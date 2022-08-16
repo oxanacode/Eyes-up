@@ -1,0 +1,33 @@
+html {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+  font-size: 10px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+button,
+input {
+  font-family: inherit;
+  background-color: transparent;
+  outline: none;
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
