@@ -1,0 +1,8 @@
+@mixin interaction-effects {
+  cursor: pointer;
+  transition: $transition-time;
+
+  &:disabled {
+    cursor: auto;
+  }
+}
