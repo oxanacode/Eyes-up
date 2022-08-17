@@ -12,7 +12,7 @@ export enum Page {
   about = 'about',
 }
 
-export enum Language {
+export enum Lang {
   ru = 'ru',
   en = 'en',
 }

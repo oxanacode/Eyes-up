@@ -1,12 +1,12 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state';
-import ChangeLanguage from '../../../scripts/layout/header/change-language';
+import ChangeLang from '../../../scripts/layout/header/change-lang';
 
-import { Language, Tag, Theme } from '../../../types/enums';
+import { Lang, Tag, Theme } from '../../../types/enums';
 
-class LanguageSwitcher {
-  public static createLanguageSwitcher(className: string, language: Language): HTMLElement {
-    const langSwitcher = CreateElement.createElement(Tag.link, [{ name: 'class', value: className }]);
+class LangSwitcher {
+  public static createLanguageSwitcher(className: string, lang: Lang): HTMLElement {
+    const langSwitcher = CreateElement.createElement(Tag.btn, [{ name: 'class', value: className }]);
 
     if (State.currentTheme === Theme.light) {
       langSwitcher.classList.add('класс светлой темы для элемента');
@@ -14,13 +14,13 @@ class LanguageSwitcher {
       langSwitcher.classList.add('класс темной темы для элемента');
     }
 
-    langSwitcher.textContent = State.currentLanguage === Language.en
+    langSwitcher.textContent = State.currentLang === Lang.en
       ? 'текст на английском'
       : 'текст на русском';
-    langSwitcher.addEventListener('click', () => { ChangeLanguage.changeLanguage(language) });
+    langSwitcher.addEventListener('click', () => { ChangeLang.changeLang(lang) });
 
     return langSwitcher;
   }
 }
 
-export default LanguageSwitcher;
+export default LangSwitcher;

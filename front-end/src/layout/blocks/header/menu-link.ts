@@ -2,10 +2,10 @@ import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state';
 import ChangePage from '../../../scripts/layout/header/change-page';
 
-import { Tag, Page, Theme, Language } from '../../../types/enums';
+import { Tag, Page, Theme, Lang } from '../../../types/enums';
 
 class MenuLink {
-  public static createMenuLink(className: string, pageName: Page): HTMLElement {
+  public static createMenuLink(className: string, page: Page): HTMLElement {
     const menuLink = CreateElement.createElement(Tag.link, [{ name: 'class', value: className }]);
 
     if (State.currentTheme === Theme.light) {
@@ -14,10 +14,10 @@ class MenuLink {
       menuLink.classList.add('класс темной темы для элемента');
     }
 
-    menuLink.textContent = State.currentLanguage === Language.en
+    menuLink.textContent = State.currentLang === Lang.en
       ? 'текст на английском'
       : 'текст на русском';
-    menuLink.addEventListener('click', () => { ChangePage.changePage(pageName) });
+    menuLink.addEventListener('click', () => { ChangePage.changePage(page) });
 
     return menuLink;
   }

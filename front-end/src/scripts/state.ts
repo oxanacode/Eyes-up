@@ -1,9 +1,9 @@
-import { Language, Page, Theme } from '../types/enums';
+import { Lang, Page, Theme } from '../types/enums';
 
 class State {
   public static currentPage = Page.home;
 
-  public static currentLanguage = Language.en;
+  public static currentLang = Lang.en;
 
   public static currentTheme = Theme.light;
 }

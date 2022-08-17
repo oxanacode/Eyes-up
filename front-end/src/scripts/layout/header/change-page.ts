@@ -4,11 +4,11 @@ import RenderPage from '../../../layout/render-page';
 import { Page } from '../../../types/enums';
 
 class ChangePage {
-  public static changePage(pageName: Page): void {
+  public static changePage(page: Page): void {
 
-    if (State.currentPage === pageName) return;
+    if (State.currentPage === page) return;
 
-    State.currentPage = pageName;
+    State.currentPage = page;
     RenderPage.renderPage();
   }
 }
