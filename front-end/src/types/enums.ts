@@ -5,6 +5,7 @@ export enum Tag {
 
 export enum Page {
   home = 'home',
+  layout = 'layout',
   lessons = 'lessons',
   lesson = 'lesson',
   games = 'games',
