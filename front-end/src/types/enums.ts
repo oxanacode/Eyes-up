@@ -1,5 +1,6 @@
 export enum Tag {
   link = 'a',
+  btn = 'button',
 }
 
 export enum Page {
@@ -9,4 +10,14 @@ export enum Page {
   games = 'games',
   game = 'game',
   about = 'about',
+}
+
+export enum Lang {
+  ru = 'ru',
+  en = 'en',
+}
+
+export enum Theme {
+  light = 'light',
+  dark = 'dark',
 }
