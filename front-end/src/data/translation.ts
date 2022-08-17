@@ -57,7 +57,7 @@ const translation = {
   },
   homeStatsText: {
     en: 'Badges are designed to motivate students on key objectives. Statistics allows students to track the development of their typing skills',
-    ru: 'Значки увеличивают мотивацию, a cтатистика позволит отследети развитие ваших навыков набора текста'
+    ru: 'Значки увеличивают мотивацию, a статистика позволяет отследить развитие ваших навыков набора текста'
   },
   homePromoSignUpTitle: {
     en: 'Explore all possibilities',
@@ -77,7 +77,7 @@ const translation = {
   },
   lessonsEnglishLayoutTitle: {
     en: 'English Layout',
-    ru: 'Aнглийская раскладка'
+    ru: 'Английская раскладка'
   },
   lessonsRussianLayoutTitle: {
     en: 'English Layout',
@@ -136,8 +136,8 @@ const translation = {
     ru: 'Создать аккаунт'
   },
   modalLogInText: {
-    en: 'Don’t have an account?', 
-    ru: 'Еще не нет аккаунта'
+    en: `Don't have an account?`, 
+    ru: 'Еще нет аккаунта?'
   },
   modalSignUpText: {
     en: 'Already have an account?', 
