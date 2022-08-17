@@ -10,8 +10,8 @@
 }
 
 @mixin button {
-  width: 240px;
-  height: 50px;
+  width: 24rem;
+  height: 5rem;
   border-radius: $small-border-radius;
   
   font-size: 2rem;
@@ -23,17 +23,15 @@
 
 @mixin font-main {
   font-size: 1.6rem;
-  font-weight: $fw-regular;
 }
 
 @mixin font-main-small {
   font-size: 1.4rem;
-  font-weight: $fw-regular;
 }
 
 @mixin font-title-promo {
   font-size: 4rem;
-  font-weight: $fw-regular;
+  font-weight: $fw-extrabold;
 }
 
 @mixin font-title-promo-mobile {
@@ -48,7 +46,6 @@
 
 @mixin font-subtitle {
   font-size: 2.4rem;
-  font-weight: $fw-regular;
 }
 
 @mixin font-title-mobile {
@@ -58,5 +55,4 @@
 
 @mixin font-subtitle-mobile {
   font-size: 2rem;
-  font-weight: $fw-regular;
 } 

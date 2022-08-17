@@ -1,7 +1,9 @@
+@import './variables.scss';
+
 html {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: $fw-regular;
   box-sizing: border-box;
 }
 
