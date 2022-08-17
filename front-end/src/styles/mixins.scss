@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 @mixin interaction-effects {
   cursor: pointer;
   transition: $transition-time;
@@ -6,3 +8,55 @@
     cursor: auto;
   }
 }
+
+@mixin button {
+  width: 240px;
+  height: 50px;
+  border-radius: $small-border-radius;
+  
+  font-size: 2rem;
+  font-weight: $fw-bold; 
+
+  color: $c-light-white;
+  background-color: $c-light-accent;
+}
+
+@mixin font-main {
+  font-size: 1.6rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-main-small {
+  font-size: 1.4rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-title-promo {
+  font-size: 4rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-title-promo-mobile {
+  font-size: 3.2rem;
+  font-weight: $fw-bold;
+}
+
+@mixin font-title  {
+  font-size: 3.2rem;
+  font-weight: $fw-bold;
+}
+
+@mixin font-subtitle {
+  font-size: 2.4rem;
+  font-weight: $fw-regular;
+}
+
+@mixin font-title-mobile {
+  font-size: 2.4rem;
+  font-weight: $fw-bold;
+}
+
+@mixin font-subtitle-mobile {
+  font-size: 2rem;
+  font-weight: $fw-regular;
+} 
