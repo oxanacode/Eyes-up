@@ -7,6 +7,7 @@ class RssLink {
     const rssLink = CreateElement.createElement(Tag.link, [
       { name: 'class', value: 'rss-link' },
       { name: 'href', value: 'https://rs.school/js/' },
+      { name: 'target', value: '_blank' },
     ]);
     const rssLogoText = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'rss-logo-text' },
