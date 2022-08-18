@@ -32,6 +32,8 @@ body.light {
   --bg-home-bg-1: url(./../assets/images/background/home/home-bg-1-light.svg);
   --bg-home-bg-2: url(./../assets/images/background/home/home-bg-2-light.svg);
   --bg-home-bg-3: url(./../assets/images/background/home/home-bg-3-light.svg);
+  --bg-home-bg-blur-1: url(./../assets/images/background/home/home-bg-blur-1-light.svg);
+  --bg-home-bg-blur-2: url(./../assets/images/background/home/home-bg-blur-2-light.svg);
   --bg-lessons-easy: url(./../assets/images/background/lessons/lessons-easy-light.svg);
   --bg-lessons-medium: url(./../assets/images/background/lessons/lessons-medium-light.svg);
   --bg-lessons-hard: url(./../assets/images/background/lessons/lessons-hard-light.svg);
@@ -74,6 +76,8 @@ body.dark {
   --bg-home-bg-1: url(./../assets/images/background/home/home-bg-1-dark.svg);
   --bg-home-bg-2: url(./../assets/images/background/home/home-bg-2-dark.svg);
   --bg-home-bg-3: url(./../assets/images/background/home/home-bg-3-dark.svg);
+  --bg-home-bg-blur-1: url(./../assets/images/background/home/home-bg-blur-dark.svg);
+  --bg-home-bg-blur-2: url(./../assets/images/background/home/home-bg-blur-dark.svg);
   --bg-lessons-easy: url(./../assets/images/background/lessons/lessons-easy-dark.svg);
   --bg-lessons-medium: url(./../assets/images/background/lessons/lessons-medium-dark.svg);
   --bg-lessons-hard: url(./../assets/images/background/lessons/lessons-hard-dark.svg);
@@ -115,6 +119,8 @@ $bg-home-bg-wave: var(--bg-home-bg-wave);
 $bg-home-bg-1: var(--bg-home-bg-1);
 $bg-home-bg-2: var(--bg-home-bg-2);
 $bg-home-bg-3: var(--bg-home-bg-3);
+$bg-home-bg-blur-1: var(--bg-home-blur-1);
+$bg-home-bg-blur-2: var(--bg-home-blur-2);
 $bg-lessons-easy: var(--bg-level-easy);
 $bg-lessons-medium: var(--bg-level-medium);
 $bg-lessons-hard: var(--bg-lessons-hard);
