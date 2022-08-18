@@ -95,8 +95,8 @@ const translation = {
     en: 'All',
     ru: 'Все',
   },
-  lessonsFilterBasics: {
-    en: 'Basics',
+  lessonsFilterBasic: {
+    en: 'Basic',
     ru: 'Простые',
   },
   lessonsFilterIntermediate: {
@@ -113,7 +113,7 @@ const translation = {
   },
   modalSignUpTitle: {
     en: 'Sign Up',
-    ru: 'Регистрация'
+    ru: 'Регистрация',
   },
   modalLogInTitle: {
     en: 'Log In',
@@ -145,39 +145,43 @@ const translation = {
   },
   modalLogInLink: {
     en: 'Sign Up',
-    ru: 'Создать аккаунт'
+    ru: 'Создать аккаунт',
   },
   modalSignUpLink: {
     en: 'Log In',
-    ru: 'Войти'
+    ru: 'Войти',
   },
   profileTitle: {
     en: 'Profile',
-    ru: 'Профиль'
+    ru: 'Профиль',
+  },
+  profileEditTitle: {
+    en: 'Edit Profile',
+    ru: 'Редактирование',
   },
   profileUsernameInput: {
     en: 'Username',
-    ru: 'Ник'
+    ru: 'Ник',
   },
   profileUsernamePassword: {
     en: 'Password',
-    ru: 'Пароль'
+    ru: 'Пароль',
   },
   statsTitle: {
     en: 'Statistics',
-    ru: 'Статистика'
+    ru: 'Статистика',
   },
   statsLessonsCompleted: {
     en: 'Completed lessons',
-    ru: 'Завершено уроков'
+    ru: 'Завершено уроков',
   },
   statsLessonsSpeed: {
     en: 'Average Speed',
-    ru: 'Средняя скорость'
+    ru: 'Средняя скорость',
   },
   statsLessonsAccuracy: {
     en: 'Accuracy',
-    ru: 'Точность'
+    ru: 'Точность',
   },
   profileBadgesTitle: {
     en: 'Earned Badges',
@@ -193,7 +197,7 @@ const translation = {
   },
   profileSaveBtn: {
     en: 'Save Changes',
-    ru: 'Сохранить'
+    ru: 'Сохранить',
   },
   profileAvatarsTitle: {
     en: 'Avatars',
