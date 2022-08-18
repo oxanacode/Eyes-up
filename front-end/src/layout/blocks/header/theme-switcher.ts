@@ -5,8 +5,13 @@ import ChangeTheme from '../../../scripts/layout/header/change-theme';
 import { Tag, Theme } from '../../../types/enums';
 
 class ThemeSwitcher {
-  public static createThemeSwitcher(className: string, theme: Theme): HTMLElement {
-    const themeSwitcher = CreateElement.createElement(Tag.btn, [{ name: 'class', value: className }]);
+  public static createThemeSwitcher(
+    className: string,
+    theme: Theme
+  ): HTMLElement {
+    const themeSwitcher = CreateElement.createElement(Tag.btn, [
+      { name: 'class', value: className },
+    ]);
 
     if (State.currentTheme === Theme.light) {
       themeSwitcher.classList.add('класс светлой темы для элемента');
@@ -14,7 +19,9 @@ class ThemeSwitcher {
       themeSwitcher.classList.add('класс темной темы для элемента');
     }
 
-    themeSwitcher.addEventListener('click', () => { ChangeTheme.changeTheme(theme) });
+    themeSwitcher.addEventListener('click', () => {
+      ChangeTheme.changeTheme(theme);
+    });
 
     return themeSwitcher;
   }

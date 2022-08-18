@@ -29,7 +29,7 @@ module.exports = {
         test: /.(?:ico|gif|png|jpg|jpeg|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: './assets/images/background/[name][ext]'
+          filename: './assets/images/background/[name][ext]',
         }
       },
       {
@@ -53,28 +53,8 @@ module.exports = {
     new EslintPlugin({ extensions: 'ts' }),
     new CopyPlugin({
       patterns: [{
-        from: './src/assets/images/avatars',
-        to: './assets/images/avatars',
-        noErrorOnMissing: true
-      },
-      {
-        from: './src/assets/images/home',
-        to: './assets/images/home',
-        noErrorOnMissing: true
-      },
-      {
-        from: './src/assets/images/lessons',
-        to: './assets/images/lessons',
-        noErrorOnMissing: true
-      },
-      {
-        from: './src/assets/images/games',
-        to: './assets/images/games',
-        noErrorOnMissing: true
-      },
-      {
-        from: './src/assets/images/logos',
-        to: './assets/images/logos',
+        from: './src/assets/',
+        to: './assets/',
         noErrorOnMissing: true
       }],
     })
