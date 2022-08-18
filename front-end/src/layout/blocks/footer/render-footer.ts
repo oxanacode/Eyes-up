@@ -11,6 +11,7 @@ class CreateFooter {
     const content = FooterWrapper.createContentWrapper();
 
     footer.append(content);
+
     return footer;
   }
 }

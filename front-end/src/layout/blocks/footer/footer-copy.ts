@@ -9,6 +9,7 @@ class FooterCopy {
     ]);
 
     paragpaph.textContent = '© 2022 EyesUP';
+
     return paragpaph;
   }
 }

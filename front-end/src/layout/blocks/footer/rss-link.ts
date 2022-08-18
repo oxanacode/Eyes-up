@@ -8,11 +8,13 @@ class RssLink {
       { name: 'class', value: 'rss-link' },
       { name: 'href', value: 'https://rs.school/js/' },
     ]);
-    const rssLogoWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'rss-img' },
+    const rssLogoText = CreateElement.createElement(Tag.par, [
+      { name: 'class', value: 'rss-logo-text' },
     ]);
+    rssLogoText.textContent = 'RS logo';
 
-    rssLink.append(rssLogoWrapper);
+    rssLink.append(rssLogoText);
+
     return rssLink;
   }
 }

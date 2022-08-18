@@ -14,6 +14,7 @@ class FooterWrapper {
     const copy = FooterCopy.createCopy();
 
     wrapper.append(rssLink, copy);
+
     return wrapper;
   }
 
@@ -23,6 +24,7 @@ class FooterWrapper {
     ]);
 
     wrapper.append(...GithubLinks.createGithubLinks());
+
     return wrapper;
   }
 
@@ -34,6 +36,7 @@ class FooterWrapper {
     const rssCopy = FooterWrapper.createRssCopyWrapper();
     const githubs = FooterWrapper.createGithubsWrapper();
     wrapper.append(rssCopy, githubs);
+
     return wrapper;
   }
 }

@@ -21,8 +21,10 @@ class GithubLinks {
       const link = CreateElement.createElement(Tag.link, [
         { name: 'class', value: 'dev-link' },
         { name: 'href', value: item.link },
+        { name: 'target', value: '_blank' },
       ]);
       link.textContent = item.name;
+
       return link;
     });
   }
