@@ -5,10 +5,9 @@ import { Theme } from '../../../types/enums';
 
 class ChangeTheme {
   public static changeTheme(theme: Theme): void {
-
     if (State.currentTheme === theme) return;
 
-    State.currentTheme === theme;
+    State.currentTheme = theme;
     RenderPage.renderPage();
   }
 }
