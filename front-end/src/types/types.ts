@@ -1,3 +1,13 @@
-import { Attribute } from './interfaces';
+import { Attribute, Lesson, Query, User } from './interfaces';
 
 export type AttributesList = Array<Attribute>;
+
+export type UsersList = Array<User>;
+
+export type LessonsList = Array<Lesson>;
+
+export type QueriesList = Array<Query>;
+
+export type UserData = Pick<User, 'login' | 'password'>;
+
+export type LessonData = Pick<Lesson, 'language' | 'name' | 'complexity' | 'text'>;
