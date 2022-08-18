@@ -34,3 +34,21 @@ export enum Theme {
   light = 'light',
   dark = 'dark',
 }
+
+export enum Endpoint {
+  users = '/users',
+  lessons = '/lessons',
+}
+
+export enum Method {
+  get = 'get',
+  post = 'post',
+  put = 'put',
+  delete = 'delete',
+}
+
+export enum Complexity {
+  easy = 'basic',
+  medium = 'intermediate',
+  hard = 'advanced',
+}
