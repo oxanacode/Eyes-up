@@ -108,99 +108,99 @@ const translation = {
     ru: 'Продвинутые'
   },
   gamesTitle: {
-    en: 'Games', 
+    en: 'Games',
     ru: 'Игры'
   },
   modalSignUpTitle: {
-    en: 'Sign Up', 
+    en: 'Sign Up',
     ru: 'Регистрация'
   },
   modalLogInTitle: {
-    en: 'Log In', 
+    en: 'Log In',
     ru: 'Авторизация'
   },
   modalSignUpLoginInput: {
-    en: 'Login', 
+    en: 'Login',
     ru: 'Логин'
   },
   modalSignUpPasswordInput: {
-    en: 'Password', 
+    en: 'Password',
     ru: 'Пароль'
   },
   modalLogInBtn: {
-    en: 'Log In', 
+    en: 'Log In',
     ru: 'Войти'
   },
   modalSignUpBtn: {
-    en: 'Sign Up', 
+    en: 'Sign Up',
     ru: 'Создать аккаунт'
   },
   modalLogInText: {
-    en: `Don't have an account?`, 
+    en: `Don't have an account?`,
     ru: 'Еще нет аккаунта?'
   },
   modalSignUpText: {
-    en: 'Already have an account?', 
+    en: 'Already have an account?',
     ru: 'Уже есть аккаунт?'
   },
   modalLogInLink: {
-    en: 'Sign Up', 
+    en: 'Sign Up',
     ru: 'Создать аккаунт'
   },
   modalSignUpLink: {
-    en: 'Log In', 
+    en: 'Log In',
     ru: 'Войти'
   },
   profileTitle: {
-    en: 'Profile', 
+    en: 'Profile',
     ru: 'Профиль'
   },
   profileUsernameInput: {
-    en: 'Username', 
+    en: 'Username',
     ru: 'Ник'
   },
   profileUsernamePassword: {
-    en: 'Password', 
+    en: 'Password',
     ru: 'Пароль'
   },
   statsTitle: {
-    en: 'Statistics', 
+    en: 'Statistics',
     ru: 'Статистика'
   },
   statsLessonsCompleted: {
-    en: 'Completed lessons', 
+    en: 'Completed lessons',
     ru: 'Завершено уроков'
   },
   statsLessonsSpeed: {
-    en: 'Average Speed', 
+    en: 'Average Speed',
     ru: 'Средняя скорость'
   },
   statsLessonsAccuracy: {
-    en: 'Accuracy', 
+    en: 'Accuracy',
     ru: 'Точность'
   },
   profileBadgesTitle: {
-    en: 'Earned Badges', 
+    en: 'Earned Badges',
     ru: 'Полученные значки'
   },
   profileBadgesLink: {
-    en: 'All badges', 
+    en: 'All badges',
     ru: 'Все значки'
   },
   profileLogoutBtn: {
-    en: 'Logout', 
+    en: 'Logout',
     ru: 'Выйти'
   },
   profileSaveBtn: {
-    en: 'Save Changes', 
+    en: 'Save Changes',
     ru: 'Сохранить'
   },
   profileAvatarsTitle: {
-    en: 'Avatars', 
+    en: 'Avatars',
     ru: 'Аватарки'
   },
   profileDeleteBtn: {
-    en: 'Delete Account', 
+    en: 'Delete Account',
     ru: 'Удалить аккаунт'
   },
 };

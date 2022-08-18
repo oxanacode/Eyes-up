@@ -34,3 +34,9 @@ export enum Method {
   put = 'put',
   delete = 'delete',
 }
+
+export enum Complexity {
+  easy = 'basic',
+  medium = 'intermediate',
+  hard = 'advanced',
+}

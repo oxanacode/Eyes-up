@@ -1,12 +1,16 @@
 import { Endpoint, Method } from '../../types/enums';
 import { User, Lesson, Query } from '../../types/interfaces';
-import { UsersList, LessonsList, QueriesList, UserData } from '../../types/types';
+import { UsersList, LessonsList, UserData, LessonData } from '../../types/types';
 
 class ApiService {
   private static url = 'http://127.0.0.1:3000/api/v1';
 
-  private static getQuery(queries: QueriesList): string {
-    return queries.map((query: Query) => `${query.key}=${query.value}`).join('&');
+  private static getLessonsQuery(query: Query): string {
+    if (query.language && query.complexity) {
+      return `language=${query.language}&complexity=${query.complexity}`;
+    } else {
+      return `language=${query.language}`;
+    }
   }
 
   public static async getUsers(): Promise<UsersList> {
@@ -54,6 +58,55 @@ class ApiService {
       method: Method.delete,
     });
     const data: Promise<User> = await response.json();
+
+    return data;
+  }
+
+  public static async getLessons(query: Query): Promise<LessonsList> {
+    const response = await fetch(`${Endpoint.lessons}?${ApiService.getLessonsQuery(query)}}`);
+    const data: Promise<LessonsList> = await response.json();
+
+    return data;
+  }
+
+  public static async createLesson(lessonData: LessonData): Promise<Lesson> {
+    const response = await fetch(`${Endpoint.lessons}`, {
+      method: Method.post,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(lessonData),
+    });
+    const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async getLesson(id: string): Promise<Lesson> {
+    const response = await fetch(`${Endpoint.lessons}/${id}`);
+    const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async updateLesson(id: string, lessonData: LessonData): Promise<Lesson> {
+    const response = await fetch(`${Endpoint.lessons}/${id}`, {
+      method: Method.put,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(lessonData),
+    });
+    const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async deleteLesson(id: string): Promise<Lesson> {
+    const response = await fetch(`${Endpoint.lessons}/${id}`, {
+      method: Method.delete,
+    });
+    const data: Promise<Lesson> = await response.json();
 
     return data;
   }

@@ -1,3 +1,5 @@
+import { Complexity, Lang } from './enums';
+
 export interface Attribute {
   name: string;
   value: string;
@@ -20,6 +22,6 @@ export interface Lesson {
 }
 
 export interface Query {
-  key: string;
-  value: number;
+  language: Lang;
+  complexity?: Complexity;
 }
