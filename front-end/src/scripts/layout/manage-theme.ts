@@ -4,10 +4,12 @@ import ManagePage from './manage-page';
 import { Theme } from '../../types/enums';
 
 class ManageTheme {
-  public static changeTheme(theme: Theme): void {
-    if (State.currentTheme === theme) return;
-
-    State.currentTheme = theme;
+  public static changeTheme(
+    currentTheme: Theme,
+    alternativeTheme: Theme
+  ): void {
+    State.currentTheme = alternativeTheme;
+    State.alternativeTheme = currentTheme;
   }
 
   public static applyTheme(): void {

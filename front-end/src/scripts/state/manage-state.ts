@@ -10,19 +10,23 @@ class ManageState {
       LocalStorageService.getItem('eyesUpState');
 
     if (currentState) {
-      State.currentUser = currentState.user;
-      State.currentPage = currentState.page;
-      State.currentLang = currentState.lang;
-      State.currentTheme = currentState.theme;
+      State.currentUser = currentState.currentUser;
+      State.currentPage = currentState.currentPage;
+      State.currentLang = currentState.currentLang;
+      State.alternativeLang = currentState.alternativeLang;
+      State.currentTheme = currentState.currentTheme;
+      State.alternativeTheme = currentState.alternativeTheme;
     }
   }
 
   public static saveState(): void {
     const stateToSave: CurrentState = {
-      user: State.currentUser,
-      page: State.currentPage,
-      lang: State.currentLang,
-      theme: State.currentTheme,
+      currentUser: State.currentUser,
+      currentPage: State.currentPage,
+      currentLang: State.currentLang,
+      alternativeLang: State.alternativeLang,
+      currentTheme: State.currentTheme,
+      alternativeTheme: State.alternativeTheme,
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);
