@@ -63,6 +63,12 @@
   }
 }
 
+.copy {
+  @include mobile {
+    padding-top: 0.5rem;
+  }
+}
+
 .github-links-wrapper {
   display: flex;
   gap: 5rem;
@@ -85,13 +91,8 @@
   height: 2.4rem;
 }
 
-@include mobile {
-  .copy {
-    padding-top: 0.5rem;
-  }
-
-  .dev-link:nth-child(2)::before,
-  .dev-link:nth-child(3)::before {
+.dev-link:not(:first-child)::before {
+  @include mobile {
     content: "";
     display: block;
     position: absolute;
