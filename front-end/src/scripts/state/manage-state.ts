@@ -4,7 +4,7 @@ import RenderPage from '../../layout/render-page';
 
 import { CurrentState } from '../../types/interfaces';
 
-class UpdateState {
+class ManageState {
   public static updateState(): void {
     const currentState: CurrentState | null =
       LocalStorageService.getItem('eyesUpState');
@@ -29,9 +29,9 @@ class UpdateState {
   }
 
   public static applyState(): void {
-    UpdateState.saveState();
+    ManageState.saveState();
     RenderPage.renderPage();
   }
 }
 
-export default UpdateState;
+export default ManageState;

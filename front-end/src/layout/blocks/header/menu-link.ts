@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
 import ChangePage from '../../../scripts/layout/change-page';
-import UpdateState from '../../../scripts/state/update-state';
+import UpdateState from '../../../scripts/state/manage-state';
 
 import { Tag, Page, Theme, Lang } from '../../../types/enums';
 

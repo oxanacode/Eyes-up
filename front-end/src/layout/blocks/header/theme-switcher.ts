@@ -1,7 +1,7 @@
 import State from '../../../scripts/state/state';
 import CreateElement from '../../elements/create-element';
 import ChangeTheme from '../../../scripts/layout/change-theme';
-import UpdateState from '../../../scripts/state/update-state';
+import UpdateState from '../../../scripts/state/manage-state';
 
 import { Tag, Theme } from '../../../types/enums';
 

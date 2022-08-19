@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
 import ChangeLang from '../../../scripts/layout/change-lang';
-import UpdateState from '../../../scripts/state/update-state';
+import UpdateState from '../../../scripts/state/manage-state';
 
 import { Lang, Tag, Theme } from '../../../types/enums';
 
