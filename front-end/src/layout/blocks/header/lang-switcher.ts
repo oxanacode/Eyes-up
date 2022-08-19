@@ -1,6 +1,7 @@
 import CreateElement from '../../elements/create-element';
-import State from '../../../scripts/state';
+import State from '../../../scripts/state/state';
 import ChangeLang from '../../../scripts/layout/change-lang';
+import UpdateState from '../../../scripts/state/update-state';
 
 import { Lang, Tag, Theme } from '../../../types/enums';
 
@@ -25,6 +26,7 @@ class LangSwitcher {
         : 'текст на русском';
     langSwitcher.addEventListener('click', () => {
       ChangeLang.changeLang(lang);
+      UpdateState.applyState();
     });
 
     return langSwitcher;

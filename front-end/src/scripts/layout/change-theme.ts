@@ -1,5 +1,4 @@
-import RenderPage from '../../layout/render-page';
-import State from '../state';
+import State from '../state/state';
 
 import { Theme } from '../../types/enums';
 
@@ -8,7 +7,6 @@ class ChangeTheme {
     if (State.currentTheme === theme) return;
 
     State.currentTheme = theme;
-    RenderPage.renderPage();
   }
 }
 
