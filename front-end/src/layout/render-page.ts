@@ -3,6 +3,8 @@ import State from '../scripts/state/state';
 
 import { Page } from '../types/enums';
 
+import CreateFooter from './blocks/footer/render-footer';
+
 class RenderPage {
   public static renderInteractivePage(): void {
     const page = UpdatePage.getPage();
@@ -15,9 +17,9 @@ class RenderPage {
     const page = UpdatePage.getPage();
     // const header = CreateHeader
     // const main = CreateMain
-    // const footer = CreateFooter
+    const footer = CreateFooter.createFooter();
 
-    // page.append(header, main, footer);
+    page.append(footer);
   }
 
   public static renderPage(): void {
