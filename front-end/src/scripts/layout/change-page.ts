@@ -1,7 +1,7 @@
-import State from '../../state';
-import RenderPage from '../../../layout/render-page';
+import State from '../state';
+import RenderPage from '../../layout/render-page';
 
-import { Page } from '../../../types/enums';
+import { Page } from '../../types/enums';
 
 class ChangePage {
   public static changePage(page: Page): void {

@@ -1,6 +1,6 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state';
-import ChangePage from '../../../scripts/layout/header/change-page';
+import ChangePage from '../../../scripts/layout/change-page';
 
 import { Tag, Page, Theme, Lang } from '../../../types/enums';
 

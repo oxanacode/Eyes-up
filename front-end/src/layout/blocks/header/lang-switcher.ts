@@ -1,6 +1,6 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state';
-import ChangeLang from '../../../scripts/layout/header/change-lang';
+import ChangeLang from '../../../scripts/layout/change-lang';
 
 import { Lang, Tag, Theme } from '../../../types/enums';
 
