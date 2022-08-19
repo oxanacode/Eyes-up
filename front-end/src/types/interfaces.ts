@@ -10,6 +10,7 @@ export interface User {
   __v: number;
   login: string;
   password: string;
+  avatar: number;
 }
 
 export interface Lesson {
