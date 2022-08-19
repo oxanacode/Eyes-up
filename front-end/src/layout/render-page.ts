@@ -1,9 +1,9 @@
 import ManagePage from '../scripts/layout/manage-page';
+import ManageTheme from '../scripts/layout/manage-theme';
 import State from '../scripts/state/state';
+import CreateFooter from './blocks/footer/render-footer';
 
 import { Page } from '../types/enums';
-
-import CreateFooter from './blocks/footer/render-footer';
 
 class RenderPage {
   public static renderInteractivePage(): void {
@@ -24,6 +24,7 @@ class RenderPage {
 
   public static renderPage(): void {
     ManagePage.clearPage();
+    ManageTheme.applyTheme();
 
     if (State.currentPage === Page.lesson || State.currentPage === Page.game) {
       RenderPage.renderInteractivePage();
