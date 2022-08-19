@@ -1,0 +1,106 @@
+.footer {
+  height: 10rem;
+  padding: 0 8rem;
+  background: $bg-footer-gradient;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include mobile {
+    padding: 0 1.5rem;
+  }
+}
+
+.footer-wrapper {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include tablet {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1.5rem;
+  }
+  @include mobile {
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 2rem;
+  }
+}
+
+.rsslink-copy-wrapper {
+  display: flex;
+  gap: 4rem;
+  align-items: center;
+  @include tablet {
+    order: 1;
+  }
+  @include mobile {
+    gap: 1.5rem;
+  }
+}
+
+.rss-link {
+  display: block;
+  width: 10rem;
+  height: 4rem;
+  background-image: $bg-rss-logo;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-size: 0;
+  @include mobile {
+    width: 8rem;
+    height: 3rem;
+  }
+}
+
+.copy,
+.dev-link {
+  @include font-main;
+  color: $c-menu-inactive-link;
+  @include mobile {
+    @include font-main-small;
+  }
+}
+
+.copy {
+  @include mobile {
+    padding-top: 0.5rem;
+  }
+}
+
+.github-links-wrapper {
+  display: flex;
+  gap: 5rem;
+  padding-left: 3.2rem;
+  @include mobile {
+    gap: 2rem;
+  }
+}
+
+.dev-link {
+  position: relative;
+}
+
+.dev-link::before {
+  content: $bg-icon-github;
+  position: absolute;
+  top: -0.4rem;
+  left: -3.3rem;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.dev-link:not(:first-child)::before {
+  @include mobile {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -0.2rem;
+    left: -1.1rem;
+    width: 0.1rem;
+    height: 2.4rem;
+    background-color: $c-menu-inactive-link;
+    border-radius: $small-border-radius;
+  }
+}
