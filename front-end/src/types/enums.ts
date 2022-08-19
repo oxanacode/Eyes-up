@@ -15,6 +15,7 @@ export enum Tag {
   main = 'main',
   header = 'header',
   footer = 'footer',
+  section = 'section',
 }
 
 export enum Page {

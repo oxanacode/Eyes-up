@@ -51,23 +51,23 @@ const translation = {
     en: `EyesUP's games are unique, engaging and challenging. Each of the games focuses on building specific typing skills. You can track your progress the same as you would with any other lesson`,
     ru: 'Игры EyesUP уникальны и интересны. Каждая из игр направлена на развитие определенных навыков набора текста. Вы сможете отслеживать свой прогресс, как при любом другом уроке',
   },
-  homeStatsTitle: {
+  homeProgressTitle: {
     en: 'Badges and Statistics',
     ru: 'Значки и статистика',
   },
-  homeStatsText: {
+  homeProgressText: {
     en: 'Badges are designed to motivate students on key objectives. Statistics allows students to track the development of their typing skills',
     ru: 'Значки увеличивают мотивацию, a статистика позволяет отследить развитие ваших навыков набора текста',
   },
-  homePromoSignUpTitle: {
+  homeRegistrationTitle: {
     en: 'Explore all possibilities',
     ru: 'Исследуйте все возможности',
   },
-  homePromoSignUpText: {
+  homeRegistrationText: {
     en: 'Create an account to track your progress and store badges',
     ru: 'Создайте учетную запись, чтобы отслеживать свои успехи и хранить значки',
   },
-  homePromoSignUpBtn: {
+  homeRegistrationBtn: {
     en: 'Sign Up',
     ru: 'Создать аккаунт',
   },
