@@ -1,5 +1,5 @@
-import { Lang, Page, Theme } from '../types/enums';
-import { CurrentUser } from '../types/types';
+import { Lang, Page, Theme } from '../../types/enums';
+import { CurrentUser } from '../../types/interfaces';
 
 class State {
   public static noLogin = '';

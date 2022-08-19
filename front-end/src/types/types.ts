@@ -12,5 +12,3 @@ export type LessonData = Pick<
   Lesson,
   'language' | 'name' | 'complexity' | 'text'
 >;
-
-export type CurrentUser = Pick<User, 'login' | 'avatar'>;

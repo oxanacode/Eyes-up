@@ -1,6 +1,7 @@
-import State from '../../../scripts/state';
+import State from '../../../scripts/state/state';
 import CreateElement from '../../elements/create-element';
 import ChangeTheme from '../../../scripts/layout/change-theme';
+import UpdateState from '../../../scripts/state/update-state';
 
 import { Tag, Theme } from '../../../types/enums';
 
@@ -21,6 +22,7 @@ class ThemeSwitcher {
 
     themeSwitcher.addEventListener('click', () => {
       ChangeTheme.changeTheme(theme);
+      UpdateState.applyState();
     });
 
     return themeSwitcher;

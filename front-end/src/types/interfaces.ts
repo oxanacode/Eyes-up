@@ -1,4 +1,4 @@
-import { Complexity, Lang } from './enums';
+import { Complexity, Lang, Page, Theme } from './enums';
 
 export interface Attribute {
   name: string;
@@ -25,4 +25,16 @@ export interface Lesson {
 export interface Query {
   language: Lang;
   complexity?: Complexity;
+}
+
+export interface CurrentUser {
+  login: string;
+  avatar: number;
+}
+
+export interface CurrentState {
+  user: CurrentUser;
+  page: Page;
+  lang: Lang;
+  theme: Theme;
 }

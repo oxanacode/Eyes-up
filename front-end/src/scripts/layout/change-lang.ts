@@ -1,5 +1,4 @@
-import RenderPage from '../../layout/render-page';
-import State from '../state';
+import State from '../state/state';
 
 import { Lang } from '../../types/enums';
 
@@ -8,7 +7,6 @@ class ChangeLang {
     if (State.currentLang === lang) return;
 
     State.currentLang = lang;
-    RenderPage.renderPage();
   }
 }
 

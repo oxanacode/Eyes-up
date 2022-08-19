@@ -1,5 +1,5 @@
 import UpdatePage from './elements/update-page';
-import State from '../scripts/state';
+import State from '../scripts/state/state';
 
 import { Page } from '../types/enums';
 
