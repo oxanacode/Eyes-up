@@ -1,12 +1,12 @@
 .footer {
-  height: 100px;
-  padding: 0 80px;
+  height: 10rem;
+  padding: 0 8rem;
   background: $bg-footer-gradient;
   display: flex;
   align-items: center;
   justify-content: center;
   @include mobile {
-    padding: 0 15px;
+    padding: 0 1.5rem;
   }
 }
 
@@ -19,38 +19,38 @@
   @include tablet {
     flex-direction: column;
     justify-content: center;
-    row-gap: 15px;
+    row-gap: 1.5rem;
   }
   @include mobile {
     flex-direction: column;
     justify-content: center;
-    row-gap: 20px;
+    row-gap: 2rem;
   }
 }
 
 .rsslink-copy-wrapper {
   display: flex;
-  gap: 40px;
+  gap: 4rem;
   align-items: center;
   @include tablet {
     order: 1;
   }
   @include mobile {
-    gap: 15px;
+    gap: 1.5rem;
   }
 }
 
 .rss-link {
   display: block;
-  width: 100px;
-  height: 40px;
+  width: 10rem;
+  height: 4rem;
   background-image: $bg-rss-logo;
   background-size: contain;
   background-repeat: no-repeat;
   font-size: 0;
   @include mobile {
-    width: 80px;
-    height: 30px;
+    width: 8rem;
+    height: 3rem;
   }
 }
 
@@ -65,10 +65,10 @@
 
 .github-links-wrapper {
   display: flex;
-  gap: 55px;
-  padding-left: 32px;
+  gap: 5rem;
+  padding-left: 3.2rem;
   @include mobile {
-    gap: 22px;
+    gap: 2rem;
   }
 }
 
@@ -79,15 +79,15 @@
 .dev-link::before {
   content: $bg-icon-github;
   position: absolute;
-  top: -4px;
-  left: -33px;
-  width: 24px;
-  height: 24px;
+  top: -0.4rem;
+  left: -3.3rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
 @include mobile {
   .copy {
-    padding-top: 5px;
+    padding-top: 0.5rem;
   }
 
   .dev-link:nth-child(2)::before,
@@ -95,11 +95,11 @@
     content: "";
     display: block;
     position: absolute;
-    top: -2px;
-    left: -11px;
-    width: 1px;
-    height: 24px;
+    top: -0.2rem;
+    left: -1.1rem;
+    width: 0.1rem;
+    height: 2.4rem;
     background-color: $c-menu-inactive-link;
-    border-radius: 10px;
+    border-radius: 1rem;
   }
 }
