@@ -19,21 +19,21 @@ class ApiService {
   }
 
   public static async getUsers(): Promise<UsersList> {
-    const response = await fetch(`${Endpoint.users}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.users}`);
     const data: Promise<UsersList> = await response.json();
 
     return data;
   }
 
   public static async getUser(login: string): Promise<User> {
-    const response = await fetch(`${Endpoint.users}/${login}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.users}/${login}`);
     const data: Promise<User> = await response.json();
 
     return data;
   }
 
   public static async createUser(userData: UserData): Promise<User> {
-    const response = await fetch(`${Endpoint.users}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.users}`, {
       method: Method.post,
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ class ApiService {
     id: string,
     userData: UserData
   ): Promise<User> {
-    const response = await fetch(`${Endpoint.users}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.users}/${id}`, {
       method: Method.put,
       headers: {
         'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ class ApiService {
   }
 
   public static async deleteUser(id: string): Promise<User> {
-    const response = await fetch(`${Endpoint.users}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.users}/${id}`, {
       method: Method.delete,
     });
     const data: Promise<User> = await response.json();
@@ -72,7 +72,9 @@ class ApiService {
 
   public static async getLessons(query: Query): Promise<LessonsList> {
     const response = await fetch(
-      `${Endpoint.lessons}?${ApiService.getLessonsQuery(query)}}`
+      `${ApiService.url}${Endpoint.lessons}?${ApiService.getLessonsQuery(
+        query
+      )}}`
     );
     const data: Promise<LessonsList> = await response.json();
 
@@ -80,7 +82,7 @@ class ApiService {
   }
 
   public static async createLesson(lessonData: LessonData): Promise<Lesson> {
-    const response = await fetch(`${Endpoint.lessons}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}`, {
       method: Method.post,
       headers: {
         'Content-Type': 'application/json',
@@ -93,7 +95,7 @@ class ApiService {
   }
 
   public static async getLesson(id: string): Promise<Lesson> {
-    const response = await fetch(`${Endpoint.lessons}/${id}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`);
     const data: Promise<Lesson> = await response.json();
 
     return data;
@@ -103,7 +105,7 @@ class ApiService {
     id: string,
     lessonData: LessonData
   ): Promise<Lesson> {
-    const response = await fetch(`${Endpoint.lessons}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`, {
       method: Method.put,
       headers: {
         'Content-Type': 'application/json',
@@ -116,7 +118,7 @@ class ApiService {
   }
 
   public static async deleteLesson(id: string): Promise<Lesson> {
-    const response = await fetch(`${Endpoint.lessons}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`, {
       method: Method.delete,
     });
     const data: Promise<Lesson> = await response.json();
