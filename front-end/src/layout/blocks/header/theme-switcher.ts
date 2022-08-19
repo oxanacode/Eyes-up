@@ -1,6 +1,6 @@
 import State from '../../../scripts/state';
 import CreateElement from '../../elements/create-element';
-import ChangeTheme from '../../../scripts/layout/header/change-theme';
+import ChangeTheme from '../../../scripts/layout/change-theme';
 
 import { Tag, Theme } from '../../../types/enums';
 

@@ -1,7 +1,7 @@
-import RenderPage from '../../../layout/render-page';
-import State from '../../state';
+import RenderPage from '../../layout/render-page';
+import State from '../state';
 
-import { Theme } from '../../../types/enums';
+import { Theme } from '../../types/enums';
 
 class ChangeTheme {
   public static changeTheme(theme: Theme): void {
