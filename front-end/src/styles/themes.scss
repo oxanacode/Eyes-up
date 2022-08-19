@@ -1,0 +1,150 @@
+body.light {
+  --c-body-bg:  #FFFFFF;
+  --c-main-text:  #212529;
+  --c-small-text:  #212529;
+  --c-accent: #212529;
+  --c-accent: #848ED9;
+  --c-big-btn-hover: #AFB8FA;
+  --c-big-btn-active: #6D78CC;
+  --c-big-btn-disabled: #8693B3;
+  --c-level-all: #F3F2FC;
+  --c-level-basic: #FFEBF5;
+  --c-level-intermediate: #D5E9EC;
+  --c-level-advanced: #E3F6DE;
+  --c-small-btn-bg: #FFFFFF;
+  --c-block-bg: #FAFAFA;
+  --c-menu-inactive-link: #75819C;
+  --c-modal-overlay: rgba(50, 50, 50, .2);
+
+  --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+
+  --bg-header-gradient: linear-gradient(180deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 100%);
+  --bg-footer-gradient: linear-gradient(0deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 56%);
+
+  --bg-theme-switcher: url(./../assets/images/background/icons/icon-theme-light.svg);
+  --bg-app-logo: url(./../assets/images/background/logos/app-logo-light.svg);
+  --bg-rss-logo: url(./../assets/images/background/logos/rss-logo-light.svg);
+  --bg-home-promo: url(./../assets/images/background/home/home-promo-light.svg);
+  --bg-home-lessons: url(./../assets/images/background/home/home-lessons-light.svg);
+  --bg-home-games: url(./../assets/images/background/home/home-games-light.svg);
+  --bg-home-progress: url(./../assets/images/background/home/home-progress-light.svg);
+  --bg-home-bg-wave: url(./../assets/images/background/home/home-wave.svg);
+  --bg-home-bg-1: url(./../assets/images/background/home/home-bg-1-light.svg);
+  --bg-home-bg-2: url(./../assets/images/background/home/home-bg-2-light.svg);
+  --bg-home-bg-3: url(./../assets/images/background/home/home-bg-3-light.svg);
+  --bg-home-bg-blur-1: url(./../assets/images/background/home/home-bg-blur-1-light.svg);
+  --bg-home-bg-blur-2: url(./../assets/images/background/home/home-bg-blur-2-light.svg);
+  --bg-lessons-easy: url(./../assets/images/background/lessons/lessons-easy-light.svg);
+  --bg-lessons-medium: url(./../assets/images/background/lessons/lessons-medium-light.svg);
+  --bg-lessons-hard: url(./../assets/images/background/lessons/lessons-hard-light.svg);
+  --bg-lessons-fact: url(./../assets/images/background/lessons/lessons-facts-light.svg);
+  --bg-lessons-ru: url(./../assets/images/background/lessons/lessons-ru.svg);
+  --bg-lessons-en: url(./../assets/images/background/lessons/lessons-eng.svg);
+  --bg-profile-close: url(./../assets/images/background/icons/icon-close-light.svg);
+  --bg-profile-edit: url(./../assets/images/background/icons/icon-edit-light.svg);
+  --bg-modal-password-open: url(./../assets/images/background/icons/icon-password-open-light.svg);
+  --bg-modal-password-closed: url(./../assets/images/background/icons/icon-password-closed-light.svg);
+  --bg-lessons-star: url(./../assets/images/background/icons/icon-star-light.svg);
+  --bg-arrow-left: url(./../assets/images/background/icons/icon-arrow-left-light.svg);
+  --bg-arrow-right: url(./../assets/images/background/icons/icon-arrow-right-light.svg);
+}
+
+body.dark {
+  --c-body-bg:  #1E273A;
+  --c-main-text:  #F3F3F4;
+  --c-small-text:  #8693B3;
+  --c-accent: #4794BA;
+  --c-accent: #4794BA;
+  --c-big-btn-hover: #7DC2E4;
+  --c-big-btn-active: #417B97;
+  --c-big-btn-disabled: #8693B3;
+  --c-level-all: #426A81;
+  --c-level-basic: #995C7A;
+  --c-level-intermediate: #4C4574;
+  --c-level-advanced: #4B716C;
+  --c-small-btn-bg: #212C42;
+  --c-block-bg: #212C42;
+  --c-menu-inactive-link: #75819C;
+  --c-modal-overlay: rgba(0, 0, 0, .5);
+
+  --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+
+  --bg-header-gradient: linear-gradient(180deg, #111A2C 0%, #1E273A 61.33%);
+  --bg-footer-gradient: linear-gradient(0deg, #131B2C 0%, #1E273A 69%);
+
+  --bg-theme-switcher: url(./../assets/images/background/icons/icon-theme-dark.svg);
+  --bg-app-logo: url(./../assets/images/background/logos/app-logo-dark.svg);
+  --bg-rss-logo: url(./../assets/images/background/logos/rss-logo-dark.svg);
+  --bg-home-promo: url(./../assets/images/background/home/home-promo-dark.svg);
+  --bg-home-lessons: url(./../assets/images/background/home/home-lessons-dark.svg);
+  --bg-home-games: url(./../assets/images/background/home/home-games-dark.svg);
+  --bg-home-progress: url(./../assets/images/background/home/home-progress-dark.svg);
+  --bg-home-bg-wave: url(./../assets/images/background/home/home-wave.svg);
+  --bg-home-bg-1: url(./../assets/images/background/home/home-bg-1-dark.svg);
+  --bg-home-bg-2: url(./../assets/images/background/home/home-bg-2-dark.svg);
+  --bg-home-bg-3: url(./../assets/images/background/home/home-bg-3-dark.svg);
+  --bg-home-bg-blur-1: url(./../assets/images/background/home/home-bg-blur-dark.svg);
+  --bg-home-bg-blur-2: url(./../assets/images/background/home/home-bg-blur-dark.svg);
+  --bg-lessons-easy: url(./../assets/images/background/lessons/lessons-easy-dark.svg);
+  --bg-lessons-medium: url(./../assets/images/background/lessons/lessons-medium-dark.svg);
+  --bg-lessons-hard: url(./../assets/images/background/lessons/lessons-hard-dark.svg);
+  --bg-lessons-fact: url(./../assets/images/background/lessons/lessons-facts-dark.svg);
+  --bg-lessons-ru: url(./../assets/images/background/lessons/lessons-ru.svg);
+  --bg-lessons-en: url(./../assets/images/background/lessons/lessons-eng.svg);
+  --bg-close: url(./../assets/images/background/icons/icon-close-dark.svg);
+  --bg-profile-edit: url(./../assets/images/background/icons/icon-edit-dark.svg);
+  --bg-modal-password-open: url(./../assets/images/background/icons/icon-password-open-dark.svg);
+  --bg-modal-password-closed: url(./../assets/images/background/icons/icon-password-closed-dark.svg);
+  --bg-lessons-star: url(./../assets/images/background/icons/icon-star-dark.svg);
+  --bg-arrow-left: url(./../assets/images/background/icons/icon-arrow-left-dark.svg);
+  --bg-arrow-right: url(./../assets/images/background/icons/icon-arrow-right-dark.svg);
+}
+
+$c-body-bg: var(--c-body-bg); 
+$c-main-text: var(--c-main-text); 
+$c-small-text: var(--c-main-text); 
+$c-home-title: var(--c-accent); 
+$c-accent: var(--c-accent); 
+$c-big-btn-hover: var(--c-big-btn-hover);
+$c-big-btn-active: var(c-big-btn-active);
+$c-big-btn-disabled: var(c-big-btn-active);
+$c-level-all: var(--c-level-all);
+$c-level-basic: var(--c-level-basic);
+$c-level-intermediate: var(--c-level-intermediate);
+$c-level-advanced: var(--c-level-advanced);
+$c-small-btn-bg: var(--c-small-btn-bg);
+$c-block-bg: var(--c-block-bg);
+$c-menu-inactive-link: var(--c-menu-inactive-link);
+$c-bg-modal-overlay: var(--bg-modal-overlay);
+
+$bxs-modal-shadow: var(--bxs-modal-shadow);
+
+$bg-header-gradient: var(--bg-header-gradient);
+$bg-footer-gradient: var(--bg-footer-gradient);
+
+$bg-theme-switcher: var(--bg-theme-switcher);
+$bg-app-logo: var(--bg-app-logo);
+$bg-rss-logo: var(--bg-rss-logo);
+$bg-home-promo: var(--bg-home-promo);
+$bg-home-lessons: var(--bg-home-lessons);
+$bg-home-games: var(--bg-home-games);
+$bg-home-progress: var(--bg-home-progress);
+$bg-home-bg-wave: var(--bg-home-bg-wave);
+$bg-home-bg-1: var(--bg-home-bg-1);
+$bg-home-bg-2: var(--bg-home-bg-2);
+$bg-home-bg-3: var(--bg-home-bg-3);
+$bg-home-bg-blur-1: var(--bg-home-blur-1);
+$bg-home-bg-blur-2: var(--bg-home-blur-2);
+$bg-lessons-easy: var(--bg-level-easy);
+$bg-lessons-medium: var(--bg-level-medium);
+$bg-lessons-hard: var(--bg-lessons-hard);
+$bg-lessons-fact: var(--bg-lessons-fact);
+$bg-lessons-ru: var(--bg-lessons-ru);
+$bg-lessons-en: var(--bg-lessons-en);
+$bg-close: var(--bg-close);
+$bg-profile-edit: var(--bg-profile-edit);
+$bg-modal-password-open: var(--bg-modal-password-open);
+$bg-modal-password-closed: var(--bg-modal-password-closed);
+$bg-lessons-star: var(--bg-lessons-star);
+$bg-arrow-left: var(--bg-arrow-left);
+$bg-arrow-right: var(--bg-arrow-right);
