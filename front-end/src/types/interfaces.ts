@@ -16,9 +16,9 @@ export interface User {
 export interface Lesson {
   _id: string;
   __v: number;
-  language: string;
+  language: Lang;
   name: string;
-  complexity: string;
+  complexity: Complexity;
   text: string;
 }
 
