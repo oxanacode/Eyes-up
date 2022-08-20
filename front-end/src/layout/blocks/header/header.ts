@@ -2,7 +2,6 @@ import CreateElement from '../../elements/create-element';
 import AppLogo from './app-logo';
 import Menu from './menu';
 import ThemeBtn from './theme-btn';
-import State from '../../../scripts/state/state';
 import LangBtn from './lang-btn';
 import UserBtn from './user-btn';
 import BurgerMenuBtn from './burder-menu-btn';
