@@ -3,8 +3,10 @@ import ManageState from '../../../scripts/state/manage-state';
 import State from '../../../scripts/state/state';
 import SmallBtn from '../../elements/small-btn';
 
+import { RenderHandler } from '../../../types/types';
+
 class LangBtn {
-  public static createLangBtn(): HTMLElement {
+  public static createLangBtn(render: RenderHandler): HTMLElement {
     const btn = SmallBtn.createSmallBtn(
       'small-btn small-btn-bg',
       State.currentLang
@@ -12,7 +14,8 @@ class LangBtn {
 
     btn.addEventListener('click', () => {
       ChangeLang.changeLang();
-      ManageState.applyState();
+      ManageState.saveState();
+      render();
     });
 
     return btn;

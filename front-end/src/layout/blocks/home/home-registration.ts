@@ -1,8 +1,8 @@
 import CreateElement from '../../elements/create-element';
 import BigButton from '../../elements/big-button';
-import State from '../../../scripts/state';
 import translation from '../../../data/translation';
 import MainTitle from '../../elements/main-title';
+import State from '../../../scripts/state/state';
 
 import { Tag } from '../../../types/enums';
 

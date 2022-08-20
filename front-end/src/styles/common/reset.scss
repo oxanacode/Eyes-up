@@ -1,6 +1,3 @@
-@import './variables.scss';
-@import './fonts.scss';
-
 html {
   font-family: 'Nunito', Arial, Helvetica, sans-serif;
   font-size: 10px;
@@ -17,6 +14,10 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+body {
+  background-color: $c-body-bg;
 }
 
 button,

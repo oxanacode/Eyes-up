@@ -1,8 +1,10 @@
-@import './styles/commons/reset.scss';
-@import './styles/commons/fonts.scss';
-@import './styles/commons/themes.scss';
-@import './styles/commons/variables.scss';
-@import './styles/commons/mixins.scss';
+// Common
+@import './styles/common/fonts.scss';
+@import './styles/common/variables.scss';
+@import './styles/common/mixins.scss';
+@import './styles/common/themes.scss';
+@import './styles/common/reset.scss';
 
+// Layout
 @import './styles/blocks/footer.scss';
 @import './styles/blocks/home.scss';

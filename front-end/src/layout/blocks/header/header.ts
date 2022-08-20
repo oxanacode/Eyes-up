@@ -7,9 +7,10 @@ import UserBtn from './user-btn';
 import BurgerMenuBtn from './burder-menu-btn';
 
 import { Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class Header {
-  public static createHeader(): HTMLElement {
+  public static createHeader(render: RenderHandler): HTMLElement {
     const header = CreateElement.createElement(Tag.header, [
       { name: 'class', value: 'header' },
     ]);
@@ -20,7 +21,7 @@ class Header {
     const menuWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'menu-wrapper' },
     ]);
-    const menu = Menu.createMenu();
+    const menu = Menu.createMenu(render);
     const controlsWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'controls-wrapper' },
     ]);
@@ -28,9 +29,9 @@ class Header {
       { name: 'class', value: 'theme-lang-wrapper' },
     ]);
     const themeBtn = ThemeBtn.createThemeBtn();
-    const langBtn = LangBtn.createLangBtn();
+    const langBtn = LangBtn.createLangBtn(render);
     const userBtn = UserBtn.getUserBtn();
-    const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn();
+    const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
     themeLangWrapper.append(themeBtn, langBtn);
     controlsWrapper.append(themeLangWrapper, userBtn, burgerBtn);

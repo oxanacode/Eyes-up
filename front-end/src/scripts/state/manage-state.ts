@@ -1,6 +1,5 @@
 import LocalStorageService from '../storage/local-storage';
 import State from './state';
-import RenderPage from '../../layout/render-page';
 
 import { CurrentState } from '../../types/interfaces';
 
@@ -26,11 +25,6 @@ class ManageState {
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);
-  }
-
-  public static applyState(): void {
-    ManageState.saveState();
-    RenderPage.renderPage();
   }
 }
 

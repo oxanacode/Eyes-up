@@ -4,9 +4,14 @@ import ManageState from '../../../scripts/state/manage-state';
 import State from '../../../scripts/state/state';
 
 import { Tag, Page } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class MenuBtn {
-  public static createMenuBtn(text: string, page: Page): HTMLElement {
+  public static createMenuBtn(
+    text: string,
+    page: Page,
+    render: RenderHandler
+  ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [
       { name: 'class', value: 'menu-btn' },
     ]);
@@ -18,7 +23,8 @@ class MenuBtn {
     btn.textContent = text;
     btn.addEventListener('click', () => {
       ChangePage.changePage(page);
-      ManageState.applyState();
+      ManageState.saveState();
+      render();
     });
 
     return btn;
