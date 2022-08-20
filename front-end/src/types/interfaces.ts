@@ -36,7 +36,5 @@ export interface CurrentState {
   currentUser: CurrentUser;
   currentPage: Page;
   currentLang: Lang;
-  alternativeLang: Lang;
   currentTheme: Theme;
-  alternativeTheme: Theme;
 }

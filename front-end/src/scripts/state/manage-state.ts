@@ -13,9 +13,7 @@ class ManageState {
       State.currentUser = currentState.currentUser;
       State.currentPage = currentState.currentPage;
       State.currentLang = currentState.currentLang;
-      State.alternativeLang = currentState.alternativeLang;
       State.currentTheme = currentState.currentTheme;
-      State.alternativeTheme = currentState.alternativeTheme;
     }
   }
 
@@ -24,9 +22,7 @@ class ManageState {
       currentUser: State.currentUser,
       currentPage: State.currentPage,
       currentLang: State.currentLang,
-      alternativeLang: State.alternativeLang,
       currentTheme: State.currentTheme,
-      alternativeTheme: State.alternativeTheme,
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);
