@@ -1,5 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import BigButton from '../../elements/big-button';
+import BigButton from '../../elements/big-btn';
 import translation from '../../../data/translation';
 import MainTitle from '../../elements/main-title';
 import State from '../../../scripts/state/state';
@@ -17,7 +17,7 @@ class HomeRegistration {
     const text = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'home-text-registration' },
     ]);
-    const button = BigButton.createBigButton(
+    const button = BigButton.createBigBtn(
       translation.homeRegistrationBtn[State.currentLang]
     );
 

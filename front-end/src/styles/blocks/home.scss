@@ -71,15 +71,15 @@
   &::after {
     content: '';
     position: absolute;
-    width: 3rem;
-    height: 3rem;
     transition: $transition-time;
   }
 
   &::before {
-    background: $bg-home-bg-2 no-repeat;
+    background: $bg-home-bg-2 no-repeat center / contain;
     left: -10rem;
     bottom: 10rem;
+    width: 2rem;
+    height: 2em;
 
     @include desktop-small {
       bottom: 16rem;
@@ -91,9 +91,11 @@
   }
 
   &::after {
-    background: $bg-home-bg-1 no-repeat;
+    background: $bg-home-bg-1 no-repeat center / contain;
     right: 70rem;
-    bottom: -10rem;
+    bottom: -10rem; 
+    width: 3rem;
+    height: 3rem;
 
     @include desktop-small {
       bottom: 10rem;
@@ -122,7 +124,7 @@
   &::after {
     content: '';
     position: absolute;
-    background: $bg-home-bg-3 no-repeat;
+    background: $bg-home-bg-3 no-repeat center / contain;
     width: 3rem;
     height: 3rem;
     right: 0;
@@ -307,7 +309,7 @@
     transition: $transition-time;
     right: 0;
     bottom: -20rem;
-    z-index: -1;
+    z-index: 1;
 
     @include tablet {
       width: 40rem;

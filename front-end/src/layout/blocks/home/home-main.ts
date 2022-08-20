@@ -5,14 +5,15 @@ import State from '../../../scripts/state/state';
 import translation from '../../../data/translation';
 import HomeRegistration from './home-registration';
 
+import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
 
 class HomeMain {
-  public static createHomeMain() {
+  public static createHomeMain(render: RenderHandler) {
     const main = CreateElement.createElement(Tag.main, [
       { name: 'class', value: 'home' },
     ]);
-    const promo = HomePromo.createHomePromo();
+    const promo = HomePromo.createHomePromo(render);
     const lessons = HomeSection.createHomeSection(
       'lessons',
       translation.homeLessonsTitle[State.currentLang],
