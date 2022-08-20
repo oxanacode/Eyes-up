@@ -1,12 +1,12 @@
 import CreateElement from '../../elements/create-element';
-import AppLogo from './app-logo';
 import Menu from './menu';
 import ThemeBtn from './theme-btn';
 import LangBtn from './lang-btn';
 import UserBtn from './user-btn';
 import BurgerMenuBtn from './burder-menu-btn';
+import AppBtn from './app-btn';
 
-import { Tag } from '../../../types/enums';
+import { Page, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class Header {
@@ -17,10 +17,10 @@ class Header {
     const headerWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'header-wrapper' },
     ]);
-    const logo = AppLogo.createAppLogo();
     const menuWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'menu-wrapper' },
     ]);
+    const logo = AppBtn.createAppBtn(Page.home, render);
     const menu = Menu.createMenu(render);
     const controlsWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'controls-wrapper' },
@@ -35,8 +35,8 @@ class Header {
 
     themeLangWrapper.append(themeBtn, langBtn);
     controlsWrapper.append(themeLangWrapper, userBtn, burgerBtn);
-    menuWrapper.append(menu, controlsWrapper);
-    headerWrapper.append(logo, menuWrapper);
+    menuWrapper.append(logo, menu);
+    headerWrapper.append(menuWrapper, controlsWrapper);
     header.append(headerWrapper);
 
     return header;
