@@ -9,7 +9,7 @@ class LangBtn {
     currentLang: Lang,
     alternativeLang: Lang
   ): HTMLElement {
-    const btn = SmallBtn.createSmallBtn('small-btn small-btn-bg');
+    const btn = SmallBtn.createSmallBtn('small-btn small-btn-bg', currentLang);
 
     btn.addEventListener('click', () => {
       ChangeLang.changeLang(currentLang, alternativeLang);
