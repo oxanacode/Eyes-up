@@ -2,7 +2,7 @@ import { Lang, Page, Theme } from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
 class State {
-  public static noLogin = '';
+  public static noLogin = 'noLogin';
 
   public static noAvatar = 0;
 
