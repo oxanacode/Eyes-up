@@ -84,6 +84,7 @@
     @include desktop-small {
       bottom: 16rem;
     }
+
     @include tablet {
       left: 0;
     }
@@ -98,6 +99,7 @@
       bottom: 10rem;
       right: 50rem;
     }
+    
     @include tablet {
       right: 8rem;
       bottom: 5rem;
@@ -263,7 +265,6 @@
     transition: $transition-time;
     right: 0;
     z-index: -1;
-
     
     @include tablet {
       width: 40rem;
