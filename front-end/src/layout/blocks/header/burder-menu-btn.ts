@@ -1,5 +1,8 @@
-import { Tag } from '../../../types/enums';
 import CreateElement from '../../elements/create-element';
+import OpenModal from '../../../scripts/layout/open-modal';
+import BurgerMenu from '../modals/burger-menu';
+
+import { Tag } from '../../../types/enums';
 
 class BurgerMenuBtn {
   public static createBurgerMenuBtn(): HTMLElement {
@@ -8,7 +11,7 @@ class BurgerMenuBtn {
     ]);
 
     btn.addEventListener('click', () => {
-      console.log('бургер меню');
+      OpenModal.openModal(BurgerMenu.createBurgerMenu());
     });
 
     return btn;

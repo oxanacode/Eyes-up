@@ -5,7 +5,7 @@ import SmallBtn from '../../elements/small-btn';
 class RegistrationBtn {
   public static createRegistrationBtn(): HTMLElement {
     const btn = SmallBtn.createSmallBtn(
-      'small-btn',
+      'small-btn small-btn-bg',
       translation.headerSignUpBtn[State.currentLang]
     );
 

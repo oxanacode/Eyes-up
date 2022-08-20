@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
+import State from '../../../scripts/state/state';
 
 import { Tag } from '../../../types/enums';
-import State from '../../../scripts/state/state';
 
 class ProfileBtn {
   public static createProfileBtn(): HTMLElement {

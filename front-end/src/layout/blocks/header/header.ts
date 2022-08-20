@@ -5,6 +5,7 @@ import ThemeBtn from './theme-btn';
 import State from '../../../scripts/state/state';
 import LangBtn from './lang-btn';
 import UserBtn from './user-btn';
+import BurgerMenuBtn from './burder-menu-btn';
 
 import { Tag } from '../../../types/enums';
 
@@ -27,7 +28,6 @@ class Header {
     const themeLangWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'theme-lang-wrapper' },
     ]);
-    const userBtn = UserBtn.getUserBtn();
     const themeBtn = ThemeBtn.createThemeBtn(
       State.currentTheme,
       State.alternativeTheme
@@ -36,9 +36,11 @@ class Header {
       State.currentLang,
       State.alternativeLang
     );
+    const userBtn = UserBtn.getUserBtn();
+    const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn();
 
     themeLangWrapper.append(themeBtn, langBtn);
-    controlsWrapper.append(themeLangWrapper, userBtn);
+    controlsWrapper.append(themeLangWrapper, userBtn, burgerBtn);
     menuWrapper.append(menu, controlsWrapper);
     headerWrapper.append(logo, menuWrapper);
     header.append(headerWrapper);
