@@ -4,7 +4,7 @@ import { Lang } from '../../types/enums';
 
 class ChangeLang {
   public static changeLang(): void {
-    State.currentLang = Lang.en ? Lang.ru : Lang.en;
+    State.currentLang = State.currentLang === Lang.en ? Lang.ru : Lang.en;
   }
 }
 

@@ -51,7 +51,7 @@
 
 .home-promo {
   height: 53rem;
-  display: flex; 
+  display: flex;
   margin: 0 3rem 30rem 12rem;
   align-items: center;
   position: relative;
@@ -99,7 +99,7 @@
       bottom: 10rem;
       right: 50rem;
     }
-    
+
     @include tablet {
       right: 8rem;
       bottom: 5rem;
@@ -152,7 +152,6 @@
   width: 38rem;
   margin-top: 2rem;
 
-
   @include desktop-small {
     text-align: center;
   }
@@ -171,7 +170,7 @@
 .home-games,
 .home-progress {
   height: 45rem;
-  display: flex; 
+  display: flex;
   margin: 0 12rem;
   align-items: center;
 
@@ -265,7 +264,7 @@
     transition: $transition-time;
     right: 0;
     z-index: -1;
-    
+
     @include tablet {
       width: 40rem;
       height: 40rem;

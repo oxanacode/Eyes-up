@@ -4,27 +4,32 @@ import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 
 import { Page, Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class Menu {
-  public static createMenu(): HTMLElement {
+  public static createMenu(render: RenderHandler): HTMLElement {
     const menu = CreateElement.createElement(Tag.nav, [
       { name: 'class', value: 'menu' },
     ]);
     const homeBtn = MenuBtn.createMenuBtn(
       translation.homeLink[State.currentLang],
-      Page.home
+      Page.home,
+      render
     );
     const layoutBtn = MenuBtn.createMenuBtn(
       translation.lessonsLink[State.currentLang],
-      Page.layout
+      Page.layout,
+      render
     );
     const gamesBtn = MenuBtn.createMenuBtn(
       translation.gamesLink[State.currentLang],
-      Page.games
+      Page.games,
+      render
     );
     const aboutBtn = MenuBtn.createMenuBtn(
       translation.aboutUsLink[State.currentLang],
-      Page.about
+      Page.about,
+      render
     );
 
     menu.append(homeBtn, layoutBtn, gamesBtn, aboutBtn);

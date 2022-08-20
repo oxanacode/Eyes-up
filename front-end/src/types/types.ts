@@ -12,3 +12,5 @@ export type LessonData = Pick<
   Lesson,
   'language' | 'name' | 'complexity' | 'text'
 >;
+
+export type RenderHandler = () => void;
