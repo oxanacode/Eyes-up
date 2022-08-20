@@ -1,5 +1,4 @@
-import State from '../state';
-import RenderPage from '../../layout/render-page';
+import State from '../state/state';
 
 import { Page } from '../../types/enums';
 
@@ -8,7 +7,6 @@ class ChangePage {
     if (State.currentPage === page) return;
 
     State.currentPage = page;
-    RenderPage.renderPage();
   }
 }
 
