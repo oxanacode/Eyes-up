@@ -1,5 +1,4 @@
-import ChangeLang from '../../../scripts/layout/change-lang';
-import ManageState from '../../../scripts/state/manage-state';
+import SwitchLang from '../../../scripts/layout/switch-lang';
 import State from '../../../scripts/state/state';
 import SmallBtn from '../../elements/small-btn';
 import translation from '../../../data/translation';
@@ -14,9 +13,7 @@ class LangBtn {
     );
 
     btn.addEventListener('click', () => {
-      ChangeLang.changeLang();
-      ManageState.saveState();
-      render();
+      SwitchLang.applyLang(render);
     });
 
     return btn;

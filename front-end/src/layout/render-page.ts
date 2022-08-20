@@ -1,5 +1,5 @@
 import ManagePage from '../scripts/layout/manage-page';
-import ManageTheme from '../scripts/layout/manage-theme';
+import SwitchTheme from '../scripts/layout/switch-theme';
 import State from '../scripts/state/state';
 import Header from './blocks/header/header';
 import CreateFooter from './blocks/footer/render-footer';
@@ -25,7 +25,7 @@ class RenderPage {
 
   public static renderPage(): void {
     ManagePage.clearPage();
-    ManageTheme.applyTheme();
+    SwitchTheme.swapTheme();
 
     if (State.currentPage === Page.lesson || State.currentPage === Page.game) {
       RenderPage.renderInteractivePage();

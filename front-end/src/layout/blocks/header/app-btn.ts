@@ -1,7 +1,6 @@
 import CreateElement from '../../elements/create-element';
 import AppLogo from './app-logo';
-import ChangePage from '../../../scripts/layout/change-page';
-import ManageState from '../../../scripts/state/manage-state';
+import SwitchPage from '../../../scripts/layout/switch-page';
 
 import { Page, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -15,9 +14,7 @@ class AppBtn {
 
     btn.append(logo);
     btn.addEventListener('click', () => {
-      ChangePage.changePage(page);
-      ManageState.saveState();
-      render();
+      SwitchPage.applyPage(page, render);
     });
 
     return btn;
