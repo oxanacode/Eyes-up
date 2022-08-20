@@ -5,7 +5,8 @@ import { Theme } from '../../types/enums';
 
 class ManageTheme {
   public static changeTheme(): void {
-    State.currentTheme = Theme.light ? Theme.dark : Theme.light;
+    State.currentTheme =
+      State.currentTheme === Theme.light ? Theme.dark : Theme.light;
   }
 
   public static applyTheme(): void {

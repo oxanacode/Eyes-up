@@ -15,11 +15,7 @@ class State {
 
   public static currentLang = Lang.en;
 
-  public static alternativeLang = Lang.ru;
-
   public static currentTheme = Theme.light;
-
-  public static alternativeTheme = Theme.dark;
 }
 
 export default State;
