@@ -1,7 +1,7 @@
 body.light {
-  --c-body-bg:  #FFFFFF;
-  --c-main-text:  #212529;
-  --c-small-text:  #212529;
+  --c-body-bg: #FFFFFF;
+  --c-main-text: #212529;
+  --c-small-text: #212529;
   --c-accent: #212529;
   --c-accent: #848ED9;
   --c-big-btn-hover: #AFB8FA;
@@ -47,12 +47,13 @@ body.light {
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-light.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-light.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-light.svg);
+  --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-light.svg);
 }
 
 body.dark {
-  --c-body-bg:  #1E273A;
-  --c-main-text:  #F3F3F4;
-  --c-small-text:  #8693B3;
+  --c-body-bg: #1E273A;
+  --c-main-text: #F3F3F4;
+  --c-small-text: #8693B3;
   --c-accent: #4794BA;
   --c-accent: #4794BA;
   --c-big-btn-hover: #7DC2E4;
@@ -98,13 +99,14 @@ body.dark {
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-dark.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-dark.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-dark.svg);
+  --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-dark.svg);
 }
 
-$c-body-bg: var(--c-body-bg); 
-$c-main-text: var(--c-main-text); 
-$c-small-text: var(--c-main-text); 
-$c-home-title: var(--c-accent); 
-$c-accent: var(--c-accent); 
+$c-body-bg: var(--c-body-bg);
+$c-main-text: var(--c-main-text);
+$c-small-text: var(--c-main-text);
+$c-home-title: var(--c-accent);
+$c-accent: var(--c-accent);
 $c-big-btn-hover: var(--c-big-btn-hover);
 $c-big-btn-active: var(c-big-btn-active);
 $c-big-btn-disabled: var(c-big-btn-active);
@@ -151,3 +153,4 @@ $bg-modal-password-closed: var(--bg-modal-password-closed);
 $bg-lessons-star: var(--bg-lessons-star);
 $bg-arrow-left: var(--bg-arrow-left);
 $bg-arrow-right: var(--bg-arrow-right);
+$bg-icon-burger-menu: var(--bg-icon-burger-menu);
