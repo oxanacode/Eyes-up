@@ -1,20 +1,20 @@
-import UpdatePage from './elements/update-page';
+import ManagePage from '../scripts/layout/manage-page';
+import ManageTheme from '../scripts/layout/manage-theme';
 import State from '../scripts/state/state';
+import CreateFooter from './blocks/footer/render-footer';
 
 import { Page } from '../types/enums';
 
-import CreateFooter from './blocks/footer/render-footer';
-
 class RenderPage {
   public static renderInteractivePage(): void {
-    const page = UpdatePage.getPage();
+    const page = ManagePage.getPage();
     // const main = CreateMain
 
     // page.append(main);
   }
 
   public static renderStaticPage(): void {
-    const page = UpdatePage.getPage();
+    const page = ManagePage.getPage();
     // const header = CreateHeader
     // const main = CreateMain
     const footer = CreateFooter.createFooter();
@@ -23,7 +23,8 @@ class RenderPage {
   }
 
   public static renderPage(): void {
-    UpdatePage.clearPage();
+    ManagePage.clearPage();
+    ManageTheme.applyTheme();
 
     if (State.currentPage === Page.lesson || State.currentPage === Page.game) {
       RenderPage.renderInteractivePage();

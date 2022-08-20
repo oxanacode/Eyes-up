@@ -33,8 +33,8 @@ export interface CurrentUser {
 }
 
 export interface CurrentState {
-  user: CurrentUser;
-  page: Page;
-  lang: Lang;
-  theme: Theme;
+  currentUser: CurrentUser;
+  currentPage: Page;
+  currentLang: Lang;
+  currentTheme: Theme;
 }

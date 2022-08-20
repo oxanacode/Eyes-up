@@ -4,34 +4,34 @@ import RenderPage from '../../layout/render-page';
 
 import { CurrentState } from '../../types/interfaces';
 
-class UpdateState {
+class ManageState {
   public static updateState(): void {
     const currentState: CurrentState | null =
       LocalStorageService.getItem('eyesUpState');
 
     if (currentState) {
-      State.currentUser = currentState.user;
-      State.currentPage = currentState.page;
-      State.currentLang = currentState.lang;
-      State.currentTheme = currentState.theme;
+      State.currentUser = currentState.currentUser;
+      State.currentPage = currentState.currentPage;
+      State.currentLang = currentState.currentLang;
+      State.currentTheme = currentState.currentTheme;
     }
   }
 
   public static saveState(): void {
     const stateToSave: CurrentState = {
-      user: State.currentUser,
-      page: State.currentPage,
-      lang: State.currentLang,
-      theme: State.currentTheme,
+      currentUser: State.currentUser,
+      currentPage: State.currentPage,
+      currentLang: State.currentLang,
+      currentTheme: State.currentTheme,
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);
   }
 
   public static applyState(): void {
-    UpdateState.saveState();
+    ManageState.saveState();
     RenderPage.renderPage();
   }
 }
 
-export default UpdateState;
+export default ManageState;
