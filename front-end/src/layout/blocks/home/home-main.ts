@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import HomePromo from './home-promo';
 import HomeSection from './home-section';
-import State from '../../../scripts/state';
+import State from '../../../scripts/state/state';
 import translation from '../../../data/translation';
 import HomeRegistration from './home-registration';
 
@@ -14,7 +14,7 @@ class HomeMain {
     ]);
     const promo = HomePromo.createHomePromo();
     const lessons = HomeSection.createHomeSection(
-      'lesson',
+      'lessons',
       translation.homeLessonsTitle[State.currentLang],
       translation.homeLessonsText[State.currentLang]
     );
@@ -29,10 +29,14 @@ class HomeMain {
       translation.homeProgressText[State.currentLang]
     );
     const registration = HomeRegistration.createHomeRegistration();
+    const wrapper = CreateElement.createElement(Tag.main, [
+      { name: 'class', value: 'home-wrapper' },
+    ]);
 
     main.append(promo, lessons, games, progress, registration);
+    wrapper.append(main);
 
-    return main;
+    return wrapper;
   }
 }
 

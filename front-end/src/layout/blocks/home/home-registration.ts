@@ -9,13 +9,13 @@ import { Tag } from '../../../types/enums';
 class HomeRegistration {
   public static createHomeRegistration(): HTMLElement {
     const registration = CreateElement.createElement(Tag.section, [
-      { name: 'class', value: 'home-promo' },
+      { name: 'class', value: 'home-registration' },
     ]);
     const title = MainTitle.createMainTitle(
       translation.homeRegistrationTitle[State.currentLang]
     );
     const text = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'promo-text' },
+      { name: 'class', value: 'home-text-registration' },
     ]);
     const button = BigButton.createBigButton(
       translation.homeRegistrationBtn[State.currentLang]
@@ -24,7 +24,7 @@ class HomeRegistration {
     button.addEventListener('click', () => {
       // Open SignUp Modal
     });
-    text.textContent = translation.promoText[State.currentLang];
+    text.textContent = translation.homeRegistrationText[State.currentLang];
     registration.append(title, text, button);
 
     return registration;

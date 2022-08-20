@@ -28,7 +28,7 @@ const translation = {
     ru: 'Уроки печати',
   },
   promoText: {
-    en: 'Always wanted to type without looking at the keyboard? Learn with us quickly and efficiently!ping Lessons',
+    en: 'Always wanted to type without looking at the keyboard? Learn with us quickly and efficiently!',
     ru: 'Давно мечтали печатать, не глядя на клавиатуру? Научитесь вместе с нами быстро и эффективно!',
   },
   promoBtn: {

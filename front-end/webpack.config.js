@@ -55,7 +55,12 @@ module.exports = {
       patterns: [{
         from: './src/assets/',
         to: './assets/',
-        noErrorOnMissing: true
+        noErrorOnMissing: true,
+        globOptions: {
+          dot: true,
+          gitignore: true,
+          ignore: ["**/background/**"],
+        },
       }],
     })
   ]

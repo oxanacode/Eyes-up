@@ -16,8 +16,9 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("./assets/fonts/Nunito-ExtraBold.woff2") format("woff2"),
-    url("./assets/fonts/Nunito-ExtraBold.woff") format("woff"),
-    url("./assets/fonts/Nunito-ExtraBold.ttf") format("ttf");
+  src: 
+  url("./assets/fonts/Nunito-ExtraBold.ttf") format("ttf"),
+  url("./assets/fonts/Nunito-ExtraBold.woff2") format("woff2"),
+    url("./assets/fonts/Nunito-ExtraBold.woff") format("woff");
   font-weight: 800;
 }

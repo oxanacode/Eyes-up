@@ -10,6 +10,10 @@
   }
 }
 
+@mixin desktop-small {
+  @media (max-width: 1079px) { @content; }
+}
+
 @mixin tablet {
   @media (max-width: 899px) { @content; }
 }
@@ -19,7 +23,7 @@
 }
 
 
-@mixin button {
+@mixin big-btn {
   width: 24rem;
   height: 5rem;
   border-radius: $small-border-radius;
@@ -29,6 +33,18 @@
 
   color: white;
   background-color: $c-accent;
+
+  cursor: pointer;
+
+  &:hover {
+    background-color: $c-big-btn-hover;
+  }
+  &:active {
+    background-color: $c-big-btn-active;
+  }
+  &:disabled {
+    background-color: $c-big-btn-disabled;
+  }
 }
 
 @mixin font-main {
@@ -46,7 +62,7 @@
 
 @mixin font-title-promo-mobile {
   font-size: 3.2rem;
-  font-weight: $fw-bold;
+  font-weight: $fw-extrabold;
 }
 
 @mixin font-title  {

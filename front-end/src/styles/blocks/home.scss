@@ -1,0 +1,323 @@
+.home {
+  max-width: 124rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  margin: 10rem auto;
+}
+
+.home-wrapper {
+  background: $bg-home-wave no-repeat 0 65rem;
+  background-size: 100% auto;
+}
+
+.big-btn {
+  transition: $transition-time;
+  @include big-btn;
+}
+
+.promo-title {
+  @include font-title-promo;
+  margin-bottom: 4rem;
+
+  @include mobile {
+    @include font-title-promo-mobile;
+    text-align: center;
+  }
+}
+
+.promo-text {
+  @include font-subtitle;
+  width: 50rem;
+  margin-bottom: 5rem;
+
+  @include desktop-small {
+    text-align: center;
+  }
+
+  @include mobile {
+    @include font-main;
+    max-width: 28.8rem;
+  }
+}
+
+.promo-content-container {
+  @include desktop-small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.home-promo {
+  height: 53rem;
+  display: flex; 
+  margin: 0 3rem 30rem 12rem;
+  align-items: center;
+  position: relative;
+
+  @include desktop-small {
+    margin: 0 auto 10rem;
+    flex-direction: column;
+    height: 70rem;
+  }
+
+  @include mobile {
+    height: 60rem;
+    margin: 0 3rem 10rem;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    transition: $transition-time;
+  }
+
+  &::before {
+    background: $bg-home-bg-2 no-repeat;
+    left: -10rem;
+    bottom: 10rem;
+
+    @include desktop-small {
+      bottom: 16rem;
+    }
+    @include tablet {
+      left: 0;
+    }
+  }
+
+  &::after {
+    background: $bg-home-bg-1 no-repeat;
+    right: 70rem;
+    bottom: -10rem;
+
+    @include desktop-small {
+      bottom: 10rem;
+      right: 50rem;
+    }
+    @include tablet {
+      right: 8rem;
+      bottom: 5rem;
+    }
+  }
+}
+
+.home-promo-bg {
+  width: 100%;
+  height: 100%;
+  background: $bg-home-promo no-repeat center right;
+  background-size: contain;
+  position: relative;
+
+  @include desktop-small {
+    margin: 3rem;
+    background-position: center center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $bg-home-bg-3 no-repeat;
+    width: 3rem;
+    height: 3rem;
+    right: 0;
+    top: 0;
+    transition: $transition-time;
+
+    @include mobile {
+      right: 2rem;
+    }
+  }
+}
+
+.main-title {
+  @include font-title;
+
+  @include desktop-small {
+    text-align: center;
+  }
+
+  @include mobile {
+    @include font-title-mobile;
+  }
+}
+
+.home-text {
+  @include font-subtitle-mobile;
+  width: 38rem;
+  margin-top: 2rem;
+
+
+  @include desktop-small {
+    text-align: center;
+  }
+
+  @include mobile {
+    @include font-main-small;
+    max-width: 28.8rem;
+  }
+}
+
+.home-games {
+  flex-flow: row-reverse;
+}
+
+.home-lessons,
+.home-games,
+.home-progress {
+  height: 45rem;
+  display: flex; 
+  margin: 0 12rem;
+  align-items: center;
+
+  @include desktop-small {
+    height: 38rem;
+  }
+
+  @include tablet {
+    flex-direction: column;
+    height: 56rem;
+    margin: 0 6rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    height: 36rem;
+    margin: 0 1.6rem;
+  }
+}
+
+.home-lessons-bg,
+.home-games-bg,
+.home-progress-bg {
+  width: 100%;
+  height: 100%;
+}
+
+.home-lessons-bg {
+  background: $bg-home-lessons no-repeat center right;
+  background-size: contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.home-games-bg {
+  background: $bg-home-games no-repeat center left;
+  background-size: contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.home-progress-bg {
+  background: $bg-home-progress no-repeat center right;
+  background-size: contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.home-lessons,
+.home-progress {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $bg-home-bg-blur-1 no-repeat center / contain;
+    width: 90rem;
+    height: 90rem;
+    transition: $transition-time;
+    left: -40rem;
+    z-index: -1;
+
+    @include tablet {
+      left: 0;
+      width: 40rem;
+      height: 40rem;
+    }
+
+    @include mobile {
+      width: 30rem;
+      height: 30rem;
+    }
+  }
+}
+
+.home-games {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $bg-home-bg-blur-2 no-repeat center / contain;
+    width: 60rem;
+    height: 60rem;
+    transition: $transition-time;
+    right: 0;
+    z-index: -1;
+
+    
+    @include tablet {
+      width: 40rem;
+      height: 40rem;
+      bottom: 20rem;
+    }
+
+    @include mobile {
+      width: 30rem;
+      height: 30rem;
+    }
+  }
+}
+
+.home-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-text-registration {
+  @include font-subtitle-mobile;
+  text-align: center;
+  margin: 2rem 0 5rem;
+
+  @include mobile {
+    @include font-main-small;
+    max-width: 28.8rem
+  }
+}
+
+.home-registration {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    background: $bg-home-bg-blur-2 no-repeat center / contain;
+    width: 50rem;
+    height: 50rem;
+    transition: $transition-time;
+    right: 0;
+    bottom: -20rem;
+    z-index: -1;
+
+    @include tablet {
+      width: 40rem;
+      height: 40rem;
+      bottom: -10rem;
+    }
+
+    @include mobile {
+      width: 20rem;
+      height: 20rem;
+    }
+  }
+}

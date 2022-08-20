@@ -2,9 +2,8 @@ import CreateElement from '../../elements/create-element';
 import BigButton from '../../elements/big-button';
 import State from '../../../scripts/state';
 import translation from '../../../data/translation';
-import ChangePage from '../../../scripts/layout/change-page';
 
-import { Tag, Page } from '../../../types/enums';
+import { Tag } from '../../../types/enums';
 
 class HomePromo {
   public static createHomePromo(): HTMLElement {
@@ -20,13 +19,21 @@ class HomePromo {
     const button = BigButton.createBigButton(
       translation.promoBtn[State.currentLang]
     );
+    const imgContainer = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'home-promo-bg' },
+    ]);
+    const contentContainer = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'promo-content-container' },
+    ]);
 
     button.addEventListener('click', () => {
-      ChangePage.changePage(Page.lessons);
+      // State.currentPage = Page.lessons;
+      // UpdatePage
     });
     title.textContent = translation.promoTitle[State.currentLang];
     text.textContent = translation.promoText[State.currentLang];
-    promo.append(title, text, button);
+    contentContainer.append(title, text, button);
+    promo.append(contentContainer, imgContainer);
 
     return promo;
   }

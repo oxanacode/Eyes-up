@@ -16,10 +16,15 @@ class HomeSection {
     const text = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'home-text' },
     ]);
+    const imgContainer = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: `home-${sectionClass}-bg` },
+    ]);
+    const contentContainer = CreateElement.createElement(Tag.div);
 
     title.textContent = sectionTitle;
     text.textContent = sectionText;
-    section.append(title, text);
+    contentContainer.append(title, text);
+    section.append(contentContainer, imgContainer);
 
     return section;
   }
