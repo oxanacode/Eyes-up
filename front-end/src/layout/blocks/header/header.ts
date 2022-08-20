@@ -28,14 +28,8 @@ class Header {
     const themeLangWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'theme-lang-wrapper' },
     ]);
-    const themeBtn = ThemeBtn.createThemeBtn(
-      State.currentTheme,
-      State.alternativeTheme
-    );
-    const langBtn = LangBtn.createLangBtn(
-      State.currentLang,
-      State.alternativeLang
-    );
+    const themeBtn = ThemeBtn.createThemeBtn();
+    const langBtn = LangBtn.createLangBtn();
     const userBtn = UserBtn.getUserBtn();
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn();
 
