@@ -5,6 +5,12 @@ import State from '../../../scripts/state/state';
 import { Tag } from '../../../types/enums';
 
 class LessonsFact {
+  public static getRandomFact(): string {
+    const randomFactNumber = Math.floor(Math.random() * facts.length);
+
+    return facts[randomFactNumber][State.currentLang];
+  }
+
   public static createLessonsTest(): HTMLElement {
     const fact = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'layout-fact' },
@@ -13,11 +19,10 @@ class LessonsFact {
       { name: 'class', value: 'fact-bg' },
     ]);
     const factText = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'base-text' },
+      { name: 'class', value: 'base-text fact-text' },
     ]);
-    const randomFactNumber = Math.floor(Math.random() * facts.length);
 
-    factText.textContent = facts[randomFactNumber][State.currentLang];
+    factText.textContent = LessonsFact.getRandomFact();
     fact.append(factBg, factText);
 
     return fact;

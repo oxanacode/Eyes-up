@@ -1,4 +1,5 @@
 .footer {
+  margin-top: auto;
   height: 10rem;
   padding: 0 8rem;
   background: $bg-footer-gradient;
@@ -79,6 +80,7 @@
 }
 
 .dev-link {
+  z-index: 2;
   position: relative;
 }
 

@@ -56,3 +56,8 @@ export enum Complexity {
   medium = 'intermediate',
   hard = 'advanced',
 }
+
+export enum Game {
+  one = 'gameOne',
+  two = 'gameTwo',
+}

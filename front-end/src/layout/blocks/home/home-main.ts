@@ -30,14 +30,14 @@ class HomeMain {
       translation.homeProgressText[State.currentLang]
     );
     const registration = HomeRegistration.createHomeRegistration();
-    const wrapper = CreateElement.createElement(Tag.main, [
+    const wrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-wrapper' },
     ]);
 
-    main.append(promo, lessons, games, progress, registration);
-    wrapper.append(main);
+    wrapper.append(promo, lessons, games, progress, registration);
+    main.append(wrapper);
 
-    return wrapper;
+    return main;
   }
 }
 

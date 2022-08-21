@@ -1,4 +1,17 @@
 .home {
+  background: $bg-home-wave no-repeat 0 75rem;
+  background-size: 100% auto;
+
+  @include desktop-small {
+    background-position: 0 80rem;
+  }
+
+  @include mobile {
+    background-position: 0 70rem;
+  }
+}
+
+.home-wrapper {
   max-width: 124rem;
   display: flex;
   flex-direction: column;
@@ -6,19 +19,10 @@
   margin: 10rem auto;
 }
 
-.home-wrapper {
-  background: $bg-home-wave no-repeat 0 65rem;
-  background-size: 100% auto;
-}
-
-.big-btn {
-  transition: $transition-time;
-  @include big-btn;
-}
-
 .promo-title {
   @include font-title-promo;
   margin-bottom: 4rem;
+  color: $c-main-text;
 
   @include mobile {
     @include font-title-promo-mobile;
@@ -30,6 +34,7 @@
   @include font-subtitle;
   width: 50rem;
   margin-bottom: 5rem;
+  color: $c-subtitle;
 
   @include desktop-small {
     text-align: center;
@@ -62,9 +67,13 @@
     height: 70rem;
   }
 
+  @include tablet {
+    margin: 0 auto 15rem;
+  }
+
   @include mobile {
     height: 60rem;
-    margin: 0 3rem 10rem;
+    margin: 0 3rem 5rem;
   }
 
   &::before,
@@ -137,24 +146,13 @@
   }
 }
 
-.main-title {
-  @include font-title;
-
-  @include desktop-small {
-    text-align: center;
-  }
-
-  @include mobile {
-    @include font-title-mobile;
-  }
-}
-
 .home-text {
   @include font-subtitle-mobile;
   width: 38rem;
   margin-top: 2rem;
+  color: $c-subtitle;
 
-  @include desktop-small {
+  @include tablet {
     text-align: center;
   }
 
@@ -288,8 +286,10 @@
 
 .home-text-registration {
   @include font-subtitle-mobile;
+  color: $c-subtitle;
   text-align: center;
   margin: 2rem 0 5rem;
+  z-index: 2;
 
   @include mobile {
     @include font-main-small;

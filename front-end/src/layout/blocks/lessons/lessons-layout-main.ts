@@ -4,11 +4,9 @@ import State from '../../../scripts/state/state';
 import SectionBtn from '../../elements/section-btn';
 import LessonsTest from './lessons-test';
 import LessonsFact from './lessons-fact';
-import ManageState from '../../../scripts/state/manage-state';
-import ChangePage from '../../../scripts/layout/change-page';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag } from '../../../types/enums';
 import MainTitle from '../../elements/main-title';
 
 class LayoutMain {
@@ -29,18 +27,15 @@ class LayoutMain {
     );
     const test = LessonsTest.createLessonsTest(render);
     const fact = LessonsFact.createLessonsTest();
+    const buttonsWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'section-btns-wrapper' },
+    ]);
 
-    main.append(mainTitle, layoutEnBtn, layoutRuBtn, test, fact);
-    layoutEnBtn.addEventListener('click', () => {
-      ChangePage.changePage(Page.lessons);
-      ManageState.saveState();
-      render();
-    });
-    layoutRuBtn.addEventListener('click', () => {
-      ChangePage.changePage(Page.lessons);
-      ManageState.saveState();
-      render();
-    });
+    mainTitle.classList.add('lessons-title');
+    buttonsWrapper.append(layoutEnBtn, layoutRuBtn);
+    main.append(mainTitle, buttonsWrapper, test, fact);
+    layoutEnBtn.addEventListener('click', () => {});
+    layoutRuBtn.addEventListener('click', () => {});
 
     return main;
   }

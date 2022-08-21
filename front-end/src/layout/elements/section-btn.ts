@@ -9,11 +9,11 @@ class SectionBtn {
     title: string
   ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: `${className}-btn` },
+      { name: 'class', value: `${className}-btn section-btn` },
     ]);
     const btnTitle = SectionTitle.createSectionTitle(title);
     const imgContainer = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: `${className}-bg` },
+      { name: 'class', value: `${className}-bg section-btn-bg` },
     ]);
 
     btn.append(btnTitle, imgContainer);

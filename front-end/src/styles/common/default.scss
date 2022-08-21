@@ -1,0 +1,103 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $c-body-bg;
+}
+
+.big-btn {
+  z-index: 2;
+  transition: $transition-time;
+  @include big-btn;
+}
+
+.main-title {
+  z-index: 2;
+  @include font-title;
+  color: $c-main-title;
+
+  @include tablet {
+    text-align: center;
+  }
+
+  @include mobile {
+    @include font-title-mobile;
+  }
+}
+
+.base-text {
+  @include font-main;
+  color: $c-main-text;
+
+  @include mobile {
+    @include font-main-small;
+    text-align: justify;
+  }
+}
+
+.section-title {
+  @include font-subtitle;
+  color: $c-subtitle;
+  text-align: left;
+
+  @include tablet {
+    text-align: center;
+  }
+
+  @include mobile {
+    @include font-subtitle-mobile;
+  }
+}
+
+.section-btns-wrapper {
+  max-width: 110rem;
+  display: flex;
+  column-gap: 8rem;
+
+  @include desktop-small {
+    column-gap: 5rem;
+  }
+
+  @include tablet {
+    column-gap: 3rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+}
+
+.section-btn {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 42rem;
+  padding-top: 4rem;
+  padding-left: 5rem;
+  border: 0.2rem solid $c-accent;
+  border-radius: $big-border-radius;
+  background-color: $c-block-bg;
+  cursor: pointer;
+
+  @include tablet {
+    padding-left: 0;
+    height: 35rem;
+    align-items: center;
+  }
+
+  @include mobile {
+    padding-top: 2rem;
+  }
+}
+
+.section-btn-bg {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+
+  @include tablet {
+    padding: 5rem;
+  }
+}

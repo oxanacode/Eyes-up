@@ -6,13 +6,12 @@ import ManageState from '../../../scripts/state/manage-state';
 import ChangePage from '../../../scripts/layout/change-page';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
-import MainTitle from '../../elements/main-title';
+import { Tag, Page, Game } from '../../../types/enums';
 
 class GameSection {
   public static createGameSection(
     className: string,
-    gameName: 'gameOne' | 'gameTwo', // --------------- enum for game titles
+    gameName: Game.one | Game.two,
     render: RenderHandler
   ) {
     const gameSection = CreateElement.createElement(Tag.section, [
@@ -25,15 +24,17 @@ class GameSection {
     const descSection = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'game-desc' },
     ]);
-    const descTitle = MainTitle.createMainTitle(
-      translation[`${gameName}DescTitle`][State.currentLang]
-    );
+    const descTitle = CreateElement.createElement(Tag.h4, [
+      { name: 'class', value: 'section-title' },
+    ]);
     const descText = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'base-text' },
+      { name: 'class', value: 'base-text game-desc-text' },
     ]);
 
+    descTitle.textContent =
+      translation[`${gameName}DescTitle`][State.currentLang];
     gameBtn.addEventListener('click', () => {
-      ChangePage.changePage(Page.game); // --------------- enum for game titles
+      ChangePage.changePage(Page.game);
       ManageState.saveState();
       render();
     });
