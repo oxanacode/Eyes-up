@@ -1,0 +1,51 @@
+.games {
+  display: grid;
+  grid-template-columns: minmax(max-content, 110rem);
+  row-gap: 3rem;
+  max-width: 110rem;
+  padding: 0 5rem;
+  margin: 0 auto 4rem;
+
+  @include mobile {
+    padding: 0 1.6rem;
+    row-gap: 2rem;
+  }
+}
+
+.game-one-bg{
+  background: $bg-game-bg no-repeat right / contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+  
+}
+
+.game-two-bg{
+  background: $bg-game-bg no-repeat right / contain;
+
+  @include tablet {
+    background-position: center center;
+  }
+}
+
+.game {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  row-gap: 3rem;
+
+  @include mobile {
+    row-gap: 1rem;
+  }
+}
+
+.game-desc {
+  padding: 3rem 4rem;
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+}
+
+.game-desc-text {
+  margin-top: 2rem;
+}

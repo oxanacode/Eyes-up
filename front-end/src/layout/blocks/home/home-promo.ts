@@ -1,12 +1,13 @@
 import CreateElement from '../../elements/create-element';
-import BigButton from '../../elements/big-button';
+import BigButton from '../../elements/big-btn';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 
-import { Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
+import { Tag, Page } from '../../../types/enums';
 
 class HomePromo {
-  public static createHomePromo(): HTMLElement {
+  public static createHomePromo(render: RenderHandler): HTMLElement {
     const promo = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'home-promo' },
     ]);
@@ -16,8 +17,10 @@ class HomePromo {
     const text = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'promo-text' },
     ]);
-    const button = BigButton.createBigButton(
-      translation.promoBtn[State.currentLang]
+    const button = BigButton.createBigBtn(
+      translation.promoBtn[State.currentLang],
+      Page.layout,
+      render
     );
     const imgContainer = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-promo-bg' },
@@ -26,10 +29,6 @@ class HomePromo {
       { name: 'class', value: 'promo-content-container' },
     ]);
 
-    button.addEventListener('click', () => {
-      // State.currentPage = Page.lessons;
-      // UpdatePage
-    });
     title.textContent = translation.promoTitle[State.currentLang];
     text.textContent = translation.promoText[State.currentLang];
     contentContainer.append(title, text, button);

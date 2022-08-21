@@ -4,6 +4,8 @@ import State from '../scripts/state/state';
 import Header from './blocks/header/header';
 import CreateFooter from './blocks/footer/render-footer';
 import HomeMain from './blocks/home/home-main';
+import LayoutMain from './blocks/lessons/lessons-layout-main';
+import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
 
 import { Page } from '../types/enums';
@@ -18,8 +20,19 @@ class RenderPage {
   public static renderStaticPage(): void {
     const page = ManagePage.getPage();
     const header = Header.createHeader(RenderPage.renderPage);
-    const main = HomeMain.createHomeMain();
+    let main: HTMLElement;
     const footer = CreateFooter.createFooter();
+
+    switch (State.currentPage) {
+      case Page.layout:
+        main = LayoutMain.createLayoutMain(RenderPage.renderPage);
+        break;
+      case Page.games:
+        main = GamesMain.createGamesMain(RenderPage.renderPage);
+        break;
+      default:
+        main = HomeMain.createHomeMain(RenderPage.renderPage);
+    }
 
     page.append(header, main, footer);
   }

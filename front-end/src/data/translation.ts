@@ -11,6 +11,30 @@ const translation = {
     en: 'Games',
     ru: 'Игры',
   },
+  gameOneTitle: {
+    en: 'GameOne',
+    ru: 'ИграПервая',
+  },
+  gameOneDescTitle: {
+    en: 'GameOneDesc',
+    ru: 'Описание',
+  },
+  gameOneDescText: {
+    en: 'Text',
+    ru: 'Описание',
+  },
+  gameTwoTitle: {
+    en: 'GameTwo',
+    ru: 'ИграВторая',
+  },
+  gameTwoDescTitle: {
+    en: 'GameTwoDesc',
+    ru: 'Описание',
+  },
+  gameTwoDescText: {
+    en: 'Text',
+    ru: 'Описание',
+  },
   aboutUsLink: {
     en: 'About Us',
     ru: 'О нас',
@@ -75,11 +99,11 @@ const translation = {
     en: 'Lessons',
     ru: 'Уроки',
   },
-  lessonsEnglishLayoutTitle: {
+  lessonsEnLayoutTitle: {
     en: 'English Layout',
     ru: 'Английская раскладка',
   },
-  lessonsRussianLayoutTitle: {
+  lessonsRuLayoutTitle: {
     en: 'English Layout',
     ru: 'Русская раскладка',
   },

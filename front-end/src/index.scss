@@ -4,8 +4,11 @@
 @import './styles/common/mixins.scss';
 @import './styles/common/themes.scss';
 @import './styles/common/reset.scss';
+@import './styles/common/default.scss';
 
 // Layout
 @import './styles/blocks/header.scss';
 @import './styles/blocks/footer.scss';
 @import './styles/blocks/home.scss';
+@import './styles/blocks/lessons-layout.scss';
+@import './styles/blocks/games.scss';

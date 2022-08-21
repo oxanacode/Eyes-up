@@ -5,14 +5,15 @@ import State from '../../../scripts/state/state';
 import translation from '../../../data/translation';
 import HomeRegistration from './home-registration';
 
+import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
 
 class HomeMain {
-  public static createHomeMain() {
+  public static createHomeMain(render: RenderHandler) {
     const main = CreateElement.createElement(Tag.main, [
       { name: 'class', value: 'home' },
     ]);
-    const promo = HomePromo.createHomePromo();
+    const promo = HomePromo.createHomePromo(render);
     const lessons = HomeSection.createHomeSection(
       'lessons',
       translation.homeLessonsTitle[State.currentLang],
@@ -28,15 +29,15 @@ class HomeMain {
       translation.homeProgressTitle[State.currentLang],
       translation.homeProgressText[State.currentLang]
     );
-    const registration = HomeRegistration.createHomeRegistration();
-    const wrapper = CreateElement.createElement(Tag.main, [
+    const registration = HomeRegistration.createHomeRegistration(render);
+    const wrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-wrapper' },
     ]);
 
-    main.append(promo, lessons, games, progress, registration);
-    wrapper.append(main);
+    wrapper.append(promo, lessons, games, progress, registration);
+    main.append(wrapper);
 
-    return wrapper;
+    return main;
   }
 }
 

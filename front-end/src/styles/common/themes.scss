@@ -1,7 +1,9 @@
 body.light {
-  --c-body-bg: #FFFFFF;
-  --c-main-text: #212529;
-  --c-small-text: #212529;
+  --c-body-bg:  #FFFFFF;
+  --c-main-text:  #212529;
+  --c-small-text:  #212529;
+  --c-main-title:  #212529;
+  --c-subtitle:  #212529;
   --c-accent: #212529;
   --c-accent: #848ED9;
   --c-big-btn-hover: #AFB8FA;
@@ -37,7 +39,7 @@ body.light {
   --bg-lessons-easy: url(./assets/images/background/lessons/lessons-easy-light.svg);
   --bg-lessons-medium: url(./assets/images/background/lessons/lessons-medium-light.svg);
   --bg-lessons-hard: url(./assets/images/background/lessons/lessons-hard-light.svg);
-  --bg-lessons-fact: url(./assets/images/background/lessons/lessons-facts-light.svg);
+  --bg-lessons-fact: url(./assets/images/background/lessons/lessons-facts-light.png);
   --bg-lessons-ru: url(./assets/images/background/lessons/lessons-ru.svg);
   --bg-lessons-en: url(./assets/images/background/lessons/lessons-eng.svg);
   --bg-close: url(./assets/images/background/icons/icon-close-light.svg);
@@ -53,9 +55,11 @@ body.light {
 }
 
 body.dark {
-  --c-body-bg: #1E273A;
-  --c-main-text: #F3F3F4;
-  --c-small-text: #8693B3;
+  --c-body-bg:  #1E273A;
+  --c-main-text:  #F3F3F4;
+  --c-small-text:  #8693B3;
+  --c-main-title:  #4794BA;
+  --c-subtitle:  #8693B3;
   --c-accent: #4794BA;
   --c-accent: #4794BA;
   --c-big-btn-hover: #7DC2E4;
@@ -91,7 +95,7 @@ body.dark {
   --bg-lessons-easy: url(./assets/images/background/lessons/lessons-easy-dark.svg);
   --bg-lessons-medium: url(./assets/images/background/lessons/lessons-medium-dark.svg);
   --bg-lessons-hard: url(./assets/images/background/lessons/lessons-hard-dark.svg);
-  --bg-lessons-fact: url(./assets/images/background/lessons/lessons-facts-dark.svg);
+  --bg-lessons-fact: url(./assets/images/background/lessons/lessons-facts-dark.png);
   --bg-lessons-ru: url(./assets/images/background/lessons/lessons-ru.svg);
   --bg-lessons-en: url(./assets/images/background/lessons/lessons-eng.svg);
   --bg-close: url(./assets/images/background/icons/icon-close-dark.svg);
@@ -106,11 +110,13 @@ body.dark {
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-dark.svg);
 }
 
-$c-body-bg: var(--c-body-bg);
-$c-main-text: var(--c-main-text);
-$c-small-text: var(--c-main-text);
-$c-home-title: var(--c-accent);
-$c-accent: var(--c-accent);
+$c-body-bg: var(--c-body-bg); 
+$c-main-text: var(--c-main-text); 
+$c-small-text: var(--c-main-text); 
+$c-home-title: var(--c-accent); 
+$c-main-title: var(--c-main-title);
+$c-subtitle: var(--c-subtitle);
+$c-accent: var(--c-accent); 
 $c-big-btn-hover: var(--c-big-btn-hover);
 $c-big-btn-active: var(c-big-btn-active);
 $c-big-btn-disabled: var(c-big-btn-active);
@@ -130,6 +136,7 @@ $bg-footer-gradient: var(--bg-footer-gradient);
 
 $bg-icon-github: url(./assets/images/background/icons/icon-github.svg);
 $bg-home-wave: url(./assets/images/background/home/home-wave.svg);
+$bg-game-bg: url(./assets/images/games/games-game-1.png);
 
 $bg-theme-switcher: var(--bg-theme-switcher);
 $bg-app-logo: var(--bg-app-logo);
