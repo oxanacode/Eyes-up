@@ -1,5 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import CloseBtn from './close-btn';
+import CloseBtn from '../../elements/close-btn';
 import Menu from '../header/menu';
 import UserBtn from '../header/user-btn';
 
@@ -8,13 +8,13 @@ import { RenderHandler } from '../../../types/types';
 
 class BurgerMenu {
   public static createBurgerMenu(
-    modalWrapper: HTMLElement,
+    wrapper: HTMLElement,
     render: RenderHandler
   ): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'burger-menu' },
     ]);
-    const closeBtn = CloseBtn.createCloseBtn(modalWrapper);
+    const closeBtn = CloseBtn.createCloseBtn(wrapper);
     const menu = Menu.createMenu('menu modal-menu', render);
     const userBtn = UserBtn.getUserBtn('modal-user-btn');
 
