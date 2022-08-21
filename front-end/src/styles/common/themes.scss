@@ -40,8 +40,10 @@ body.light {
   --bg-lessons-fact: url(./assets/images/background/lessons/lessons-facts-light.svg);
   --bg-lessons-ru: url(./assets/images/background/lessons/lessons-ru.svg);
   --bg-lessons-en: url(./assets/images/background/lessons/lessons-eng.svg);
-  --bg-profile-close: url(./assets/images/background/icons/icon-close-light.svg);
+  --bg-close: url(./assets/images/background/icons/icon-close-light.svg);
+  --bg-close-hover: url(./assets/images/background/icons/icon-close-hover-light.svg);
   --bg-profile-edit: url(./assets/images/background/icons/icon-edit-light.svg);
+  --bg-profile-edit-hover: url(./assets/images/background/icons/icon-profile-edit-hover-light.svg);
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-light.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-light.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-light.svg);
@@ -93,7 +95,9 @@ body.dark {
   --bg-lessons-ru: url(./assets/images/background/lessons/lessons-ru.svg);
   --bg-lessons-en: url(./assets/images/background/lessons/lessons-eng.svg);
   --bg-close: url(./assets/images/background/icons/icon-close-dark.svg);
+  --bg-close-hover: url(./assets/images/background/icons/icon-close-hover-dark.svg);
   --bg-profile-edit: url(./assets/images/background/icons/icon-edit-dark.svg);
+  --bg-profile-edit-hover: url(./assets/images/background/icons/icon-profile-edit-hover-dark.svg);
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-dark.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-dark.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-dark.svg);
@@ -117,7 +121,7 @@ $c-level-advanced: var(--c-level-advanced);
 $c-small-btn-bg: var(--c-small-btn-bg);
 $c-block-bg: var(--c-block-bg);
 $c-menu-inactive-link: var(--c-menu-inactive-link);
-$c-bg-modal-overlay: var(--bg-modal-overlay);
+$c-bg-modal-overlay: var(--c-modal-overlay);
 
 $bxs-modal-shadow: var(--bxs-modal-shadow);
 
@@ -147,7 +151,9 @@ $bg-lessons-fact: var(--bg-lessons-fact);
 $bg-lessons-ru: var(--bg-lessons-ru);
 $bg-lessons-en: var(--bg-lessons-en);
 $bg-close: var(--bg-close);
+$bg-close-hover: var(--bg-close-hover);
 $bg-profile-edit: var(--bg-profile-edit);
+$bg-profile-edit-hover: var(--bg-profile-edit-hover);
 $bg-modal-password-open: var(--bg-modal-password-open);
 $bg-modal-password-closed: var(--bg-modal-password-closed);
 $bg-lessons-star: var(--bg-lessons-star);

@@ -21,7 +21,7 @@ class Header {
       { name: 'class', value: 'menu-wrapper' },
     ]);
     const logo = AppBtn.createAppBtn(Page.home, render);
-    const menu = Menu.createMenu(render);
+    const menu = Menu.createMenu('menu header-menu', render);
     const controlsWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'controls-wrapper' },
     ]);
@@ -30,7 +30,7 @@ class Header {
     ]);
     const themeBtn = ThemeBtn.createThemeBtn();
     const langBtn = LangBtn.createLangBtn(render);
-    const userBtn = UserBtn.getUserBtn();
+    const userBtn = UserBtn.getUserBtn('header-user-btn');
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
     themeLangWrapper.append(themeBtn, langBtn);

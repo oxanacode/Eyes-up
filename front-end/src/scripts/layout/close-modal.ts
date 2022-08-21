@@ -4,7 +4,8 @@ class CloseModal {
   public static closeModal(element: HTMLElement): void {
     const page = ManagePage.getPage();
 
-    page.removeChild(element);
+    page.classList.remove('not-scrollable');
+    element.remove();
   }
 }
 

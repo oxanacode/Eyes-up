@@ -1,14 +1,19 @@
+// Common
 @mixin default-wrapper {
   display: flex;
   align-items: center;
 }
 
-@mixin btn-bg {
+@mixin small-btn-bg {
   background-repeat: no-repeat;
   background-position: center;
 }
 
 $desktop-width: 144rem;
+$desktop-small-width: 1079px;
+$tablet-width: 899px;
+$mobile-width: 599px;
+
 $desktop-margin: 8rem;
 $tablet-margin: 5rem;
 $mobile-margin: 1.6rem;
@@ -16,34 +21,82 @@ $mobile-margin: 1.6rem;
 .small-btn {
   @include font-main;
   @include interaction-effects;
-  @include btn-bg;
+  @include small-btn-bg;
+  display: block;
   width: 4rem;
   height: 4rem;
   color: $c-main-text;
-  background-color: $c-small-btn-bg;
   padding: 1rem;
   border-radius: $small-border-radius;
+}
+
+.small-btn-bg {
+  background-color: $c-small-btn-bg;
+}
+
+.close-btn {
+  @include small-btn-bg;
+  background-image: $bg-close;
+
+  &:hover {
+    background-image: $bg-close-hover;
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.overlay {
+  height: 100vh;
+  background: $c-bg-modal-overlay;
+}
+
+.not-scrollable {
+  overflow: hidden;
+}
+
+// Header
+.header {
+  height: 15rem;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 15rem;
+    background: $bg-header-gradient;
+  }
 }
 
 .header-wrapper {
   @include default-wrapper;
   justify-content: space-between;
   max-width: $desktop-width;
-  padding: 1.5rem $desktop-margin 9.5rem;
+  padding: 1.5rem $desktop-margin 0;
   margin: 0 auto;
 
   @include tablet {
-    padding: 1.5rem $tablet-margin 9.5rem;
+    padding: 1.5rem $tablet-margin 0;
   }
 
   @include mobile {
-    padding: 1.5rem $mobile-margin 9.5rem;
+    padding: 1.5rem $mobile-margin 0;
   }
 }
 
 .app-btn {
   @include interaction-effects;
-  @include btn-bg;
+  @include small-btn-bg;
   width: 11.4rem;
   height: 4.1rem;
   background-image: $bg-app-logo;
@@ -71,6 +124,14 @@ $mobile-margin: 1.6rem;
   gap: 3rem;
 
   @include tablet {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0 7rem;
+  }
+}
+
+.header-menu {
+  @include tablet {
     display: none;
   }
 }
@@ -92,13 +153,13 @@ $mobile-margin: 1.6rem;
   &::after {
     content: '';
     display: block;
-    width: 2.4rem;
-    height: 0.2rem;
-    background-color: $c-accent;
     position: absolute;
     bottom: -0.4rem;
     left: 50%;
     transform: translate(-50%);
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: $c-accent;
   }
 }
 
@@ -111,7 +172,7 @@ $mobile-margin: 1.6rem;
   gap: 2rem;
 
   @include tablet {
-    gap: 3rem;
+    gap: 1rem;
   }
 }
 
@@ -129,20 +190,39 @@ $mobile-margin: 1.6rem;
   }
 
   @include tablet {
+    margin: 0 auto;
+    background-color: $c-block-bg;
+  }
+}
+
+.header-user-btn {
+  @include tablet {
     display: none;
   }
 }
 
 .burger-menu-btn {
   @include interaction-effects;
-  @include btn-bg;
+  @include small-btn-bg;
+  display: none;
   width: 2.4rem;
   height: 1.8rem;
   background-image: $bg-icon-burger-menu;
-  margin-left: 2.4rem;
-  display: none;
+  margin-left: 2rem;
 
   @include tablet {
     display: block;
   }
+}
+
+.burger-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+  width: 20rem;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+  padding: 0.6rem;
 }
