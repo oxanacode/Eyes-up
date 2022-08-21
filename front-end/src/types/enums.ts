@@ -16,6 +16,12 @@ export enum Tag {
   header = 'header',
   footer = 'footer',
   section = 'section',
+  label = 'label',
+}
+
+export enum InputType {
+  text = 'text',
+  password = 'password',
 }
 
 export enum Page {

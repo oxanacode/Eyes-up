@@ -8,7 +8,6 @@
 
 .small-btn {
   @include font-main;
-  @include interaction-effects;
   @include small-btn-bg;
   display: block;
   width: 4rem;

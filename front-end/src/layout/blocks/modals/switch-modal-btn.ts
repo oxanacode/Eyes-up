@@ -1,0 +1,28 @@
+import CreateElement from '../../elements/create-element';
+
+import { Tag } from '../../../types/enums';
+
+class SwitchModalBtn {
+  public static createSwitchModalBtn(
+    btnText: string,
+    btnAction: string
+  ): HTMLElement {
+    const btn = CreateElement.createElement(Tag.btn, [
+      { name: 'class', value: 'switch-modal-btn' },
+    ]);
+    const text = CreateElement.createElement(Tag.btn, [
+      { name: 'class', value: 'switch-modal-text' },
+    ]);
+    const action = CreateElement.createElement(Tag.btn, [
+      { name: 'class', value: 'switch-modal-action' },
+    ]);
+
+    text.textContent = btnText;
+    action.textContent = btnAction;
+    btn.append(text);
+
+    return btn;
+  }
+}
+
+export default SwitchModalBtn;

@@ -5,12 +5,15 @@ import { Tag } from '../../../types/enums';
 import { ModalHandler, RenderHandler } from '../../../types/types';
 
 class ModalWrapper {
-  public static createModalWrapper(modal: ModalHandler, render: RenderHandler) {
+  public static createModalWrapper(
+    modal: ModalHandler,
+    render?: RenderHandler
+  ) {
     const wrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'modal-wrapper' },
     ]);
     const overlay = Overlay.createOverlay(wrapper);
-    const content = modal(wrapper, render);
+    const content = render ? modal(wrapper, render) : modal(wrapper);
 
     wrapper.append(overlay, content);
 

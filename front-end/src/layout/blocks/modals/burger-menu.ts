@@ -1,5 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import CloseBtn from '../../elements/close-btn';
+import CloseBtn from './close-btn';
 import Menu from '../header/menu';
 import UserBtn from '../header/user-btn';
 

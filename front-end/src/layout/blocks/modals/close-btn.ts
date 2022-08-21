@@ -1,5 +1,5 @@
-import CloseModal from '../../scripts/layout/close-modal';
-import SmallBtn from './small-btn';
+import CloseModal from '../../../scripts/layout/close-modal';
+import SmallBtn from '../../elements/small-btn';
 
 class CloseBtn {
   public static createCloseBtn(wrapper: HTMLElement): HTMLElement {

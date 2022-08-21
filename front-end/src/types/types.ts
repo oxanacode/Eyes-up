@@ -17,5 +17,5 @@ export type RenderHandler = () => void;
 
 export type ModalHandler = (
   wrapper: HTMLElement,
-  renderHandler: RenderHandler
+  renderHandler?: RenderHandler
 ) => HTMLElement;
