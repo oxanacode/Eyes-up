@@ -1,11 +1,11 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
+import MainTitle from '../../elements/main-title';
+import GameSection from './game-section';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Game } from '../../../types/enums';
-import MainTitle from '../../elements/main-title';
-import GameSection from './game-section';
 
 class GamesMain {
   public static createGamesMain(render: RenderHandler) {

@@ -4,10 +4,10 @@ import State from '../../../scripts/state/state';
 import SectionBtn from '../../elements/section-btn';
 import LessonsTest from './lessons-test';
 import LessonsFact from './lessons-fact';
+import MainTitle from '../../elements/main-title';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
-import MainTitle from '../../elements/main-title';
 
 class LayoutMain {
   public static createLayoutMain(render: RenderHandler) {
