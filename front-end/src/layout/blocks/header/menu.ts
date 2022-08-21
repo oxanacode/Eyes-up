@@ -7,9 +7,12 @@ import { Page, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class Menu {
-  public static createMenu(render: RenderHandler): HTMLElement {
+  public static createMenu(
+    className: string,
+    render: RenderHandler
+  ): HTMLElement {
     const menu = CreateElement.createElement(Tag.nav, [
-      { name: 'class', value: 'menu' },
+      { name: 'class', value: className },
     ]);
     const homeBtn = MenuBtn.createMenuBtn(
       translation.homeLink[State.currentLang],

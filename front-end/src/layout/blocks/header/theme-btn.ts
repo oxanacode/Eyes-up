@@ -1,5 +1,4 @@
-import ManageTheme from '../../../scripts/layout/manage-theme';
-import ManageState from '../../../scripts/state/manage-state';
+import SwitchTheme from '../../../scripts/layout/switch-theme';
 import SmallBtn from '../../elements/small-btn';
 
 class ThemeBtn {
@@ -10,9 +9,7 @@ class ThemeBtn {
     );
 
     btn.addEventListener('click', () => {
-      ManageTheme.changeTheme();
-      ManageState.saveState();
-      ManageTheme.applyTheme();
+      SwitchTheme.applyTheme();
     });
 
     return btn;

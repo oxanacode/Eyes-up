@@ -2,14 +2,15 @@ import State from '../state/state';
 import ManagePage from './manage-page';
 
 import { Theme } from '../../types/enums';
+import ManageState from '../state/manage-state';
 
-class ManageTheme {
+class SwitchTheme {
   public static changeTheme(): void {
     State.currentTheme =
       State.currentTheme === Theme.light ? Theme.dark : Theme.light;
   }
 
-  public static applyTheme(): void {
+  public static swapTheme(): void {
     const page = ManagePage.getPage();
 
     if (State.currentTheme === Theme.light) {
@@ -20,6 +21,12 @@ class ManageTheme {
       page.classList.add(Theme.dark);
     }
   }
+
+  public static applyTheme(): void {
+    SwitchTheme.changeTheme();
+    ManageState.saveState();
+    SwitchTheme.swapTheme();
+  }
 }
 
-export default ManageTheme;
+export default SwitchTheme;

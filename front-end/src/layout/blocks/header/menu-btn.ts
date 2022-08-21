@@ -1,6 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import ChangePage from '../../../scripts/layout/change-page';
-import ManageState from '../../../scripts/state/manage-state';
+import SwitchPage from '../../../scripts/layout/switch-page';
 import State from '../../../scripts/state/state';
 
 import { Tag, Page } from '../../../types/enums';
@@ -22,9 +21,7 @@ class MenuBtn {
 
     btn.textContent = text;
     btn.addEventListener('click', () => {
-      ChangePage.changePage(page);
-      ManageState.saveState();
-      render();
+      SwitchPage.applyPage(page, render);
     });
 
     return btn;
