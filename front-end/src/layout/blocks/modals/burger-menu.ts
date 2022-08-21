@@ -2,25 +2,25 @@ import CreateElement from '../../elements/create-element';
 import CloseBtn from './close-btn';
 import Menu from '../header/menu';
 import UserBtn from '../header/user-btn';
-import Overlay from './overlay';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class BurgerMenu {
-  public static createBurgerMenu(render: RenderHandler): HTMLElement {
-    const overlay = Overlay.createOverlay();
+  public static createBurgerMenu(
+    modalWrapper: HTMLElement,
+    render: RenderHandler
+  ): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'burger-menu' },
     ]);
-    const closeBtn = CloseBtn.createCloseBtn(overlay);
-    const menu = Menu.createMenu(render);
-    const userBtn = UserBtn.getUserBtn();
+    const closeBtn = CloseBtn.createCloseBtn(modalWrapper);
+    const menu = Menu.createMenu('menu modal-menu', render);
+    const userBtn = UserBtn.getUserBtn('modal-user-btn');
 
     modal.append(closeBtn, menu, userBtn);
-    overlay.append(modal);
 
-    return overlay;
+    return modal;
   }
 }
 

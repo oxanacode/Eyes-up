@@ -1,0 +1,228 @@
+// Common
+@mixin default-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@mixin small-btn-bg {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+$desktop-width: 144rem;
+$desktop-small-width: 1079px;
+$tablet-width: 899px;
+$mobile-width: 599px;
+
+$desktop-margin: 8rem;
+$tablet-margin: 5rem;
+$mobile-margin: 1.6rem;
+
+.small-btn {
+  @include font-main;
+  @include interaction-effects;
+  @include small-btn-bg;
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  color: $c-main-text;
+  padding: 1rem;
+  border-radius: $small-border-radius;
+}
+
+.small-btn-bg {
+  background-color: $c-small-btn-bg;
+}
+
+.close-btn {
+  @include small-btn-bg;
+  background-image: $bg-close;
+
+  &:hover {
+    background-image: $bg-close-hover;
+  }
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.overlay {
+  height: 100vh;
+  background: $c-bg-modal-overlay;
+}
+
+.not-scrollable {
+  overflow: hidden;
+}
+
+// Header
+.header {
+  height: 15rem;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 15rem;
+    background: $bg-header-gradient;
+  }
+}
+
+.header-wrapper {
+  @include default-wrapper;
+  justify-content: space-between;
+  max-width: $desktop-width;
+  padding: 1.5rem $desktop-margin 0;
+  margin: 0 auto;
+
+  @include tablet {
+    padding: 1.5rem $tablet-margin 0;
+  }
+
+  @include mobile {
+    padding: 1.5rem $mobile-margin 0;
+  }
+}
+
+.app-btn {
+  @include interaction-effects;
+  @include small-btn-bg;
+  width: 11.4rem;
+  height: 4.1rem;
+  background-image: $bg-app-logo;
+  margin-right: $desktop-margin;
+
+  @include desktop-small {
+    margin-right: $tablet-margin;
+  }
+
+  @include tablet {
+    margin-right: 0;
+  }
+}
+
+.app-logo {
+  font-size: 0;
+}
+
+.menu-wrapper {
+  @include default-wrapper;
+}
+
+.menu {
+  @include default-wrapper;
+  gap: 3rem;
+
+  @include tablet {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem 0 7rem;
+  }
+}
+
+.header-menu {
+  @include tablet {
+    display: none;
+  }
+}
+
+.menu-btn {
+  @include font-main;
+  @include interaction-effects;
+  color: $c-menu-inactive-link;
+
+  &:hover {
+    color: $c-main-text;
+  }
+}
+
+.menu-btn-active {
+  position: relative;
+  color: $c-main-text;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -0.4rem;
+    left: 50%;
+    transform: translate(-50%);
+    width: 2.4rem;
+    height: 0.2rem;
+    background-color: $c-accent;
+  }
+}
+
+.controls-wrapper {
+  @include default-wrapper;
+}
+
+.theme-lang-wrapper {
+  @include default-wrapper;
+  gap: 2rem;
+
+  @include tablet {
+    gap: 1rem;
+  }
+}
+
+.theme-btn {
+  font-size: 0;
+  background-image: $bg-theme-switcher;
+}
+
+.registration-btn {
+  width: 10rem;
+  margin-left: 6rem;
+
+  @include desktop-small {
+    margin-left: $tablet-margin;
+  }
+
+  @include tablet {
+    margin: 0 auto;
+    background-color: $c-block-bg;
+  }
+}
+
+.header-user-btn {
+  @include tablet {
+    display: none;
+  }
+}
+
+.burger-menu-btn {
+  @include interaction-effects;
+  @include small-btn-bg;
+  display: none;
+  width: 2.4rem;
+  height: 1.8rem;
+  background-image: $bg-icon-burger-menu;
+  margin-left: 2rem;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.burger-menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+  width: 20rem;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+  padding: 0.6rem;
+}

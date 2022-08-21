@@ -1,6 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import OpenModal from '../../../scripts/layout/open-modal';
 import BurgerMenu from '../modals/burger-menu';
+import ModalWrapper from '../modals/modal-wrapper';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -12,7 +13,9 @@ class BurgerMenuBtn {
     ]);
 
     btn.addEventListener('click', () => {
-      OpenModal.openModal(BurgerMenu.createBurgerMenu(render));
+      OpenModal.openModal(
+        ModalWrapper.createModalWrapper(BurgerMenu.createBurgerMenu, render)
+      );
     });
 
     return btn;
