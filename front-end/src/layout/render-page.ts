@@ -4,6 +4,9 @@ import State from '../scripts/state/state';
 import Header from './blocks/header/header';
 import CreateFooter from './blocks/footer/render-footer';
 import HomeMain from './blocks/home/home-main';
+import LayoutMain from './blocks/lessons/lessons-layout-main';
+import GamesMain from './blocks/games/games-main';
+import ManageState from '../scripts/state/manage-state';
 
 import { Page } from '../types/enums';
 

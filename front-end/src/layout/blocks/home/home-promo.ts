@@ -2,7 +2,6 @@ import CreateElement from '../../elements/create-element';
 import BigButton from '../../elements/big-btn';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import ManageState from '../../../scripts/state/manage-state';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -19,7 +18,9 @@ class HomePromo {
       { name: 'class', value: 'promo-text' },
     ]);
     const button = BigButton.createBigBtn(
-      translation.promoBtn[State.currentLang]
+      translation.promoBtn[State.currentLang],
+      Page.layout,
+      render
     );
     const imgContainer = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-promo-bg' },
@@ -28,11 +29,6 @@ class HomePromo {
       { name: 'class', value: 'promo-content-container' },
     ]);
 
-    button.addEventListener('click', () => {
-      State.currentPage = Page.layout;
-      ManageState.saveState();
-      render();
-    });
     title.textContent = translation.promoTitle[State.currentLang];
     text.textContent = translation.promoText[State.currentLang];
     contentContainer.append(title, text, button);

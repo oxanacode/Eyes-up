@@ -2,8 +2,6 @@ import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 import BigButton from '../../elements/big-btn';
-import ManageState from '../../../scripts/state/manage-state';
-import ChangePage from '../../../scripts/layout/change-page';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -17,17 +15,14 @@ class LessonsTest {
       { name: 'class', value: 'section-title' },
     ]);
     const testBtn = BigButton.createBigBtn(
-      translation.lessonsTestBtn[State.currentLang]
+      translation.lessonsTestBtn[State.currentLang],
+      Page.test,
+      render
     );
 
     lessonsTestTitle.textContent =
       translation.lessonsTestTitle[State.currentLang];
     test.append(lessonsTestTitle, testBtn);
-    testBtn.addEventListener('click', () => {
-      ChangePage.changePage(Page.test);
-      ManageState.saveState();
-      render();
-    });
 
     return test;
   }

@@ -2,6 +2,8 @@ body.light {
   --c-body-bg:  #FFFFFF;
   --c-main-text:  #212529;
   --c-small-text:  #212529;
+  --c-main-title:  #212529;
+  --c-subtitle:  #212529;
   --c-accent: #212529;
   --c-accent: #848ED9;
   --c-big-btn-hover: #AFB8FA;
@@ -56,6 +58,8 @@ body.dark {
   --c-body-bg:  #1E273A;
   --c-main-text:  #F3F3F4;
   --c-small-text:  #8693B3;
+  --c-main-title:  #4794BA;
+  --c-subtitle:  #8693B3;
   --c-accent: #4794BA;
   --c-accent: #4794BA;
   --c-big-btn-hover: #7DC2E4;
@@ -110,6 +114,8 @@ $c-body-bg: var(--c-body-bg);
 $c-main-text: var(--c-main-text); 
 $c-small-text: var(--c-main-text); 
 $c-home-title: var(--c-accent); 
+$c-main-title: var(--c-main-title);
+$c-subtitle: var(--c-subtitle);
 $c-accent: var(--c-accent); 
 $c-big-btn-hover: var(--c-big-btn-hover);
 $c-big-btn-active: var(c-big-btn-active);

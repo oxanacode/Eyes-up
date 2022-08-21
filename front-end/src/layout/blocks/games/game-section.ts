@@ -2,8 +2,6 @@ import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 import SectionBtn from '../../elements/section-btn';
-import ManageState from '../../../scripts/state/manage-state';
-import ChangePage from '../../../scripts/layout/change-page';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Game } from '../../../types/enums';
@@ -19,7 +17,9 @@ class GameSection {
     ]);
     const gameBtn = SectionBtn.createSectionBtn(
       className,
-      translation[`${gameName}Title`][State.currentLang]
+      translation[`${gameName}Title`][State.currentLang],
+      Page.game,
+      render
     );
     const descSection = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'game-desc' },
@@ -33,11 +33,6 @@ class GameSection {
 
     descTitle.textContent =
       translation[`${gameName}DescTitle`][State.currentLang];
-    gameBtn.addEventListener('click', () => {
-      ChangePage.changePage(Page.game);
-      ManageState.saveState();
-      render();
-    });
     descText.textContent =
       translation[`${gameName}DescText`][State.currentLang];
     descSection.append(descTitle, descText);

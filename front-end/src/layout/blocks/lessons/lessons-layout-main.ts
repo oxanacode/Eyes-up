@@ -6,7 +6,7 @@ import LessonsTest from './lessons-test';
 import LessonsFact from './lessons-fact';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag } from '../../../types/enums';
+import { Tag, Page } from '../../../types/enums';
 import MainTitle from '../../elements/main-title';
 
 class LayoutMain {
@@ -19,11 +19,15 @@ class LayoutMain {
     );
     const layoutEnBtn = SectionBtn.createSectionBtn(
       'layout-en',
-      translation.lessonsEnLayoutTitle[State.currentLang]
+      translation.lessonsEnLayoutTitle[State.currentLang],
+      Page.lessons,
+      render
     );
     const layoutRuBtn = SectionBtn.createSectionBtn(
       'layout-ru',
-      translation.lessonsRuLayoutTitle[State.currentLang]
+      translation.lessonsRuLayoutTitle[State.currentLang],
+      Page.lessons,
+      render
     );
     const test = LessonsTest.createLessonsTest(render);
     const fact = LessonsFact.createLessonsTest();
@@ -34,8 +38,6 @@ class LayoutMain {
     mainTitle.classList.add('lessons-title');
     buttonsWrapper.append(layoutEnBtn, layoutRuBtn);
     main.append(mainTitle, buttonsWrapper, test, fact);
-    layoutEnBtn.addEventListener('click', () => {});
-    layoutRuBtn.addEventListener('click', () => {});
 
     return main;
   }

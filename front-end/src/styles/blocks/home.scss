@@ -1,13 +1,13 @@
 .home {
-  background: $bg-home-wave no-repeat 0 75rem;
+  background: $bg-home-wave no-repeat 0 70rem;
   background-size: 100% auto;
 
   @include desktop-small {
-    background-position: 0 80rem;
+    background-position: 0 75rem;
   }
 
   @include mobile {
-    background-position: 0 70rem;
+    background-position: 0 65rem;
   }
 }
 
@@ -16,7 +16,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 5rem;
-  margin: 10rem auto;
+  margin: 3rem auto 10rem;
 }
 
 .promo-title {
@@ -73,7 +73,7 @@
 
   @include mobile {
     height: 60rem;
-    margin: 0 3rem 5rem;
+    margin: 0 3rem 7rem;
   }
 
   &::before,
@@ -240,14 +240,16 @@
     z-index: -1;
 
     @include tablet {
-      left: 0;
-      width: 40rem;
-      height: 40rem;
+      left: -10rem;
+      width: 60rem;
+      height: 60rem;
+      bottom: 20rem;
     }
 
     @include mobile {
-      width: 30rem;
-      height: 30rem;
+      width: 40rem;
+      height: 40rem;
+      bottom: 10rem;
     }
   }
 }
@@ -259,21 +261,23 @@
     content: '';
     position: absolute;
     background: $bg-home-bg-blur-2 no-repeat center / contain;
-    width: 60rem;
-    height: 60rem;
+    width: 90rem;
+    height: 90rem;
     transition: $transition-time;
-    right: 0;
+    right: -40rem;
     z-index: -1;
 
     @include tablet {
-      width: 40rem;
-      height: 40rem;
+      width: 60rem;
+      height: 60rem;
       bottom: 20rem;
+      right: -10rem;
     }
 
     @include mobile {
-      width: 30rem;
-      height: 30rem;
+      width: 40rem;
+      height: 40rem;
+      bottom: 10rem;
     }
   }
 }
@@ -304,17 +308,18 @@
     content: '';
     position: absolute;
     background: $bg-home-bg-blur-2 no-repeat center / contain;
-    width: 50rem;
-    height: 50rem;
+    width: 90rem;
+    height: 90rem;
     transition: $transition-time;
-    right: 0;
-    bottom: -20rem;
+    right: -35rem;
+    bottom: -70rem;
     z-index: 1;
 
     @include tablet {
-      width: 40rem;
-      height: 40rem;
-      bottom: -10rem;
+      width: 60rem;
+      height: 60rem;
+      right: -20rem;
+      bottom: -40rem;
     }
 
     @include mobile {
