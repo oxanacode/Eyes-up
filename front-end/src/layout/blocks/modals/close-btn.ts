@@ -1,4 +1,4 @@
-import CloseModal from '../../../scripts/layout/close-modal';
+import ManageModal from '../../../scripts/layout/manage-modal';
 import SmallBtn from '../../elements/small-btn';
 
 class CloseBtn {
@@ -6,7 +6,7 @@ class CloseBtn {
     const btn = SmallBtn.createSmallBtn('small-btn close-btn');
 
     btn.addEventListener('click', () => {
-      CloseModal.closeModal(wrapper);
+      ManageModal.closeModal(wrapper);
     });
 
     return btn;

@@ -1,7 +1,9 @@
 import CreateElement from '../../elements/create-element';
 import CloseBtn from './close-btn';
 import Menu from '../header/menu';
-import UserBtn from '../header/user-btn';
+import ManageUser from '../../../scripts/profile/manage-user';
+import ProfileBtn from '../header/profile-btn';
+import RegistrationBtn from '../header/registration-btn';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -16,8 +18,15 @@ class BurgerMenu {
     ]);
     const closeBtn = CloseBtn.createCloseBtn(wrapper);
     const menu = Menu.createMenu('menu modal-menu', render);
-    const userBtn = UserBtn.getUserBtn('modal-user-btn');
+    let userBtn;
 
+    if (ManageUser.checkIfUserAuthorized()) {
+      userBtn = ProfileBtn.createProfileBtn();
+    } else {
+      userBtn = RegistrationBtn.createRegistrationBtn();
+    }
+
+    userBtn.classList.add('modal-user-btn');
     modal.append(closeBtn, menu, userBtn);
 
     return modal;

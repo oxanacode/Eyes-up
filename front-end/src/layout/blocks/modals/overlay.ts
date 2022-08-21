@@ -1,5 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import CloseModal from '../../../scripts/layout/close-modal';
+import ManageModal from '../../../scripts/layout/manage-modal';
 
 import { Tag } from '../../../types/enums';
 
@@ -10,7 +10,7 @@ class Overlay {
     ]);
 
     overlay.addEventListener('click', () => {
-      CloseModal.closeModal(wrapper);
+      ManageModal.closeModal(wrapper);
     });
 
     return overlay;
