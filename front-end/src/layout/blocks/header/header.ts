@@ -36,9 +36,10 @@ class Header {
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
     if (ManageUser.checkIfUserAuthorized()) {
+      // заменить на createHeaderProfileBtn
       userBtn = ProfileBtn.createProfileBtn();
     } else {
-      userBtn = RegistrationBtn.createRegistrationBtn();
+      userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);
     }
 
     userBtn.classList.add('header-user-btn');

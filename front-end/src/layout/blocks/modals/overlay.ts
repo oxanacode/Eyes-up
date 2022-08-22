@@ -4,13 +4,13 @@ import ManageModal from '../../../scripts/layout/manage-modal';
 import { Tag } from '../../../types/enums';
 
 class Overlay {
-  public static createOverlay(wrapper: HTMLElement): HTMLElement {
+  public static createOverlay(modalToClose: HTMLElement): HTMLElement {
     const overlay = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'overlay' },
     ]);
 
     overlay.addEventListener('click', () => {
-      ManageModal.closeModal(wrapper);
+      ManageModal.closeModal(modalToClose);
     });
 
     return overlay;

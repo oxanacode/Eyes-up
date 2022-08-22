@@ -1,26 +1,26 @@
 import ManagePage from './manage-page';
 
 class ManageModal {
-  public static closeModal(element: HTMLElement): void {
-    const page = ManagePage.getPage();
-
-    page.classList.remove('not-scrollable');
-    element.remove();
-  }
-
-  public static openModal(element: HTMLElement): void {
+  public static openModal(modalToOpen: HTMLElement): void {
     const page = ManagePage.getPage();
 
     page.classList.add('not-scrollable');
-    page.append(element);
+    page.append(modalToOpen);
+  }
+
+  public static closeModal(modalToClose: HTMLElement): void {
+    const page = ManagePage.getPage();
+
+    page.classList.remove('not-scrollable');
+    modalToClose.remove();
   }
 
   public static closeModalOpenModal(
-    elementToClose: HTMLElement,
-    elementToOpen: HTMLElement
+    modalToClose: HTMLElement,
+    modalToOpen: HTMLElement
   ): void {
-    ManageModal.closeModal(elementToClose);
-    ManageModal.openModal(elementToOpen);
+    ManageModal.closeModal(modalToClose);
+    ManageModal.openModal(modalToOpen);
   }
 }
 

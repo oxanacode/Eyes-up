@@ -21,8 +21,10 @@ class BurgerMenu {
     let userBtn;
 
     if (ManageUser.checkIfUserAuthorized()) {
+      // заменить на BurgerMenuProfileBtn
       userBtn = ProfileBtn.createProfileBtn();
     } else {
+      // заменить на BurgerMenuRegistrationBtn
       userBtn = RegistrationBtn.createRegistrationBtn();
     }
 
