@@ -12,10 +12,14 @@ exports.getLesson = async (req, res) => {
 
 exports.addLesson = async (req, res) => {
   const data = new lessonModel({
-    language: req.body.language,
-    name: req.body.name,
+    layout: req.body.layout,
+    index: req.body.index,
+    title: req.body.title,
     complexity: req.body.complexity,
-    text: req.body.text
+    minAccuracy: req.body.minAccuracy,
+    minSpeed: req.body.minSpeed,
+    starSpeed: req.body.starSpeed,
+    content: req.body.content
   });
 
   try {
