@@ -1,10 +1,10 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import BigButton from '../../elements/big-btn';
+import ChangePageBtn from '../../elements/change-page-btn';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, Btn } from '../../../types/enums';
 
 class LessonsTest {
   public static createLessonsTest(render: RenderHandler): HTMLElement {
@@ -14,7 +14,8 @@ class LessonsTest {
     const lessonsTestTitle = CreateElement.createElement(Tag.h4, [
       { name: 'class', value: 'section-title' },
     ]);
-    const testBtn = BigButton.createBigBtn(
+    const testBtn = ChangePageBtn.createChangePageBtn(
+      Btn.big,
       translation.lessonsTestBtn[State.currentLang],
       Page.test,
       render

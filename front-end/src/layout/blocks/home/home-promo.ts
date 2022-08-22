@@ -1,10 +1,10 @@
 import CreateElement from '../../elements/create-element';
-import BigButton from '../../elements/big-btn';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
+import ChangePageBtn from '../../elements/change-page-btn';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Btn, Page } from '../../../types/enums';
 
 class HomePromo {
   public static createHomePromo(render: RenderHandler): HTMLElement {
@@ -17,7 +17,8 @@ class HomePromo {
     const text = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'promo-text' },
     ]);
-    const button = BigButton.createBigBtn(
+    const button = ChangePageBtn.createChangePageBtn(
+      Btn.big,
       translation.promoBtn[State.currentLang],
       Page.layout,
       render
