@@ -1,17 +1,22 @@
+@mixin default-input {
+  @include font-main-small;
+  display: block;
+  width: 24rem;
+  height: 4rem;
+  padding: 1rem;
+  border: 0.1rem solid $c-accent;
+  border-radius: $small-border-radius;
+}
+
+@mixin default-modal {
+  position: absolute;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+}
+
 .header {
   height: 15rem;
-
-  &::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 15rem;
-    background: $bg-header-gradient;
-  }
+  background: $bg-header-gradient;
 }
 
 .header-wrapper {
@@ -152,12 +157,93 @@
 }
 
 .burger-menu {
-  position: absolute;
+  @include default-modal;
   top: 0;
   bottom: 0;
   right: 0;
   width: 20rem;
-  background-color: $c-body-bg;
-  box-shadow: $bxs-modal-shadow;
   padding: 0.6rem;
+}
+
+.registration-modal {
+  @include default-modal;
+  @include default-wrapper;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: $big-border-radius;
+
+  @include mobile {
+    width: 32rem;
+  }
+}
+
+.input-label {
+  position: relative;
+  text-align: left;
+}
+
+.login-input {
+  @include default-input;
+  margin-top: 0.2rem;
+  margin-bottom: 2rem;
+}
+
+.password-input {
+  @include default-input;
+  margin-top: 0.2rem;
+  margin-bottom: 4rem;
+}
+
+.password-visibility-btn {
+  @include small-btn-bg;
+  position: absolute;
+  bottom: 5rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.password-close {
+  background-image: $bg-modal-password-closed;
+}
+
+.password-open {
+  background-image: $bg-modal-password-open;
+}
+
+.registration-modal .close-btn {
+  align-self: end;
+  margin-bottom: 0.6rem;
+}
+
+.registration-modal .main-title {
+  margin-bottom: 3rem;
+}
+
+.registration-modal .big-btn {
+  margin-bottom: 4rem;
+}
+
+.switch-modal-btn {
+  margin-bottom: 3rem;
+
+  &:hover .switch-modal-action {
+    color: $c-main-text;
+  }
+}
+
+.switch-modal-text {
+  @include font-main-small;
+  margin-bottom: 1rem;
+}
+
+.switch-modal-action {
+  @include interaction-effects;
+  @include font-subtitle-mobile;
+  color: $c-menu-inactive-link;
 }

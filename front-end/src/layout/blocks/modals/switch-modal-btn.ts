@@ -10,16 +10,16 @@ class SwitchModalBtn {
     const btn = CreateElement.createElement(Tag.btn, [
       { name: 'class', value: 'switch-modal-btn' },
     ]);
-    const text = CreateElement.createElement(Tag.btn, [
+    const text = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'switch-modal-text' },
     ]);
-    const action = CreateElement.createElement(Tag.btn, [
+    const action = CreateElement.createElement(Tag.par, [
       { name: 'class', value: 'switch-modal-action' },
     ]);
 
     text.textContent = btnText;
     action.textContent = btnAction;
-    btn.append(text);
+    btn.append(text, action);
 
     return btn;
   }

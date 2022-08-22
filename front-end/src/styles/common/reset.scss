@@ -17,9 +17,12 @@ html {
   box-sizing: inherit;
 }
 
+button {
+  @include interaction-effects;
+}
+
 button,
 input {
-  @include interaction-effects;
   font-family: inherit;
   background-color: transparent;
   outline: none;
