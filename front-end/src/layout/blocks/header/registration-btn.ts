@@ -1,9 +1,9 @@
-import translation from '../../../data/translation';
 import ManageModal from '../../../scripts/layout/manage-modal';
 import State from '../../../scripts/state/state';
 import SmallBtn from '../../elements/small-btn';
 import ModalWrapper from '../modals/modal-wrapper';
 import RegistrationModal from '../modals/registration-modal';
+import translation from '../../../data/translation';
 
 import { RenderHandler } from '../../../types/types';
 
@@ -34,15 +34,15 @@ class RegistrationBtn {
     return btn;
   }
 
-  // подумать над тем, как реализовать закрытие одной модалки и открытие другой - может, перерисовывать?
   public static createBurgerMenuRegistrationBtn(
+    modalWrapper: HTMLElement,
     modalToClose: HTMLElement,
     modalToOpen: HTMLElement
   ): HTMLElement {
     const btn = RegistrationBtn.createRegistrationBtn();
 
     btn.addEventListener('click', () => {
-      ManageModal.closeModalOpenModal(modalToClose, modalToOpen);
+      ManageModal.changeModal(modalWrapper, modalToClose, modalToOpen);
     });
 
     return btn;

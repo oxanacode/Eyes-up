@@ -4,6 +4,7 @@ import Menu from '../header/menu';
 import ManageUser from '../../../scripts/profile/manage-user';
 import ProfileBtn from '../header/profile-btn';
 import RegistrationBtn from '../header/registration-btn';
+import RegistrationModal from './registration-modal';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -24,8 +25,11 @@ class BurgerMenu {
       // заменить на BurgerMenuProfileBtn
       userBtn = ProfileBtn.createProfileBtn();
     } else {
-      // заменить на BurgerMenuRegistrationBtn
-      userBtn = RegistrationBtn.createRegistrationBtn();
+      userBtn = RegistrationBtn.createBurgerMenuRegistrationBtn(
+        wrapper,
+        modal,
+        RegistrationModal.createRegistrationModal(wrapper, render)
+      );
     }
 
     userBtn.classList.add('modal-user-btn');

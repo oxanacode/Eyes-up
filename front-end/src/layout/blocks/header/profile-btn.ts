@@ -1,6 +1,5 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
-import ManageModal from '../../../scripts/layout/manage-modal';
 
 import { Tag } from '../../../types/enums';
 
@@ -15,27 +14,22 @@ class ProfileBtn {
     return btn;
   }
 
-  // заменить modalToOpen на render, в openModal передавать метод создания модалки профиля и render
-  public static createHeaderProfileBtn(modalToOpen: HTMLElement): HTMLElement {
+  public static createHeaderProfileBtn(): HTMLElement {
     const btn = ProfileBtn.createProfileBtn();
 
-    btn.addEventListener('click', () => {
-      ManageModal.openModal(modalToOpen);
-    });
+    // btn.addEventListener('click', () => {
+    //   console.log('профиль');
+    // });
 
     return btn;
   }
 
-  // подумать над тем, как реализовать закрытие одной модалки и открытие другой - может, перерисовывать?
-  public static createBurgerMenuProfileBtn(
-    modalToClose: HTMLElement,
-    modalToOpen: HTMLElement
-  ): HTMLElement {
+  public static createBurgerMenuProfileBtn(): HTMLElement {
     const btn = ProfileBtn.createProfileBtn();
 
-    btn.addEventListener('click', () => {
-      ManageModal.closeModalOpenModal(modalToClose, modalToOpen);
-    });
+    // btn.addEventListener('click', () => {
+    //   console.log('профиль');
+    // });
 
     return btn;
   }

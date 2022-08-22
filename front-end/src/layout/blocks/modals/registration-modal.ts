@@ -1,12 +1,9 @@
-import CloseBtn from './close-btn';
 import CreateElement from '../../elements/create-element';
-import MainTitle from '../../elements/main-title';
 import State from '../../../scripts/state/state';
-import translation from '../../../data/translation';
-import LoginInput from './login-input';
-import PasswordInput from './password-input';
-import SwitchModalBtn from './switch-modal-btn';
 import SignUpBtn from './sign-up-btn';
+import LogInBtn from './log-in-btn';
+import RegistrationModalContent from './registration-modal-content';
+import translation from '../../../data/translation';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -19,19 +16,25 @@ class RegistrationModal {
     const modal = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'registration-modal' },
     ]);
-    const closeBtn = CloseBtn.createCloseBtn(modalToClose);
-    const title = MainTitle.createMainTitle(
-      translation.modalSignUpTitle[State.currentLang]
-    );
-    const login = LoginInput.createLoginInput();
-    const password = PasswordInput.createPasswordInput();
-    const signUpBtn = SignUpBtn.createSignUpBtn(render);
-    const switchBtn = SwitchModalBtn.createSwitchModalBtn(
-      translation.modalSignUpText[State.currentLang],
-      translation.modalSignUpLink[State.currentLang]
-    );
+    const signUpContent =
+      RegistrationModalContent.createRegistrationModalContent(
+        translation.modalSignUpTitle[State.currentLang],
+        SignUpBtn.createSignUpBtn(render),
+        translation.modalSignUpText[State.currentLang],
+        translation.modalSignUpLink[State.currentLang],
+        modalToClose
+      );
+    const logInContent =
+      RegistrationModalContent.createRegistrationModalContent(
+        translation.modalLogInTitle[State.currentLang],
+        LogInBtn.createLogInBtn(render),
+        translation.modalLogInText[State.currentLang],
+        translation.modalLogInLink[State.currentLang],
+        modalToClose
+      );
 
-    modal.append(closeBtn, title, login, password, signUpBtn, switchBtn);
+    logInContent.classList.add('hidden');
+    modal.append(signUpContent, logInContent);
 
     return modal;
   }

@@ -247,3 +247,7 @@
   @include font-subtitle-mobile;
   color: $c-menu-inactive-link;
 }
+
+.hidden {
+  display: none;
+}

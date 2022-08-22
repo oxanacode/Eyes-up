@@ -15,12 +15,25 @@ class ManageModal {
     modalToClose.remove();
   }
 
-  public static closeModalOpenModal(
+  public static changeModal(
+    modalWrapper: HTMLElement,
     modalToClose: HTMLElement,
     modalToOpen: HTMLElement
   ): void {
-    ManageModal.closeModal(modalToClose);
-    ManageModal.openModal(modalToOpen);
+    modalToClose.remove();
+    modalWrapper.append(modalToOpen);
+  }
+
+  public static switchModal(modalToHide: HTMLElement): void {
+    modalToHide.classList.add('hidden');
+
+    if (modalToHide.previousElementSibling) {
+      modalToHide.previousElementSibling.classList.remove('hidden');
+    }
+
+    if (modalToHide.nextElementSibling) {
+      modalToHide.nextElementSibling.classList.remove('hidden');
+    }
   }
 }
 
