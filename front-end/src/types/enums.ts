@@ -61,3 +61,8 @@ export enum Game {
   one = 'gameOne',
   two = 'gameTwo',
 }
+
+export enum Btn {
+  big = 'big',
+  section = 'section',
+}

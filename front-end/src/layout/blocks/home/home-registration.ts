@@ -4,11 +4,10 @@ import translation from '../../../data/translation';
 import MainTitle from '../../elements/main-title';
 import State from '../../../scripts/state/state';
 
-import { Tag, Page } from '../../../types/enums';
-import { RenderHandler } from '../../../types/types';
+import { Tag } from '../../../types/enums';
 
 class HomeRegistration {
-  public static createHomeRegistration(render: RenderHandler): HTMLElement {
+  public static createHomeRegistration(): HTMLElement {
     const registration = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'home-registration' },
     ]);
@@ -20,9 +19,7 @@ class HomeRegistration {
     ]);
     // -----OpenModal vvvv
     const button = BigButton.createBigBtn(
-      translation.homeRegistrationBtn[State.currentLang],
-      Page.home,
-      render
+      translation.homeRegistrationBtn[State.currentLang]
     );
 
     text.textContent = translation.homeRegistrationText[State.currentLang];

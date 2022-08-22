@@ -29,7 +29,7 @@ class HomeMain {
       translation.homeProgressTitle[State.currentLang],
       translation.homeProgressText[State.currentLang]
     );
-    const registration = HomeRegistration.createHomeRegistration(render);
+    const registration = HomeRegistration.createHomeRegistration();
     const wrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-wrapper' },
     ]);
