@@ -1,13 +1,13 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import SectionBtn from '../../elements/section-btn';
 import LessonsTest from './lessons-test';
 import LessonsFact from './lessons-fact';
 import MainTitle from '../../elements/main-title';
+import ChangePageBtn from '../../elements/change-page-btn';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, Btn } from '../../../types/enums';
 
 class LayoutMain {
   public static createLayoutMain(render: RenderHandler) {
@@ -17,17 +17,19 @@ class LayoutMain {
     const mainTitle = MainTitle.createMainTitle(
       translation.lessonsTitle[State.currentLang]
     );
-    const layoutEnBtn = SectionBtn.createSectionBtn(
-      'layout-en',
+    const layoutEnBtn = ChangePageBtn.createChangePageBtn(
+      Btn.section,
       translation.lessonsEnLayoutTitle[State.currentLang],
       Page.lessons,
-      render
+      render,
+      'layout-en'
     );
-    const layoutRuBtn = SectionBtn.createSectionBtn(
-      'layout-ru',
+    const layoutRuBtn = ChangePageBtn.createChangePageBtn(
+      Btn.section,
       translation.lessonsRuLayoutTitle[State.currentLang],
       Page.lessons,
-      render
+      render,
+      'layout-ru'
     );
     const test = LessonsTest.createLessonsTest(render);
     const fact = LessonsFact.createLessonsTest();
