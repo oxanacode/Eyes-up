@@ -3,20 +3,20 @@ import ManageModal from '../../../scripts/layout/manage-modal';
 
 import { Tag } from '../../../types/enums';
 
-class SwitchModalBtn {
-  public static createSwitchModalBtn(
+class RegistrationSwitchBtn {
+  public static createRegistrationSwitchBtn(
     btnText: string,
     btnAction: string,
     modalToHide: HTMLElement
   ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'switch-modal-btn' },
+      { name: 'class', value: 'registration-switch-btn' },
     ]);
     const text = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'switch-modal-text' },
+      { name: 'class', value: 'registration-switch-text' },
     ]);
     const action = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'switch-modal-action' },
+      { name: 'class', value: 'registration-switch-action' },
     ]);
 
     text.textContent = btnText;
@@ -30,4 +30,4 @@ class SwitchModalBtn {
   }
 }
 
-export default SwitchModalBtn;
+export default RegistrationSwitchBtn;

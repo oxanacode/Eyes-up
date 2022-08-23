@@ -1,8 +1,8 @@
+// Mixins
 @mixin default-input {
   @include font-main-small;
   display: block;
-  width: 24rem;
-  height: 4rem;
+  color: $c-main-text;
   padding: 1rem;
   border: 0.1rem solid $c-accent;
   border-radius: $small-border-radius;
@@ -14,6 +14,20 @@
   box-shadow: $bxs-modal-shadow;
 }
 
+// Default
+.hidden {
+  display: none;
+}
+
+.error-block {
+  @include font-main;
+
+  @include mobile {
+    @include font-main-small;
+  }
+}
+
+// Header
 .header {
   height: 15rem;
   background: $bg-header-gradient;
@@ -165,6 +179,7 @@
   padding: 0.6rem;
 }
 
+// Registration
 .registration-modal {
   @include default-modal;
   @include default-wrapper;
@@ -182,27 +197,41 @@
   }
 }
 
-.input-label {
-  position: relative;
-  text-align: left;
+.registration-close-btn {
+  align-self: end;
+  margin-bottom: 0.6rem;
 }
 
-.login-input {
-  @include default-input;
-  margin-top: 0.2rem;
+.registration-modal-content {
+  width: 100%;
+}
+
+.registration-inputs-wrapper {
+  padding: 3rem 6.8rem 2rem;
+
+  @include mobile {
+    padding: 3rem 2.8rem 2rem;
+  }
+}
+
+.registration-input-label {
+  position: relative;
+  display: block;
+  text-align: left;
   margin-bottom: 2rem;
 }
 
-.password-input {
+.registration-input {
   @include default-input;
+  width: 100%;
+  height: 4rem;
   margin-top: 0.2rem;
-  margin-bottom: 4rem;
 }
 
 .password-visibility-btn {
   @include small-btn-bg;
   position: absolute;
-  bottom: 5rem;
+  bottom: 1rem;
   right: 1rem;
   width: 2rem;
   height: 2rem;
@@ -216,38 +245,23 @@
   background-image: $bg-modal-password-open;
 }
 
-.registration-modal .close-btn {
-  align-self: end;
-  margin-bottom: 0.6rem;
-}
+.registration-switch-btn {
+  display: block;
+  margin: 4rem auto 2.8rem;
 
-.registration-modal .main-title {
-  margin-bottom: 3rem;
-}
-
-.registration-modal .big-btn {
-  margin-bottom: 4rem;
-}
-
-.switch-modal-btn {
-  margin-bottom: 3rem;
-
-  &:hover .switch-modal-action {
+  &:hover .registration-switch-action {
     color: $c-main-text;
   }
 }
 
-.switch-modal-text {
+.registration-switch-text {
   @include font-main-small;
+  color: $c-main-text;
   margin-bottom: 1rem;
 }
 
-.switch-modal-action {
+.registration-switch-action {
   @include interaction-effects;
   @include font-subtitle-mobile;
   color: $c-menu-inactive-link;
-}
-
-.hidden {
-  display: none;
 }

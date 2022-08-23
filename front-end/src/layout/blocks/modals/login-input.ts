@@ -11,7 +11,7 @@ class LoginInput {
       translation.modalSignUpLoginInput[State.currentLang]
     );
     const input = CreateElement.createElement(Tag.input, [
-      { name: 'class', value: 'login-input' },
+      { name: 'class', value: 'registration-input' },
     ]);
 
     label.append(input);

@@ -1,9 +1,8 @@
 import CreateElement from '../../elements/create-element';
 import MainTitle from '../../elements/main-title';
-import CloseBtn from './close-btn';
 import LoginInput from './login-input';
 import PasswordInput from './password-input';
-import SwitchModalBtn from './switch-modal-btn';
+import RegistrationSwitchBtn from './registration-switch-btn';
 
 import { Tag } from '../../../types/enums';
 
@@ -12,24 +11,29 @@ class RegistrationModalContent {
     titleName: string,
     actionBtn: HTMLElement,
     switchBtnText: string,
-    switchBtnAction: string,
-    modalToClose: HTMLElement
+    switchBtnAction: string
   ): HTMLElement {
     const content = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'registration-modal-content' },
     ]);
-    const closeBtn = CloseBtn.createCloseBtn(modalToClose);
     const title = MainTitle.createMainTitle(titleName);
+    const inputsWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'registration-inputs-wrapper' },
+    ]);
     const login = LoginInput.createLoginInput();
     const password = PasswordInput.createPasswordInput();
+    const error = CreateElement.createElement(Tag.par, [
+      { name: 'class', value: 'error-block' },
+    ]);
     const action = actionBtn;
-    const switchBtn = SwitchModalBtn.createSwitchModalBtn(
+    const switchBtn = RegistrationSwitchBtn.createRegistrationSwitchBtn(
       switchBtnText,
       switchBtnAction,
       content
     );
 
-    content.append(closeBtn, title, login, password, action, switchBtn);
+    inputsWrapper.append(login, password, error);
+    content.append(title, inputsWrapper, action, switchBtn);
 
     return content;
   }

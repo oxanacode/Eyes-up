@@ -12,7 +12,7 @@ class PasswordInput {
       translation.modalSignUpPasswordInput[State.currentLang]
     );
     const input = CreateElement.createElement(Tag.input, [
-      { name: 'class', value: 'password-input' },
+      { name: 'class', value: 'registration-input' },
       { name: 'type', value: InputType.password },
     ]);
     const visibilityBtn =

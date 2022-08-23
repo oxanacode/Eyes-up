@@ -17,7 +17,7 @@ class BurgerMenu {
     const modal = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'burger-menu' },
     ]);
-    const closeBtn = CloseBtn.createCloseBtn(wrapper);
+    const closeBtn = CloseBtn.createCloseBtn('small-btn close-btn', wrapper);
     const menu = Menu.createMenu('menu modal-menu', render);
     let userBtn;
 
