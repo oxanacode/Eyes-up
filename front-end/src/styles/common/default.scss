@@ -170,3 +170,16 @@
     left: 0;
   }
 }
+
+.hidden {
+  display: none;
+}
+
+.error-block {
+  @include font-main;
+
+  @include mobile {
+    @include font-main-small;
+  }
+}
+
