@@ -2,6 +2,7 @@
   @include default-modal;
   @include default-wrapper;
   flex-direction: column;
+  row-gap: 1rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

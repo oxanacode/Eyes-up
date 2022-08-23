@@ -313,24 +313,26 @@
   &::after {
     content: '';
     position: absolute;
-    background: $bg-home-bg-blur-2 no-repeat center / contain;
+    background: $bg-home-bg-blur-3 no-repeat center / contain;
     width: 90rem;
-    height: 90rem;
+    height: 45rem;
     transition: $transition-time;
     right: -35rem;
-    bottom: -70rem;
+    bottom: -25rem;
     z-index: 1;
 
     @include tablet {
+      background: $bg-home-bg-blur-2 no-repeat center / contain;
       width: 60rem;
       height: 60rem;
-      right: -20rem;
-      bottom: -40rem;
+      right: -10rem;
+      bottom: -20rem;
     }
 
     @include mobile {
-      width: 20rem;
-      height: 20rem;
+      width: 40rem;
+      height: 40rem;
+      bottom: -10rem;
     }
   }
 }
