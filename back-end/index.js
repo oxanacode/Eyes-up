@@ -5,6 +5,12 @@ const mongoose = require('mongoose');
 const db = mongoose.connection;
 const routerV1 = require('./routers/v1');
 const app = express();
+const cors = require('cors');
+app.use(
+  cors({
+    origin: 'http://localhost:8080',
+  })
+);
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
