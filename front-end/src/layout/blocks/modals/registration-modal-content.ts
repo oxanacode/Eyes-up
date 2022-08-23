@@ -8,13 +8,14 @@ import { Tag } from '../../../types/enums';
 
 class RegistrationModalContent {
   public static createRegistrationModalContent(
+    className: string,
     titleName: string,
     actionBtn: HTMLElement,
     switchBtnText: string,
     switchBtnAction: string
   ): HTMLElement {
     const content = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'registration-modal-content' },
+      { name: 'class', value: className },
     ]);
     const title = MainTitle.createMainTitle(titleName);
     const inputsWrapper = CreateElement.createElement(Tag.div, [

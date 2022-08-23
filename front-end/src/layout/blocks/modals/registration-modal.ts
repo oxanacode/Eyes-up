@@ -23,6 +23,7 @@ class RegistrationModal {
     );
     const signUpContent =
       RegistrationModalContent.createRegistrationModalContent(
+        'registration-modal-content',
         translation.modalSignUpTitle[State.currentLang],
         SignUpBtn.createSignUpBtn(render),
         translation.modalSignUpText[State.currentLang],
@@ -30,13 +31,13 @@ class RegistrationModal {
       );
     const logInContent =
       RegistrationModalContent.createRegistrationModalContent(
+        'registration-modal-content hidden',
         translation.modalLogInTitle[State.currentLang],
         LogInBtn.createLogInBtn(render),
         translation.modalLogInText[State.currentLang],
         translation.modalLogInLink[State.currentLang]
       );
 
-    logInContent.classList.add('hidden');
     modal.append(closeBtn, signUpContent, logInContent);
 
     return modal;
