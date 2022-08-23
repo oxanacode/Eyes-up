@@ -14,7 +14,6 @@ class SignUpBtn {
 
     btn.textContent = translation.modalSignUpTitle[State.currentLang];
     btn.addEventListener('click', () => {
-      // заглушка для логики регистрации
       if (ManageUser.checkIfUserAuthorized()) {
         render();
       }

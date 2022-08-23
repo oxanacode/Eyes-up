@@ -44,3 +44,7 @@ export interface CurrentState {
   currentLayout: Layout;
   currentComplexity: Complexity | undefined;
 }
+
+export interface RegExpPattern {
+  [key: string]: string;
+}
