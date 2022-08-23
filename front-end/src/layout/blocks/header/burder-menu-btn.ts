@@ -1,5 +1,5 @@
 import CreateElement from '../../elements/create-element';
-import OpenModal from '../../../scripts/layout/open-modal';
+import ManageModal from '../../../scripts/layout/manage-modal';
 import BurgerMenu from '../modals/burger-menu';
 import ModalWrapper from '../modals/modal-wrapper';
 
@@ -13,7 +13,7 @@ class BurgerMenuBtn {
     ]);
 
     btn.addEventListener('click', () => {
-      OpenModal.openModal(
+      ManageModal.openModal(
         ModalWrapper.createModalWrapper(BurgerMenu.createBurgerMenu, render)
       );
     });

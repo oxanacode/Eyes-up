@@ -2,9 +2,11 @@ import CreateElement from '../../elements/create-element';
 import Menu from './menu';
 import ThemeBtn from './theme-btn';
 import LangBtn from './lang-btn';
-import UserBtn from './user-btn';
 import BurgerMenuBtn from './burder-menu-btn';
 import AppBtn from './app-btn';
+import ManageUser from '../../../scripts/profile/manage-user';
+import ProfileBtn from './profile-btn';
+import RegistrationBtn from './registration-btn';
 
 import { Page, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -30,9 +32,17 @@ class Header {
     ]);
     const themeBtn = ThemeBtn.createThemeBtn();
     const langBtn = LangBtn.createLangBtn(render);
-    const userBtn = UserBtn.getUserBtn('header-user-btn');
+    let userBtn;
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
+    if (ManageUser.checkIfUserAuthorized()) {
+      // заменить на createHeaderProfileBtn
+      userBtn = ProfileBtn.createProfileBtn();
+    } else {
+      userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);
+    }
+
+    userBtn.classList.add('header-user-btn');
     themeLangWrapper.append(themeBtn, langBtn);
     controlsWrapper.append(themeLangWrapper, userBtn, burgerBtn);
     menuWrapper.append(logo, menu);

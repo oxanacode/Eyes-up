@@ -23,6 +23,6 @@ export type LessonData = Pick<
 export type RenderHandler = () => void;
 
 export type ModalHandler = (
-  modalWrapper: HTMLElement,
+  wrapper: HTMLElement,
   renderHandler: RenderHandler
 ) => HTMLElement;
