@@ -1,6 +1,6 @@
 import CreateElement from '../../elements/create-element';
 import SwitchPage from '../../../scripts/layout/switch-page';
-import ChosenLessons from './chosen-lessons';
+import State from '../../../scripts/state/state';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Complexity, Page } from '../../../types/enums';
@@ -15,13 +15,16 @@ class FilterBtn {
       { name: 'class', value: 'filter-btn' },
     ]);
 
-    if (complexity) button.classList.add(complexity);
-    else button.classList.add('all');
+    if (complexity) button.classList.add(`filter-btn-${complexity}`);
+    else button.classList.add('filter-btn-all');
+
+    if (State.currentComplexity === complexity)
+      button.classList.add('active-filter');
 
     button.textContent = text;
     button.addEventListener('click', () => {
-      if (complexity) ChosenLessons.complexity = complexity;
-      else ChosenLessons.complexity = undefined;
+      if (complexity) State.currentComplexity = complexity;
+      else State.currentComplexity = undefined;
 
       SwitchPage.applyPage(Page.lessons, render);
     });

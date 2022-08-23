@@ -73,7 +73,7 @@
 
   @include mobile {
     height: 60rem;
-    margin: 0 3rem 7rem;
+    margin: 0 1.6rem 7rem;
   }
 
   &::before,
@@ -153,6 +153,7 @@
   color: $c-subtitle;
 
   @include tablet {
+    margin: 2rem auto 0;
     text-align: center;
   }
 
@@ -282,12 +283,6 @@
   }
 }
 
-.home-registration {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .home-text-registration {
   @include font-subtitle-mobile;
   color: $c-subtitle;
@@ -297,12 +292,23 @@
 
   @include mobile {
     @include font-main-small;
-    max-width: 28.8rem
   }
 }
 
 .home-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  margin: 5rem 8rem 5rem;
+
+  @include tablet {
+    margin: 5rem 5rem 5rem;
+  }
+
+  @include mobile {
+    margin: 5rem 1.6rem 2rem;
+  }
 
   &::after {
     content: '';

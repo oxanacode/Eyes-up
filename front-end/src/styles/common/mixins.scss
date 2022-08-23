@@ -63,6 +63,7 @@
 
 @mixin font-main {
   font-size: 1.6rem;
+  font-weight: $fw-regular;
 }
 
 @mixin font-main-small {

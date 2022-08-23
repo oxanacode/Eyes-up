@@ -41,4 +41,6 @@ export interface CurrentState {
   currentPage: Page;
   currentLang: Lang;
   currentTheme: Theme;
+  currentLayout: Layout;
+  currentComplexity: Complexity | undefined;
 }

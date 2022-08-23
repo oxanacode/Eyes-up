@@ -1,0 +1,173 @@
+.lessons {
+  display: grid;
+  grid-template-columns: minmax(min-content, 110rem);
+  row-gap: 6rem;
+  max-width: 110rem;
+  padding: 0 8rem;
+  margin: 6rem auto 5rem;
+
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+
+  @include tablet {
+    row-gap: 4rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+    row-gap: 2rem;
+  }
+}
+
+.lessons-top {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include tablet {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+}
+
+.lessons-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  @include tablet {
+    justify-content: center;
+  }
+}
+
+.filter-btn {
+  height: 5rem;
+  padding: 0 3rem;
+  @include font-main;
+  color: $c-menu-inactive-link;
+  border-radius: $small-border-radius;
+
+  &:hover {
+    color: $c-main-text;
+  }
+}
+
+.filter-btn-all {
+  border: 0.2rem solid $c-filter-all;
+
+  &.active-filter {
+    background-color: $c-filter-all;
+  }
+}
+
+.filter-btn-basic {
+  border: 0.2rem solid $c-filter-basic;
+
+  &.active-filter {
+    background-color: $c-filter-basic;
+  }
+}
+
+.filter-btn-intermediate{
+  border: 0.2rem solid $c-filter-intermediate;
+
+  &.active-filter {
+    background-color: $c-filter-intermediate;
+  }
+}
+
+.filter-btn-advanced {
+  border: 0.2rem solid $c-filter-advanced;
+
+  &.active-filter {
+    background-color: $c-filter-advanced;
+  }
+}
+
+.active-filter {
+  color: $c-main-text;
+}
+
+.lessons-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 1rem;
+  row-gap: 2rem;
+
+  @include tablet {
+    justify-content: center;
+  }
+}
+
+.lesson-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 18rem;
+  height: 18rem;
+  border-radius: $big-border-radius;
+  border: 0.2rem solid $c-accent;
+  overflow: hidden;
+
+  @include mobile {
+    height: 7rem;
+  }
+}
+
+.lesson-btn-top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.lesson-btn-index {
+  @include font-main;
+  color: $c-main-text;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 0 0 $big-border-radius 0;
+}
+
+.lesson-index-basic {
+  background-color: $c-filter-basic;
+}
+
+.lesson-index-intermediate {
+  background-color: $c-filter-intermediate;
+}
+
+.lesson-index-advanced {
+  background-color: $c-filter-advanced;
+}
+
+.lesson-btn-bg {
+  flex-grow: 1;
+  width: 100%;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+.lesson-bg-basic {
+  background: $bg-lessons-easy no-repeat center / contain;
+}
+
+.lesson-bg-intermediate {
+  background: $bg-lessons-medium no-repeat center / contain;
+}
+
+.lesson-bg-advanced {
+  background: $bg-lessons-hard no-repeat center / contain;
+}
+
+.lesson-btn-title {
+  @include font-main;
+  color: $c-main-text;
+  width: 100%;
+  line-height: 3rem;
+  background-color: $c-block-bg;
+}

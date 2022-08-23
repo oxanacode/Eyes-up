@@ -231,6 +231,10 @@ const translation = {
     en: 'Delete Account',
     ru: 'Удалить аккаунт',
   },
+  backBtn: {
+    en: 'Back',
+    ru: 'Назад',
+  },
 };
 
 export default translation;

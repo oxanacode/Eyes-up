@@ -8,6 +8,7 @@ import { Lesson } from '../../../types/interfaces';
 class LessonBtn {
   public static createLessonBtn(
     lesson: Lesson,
+    index: number,
     render: RenderHandler
   ): HTMLElement {
     const lessonBtn = CreateElement.createElement(Tag.btn, [
@@ -17,7 +18,10 @@ class LessonBtn {
       { name: 'class', value: 'lesson-btn-top' },
     ]);
     const lessonIndex = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'lesson-btn-index' },
+      {
+        name: 'class',
+        value: `lesson-btn-index lesson-index-${lesson.complexity}`,
+      },
     ]);
     const lessonStars = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'lesson-btn-stars' },
@@ -30,6 +34,7 @@ class LessonBtn {
       { name: 'class', value: 'lesson-btn-title' },
     ]);
 
+    lessonIndex.textContent = `${index + 1}`;
     lessonTitle.textContent = lesson.title;
     lessonTop.append(lessonIndex, lessonStars);
     lessonBtn.append(lessonTop, lessonImg, lessonTitle);

@@ -3,8 +3,12 @@
   flex-direction: column;
   row-gap: 3rem;
   max-width: 110rem;
-  padding: 0 5rem;
+  padding: 0 8rem;
   margin: 0 auto 4rem;
+
+  @include desktop-small {
+    padding: 0 5rem;
+  }
 
   @include mobile {
     padding: 0 1.6rem;

@@ -14,7 +14,9 @@ class AllLessonsList {
     ]);
 
     lessonsList.append(
-      ...data.map((lesson) => LessonBtn.createLessonBtn(lesson, render))
+      ...data.map((lesson, index) =>
+        LessonBtn.createLessonBtn(lesson, index, render)
+      )
     );
 
     return lessonsList;

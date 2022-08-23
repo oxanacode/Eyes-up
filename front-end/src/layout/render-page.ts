@@ -13,9 +13,9 @@ import { Page } from '../types/enums';
 
 class RenderPage {
   public static renderInteractivePage(): void {
-    // const page = ManagePage.getPage();
-    // const main = CreateMain
-    // page.append(main);
+    const page = ManagePage.getPage();
+    const main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    page.append(main);
   }
 
   public static renderStaticPage(): void {
@@ -27,9 +27,6 @@ class RenderPage {
     switch (State.currentPage) {
       case Page.layout:
         main = LayoutMain.createLayoutMain(RenderPage.renderPage);
-        break;
-      case Page.lessons:
-        main = LessonsMain.createLessonsMain(RenderPage.renderPage);
         break;
       case Page.games:
         main = GamesMain.createGamesMain(RenderPage.renderPage);
@@ -46,7 +43,11 @@ class RenderPage {
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
 
-    if (State.currentPage === Page.lesson || State.currentPage === Page.game) {
+    if (
+      State.currentPage === Page.lesson ||
+      State.currentPage === Page.game ||
+      State.currentPage === Page.lessons
+    ) {
       RenderPage.renderInteractivePage();
     } else {
       RenderPage.renderStaticPage();
