@@ -3,7 +3,6 @@ html {
   font-size: 10px;
   font-weight: $fw-regular;
   box-sizing: border-box;
-  overflow-y: scroll;
 }
 
 * {
@@ -15,6 +14,10 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+}
+
+button {
+  @include interaction-effects;
 }
 
 button,

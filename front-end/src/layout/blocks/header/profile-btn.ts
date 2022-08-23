@@ -10,9 +10,26 @@ class ProfileBtn {
     ]);
 
     btn.style.backgroundImage = `./assets/images/avatars/avatar-${State.currentUser.avatar}.png`;
-    btn.addEventListener('click', () => {
-      console.log('пользовательский профиль');
-    });
+
+    return btn;
+  }
+
+  public static createHeaderProfileBtn(): HTMLElement {
+    const btn = ProfileBtn.createProfileBtn();
+
+    // btn.addEventListener('click', () => {
+    //   console.log('профиль');
+    // });
+
+    return btn;
+  }
+
+  public static createBurgerMenuProfileBtn(): HTMLElement {
+    const btn = ProfileBtn.createProfileBtn();
+
+    // btn.addEventListener('click', () => {
+    //   console.log('профиль');
+    // });
 
     return btn;
   }

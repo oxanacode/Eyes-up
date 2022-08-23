@@ -1,8 +1,8 @@
 import State from '../state/state';
 import ManagePage from './manage-page';
+import ManageState from '../state/manage-state';
 
 import { Theme } from '../../types/enums';
-import ManageState from '../state/manage-state';
 
 class SwitchTheme {
   public static changeTheme(): void {

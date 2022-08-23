@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   background-color: $c-body-bg;
-  overflow: hidden;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
 .small-btn {
   @include font-main;
-  @include interaction-effects;
   @include small-btn-bg;
   display: block;
   width: 4rem;
