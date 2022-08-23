@@ -74,7 +74,7 @@ class ApiService {
     const response = await fetch(
       `${ApiService.url}${Endpoint.lessons}?${ApiService.getLessonsQuery(
         query
-      )}}`
+      )}`
     );
     const data: Promise<LessonsList> = await response.json();
 

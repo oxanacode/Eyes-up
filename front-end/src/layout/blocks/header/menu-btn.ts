@@ -15,7 +15,10 @@ class MenuBtn {
       { name: 'class', value: 'menu-btn' },
     ]);
 
-    if (State.currentPage === page) {
+    if (
+      State.currentPage === page ||
+      (State.currentPage === Page.lessons && page === Page.layout)
+    ) {
       btn.classList.add('menu-btn-active');
     }
 

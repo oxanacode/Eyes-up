@@ -10,7 +10,7 @@ class SwitchPage {
   }
 
   public static applyPage(page: Page, render: RenderHandler): void {
-    if (State.currentPage !== page) {
+    if (State.currentPage !== page || State.currentPage === Page.lessons) {
       SwitchPage.changePage(page);
       ManageState.saveState();
       render();

@@ -104,7 +104,7 @@ const translation = {
     ru: 'Английская раскладка',
   },
   lessonsRuLayoutTitle: {
-    en: 'English Layout',
+    en: 'Russian Layout',
     ru: 'Русская раскладка',
   },
   lessonsTestTitle: {

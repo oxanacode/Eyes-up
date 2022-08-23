@@ -7,6 +7,7 @@ import HomeMain from './blocks/home/home-main';
 import LayoutMain from './blocks/lessons/lessons-layout-main';
 import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
+import LessonsMain from './blocks/lessons/lessons-main';
 
 import { Page } from '../types/enums';
 
@@ -26,6 +27,9 @@ class RenderPage {
     switch (State.currentPage) {
       case Page.layout:
         main = LayoutMain.createLayoutMain(RenderPage.renderPage);
+        break;
+      case Page.lessons:
+        main = LessonsMain.createLessonsMain(RenderPage.renderPage);
         break;
       case Page.games:
         main = GamesMain.createGamesMain(RenderPage.renderPage);

@@ -9,7 +9,7 @@ import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
 
 class HomeMain {
-  public static createHomeMain(render: RenderHandler) {
+  public static createHomeMain(render: RenderHandler): HTMLElement {
     const main = CreateElement.createElement(Tag.main, [
       { name: 'class', value: 'home' },
     ]);

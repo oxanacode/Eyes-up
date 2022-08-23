@@ -1,26 +1,24 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import ChangePageBtn from '../../elements/change-page-btn';
+import GameSectionBtn from './game-section-btn';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page, Game, Btn } from '../../../types/enums';
+import { Tag, Game } from '../../../types/enums';
 
 class GameSection {
   public static createGameSection(
     className: string,
     gameName: Game.one | Game.two,
     render: RenderHandler
-  ) {
+  ): HTMLElement {
     const gameSection = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'game' },
     ]);
-    const gameBtn = ChangePageBtn.createChangePageBtn(
-      Btn.section,
+    const gameBtn = GameSectionBtn.createGameSectionBtn(
+      className,
       translation[`${gameName}Title`][State.currentLang],
-      Page.games, // ---------------- Change to 'game'
-      render,
-      className
+      render
     );
     const descSection = CreateElement.createElement(Tag.section, [
       { name: 'class', value: 'game-desc' },
