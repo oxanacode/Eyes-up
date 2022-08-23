@@ -1,0 +1,86 @@
+.registration-modal {
+  @include default-modal;
+  @include default-wrapper;
+  flex-direction: column;
+  row-gap: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40rem;
+  text-align: center;
+  padding: 1.2rem;
+  border-radius: $big-border-radius;
+
+  @include mobile {
+    width: 32rem;
+  }
+}
+
+.registration-close-btn {
+  align-self: end;
+  margin-bottom: 0.6rem;
+}
+
+.registration-modal-content {
+  width: 100%;
+}
+
+.registration-inputs-wrapper {
+  padding: 3rem 6.8rem 2rem;
+
+  @include mobile {
+    padding: 3rem 2.8rem 2rem;
+  }
+}
+
+.registration-input-label {
+  position: relative;
+  display: block;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.registration-input {
+  @include default-input;
+  width: 100%;
+  height: 4rem;
+  margin-top: 0.2rem;
+}
+
+.password-visibility-btn {
+  @include small-btn-bg;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.password-close {
+  background-image: $bg-modal-password-closed;
+}
+
+.password-open {
+  background-image: $bg-modal-password-open;
+}
+
+.registration-switch-btn {
+  display: block;
+  margin: 4rem auto 2.8rem;
+
+  &:hover .registration-switch-action {
+    color: $c-main-text;
+  }
+}
+
+.registration-switch-text {
+  @include font-main-small;
+  color: $c-main-text;
+  margin-bottom: 1rem;
+}
+
+.registration-switch-action {
+  @include interaction-effects;
+  @include font-subtitle-mobile;
+  color: $c-menu-inactive-link;
+}

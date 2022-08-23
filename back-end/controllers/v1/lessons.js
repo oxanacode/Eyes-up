@@ -3,9 +3,9 @@ const lessonModel = require('../../models/lesson');
 exports.getLessons = async (req, res) => {
   try {
     const query = req.query.complexity
-      ? { language: req.query.language, complexity: req.query.complexity }
-      : { language: req.query.language };
-    const dataToFind = await lessonModel.find(query);
+      ? { layout: req.query.layout, complexity: req.query.complexity }
+      : { layout: req.query.layout };
+    const dataToFind = await lessonModel.find(query).sort({"index": 1});
 
     res.json(dataToFind);
   } catch (error) {

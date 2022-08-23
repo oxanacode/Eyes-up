@@ -73,7 +73,7 @@
 
   @include mobile {
     height: 60rem;
-    margin: 0 3rem 7rem;
+    margin: 0 1.6rem 7rem;
   }
 
   &::before,
@@ -153,6 +153,7 @@
   color: $c-subtitle;
 
   @include tablet {
+    margin: 2rem auto 0;
     text-align: center;
   }
 
@@ -282,12 +283,6 @@
   }
 }
 
-.home-registration {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 .home-text-registration {
   @include font-subtitle-mobile;
   color: $c-subtitle;
@@ -297,34 +292,47 @@
 
   @include mobile {
     @include font-main-small;
-    max-width: 28.8rem
   }
 }
 
 .home-registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  margin: 5rem 8rem 5rem;
+
+  @include tablet {
+    margin: 5rem 5rem 5rem;
+  }
+
+  @include mobile {
+    margin: 5rem 1.6rem 2rem;
+  }
 
   &::after {
     content: '';
     position: absolute;
-    background: $bg-home-bg-blur-2 no-repeat center / contain;
+    background: $bg-home-bg-blur-3 no-repeat center / contain;
     width: 90rem;
-    height: 90rem;
+    height: 45rem;
     transition: $transition-time;
     right: -35rem;
-    bottom: -70rem;
+    bottom: -25rem;
     z-index: 1;
 
     @include tablet {
+      background: $bg-home-bg-blur-2 no-repeat center / contain;
       width: 60rem;
       height: 60rem;
-      right: -20rem;
-      bottom: -40rem;
+      right: -10rem;
+      bottom: -20rem;
     }
 
     @include mobile {
-      width: 20rem;
-      height: 20rem;
+      width: 40rem;
+      height: 40rem;
+      bottom: -10rem;
     }
   }
 }

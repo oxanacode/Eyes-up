@@ -9,7 +9,7 @@ import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
 
 class HomeMain {
-  public static createHomeMain(render: RenderHandler) {
+  public static createHomeMain(render: RenderHandler): HTMLElement {
     const main = CreateElement.createElement(Tag.main, [
       { name: 'class', value: 'home' },
     ]);
@@ -29,7 +29,7 @@ class HomeMain {
       translation.homeProgressTitle[State.currentLang],
       translation.homeProgressText[State.currentLang]
     );
-    const registration = HomeRegistration.createHomeRegistration();
+    const registration = HomeRegistration.createHomeRegistration(render);
     const wrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'home-wrapper' },
     ]);

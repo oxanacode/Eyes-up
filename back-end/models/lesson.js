@@ -1,11 +1,15 @@
 const mongoose = require('mongoose');
 
 const lessonSchema = new mongoose.Schema({
-  language: {
+  layout: {
     type: String,
     required: true
   },
-  name: {
+  index: {
+    type: Number,
+    required: true
+  },
+  title: {
     type: String,
     required: true
   },
@@ -13,7 +17,19 @@ const lessonSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-  text: {
+  minAccuracy: {
+    type: Number,
+    required: true
+  },
+  minSpeed: {
+    type: Number,
+    required: true
+  },
+  starSpeed: {
+    type: Number,
+    required: true
+  },
+  content: {
     type: String,
     required: true
   }

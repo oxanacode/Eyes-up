@@ -7,14 +7,15 @@ import HomeMain from './blocks/home/home-main';
 import LayoutMain from './blocks/lessons/lessons-layout-main';
 import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
+import LessonsMain from './blocks/lessons/lessons-main';
 
 import { Page } from '../types/enums';
 
 class RenderPage {
   public static renderInteractivePage(): void {
-    // const page = ManagePage.getPage();
-    // const main = CreateMain
-    // page.append(main);
+    const page = ManagePage.getPage();
+    const main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    page.append(main);
   }
 
   public static renderStaticPage(): void {
@@ -42,7 +43,11 @@ class RenderPage {
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
 
-    if (State.currentPage === Page.lesson || State.currentPage === Page.game) {
+    if (
+      State.currentPage === Page.lesson ||
+      State.currentPage === Page.game ||
+      State.currentPage === Page.lessons
+    ) {
       RenderPage.renderInteractivePage();
     } else {
       RenderPage.renderStaticPage();

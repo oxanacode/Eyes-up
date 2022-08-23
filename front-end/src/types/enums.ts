@@ -63,12 +63,12 @@ export enum Complexity {
   hard = 'advanced',
 }
 
+export enum Layout {
+  ru = 'ru',
+  en = 'en',
+}
+
 export enum Game {
   one = 'gameOne',
   two = 'gameTwo',
-}
-
-export enum Btn {
-  big = 'big',
-  section = 'section',
 }

@@ -3,12 +3,12 @@
   display: flex;
   flex-direction: column;
   background-color: $c-body-bg;
-  overflow-x: hidden;
-  margin-right: calc(-1 * (100vw - 100%));
+  overflow: hidden;
 }
 
 .small-btn {
   @include font-main;
+  @include interaction-effects;
   @include small-btn-bg;
   display: block;
   width: 4rem;
@@ -43,10 +43,6 @@
 .overlay {
   height: 100vh;
   background: $c-bg-modal-overlay;
-}
-
-.not-scrollable {
-  overflow: hidden;
 }
 
 .big-btn {
@@ -85,6 +81,7 @@
   text-align: left;
 
   @include tablet {
+    padding: 0 2rem;
     text-align: center;
   }
 
@@ -114,6 +111,7 @@
 
 .section-btn {
   flex-grow: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -145,3 +143,39 @@
     padding: 5rem;
   }
 }
+
+.back-btn {
+  position: relative;
+  @include font-main;
+  color: $c-menu-inactive-link;
+  margin-right: auto;
+  cursor: pointer;
+  line-height: 2.4rem;
+  padding-left: 3.4rem;
+
+  &:hover {
+    color: $c-main-text;
+  }
+
+  &::before {
+    position: absolute;
+    content: '';
+    background: $bg-icon-back no-repeat center;
+    height: 2.4rem;
+    width: 2.4rem;
+    left: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.error-block {
+  @include font-main;
+
+  @include mobile {
+    @include font-main-small;
+  }
+}
+

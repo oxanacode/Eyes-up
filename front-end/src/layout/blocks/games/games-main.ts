@@ -8,7 +8,7 @@ import { RenderHandler } from '../../../types/types';
 import { Tag, Game } from '../../../types/enums';
 
 class GamesMain {
-  public static createGamesMain(render: RenderHandler) {
+  public static createGamesMain(render: RenderHandler): HTMLElement {
     const main = CreateElement.createElement(Tag.main, [
       { name: 'class', value: 'games' },
     ]);

@@ -11,11 +11,11 @@ class ApiService {
   private static url = 'http://127.0.0.1:3000/api/v1';
 
   private static getLessonsQuery(query: Query): string {
-    if (query.language && query.complexity) {
-      return `language=${query.language}&complexity=${query.complexity}`;
+    if (query.layout && query.complexity) {
+      return `layout=${query.layout}&complexity=${query.complexity}`;
     }
 
-    return `language=${query.language}`;
+    return `layout=${query.layout}`;
   }
 
   public static async getUsers(): Promise<UsersList> {
@@ -74,7 +74,7 @@ class ApiService {
     const response = await fetch(
       `${ApiService.url}${Endpoint.lessons}?${ApiService.getLessonsQuery(
         query
-      )}}`
+      )}`
     );
     const data: Promise<LessonsList> = await response.json();
 

@@ -4,14 +4,10 @@ class ManageModal {
   public static openModal(modalToOpen: HTMLElement): void {
     const page = ManagePage.getPage();
 
-    page.classList.add('not-scrollable');
     page.append(modalToOpen);
   }
 
   public static closeModal(modalToClose: HTMLElement): void {
-    const page = ManagePage.getPage();
-
-    page.classList.remove('not-scrollable');
     modalToClose.remove();
   }
 

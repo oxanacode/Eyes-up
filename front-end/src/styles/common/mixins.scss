@@ -63,6 +63,7 @@
 
 @mixin font-main {
   font-size: 1.6rem;
+  font-weight: $fw-regular;
 }
 
 @mixin font-main-small {
@@ -96,4 +97,19 @@
 
 @mixin font-subtitle-mobile {
   font-size: 2rem;
+}
+
+@mixin default-input {
+  @include font-main-small;
+  display: block;
+  color: $c-main-text;
+  padding: 1rem;
+  border: 0.1rem solid $c-accent;
+  border-radius: $small-border-radius;
+}
+
+@mixin default-modal {
+  position: absolute;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
 }

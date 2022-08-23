@@ -10,7 +10,14 @@ export type UserData = Pick<User, 'login' | 'password'>;
 
 export type LessonData = Pick<
   Lesson,
-  'language' | 'name' | 'complexity' | 'text'
+  | 'layout'
+  | 'index'
+  | 'title'
+  | 'complexity'
+  | 'minAccuracy'
+  | 'minSpeed'
+  | 'starSpeed'
+  | 'content'
 >;
 
 export type RenderHandler = () => void;

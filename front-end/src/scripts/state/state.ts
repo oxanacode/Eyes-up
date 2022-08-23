@@ -1,4 +1,4 @@
-import { Lang, Page, Theme } from '../../types/enums';
+import { Complexity, Lang, Layout, Page, Theme } from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
 class State {
@@ -16,6 +16,10 @@ class State {
   public static currentLang = Lang.en;
 
   public static currentTheme = Theme.light;
+
+  public static currentLayout: Layout;
+
+  public static currentComplexity: Complexity | undefined;
 }
 
 export default State;
