@@ -2,7 +2,10 @@ const testModel = require('../../models/test');
 
 exports.getTest = async (req, res) => {
   try {
-    const dataToFind = await testModel.aggregate([{$sample:{size:1}}]);
+    const dataToFind = await testModel.aggregate([
+      { $match: { 'language' : req.query.language } },
+      { $sample: { size:1 } }
+    ]);
 
     res.json(dataToFind);
   } catch (error) {
@@ -12,8 +15,8 @@ exports.getTest = async (req, res) => {
 
 exports.addTest = async (req, res) => {
   const data = new testModel({
-    en: req.body.en,
-    ru: req.body.ru,
+    language: req.body.language,
+    text: req.body.text,
   });
 
   try {

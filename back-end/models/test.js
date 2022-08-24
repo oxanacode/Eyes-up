@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 
 const testSchema = new mongoose.Schema({
-  en: {
+  language: {
     type: String,
     required: true
   },
-  ru: {
+  text: {
     type: String,
     required: true
   }
