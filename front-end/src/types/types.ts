@@ -26,3 +26,10 @@ export type ModalHandler = (
   wrapper: HTMLElement,
   renderHandler: RenderHandler
 ) => HTMLElement;
+
+export type ActionHandler = (
+  loginInput: HTMLInputElement,
+  passwordInput: HTMLInputElement,
+  errorBlock: HTMLElement,
+  render: RenderHandler
+) => HTMLElement;

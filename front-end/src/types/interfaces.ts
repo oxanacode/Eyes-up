@@ -48,3 +48,12 @@ export interface CurrentState {
 export interface RegExpPattern {
   [key: string]: string;
 }
+
+export interface TranslationOption {
+  en: string;
+  ru: string;
+}
+
+export interface Translation {
+  [key: string]: TranslationOption;
+}

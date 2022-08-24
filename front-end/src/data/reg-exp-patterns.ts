@@ -9,8 +9,6 @@ export const passwordPattern: RegExpPattern = {
 
 export const loginPattern: RegExpPattern = {
   numeric: '0-9',
-  latinLower: 'a-z',
-  latinUpper: 'A-Z',
-  cyrillicLower: 'а-яё',
-  cyrillicUpper: 'А-ЯЁ',
+  latin: 'a-z',
+  cyrillic: 'а-яё',
 };

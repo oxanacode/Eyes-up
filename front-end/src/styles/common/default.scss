@@ -171,11 +171,10 @@
   display: none;
 }
 
-.error-block {
+.error-text {
   @include font-main;
 
   @include mobile {
     @include font-main-small;
   }
 }
-

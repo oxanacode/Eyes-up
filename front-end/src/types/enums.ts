@@ -72,3 +72,18 @@ export enum Game {
   one = 'gameOne',
   two = 'gameTwo',
 }
+
+export enum ErrorType {
+  noLogin = 'noLogin',
+  noPassword = 'noPassword',
+  incorrectLogin = 'incorrentLogin',
+  incorrectPassword = 'incorrectPassword',
+  existingLogin = 'existingLogin',
+  notRegistered = 'notRegistered',
+  notMatchingPassword = 'notMatchingPassword',
+}
+
+export enum ErrorSource {
+  registration = 'registration',
+  authorisation = 'authorisation',
+}

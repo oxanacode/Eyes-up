@@ -4,10 +4,10 @@ import SignUpBtn from './sign-up-btn';
 import LogInBtn from './log-in-btn';
 import RegistrationModalContent from './registration-modal-content';
 import translation from '../../../data/translation';
+import CloseBtn from './close-btn';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
-import CloseBtn from './close-btn';
 
 class RegistrationModal {
   public static createRegistrationModal(
@@ -25,17 +25,19 @@ class RegistrationModal {
       RegistrationModalContent.createRegistrationModalContent(
         'registration-modal-content',
         translation.modalSignUpTitle[State.currentLang],
-        SignUpBtn.createSignUpBtn(render),
         translation.modalSignUpText[State.currentLang],
-        translation.modalSignUpLink[State.currentLang]
+        translation.modalSignUpLink[State.currentLang],
+        SignUpBtn.createSignUpBtn,
+        render
       );
     const logInContent =
       RegistrationModalContent.createRegistrationModalContent(
         'registration-modal-content hidden',
         translation.modalLogInTitle[State.currentLang],
-        LogInBtn.createLogInBtn(render),
         translation.modalLogInText[State.currentLang],
-        translation.modalLogInLink[State.currentLang]
+        translation.modalLogInLink[State.currentLang],
+        LogInBtn.createLogInBtn,
+        render
       );
 
     modal.append(closeBtn, signUpContent, logInContent);

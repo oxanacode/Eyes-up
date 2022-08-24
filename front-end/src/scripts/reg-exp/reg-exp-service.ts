@@ -22,10 +22,10 @@ class RegExpService {
   ): RegExp {
     const range = `{${min},${max}}`;
     const rules: Array<string> = [...Object.values(pattern)];
-    const start = `^[${pattern.latinUpper}${pattern.cyrillicUpper}]`;
+    const start = `^[${pattern.latin}${pattern.cyrillic}]`;
     const regExp = `${start}[${rules.join('')}]${range}`;
 
-    return new RegExp(regExp, 'g');
+    return new RegExp(regExp, 'ig');
   }
 }
 
