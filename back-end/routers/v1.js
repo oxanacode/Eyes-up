@@ -5,6 +5,7 @@ const users = require('../controllers/v1/users');
 const user = require('../controllers/v1/user');
 const lessons = require('../controllers/v1/lessons');
 const lesson = require('../controllers/v1/lesson');
+const test = require('../controllers/v1/test');
 
 // Users
 router.get('/v1/users', users.getUsers);
@@ -23,5 +24,11 @@ router.get('/v1/lessons/:id', lesson.getLesson);
 router.post('/v1/lessons', lesson.addLesson);
 router.put('/v1/lessons/:id', lesson.updateLesson);
 router.delete('/v1/lessons/:id', lesson.deleteLesson);
+
+// Test
+router.get('/v1/test', test.getTest);
+router.post('/v1/test', test.addTest);
+router.put('/v1/test/:id', test.updateTest);
+router.delete('/v1/test/:id', test.deleteTest);
 
 module.exports = router;
