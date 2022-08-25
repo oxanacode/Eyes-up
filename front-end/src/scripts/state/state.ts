@@ -1,14 +1,21 @@
-import { Complexity, Lang, Layout, Page, Theme } from '../../types/enums';
+import {
+  Avatar,
+  Complexity,
+  Lang,
+  Layout,
+  Page,
+  Theme,
+} from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
 class State {
-  public static noLogin = 'noLogin';
+  public static notAuthorised = 'login';
 
-  public static noAvatar = 0;
+  public static defaultAvatar: Avatar = Avatar.one;
 
   public static currentUser: CurrentUser = {
-    login: State.noLogin,
-    avatar: State.noAvatar,
+    login: State.notAuthorised,
+    avatar: State.defaultAvatar,
   };
 
   public static currentPage = Page.home;

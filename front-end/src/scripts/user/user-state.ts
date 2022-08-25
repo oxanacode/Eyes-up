@@ -2,7 +2,7 @@ import State from '../state/state';
 
 class UserState {
   public static checkIfUserAuthorized(): boolean {
-    if (State.currentUser.login === State.noLogin) {
+    if (State.currentUser.login === State.notAuthorised) {
       return false;
     }
 
@@ -19,8 +19,8 @@ class UserState {
   }
 
   public static resetUserState(): void {
-    State.currentUser.login = State.noLogin;
-    State.currentUser.avatar = State.noAvatar;
+    State.currentUser.login = State.notAuthorised;
+    State.currentUser.avatar = State.defaultAvatar;
   }
 }
 
