@@ -1,6 +1,6 @@
 import { Translation } from '../types/interfaces';
 
-const registrationErrors: Translation = {
+const errorsTranslation: Translation = {
   noLogin: {
     en: 'Please enter login.',
     ru: 'Пожалуйста, введите логин.',
@@ -39,4 +39,4 @@ const registrationErrors: Translation = {
   },
 };
 
-export default registrationErrors;
+export default errorsTranslation;

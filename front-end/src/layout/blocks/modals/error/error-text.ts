@@ -1,6 +1,6 @@
 import CreateElement from '../../../elements/create-element';
 import State from '../../../../scripts/state/state';
-import registrationErrors from '../../../../data/registration-errors';
+import errorsTranslation from '../../../../data/errors-translation';
 
 import { ErrorType, Tag } from '../../../../types/enums';
 
@@ -10,7 +10,7 @@ class ErrorText {
       { name: 'class', value: 'error-text' },
     ]);
 
-    text.textContent = registrationErrors[errorType][State.currentLang];
+    text.textContent = errorsTranslation[errorType][State.currentLang];
 
     return text;
   }

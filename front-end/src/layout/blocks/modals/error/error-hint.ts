@@ -2,7 +2,7 @@ import CreateElement from '../../../elements/create-element';
 import ErrorHintContent from './error-hint-content';
 import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
-import registrationErrors from '../../../../data/registration-errors';
+import errorsTranslation from '../../../../data/errors-translation';
 
 import { Tag } from '../../../../types/enums';
 
@@ -13,11 +13,11 @@ class ErrorHint {
     ]);
     const loginHint = ErrorHintContent.createErrorHintContent(
       translation.modalSignUpLoginInput[State.currentLang],
-      registrationErrors.loginHint[State.currentLang]
+      errorsTranslation.loginHint[State.currentLang]
     );
     const passwordHint = ErrorHintContent.createErrorHintContent(
       translation.modalSignUpPasswordInput[State.currentLang],
-      registrationErrors.passwordHint[State.currentLang]
+      errorsTranslation.passwordHint[State.currentLang]
     );
 
     wrapper.append(loginHint, passwordHint);
