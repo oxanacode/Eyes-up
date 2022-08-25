@@ -1,15 +1,15 @@
-import CreateElement from '../../elements/create-element';
+import CreateInput from '../../elements/create-input';
 
 import { InputType, Tag } from '../../../types/enums';
 
 class PasswordInput {
   public static createPasswordInput(): HTMLInputElement {
-    const input = CreateElement.createElement(Tag.input, [
+    const input = CreateInput.createInput(Tag.input, [
       { name: 'class', value: 'registration-input' },
       { name: 'type', value: InputType.password },
     ]);
 
-    return input as HTMLInputElement;
+    return input;
   }
 }
 
