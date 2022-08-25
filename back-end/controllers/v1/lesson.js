@@ -4,9 +4,9 @@ exports.getLesson = async (req, res) => {
   try {
     const dataToFind = await lessonModel.findById(req.params.id);
 
-    res.json(dataToFind);
+    res.status(200).json(dataToFind);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -27,7 +27,7 @@ exports.addLesson = async (req, res) => {
 
     res.status(200).json(dataToSave);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -40,7 +40,7 @@ exports.updateLesson = async (req, res) => {
 
     res.status(200).json(dataToUpdate);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -50,6 +50,6 @@ exports.deleteLesson = async (req, res) => {
 
     res.status(200).json(dataToDelete);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
