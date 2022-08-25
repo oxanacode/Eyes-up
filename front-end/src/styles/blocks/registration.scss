@@ -115,11 +115,11 @@
 }
 
 .password-close {
-  background-image: $bg-modal-password-closed;
+  background-image: $bg-modal-password-open;
 }
 
 .password-open {
-  background-image: $bg-modal-password-open;
+  background-image: $bg-modal-password-closed;
 }
 
 .registration-switch-btn {
