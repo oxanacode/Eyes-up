@@ -17,7 +17,7 @@ class ErrorHintContent {
       { name: 'class', value: 'error-hint-text' },
     ]);
 
-    mark.textContent = `${markText}:`;
+    mark.textContent = `${markText}: `;
     hint.textContent = hintText;
     content.append(mark, hint);
 

@@ -9,10 +9,11 @@ class ErrorIcon {
       { name: 'class', value: 'error-icon' },
     ]);
 
-    icon.addEventListener('mouseover', () => {
+    icon.textContent = 'Error hint';
+    icon.addEventListener('mouseenter', () => {
       ManageErrorHint.showHint(errorContent);
     });
-    icon.addEventListener('mouseout', () => {
+    icon.addEventListener('mouseleave', () => {
       ManageErrorHint.hideHint(errorContent);
     });
 
