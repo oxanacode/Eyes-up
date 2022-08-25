@@ -69,7 +69,7 @@ class ManageUser {
           );
         } else if (status === StatusCode.found) {
           ApiService.getUser(login).then((user: User) => {
-            if (login !== user.login) {
+            if (password !== user.password) {
               ManageError.showError(
                 errorBlock,
                 ErrorSource.authorisation,
