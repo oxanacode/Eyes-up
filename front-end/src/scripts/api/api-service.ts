@@ -25,6 +25,14 @@ class ApiService {
     return data;
   }
 
+  public static async checkUser(login: string): Promise<number> {
+    const response = await fetch(`${ApiService.url}${Endpoint.users}/${login}`);
+
+    const data: number = await response.status;
+
+    return data;
+  }
+
   public static async getUser(login: string): Promise<User> {
     const response = await fetch(`${ApiService.url}${Endpoint.users}/${login}`);
     const data: Promise<User> = await response.json();

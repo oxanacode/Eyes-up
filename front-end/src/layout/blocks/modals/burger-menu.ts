@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import CloseBtn from './close-btn';
 import Menu from '../header/menu';
-import ManageUser from '../../../scripts/profile/manage-user';
+import UserState from '../../../scripts/user/user-state';
 import ProfileBtn from '../header/profile-btn';
 import RegistrationBtn from '../header/registration-btn';
 import RegistrationModal from './registration-modal';
@@ -21,7 +21,7 @@ class BurgerMenu {
     const menu = Menu.createMenu('menu modal-menu', render);
     let userBtn;
 
-    if (ManageUser.checkIfUserAuthorized()) {
+    if (UserState.checkIfUserAuthorized()) {
       // заменить на BurgerMenuProfileBtn
       userBtn = ProfileBtn.createProfileBtn();
     } else {

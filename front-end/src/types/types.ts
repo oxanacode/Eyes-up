@@ -6,7 +6,7 @@ export type UsersList = Array<User>;
 
 export type LessonsList = Array<Lesson>;
 
-export type UserData = Pick<User, 'login' | 'password'>;
+export type UserData = Pick<User, 'login' | 'password' | 'avatar'>;
 
 export type LessonData = Pick<
   Lesson,

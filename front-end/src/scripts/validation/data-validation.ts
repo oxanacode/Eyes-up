@@ -1,20 +1,48 @@
-import ManageError from './manage-error';
-import ManageUser from '../profile/manage-user';
+import ManageError from '../layout/manage-error';
+import RegExpService from '../reg-exp/reg-exp-service';
 
-import { ErrorSource, ErrorType } from '../../types/enums';
-import { RenderHandler } from '../../types/types';
+import {
+  ErrorSource,
+  ErrorType,
+  LoginLength,
+  PasswordLength,
+} from '../../types/enums';
+import { loginPattern, passwordPattern } from '../../data/reg-exp-patterns';
 
 class DataValidation {
-  public static checkRegistrationData(
-    loginInput: HTMLInputElement,
-    passwordInput: HTMLInputElement,
-    errorBlock: HTMLElement,
-    render: RenderHandler
-  ): boolean {
-    const login = loginInput.value.trim();
-    const password = passwordInput.value.trim();
+  public static checkIfValueNotEmpty(value: string): boolean {
+    if (value) {
+      return true;
+    }
 
-    if (!login) {
+    return false;
+  }
+
+  public static checkIfLoginValid(login: string): boolean {
+    const loginRegExp = RegExpService.createLoginRegExp(
+      loginPattern,
+      LoginLength.min,
+      LoginLength.max
+    );
+
+    return loginRegExp.test(login);
+  }
+
+  public static checkIfPasswordValid(password: string): boolean {
+    const passwordRegExp = RegExpService.createPasswordRegExp(
+      passwordPattern,
+      PasswordLength.min,
+      PasswordLength.max
+    );
+
+    return passwordRegExp.test(password);
+  }
+
+  public static checkIfLoginCorrect(
+    login: string,
+    errorBlock: HTMLElement
+  ): boolean {
+    if (!DataValidation.checkIfValueNotEmpty(login)) {
       ManageError.showError(
         errorBlock,
         ErrorSource.registration,
@@ -23,41 +51,23 @@ class DataValidation {
       return false;
     }
 
-    if (!password) {
+    if (!DataValidation.checkIfLoginValid(login)) {
       ManageError.showError(
         errorBlock,
         ErrorSource.registration,
-        ErrorType.noPassword
+        ErrorType.invalidLogin
       );
       return false;
-    }
-
-    if (ManageUser.checkIfUserAuthorized()) {
-      render();
     }
 
     return true;
   }
 
-  public static checkAuthorisationData(
-    loginInput: HTMLInputElement,
-    passwordInput: HTMLInputElement,
-    errorBlock: HTMLElement,
-    render: RenderHandler
+  public static checkIfPasswordCorrect(
+    password: string,
+    errorBlock: HTMLElement
   ): boolean {
-    const login = loginInput.value.trim();
-    const password = passwordInput.value.trim();
-
-    if (!login) {
-      ManageError.showError(
-        errorBlock,
-        ErrorSource.registration,
-        ErrorType.noLogin
-      );
-      return false;
-    }
-
-    if (!password) {
+    if (!DataValidation.checkIfValueNotEmpty(password)) {
       ManageError.showError(
         errorBlock,
         ErrorSource.registration,
@@ -66,8 +76,57 @@ class DataValidation {
       return false;
     }
 
-    if (ManageUser.checkIfUserAuthorized()) {
-      render();
+    if (!DataValidation.checkIfPasswordValid(password)) {
+      ManageError.showError(
+        errorBlock,
+        ErrorSource.registration,
+        ErrorType.invalidPassword
+      );
+      return false;
+    }
+
+    return true;
+  }
+
+  public static checkIfDataCorrect(
+    login: string,
+    password: string,
+    errorBlock: HTMLElement
+  ): boolean {
+    const passwordCorrect = DataValidation.checkIfPasswordCorrect(
+      password,
+      errorBlock
+    );
+    const loginCorrect = DataValidation.checkIfLoginCorrect(login, errorBlock);
+
+    if (passwordCorrect && loginCorrect) {
+      return true;
+    }
+
+    return false;
+  }
+
+  public static checkIfDataEntered(
+    login: string,
+    password: string,
+    errorBlock: HTMLElement
+  ): boolean {
+    if (!DataValidation.checkIfValueNotEmpty(login)) {
+      ManageError.showError(
+        errorBlock,
+        ErrorSource.authorisation,
+        ErrorType.noLogin
+      );
+      return false;
+    }
+
+    if (!DataValidation.checkIfValueNotEmpty(password)) {
+      ManageError.showError(
+        errorBlock,
+        ErrorSource.authorisation,
+        ErrorType.noPassword
+      );
+      return false;
     }
 
     return true;

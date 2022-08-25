@@ -20,10 +20,10 @@ class RegExpService {
     min: number,
     max: number
   ): RegExp {
-    const range = `{${min},${max}}`;
+    const range = `{${min - 1},${max - 1}}`;
     const rules: Array<string> = [...Object.values(pattern)];
     const start = `^[${pattern.latin}${pattern.cyrillic}]`;
-    const regExp = `${start}[${rules.join('')}]${range}`;
+    const regExp = `${start}+[${rules.join('')}]${range}`;
 
     return new RegExp(regExp, 'ig');
   }

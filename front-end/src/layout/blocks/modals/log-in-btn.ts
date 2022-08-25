@@ -1,7 +1,7 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
 import translation from '../../../data/translation';
-import DataValidation from '../../../scripts/validation/data-validation';
+import ManageUser from '../../../scripts/user/manage-user';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
@@ -19,12 +19,7 @@ class LogInBtn {
 
     btn.textContent = translation.modalLogInTitle[State.currentLang];
     btn.addEventListener('click', () => {
-      DataValidation.checkAuthorisationData(
-        loginInput,
-        passwordInput,
-        errorBlock,
-        render
-      );
+      ManageUser.authoriseUser(loginInput, passwordInput, errorBlock, render);
     });
 
     return btn;

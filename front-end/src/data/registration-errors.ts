@@ -9,11 +9,11 @@ const registrationErrors: Translation = {
     en: 'Please enter password.',
     ru: 'Пожалуйста, введите пароль.',
   },
-  incorrectLogin: {
+  invalidLogin: {
     en: 'Invalid login. Hover over the icon to see more details.',
     ru: 'Неверный логин. Коснитесь иконки, чтобы узнать детали.',
   },
-  incorrectPassword: {
+  invalidPassword: {
     en: 'Invalid password. Hover over the icon to see more details.',
     ru: 'Неверный пароль. Коснитесь иконки, чтобы узнать детали.',
   },
