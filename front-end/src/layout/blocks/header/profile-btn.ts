@@ -29,8 +29,8 @@ class ProfileBtn {
   public static createHeaderProfileBtn(render: RenderHandler): HTMLElement {
     const btn = ProfileBtn.createProfileBtn(
       'header-profile-btn',
-      'header-profile-avatar',
-      `${AvatarImage.path}avatar-${State.currentUser.avatar}.png`,
+      'default-avatar header-profile-avatar',
+      AvatarImage.createAvatarImagePath(State.currentUser.avatar),
       'header-profile-text'
     );
 
@@ -48,8 +48,8 @@ class ProfileBtn {
   ): HTMLElement {
     const btn = ProfileBtn.createProfileBtn(
       'burger-menu-profile-btn',
-      'burger-menu-profile-avatar selected-avatar',
-      `${AvatarImage.path}avatar-${State.currentUser.avatar}.png`,
+      'default-avatar burger-menu-profile-avatar selected-avatar',
+      AvatarImage.createAvatarImagePath(State.currentUser.avatar),
       'burger-menu-profile-text'
     );
 

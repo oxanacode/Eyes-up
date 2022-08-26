@@ -117,3 +117,7 @@ export enum Avatar {
   eleven = 11,
   twelve = 12,
 }
+
+export enum Disabled {
+  true = 'disabled',
+}

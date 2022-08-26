@@ -1,9 +1,13 @@
 import CreateElement from './create-element';
 
-import { Tag } from '../../types/enums';
+import { Avatar, Tag } from '../../types/enums';
 
 class AvatarImage {
   public static path = './assets/images/avatars/';
+
+  public static createAvatarImagePath(avatar: Avatar | number): string {
+    return `${AvatarImage.path}avatar-${avatar}.png`;
+  }
 
   public static createAvatarImage(className: string, imgPath: string): HTMLElement {
     const avatar = CreateElement.createElement(Tag.img, [{ name: 'class', value: className }]);

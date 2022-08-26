@@ -1,3 +1,8 @@
+.default-avatar {
+  width: 100%;
+  border-radius: 50%;
+}
+
 .profile-modal {
   @include default-modal;
   top: 0;
@@ -10,6 +15,7 @@
 .profile-header {
   @include default-wrapper;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 
 .profile-modal-content {
@@ -34,4 +40,40 @@
 .edit-profile-plag {
   width: 4rem;
   height: 4rem;
+}
+
+.profile-data-wrapper {
+  display: grid;
+  grid-template-columns: 15rem 1fr;
+  column-gap: $desktop-margin;
+  row-gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.profile-avatar-wrapper {
+  width: 15rem;
+  height: 15rem;
+  grid-row: 1/3;
+}
+
+.profile-input-label {
+  @include default-wrapper;
+  @include font-subtitle-mobile;
+  position: relative;
+  color: $c-main-text;
+
+  @include mobile {
+    @include font-main;
+  }
+}
+
+.profile-input {
+  @include default-input;
+  @include font-main;
+  width: 39rem;
+  margin-left: auto;
+}
+
+.profile-password-visibility-btn {
+  right: 1rem;
 }
