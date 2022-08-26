@@ -7,9 +7,9 @@ exports.getTest = async (req, res) => {
       { $sample: { size:1 } }
     ]);
 
-    res.json(dataToFind);
+    res.status(200).json(dataToFind);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -24,7 +24,7 @@ exports.addTest = async (req, res) => {
 
     res.status(200).json(dataToSave);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -37,7 +37,7 @@ exports.updateTest = async (req, res) => {
 
     res.status(200).json(dataToUpdate);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -47,6 +47,6 @@ exports.deleteTest = async (req, res) => {
 
     res.status(200).json(dataToDelete);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
