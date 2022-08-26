@@ -1,9 +1,13 @@
 import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
-import AvatarImage from '../modals/avatar-image';
+import AvatarImage from '../../elements/avatar-image';
+import ManageModal from '../../../scripts/layout/manage-modal';
+import ModalWrapper from '../modals/modal-wrapper';
+import ProfileModal from '../modals/profile/profile-modal';
 import translation from '../../../data/translation';
 
 import { Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class ProfileBtn {
   public static createProfileBtn(
@@ -22,7 +26,7 @@ class ProfileBtn {
     return btn;
   }
 
-  public static createHeaderProfileBtn(): HTMLElement {
+  public static createHeaderProfileBtn(render: RenderHandler): HTMLElement {
     const btn = ProfileBtn.createProfileBtn(
       'header-profile-btn',
       'header-profile-avatar',
@@ -30,14 +34,18 @@ class ProfileBtn {
       'header-profile-text'
     );
 
-    // btn.addEventListener('click', () => {
-    //   console.log('профиль');
-    // });
+    btn.addEventListener('click', () => {
+      ManageModal.openModal(ModalWrapper.createModalWrapper(ProfileModal.createProfileModal, render));
+    });
 
     return btn;
   }
 
-  public static createBurgerMenuProfileBtn(): HTMLElement {
+  public static createBurgerMenuProfileBtn(
+    modalWrapper: HTMLElement,
+    modalToClose: HTMLElement,
+    modalToOpen: HTMLElement
+  ): HTMLElement {
     const btn = ProfileBtn.createProfileBtn(
       'burger-menu-profile-btn',
       'burger-menu-profile-avatar selected-avatar',
@@ -45,9 +53,9 @@ class ProfileBtn {
       'burger-menu-profile-text'
     );
 
-    // btn.addEventListener('click', () => {
-    //   console.log('профиль');
-    // });
+    btn.addEventListener('click', () => {
+      ManageModal.changeModal(modalWrapper, modalToClose, modalToOpen);
+    });
 
     return btn;
   }

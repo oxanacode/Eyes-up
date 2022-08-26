@@ -1,6 +1,6 @@
-import CreateElement from '../../elements/create-element';
+import CreateElement from './create-element';
 
-import { Tag } from '../../../types/enums';
+import { Tag } from '../../types/enums';
 
 class AvatarImage {
   public static path = './assets/images/avatars/';
