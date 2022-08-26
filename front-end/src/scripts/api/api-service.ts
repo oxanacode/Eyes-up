@@ -1,10 +1,12 @@
-import { Endpoint, Method } from '../../types/enums';
-import { User, Lesson, Query } from '../../types/interfaces';
+import { Endpoint, Lang, Method } from '../../types/enums';
+import { User, Lesson, Test, Query } from '../../types/interfaces';
 import {
   UsersList,
   LessonsList,
   UserData,
   LessonData,
+  TestData,
+  RandomTest,
 } from '../../types/types';
 
 class ApiService {
@@ -122,6 +124,53 @@ class ApiService {
       method: Method.delete,
     });
     const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async createTest(testData: TestData): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.test}`, {
+      method: Method.post,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(testData),
+    });
+    const data: Promise<Test> = await response.json();
+
+    return data;
+  }
+
+  public static async getTest(language: Lang): Promise<RandomTest> {
+    const response = await fetch(
+      `${ApiService.url}${Endpoint.test}?language=${language}`
+    );
+    const data: Promise<RandomTest> = await response.json();
+
+    return data;
+  }
+
+  public static async updateTest(
+    id: string,
+    testData: TestData
+  ): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.test}/${id}`, {
+      method: Method.put,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(testData),
+    });
+    const data: Promise<Test> = await response.json();
+
+    return data;
+  }
+
+  public static async deleteTest(id: string): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.test}/${id}`, {
+      method: Method.delete,
+    });
+    const data: Promise<Test> = await response.json();
 
     return data;
   }

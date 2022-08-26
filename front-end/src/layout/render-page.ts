@@ -10,11 +10,21 @@ import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
 
 import { Page } from '../types/enums';
+import TestMain from './blocks/testing/test-main';
 
 class RenderPage {
   public static renderInteractivePage(): void {
     const page = ManagePage.getPage();
-    const main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    let main: HTMLElement;
+
+    switch (State.currentPage) {
+      case Page.test:
+        main = TestMain.createTestMain(RenderPage.renderPage);
+        break;
+      default:
+        main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    }
+
     page.append(main);
   }
 
@@ -44,9 +54,10 @@ class RenderPage {
     SwitchTheme.swapTheme();
 
     if (
+      State.currentPage === Page.lessons ||
       State.currentPage === Page.lesson ||
-      State.currentPage === Page.game ||
-      State.currentPage === Page.lessons
+      State.currentPage === Page.test ||
+      State.currentPage === Page.game
     ) {
       RenderPage.renderInteractivePage();
     } else {

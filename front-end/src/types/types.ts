@@ -1,10 +1,12 @@
-import { Attribute, Lesson, User } from './interfaces';
+import { Attribute, Lesson, User, Test } from './interfaces';
 
 export type AttributesList = Array<Attribute>;
 
 export type UsersList = Array<User>;
 
 export type LessonsList = Array<Lesson>;
+
+export type RandomTest = Array<Test>;
 
 export type UserData = Pick<User, 'login' | 'password'>;
 
@@ -19,6 +21,8 @@ export type LessonData = Pick<
   | 'starSpeed'
   | 'content'
 >;
+
+export type TestData = Pick<Test, 'language' | 'text'>;
 
 export type RenderHandler = () => void;
 

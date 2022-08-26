@@ -1,0 +1,49 @@
+.test-lang-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  text-transform: uppercase;
+}
+
+.active-test-lang {
+  background-color: $c-accent;
+}
+
+.test-btns {
+  display: flex;
+  width: 10rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  background-color: $c-block-bg;
+  margin: 2rem auto;
+}
+
+.incorrect {
+  border-radius: 0.6rem;
+  background-color: red;
+}
+
+.correct {
+  border-radius: 0.6rem;;
+  background-color: green;
+}
+
+.correction {
+  border-radius: 0.6rem;;
+  background-color: yellow;
+}
+
+.test-text {
+  @include font-subtitle;
+}
+
+.char {
+  line-height: 5rem;
+}
+
+.test-text-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}

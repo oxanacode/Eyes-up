@@ -235,6 +235,10 @@ const translation = {
     en: 'Back',
     ru: 'Назад',
   },
+  testRibbonText: {
+    en: 'Start typing',
+    ru: 'Начните печатать',
+  },
 };
 
 export default translation;

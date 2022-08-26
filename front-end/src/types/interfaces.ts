@@ -44,3 +44,10 @@ export interface CurrentState {
   currentLayout: Layout;
   currentComplexity: Complexity | undefined;
 }
+
+export interface Test {
+  _id: string;
+  __v: number;
+  language: Lang;
+  text: string;
+}

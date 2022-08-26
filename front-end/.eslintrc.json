@@ -30,7 +30,7 @@
     "eol-last": "error",
     "max-lines-per-function": [
       "error",
-      40
+      60
     ]
   },
   "ignorePatterns": "*config.js"

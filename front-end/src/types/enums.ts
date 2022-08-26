@@ -48,6 +48,7 @@ export enum Theme {
 export enum Endpoint {
   users = '/users',
   lessons = '/lessons',
+  test = '/test',
 }
 
 export enum Method {
