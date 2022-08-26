@@ -37,7 +37,7 @@
 }
 
 .app-logo {
-  font-size: 0;
+  @include accesibility-text;
 }
 
 .menu-wrapper {
@@ -103,7 +103,7 @@
 }
 
 .theme-btn {
-  font-size: 0;
+  @include accesibility-text;
   background-image: $bg-theme-switcher;
 }
 
