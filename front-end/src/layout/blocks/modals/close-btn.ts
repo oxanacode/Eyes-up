@@ -5,6 +5,7 @@ class CloseBtn {
   public static createCloseBtn(className: string, modalToClose: HTMLElement): HTMLElement {
     const btn = SmallBtn.createSmallBtn(className);
 
+    btn.textContent = 'Close button';
     btn.addEventListener('click', () => {
       ManageModal.closeModal(modalToClose);
     });

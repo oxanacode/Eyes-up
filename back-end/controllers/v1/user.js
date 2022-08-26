@@ -4,16 +4,21 @@ exports.getUser = async (req, res) => {
   try {
     const dataToFind = await userModel.findOne({ login: req.params.login });
 
-    res.json(dataToFind);
+    if (dataToFind) {
+      res.status(200).json(dataToFind);
+    } else {
+      res.status(404).send('User not found.');
+    }
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
 exports.addUser = async (req, res) => {
   const data = new userModel({
     login: req.body.login,
-    password: req.body.password
+    password: req.body.password,
+    avatar: req.body.avatar
   });
 
   try {
@@ -21,7 +26,7 @@ exports.addUser = async (req, res) => {
 
     res.status(200).json(dataToSave);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -34,7 +39,7 @@ exports.updateUser = async (req, res) => {
 
     res.status(200).json(dataToUpdate);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };
 
@@ -44,6 +49,6 @@ exports.deleteUser = async (req, res) => {
 
     res.status(200).json(dataToDelete);
   } catch (error) {
-    res.status(404).json({ message: error.message });
+    res.status(500).json({ message: error.message });
   }
 };

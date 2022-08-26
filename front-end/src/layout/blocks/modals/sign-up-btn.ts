@@ -1,21 +1,23 @@
 import CreateElement from '../../elements/create-element';
-import ManageUser from '../../../scripts/profile/manage-user';
 import State from '../../../scripts/state/state';
+import ManageUser from '../../../scripts/user/manage-user';
 import translation from '../../../data/translation';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
 
 class SignUpBtn {
-  public static createSignUpBtn(render: RenderHandler): HTMLElement {
+  public static createSignUpBtn(
+    loginInput: HTMLInputElement,
+    passwordInput: HTMLInputElement,
+    errorBlock: HTMLElement,
+    render: RenderHandler
+  ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'big-btn' }]);
 
     btn.textContent = translation.modalSignUpTitle[State.currentLang];
     btn.addEventListener('click', () => {
-      // заглушка для логики регистрации
-      if (ManageUser.checkIfUserAuthorized()) {
-        render();
-      }
+      ManageUser.createUser(loginInput, passwordInput, errorBlock, render);
     });
 
     return btn;

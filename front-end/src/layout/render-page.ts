@@ -53,12 +53,7 @@ class RenderPage {
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
 
-    if (
-      State.currentPage === Page.lessons ||
-      State.currentPage === Page.lesson ||
-      State.currentPage === Page.test ||
-      State.currentPage === Page.game
-    ) {
+    if (State.currentPage === Page.lesson || State.currentPage === Page.game || State.currentPage === Page.lessons) {
       RenderPage.renderInteractivePage();
     } else {
       RenderPage.renderStaticPage();

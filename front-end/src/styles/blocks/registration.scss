@@ -2,7 +2,7 @@
   @include default-modal;
   @include default-wrapper;
   flex-direction: column;
-  row-gap: 1rem;
+  gap: 2rem;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -57,16 +57,16 @@
 }
 
 .password-close {
-  background-image: $bg-modal-password-closed;
+  background-image: $bg-modal-password-open;
 }
 
 .password-open {
-  background-image: $bg-modal-password-open;
+  background-image: $bg-modal-password-closed;
 }
 
 .registration-switch-btn {
   display: block;
-  margin: 4rem auto 2.8rem;
+  margin: 5rem auto 5.8rem;
 
   &:hover .registration-switch-action {
     color: $c-main-text;

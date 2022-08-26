@@ -4,7 +4,7 @@ import ThemeBtn from './theme-btn';
 import LangBtn from './lang-btn';
 import BurgerMenuBtn from './burder-menu-btn';
 import AppBtn from './app-btn';
-import ManageUser from '../../../scripts/profile/manage-user';
+import UserState from '../../../scripts/user/user-state';
 import ProfileBtn from './profile-btn';
 import RegistrationBtn from './registration-btn';
 
@@ -25,9 +25,8 @@ class Header {
     let userBtn;
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
-    if (ManageUser.checkIfUserAuthorized()) {
-      // заменить на createHeaderProfileBtn
-      userBtn = ProfileBtn.createProfileBtn();
+    if (UserState.checkIfUserAuthorized()) {
+      userBtn = ProfileBtn.createHeaderProfileBtn();
     } else {
       userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);
     }

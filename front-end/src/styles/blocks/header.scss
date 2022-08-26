@@ -7,7 +7,7 @@
   @include default-wrapper;
   justify-content: space-between;
   max-width: $desktop-width;
-  padding: 1.5rem $desktop-margin 0;
+  padding: 1rem $desktop-margin 0;
   margin: 0 auto;
 
   @include desktop-small {
@@ -37,7 +37,7 @@
 }
 
 .app-logo {
-  font-size: 0;
+  @include accessibility-text;
 }
 
 .menu-wrapper {
@@ -51,7 +51,7 @@
   @include tablet {
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem 0 7rem;
+    padding: 2rem 0 4rem;
   }
 }
 
@@ -103,28 +103,44 @@
 }
 
 .theme-btn {
-  font-size: 0;
+  @include accessibility-text;
   background-image: $bg-theme-switcher;
+}
+
+.header-user-btn {
+  margin-left: 6rem;
+
+  @include tablet {
+    display: none;
+  }
 }
 
 .registration-btn {
   width: 10rem;
-  margin-left: 6rem;
 
   @include desktop-small {
     margin-left: $tablet-margin;
   }
 
   @include tablet {
-    margin: 0 auto;
+    margin: 2rem auto 0;
     background-color: $c-block-bg;
   }
 }
 
-.header-user-btn {
-  @include tablet {
-    display: none;
-  }
+.header-profile-btn {
+  @include interaction-effects;
+  width: 5rem;
+  height: 5rem;
+}
+
+.header-profile-avatar {
+  @include default-avatar;
+  border: 0.2rem solid $c-accent;
+}
+
+.header-profile-text {
+  @include accessibility-text;
 }
 
 .burger-menu-btn {
@@ -148,4 +164,25 @@
   right: 0;
   width: 20rem;
   padding: 0.6rem;
+}
+
+.burger-menu-profile-btn {
+  @include interaction-effects;
+  width: 10rem;
+  display: block;
+  margin: 0 auto;
+
+  &:hover .burger-menu-profile-text {
+    color: $c-main-text;
+  }
+}
+
+.burger-menu-profile-avatar {
+  @include default-avatar;
+  margin-bottom: 1rem;
+}
+
+.burger-menu-profile-text {
+  @include font-main;
+  color: $c-menu-inactive-link;
 }

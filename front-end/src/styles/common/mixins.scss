@@ -7,6 +7,10 @@
   }
 }
 
+@mixin accessibility-text {
+  font-size: 0;
+}
+
 @mixin desktop-small {
   @media (max-width: $desktop-small-width) {
     @content;
@@ -19,20 +23,16 @@
   }
 }
 
-@mixin mobile {
-  @media (max-width: $mobile-width) {
+@mixin tablet-small {
+  @media (max-width: $tablet-small-width) {
     @content;
   }
 }
 
-@mixin default-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-@mixin small-btn-bg {
-  background-repeat: no-repeat;
-  background-position: center;
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
 }
 
 @mixin big-btn {
@@ -59,6 +59,11 @@
   &:disabled {
     background-color: $c-big-btn-disabled;
   }
+}
+
+@mixin small-btn-bg {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @mixin font-main {
@@ -99,6 +104,17 @@
   font-size: 2rem;
 }
 
+@mixin default-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@mixin default-modal {
+  position: absolute;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+}
+
 @mixin default-input {
   @include font-main-small;
   display: block;
@@ -108,8 +124,7 @@
   border-radius: $small-border-radius;
 }
 
-@mixin default-modal {
-  position: absolute;
-  background-color: $c-body-bg;
-  box-shadow: $bxs-modal-shadow;
+@mixin default-avatar {
+  width: 100%;
+  border-radius: 50%;
 }

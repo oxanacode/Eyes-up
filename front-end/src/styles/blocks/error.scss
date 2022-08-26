@@ -1,0 +1,50 @@
+.error-content {
+  @include default-wrapper;
+  @include font-main;
+  position: relative;
+  justify-content: space-between;
+  text-align: left;
+
+  @include mobile {
+    @include font-main-small;
+  }
+}
+
+.error-text {
+  color: $c-error-text;
+}
+
+.error-icon {
+  @include accessibility-text;
+  @include interaction-effects;
+  @include small-btn-bg;
+  min-width: 2.2rem;
+  height: 2.2rem;
+  background-image: $bg-icon-error-hint;
+}
+
+.error-hint {
+  position: absolute;
+  top: calc(100% + 1rem);
+  width: 28rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $c-block-bg;
+  padding: 2rem;
+  border-radius: $big-border-radius;
+  box-shadow: $bxs-modal-shadow;
+}
+
+.error-hint-content {
+  &:first-child {
+    margin-bottom: 2rem;
+  }
+}
+
+.error-hint-mark {
+  color: $c-accent;
+}
+
+.error-hint-text {
+  color: $c-main-text;
+}
