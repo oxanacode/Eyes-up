@@ -66,6 +66,12 @@ class ManageUser {
       });
     }
   }
+
+  public static logoutFromProfile(render: RenderHandler): void {
+    UserState.resetUserState();
+    ManageState.saveState();
+    render();
+  }
 }
 
 export default ManageUser;
