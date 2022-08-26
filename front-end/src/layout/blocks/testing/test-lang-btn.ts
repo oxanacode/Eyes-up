@@ -6,13 +6,8 @@ import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Lang } from '../../../types/enums';
 
 class TestLangBtn {
-  public static createTestLangBtn(
-    lang: Lang,
-    render: RenderHandler
-  ): HTMLElement {
-    const button = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'test-lang-btn' },
-    ]);
+  public static createTestLangBtn(lang: Lang, render: RenderHandler): HTMLElement {
+    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'test-lang-btn' }]);
 
     if (lang === TestState.lang) {
       button.classList.add('active-test-lang');

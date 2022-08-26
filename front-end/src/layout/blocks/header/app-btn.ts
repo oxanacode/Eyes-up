@@ -7,9 +7,7 @@ import { RenderHandler } from '../../../types/types';
 
 class AppBtn {
   public static createAppBtn(page: Page, render: RenderHandler): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'app-btn' },
-    ]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'app-btn' }]);
     const logo = AppLogo.createAppLogo();
 
     btn.append(logo);

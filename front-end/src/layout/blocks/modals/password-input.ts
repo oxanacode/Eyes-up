@@ -8,15 +8,12 @@ import { InputType, Tag } from '../../../types/enums';
 
 class PasswordInput {
   public static createPasswordInput(): HTMLElement {
-    const label = InputLabel.createInputLabel(
-      translation.modalSignUpPasswordInput[State.currentLang]
-    );
+    const label = InputLabel.createInputLabel(translation.modalSignUpPasswordInput[State.currentLang]);
     const input = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'registration-input' },
       { name: 'type', value: InputType.password },
     ]);
-    const visibilityBtn =
-      PasswordVisibilityBtn.createPasswordVisibilityBtn(input);
+    const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(input);
 
     label.append(input, visibilityBtn);
 

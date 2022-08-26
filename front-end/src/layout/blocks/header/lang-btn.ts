@@ -7,10 +7,7 @@ import { RenderHandler } from '../../../types/types';
 
 class LangBtn {
   public static createLangBtn(render: RenderHandler): HTMLElement {
-    const btn = SmallBtn.createSmallBtn(
-      'small-btn small-btn-bg',
-      translation.themeSwitcher[State.currentLang]
-    );
+    const btn = SmallBtn.createSmallBtn('small-btn small-btn-bg', translation.themeSwitcher[State.currentLang]);
 
     btn.addEventListener('click', () => {
       SwitchLang.applyLang(render);

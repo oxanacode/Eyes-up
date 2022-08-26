@@ -12,28 +12,18 @@ class GameSection {
     gameName: Game.one | Game.two,
     render: RenderHandler
   ): HTMLElement {
-    const gameSection = CreateElement.createElement(Tag.section, [
-      { name: 'class', value: 'game' },
-    ]);
+    const gameSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game' }]);
     const gameBtn = GameSectionBtn.createGameSectionBtn(
       className,
       translation[`${gameName}Title`][State.currentLang],
       render
     );
-    const descSection = CreateElement.createElement(Tag.section, [
-      { name: 'class', value: 'game-desc' },
-    ]);
-    const descTitle = CreateElement.createElement(Tag.h4, [
-      { name: 'class', value: 'section-title' },
-    ]);
-    const descText = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'base-text game-desc-text' },
-    ]);
+    const descSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game-desc' }]);
+    const descTitle = CreateElement.createElement(Tag.h4, [{ name: 'class', value: 'section-title' }]);
+    const descText = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'base-text game-desc-text' }]);
 
-    descTitle.textContent =
-      translation[`${gameName}DescTitle`][State.currentLang];
-    descText.textContent =
-      translation[`${gameName}DescText`][State.currentLang];
+    descTitle.textContent = translation[`${gameName}DescTitle`][State.currentLang];
+    descText.textContent = translation[`${gameName}DescText`][State.currentLang];
     descSection.append(descTitle, descText);
     gameSection.append(gameBtn, descSection);
 

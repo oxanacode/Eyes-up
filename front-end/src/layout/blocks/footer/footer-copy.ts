@@ -4,9 +4,7 @@ import { Tag } from '../../../types/enums';
 
 class FooterCopy {
   public static createCopy() {
-    const paragpaph = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'copy' },
-    ]);
+    const paragpaph = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'copy' }]);
 
     paragpaph.textContent = '© 2022 EyesUP';
 

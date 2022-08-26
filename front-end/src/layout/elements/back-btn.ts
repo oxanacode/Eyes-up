@@ -8,9 +8,7 @@ import { RenderHandler } from '../../types/types';
 
 class BackBtn {
   public static createBackBtn(page: Page, render: RenderHandler): HTMLElement {
-    const button = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'back-btn' },
-    ]);
+    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'back-btn' }]);
 
     button.textContent = translation.backBtn[State.currentLang];
     button.addEventListener('click', () => SwitchPage.applyPage(page, render));

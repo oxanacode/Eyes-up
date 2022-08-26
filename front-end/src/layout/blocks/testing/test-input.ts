@@ -14,34 +14,23 @@ class TestInput {
       testInput.focus();
     });
     testInput.addEventListener('input', () => {
-      const inputChar = (<HTMLInputElement>testInput).value.split('')[
-        TestState.charIndex
-      ];
+      const inputChar = (<HTMLInputElement>testInput).value.split('')[TestState.charIndex];
       if (inputChar == null) {
         TestState.charIndex -= 1;
-        spanArray[TestState.charIndex].classList.remove(
-          'correct',
-          'incorrect',
-          'rep'
-        );
+        spanArray[TestState.charIndex].classList.remove('correct', 'incorrect', 'rep');
 
         return;
       }
       if (spanArray[TestState.charIndex].textContent === inputChar) {
         if (TestState.mistakes.includes(TestState.charIndex)) {
-          TestState.mistakes = TestState.mistakes.filter(
-            (m) => m !== TestState.charIndex
-          );
+          TestState.mistakes = TestState.mistakes.filter((m) => m !== TestState.charIndex);
           spanArray[TestState.charIndex].classList.add('correction');
-          console.log(TestState.mistakes);
         } else {
           spanArray[TestState.charIndex].classList.add('correct');
         }
       } else {
-        if (!TestState.mistakes.includes(TestState.charIndex))
-          TestState.mistakes.push(TestState.charIndex);
+        if (!TestState.mistakes.includes(TestState.charIndex)) TestState.mistakes.push(TestState.charIndex);
         spanArray[TestState.charIndex].classList.add('incorrect');
-        console.log(TestState.mistakes);
       }
       TestState.charIndex += 1;
     });

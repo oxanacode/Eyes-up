@@ -13,19 +13,10 @@ import { Tag, Page } from '../../../types/enums';
 class LessonsMain {
   public static createLessonsMain(render: RenderHandler): HTMLElement {
     const back = BackBtn.createBackBtn(Page.layout, render);
-    const main = CreateElement.createElement(Tag.main, [
-      { name: 'class', value: 'lessons' },
-    ]);
-    const lessonsTopWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'lessons-top' },
-    ]);
-    const mainTitle = MainTitle.createMainTitle(
-      translation.lessonsTitle[State.currentLang]
-    );
-    const lessonFilters = LessonsFilters.createLessonsFilters(
-      State.currentLayout,
-      render
-    );
+    const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'lessons' }]);
+    const lessonsTopWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lessons-top' }]);
+    const mainTitle = MainTitle.createMainTitle(translation.lessonsTitle[State.currentLang]);
+    const lessonFilters = LessonsFilters.createLessonsFilters(State.currentLayout, render);
     const layout = State.currentLayout;
     const complexity = State.currentComplexity;
 

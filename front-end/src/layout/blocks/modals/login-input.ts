@@ -7,12 +7,8 @@ import { Tag } from '../../../types/enums';
 
 class LoginInput {
   public static createLoginInput(): HTMLElement {
-    const label = InputLabel.createInputLabel(
-      translation.modalSignUpLoginInput[State.currentLang]
-    );
-    const input = CreateElement.createElement(Tag.input, [
-      { name: 'class', value: 'registration-input' },
-    ]);
+    const label = InputLabel.createInputLabel(translation.modalSignUpLoginInput[State.currentLang]);
+    const input = CreateElement.createElement(Tag.input, [{ name: 'class', value: 'registration-input' }]);
 
     label.append(input);
 

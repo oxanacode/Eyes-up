@@ -12,18 +12,12 @@ import { Tag, Page, Lang } from '../../../types/enums';
 
 class TestMain {
   public static createTestMain(render: RenderHandler): HTMLElement {
-    const main = CreateElement.createElement(Tag.main, [
-      { name: 'class', value: 'test' },
-    ]);
+    const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'test' }]);
     const back = BackBtn.createBackBtn(Page.layout, render);
-    const btnsWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'test-btns' },
-    ]);
+    const btnsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-btns' }]);
     const enBtn = TestLangBtn.createTestLangBtn(Lang.en, render);
     const ruBtn = TestLangBtn.createTestLangBtn(Lang.ru, render);
-    const testRibbon = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'test-ribbon' },
-    ]);
+    const testRibbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-ribbon' }]);
 
     testRibbon.textContent = translation.testRibbonText[State.currentLang];
     btnsWrapper.append(enBtn, ruBtn);
