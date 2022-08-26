@@ -23,6 +23,7 @@
 }
 
 .close-btn {
+  @include accessibility-text;
   @include small-btn-bg;
   background-image: $bg-close;
 
@@ -179,3 +180,10 @@
   }
 }
 
+.not-selected-avatar {
+  border: 0.5rem solid $c-block-bg;
+}
+
+.selected-avatar {
+  border: 0.5rem solid $c-accent;
+}

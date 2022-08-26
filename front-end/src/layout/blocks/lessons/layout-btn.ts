@@ -6,11 +6,7 @@ import { RenderHandler } from '../../../types/types';
 import { Page, Layout } from '../../../types/enums';
 
 class LayoutBtn {
-  public static createLayoutBtn(
-    text: string,
-    render: RenderHandler,
-    layout: Layout
-  ): HTMLElement {
+  public static createLayoutBtn(text: string, render: RenderHandler, layout: Layout): HTMLElement {
     const button = SectionBtn.createSectionBtn(`layout-${layout}`, text);
 
     button.addEventListener('click', () => {

@@ -1,10 +1,7 @@
 import { InputType } from '../../types/enums';
 
 class SwitchPasswordVisibility {
-  public static switchPasswordVisibility(
-    visibilityBtn: HTMLElement,
-    passwordInput: HTMLElement
-  ): void {
+  public static switchPasswordVisibility(visibilityBtn: HTMLElement, passwordInput: HTMLElement): void {
     if (passwordInput.getAttribute('type') === InputType.password) {
       visibilityBtn.classList.add('password-open');
       visibilityBtn.classList.remove('password-close');

@@ -4,9 +4,7 @@ import { Tag } from '../../types/enums';
 
 class SectionTitle {
   public static createSectionTitle(text: string): HTMLElement {
-    const title = CreateElement.createElement(Tag.h4, [
-      { name: 'class', value: 'section-title' },
-    ]);
+    const title = CreateElement.createElement(Tag.h4, [{ name: 'class', value: 'section-title' }]);
 
     title.textContent = text;
 

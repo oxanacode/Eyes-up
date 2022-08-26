@@ -6,9 +6,7 @@ import { ModalHandler, RenderHandler } from '../../../types/types';
 
 class ModalWrapper {
   public static createModalWrapper(modal: ModalHandler, render: RenderHandler) {
-    const wrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'modal-wrapper' },
-    ]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'modal-wrapper' }]);
     const overlay = Overlay.createOverlay(wrapper);
     const content = modal(wrapper, render);
 

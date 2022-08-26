@@ -4,7 +4,7 @@ import ThemeBtn from './theme-btn';
 import LangBtn from './lang-btn';
 import BurgerMenuBtn from './burder-menu-btn';
 import AppBtn from './app-btn';
-import ManageUser from '../../../scripts/profile/manage-user';
+import UserState from '../../../scripts/user/user-state';
 import ProfileBtn from './profile-btn';
 import RegistrationBtn from './registration-btn';
 
@@ -13,31 +13,20 @@ import { RenderHandler } from '../../../types/types';
 
 class Header {
   public static createHeader(render: RenderHandler): HTMLElement {
-    const header = CreateElement.createElement(Tag.header, [
-      { name: 'class', value: 'header' },
-    ]);
-    const headerWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'header-wrapper' },
-    ]);
-    const menuWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'menu-wrapper' },
-    ]);
+    const header = CreateElement.createElement(Tag.header, [{ name: 'class', value: 'header' }]);
+    const headerWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'header-wrapper' }]);
+    const menuWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'menu-wrapper' }]);
     const logo = AppBtn.createAppBtn(Page.home, render);
     const menu = Menu.createMenu('menu header-menu', render);
-    const controlsWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'controls-wrapper' },
-    ]);
-    const themeLangWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'theme-lang-wrapper' },
-    ]);
+    const controlsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'controls-wrapper' }]);
+    const themeLangWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'theme-lang-wrapper' }]);
     const themeBtn = ThemeBtn.createThemeBtn();
     const langBtn = LangBtn.createLangBtn(render);
     let userBtn;
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
-    if (ManageUser.checkIfUserAuthorized()) {
-      // заменить на createHeaderProfileBtn
-      userBtn = ProfileBtn.createProfileBtn();
+    if (UserState.checkIfUserAuthorized()) {
+      userBtn = ProfileBtn.createHeaderProfileBtn();
     } else {
       userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);
     }

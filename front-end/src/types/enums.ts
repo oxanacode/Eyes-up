@@ -72,3 +72,48 @@ export enum Game {
   one = 'gameOne',
   two = 'gameTwo',
 }
+
+export enum ErrorType {
+  noLogin = 'noLogin',
+  noPassword = 'noPassword',
+  invalidLogin = 'invalidLogin',
+  invalidPassword = 'invalidPassword',
+  existingLogin = 'existingLogin',
+  notRegistered = 'notRegistered',
+  notMatchingPassword = 'notMatchingPassword',
+}
+
+export enum ErrorSource {
+  registration = 'registration',
+  authorisation = 'authorisation',
+}
+
+export enum LoginLength {
+  min = 2,
+  max = 20,
+}
+
+export enum PasswordLength {
+  min = 6,
+  max = 20,
+}
+
+export enum StatusCode {
+  found = 200,
+  notFound = 404,
+}
+
+export enum Avatar {
+  one = 1,
+  two = 2,
+  three = 3,
+  four = 4,
+  five = 5,
+  six = 6,
+  seven = 7,
+  eight = 8,
+  nine = 9,
+  ten = 10,
+  eleven = 11,
+  twelve = 12,
+}

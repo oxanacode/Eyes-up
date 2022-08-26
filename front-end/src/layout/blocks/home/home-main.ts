@@ -10,9 +10,7 @@ import { Tag } from '../../../types/enums';
 
 class HomeMain {
   public static createHomeMain(render: RenderHandler): HTMLElement {
-    const main = CreateElement.createElement(Tag.main, [
-      { name: 'class', value: 'home' },
-    ]);
+    const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'home' }]);
     const promo = HomePromo.createHomePromo(render);
     const lessons = HomeSection.createHomeSection(
       'lessons',
@@ -30,9 +28,7 @@ class HomeMain {
       translation.homeProgressText[State.currentLang]
     );
     const registration = HomeRegistration.createHomeRegistration(render);
-    const wrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'home-wrapper' },
-    ]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'home-wrapper' }]);
 
     wrapper.append(promo, lessons, games, progress, registration);
     main.append(wrapper);

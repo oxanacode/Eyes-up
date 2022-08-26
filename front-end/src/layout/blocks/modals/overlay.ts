@@ -5,9 +5,7 @@ import { Tag } from '../../../types/enums';
 
 class Overlay {
   public static createOverlay(modalToClose: HTMLElement): HTMLElement {
-    const overlay = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'overlay' },
-    ]);
+    const overlay = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'overlay' }]);
 
     overlay.addEventListener('click', () => {
       ManageModal.closeModal(modalToClose);
