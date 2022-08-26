@@ -7,7 +7,7 @@ import { RenderHandler } from '../../../../types/types';
 
 class EditProfileModal {
   public static createEditProfileModal(render: RenderHandler): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'edit-profile-modal' }]);
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content hidden' }]);
     const header = EditProfileHeader.createEditProfileHeader(modal);
 
     if (State.currentUser.login === '42') {

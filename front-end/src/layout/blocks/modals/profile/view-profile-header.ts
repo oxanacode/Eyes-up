@@ -10,7 +10,7 @@ import { Tag } from '../../../../types/enums';
 class ViewProfileHeader {
   public static createViewProfileHeader(modalToClose: HTMLElement, modalToHide: HTMLElement): HTMLElement {
     const header = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header' }]);
-    const closeBtn = CloseBtn.createCloseBtn('small-btn small-btn-bg close-btn close-profile-btn', modalToClose);
+    const closeBtn = CloseBtn.createCloseBtn('small-btn close-btn profile-btn', modalToClose);
     const title = MainTitle.createMainTitle(translation.profileTitle[State.currentLang]);
     const editBtn = EditProfileBtn.createEditProfileBtn(modalToHide);
 

@@ -5,9 +5,7 @@ import { Tag } from '../../../../types/enums';
 
 class CloseEditProfileBtn {
   public static createCloseEditProfileBtn(modalToHide: HTMLElement): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'small-btn small-btn-bg edit-profile-close-btn' },
-    ]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'small-btn close-btn profile-btn' }]);
 
     btn.addEventListener('click', () => {
       ManageModal.switchModal(modalToHide);

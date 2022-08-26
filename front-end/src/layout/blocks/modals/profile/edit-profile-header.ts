@@ -11,8 +11,9 @@ class EditProfileHeader {
     const header = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header' }]);
     const closeBtn = CloseEditProfileBtn.createCloseEditProfileBtn(modalToHide);
     const title = MainTitle.createMainTitle(translation.profileEditTitle[State.currentLang]);
+    const plag = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'edit-profile-plag' }]);
 
-    header.append(closeBtn, title);
+    header.append(closeBtn, title, plag);
 
     return header;
   }

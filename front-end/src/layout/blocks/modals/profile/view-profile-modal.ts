@@ -7,7 +7,7 @@ import { RenderHandler } from '../../../../types/types';
 
 class ViewProfileModal {
   public static createViewProfileModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'view-profile-modal' }]);
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content' }]);
     const header = ViewProfileHeader.createViewProfileHeader(modalToClose, modal);
 
     if (State.currentUser.login === '42') {
