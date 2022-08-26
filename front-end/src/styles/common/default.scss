@@ -179,3 +179,11 @@
     @include font-main-small;
   }
 }
+
+.not-selected-avatar {
+  border: 0.5rem solid $c-block-bg;
+}
+
+.selected-avatar {
+  border: 0.5rem solid $c-accent;
+}

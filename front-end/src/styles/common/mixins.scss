@@ -35,16 +35,6 @@
   }
 }
 
-@mixin default-wrapper {
-  display: flex;
-  align-items: center;
-}
-
-@mixin small-btn-bg {
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
 @mixin big-btn {
   width: 24rem;
   height: 5rem;
@@ -69,6 +59,11 @@
   &:disabled {
     background-color: $c-big-btn-disabled;
   }
+}
+
+@mixin small-btn-bg {
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 @mixin font-main {
@@ -109,6 +104,17 @@
   font-size: 2rem;
 }
 
+@mixin default-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+@mixin default-modal {
+  position: absolute;
+  background-color: $c-body-bg;
+  box-shadow: $bxs-modal-shadow;
+}
+
 @mixin default-input {
   @include font-main-small;
   display: block;
@@ -118,8 +124,7 @@
   border-radius: $small-border-radius;
 }
 
-@mixin default-modal {
-  position: absolute;
-  background-color: $c-body-bg;
-  box-shadow: $bxs-modal-shadow;
+@mixin default-avatar {
+  width: 100%;
+  border-radius: 50%;
 }

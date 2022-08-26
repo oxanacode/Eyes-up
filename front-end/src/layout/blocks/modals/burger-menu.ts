@@ -17,8 +17,7 @@ class BurgerMenu {
     let userBtn;
 
     if (UserState.checkIfUserAuthorized()) {
-      // заменить на BurgerMenuProfileBtn
-      userBtn = ProfileBtn.createProfileBtn();
+      userBtn = ProfileBtn.createBurgerMenuProfileBtn();
     } else {
       userBtn = RegistrationBtn.createBurgerMenuRegistrationBtn(
         wrapper,
@@ -27,7 +26,7 @@ class BurgerMenu {
       );
     }
 
-    userBtn.classList.add('modal-user-btn');
+    userBtn.classList.add('burger-menu-user-btn');
     modal.append(closeBtn, menu, userBtn);
 
     return modal;

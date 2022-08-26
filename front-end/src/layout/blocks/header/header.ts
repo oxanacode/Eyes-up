@@ -26,8 +26,7 @@ class Header {
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
     if (UserState.checkIfUserAuthorized()) {
-      // заменить на createHeaderProfileBtn
-      userBtn = ProfileBtn.createProfileBtn();
+      userBtn = ProfileBtn.createHeaderProfileBtn();
     } else {
       userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);
     }

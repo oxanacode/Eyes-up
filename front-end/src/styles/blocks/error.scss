@@ -15,7 +15,7 @@
 }
 
 .error-icon {
-  @include accesibility-text;
+  @include accessibility-text;
   @include interaction-effects;
   @include small-btn-bg;
   min-width: 2.2rem;
