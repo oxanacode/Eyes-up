@@ -1,11 +1,4 @@
-import {
-  Avatar,
-  Complexity,
-  Lang,
-  Layout,
-  Page,
-  Theme,
-} from '../../types/enums';
+import { Avatar, Complexity, Lang, Layout, Page, Theme } from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
 class State {

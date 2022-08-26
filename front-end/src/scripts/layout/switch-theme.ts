@@ -6,8 +6,7 @@ import { Theme } from '../../types/enums';
 
 class SwitchTheme {
   public static changeTheme(): void {
-    State.currentTheme =
-      State.currentTheme === Theme.light ? Theme.dark : Theme.light;
+    State.currentTheme = State.currentTheme === Theme.light ? Theme.dark : Theme.light;
   }
 
   public static swapTheme(): void {

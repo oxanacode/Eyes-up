@@ -17,18 +17,11 @@ class RegistrationBtn {
     return btn;
   }
 
-  public static createHeaderRegistrationBtn(
-    render: RenderHandler
-  ): HTMLElement {
+  public static createHeaderRegistrationBtn(render: RenderHandler): HTMLElement {
     const btn = RegistrationBtn.createRegistrationBtn();
 
     btn.addEventListener('click', () => {
-      ManageModal.openModal(
-        ModalWrapper.createModalWrapper(
-          RegistrationModal.createRegistrationModal,
-          render
-        )
-      );
+      ManageModal.openModal(ModalWrapper.createModalWrapper(RegistrationModal.createRegistrationModal, render));
     });
 
     return btn;

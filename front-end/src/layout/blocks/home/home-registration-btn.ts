@@ -9,17 +9,10 @@ import State from '../../../scripts/state/state';
 
 class HomeRegBtn {
   public static createHomeRegBtn(render: RenderHandler): HTMLElement {
-    const button = BigBtn.createBigBtn(
-      translation.homeRegistrationBtn[State.currentLang]
-    );
+    const button = BigBtn.createBigBtn(translation.homeRegistrationBtn[State.currentLang]);
 
     button.addEventListener('click', () => {
-      ManageModal.openModal(
-        ModalWrapper.createModalWrapper(
-          RegistrationModal.createRegistrationModal,
-          render
-        )
-      );
+      ManageModal.openModal(ModalWrapper.createModalWrapper(RegistrationModal.createRegistrationModal, render));
     });
 
     return button;

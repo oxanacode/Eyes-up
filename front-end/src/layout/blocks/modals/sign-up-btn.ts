@@ -13,9 +13,7 @@ class SignUpBtn {
     errorBlock: HTMLElement,
     render: RenderHandler
   ): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'big-btn' },
-    ]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'big-btn' }]);
 
     btn.textContent = translation.modalSignUpTitle[State.currentLang];
     btn.addEventListener('click', () => {

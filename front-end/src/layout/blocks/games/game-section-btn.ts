@@ -5,11 +5,7 @@ import { RenderHandler } from '../../../types/types';
 import { Page } from '../../../types/enums';
 
 class GameSectionBtn {
-  public static createGameSectionBtn(
-    className: string,
-    text: string,
-    render: RenderHandler
-  ): HTMLElement {
+  public static createGameSectionBtn(className: string, text: string, render: RenderHandler): HTMLElement {
     const button = SectionBtn.createSectionBtn(className, text);
 
     button.addEventListener('click', () => {

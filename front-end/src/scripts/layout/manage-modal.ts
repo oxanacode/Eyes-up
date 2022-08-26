@@ -11,11 +11,7 @@ class ManageModal {
     modalToClose.remove();
   }
 
-  public static changeModal(
-    modalWrapper: HTMLElement,
-    modalToClose: HTMLElement,
-    modalToOpen: HTMLElement
-  ): void {
+  public static changeModal(modalWrapper: HTMLElement, modalToClose: HTMLElement, modalToOpen: HTMLElement): void {
     modalToClose.remove();
     modalWrapper.append(modalToOpen);
   }

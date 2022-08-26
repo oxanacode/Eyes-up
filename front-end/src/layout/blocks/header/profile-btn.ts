@@ -5,9 +5,7 @@ import { Tag } from '../../../types/enums';
 
 class ProfileBtn {
   public static createProfileBtn(): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'profile-btn' },
-    ]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'profile-btn' }]);
 
     btn.style.backgroundImage = `./assets/images/avatars/avatar-${State.currentUser.avatar}.png`;
 

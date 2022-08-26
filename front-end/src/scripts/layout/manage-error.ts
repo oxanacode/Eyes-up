@@ -9,11 +9,7 @@ class ManageError {
     }
   }
 
-  public static showError(
-    errorBlock: HTMLElement,
-    errorSource: ErrorSource,
-    errorType: ErrorType
-  ): void {
+  public static showError(errorBlock: HTMLElement, errorSource: ErrorSource, errorType: ErrorType): void {
     ManageError.wipeError(errorBlock);
     errorBlock.append(ErrorContent.createErrorContent(errorSource, errorType));
   }

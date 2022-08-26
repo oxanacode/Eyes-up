@@ -6,13 +6,8 @@ import ErrorHint from './error-hint';
 import { ErrorSource, ErrorType, Tag } from '../../../../types/enums';
 
 class ErrorContent {
-  public static createErrorContent(
-    errorSource: ErrorSource,
-    errorType: ErrorType
-  ): HTMLElement {
-    const content = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'error-content' },
-    ]);
+  public static createErrorContent(errorSource: ErrorSource, errorType: ErrorType): HTMLElement {
+    const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'error-content' }]);
     const text = ErrorText.createErrorText(errorType);
 
     if (errorSource === ErrorSource.registration) {

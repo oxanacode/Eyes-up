@@ -10,13 +10,8 @@ import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class BurgerMenu {
-  public static createBurgerMenu(
-    wrapper: HTMLElement,
-    render: RenderHandler
-  ): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'burger-menu' },
-    ]);
+  public static createBurgerMenu(wrapper: HTMLElement, render: RenderHandler): HTMLElement {
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'burger-menu' }]);
     const closeBtn = CloseBtn.createCloseBtn('small-btn close-btn', wrapper);
     const menu = Menu.createMenu('menu modal-menu', render);
     let userBtn;

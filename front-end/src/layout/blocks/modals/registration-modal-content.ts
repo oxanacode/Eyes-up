@@ -15,19 +15,10 @@ class RegistrationModalContent {
     actionBtn: ActionHandler,
     render: RenderHandler
   ): HTMLElement {
-    const content = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: className },
-    ]);
+    const content = CreateElement.createElement(Tag.div, [{ name: 'class', value: className }]);
     const title = MainTitle.createMainTitle(titleName);
-    const dataWrapper = RegistrationDataWrapper.createRegistrationDataWrapper(
-      actionBtn,
-      render
-    );
-    const switchBtn = RegistrationSwitchBtn.createRegistrationSwitchBtn(
-      switchBtnText,
-      switchBtnAction,
-      content
-    );
+    const dataWrapper = RegistrationDataWrapper.createRegistrationDataWrapper(actionBtn, render);
+    const switchBtn = RegistrationSwitchBtn.createRegistrationSwitchBtn(switchBtnText, switchBtnAction, content);
 
     content.append(title, dataWrapper, switchBtn);
 

@@ -5,9 +5,7 @@ import { Tag } from '../../../../types/enums';
 
 class ErrorIcon {
   public static createErrorIcon(errorContent: HTMLElement): HTMLElement {
-    const icon = CreateElement.createElement(Tag.span, [
-      { name: 'class', value: 'error-icon' },
-    ]);
+    const icon = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'error-icon' }]);
 
     icon.textContent = 'Error hint';
     icon.addEventListener('mouseenter', () => {

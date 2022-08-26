@@ -11,12 +11,8 @@ import { Tag, Layout } from '../../../types/enums';
 
 class LayoutMain {
   public static createLayoutMain(render: RenderHandler): HTMLElement {
-    const main = CreateElement.createElement(Tag.main, [
-      { name: 'class', value: 'layout' },
-    ]);
-    const mainTitle = MainTitle.createMainTitle(
-      translation.lessonsTitle[State.currentLang]
-    );
+    const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'layout' }]);
+    const mainTitle = MainTitle.createMainTitle(translation.lessonsTitle[State.currentLang]);
     const layoutEnBtn = LayoutBtn.createLayoutBtn(
       translation.lessonsEnLayoutTitle[State.currentLang],
       render,
@@ -29,9 +25,7 @@ class LayoutMain {
     );
     const test = LessonsTest.createLessonsTest(render);
     const fact = LessonsFact.createLessonsTest();
-    const buttonsWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'section-btns-wrapper' },
-    ]);
+    const buttonsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'section-btns-wrapper' }]);
 
     mainTitle.classList.add('lessons-title');
     buttonsWrapper.append(layoutEnBtn, layoutRuBtn);

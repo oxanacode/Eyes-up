@@ -10,22 +10,12 @@ export type UserData = Pick<User, 'login' | 'password' | 'avatar'>;
 
 export type LessonData = Pick<
   Lesson,
-  | 'layout'
-  | 'index'
-  | 'title'
-  | 'complexity'
-  | 'minAccuracy'
-  | 'minSpeed'
-  | 'starSpeed'
-  | 'content'
+  'layout' | 'index' | 'title' | 'complexity' | 'minAccuracy' | 'minSpeed' | 'starSpeed' | 'content'
 >;
 
 export type RenderHandler = () => void;
 
-export type ModalHandler = (
-  wrapper: HTMLElement,
-  renderHandler: RenderHandler
-) => HTMLElement;
+export type ModalHandler = (wrapper: HTMLElement, renderHandler: RenderHandler) => HTMLElement;
 
 export type ActionHandler = (
   loginInput: HTMLInputElement,

@@ -5,10 +5,7 @@ import { Page } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class PromoBtn {
-  public static createPromoBtn(
-    text: string,
-    render: RenderHandler
-  ): HTMLElement {
+  public static createPromoBtn(text: string, render: RenderHandler): HTMLElement {
     const button = BigBtn.createBigBtn(text);
 
     button.addEventListener('click', () => {

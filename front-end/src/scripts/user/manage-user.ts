@@ -18,20 +18,12 @@ class ManageUser {
   ): void {
     const login = loginInput.value.trim();
     const password = passwordInput.value.trim();
-    const dataCorrect = DataValidation.checkIfDataCorrect(
-      login,
-      password,
-      errorBlock
-    );
+    const dataCorrect = DataValidation.checkIfDataCorrect(login, password, errorBlock);
 
     if (dataCorrect) {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.found) {
-          ManageError.showError(
-            errorBlock,
-            ErrorSource.registration,
-            ErrorType.existingLogin
-          );
+          ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
         } else if (status === StatusCode.notFound) {
           const user = new UserInfo(login, password, 0);
 
@@ -53,28 +45,16 @@ class ManageUser {
   ): void {
     const login = loginInput.value.trim();
     const password = passwordInput.value.trim();
-    const dataEntered = DataValidation.checkIfDataEntered(
-      login,
-      password,
-      errorBlock
-    );
+    const dataEntered = DataValidation.checkIfDataEntered(login, password, errorBlock);
 
     if (dataEntered) {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.notFound) {
-          ManageError.showError(
-            errorBlock,
-            ErrorSource.authorisation,
-            ErrorType.notRegistered
-          );
+          ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notRegistered);
         } else if (status === StatusCode.found) {
           ApiService.getUser(login).then((user: User) => {
             if (password !== user.password) {
-              ManageError.showError(
-                errorBlock,
-                ErrorSource.authorisation,
-                ErrorType.notMatchingPassword
-              );
+              ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notMatchingPassword);
             } else {
               UserState.updateUserLogin(login);
               ManageState.saveState();

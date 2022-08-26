@@ -12,15 +12,9 @@ class LessonsFact {
   }
 
   public static createLessonsTest(): HTMLElement {
-    const fact = CreateElement.createElement(Tag.section, [
-      { name: 'class', value: 'layout-fact' },
-    ]);
-    const factBg = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'fact-bg' },
-    ]);
-    const factText = CreateElement.createElement(Tag.par, [
-      { name: 'class', value: 'base-text fact-text' },
-    ]);
+    const fact = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'layout-fact' }]);
+    const factBg = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'fact-bg' }]);
+    const factText = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'base-text fact-text' }]);
 
     factText.textContent = LessonsFact.getRandomFact();
     fact.append(factBg, factText);

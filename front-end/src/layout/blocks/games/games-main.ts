@@ -9,25 +9,11 @@ import { Tag, Game } from '../../../types/enums';
 
 class GamesMain {
   public static createGamesMain(render: RenderHandler): HTMLElement {
-    const main = CreateElement.createElement(Tag.main, [
-      { name: 'class', value: 'games' },
-    ]);
-    const mainTitle = MainTitle.createMainTitle(
-      translation.gamesTitle[State.currentLang]
-    );
-    const gameOneSection = GameSection.createGameSection(
-      'game-one',
-      Game.one,
-      render
-    );
-    const gameTwoSection = GameSection.createGameSection(
-      'game-two',
-      Game.two,
-      render
-    );
-    const gamesWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'section-btns-wrapper' },
-    ]);
+    const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'games' }]);
+    const mainTitle = MainTitle.createMainTitle(translation.gamesTitle[State.currentLang]);
+    const gameOneSection = GameSection.createGameSection('game-one', Game.one, render);
+    const gameTwoSection = GameSection.createGameSection('game-two', Game.two, render);
+    const gamesWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'section-btns-wrapper' }]);
 
     gamesWrapper.append(gameOneSection, gameTwoSection);
     main.append(mainTitle, gamesWrapper);

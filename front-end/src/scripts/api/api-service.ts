@@ -1,11 +1,6 @@
 import { Endpoint, Method } from '../../types/enums';
 import { User, Lesson, Query } from '../../types/interfaces';
-import {
-  UsersList,
-  LessonsList,
-  UserData,
-  LessonData,
-} from '../../types/types';
+import { UsersList, LessonsList, UserData, LessonData } from '../../types/types';
 
 class ApiService {
   private static url = 'http://127.0.0.1:3000/api/v1';
@@ -53,10 +48,7 @@ class ApiService {
     return data;
   }
 
-  public static async updateUser(
-    id: string,
-    userData: UserData
-  ): Promise<User> {
+  public static async updateUser(id: string, userData: UserData): Promise<User> {
     const response = await fetch(`${ApiService.url}${Endpoint.users}/${id}`, {
       method: Method.put,
       headers: {
@@ -79,11 +71,7 @@ class ApiService {
   }
 
   public static async getLessons(query: Query): Promise<LessonsList> {
-    const response = await fetch(
-      `${ApiService.url}${Endpoint.lessons}?${ApiService.getLessonsQuery(
-        query
-      )}`
-    );
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}?${ApiService.getLessonsQuery(query)}`);
     const data: Promise<LessonsList> = await response.json();
 
     return data;
@@ -109,10 +97,7 @@ class ApiService {
     return data;
   }
 
-  public static async updateLesson(
-    id: string,
-    lessonData: LessonData
-  ): Promise<Lesson> {
+  public static async updateLesson(id: string, lessonData: LessonData): Promise<Lesson> {
     const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`, {
       method: Method.put,
       headers: {

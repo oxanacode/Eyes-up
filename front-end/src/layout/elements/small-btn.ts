@@ -4,9 +4,7 @@ import { Tag } from '../../types/enums';
 
 class SmallBtn {
   public static createSmallBtn(className: string, text?: string): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: className },
-    ]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: className }]);
 
     if (text) {
       btn.textContent = text;

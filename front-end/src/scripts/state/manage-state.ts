@@ -5,8 +5,7 @@ import { CurrentState } from '../../types/interfaces';
 
 class ManageState {
   public static updateState(): void {
-    const currentState: CurrentState | null =
-      LocalStorageService.getItem('eyesUpState');
+    const currentState: CurrentState | null = LocalStorageService.getItem('eyesUpState');
 
     if (currentState) {
       State.currentUser = currentState.currentUser;
