@@ -7,6 +7,10 @@
   }
 }
 
+@mixin accesibility-text {
+  font-size: 0;
+}
+
 @mixin desktop-small {
   @media (max-width: $desktop-small-width) {
     @content;
@@ -15,6 +19,12 @@
 
 @mixin tablet {
   @media (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-small {
+  @media (max-width: $tablet-small-width) {
     @content;
   }
 }
