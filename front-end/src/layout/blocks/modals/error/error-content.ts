@@ -10,12 +10,12 @@ class ErrorContent {
     const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'error-content' }]);
     const text = ErrorText.createErrorText(errorType);
 
+    content.append(text);
+
     if (errorSource === ErrorSource.registration) {
       const icon = ErrorIcon.createErrorIcon(content);
       const hint = ErrorHint.createErrorHint();
-      content.append(text, icon, hint);
-    } else {
-      content.append(text);
+      content.append(icon, hint);
     }
 
     return content;
