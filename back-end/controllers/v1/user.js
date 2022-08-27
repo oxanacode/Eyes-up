@@ -18,7 +18,13 @@ exports.addUser = async (req, res) => {
   const data = new userModel({
     login: req.body.login,
     password: req.body.password,
-    avatar: req.body.avatar
+    avatar: req.body.avatar,
+    testing: req.body.testing,
+    lessonsEn: req.body.lessonsEn,
+    lessonsRu: req.body.lessonsRu,
+    typingAdventure: req.body.typingAdventure,
+    typingHero: req.body.typingHero,
+    badges: req.body.badges
   });
 
   try {

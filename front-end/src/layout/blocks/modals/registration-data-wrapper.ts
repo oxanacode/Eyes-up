@@ -15,11 +15,20 @@ class RegistrationDataWrapper {
     const inputsWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'registration-inputs-wrapper' },
     ]);
-    const loginLabel = InputLabel.createInputLabel(translation.modalSignUpLoginInput[State.currentLang]);
-    const loginInput = LoginInput.createLoginInput();
-    const passwordLabel = InputLabel.createInputLabel(translation.modalSignUpPasswordInput[State.currentLang]);
-    const passwordInput = PasswordInput.createPasswordInput();
-    const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(passwordInput);
+    const loginLabel = InputLabel.createInputLabel(
+      'registration-input-label base-text',
+      translation.modalSignUpLoginInput[State.currentLang]
+    );
+    const loginInput = LoginInput.createLoginInput('registration-input');
+    const passwordLabel = InputLabel.createInputLabel(
+      'registration-input-label base-text',
+      translation.modalSignUpPasswordInput[State.currentLang]
+    );
+    const passwordInput = PasswordInput.createPasswordInput('registration-input');
+    const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(
+      'password-visibility-btn registration-password-visibility-btn password-close',
+      passwordInput
+    );
     const errorBlock = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'error-block' }]);
     const action = actionBtn(loginInput, passwordInput, errorBlock, render);
 

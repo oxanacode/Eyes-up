@@ -8,6 +8,7 @@ import ManageState from '../state/manage-state';
 import { ErrorSource, ErrorType, StatusCode } from '../../types/enums';
 import { RenderHandler } from '../../types/types';
 import { User } from '../../types/interfaces';
+import State from '../state/state';
 
 class ManageUser {
   public static createUser(
@@ -25,7 +26,7 @@ class ManageUser {
         if (status === StatusCode.found) {
           ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
         } else if (status === StatusCode.notFound) {
-          const user = new UserInfo(login, password, 0);
+          const user = new UserInfo(login, password, State.currentUser.avatar);
 
           ApiService.createUser(user).then(() => {
             UserState.updateUserLogin(login);
@@ -64,6 +65,12 @@ class ManageUser {
         }
       });
     }
+  }
+
+  public static logoutFromProfile(render: RenderHandler): void {
+    UserState.resetUserState();
+    ManageState.saveState();
+    render();
   }
 }
 
