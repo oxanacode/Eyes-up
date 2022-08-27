@@ -2,7 +2,7 @@ import CreateElement from '../../elements/create-element';
 import Menu from './menu';
 import ThemeBtn from './theme-btn';
 import LangBtn from './lang-btn';
-import BurgerMenuBtn from './burder-menu-btn';
+import BurgerMenuBtn from '../modals/burger-menu/burder-menu-btn';
 import AppBtn from './app-btn';
 import UserState from '../../../scripts/user/user-state';
 import ProfileBtn from './profile-btn';

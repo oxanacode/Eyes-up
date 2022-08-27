@@ -1,10 +1,10 @@
-import CreateElement from '../../elements/create-element';
-import ManageModal from '../../../scripts/layout/manage-modal';
-import BurgerMenu from '../modals/burger-menu';
-import ModalWrapper from '../modals/modal-wrapper';
+import CreateElement from '../../../elements/create-element';
+import ManageModal from '../../../../scripts/layout/manage-modal';
+import BurgerMenu from './burger-menu';
+import ModalWrapper from '../common/modal-wrapper';
 
-import { Tag } from '../../../types/enums';
-import { RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { RenderHandler } from '../../../../types/types';
 
 class BurgerMenuBtn {
   public static createBurgerMenuBtn(render: RenderHandler): HTMLElement {

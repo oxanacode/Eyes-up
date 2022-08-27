@@ -1,7 +1,7 @@
-import CreateElement from '../../elements/create-element';
+import CreateElement from '../../../elements/create-element';
 
-import { Tag } from '../../../types/enums';
-import SwitchPasswordVisibility from '../../../scripts/layout/switch-password-visibility';
+import { Tag } from '../../../../types/enums';
+import SwitchPasswordVisibility from '../../../../scripts/layout/switch-password-visibility';
 
 class PasswordVisibilityBtn {
   public static createPasswordVisibilityBtn(className: string, input: HTMLElement): HTMLElement {

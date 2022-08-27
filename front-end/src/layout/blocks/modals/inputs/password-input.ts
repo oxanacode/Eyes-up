@@ -1,6 +1,6 @@
-import CreateInput from '../../elements/create-input';
+import CreateInput from '../../../elements/create-input';
 
-import { Disabled, InputType, Tag } from '../../../types/enums';
+import { Disabled, InputType, Tag } from '../../../../types/enums';
 
 class PasswordInput {
   public static createPasswordInput(className: string, disabled?: Disabled): HTMLInputElement {

@@ -1,10 +1,10 @@
-import CreateElement from '../../elements/create-element';
-import State from '../../../scripts/state/state';
-import translation from '../../../data/translation';
-import ManageUser from '../../../scripts/user/manage-user';
+import CreateElement from '../../../elements/create-element';
+import State from '../../../../scripts/state/state';
+import translation from '../../../../data/translation';
+import ManageUser from '../../../../scripts/user/manage-user';
 
-import { RenderHandler } from '../../../types/types';
-import { Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../../types/types';
+import { Tag } from '../../../../types/enums';
 
 class LogInBtn {
   public static createLogInBtn(

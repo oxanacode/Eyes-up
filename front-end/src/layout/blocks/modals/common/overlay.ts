@@ -1,7 +1,7 @@
-import CreateElement from '../../elements/create-element';
-import ManageModal from '../../../scripts/layout/manage-modal';
+import CreateElement from '../../../elements/create-element';
+import ManageModal from '../../../../scripts/layout/manage-modal';
 
-import { Tag } from '../../../types/enums';
+import { Tag } from '../../../../types/enums';
 
 class Overlay {
   public static createOverlay(modalToClose: HTMLElement): HTMLElement {

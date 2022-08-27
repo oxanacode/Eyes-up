@@ -1,11 +1,11 @@
 import CreateElement from '../../../elements/create-element';
-import InputLabel from '../input-label';
+import InputLabel from '../inputs/input-label';
 import ProfileAvatar from './profile-avatar';
 import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
-import LoginInput from '../login-input';
-import PasswordInput from '../password-input';
-import PasswordVisibilityBtn from '../password-visibility-btn';
+import LoginInput from '../inputs/login-input';
+import PasswordInput from '../inputs/password-input';
+import PasswordVisibilityBtn from '../inputs/password-visibility-btn';
 
 import { Disabled, Tag } from '../../../../types/enums';
 import { User } from '../../../../types/interfaces';

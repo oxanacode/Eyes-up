@@ -2,7 +2,7 @@ import CreateElement from '../../elements/create-element';
 import State from '../../../scripts/state/state';
 import AvatarImage from '../../elements/avatar-image';
 import ManageModal from '../../../scripts/layout/manage-modal';
-import ModalWrapper from '../modals/modal-wrapper';
+import ModalWrapper from '../modals/common/modal-wrapper';
 import ProfileModal from '../modals/profile/profile-modal';
 import translation from '../../../data/translation';
 

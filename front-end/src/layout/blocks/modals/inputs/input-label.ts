@@ -1,6 +1,6 @@
-import CreateElement from '../../elements/create-element';
+import CreateElement from '../../../elements/create-element';
 
-import { Tag } from '../../../types/enums';
+import { Tag } from '../../../../types/enums';
 
 class InputLabel {
   public static createInputLabel(className: string, text: string): HTMLElement {
