@@ -1,4 +1,4 @@
-import { Complexity, Lang, Page, Theme, Layout, Avatar } from './enums';
+import { Complexity, Lang, Page, Theme, Layout } from './enums';
 
 export interface Attribute {
   name: string;
@@ -10,7 +10,13 @@ export interface User {
   __v: number;
   login: string;
   password: string;
-  avatar: Avatar;
+  avatar: number;
+  testing: string;
+  lessonsEn: string;
+  lessonsRu: string;
+  typingAdventure: string;
+  typingHero: string;
+  badges: Array<number>;
 }
 
 export interface Lesson {
@@ -33,7 +39,7 @@ export interface Query {
 
 export interface CurrentUser {
   login: string;
-  avatar: Avatar;
+  avatar: number;
 }
 
 export interface CurrentState {
