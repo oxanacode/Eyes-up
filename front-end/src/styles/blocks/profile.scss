@@ -1,3 +1,8 @@
+@mixin profile-avatar-wrapper {
+  width: 15rem;
+  height: 15rem;
+}
+
 .default-avatar {
   width: 100%;
   border-radius: 50%;
@@ -10,6 +15,7 @@
   right: 0;
   width: 80rem;
   padding: 3rem 4rem 2rem;
+  overflow-y: auto;
 }
 
 .profile-header {
@@ -51,8 +57,7 @@
 }
 
 .profile-avatar-wrapper {
-  width: 15rem;
-  height: 15rem;
+  @include profile-avatar-wrapper;
   grid-row: 1/3;
 }
 
@@ -86,8 +91,16 @@
 .save-changes-btn {
   display: block;
   margin: 0 auto;
+}
 
-  &:disabled {
-    background-color: $c-big-btn-disabled;
-  }
+.profile-avatars-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4rem;
+  row-gap: 5.5rem;
+  margin-bottom: 6rem;
+}
+
+.avatar-btn {
+  @include profile-avatar-wrapper;
 }
