@@ -20,7 +20,7 @@ class EditProfileModal {
     const data = ProfileData.createViewProfileData(user, Profile.edit, saveChangesBtn);
     const avatarsTitle = ProfileSubtitle.createProfileSubtitle(translation.profileAvatarsTitle[State.currentLang]);
     const avatars = ProfileAvatars.createProfileAvatars(data);
-    const deleteAccountBtn = DeleteAccountBtn.createDeleteAccountBtn(user);
+    const deleteAccountBtn = DeleteAccountBtn.createDeleteAccountBtn(user, render);
 
     modal.append(header, data, avatarsTitle, avatars, deleteAccountBtn, saveChangesBtn);
 
