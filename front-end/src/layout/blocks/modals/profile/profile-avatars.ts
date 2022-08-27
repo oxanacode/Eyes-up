@@ -8,7 +8,7 @@ class ProfileAvatars {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-avatars-wrapper' }]);
 
     for (let i = Avatar.default; i <= Avatar.amount; i += 1) {
-      const avatarBtn = AvatarBtn.createAvatarBtn(i, dataBlock);
+      const avatarBtn = AvatarBtn.createAvatarBtn(wrapper, i, dataBlock);
 
       wrapper.append(avatarBtn);
     }
