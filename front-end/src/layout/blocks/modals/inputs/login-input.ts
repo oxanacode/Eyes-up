@@ -7,7 +7,7 @@ class LoginInput {
     const input = CreateInput.createInput(Tag.input, [{ name: 'class', value: className }]);
 
     if (disabled) {
-      input.setAttribute(disabled, 'true');
+      input.setAttribute(disabled, disabled);
     }
 
     return input;

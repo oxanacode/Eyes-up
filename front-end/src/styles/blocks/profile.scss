@@ -82,3 +82,12 @@
   display: block;
   margin: 0 auto;
 }
+
+.save-changes-btn {
+  display: block;
+  margin: 0 auto;
+
+  &:disabled {
+    background-color: $c-big-btn-disabled;
+  }
+}

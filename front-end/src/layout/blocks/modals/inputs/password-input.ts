@@ -10,7 +10,7 @@ class PasswordInput {
     ]);
 
     if (disabled) {
-      input.setAttribute(disabled, 'true');
+      input.setAttribute(disabled, disabled);
     }
 
     return input;

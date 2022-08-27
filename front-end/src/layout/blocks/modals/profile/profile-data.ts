@@ -13,7 +13,7 @@ import { Disabled, Profile, Tag } from '../../../../types/enums';
 import { User } from '../../../../types/interfaces';
 
 class ProfileData {
-  public static createViewProfileData(user: User, profile: Profile, modal?: HTMLElement): HTMLElement {
+  public static createViewProfileData(user: User, profile: Profile, saveChangesBtn?: HTMLElement): HTMLElement {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-data-wrapper' }]);
     const image = ProfileAvatar.createProfileAvatar(user.avatar);
     const loginLabel = InputLabel.createInputLabel(
@@ -31,9 +31,9 @@ class ProfileData {
       passwordInput
     );
 
-    if (profile === Profile.edit && modal) {
-      loginInput = EditProfileLoginInput.createEditProfileLoginInput(modal);
-      passwordInput = EditProfilePasswordInput.createEditProfilePasswordInput(modal);
+    if (profile === Profile.edit && saveChangesBtn) {
+      loginInput = EditProfileLoginInput.createEditProfileLoginInput(saveChangesBtn);
+      passwordInput = EditProfilePasswordInput.createEditProfilePasswordInput(saveChangesBtn);
     }
 
     loginInput.value = user.login;

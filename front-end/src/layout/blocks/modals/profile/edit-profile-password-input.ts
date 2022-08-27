@@ -1,7 +1,7 @@
 import PasswordInput from '../inputs/password-input';
 
 class EditProfilePasswordInput {
-  public static createEditProfilePasswordInput(modal: HTMLElement): HTMLInputElement {
+  public static createEditProfilePasswordInput(saveChangesBtn: HTMLElement): HTMLInputElement {
     const input = PasswordInput.createPasswordInput('profile-input');
 
     return input;
