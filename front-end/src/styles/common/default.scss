@@ -187,3 +187,18 @@
 .selected-avatar {
   border: 0.5rem solid $c-accent;
 }
+
+.password-visibility-btn {
+  @include small-btn-bg;
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+}
+
+.password-close {
+  background-image: $bg-modal-password-open;
+}
+
+.password-open {
+  background-image: $bg-modal-password-closed;
+}

@@ -5,6 +5,7 @@ import UserState from '../../../scripts/user/user-state';
 import ProfileBtn from '../header/profile-btn';
 import RegistrationBtn from '../header/registration-btn';
 import RegistrationModal from './registration-modal';
+import ProfileModal from './profile/profile-modal';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
@@ -17,7 +18,7 @@ class BurgerMenu {
     let userBtn;
 
     if (UserState.checkIfUserAuthorized()) {
-      userBtn = ProfileBtn.createBurgerMenuProfileBtn();
+      userBtn = ProfileBtn.createBurgerMenuProfileBtn(wrapper, modal, ProfileModal.createProfileModal(wrapper, render));
     } else {
       userBtn = RegistrationBtn.createBurgerMenuRegistrationBtn(
         wrapper,

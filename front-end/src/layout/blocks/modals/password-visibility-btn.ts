@@ -4,10 +4,8 @@ import { Tag } from '../../../types/enums';
 import SwitchPasswordVisibility from '../../../scripts/layout/switch-password-visibility';
 
 class PasswordVisibilityBtn {
-  public static createPasswordVisibilityBtn(input: HTMLElement): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [
-      { name: 'class', value: 'password-visibility-btn password-close' },
-    ]);
+  public static createPasswordVisibilityBtn(className: string, input: HTMLElement): HTMLElement {
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: className }]);
 
     btn.addEventListener('click', () => {
       SwitchPasswordVisibility.switchPasswordVisibility(btn, input);

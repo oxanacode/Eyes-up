@@ -43,25 +43,12 @@
 .registration-input {
   @include default-input;
   width: 100%;
-  height: 4rem;
   margin-top: 0.2rem;
 }
 
-.password-visibility-btn {
-  @include small-btn-bg;
-  position: absolute;
+.registration-password-visibility-btn {
   bottom: 1rem;
   right: 1rem;
-  width: 2rem;
-  height: 2rem;
-}
-
-.password-close {
-  background-image: $bg-modal-password-open;
-}
-
-.password-open {
-  background-image: $bg-modal-password-closed;
 }
 
 .registration-switch-btn {

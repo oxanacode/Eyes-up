@@ -135,7 +135,6 @@
 }
 
 .header-profile-avatar {
-  @include default-avatar;
   border: 0.2rem solid $c-accent;
 }
 
@@ -178,7 +177,6 @@
 }
 
 .burger-menu-profile-avatar {
-  @include default-avatar;
   margin-bottom: 1rem;
 }
 
