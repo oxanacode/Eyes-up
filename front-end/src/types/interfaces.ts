@@ -16,7 +16,7 @@ export interface User {
   lessonsRu: string;
   typingAdventure: string;
   typingHero: string;
-  badges: Array<number>;
+  badges: string;
 }
 
 export interface Lesson {
