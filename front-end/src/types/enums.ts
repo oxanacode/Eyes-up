@@ -115,3 +115,8 @@ export enum Disabled {
 export enum Data {
   noData = 'noData',
 }
+
+export enum Profile {
+  view = 'view',
+  edit = 'edit',
+}
