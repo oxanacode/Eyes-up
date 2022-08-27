@@ -8,6 +8,7 @@ import { RenderHandler } from '../../../../types/types';
 import { User } from '../../../../types/interfaces';
 import SaveChangesBtn from './save-changes-btn';
 import ProfileAvatars from './profile-avatars';
+import DeleteAccountBtn from './delete-account-btn';
 
 class EditProfileModal {
   public static createEditProfileModal(user: User, render: RenderHandler): HTMLElement {
@@ -16,8 +17,9 @@ class EditProfileModal {
     const saveChangesBtn = SaveChangesBtn.createSaveChangesBtn();
     const data = ProfileData.createViewProfileData(user, Profile.edit, saveChangesBtn);
     const avatars = ProfileAvatars.createProfileAvatars(data);
+    const deleteAccountBtn = DeleteAccountBtn.createDeleteAccountBtn(user);
 
-    modal.append(header, data, avatars, saveChangesBtn);
+    modal.append(header, data, avatars, deleteAccountBtn, saveChangesBtn);
 
     if (State.currentUser.login === '42') {
       render();

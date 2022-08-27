@@ -14,7 +14,7 @@
   bottom: 0;
   right: 0;
   width: 80rem;
-  padding: 3rem 4rem 2rem;
+  padding: 3rem 4rem 2.5rem;
   overflow-y: auto;
 }
 
@@ -25,6 +25,7 @@
 }
 
 .profile-modal-content {
+  position: relative;
   width: 100%;
   height: 100%;
 }
@@ -103,4 +104,11 @@
 
 .avatar-btn {
   @include profile-avatar-wrapper;
+}
+
+.delete-account-btn {
+  @include font-main;
+  position: absolute;
+  color: $c-main-text;
+  bottom: -10.1rem;
 }
