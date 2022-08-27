@@ -25,7 +25,9 @@ class ManageUser {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.found) {
           ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
-        } else if (status === StatusCode.notFound) {
+        }
+
+        if (status === StatusCode.notFound) {
           const user = new UserInfo(login, password, State.currentUser.avatar);
 
           ApiService.createUser(user).then(() => {
@@ -52,7 +54,9 @@ class ManageUser {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.notFound) {
           ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notRegistered);
-        } else if (status === StatusCode.found) {
+        }
+
+        if (status === StatusCode.found) {
           ApiService.getUser(login).then((user: User) => {
             if (password !== user.password) {
               ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notMatchingPassword);
