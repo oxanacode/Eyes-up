@@ -1,11 +1,11 @@
-import ManageModal from '../../../scripts/layout/manage-modal';
-import State from '../../../scripts/state/state';
-import SmallBtn from '../../elements/small-btn';
-import ModalWrapper from '../modals/common/modal-wrapper';
-import RegistrationModal from '../modals/registration/registration-modal';
-import translation from '../../../data/translation';
+import ManageModal from '../../../../scripts/layout/manage-modal';
+import State from '../../../../scripts/state/state';
+import SmallBtn from '../../../elements/small-btn';
+import ModalWrapper from '../common/modal-wrapper';
+import RegistrationModal from './registration-modal';
+import translation from '../../../../data/translation';
 
-import { RenderHandler } from '../../../types/types';
+import { RenderHandler } from '../../../../types/types';
 
 class RegistrationBtn {
   public static createRegistrationBtn(): HTMLElement {

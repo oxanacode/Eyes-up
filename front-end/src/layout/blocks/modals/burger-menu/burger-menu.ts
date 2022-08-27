@@ -2,8 +2,8 @@ import CreateElement from '../../../elements/create-element';
 import CloseBtn from '../common/close-btn';
 import Menu from '../../header/menu';
 import UserState from '../../../../scripts/user/user-state';
-import ProfileBtn from '../../header/profile-btn';
-import RegistrationBtn from '../../header/registration-btn';
+import ProfileBtn from '../profile/profile-btn';
+import RegistrationBtn from '../registration/registration-btn';
 import RegistrationModal from '../registration/registration-modal';
 import ProfileModal from '../profile/profile-modal';
 

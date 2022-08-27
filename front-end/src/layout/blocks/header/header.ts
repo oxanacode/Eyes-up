@@ -5,8 +5,8 @@ import LangBtn from './lang-btn';
 import BurgerMenuBtn from '../modals/burger-menu/burder-menu-btn';
 import AppBtn from './app-btn';
 import UserState from '../../../scripts/user/user-state';
-import ProfileBtn from './profile-btn';
-import RegistrationBtn from './registration-btn';
+import ProfileBtn from '../modals/profile/profile-btn';
+import RegistrationBtn from '../modals/registration/registration-btn';
 
 import { Page, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
