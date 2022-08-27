@@ -6,7 +6,10 @@ export type UsersList = Array<User>;
 
 export type LessonsList = Array<Lesson>;
 
-export type UserData = Pick<User, 'login' | 'password' | 'avatar'>;
+export type UserData = Pick<
+  User,
+  'login' | 'password' | 'avatar' | 'testing' | 'lessonsEn' | 'lessonsRu' | 'typingAdventure' | 'typingHero' | 'badges'
+>;
 
 export type LessonData = Pick<
   Lesson,
