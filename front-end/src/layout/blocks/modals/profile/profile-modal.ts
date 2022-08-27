@@ -3,6 +3,7 @@ import ViewProfileModal from './view-profile-modal';
 import EditProfileModal from './edit-profile-modal';
 import ApiService from '../../../../scripts/api/api-service';
 import State from '../../../../scripts/state/state';
+import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
 
 import { Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
@@ -15,6 +16,7 @@ class ProfileModal {
       const viewProfile = ViewProfileModal.createViewProfileModal(modalToClose, user, render);
       const editProfile = EditProfileModal.createEditProfileModal(user, render);
 
+      ManageProfileState.updateProfileState(user);
       modal.append(viewProfile, editProfile);
     });
 
