@@ -1,11 +1,11 @@
 import CreateElement from './create-element';
 
-import { Avatar, Tag } from '../../types/enums';
+import { Tag } from '../../types/enums';
 
 class AvatarImage {
   public static path = './assets/images/avatars/';
 
-  public static createAvatarImagePath(avatar: Avatar | number): string {
+  public static createAvatarImagePath(avatar: number): string {
     return `${AvatarImage.path}avatar-${avatar}.png`;
   }
 

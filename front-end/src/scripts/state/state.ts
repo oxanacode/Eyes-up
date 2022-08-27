@@ -4,7 +4,7 @@ import { CurrentUser } from '../../types/interfaces';
 class State {
   public static notAuthorised = 'login';
 
-  public static defaultAvatar: Avatar = Avatar.one;
+  public static defaultAvatar: Avatar = Avatar.default;
 
   public static currentUser: CurrentUser = {
     login: State.notAuthorised,
