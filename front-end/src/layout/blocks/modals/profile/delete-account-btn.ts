@@ -14,7 +14,6 @@ class DeleteAccountBtn {
 
     btn.textContent = translation.profileDeleteBtn[State.currentLang];
     btn.addEventListener('click', () => {
-      /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
       ApiService.deleteUser(user._id).then(() => {
         ManageUser.logoutFromProfile(render);
       });

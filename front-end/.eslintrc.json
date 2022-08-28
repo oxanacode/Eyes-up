@@ -24,6 +24,7 @@
     "node": true
   },
   "rules": {
+    "no-underscore-dangle": "off",
     "no-debugger": "off",
     "no-console": "warn",
     "@typescript-eslint/no-explicit-any": "error",
