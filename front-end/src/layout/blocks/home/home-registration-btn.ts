@@ -1,7 +1,7 @@
 import BigBtn from '../../elements/big-btn';
 import ManageModal from '../../../scripts/layout/manage-modal';
-import ModalWrapper from '../modals/modal-wrapper';
-import RegistrationModal from '../modals/registration-modal';
+import ModalWrapper from '../modals/common/modal-wrapper';
+import RegistrationModal from '../modals/registration/registration-modal';
 import translation from '../../../data/translation';
 
 import { RenderHandler } from '../../../types/types';

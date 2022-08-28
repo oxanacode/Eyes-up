@@ -1,10 +1,10 @@
-import CreateElement from '../../elements/create-element';
-import MainTitle from '../../elements/main-title';
+import CreateElement from '../../../elements/create-element';
+import MainTitle from '../../../elements/main-title';
 import RegistrationSwitchBtn from './registration-switch-btn';
 import RegistrationDataWrapper from './registration-data-wrapper';
 
-import { Tag } from '../../../types/enums';
-import { ActionHandler, RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { ActionHandler, RenderHandler } from '../../../../types/types';
 
 class RegistrationModalContent {
   public static createRegistrationModalContent(

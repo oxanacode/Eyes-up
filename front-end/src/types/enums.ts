@@ -56,7 +56,6 @@ export enum Method {
   get = 'get',
   post = 'post',
   put = 'put',
-  patch = 'patch',
   delete = 'delete',
 }
 
@@ -117,4 +116,9 @@ export enum Disabled {
 
 export enum Data {
   noData = 'noData',
+}
+
+export enum Profile {
+  view = 'view',
+  edit = 'edit',
 }

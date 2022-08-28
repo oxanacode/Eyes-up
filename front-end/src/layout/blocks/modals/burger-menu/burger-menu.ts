@@ -1,14 +1,14 @@
-import CreateElement from '../../elements/create-element';
-import CloseBtn from './close-btn';
-import Menu from '../header/menu';
-import UserState from '../../../scripts/user/user-state';
-import ProfileBtn from '../header/profile-btn';
-import RegistrationBtn from '../header/registration-btn';
-import RegistrationModal from './registration-modal';
-import ProfileModal from './profile/profile-modal';
+import CreateElement from '../../../elements/create-element';
+import CloseBtn from '../common/close-btn';
+import Menu from '../../header/menu';
+import UserState from '../../../../scripts/user/user-state';
+import ProfileBtn from '../profile/profile-btn';
+import RegistrationBtn from '../registration/registration-btn';
+import RegistrationModal from '../registration/registration-modal';
+import ProfileModal from '../profile/profile-modal';
 
-import { Tag } from '../../../types/enums';
-import { RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { RenderHandler } from '../../../../types/types';
 
 class BurgerMenu {
   public static createBurgerMenu(wrapper: HTMLElement, render: RenderHandler): HTMLElement {
@@ -17,7 +17,7 @@ class BurgerMenu {
     const menu = Menu.createMenu('menu modal-menu', render);
     let userBtn;
 
-    if (UserState.checkIfUserAuthorized()) {
+    if (UserState.checkIfUserAuthorised()) {
       userBtn = ProfileBtn.createBurgerMenuProfileBtn(wrapper, modal, ProfileModal.createProfileModal(wrapper, render));
     } else {
       userBtn = RegistrationBtn.createBurgerMenuRegistrationBtn(

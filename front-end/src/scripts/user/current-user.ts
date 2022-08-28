@@ -1,17 +1,16 @@
 import { UserData } from '../../types/types';
-import { Data } from '../../types/enums';
 
-class UserInfo implements UserData {
+class CurrentUser implements UserData {
   constructor(
     public login: string,
     public password: string,
     public avatar: number,
-    public testing = Data.noData,
-    public lessonsEn = Data.noData,
-    public lessonsRu = Data.noData,
-    public typingAdventure = Data.noData,
-    public typingHero = Data.noData,
-    public badges = Data.noData
+    public testing: string,
+    public lessonsEn: string,
+    public lessonsRu: string,
+    public typingAdventure: string,
+    public typingHero: string,
+    public badges: string
   ) {
     this.login = login;
     this.password = password;
@@ -25,4 +24,4 @@ class UserInfo implements UserData {
   }
 }
 
-export default UserInfo;
+export default CurrentUser;

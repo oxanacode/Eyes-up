@@ -30,7 +30,7 @@ const errorsTranslation: Translation = {
     ru: 'Пароль не подходит.',
   },
   loginHint: {
-    en: '2-20 characters, latin / cyrillic letters, numbers, should start form letter.',
+    en: '2-20 characters, latin / cyrillic letters, numbers, should start from letter.',
     ru: '2-20 символов, буквы латиницы / кириллицы, числа, должен начинаться с буквы.',
   },
   passwordHint: {

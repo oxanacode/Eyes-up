@@ -1,13 +1,13 @@
-import CreateElement from '../../elements/create-element';
-import InputLabel from './input-label';
-import State from '../../../scripts/state/state';
-import LoginInput from './login-input';
-import PasswordInput from './password-input';
-import translation from '../../../data/translation';
+import CreateElement from '../../../elements/create-element';
+import InputLabel from '../inputs/input-label';
+import State from '../../../../scripts/state/state';
+import LoginInput from '../inputs/login-input';
+import PasswordInput from '../inputs/password-input';
+import translation from '../../../../data/translation';
 
-import { Tag } from '../../../types/enums';
-import { ActionHandler, RenderHandler } from '../../../types/types';
-import PasswordVisibilityBtn from './password-visibility-btn';
+import { Tag } from '../../../../types/enums';
+import { ActionHandler, RenderHandler } from '../../../../types/types';
+import PasswordVisibilityBtn from '../inputs/password-visibility-btn';
 
 class RegistrationDataWrapper {
   public static createRegistrationDataWrapper(actionBtn: ActionHandler, render: RenderHandler): HTMLElement {
@@ -29,7 +29,9 @@ class RegistrationDataWrapper {
       'password-visibility-btn registration-password-visibility-btn password-close',
       passwordInput
     );
-    const errorBlock = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'error-block' }]);
+    const errorBlock = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'error-block registration-error-block' },
+    ]);
     const action = actionBtn(loginInput, passwordInput, errorBlock, render);
 
     loginLabel.append(loginInput);
