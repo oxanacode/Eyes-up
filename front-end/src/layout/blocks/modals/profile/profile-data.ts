@@ -20,21 +20,22 @@ class ProfileData {
       'profile-input-label',
       translation.modalSignUpLoginInput[State.currentLang]
     );
-    let loginInput = LoginInput.createLoginInput('profile-input', Disabled.true);
+    const loginInput =
+      profile === Profile.edit && saveChangesBtn
+        ? EditProfileLoginInput.createEditProfileLoginInput(user, saveChangesBtn)
+        : LoginInput.createLoginInput('profile-input', Disabled.true);
     const passwordLabel = InputLabel.createInputLabel(
       'profile-input-label',
       translation.modalSignUpPasswordInput[State.currentLang]
     );
-    let passwordInput = PasswordInput.createPasswordInput('profile-input', Disabled.true);
+    const passwordInput =
+      profile === Profile.edit && saveChangesBtn
+        ? EditProfilePasswordInput.createEditProfilePasswordInput(user, saveChangesBtn)
+        : PasswordInput.createPasswordInput('profile-input', Disabled.true);
     const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(
       'password-visibility-btn profile-password-visibility-btn password-close',
       passwordInput
     );
-
-    if (profile === Profile.edit && saveChangesBtn) {
-      loginInput = EditProfileLoginInput.createEditProfileLoginInput(user, saveChangesBtn);
-      passwordInput = EditProfilePasswordInput.createEditProfilePasswordInput(user, saveChangesBtn);
-    }
 
     loginInput.value = user.login;
     passwordInput.value = user.password;
