@@ -29,9 +29,9 @@ class ManageUser {
         }
 
         if (status === StatusCode.notFound) {
-          const user = new BaseUser(login, password, State.currentUser.avatar);
+          const userData = new BaseUser(login, password, State.currentUser.avatar);
 
-          ApiService.createUser(user).then(() => {
+          ApiService.createUser(userData).then(() => {
             UserState.updateUserLogin(login);
             ManageState.saveState();
             render();
@@ -62,7 +62,7 @@ class ManageUser {
             if (password !== user.password) {
               ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notMatchingPassword);
             } else {
-              UserState.updateUserLogin(login);
+              UserState.updateUserState(login, user.avatar);
               ManageState.saveState();
               render();
             }
@@ -81,27 +81,34 @@ class ManageUser {
   public static changeUserData(user: User, errorBlock: HTMLElement, render: RenderHandler): void {
     const dataCorrect = DataValidation.checkIfDataCorrect(ProfileState.login, ProfileState.password, errorBlock);
     const loginDiffer = DataValidation.checkIfLoginDiffer(user);
+    const userData: Partial<UserData> = {
+      login: ProfileState.login,
+      password: ProfileState.password,
+      avatar: ProfileState.avatar,
+    };
 
-    if (dataCorrect && loginDiffer) {
-      ApiService.checkUser(ProfileState.login).then((status: number) => {
-        if (status === StatusCode.found) {
-          ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
-        }
+    if (dataCorrect) {
+      if (loginDiffer) {
+        ApiService.checkUser(ProfileState.login).then((status: number) => {
+          if (status === StatusCode.found) {
+            ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
+          }
 
-        if (status === StatusCode.notFound) {
-          const userData: Partial<UserData> = {
-            login: ProfileState.login,
-            password: ProfileState.password,
-            avatar: ProfileState.avatar,
-          };
-
-          ApiService.updateUser(user._id, userData).then(() => {
-            UserState.updateUserState(ProfileState.login, ProfileState.avatar);
-            ManageState.saveState();
-            render();
-          });
-        }
-      });
+          if (status === StatusCode.notFound) {
+            ApiService.updateUser(user._id, userData).then(() => {
+              UserState.updateUserState(ProfileState.login, ProfileState.avatar);
+              ManageState.saveState();
+              render();
+            });
+          }
+        });
+      } else {
+        ApiService.updateUser(user._id, userData).then(() => {
+          UserState.updateUserState(ProfileState.login, ProfileState.avatar);
+          ManageState.saveState();
+          render();
+        });
+      }
     }
   }
 }
