@@ -3,11 +3,19 @@ import AvatarImage from './avatar-image';
 import ProfileState from '../../../../scripts/profile/profile-state';
 import ManageAvatar from '../../../../scripts/layout/manage-avatar';
 import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
+import ManageSaveChangesBtn from '../../../../scripts/layout/manage-save-shanges-btn';
 
 import { Tag } from '../../../../types/enums';
+import { User } from '../../../../types/interfaces';
 
 class AvatarBtn {
-  public static createAvatarBtn(parent: HTMLElement, avatar: number, dataBlock: HTMLElement): HTMLElement {
+  public static createAvatarBtn(
+    parent: HTMLElement,
+    avatar: number,
+    user: User,
+    dataBlock: HTMLElement,
+    saveChangesBtn: HTMLElement
+  ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'avatar-btn' }]);
     const imgClass =
       avatar === ProfileState.avatar
@@ -20,6 +28,7 @@ class AvatarBtn {
       ManageProfileState.changeAvatarState(avatar);
       ManageAvatar.changeAvatarImage(dataBlock);
       ManageAvatar.changeSelectedAvatar(parent, btn);
+      ManageSaveChangesBtn.switchSaveChangesBtnState(user, saveChangesBtn);
     });
 
     return btn;

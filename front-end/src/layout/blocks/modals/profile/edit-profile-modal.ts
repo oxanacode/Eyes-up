@@ -16,17 +16,13 @@ class EditProfileModal {
   public static createEditProfileModal(user: User, render: RenderHandler): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content hidden' }]);
     const header = EditProfileHeader.createEditProfileHeader(modal);
-    const saveChangesBtn = SaveChangesBtn.createSaveChangesBtn();
+    const saveChangesBtn = SaveChangesBtn.createSaveChangesBtn(render);
     const data = ProfileData.createViewProfileData(user, Profile.edit, saveChangesBtn);
     const avatarsTitle = ProfileSubtitle.createProfileSubtitle(translation.profileAvatarsTitle[State.currentLang]);
-    const avatars = ProfileAvatars.createProfileAvatars(data);
+    const avatars = ProfileAvatars.createProfileAvatars(user, data, saveChangesBtn);
     const deleteAccountBtn = DeleteAccountBtn.createDeleteAccountBtn(user, render);
 
     modal.append(header, data, avatarsTitle, avatars, deleteAccountBtn, saveChangesBtn);
-
-    if (State.currentUser.login === '42') {
-      render();
-    }
 
     return modal;
   }

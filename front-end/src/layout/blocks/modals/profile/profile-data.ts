@@ -32,8 +32,8 @@ class ProfileData {
     );
 
     if (profile === Profile.edit && saveChangesBtn) {
-      loginInput = EditProfileLoginInput.createEditProfileLoginInput(saveChangesBtn);
-      passwordInput = EditProfilePasswordInput.createEditProfilePasswordInput(saveChangesBtn);
+      loginInput = EditProfileLoginInput.createEditProfileLoginInput(user, saveChangesBtn);
+      passwordInput = EditProfilePasswordInput.createEditProfilePasswordInput(user, saveChangesBtn);
     }
 
     loginInput.value = user.login;
