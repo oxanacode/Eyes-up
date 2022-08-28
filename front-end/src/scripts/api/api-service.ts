@@ -48,9 +48,9 @@ class ApiService {
     return data;
   }
 
-  public static async updateUser(id: string, userData: UserData): Promise<User> {
+  public static async updateUser(id: string, userData: Partial<UserData>): Promise<User> {
     const response = await fetch(`${ApiService.url}${Endpoint.users}/${id}`, {
-      method: Method.put,
+      method: Method.patch,
       headers: {
         'Content-Type': 'application/json',
       },
