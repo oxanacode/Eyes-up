@@ -8,7 +8,10 @@ export type LessonsList = Array<Lesson>;
 
 export type RandomTest = Array<Test>;
 
-export type UserData = Pick<User, 'login' | 'password' | 'avatar'>;
+export type UserData = Pick<
+  User,
+  'login' | 'password' | 'avatar' | 'testing' | 'lessonsEn' | 'lessonsRu' | 'typingAdventure' | 'typingHero' | 'badges'
+>;
 
 export type LessonData = Pick<
   Lesson,
