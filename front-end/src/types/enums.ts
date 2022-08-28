@@ -49,6 +49,7 @@ export enum Endpoint {
   users = '/users',
   lessons = '/lessons',
   tests = '/tests',
+  test = '/test',
 }
 
 export enum Method {
