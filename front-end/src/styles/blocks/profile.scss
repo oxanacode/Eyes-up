@@ -51,7 +51,6 @@
   display: grid;
   grid-template-columns: 15rem 1fr;
   column-gap: $desktop-margin;
-  row-gap: 1rem;
   margin-bottom: 3rem;
 }
 
@@ -69,6 +68,14 @@
   @include mobile {
     @include font-main;
   }
+}
+
+.profile-login-input-label {
+  padding: 2rem 0 1.5rem;
+}
+
+.profile-password-input-label {
+  padding: 1.5rem 0 2rem;
 }
 
 .profile-input {
@@ -119,4 +126,11 @@
   position: absolute;
   color: $c-main-text;
   bottom: calc((5rem - 2.1rem) / 2);
+}
+
+.profile-error-block {
+  position: absolute;
+  left: 23rem;
+  width: 47.8rem;
+  top: 20.4rem;
 }

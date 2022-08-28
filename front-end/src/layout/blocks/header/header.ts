@@ -25,7 +25,7 @@ class Header {
     let userBtn;
     const burgerBtn = BurgerMenuBtn.createBurgerMenuBtn(render);
 
-    if (UserState.checkIfUserAuthorized()) {
+    if (UserState.checkIfUserAuthorised()) {
       userBtn = ProfileBtn.createHeaderProfileBtn(render);
     } else {
       userBtn = RegistrationBtn.createHeaderRegistrationBtn(render);

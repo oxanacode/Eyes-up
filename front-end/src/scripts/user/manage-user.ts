@@ -2,13 +2,14 @@ import ApiService from '../api/api-service';
 import DataValidation from '../validation/data-validation';
 import ManageError from '../layout/manage-error';
 import UserState from './user-state';
-import UserInfo from './user-info';
+import BaseUser from './base-user';
 import ManageState from '../state/manage-state';
+import State from '../state/state';
+import ProfileState from '../profile/profile-state';
 
 import { ErrorSource, ErrorType, StatusCode } from '../../types/enums';
-import { RenderHandler } from '../../types/types';
+import { RenderHandler, UserData } from '../../types/types';
 import { User } from '../../types/interfaces';
-import State from '../state/state';
 
 class ManageUser {
   public static createUser(
@@ -28,7 +29,7 @@ class ManageUser {
         }
 
         if (status === StatusCode.notFound) {
-          const user = new UserInfo(login, password, State.currentUser.avatar);
+          const user = new BaseUser(login, password, State.currentUser.avatar);
 
           ApiService.createUser(user).then(() => {
             UserState.updateUserLogin(login);
@@ -75,6 +76,33 @@ class ManageUser {
     UserState.resetUserState();
     ManageState.saveState();
     render();
+  }
+
+  public static changeUserData(user: User, errorBlock: HTMLElement, render: RenderHandler): void {
+    const dataCorrect = DataValidation.checkIfDataCorrect(ProfileState.login, ProfileState.password, errorBlock);
+    const loginDiffer = DataValidation.checkIfLoginDiffer(user);
+
+    if (dataCorrect && loginDiffer) {
+      ApiService.checkUser(ProfileState.login).then((status: number) => {
+        if (status === StatusCode.found) {
+          ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
+        }
+
+        if (status === StatusCode.notFound) {
+          const userData: Partial<UserData> = {
+            login: ProfileState.login,
+            password: ProfileState.password,
+            avatar: ProfileState.avatar,
+          };
+
+          ApiService.updateUser(user._id, userData).then(() => {
+            UserState.updateUserState(ProfileState.login, ProfileState.avatar);
+            ManageState.saveState();
+            render();
+          });
+        }
+      });
+    }
   }
 }
 

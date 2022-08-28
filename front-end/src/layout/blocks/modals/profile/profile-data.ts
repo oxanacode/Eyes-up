@@ -17,7 +17,7 @@ class ProfileData {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-data-wrapper' }]);
     const image = ProfileAvatar.createProfileAvatar(user.avatar);
     const loginLabel = InputLabel.createInputLabel(
-      'profile-input-label',
+      'profile-input-label profile-login-input-label',
       translation.modalSignUpLoginInput[State.currentLang]
     );
     const loginInput =
@@ -25,7 +25,7 @@ class ProfileData {
         ? EditProfileLoginInput.createEditProfileLoginInput(user, saveChangesBtn)
         : LoginInput.createLoginInput('profile-input', Disabled.true);
     const passwordLabel = InputLabel.createInputLabel(
-      'profile-input-label',
+      'profile-input-label profile-password-input-label',
       translation.modalSignUpPasswordInput[State.currentLang]
     );
     const passwordInput =

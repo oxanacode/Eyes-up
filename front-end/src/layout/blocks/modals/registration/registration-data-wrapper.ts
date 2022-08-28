@@ -29,7 +29,9 @@ class RegistrationDataWrapper {
       'password-visibility-btn registration-password-visibility-btn password-close',
       passwordInput
     );
-    const errorBlock = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'error-block' }]);
+    const errorBlock = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'error-block registration-error-block' },
+    ]);
     const action = actionBtn(loginInput, passwordInput, errorBlock, render);
 
     loginLabel.append(loginInput);

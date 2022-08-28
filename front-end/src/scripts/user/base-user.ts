@@ -1,7 +1,7 @@
 import { UserData } from '../../types/types';
 import { Data } from '../../types/enums';
 
-class UserInfo implements UserData {
+class BaseUser implements UserData {
   constructor(
     public login: string,
     public password: string,
@@ -25,4 +25,4 @@ class UserInfo implements UserData {
   }
 }
 
-export default UserInfo;
+export default BaseUser;

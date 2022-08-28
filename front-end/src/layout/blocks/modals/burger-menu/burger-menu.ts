@@ -17,7 +17,7 @@ class BurgerMenu {
     const menu = Menu.createMenu('menu modal-menu', render);
     let userBtn;
 
-    if (UserState.checkIfUserAuthorized()) {
+    if (UserState.checkIfUserAuthorised()) {
       userBtn = ProfileBtn.createBurgerMenuProfileBtn(wrapper, modal, ProfileModal.createProfileModal(wrapper, render));
     } else {
       userBtn = RegistrationBtn.createBurgerMenuRegistrationBtn(

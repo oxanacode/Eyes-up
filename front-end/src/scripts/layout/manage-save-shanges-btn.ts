@@ -1,6 +1,7 @@
+import DataValidation from '../validation/data-validation';
+
 import { Disabled } from '../../types/enums';
 import { User } from '../../types/interfaces';
-import ProfileState from '../profile/profile-state';
 
 class ManageSaveChangesBtn {
   private static disableSaveChangesBtn(saveChangesBtn: HTMLElement): void {
@@ -12,14 +13,10 @@ class ManageSaveChangesBtn {
   }
 
   public static switchSaveChangesBtnState(user: User, saveChangesBtn: HTMLElement): void {
-    if (
-      ProfileState.login === user.login &&
-      ProfileState.password === user.password &&
-      ProfileState.avatar === user.avatar
-    ) {
-      ManageSaveChangesBtn.disableSaveChangesBtn(saveChangesBtn);
-    } else {
+    if (DataValidation.checkIfUserDataDiffer(user)) {
       ManageSaveChangesBtn.enableSaveChangesBtn(saveChangesBtn);
+    } else {
+      ManageSaveChangesBtn.disableSaveChangesBtn(saveChangesBtn);
     }
   }
 }
