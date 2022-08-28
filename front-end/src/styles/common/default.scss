@@ -172,14 +172,6 @@
   display: none;
 }
 
-.error-block {
-  @include font-main;
-
-  @include mobile {
-    @include font-main-small;
-  }
-}
-
 .not-selected-avatar {
   border: 0.5rem solid $c-block-bg;
 }
