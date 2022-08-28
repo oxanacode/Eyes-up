@@ -34,7 +34,6 @@
 
 .edit-btn {
   @include accessibility-text;
-  @include small-btn-bg;
   background-image: $bg-profile-edit;
 
   &:hover {
