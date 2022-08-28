@@ -55,6 +55,7 @@
 
 .action-spell-name {
   text-align: center;
+  font-size: 17px;
 }
 
 .field-middle {
@@ -75,7 +76,7 @@
   height: 50px;
   border: 1px solid;
   border-radius: 5px;
-  font-size: 25px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -90,8 +91,8 @@
 
 .action-field-total {
   position: relative;
-  width: 120px;
-  height: 50px;
+  width: 150px;
+  min-height: 50px;
   background: #ffff74;
   border-radius: 5px;
   color: purple;

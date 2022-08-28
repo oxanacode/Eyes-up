@@ -4,7 +4,6 @@ import Modal from '../overal-func.ts/create-modal';
 import GameState from '../game-state';
 import MonsterResist from './monster-resist-handler';
 
-// import { Tag } from '../game-types/enums';
 import GameValues, { Tag } from '../game-types/enums';
 
 class MoveHandler {
@@ -32,7 +31,6 @@ class MoveHandler {
         MoveHandler.totalEffects.push(damage);
 
         MonsterResist.handler(spell.name, spell.damage);
-        console.log('its listener');
 
         FieldState.actionTotal.textContent = MoveHandler.totalSpells.join(' & ');
         MoveHandler.inputStr = '';
@@ -69,8 +67,6 @@ class MoveHandler {
       const currentValue = +num + value;
       return currentValue;
     }, 0);
-    console.log(MoveHandler.totalEffects);
-    console.log(totalResult);
 
     if (MoveHandler.heroShield) {
       totalResult /= 2;

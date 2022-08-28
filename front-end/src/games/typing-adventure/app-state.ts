@@ -1,5 +1,3 @@
-class AppState {
-  static lang: 'ru';
-}
+import State from '../../scripts/state/state';
 
-export default AppState;
+export default State;

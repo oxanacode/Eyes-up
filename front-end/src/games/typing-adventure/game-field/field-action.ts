@@ -6,7 +6,6 @@ import MoveHandler from './move-handler';
 import FieldTutorial from './start-tutorial';
 import { spellsSelectors } from '../game-text-content/spells-and-beasts-selectors';
 
-// import { Tag } from '../game-types/enums';
 import GameValues, { Tag } from '../game-types/enums';
 
 class FieldAction {

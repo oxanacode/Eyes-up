@@ -27,8 +27,6 @@ class GameMap {
   static innerGameMapRender() {
     const mapView = GameMap.mapRender();
 
-    console.log(GameState.userLvl);
-
     GameState.gameWrapper.innerHTML = '';
     GameState.gameWrapper.append(mapView);
     Achievements.checker();
@@ -46,7 +44,6 @@ class GameMap {
     infoButton.textContent = GameState.lib.gameInfoTitle as string;
 
     layoutButton.addEventListener('click', () => {
-      console.log('wow!');
       GameState.appCallbacks.switchPage(GameState.appCallbacks.page, GameState.appCallbacks.render);
       GameState.gameWrapper.remove();
     });
@@ -54,7 +51,6 @@ class GameMap {
       GameInfo.createInfoModal();
     });
     resetButton.addEventListener('click', () => {
-      console.log('wow!');
       Reset.resetMethod(GameMap.innerGameMapRender);
     });
 

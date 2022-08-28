@@ -20,21 +20,19 @@
 .reset-state-button {
   padding: 5px 10px;
   color: darkmagenta;
-  border-color: darkmagenta;
+  font-size: 17px;
+  border: 2px solid darkmagenta;
   border-radius: 5px;
   background-color: inherit;
   transition: 0.5s;
   cursor: pointer;
-}
-
-.layout-button:hover,
-.game-info-button:hover,
-.reset-state-button:hover {
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .beast-title {
-  width: 200px;
+  width: 220px;
   font-size: 20px;
   transition: 0.8s;
   padding: 10px;
@@ -50,11 +48,15 @@
 }
 
 .beast-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   cursor: pointer;
-}
-
-.beast-wrapper:hover .beast-title,
-.beast-wrapper:hover .beast {
-  transform: scale(1.1);
-  transition: 0.8s;
+  &:hover {
+    .beast-title,
+    .beast {
+      transform: scale(1.1);
+      transition: 0.8s;
+    }
+  }
 }

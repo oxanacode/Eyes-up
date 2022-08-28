@@ -9,8 +9,6 @@ class GameRender {
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
     const mapView = GameMap.mapRender();
 
-    console.log(GameState.userLvl);
-
     GameState.gameWrapper = gameView;
     gameView.append(mapView);
 

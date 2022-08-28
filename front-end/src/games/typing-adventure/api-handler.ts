@@ -1,33 +1,21 @@
 import GameState from './game-state';
 
-import { Idata } from './game-types/interfaces';
-
-// export interface Idata {
-//   firstMapRender: boolean;
-//   firstFieldRender: boolean;
-//   userLvl: number;
-//   userSpells: Record<string, string>[];
-//   gameBeasts: IBeast[];
-//   achievements: Record<string, boolean>;
-// }
+// import { Idata } from './game-types/interfaces';
 
 class ApiHandler {
-  static async getData() {
-    const response = await fetch('./assets/DATABASE/database.json');
-    const data: Idata = await response.json();
-
-    if (data.firstMapRender) GameState.firstAppearance = data.firstMapRender;
-    if (data.firstFieldRender) GameState.firstFieldAppearance = data.firstFieldRender;
-    if (data.userLvl) GameState.userLvl = data.userLvl;
-    if (data.gameBeasts) GameState.currentGameBeasts = data.gameBeasts;
-    if (data.achievements) GameState.achievementsCurrentStatus = data.achievements;
-
-    if (data.userSpells) {
-      const spells = data.userSpells;
-      spells.forEach((spell) => {
-        ApiHandler.engageSpell(spell.name);
-      });
-    }
+  static getData() {
+    // const data: Idata = JSON.parse();
+    // if (data.firstMapRender) GameState.firstAppearance = data.firstMapRender;
+    // if (data.firstFieldRender) GameState.firstFieldAppearance = data.firstFieldRender;
+    // if (data.userLvl) GameState.userLvl = data.userLvl;
+    // if (data.gameBeasts) GameState.currentGameBeasts = data.gameBeasts;
+    // if (data.achievements) GameState.achievementsCurrentStatus = data.achievements;
+    // if (data.userSpells) {
+    //   const spells = data.userSpells;
+    //   spells.forEach((spell) => {
+    //     ApiHandler.engageSpell(spell.name);
+    //   });
+    // }
   }
 
   static engageSpell(databaseSpell: string) {
@@ -48,16 +36,15 @@ class ApiHandler {
   }
 
   static setData() {
-    const data = {
-      firstMapRender: GameState.firstAppearance,
-      firstFieldRender: GameState.firstFieldAppearance,
-      userLvl: GameState.userLvl,
-      userSpells: GameState.userSpells,
-      gameBeasts: GameState.currentGameBeasts,
-      achievements: GameState.achievementsCurrentStatus,
-    };
-
-    console.log(data);
+    // const dataObj = {
+    //   firstMapRender: GameState.firstAppearance,
+    //   firstFieldRender: GameState.firstFieldAppearance,
+    //   userLvl: GameState.userLvl,
+    //   userSpells: GameState.userSpells,
+    //   gameBeasts: GameState.currentGameBeasts,
+    //   achievements: GameState.achievementsCurrentStatus,
+    // };
+    // const data = JSON.stringify(dataObj);
     // Push into database;
   }
 }

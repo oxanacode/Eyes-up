@@ -79,7 +79,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleTenSpells as string;
       const text = GameState.lib.achievementTextTenSpells as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.tenSpells = true;
     }
   }
@@ -89,7 +89,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleLvlUp as string;
       const text = GameState.lib.achievementTextLvlUp as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.lvlUp = true;
     }
   }
@@ -99,7 +99,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleHalfGame as string;
       const text = GameState.lib.achievementTextHalfGame as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.halfGame = true;
     }
   }
@@ -109,72 +109,67 @@ class Achievements {
       const title = GameState.lib.achievementTitleGameDone as string;
       const text = GameState.lib.achievementTextGameDone as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.gameDone = true;
     }
   }
 
   static thunderCheck() {
     const status = Achievements.elementalCheck('thunderSpells');
-    console.log(status);
 
     if (status) {
       const title = GameState.lib.achievementTitleThunder as string;
       const text = GameState.lib.achievementTextThunder as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.thunderSpells = true;
     }
   }
 
   static fireCheck() {
     const status = Achievements.elementalCheck('fireSpells');
-    console.log(status);
 
     if (status) {
       const title = GameState.lib.achievementTitleFire as string;
       const text = GameState.lib.achievementTextFire as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.fireSpells = true;
     }
   }
 
   static waterCheck() {
     const status = Achievements.elementalCheck('waterSpells');
-    console.log(status);
 
     if (status) {
       const title = GameState.lib.achievementTitleWater as string;
       const text = GameState.lib.achievementTextWater as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.waterSpells = true;
     }
   }
 
   static lightCheck() {
     const status = Achievements.elementalCheck('lightSpells');
-    console.log(status);
 
     if (status) {
       const title = GameState.lib.achievementTitleLight as string;
       const text = GameState.lib.achievementTextLight as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.lightSpells = true;
     }
   }
 
   static windCheck() {
     const status = Achievements.elementalCheck('windSpells');
-    console.log(status);
 
     if (status) {
       const title = GameState.lib.achievementTitleWind as string;
       const text = GameState.lib.achievementTextWind as string;
 
-      Achievements.createWindow(title, text, './assets/achievement.png');
+      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
       Achievements.current.windSpells = true;
     }
   }

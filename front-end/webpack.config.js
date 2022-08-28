@@ -61,6 +61,8 @@ module.exports = {
           gitignore: true,
           ignore: ["**/background/**"],
         },
+        from: './src/games/typing-adventure/assets',
+        to: './assets/typing-adventure',
       }],
     })
   ]

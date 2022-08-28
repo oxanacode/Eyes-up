@@ -33,12 +33,6 @@
   color: darkmagenta;
 }
 
-.field-modal-button {
-  font-size: 18px;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
 .welcome-modal-overlay,
 .start-modal-overlay,
 .game-info-modal-overlay {
@@ -108,11 +102,18 @@
 .welcome-layout-button,
 .welcome-modal-button,
 .start-modal-button,
-.game-info-modal-button {
+.game-info-modal-button,
+.field-modal-button {
   font-size: 18px;
   padding: 5px 10px;
+  border: 2px solid darkmagenta;
+  border-radius: 5px;
   color: darkmagenta;
   cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .start-modal-img {

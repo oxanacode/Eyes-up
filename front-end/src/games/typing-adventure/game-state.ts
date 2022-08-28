@@ -1,4 +1,4 @@
-import AppState from './app-state';
+import State from './app-state';
 import { enContent, ruContent } from './game-text-content/text-library';
 import {
   enSpells,
@@ -41,7 +41,7 @@ class GameState {
   static achievementsCurrentStatus: Record<string, boolean>;
 
   static engageState(): void {
-    GameState.currentLang = AppState.lang;
+    GameState.currentLang = State.currentLang;
 
     GameState.lib = GameState.currentLang === 'en' ? enContent : ruContent;
     GameState.beastMoves = GameState.currentLang === 'en' ? enBeastMoves : ruBeastMoves;
