@@ -77,13 +77,6 @@ class ApiService {
     return data;
   }
 
-  public static async getLesson(id: string): Promise<Lesson> {
-    const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`);
-    const data: Promise<Lesson> = await response.json();
-
-    return data;
-  }
-
   public static async createLesson(lessonData: LessonData): Promise<Lesson> {
     const response = await fetch(`${ApiService.url}${Endpoint.lessons}`, {
       method: Method.post,
@@ -92,6 +85,13 @@ class ApiService {
       },
       body: JSON.stringify(lessonData),
     });
+    const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async getLesson(id: string): Promise<Lesson> {
+    const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`);
     const data: Promise<Lesson> = await response.json();
 
     return data;
@@ -112,22 +112,9 @@ class ApiService {
 
   public static async deleteLesson(id: string): Promise<Lesson> {
     const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`, {
-      method: Method.patch,
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(testData),
-    });
-    const data: Promise<Test> = await response.json();
-
-    return data;
-  }
-
-  public static async deleteTest(id: string): Promise<Test> {
-    const response = await fetch(`${ApiService.url}${Endpoint.tests}/${id}`, {
       method: Method.delete,
     });
-    const data: Promise<Test> = await response.json();
+    const data: Promise<Lesson> = await response.json();
 
     return data;
   }
