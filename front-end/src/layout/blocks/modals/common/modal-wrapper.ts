@@ -1,8 +1,8 @@
 import Overlay from './overlay';
-import CreateElement from '../../elements/create-element';
+import CreateElement from '../../../elements/create-element';
 
-import { Tag } from '../../../types/enums';
-import { ModalHandler, RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { ModalHandler, RenderHandler } from '../../../../types/types';
 
 class ModalWrapper {
   public static createModalWrapper(modal: ModalHandler, render: RenderHandler) {

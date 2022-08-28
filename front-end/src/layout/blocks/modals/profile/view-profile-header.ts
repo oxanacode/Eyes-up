@@ -1,5 +1,5 @@
 import CreateElement from '../../../elements/create-element';
-import CloseBtn from '../close-btn';
+import CloseBtn from '../common/close-btn';
 import State from '../../../../scripts/state/state';
 import EditProfileBtn from './edit-profile-btn';
 import MainTitle from '../../../elements/main-title';

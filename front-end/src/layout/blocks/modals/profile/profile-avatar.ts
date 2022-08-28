@@ -1,4 +1,4 @@
-import AvatarImage from '../../../elements/avatar-image';
+import AvatarImage from './avatar-image';
 import CreateElement from '../../../elements/create-element';
 
 import { Tag } from '../../../../types/enums';

@@ -1,13 +1,13 @@
-import CreateElement from '../../elements/create-element';
-import State from '../../../scripts/state/state';
+import CreateElement from '../../../elements/create-element';
+import State from '../../../../scripts/state/state';
 import SignUpBtn from './sign-up-btn';
 import LogInBtn from './log-in-btn';
 import RegistrationModalContent from './registration-modal-content';
-import translation from '../../../data/translation';
-import CloseBtn from './close-btn';
+import translation from '../../../../data/translation';
+import CloseBtn from '../common/close-btn';
 
-import { Tag } from '../../../types/enums';
-import { RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { RenderHandler } from '../../../../types/types';
 
 class RegistrationModal {
   public static createRegistrationModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {

@@ -35,6 +35,10 @@
   box-shadow: $bxs-modal-shadow;
 }
 
+.profile-modal-content .error-hint {
+  width: 100%;
+}
+
 .error-hint-content {
   &:first-child {
     margin-bottom: 2rem;

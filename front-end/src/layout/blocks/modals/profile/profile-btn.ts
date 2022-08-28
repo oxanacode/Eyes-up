@@ -1,13 +1,13 @@
-import CreateElement from '../../elements/create-element';
-import State from '../../../scripts/state/state';
-import AvatarImage from '../../elements/avatar-image';
-import ManageModal from '../../../scripts/layout/manage-modal';
-import ModalWrapper from '../modals/modal-wrapper';
-import ProfileModal from '../modals/profile/profile-modal';
-import translation from '../../../data/translation';
+import CreateElement from '../../../elements/create-element';
+import State from '../../../../scripts/state/state';
+import AvatarImage from './avatar-image';
+import ManageModal from '../../../../scripts/layout/manage-modal';
+import ModalWrapper from '../common/modal-wrapper';
+import ProfileModal from './profile-modal';
+import translation from '../../../../data/translation';
 
-import { Tag } from '../../../types/enums';
-import { RenderHandler } from '../../../types/types';
+import { Tag } from '../../../../types/enums';
+import { RenderHandler } from '../../../../types/types';
 
 class ProfileBtn {
   public static createProfileBtn(
