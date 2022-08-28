@@ -13,10 +13,11 @@ class ProfileModal {
   public static createProfileModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal' }]);
     ApiService.getUser(State.currentUser.login).then((user: User) => {
+      ManageProfileState.updateProfileState(user);
+
       const viewProfile = ViewProfileModal.createViewProfileModal(modalToClose, user, render);
       const editProfile = EditProfileModal.createEditProfileModal(user, render);
 
-      ManageProfileState.updateProfileState(user);
       modal.append(viewProfile, editProfile);
     });
 
