@@ -16,6 +16,9 @@ body.light {
   --c-small-btn-bg: #FFFFFF;
   --c-block-bg: #FAFAFA;
   --c-menu-inactive-link: #75819C;
+  --c-mistake: #FFDADA;
+  --c-correction: #FFEBC6;
+  --c-correct: #E8FFDA;
   --c-modal-overlay: rgba(50, 50, 50, .2);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -54,11 +57,13 @@ body.light {
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-light.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-light.svg);
   --bg-icon-error-hint: url(./assets/images/background/icons/icon-error-hint.svg);
+  --bg-icon-restart-hover: url(./assets/images/background/icons/icon-restart-hover-light.svg);
+  --bg-test-ribbon: url(./assets/images/background/testing/bg-test-ribbon-light.svg);
 }
 
 body.dark {
   --c-body-bg: #1E273A;
-  --c-main-text: #F3F3F4;
+  --c-main-text: #DBDBDB;
   --c-small-text: #8693B3;
   --c-main-title: #4794BA;
   --c-subtitle: #8693B3;
@@ -74,6 +79,9 @@ body.dark {
   --c-small-btn-bg: #212C42;
   --c-block-bg: #212C42;
   --c-menu-inactive-link: #75819C;
+  --c-mistake: #694444;
+  --c-correction: #716756;
+  --c-correct: #3E6253;
   --c-modal-overlay: rgba(0, 0, 0, .5);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -112,6 +120,8 @@ body.dark {
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-dark.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-dark.svg);
   --bg-icon-error-hint: url(./assets/images/background/icons/icon-error-hint.svg);
+  --bg-icon-restart-hover: url(./assets/images/background/icons/icon-restart-hover-dark.svg);
+  --bg-test-ribbon: url(./assets/images/background/testing/bg-test-ribbon-dark.svg);
 }
 
 $c-body-bg: var(--c-body-bg);
@@ -132,7 +142,11 @@ $c-small-btn-bg: var(--c-small-btn-bg);
 $c-block-bg: var(--c-block-bg);
 $c-menu-inactive-link: var(--c-menu-inactive-link);
 $c-bg-modal-overlay: var(--c-modal-overlay);
+$c-mistake: var(--c-mistake);
+$c-correction: var(--c-correction);
+$c-correct: var(--c-correct);
 $c-error-text: #DA5C54;
+
 
 $bxs-modal-shadow: var(--bxs-modal-shadow);
 
@@ -143,6 +157,7 @@ $bg-icon-github: url(./assets/images/background/icons/icon-github.svg);
 $bg-home-wave: url(./assets/images/background/home/home-wave.svg);
 $bg-game-bg: url(./assets/images/games/games-game-1.png);
 $bg-icon-back: url(./assets/images/background/icons/icon-back.svg);
+$bg-icon-restart: url(./assets/images/background/icons/icon-restart.svg);
 
 $bg-theme-switcher: var(--bg-theme-switcher);
 $bg-app-logo: var(--bg-app-logo);
@@ -175,3 +190,5 @@ $bg-arrow-left: var(--bg-arrow-left);
 $bg-arrow-right: var(--bg-arrow-right);
 $bg-icon-burger-menu: var(--bg-icon-burger-menu);
 $bg-icon-error-hint: var(--bg-icon-error-hint);
+$bg-icon-restart-hover: var(--bg-icon-restart-hover);
+$bg-test-ribbon: var(--bg-test-ribbon);

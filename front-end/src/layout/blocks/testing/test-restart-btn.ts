@@ -3,22 +3,18 @@ import SwitchPage from '../../../scripts/layout/switch-page';
 import TestState from './test-state';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page, Lang } from '../../../types/enums';
+import { Tag, Page } from '../../../types/enums';
 import TestTimer from './test-timer';
+import TestResult from './test-result';
 
-class TestLangBtn {
-  public static createTestLangBtn(lang: Lang, render: RenderHandler): HTMLElement {
-    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'test-lang-btn' }]);
+class TestRestartBtn {
+  public static createTestRestartBtn(render: RenderHandler): HTMLElement {
+    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'test-restart' }]);
 
-    if (lang === TestState.lang) {
-      button.classList.add('active-test-lang');
-    }
-
-    button.textContent = lang;
     button.addEventListener('click', () => {
-      TestState.lang = lang;
       TestState.clearState();
       TestTimer.stopTimer = true;
+      TestResult.visible = false;
       SwitchPage.applyPage(Page.test, render);
     });
 
@@ -26,4 +22,4 @@ class TestLangBtn {
   }
 }
 
-export default TestLangBtn;
+export default TestRestartBtn;

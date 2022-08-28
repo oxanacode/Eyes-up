@@ -6,6 +6,8 @@ export type UsersList = Array<User>;
 
 export type LessonsList = Array<Lesson>;
 
+export type RandomTest = Array<Test>;
+
 export type UserData = Pick<User, 'login' | 'password' | 'avatar'>;
 
 export type LessonData = Pick<

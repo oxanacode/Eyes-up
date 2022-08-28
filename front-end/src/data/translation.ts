@@ -12,8 +12,8 @@ const translation = {
     ru: 'Игры',
   },
   gameOneTitle: {
-    en: 'GameOne',
-    ru: 'ИграПервая',
+    en: 'Typing Adventure',
+    ru: 'Typing Adventure',
   },
   gameOneDescTitle: {
     en: 'GameOneDesc',
@@ -24,8 +24,8 @@ const translation = {
     ru: 'Описание',
   },
   gameTwoTitle: {
-    en: 'GameTwo',
-    ru: 'ИграВторая',
+    en: 'Typing Hero',
+    ru: 'Typing Hero',
   },
   gameTwoDescTitle: {
     en: 'GameTwoDesc',
@@ -109,7 +109,7 @@ const translation = {
   },
   lessonsTestTitle: {
     en: 'Test your typing Speed and Accuracy',
-    ru: 'Проверьте свою скорость и точность набора текста',
+    ru: 'Проверьте свою скорость и точность печати',
   },
   lessonsTestBtn: {
     en: `Let's Go!`,
@@ -238,6 +238,34 @@ const translation = {
   testRibbonText: {
     en: 'Start typing',
     ru: 'Начните печатать',
+  },
+  testMistakesText: {
+    en: 'Mistakes:',
+    ru: 'Ошибки:',
+  },
+  testWpmText: {
+    en: 'Speed:',
+    ru: 'Скорость:',
+  },
+  testWpmSub: {
+    en: 'wpm',
+    ru: 'свм',
+  },
+  testAccuracyText: {
+    en: 'Accuracy:',
+    ru: 'Точность:',
+  },
+  testCorrectionsText: {
+    en: 'Corrections:',
+    ru: 'Исправления:',
+  },
+  testBtnsText: {
+    en: 'Text language',
+    ru: 'Язык текста',
+  },
+  testResults: {
+    en: 'Test Results',
+    ru: 'Результаты теста',
   },
 };
 
