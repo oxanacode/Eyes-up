@@ -6,9 +6,10 @@ import BaseUser from './base-user';
 import ManageState from '../state/manage-state';
 import State from '../state/state';
 import ProfileState from '../profile/profile-state';
+import CurrentUser from './current-user';
 
 import { ErrorSource, ErrorType, StatusCode } from '../../types/enums';
-import { RenderHandler, UserData } from '../../types/types';
+import { RenderHandler } from '../../types/types';
 import { User } from '../../types/interfaces';
 
 class ManageUser {
@@ -81,11 +82,17 @@ class ManageUser {
   public static changeUserData(user: User, errorBlock: HTMLElement, render: RenderHandler): void {
     const dataCorrect = DataValidation.checkIfDataCorrect(ProfileState.login, ProfileState.password, errorBlock);
     const loginDiffer = DataValidation.checkIfLoginDiffer(user);
-    const userData: Partial<UserData> = {
-      login: ProfileState.login,
-      password: ProfileState.password,
-      avatar: ProfileState.avatar,
-    };
+    const userData = new CurrentUser(
+      ProfileState.login,
+      ProfileState.password,
+      ProfileState.avatar,
+      user.testing,
+      user.lessonsEn,
+      user.lessonsRu,
+      user.typingAdventure,
+      user.typingHero,
+      user.badges
+    );
 
     if (dataCorrect) {
       if (loginDiffer) {
