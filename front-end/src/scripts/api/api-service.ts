@@ -120,21 +120,21 @@ class ApiService {
   }
 
   public static async getTests(): Promise<TestsList> {
-    const response = await fetch(`${ApiService.url}${Endpoint.test}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}`);
     const data: Promise<TestsList> = await response.json();
 
     return data;
   }
 
   public static async getTest(language: Lang): Promise<RandomTest> {
-    const response = await fetch(`${ApiService.url}${Endpoint.test}?language=${language}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}?language=${language}`);
     const data: Promise<RandomTest> = await response.json();
 
     return data;
   }
 
   public static async createTest(testData: TestData): Promise<Test> {
-    const response = await fetch(`${ApiService.url}${Endpoint.test}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}`, {
       method: Method.post,
       headers: {
         'Content-Type': 'application/json',
@@ -147,7 +147,7 @@ class ApiService {
   }
 
   public static async updateTest(id: string, testData: TestData): Promise<Test> {
-    const response = await fetch(`${ApiService.url}${Endpoint.test}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}/${id}`, {
       method: Method.put,
       headers: {
         'Content-Type': 'application/json',
@@ -160,7 +160,7 @@ class ApiService {
   }
 
   public static async deleteTest(id: string): Promise<Test> {
-    const response = await fetch(`${ApiService.url}${Endpoint.test}/${id}`, {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}/${id}`, {
       method: Method.delete,
     });
     const data: Promise<Test> = await response.json();

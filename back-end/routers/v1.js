@@ -27,12 +27,12 @@ router.put('/v1/lessons/:id', lesson.updateLesson);
 router.delete('/v1/lessons/:id', lesson.deleteLesson);
 
 // Tests
-router.get('/v1/test', tests.getTests);
+router.get('/v1/tests', tests.getTests);
 
 // Test
-router.get('/v1/test', test.getTest);
-router.post('/v1/test', test.addTest);
-router.put('/v1/test/:id', test.updateTest);
-router.delete('/v1/test/:id', test.deleteTest);
+router.get('/v1/tests', test.getTest);
+router.post('/v1/tests', test.addTest);
+router.put('/v1/tests/:id', test.updateTest);
+router.delete('/v1/tests/:id', test.deleteTest);
 
 module.exports = router;
