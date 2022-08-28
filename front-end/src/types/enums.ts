@@ -55,6 +55,7 @@ export enum Method {
   get = 'get',
   post = 'post',
   put = 'put',
+  patch = 'patch',
   delete = 'delete',
 }
 
@@ -111,4 +112,8 @@ export enum Avatar {
 
 export enum Disabled {
   true = 'disabled',
+}
+
+export enum Data {
+  noData = 'noData',
 }

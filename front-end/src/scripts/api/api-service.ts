@@ -97,9 +97,9 @@ class ApiService {
     return data;
   }
 
-  public static async updateLesson(id: string, lessonData: LessonData): Promise<Lesson> {
+  public static async updateLesson(id: string, lessonData: Partial<LessonData>): Promise<Lesson> {
     const response = await fetch(`${ApiService.url}${Endpoint.lessons}/${id}`, {
-      method: Method.put,
+      method: Method.patch,
       headers: {
         'Content-Type': 'application/json',
       },
