@@ -31,7 +31,8 @@ export enum Page {
   lesson = 'lesson',
   test = 'test',
   games = 'games',
-  game = 'game',
+  gameOne = 'gameOne',
+  gameTwo = 'gameTwo',
   about = 'about',
 }
 

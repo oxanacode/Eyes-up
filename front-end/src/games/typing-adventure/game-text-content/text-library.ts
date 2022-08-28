@@ -1,0 +1,204 @@
+export const enContent = {
+  lvl: 'lvl.',
+  beastTitle: [
+    'cave beast',
+    'swamp beast',
+    'sand beast',
+    'stone beast',
+    'forest beast',
+    'cloud monster',
+    'waterfall monster',
+    'lava monster',
+    'tornado monster',
+  ],
+  layoutButton: 'back to games',
+  resetButton: 'reset progress',
+  resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
+
+  preparation: 'preparation',
+  yourMove: 'your move!',
+  beastMove: 'beast move!',
+  resistMessage: '\nresist!',
+  resultNewLvl: 'Level has been increased!\nNew beast on the map!',
+  resultFinalLvl: 'Congratulations!\nYou completed the game!',
+  winnerHero: 'You won!',
+  winnerBeast: 'Beast won!',
+  lowStrengthMessage: 'Now you are stronger!',
+  toMap: 'back to map',
+  doneStatus: ' (DONE)',
+
+  welcomeModalTitle: 'Welcome to the Typing Dungeon!',
+  welcomeModalMessage:
+    'Defeat the strongest monsters of Typiria to win the crown and the title of fast typing professional!\nThe monsters have gone berserk and are not going to calm down! Luckily, elemental magic comes to your rescue!',
+  welcomeModalWarning: 'Please register to save your progress!',
+  welcomeModalToLayoutBtn: 'back to site',
+  welcomeModalСontinue: 'continue',
+
+  startModalParagOne:
+    'Before you is a game map on which various monsters appear. With each new level, your strength increases, and a new monster appears on the map.',
+  startModalParagTwo:
+    'Select a monster to enter the playing field. To defeat an opponent, you need to enter the names of magic spells that appear in the top plate of the playing field. You learn an enchantment: once cast, it is transferred to your collection.\nEnchantments of various elements are available in the game: fire, water, light, wind and thunder.',
+  startModalParagThree:
+    "Monsters are able to attack in different ways: magical or physical attacks.\nThe monster's magic attack is much stronger, but it can be repelled.\nMoreover, in addition to monsters, monsters that have protection from certain elements may also appear, be careful with them!",
+  startModalParagFour: 'If this is your first game, carefully read the hints on the playing field.',
+  startModalParagFive: 'Collect enchantments, win and get in-game achievements!\nGood luck!',
+  startModalButton: 'start the game',
+
+  gameInfoTitle: 'game info',
+  gameInfoLvl: 'your lvl',
+  gameInfoHeroSpells: 'your spells',
+  gameInfoNullSpells: 'you are on your way to learning!',
+  gameInfoAllSpells: 'game spells',
+  gameInfoButton: 'back to game',
+
+  fieldTutorialModalParagOne: 'You are on the Typing Dungeon game field!',
+  fieldTutorialModalParagTwo: 'Check out a little hint guide before you start playing.',
+  fieldTutorialModalParagThree:
+    'Attention!\nFor the correct input of spells, the selected language in the system must match the language of the application!',
+  fieldTutorialModalParagButtonStart: 'hints',
+  fieldTutorialModalParagButtonEsc: 'skip',
+
+  fieldTutorialHintOne:
+    'The hero and the monster alternate moves, each move preceded by a preparation stage.\nDuring preparation, it is noted whose turn it will be, what spells are available in the cloud, or what attack the monster will have.',
+  fieldTutorialHintTwo:
+    "Spells appear randomly in the spell cloud and can be used by typing the name of the spell.\nIf the spell is new for your hero, after use it goes into the hero's collection.",
+  fieldTutorialHintThree:
+    'Here you can find a collection of hero spells. You can use both spells from the cloud and spells from the collection.\nThe principle of use is the same: you need to type the name of the spell.',
+  fieldTutorialHintFour: `The monster can attack with both physics and magic. The magic attack is much stronger, but you can defend yourself by typing "resist" during the monster's turn with a magic attack. If successful, you will see the word "resist" appear in the action field.`,
+  fieldTutorialHintFive:
+    "That's it, everything is quite simple, once again check that the layout in the system matches the selected language in the application, and go!",
+  fieldTutorialButtonNext: 'next',
+  fieldTutorialButtonDone: 'get start',
+
+  achievementTitle: 'New achievement!',
+
+  achievementTitleLvlUp: 'Wirst win!',
+  achievementTextLvlUp: 'Wow, you are not so simple!',
+
+  achievementTitleTenSpells: 'Wizard!',
+  achievementTextTenSpells: 'You have collected 10 spells!',
+
+  achievementTitleHalfGame: 'Almost there!',
+  achievementTextHalfGame: 'You are halfway through the game!',
+
+  achievementTitleGameDone: 'Typeria Conqueror!',
+  achievementTextGameDone: 'You completed Typing Dungeon!',
+
+  achievementTitleThunder: 'Friend of thunder!',
+  achievementTextThunder: 'You have collected all thunder spells!',
+
+  achievementTitleFire: 'Friend of fire!',
+  achievementTextFire: 'You have collected all fire spells!',
+
+  achievementTitleWater: 'Friend of water!',
+  achievementTextWater: 'You have collected all water spells!',
+
+  achievementTitleLight: 'Friend of light!',
+  achievementTextLight: 'You have collected all light spells!',
+
+  achievementTitleWind: 'Friend of wind!',
+  achievementTextWind: 'You have collected all wind spells!',
+};
+
+export const ruContent = {
+  lvl: 'ур.',
+  beastTitle: [
+    'пещерное чудище',
+    'болотное чудище',
+    'песчанное чудище',
+    'каменное чудище',
+    'лесное чущиде',
+    'облачный монстр',
+    'водопадный монстр',
+    'лавовый монстр',
+    'ураганный монстр',
+  ],
+  layoutButton: 'обратно к играм',
+  resetButton: 'сбросить прогресс',
+  resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
+
+  preparation: 'подготовка',
+  yourMove: 'ваш ход!',
+  beastMove: 'ход монстра!',
+  resistMessage: '\nзащита!',
+  resultNewLvl: 'Повышение уровня!\nНовый монстр на карте!',
+  resultFinalLvl: 'Поздравляем!\nВы прошли всю игру!',
+  winnerHero: 'Вы победили!',
+  winnerBeast: 'Монстр победил!',
+  lowStrengthMessage: 'На этот раз ты сильнее!',
+  toMap: 'вернуться на карту',
+  doneStatus: ' (Пройден)',
+
+  welcomeModalTitle: 'Добро пожаловать в игру Typing Dungeon!',
+  welcomeModalMessage:
+    'Одолейте сильнейших чудищ Тайпирии, чтобы завоевать корону и звание профессионала быстрой печати!\nЧудища разбуянились и успокаиваться не собираются! К счастью, вам на помощь приходит магия стихий!',
+  welcomeModalWarning: 'Пожалуйста, пройдите регистрацию для сохранения прогресса!',
+  welcomeModalToLayoutBtn: 'назад к сайту',
+  welcomeModalСontinue: 'продолжить',
+
+  startModalParagOne:
+    'Перед вами игровая карта, на которой появляются различные чудища. С каждым новым уровнем увеличивается ваша стойкость, а на карте возникает новое чудище.',
+  startModalParagTwo:
+    'Выберите чудище, чтобы попасть на игровое поле. Чтобы одолеть соперника, вам нужно вводить названия магических чар, которые появляются в верхней табличке игрового поля. Вы изучаете чары: после применения они переносятся в вашу коллекцию.\nВ игре доступны чары различных стихий: огня, воды, света, ветра и грома.',
+  startModalParagThree:
+    'Чудища способны атаковать разными способами: магической или физической атаками.\nМагическая атака чудища намного сильнее, однако её можно отразить.\nБолее того, помимо чудищ могут появится и монстры, которые имеют защиту от определённых стихий, будте с ними осторожнее!',
+  startModalParagFour: 'Если это ваша первая игра — внимательно прочтите подсказки на игровом поле.',
+  startModalParagFive: 'Собирайте чары, побеждайте и получайте игровые достижения!\nУдачи!',
+  startModalButton: 'начать игру',
+
+  gameInfoTitle: 'статистика',
+  gameInfoLvl: 'ваш уровень',
+  gameInfoHeroSpells: 'ваши чары',
+  gameInfoNullSpells: 'вы на пути к изучению!',
+  gameInfoAllSpells: 'чары в игре',
+  gameInfoButton: 'вернуться к игре',
+
+  fieldTutorialModalParagOne: 'Вы на игровом поле Typing Dungeon!',
+  fieldTutorialModalParagTwo: 'Посмотрите небольшое руководство из подсказок, прежде чем начать играть.',
+  fieldTutorialModalParagThree:
+    'Внимание!\nДля корректного ввода чар выбранный язык в системе должен соответствовать языку приложения!',
+  fieldTutorialModalParagButtonStart: 'подсказки',
+  fieldTutorialModalParagButtonEsc: 'пропустить',
+
+  fieldTutorialHintOne:
+    'Герой и монстр ходят поочерёдно, каждому ходу предшествует стадия подготовки.\nВо время подготовки отмечается чей будет ход, какие спеллы доступны в облаке или какая атака будет у монстра.',
+  fieldTutorialHintTwo:
+    'В облаке спеллов в случайном порядке появляются спеллы, которые можно использовать: нужно напечатать название спелла.\nЕсли спелл новый для вашего героя - после использования он попадает в коллекцию героя.',
+  fieldTutorialHintThree:
+    'Здесь вы можете найти коллекцию спеллов героя. Можно использовать как спеллы из облака, так и спеллы из коллекции.\nПринцип использования такой же: нужно напечатать название спелла.',
+  fieldTutorialHintFour:
+    'Монстр может атаковать как силой, так и магией. Магическая атака намного сильнее, но вы можете защититься, напечатав "отразить" во время хода монстра с магической атакой. В случае успеха, вы увидете, как в поле действий появится слово "защита".',
+  fieldTutorialHintFive:
+    'Вот так, всё довольно просто, ещё раз проверьте соответствие раскладки в системе выбранному языку в приложении, и вперёд!',
+  fieldTutorialButtonNext: 'далее',
+  fieldTutorialButtonDone: 'начинаем!',
+
+  achievementTitle: 'Новое достижение!',
+
+  achievementTitleLvlUp: 'Первая победа!',
+  achievementTextLvlUp: 'А вы не так просты!',
+
+  achievementTitleTenSpells: 'Вы маг!',
+  achievementTextTenSpells: 'Вы собрали десять чар!',
+
+  achievementTitleHalfGame: 'Почти у цели!',
+  achievementTextHalfGame: 'Вы прошли половину игры!',
+
+  achievementTitleGameDone: 'Завоеватель Тайперии!',
+  achievementTextGameDone: 'Вы прошли Typing Dungeon!',
+
+  achievementTitleThunder: 'Друг грома!',
+  achievementTextThunder: 'Вы собрали все чары грома!',
+
+  achievementTitleFire: 'Друг огня!',
+  achievementTextFire: 'Вы собрали все чары огня!',
+
+  achievementTitleWater: 'Друг воды!',
+  achievementTextWater: 'Вы собрали все чары воды!',
+
+  achievementTitleLight: 'Друг света!',
+  achievementTextLight: 'Вы собрали все чары света!',
+
+  achievementTitleWind: 'Друг ветра!',
+  achievementTextWind: 'Вы собрали все чары ветра!',
+};

@@ -1,0 +1,156 @@
+.field-wrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.field-header {
+  display: flex;
+  justify-content: center;
+}
+
+.spells-field-panel {
+  position: relative;
+  width: 250px;
+  height: 120px;
+  background: #ffff7d;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.action-spell-wrapper {
+  width: 80px;
+  height: 90px;
+}
+
+.action-spell-image {
+  width: 80px;
+  height: 70px;
+  border-radius: 10px;
+}
+
+.tunder {
+  background-color: aquamarine;
+}
+
+.water {
+  background-color: aqua;
+}
+
+.fire {
+  background-color: darkred;
+}
+
+.light {
+  background-color: white;
+}
+
+.wind {
+  background-color: powderblue;
+}
+
+.action-spell-name {
+  text-align: center;
+}
+
+.field-middle {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-field-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+}
+
+.field-timer {
+  width: 100px;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 5px;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.action-field-input {
+  width: 200px;
+  height: 50px;
+  background: #ffa521;
+  border-radius: 5px;
+}
+
+.action-field-total {
+  position: relative;
+  width: 120px;
+  height: 50px;
+  background: #ffff74;
+  border-radius: 5px;
+  color: purple;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.field-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.hero-field-wrapper,
+.beast-field-wrapper {
+  position: relative;
+  font-size: 20px;
+  text-align: center;
+}
+
+.hero-field-view,
+.beast-field-view {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.hero-field-view {
+  background-color: darkblue;
+}
+
+.beast-field-view {
+  background-color: maroon;
+}
+
+.field-hp-result-view {
+  position: absolute;
+  width: 40px;
+  text-align: center;
+  top: -20px;
+  left: calc(50% - 20px);
+  color: brown;
+}
+
+.hero-field-panel,
+.beast-field-panel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  font-size: 20px;
+  color: darkmagenta;
+  width: 300px;
+  height: 200px;
+  border: 2px solid darkviolet;
+  border-radius: 5px;
+}

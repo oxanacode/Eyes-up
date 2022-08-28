@@ -8,9 +8,15 @@ class GameSectionBtn {
   public static createGameSectionBtn(className: string, text: string, render: RenderHandler): HTMLElement {
     const button = SectionBtn.createSectionBtn(className, text);
 
-    button.addEventListener('click', () => {
-      SwitchPage.applyPage(Page.home, render); // ---------------------Page.game
-    });
+    if (className === 'game-one') {
+      button.addEventListener('click', () => {
+        SwitchPage.applyPage(Page.gameOne, render);
+      });
+    } else {
+      button.addEventListener('click', () => {
+        SwitchPage.applyPage(Page.home, render); // ---------------------Page.game
+      });
+    }
 
     return button;
   }
