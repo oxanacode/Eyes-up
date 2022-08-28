@@ -63,3 +63,10 @@ export interface TranslationOption {
 export interface Translation {
   [key: string]: TranslationOption;
 }
+
+export interface Test {
+  _id: string;
+  __v: number;
+  language: Lang;
+  text: string;
+}

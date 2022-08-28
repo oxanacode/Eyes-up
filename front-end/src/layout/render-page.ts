@@ -8,13 +8,23 @@ import LayoutMain from './blocks/lessons/lessons-layout-main';
 import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
+import TestMain from './blocks/testing/test-main';
 
 import { Page } from '../types/enums';
 
 class RenderPage {
   public static renderInteractivePage(): void {
     const page = ManagePage.getPage();
-    const main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    let main: HTMLElement;
+
+    switch (State.currentPage) {
+      case Page.test:
+        main = TestMain.createTestMain(RenderPage.renderPage);
+        break;
+      default:
+        main = LessonsMain.createLessonsMain(RenderPage.renderPage);
+    }
+
     page.append(main);
   }
 
@@ -43,7 +53,12 @@ class RenderPage {
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
 
-    if (State.currentPage === Page.lesson || State.currentPage === Page.game || State.currentPage === Page.lessons) {
+    if (
+      State.currentPage === Page.lesson ||
+      State.currentPage === Page.game ||
+      State.currentPage === Page.lessons ||
+      State.currentPage === Page.test
+    ) {
       RenderPage.renderInteractivePage();
     } else {
       RenderPage.renderStaticPage();
