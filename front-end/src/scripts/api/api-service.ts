@@ -1,6 +1,6 @@
-import { Endpoint, Method } from '../../types/enums';
-import { User, Lesson, Query } from '../../types/interfaces';
-import { UsersList, LessonsList, UserData, LessonData } from '../../types/types';
+import { Endpoint, Lang, Method } from '../../types/enums';
+import { User, Lesson, Test, Query } from '../../types/interfaces';
+import { UsersList, LessonsList, UserData, LessonData, TestsList, TestData, RandomTest } from '../../types/types';
 
 class ApiService {
   private static url = 'http://127.0.0.1:3000/api/v1';
@@ -115,6 +115,55 @@ class ApiService {
       method: Method.delete,
     });
     const data: Promise<Lesson> = await response.json();
+
+    return data;
+  }
+
+  public static async getTests(): Promise<TestsList> {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}`);
+    const data: Promise<TestsList> = await response.json();
+
+    return data;
+  }
+
+  public static async getTest(language: Lang): Promise<RandomTest> {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}?language=${language}`);
+    const data: Promise<RandomTest> = await response.json();
+
+    return data;
+  }
+
+  public static async createTest(testData: TestData): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}`, {
+      method: Method.post,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(testData),
+    });
+    const data: Promise<Test> = await response.json();
+
+    return data;
+  }
+
+  public static async updateTest(id: string, testData: TestData): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}/${id}`, {
+      method: Method.put,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(testData),
+    });
+    const data: Promise<Test> = await response.json();
+
+    return data;
+  }
+
+  public static async deleteTest(id: string): Promise<Test> {
+    const response = await fetch(`${ApiService.url}${Endpoint.tests}/${id}`, {
+      method: Method.delete,
+    });
+    const data: Promise<Test> = await response.json();
 
     return data;
   }

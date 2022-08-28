@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api', routerV1);
 
-db.on('eror', (error) => {
+db.on('error', (error) => {
   console.log(error);
 });
 db.on('open', () => {

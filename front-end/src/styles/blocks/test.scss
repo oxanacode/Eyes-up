@@ -1,0 +1,252 @@
+.test {
+  display: grid;
+  grid-template-columns: minmax(min-content, 110rem);
+  row-gap: 10rem;
+  max-width: 110rem;
+  padding: 0 8rem;
+  margin: 6rem auto 2rem;
+
+  @include desktop-small {
+    padding: 0 4rem;
+  }
+
+  @include tablet {
+    padding: 0 3rem;
+    row-gap: 5rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.test-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.test-btns-text {
+  @include font-subtitle-mobile;
+  color: $c-menu-inactive-link;
+  margin-right: 2rem;
+
+  @include tablet {
+    @include font-main;
+    margin-right: 1rem;
+  }
+}
+
+.test-lang-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 5rem;
+  color: $c-menu-inactive-link;
+  text-transform: uppercase;
+
+  @include tablet {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.active-test-lang {
+  background-color: $c-accent;
+  color: white;
+}
+
+.test-btns {
+  display: flex;
+  width: 10rem;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5rem;
+  background-color: $c-block-bg;
+
+  @include tablet {
+    width: 8rem;
+    height: 4rem;
+  }
+}
+
+.test-restart {
+  width: 4rem;
+  height: 4rem;
+  background: $bg-icon-restart no-repeat center;
+  margin-left: auto;
+
+  &:hover {
+    background: $bg-icon-restart-hover no-repeat center;
+  }
+}
+
+.incorrect {
+  border-radius: 0.6rem;
+  background-color:$c-mistake;
+}
+
+.correct {
+  border-radius: 0.6rem;
+  background-color:$c-correct;
+}
+
+.correction {
+  border-radius: 0.6rem;
+  background-color:$c-correction;
+}
+
+.test-text {
+  @include font-subtitle;
+  color: $c-main-text;
+  letter-spacing: 0.4rem;
+  word-spacing: 0.4rem;
+  height: 25rem;
+  overflow: hidden;
+
+  &::before {
+    content: ''; 
+    display: block;
+    width: 100%;
+    height: 0.2rem;
+    border-radius: $small-border-radius;
+    background-color: $c-accent;
+  }
+}
+
+.char {
+  line-height: 4rem;
+  padding: 0.2rem 0 0.2rem 0.3rem;
+  margin: 0 0.1rem;
+}
+
+.test-text-wrapper {
+  width: 100%;
+  margin: 0 auto;
+
+  @include tablet {
+    width: 100%;
+  }
+}
+
+.test-input {
+  width: 0;
+}
+
+.test-stats {
+  @include font-subtitle-mobile;
+  color: $c-menu-inactive-link;
+  display: flex;
+  column-gap: 4rem;
+  justify-content: space-between;
+  align-items: center;
+
+  @include tablet {
+    @include font-main;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.test-mistakes-wrapper {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.test-wpm-wrapper,
+.test-corrections-wrapper,
+.test-accuracy-wrapper {
+  display: flex;
+  column-gap: 1rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 0.2rem;
+    height: 100%;
+    border-radius: $small-border-radius;
+    background-color: $c-accent;
+    top: 0;
+    left: -2rem;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}
+
+.test-ribbon {
+  @include font-subtitle-mobile;
+  position: absolute;
+  padding: 0 3rem;
+  line-height: 5rem;
+  background-color: $c-accent;
+  color: white;
+  top: 0;
+  border-radius: 0 0 $small-border-radius $small-border-radius;
+  transition: $transition-time;
+
+  @include tablet {
+    @include font-main;
+    line-height: 4rem;
+  }
+}
+
+.test-results {
+  display: flex;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  @include tablet {
+    height: 9rem;
+  }
+}
+
+.active-char {
+  border-bottom: 0.2rem solid $c-accent;
+}
+
+.test-result-ribbon {
+  @include font-subtitle;
+  height: 6rem;
+  width: 70rem;
+  background-color: $c-block-bg;
+  color: $c-main-text;
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+  position: relative;
+  padding: 0 3rem 0 8rem;
+
+  @include tablet {
+    @include font-subtitle-mobile;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 1rem;
+    width: 24rem;
+    height: 12rem;
+    padding: 0 2rem;
+  }
+
+  &::after {
+    content: ''; 
+    position: absolute;
+    background: $bg-test-ribbon no-repeat center / contain;
+    width: 3rem;
+    height: 6rem;
+    background-color: transparent;
+    right: -3rem;
+
+    @include tablet {
+      width: 6rem;
+      height: 12rem;
+      right: -6rem;
+    }
+  }
+}
+
+.result-ribbon-text {  
+  color: $c-accent;
+}
