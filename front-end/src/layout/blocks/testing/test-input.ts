@@ -1,12 +1,12 @@
 import CreateElement from '../../elements/create-element';
 import TestState from './test-state';
 import TestTimer from './test-timer';
-
-import { Tag } from '../../../types/enums';
 import TextPosition from './text-position';
 import TestResult from './test-result';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
+
+import { Tag } from '../../../types/enums';
 
 class TestInput {
   public static createTestInput(

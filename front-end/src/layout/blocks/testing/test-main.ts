@@ -15,6 +15,7 @@ class TestMain {
   public static createTestMain(render: RenderHandler): HTMLElement {
     TestState.clearState();
     TestTimer.stopTimer = true;
+
     const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'test' }]);
     const top = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-top' }]);
     const back = BackBtn.createBackBtn(Page.layout, render);

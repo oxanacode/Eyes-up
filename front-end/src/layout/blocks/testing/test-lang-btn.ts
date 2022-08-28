@@ -1,10 +1,10 @@
 import CreateElement from '../../elements/create-element';
 import SwitchPage from '../../../scripts/layout/switch-page';
+import TestTimer from './test-timer';
 import TestState from './test-state';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Lang } from '../../../types/enums';
-import TestTimer from './test-timer';
 
 class TestLangBtn {
   public static createTestLangBtn(lang: Lang, render: RenderHandler): HTMLElement {
