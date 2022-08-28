@@ -127,7 +127,7 @@ class ApiService {
   }
 
   public static async getTest(language: Lang): Promise<RandomTest> {
-    const response = await fetch(`${ApiService.url}${Endpoint.tests}?language=${language}`);
+    const response = await fetch(`${ApiService.url}${Endpoint.test}?language=${language}`);
     const data: Promise<RandomTest> = await response.json();
 
     return data;

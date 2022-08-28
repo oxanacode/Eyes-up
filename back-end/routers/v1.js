@@ -30,7 +30,7 @@ router.delete('/v1/lessons/:id', lesson.deleteLesson);
 router.get('/v1/tests', tests.getTests);
 
 // Test
-router.get('/v1/tests', test.getTest);
+router.get('/v1/test', test.getTest);
 router.post('/v1/tests', test.addTest);
 router.put('/v1/tests/:id', test.updateTest);
 router.delete('/v1/tests/:id', test.deleteTest);

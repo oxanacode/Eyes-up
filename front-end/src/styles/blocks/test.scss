@@ -33,6 +33,7 @@
 
   @include tablet {
     @include font-main;
+    line-height: 5rem;
     margin-right: 1rem;
   }
 }
