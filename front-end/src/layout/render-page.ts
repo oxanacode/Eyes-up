@@ -8,9 +8,9 @@ import LayoutMain from './blocks/lessons/lessons-layout-main';
 import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
+import TestMain from './blocks/testing/test-main';
 
 import { Page } from '../types/enums';
-import TestMain from './blocks/testing/test-main';
 
 class RenderPage {
   public static renderInteractivePage(): void {

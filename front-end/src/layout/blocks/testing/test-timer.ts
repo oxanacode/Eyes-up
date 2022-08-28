@@ -15,6 +15,7 @@ class TestTimer {
 
     const refreshTime = setInterval(() => {
       if (TestTimer.stopTimer) clearInterval(refreshTime);
+
       TestState.checkTime = TestTimer.getTime();
     }, 100);
   }

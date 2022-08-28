@@ -19,6 +19,7 @@ class BackBtn {
         TestState.clearState();
         TestTimer.stopTimer = true;
       }
+
       SwitchPage.applyPage(page, render);
     });
 
