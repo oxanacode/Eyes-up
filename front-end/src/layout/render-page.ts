@@ -9,6 +9,7 @@ import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
 import TestMain from './blocks/testing/test-main';
+import LessonMain from './blocks/lesson/lesson-main';
 
 import { Page } from '../types/enums';
 
@@ -18,6 +19,9 @@ class RenderPage {
     let main: HTMLElement;
 
     switch (State.currentPage) {
+      case Page.lesson:
+        main = LessonMain.createLessonMain(RenderPage.renderPage);
+        break;
       case Page.test:
         main = TestMain.createTestMain(RenderPage.renderPage);
         break;
