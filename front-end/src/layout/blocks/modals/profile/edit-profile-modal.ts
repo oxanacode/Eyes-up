@@ -6,16 +6,20 @@ import SaveChangesBtn from './save-changes-btn';
 import ProfileAvatars from './profile-avatars';
 import DeleteAccountBtn from './delete-account-btn';
 import ProfileSubtitle from './profile-subtitle';
+import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
 import translation from '../../../../data/translation';
 
 import { Profile, Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
 import { User } from '../../../../types/interfaces';
+import ManageModal from '../../../../scripts/layout/manage-modal';
 
 class EditProfileModal {
-  public static createEditProfileModal(user: User, render: RenderHandler): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content hidden' }]);
-    const header = EditProfileHeader.createEditProfileHeader(modal);
+  public static createEditProfileModal(editProfile: HTMLElement, user: User, render: RenderHandler): void {
+    ManageProfileState.updateProfileState(user);
+    ManageModal.clearModalContent(editProfile);
+
+    const header = EditProfileHeader.createEditProfileHeader(editProfile);
     const errorBlock = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'error-block profile-error-block' },
     ]);
@@ -25,9 +29,7 @@ class EditProfileModal {
     const avatars = ProfileAvatars.createProfileAvatars(user, data, saveChangesBtn);
     const deleteAccountBtn = DeleteAccountBtn.createDeleteAccountBtn(user, render);
 
-    modal.append(header, data, errorBlock, avatarsTitle, avatars, deleteAccountBtn, saveChangesBtn);
-
-    return modal;
+    editProfile.append(header, data, errorBlock, avatarsTitle, avatars, deleteAccountBtn, saveChangesBtn);
   }
 }
 

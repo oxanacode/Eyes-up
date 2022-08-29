@@ -1,14 +1,23 @@
 import CreateElement from '../../../elements/create-element';
 import ManageModal from '../../../../scripts/layout/manage-modal';
+import EditProfileModal from './edit-profile-modal';
 
 import { Tag } from '../../../../types/enums';
+import { User } from '../../../../types/interfaces';
+import { RenderHandler } from '../../../../types/types';
 
 class EditProfileBtn {
-  public static createEditProfileBtn(modalToHide: HTMLElement): HTMLElement {
+  public static createEditProfileBtn(
+    editProfile: HTMLElement,
+    user: User,
+    render: RenderHandler,
+    modalToHide: HTMLElement
+  ): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'small-btn edit-btn profile-btn' }]);
 
     btn.textContent = 'Edit profile';
     btn.addEventListener('click', () => {
+      EditProfileModal.createEditProfileModal(editProfile, user, render);
       ManageModal.switchModal(modalToHide);
     });
 

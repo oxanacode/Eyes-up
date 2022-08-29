@@ -27,6 +27,14 @@ class ManageModal {
       modalToHide.nextElementSibling.classList.remove('hidden');
     }
   }
+
+  public static clearModalContent(modal: HTMLElement): void {
+    if (modal.children) {
+      Array.from(modal.children).forEach((child: Element) => {
+        modal.removeChild(child);
+      });
+    }
+  }
 }
 
 export default ManageModal;
