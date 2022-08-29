@@ -196,13 +196,12 @@
 
 .profile-error-block {
   position: absolute;
-  left: 23rem;
+  left: 33rem;
   top: 20rem;
-  width: 47.8rem;
+  width: 39rem;
 
   @include tablet-small {
-    left: 0;
-    top: 36rem;
-    width: 100%;
+    position: static;
+    margin: 0 auto 3rem;
   }
 }
