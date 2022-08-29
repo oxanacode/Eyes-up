@@ -1,7 +1,7 @@
 import State from '../state/state';
 
 class UserState {
-  public static checkIfUserAuthorized(): boolean {
+  public static checkIfUserAuthorised(): boolean {
     if (State.currentUser.login === State.notAuthorised) {
       return false;
     }

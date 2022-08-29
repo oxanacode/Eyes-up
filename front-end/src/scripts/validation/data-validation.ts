@@ -1,11 +1,13 @@
 import ManageError from '../layout/manage-error';
 import RegExpService from '../reg-exp/reg-exp-service';
+import ProfileState from '../profile/profile-state';
 
 import { ErrorSource, ErrorType, LoginLength, PasswordLength } from '../../types/enums';
 import { loginPattern, passwordPattern } from '../../data/reg-exp-patterns';
+import { User } from '../../types/interfaces';
 
 class DataValidation {
-  public static checkIfValueNotEmpty(value: string): boolean {
+  private static checkIfValueNotEmpty(value: string): boolean {
     if (value) {
       return true;
     }
@@ -13,19 +15,19 @@ class DataValidation {
     return false;
   }
 
-  public static checkIfLoginValid(login: string): boolean {
+  private static checkIfLoginValid(login: string): boolean {
     const loginRegExp = RegExpService.createLoginRegExp(loginPattern, LoginLength.min, LoginLength.max);
 
     return loginRegExp.test(login);
   }
 
-  public static checkIfPasswordValid(password: string): boolean {
+  private static checkIfPasswordValid(password: string): boolean {
     const passwordRegExp = RegExpService.createPasswordRegExp(passwordPattern, PasswordLength.min, PasswordLength.max);
 
     return passwordRegExp.test(password);
   }
 
-  public static checkIfLoginCorrect(login: string, errorBlock: HTMLElement): boolean {
+  private static checkIfLoginCorrect(login: string, errorBlock: HTMLElement): boolean {
     if (!DataValidation.checkIfValueNotEmpty(login)) {
       ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.noLogin);
       return false;
@@ -39,7 +41,7 @@ class DataValidation {
     return true;
   }
 
-  public static checkIfPasswordCorrect(password: string, errorBlock: HTMLElement): boolean {
+  private static checkIfPasswordCorrect(password: string, errorBlock: HTMLElement): boolean {
     if (!DataValidation.checkIfValueNotEmpty(password)) {
       ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.noPassword);
       return false;
@@ -76,6 +78,18 @@ class DataValidation {
     }
 
     return true;
+  }
+
+  public static checkIfLoginDiffer(user: User): boolean {
+    return ProfileState.login !== user.login;
+  }
+
+  public static checkIfUserDataDiffer(user: User): boolean {
+    return (
+      ProfileState.login !== user.login ||
+      ProfileState.password !== user.password ||
+      ProfileState.avatar !== user.avatar
+    );
   }
 }
 

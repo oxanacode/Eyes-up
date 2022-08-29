@@ -9,6 +9,8 @@ import GamesMain from './blocks/games/games-main';
 import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
 import TestMain from './blocks/testing/test-main';
+import TypingAdventure from '../games/typing-adventure/game-start';
+import SwitchPage from '../scripts/layout/switch-page';
 import LessonMain from './blocks/lesson/lesson-main';
 
 import { Page } from '../types/enums';
@@ -24,6 +26,9 @@ class RenderPage {
         break;
       case Page.test:
         main = TestMain.createTestMain(RenderPage.renderPage);
+        break;
+      case Page.gameOne:
+        main = TypingAdventure.start(Page.games, SwitchPage.applyPage, RenderPage.renderPage);
         break;
       default:
         main = LessonsMain.createLessonsMain(RenderPage.renderPage);
@@ -59,7 +64,7 @@ class RenderPage {
 
     if (
       State.currentPage === Page.lesson ||
-      State.currentPage === Page.game ||
+      State.currentPage === Page.gameOne ||
       State.currentPage === Page.lessons ||
       State.currentPage === Page.test
     ) {

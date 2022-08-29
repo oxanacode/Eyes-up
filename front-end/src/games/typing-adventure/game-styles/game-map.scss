@@ -1,0 +1,62 @@
+.game-map {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./assets/bg.png');
+  background-size: contain;
+  padding: 20px;
+  display: flex;
+  column-gap: 20px;
+}
+
+.map-buttons-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding: 200px 20px;
+}
+
+.layout-button,
+.game-info-button,
+.reset-state-button {
+  padding: 5px 10px;
+  color: darkmagenta;
+  font-size: 17px;
+  border: 2px solid darkmagenta;
+  border-radius: 5px;
+  background-color: inherit;
+  transition: 0.5s;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.beast-title {
+  width: 220px;
+  font-size: 20px;
+  transition: 0.8s;
+  padding: 10px;
+  text-align: center;
+}
+
+.beast {
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  background-color: blueviolet;
+  transition: 0.8s;
+}
+
+.beast-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    .beast-title,
+    .beast {
+      transform: scale(1.1);
+      transition: 0.8s;
+    }
+  }
+}
