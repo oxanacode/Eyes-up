@@ -1,0 +1,71 @@
+.field-tutorial-modal-overlay {
+  @extend .field-modal-overlay;
+}
+
+.field-tutorial-modal-window {
+  @extend .welcome-modal-window;
+  height: 350px;
+  font-size: 20px;
+  color: darkmagenta;
+  top: calc(50% - 175px);
+}
+
+.field-tutorial-buttons {
+  @extend .welcome-modal-buttons;
+}
+
+.field-tutorial-modal-button,
+.field-tutorial-button,
+.hint-one-modal-button,
+.hint-two-modal-button,
+.hint-three-modal-button,
+.hint-four-modal-button,
+.hint-five-modal-button {
+  @extend .start-modal-button;
+}
+
+.hint-one-modal-window,
+.hint-two-modal-window,
+.hint-three-modal-window,
+.hint-four-modal-window,
+.hint-five-modal-window {
+  position: absolute;
+  z-index: 20;
+  padding: 25px;
+  width: 400px;
+  font-size: 18px;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  color: darkmagenta;
+  background: white;
+  border-radius: 5px;
+}
+
+.hint-one-modal-window {
+  top: -120px;
+  left: -400px;
+}
+
+.hint-two-modal-window {
+  top: 10px;
+  left: -350px;
+}
+
+.hint-three-modal-window {
+  top: -70px;
+  left: 220px;
+}
+
+.hint-four-modal-window {
+  top: -90px;
+  left: -350px;
+}
+
+.hint-five-modal-window {
+  top: -120px;
+  left: -145px;
+}
