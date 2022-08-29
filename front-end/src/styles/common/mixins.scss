@@ -136,6 +136,10 @@
   }
 }
 
+@mixin password-input {
+  padding-right: 4rem;
+}
+
 @mixin default-avatar {
   width: 100%;
   border-radius: 50%;

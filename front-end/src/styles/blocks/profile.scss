@@ -117,6 +117,10 @@
   }
 }
 
+.profile-password-input {
+  @include password-input;
+}
+
 .profile-password-visibility-btn {
   right: 1rem;
 
