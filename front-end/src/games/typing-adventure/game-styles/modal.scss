@@ -1,0 +1,137 @@
+.field-modal-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+}
+
+.field-modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  position: relative;
+  top: calc(50% - 75px);
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 150px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.field-modal-content {
+  font-size: 25px;
+  color: darkmagenta;
+}
+
+.field-modal-content-info {
+  font-size: 18px;
+  color: darkmagenta;
+}
+
+.welcome-modal-overlay,
+.start-modal-overlay,
+.game-info-modal-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+}
+
+.welcome-modal-window,
+.start-modal-window,
+.game-info-modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 25px;
+  position: relative;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  width: 500px;
+  height: 500px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.game-info-title {
+  font-size: 25px;
+  color: darkmagenta;
+}
+
+.info-title {
+  font-size: 20px;
+  color: darkmagenta;
+}
+
+.lvl-spells-title {
+  color: darkmagenta;
+}
+
+.info-spell {
+  color: darkgray;
+}
+
+.info-spell.available {
+  color: orange;
+}
+
+.start-modal-window,
+.game-info-modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.welcome-modal-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.welcome-layout-button,
+.welcome-modal-button,
+.start-modal-button,
+.game-info-modal-button,
+.field-modal-button {
+  font-size: 18px;
+  padding: 5px 10px;
+  border: 2px solid darkmagenta;
+  border-radius: 5px;
+  color: darkmagenta;
+  cursor: pointer;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.start-modal-img {
+  width: 400px;
+}
+
+.reset-state-modal-overlay {
+  @extend .field-modal-overlay;
+}
+
+.reset-state-modal-window {
+  @extend .field-modal-window;
+  font-size: 20px;
+  width: 400px;
+  height: 200px;
+  text-align: center;
+}
+
+.reset-state-modal-button {
+  @extend .welcome-layout-button;
+}
