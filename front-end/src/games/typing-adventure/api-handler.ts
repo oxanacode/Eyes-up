@@ -1,9 +1,9 @@
 import GameState from './game-state';
+import Beast from './beasts/beast-creater';
 import ApiService from '../../scripts/api/api-service';
 import ParseTypingAdventure from '../../scripts/parsing/parse-typing-adventure';
 
 import { Idata, User } from './game-types/interfaces';
-import Beast from './beasts/beast-creater';
 
 class ApiHandler {
   static userData: User;

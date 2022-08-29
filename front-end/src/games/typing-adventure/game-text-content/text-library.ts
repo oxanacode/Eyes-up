@@ -27,7 +27,7 @@ export const enContent = {
   toMap: 'back to map',
   doneStatus: ' (DONE)',
 
-  welcomeModalTitle: 'Welcome to the Typing Dungeon!',
+  welcomeModalTitle: 'Welcome to the Typing Adventure!',
   welcomeModalMessage:
     'Defeat the strongest monsters of Typiria to win the crown and the title of fast typing professional!\nThe monsters have gone berserk and are not going to calm down! Luckily, elemental magic comes to your rescue!',
   welcomeModalWarning: 'Please register to save your progress!',
@@ -51,7 +51,7 @@ export const enContent = {
   gameInfoAllSpells: 'game spells',
   gameInfoButton: 'back to game',
 
-  fieldTutorialModalParagOne: 'You are on the Typing Dungeon game field!',
+  fieldTutorialModalParagOne: 'You are on the Typing Adventure game field!',
   fieldTutorialModalParagTwo: 'Check out a little hint guide before you start playing.',
   fieldTutorialModalParagThree:
     'Attention!\nFor the correct input of spells, the selected language in the system must match the language of the application!',
@@ -82,7 +82,7 @@ export const enContent = {
   achievementTextHalfGame: 'You are halfway through the game!',
 
   achievementTitleGameDone: 'Typeria Conqueror!',
-  achievementTextGameDone: 'You completed Typing Dungeon!',
+  achievementTextGameDone: 'You completed Typing Adventure!',
 
   achievementTitleThunder: 'Friend of thunder!',
   achievementTextThunder: 'You have collected all thunder spells!',
@@ -129,7 +129,7 @@ export const ruContent = {
   toMap: 'вернуться на карту',
   doneStatus: ' (Пройден)',
 
-  welcomeModalTitle: 'Добро пожаловать в игру Typing Dungeon!',
+  welcomeModalTitle: 'Добро пожаловать в игру Typing Adventure!',
   welcomeModalMessage:
     'Одолейте сильнейших чудищ Тайпирии, чтобы завоевать корону и звание профессионала быстрой печати!\nЧудища разбуянились и успокаиваться не собираются! К счастью, вам на помощь приходит магия стихий!',
   welcomeModalWarning: 'Пожалуйста, пройдите регистрацию для сохранения прогресса!',
@@ -153,7 +153,7 @@ export const ruContent = {
   gameInfoAllSpells: 'чары в игре',
   gameInfoButton: 'вернуться к игре',
 
-  fieldTutorialModalParagOne: 'Вы на игровом поле Typing Dungeon!',
+  fieldTutorialModalParagOne: 'Вы на игровом поле Typing Adventure!',
   fieldTutorialModalParagTwo: 'Посмотрите небольшое руководство из подсказок, прежде чем начать играть.',
   fieldTutorialModalParagThree:
     'Внимание!\nДля корректного ввода чар выбранный язык в системе должен соответствовать языку приложения!',
@@ -185,7 +185,7 @@ export const ruContent = {
   achievementTextHalfGame: 'Вы прошли половину игры!',
 
   achievementTitleGameDone: 'Завоеватель Тайперии!',
-  achievementTextGameDone: 'Вы прошли Typing Dungeon!',
+  achievementTextGameDone: 'Вы прошли Typing Adventure!',
 
   achievementTitleThunder: 'Друг грома!',
   achievementTextThunder: 'Вы собрали все чары грома!',

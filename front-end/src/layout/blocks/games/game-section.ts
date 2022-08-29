@@ -4,18 +4,20 @@ import State from '../../../scripts/state/state';
 import GameSectionBtn from './game-section-btn';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Game } from '../../../types/enums';
+import { Tag, Game, Page } from '../../../types/enums';
 
 class GameSection {
   public static createGameSection(
     className: string,
     gameName: Game.one | Game.two,
+    gamePage: Page.gameOne | Page.gameTwo,
     render: RenderHandler
   ): HTMLElement {
     const gameSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game' }]);
     const gameBtn = GameSectionBtn.createGameSectionBtn(
       className,
       translation[`${gameName}Title`][State.currentLang],
+      gamePage,
       render
     );
     const descSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game-desc' }]);

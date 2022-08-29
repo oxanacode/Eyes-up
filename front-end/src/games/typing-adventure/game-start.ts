@@ -2,6 +2,7 @@ import './style.scss';
 
 import CreateElement from './overal-func.ts/create-element';
 import GameState from './game-state';
+import GameMap from './game-map';
 import ApiHandler from './api-handler';
 import Modal from './overal-func.ts/create-modal';
 import State from './app-state';
@@ -9,7 +10,6 @@ import ApiService from '../../scripts/api/api-service';
 
 import { Page, Tag } from './game-types/enums';
 import RenderHandler from './game-types/types';
-import GameMap from './game-map';
 
 class TypingAdventure {
   static start(

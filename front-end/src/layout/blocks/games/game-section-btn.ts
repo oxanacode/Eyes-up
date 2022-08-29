@@ -5,16 +5,21 @@ import { RenderHandler } from '../../../types/types';
 import { Page } from '../../../types/enums';
 
 class GameSectionBtn {
-  public static createGameSectionBtn(className: string, text: string, render: RenderHandler): HTMLElement {
+  public static createGameSectionBtn(
+    className: string,
+    text: string,
+    gamePage: Page,
+    render: RenderHandler
+  ): HTMLElement {
     const button = SectionBtn.createSectionBtn(className, text);
 
-    if (className === 'game-one') {
+    if (gamePage === Page.gameOne) {
       button.addEventListener('click', () => {
         SwitchPage.applyPage(Page.gameOne, render);
       });
     } else {
       button.addEventListener('click', () => {
-        SwitchPage.applyPage(Page.home, render); // ---------------------Page.game
+        SwitchPage.applyPage(Page.home, render);
       });
     }
 

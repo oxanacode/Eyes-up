@@ -1,8 +1,8 @@
 import CreateElement from './create-element';
 import FieldState from '../game-field/field-state';
+import GameState from '../game-state';
 
 import { Tag } from '../game-types/enums';
-import GameState from '../game-state';
 
 class Modal {
   static modalElements(modalType: string) {

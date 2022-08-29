@@ -77,7 +77,6 @@ interface TypingAdventureBeast {
   hp: number;
   renderCallback: () => void;
   done: boolean;
-
   createBeast(): HTMLElement;
 }
 
