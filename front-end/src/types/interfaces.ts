@@ -70,3 +70,22 @@ export interface Test {
   language: Lang;
   text: string;
 }
+
+interface TypingAdventureBeast {
+  beastType: string;
+  lvl: number;
+  hp: number;
+  renderCallback: () => void;
+  done: boolean;
+
+  createBeast(): HTMLElement;
+}
+
+export interface TypingAdventureData {
+  firstMapRender: boolean;
+  firstFieldRender: boolean;
+  userLvl: number;
+  userSpells: Record<string, string>[];
+  gameBeasts: TypingAdventureBeast[];
+  achievements: Record<string, boolean>;
+}

@@ -69,7 +69,7 @@ class MoveHandler {
     }, 0);
 
     if (MoveHandler.heroShield) {
-      totalResult /= 2;
+      totalResult = Math.trunc((totalResult /= 2));
       MoveHandler.heroShield = false;
     }
 

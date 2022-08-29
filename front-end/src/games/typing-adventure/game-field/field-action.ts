@@ -42,8 +42,8 @@ class FieldAction {
     );
     FieldAction.createCurrentSpellAction([GameState.spellsLib[GameValues.firstLvl].wind], FieldState.spellsPanel);
 
-    FieldTutorial.startModal(FieldAction.action);
     GameState.firstFieldAppearance = false;
+    FieldTutorial.startModal(FieldAction.action);
   }
 
   static heroMove() {

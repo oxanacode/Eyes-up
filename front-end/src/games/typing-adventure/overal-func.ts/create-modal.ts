@@ -38,7 +38,7 @@ class Modal {
     GameState.gameWrapper.append(overlay);
   }
 
-  static createWelcomeModal() {
+  static createWelcomeModal(apiCallback: () => void) {
     const { overlay, modal, modalText, button } = Modal.modalElements('welcome');
 
     const title = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'welcome-modal-text' }]);
@@ -64,6 +64,8 @@ class Modal {
     modal.append(title, modalText, warning, buttonsWrapper);
     overlay.append(modal);
 
+    GameState.firstAppearance = false;
+    apiCallback();
     GameState.gameWrapper.append(overlay);
   }
 

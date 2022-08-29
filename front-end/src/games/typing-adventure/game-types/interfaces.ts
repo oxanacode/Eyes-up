@@ -1,5 +1,8 @@
 import { Page } from './enums';
+import { User } from '../../../types/interfaces';
 import RenderHandler from './types';
+
+export { User };
 
 interface IBeast {
   beastType: string;
