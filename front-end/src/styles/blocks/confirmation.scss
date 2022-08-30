@@ -1,0 +1,70 @@
+@mixin confirmation-content {
+  @include bubble-modal-bg;
+  @include font-main;
+  position: absolute;
+  width: 24rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+@mixin confirmation-btn {
+  @include interaction-effects;
+  width: 6.6rem;
+  padding: 0.2rem;
+  border-radius: 0.6rem;
+}
+
+.confirmation-question {
+  color: $c-accent;
+  margin-bottom: 1rem;
+}
+
+.confirmation-text {
+  color: $c-main-text;
+  margin-bottom: 2rem;
+}
+
+.confirmation-btns-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.confirmation-yes-btn {
+  @include confirmation-btn;
+  color: $c-confirmation-yes-text;
+  background-color: $c-accent;
+}
+
+.confirmation-no-btn {
+  @include confirmation-btn;
+  color: $c-accent;
+  border: 0.1rem solid $c-accent;
+}
+
+.logout-confirmation-wrapper {
+  position: relative;
+}
+
+.logout-confirmation-content {
+  @include confirmation-content;
+  left: 50%;
+  bottom: 6rem;
+  transform: translateX(-50%);
+}
+
+.delete-account-confirmation-wrapper {
+  position: absolute;
+  bottom: calc((5rem - 2.1rem) / 2);
+
+  @include tablet-small {
+    position: static;
+    display: block;
+    margin: 0 auto 3rem;
+  }
+}
+
+.delete-account-confirmation-content {
+  @include confirmation-content;
+  bottom: calc((5rem - 2.1rem) / 2 + 2rem);
+}

@@ -29,11 +29,11 @@ class EditProfileModal {
     const avatarsTitle = ProfileSubtitle.createProfileSubtitle(translation.profileAvatarsTitle[State.currentLang]);
     const avatars = ProfileAvatars.createProfileAvatars(user, data, saveChangesBtn);
     const deleteAccountWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'delete-account-wrapper' },
+      { name: 'class', value: 'delete-account-confirmation-wrapper' },
     ]);
     const deleteAccountConfirmation = ConfirmationContent.createConfirmationContent(
       deleteAccountWrapper,
-      'delete-account-confirmation hidden',
+      'delete-account-confirmation-content hidden',
       render,
       Confirmation.delete,
       user

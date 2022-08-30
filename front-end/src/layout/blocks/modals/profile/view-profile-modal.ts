@@ -21,10 +21,12 @@ class ViewProfileModal {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content' }]);
     const header = ViewProfileHeader.createViewProfileHeader(editProfile, user, render, modalToClose, modal);
     const data = ProfileData.createViewProfileData(user, Profile.view);
-    const logoutWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'logout-wrapper' }]);
+    const logoutWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'logout-confirmation-wrapper' },
+    ]);
     const logoutConfirmation = ConfirmationContent.createConfirmationContent(
       logoutWrapper,
-      'logout-confirmation hidden',
+      'logout-confirmation-content hidden',
       render,
       Confirmation.logout
     );

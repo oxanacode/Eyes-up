@@ -183,15 +183,7 @@
 
 .delete-account-btn {
   @include font-main;
-  position: absolute;
   color: $c-main-text;
-  bottom: calc((5rem - 2.1rem) / 2);
-
-  @include tablet-small {
-    position: static;
-    display: block;
-    margin: 0 auto 3rem;
-  }
 }
 
 .profile-error-block {
