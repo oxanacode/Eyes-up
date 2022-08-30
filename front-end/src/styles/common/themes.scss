@@ -6,7 +6,7 @@ body.light {
   --c-subtitle: #212529;
   --c-accent: #212529;
   --c-accent: #848ED9;
-  --c-big-btn-hover: #AFB8FA;
+  --c-big-btn-hover: #98A2E9;
   --c-big-btn-active: #6D78CC;
   --c-big-btn-disabled: #8693B3;
   --c-filter-all: #F3F2FC;
@@ -19,6 +19,8 @@ body.light {
   --c-mistake: #FFDADA;
   --c-correction: #FFEBC6;
   --c-correct: #E8FFDA;
+  --c-lesson-btn-border: #F6F6F6;
+  --c-key-border: #E1E1E1;
   --c-modal-overlay: rgba(50, 50, 50, .2);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -59,6 +61,16 @@ body.light {
   --bg-icon-error-hint: url(./assets/images/background/icons/icon-error-hint.svg);
   --bg-icon-restart-hover: url(./assets/images/background/icons/icon-restart-hover-light.svg);
   --bg-test-ribbon: url(./assets/images/background/testing/bg-test-ribbon-light.svg);
+  --bg-lesson-restart: url(./assets/images/background/icons/icon-lesson-restart-light.svg);
+  --bg-lesson-restart-hover: url(./assets/images/background/icons/icon-lesson-restart-hover-light.svg);
+  --bg-lesson-font: url(./assets/images/background/icons/icon-lesson-font-light.svg);
+  --bg-lesson-font-hover: url(./assets/images/background/icons/icon-lesson-font-hover-light.svg);
+  --bg-lesson-bg: url(./assets/images/background/icons/icon-lesson-bg-light.svg);
+  --bg-lesson-bg-hover: url(./assets/images/background/icons/icon-lesson-bg-hover-light.svg);
+  --bg-lesson-sound: url(./assets/images/background/icons/icon-lesson-sound-light.svg);
+  --bg-lesson-sound-hover: url(./assets/images/background/icons/icon-lesson-sound-hover-light.svg);
+  --bg-lesson-kb: url(./assets/images/background/icons/icon-lesson-kb-light.svg);
+  --bg-lesson-kb-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-light.svg);
 }
 
 body.dark {
@@ -82,6 +94,8 @@ body.dark {
   --c-mistake: #694444;
   --c-correction: #716756;
   --c-correct: #3E6253;
+  --c-lesson-btn-border: #3C4A64;
+  --c-key-border: #3C4A64;
   --c-modal-overlay: rgba(0, 0, 0, .5);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -122,6 +136,16 @@ body.dark {
   --bg-icon-error-hint: url(./assets/images/background/icons/icon-error-hint.svg);
   --bg-icon-restart-hover: url(./assets/images/background/icons/icon-restart-hover-dark.svg);
   --bg-test-ribbon: url(./assets/images/background/testing/bg-test-ribbon-dark.svg);
+  --bg-lesson-restart: url(./assets/images/background/icons/icon-lesson-restart-dark.svg);
+  --bg-lesson-restart-hover: url(./assets/images/background/icons/icon-lesson-restart-hover-dark.svg);
+  --bg-lesson-font: url(./assets/images/background/icons/icon-lesson-font-dark.svg);
+  --bg-lesson-font-hover: url(./assets/images/background/icons/icon-lesson-font-hover-dark.svg);
+  --bg-lesson-bg: url(./assets/images/background/icons/icon-lesson-bg-dark.svg);
+  --bg-lesson-bg-hover: url(./assets/images/background/icons/icon-lesson-bg-hover-dark.svg);
+  --bg-lesson-sound: url(./assets/images/background/icons/icon-lesson-sound-dark.svg);
+  --bg-lesson-sound-hover: url(./assets/images/background/icons/icon-lesson-sound-hover-dark.svg);
+  --bg-lesson-kb: url(./assets/images/background/icons/icon-lesson-kb-dark.svg);
+  --bg-lesson-kb-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-dark.svg);
 }
 
 $c-body-bg: var(--c-body-bg);
@@ -145,6 +169,8 @@ $c-bg-modal-overlay: var(--c-modal-overlay);
 $c-mistake: var(--c-mistake);
 $c-correction: var(--c-correction);
 $c-correct: var(--c-correct);
+$c-lesson-btn-border: var(--c-lesson-btn-border);
+$c-key-border: var(--c-key-border);
 $c-error-text: #DA5C54;
 $c-confirmation-yes-text: #F3F3F4;
 
@@ -192,3 +218,13 @@ $bg-icon-burger-menu: var(--bg-icon-burger-menu);
 $bg-icon-error-hint: var(--bg-icon-error-hint);
 $bg-icon-restart-hover: var(--bg-icon-restart-hover);
 $bg-test-ribbon: var(--bg-test-ribbon);
+$bg-lesson-restart: var(--bg-lesson-restart);
+$bg-lesson-restart-hover: var(--bg-lesson-restart-hover);
+$bg-lesson-font: var(--bg-lesson-font);
+$bg-lesson-font-hover: var(--bg-lesson-font-hover);
+$bg-lesson-bg: var(--bg-lesson-bg);
+$bg-lesson-bg-hover: var(--bg-lesson-bg-hover);
+$bg-lesson-sound: var(--bg-lesson-sound);
+$bg-lesson-sound-hover: var(--bg-lesson-sound-hover);
+$bg-lesson-kb: var(--bg-lesson-kb);
+$bg-lesson-kb-hover: var(--bg-lesson-kb-hover);

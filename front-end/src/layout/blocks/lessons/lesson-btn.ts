@@ -1,5 +1,6 @@
 import CreateElement from '../../elements/create-element';
 import SwitchPage from '../../../scripts/layout/switch-page';
+import LessonState from '../lesson/lesson-state';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -27,7 +28,8 @@ class LessonBtn {
     lessonTop.append(lessonIndex, lessonStars);
     lessonBtn.append(lessonTop, lessonImg, lessonTitle);
     lessonBtn.addEventListener('click', () => {
-      SwitchPage.applyPage(Page.lessons, render);
+      LessonState.lessonData = lesson;
+      SwitchPage.applyPage(Page.lesson, render);
     });
 
     return lessonBtn;

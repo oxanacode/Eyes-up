@@ -2,7 +2,7 @@ import { Avatar, Complexity, Lang, Layout, Page, Theme } from '../../types/enums
 import { CurrentUser } from '../../types/interfaces';
 
 class State {
-  public static notAuthorised = 'login';
+  public static notAuthorised = '0login';
 
   public static defaultAvatar: Avatar = Avatar.default;
 
