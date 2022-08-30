@@ -3,7 +3,7 @@ import { User, Lesson, Test, Query } from '../../types/interfaces';
 import { UsersList, LessonsList, UserData, LessonData, TestsList, TestData, RandomTest } from '../../types/types';
 
 class ApiService {
-  private static url = 'http://127.0.0.1:3000/api/v1';
+  private static url = 'https://eyesup-backend.herokuapp.com/api/v1';
 
   private static getLessonsQuery(query: Query): string {
     if (query.layout && query.complexity) {

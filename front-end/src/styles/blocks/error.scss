@@ -24,15 +24,13 @@
 }
 
 .error-hint {
+  @include bubble-modal-bg;
   position: absolute;
   top: calc(100% + 1rem);
   width: 28rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: $c-block-bg;
   padding: 2rem;
-  border-radius: $big-border-radius;
-  box-shadow: $bxs-modal-shadow;
 }
 
 .profile-modal-content .error-hint {

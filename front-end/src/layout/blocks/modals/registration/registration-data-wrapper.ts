@@ -24,7 +24,7 @@ class RegistrationDataWrapper {
       'registration-input-label base-text',
       translation.modalSignUpPasswordInput[State.currentLang]
     );
-    const passwordInput = PasswordInput.createPasswordInput('registration-input');
+    const passwordInput = PasswordInput.createPasswordInput('registration-input registration-password-input');
     const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(
       'password-visibility-btn registration-password-visibility-btn password-close',
       passwordInput

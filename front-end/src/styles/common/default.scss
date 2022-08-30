@@ -6,6 +6,14 @@
   overflow: hidden;
 }
 
+.measure-scrollbar {
+  width: 10rem;
+  height: 10rem;
+  overflow: scroll;
+  position: absolute;
+  top: -99.99rem;
+}
+
 .small-btn {
   @include font-main;
   @include interaction-effects;

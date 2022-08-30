@@ -31,7 +31,7 @@ class ProfileData {
     const passwordInput =
       profile === Profile.edit && saveChangesBtn
         ? EditProfilePasswordInput.createEditProfilePasswordInput(user, saveChangesBtn)
-        : PasswordInput.createPasswordInput('profile-input', Disabled.true);
+        : PasswordInput.createPasswordInput('profile-input profile-password-input', Disabled.true);
     const visibilityBtn = PasswordVisibilityBtn.createPasswordVisibilityBtn(
       'password-visibility-btn profile-password-visibility-btn password-close',
       passwordInput
