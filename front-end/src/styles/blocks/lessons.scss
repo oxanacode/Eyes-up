@@ -120,17 +120,21 @@
 }
 
 .lesson-btn {
-  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  width: 18rem;
-  height: 18rem;
+  width: 17.6rem;
+  height: 17.6rem;
   border-radius: $big-border-radius;
-  border: 0.2rem solid $c-accent;
+  outline: 0.2rem solid $c-lesson-btn-border;
   overflow: hidden;
+  transition: 0.4s;
 
   @include mobile {
-    height: 7rem;
+    height: 6.6rem;
+  }
+
+  &:hover {
+    outline-color: $c-accent;
   }
 }
 

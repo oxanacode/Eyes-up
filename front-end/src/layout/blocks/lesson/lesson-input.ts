@@ -6,6 +6,7 @@ import RowsPosition from './rows-position';
 import LessonTimer from './lesson-timer';
 
 import { Tag } from '../../../types/enums';
+import LessonKeyboard from './lesson-keyboard';
 
 class LessonInput {
   public static checkMatch(inputChar: string): void {
@@ -43,18 +44,57 @@ class LessonInput {
     LessonState.ribbon.style.top = '-5rem';
   }
 
+  public static highlightKey(index: number): void {
+    if (index < LessonState.lessonChars.length) {
+      let char = <string>LessonState.lessonChars[index].textContent;
+
+      if (char === ' ') {
+        LessonKeyboard.space.classList.add('current-char');
+      } else {
+        if (char === char.toLocaleUpperCase() && char.match(/[a-zA-Zа-яА-Я]/))
+          LessonKeyboard.shift.classList.add('current-char');
+
+        char = char.toLocaleLowerCase();
+        LessonKeyboard.virtualKeys[char].classList.add('current-char');
+      }
+    }
+  }
+
+  public static removeKeyHighlight(index: number): void {
+    if (index < LessonState.lessonChars.length) {
+      let char = <string>LessonState.lessonChars[index].textContent;
+
+      if (char === ' ') {
+        LessonKeyboard.space.classList.remove('current-char');
+      } else {
+        if (char === char.toLocaleUpperCase() && char.match(/[a-zA-Zа-яА-Я]/))
+          LessonKeyboard.shift.classList.remove('current-char');
+
+        char = char.toLocaleLowerCase();
+        LessonKeyboard.virtualKeys[char].classList.remove('current-char');
+      }
+    }
+  }
+
   public static createLessonInput(): HTMLElement {
     const testInput = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'lesson-input' },
       { name: 'autocomplete', value: 'off' },
     ]);
     LessonState.lessonChars[0].classList.add('active-char');
+    LessonInput.highlightKey(0);
 
     testInput.addEventListener('input', () => {
       if (LessonState.inputIndex < LessonState.lessonChars.length)
         LessonState.lessonChars[LessonState.inputIndex].classList.remove('active-char');
 
+      LessonInput.removeKeyHighlight(LessonState.inputIndex);
+
       if (LessonState.inputIndex >= LessonState.lessonChars.length) return;
+
+      const inputChar = (<HTMLInputElement>testInput).value.split('')[LessonState.inputIndex];
+
+      if (inputChar) LessonInput.highlightKey(LessonState.inputIndex + 1);
 
       if (!LessonState.inputIndex) LessonInput.hideRibbon();
 
@@ -62,8 +102,6 @@ class LessonInput {
 
       LessonState.typedChars =
         LessonState.typedChars > LessonState.inputIndex ? LessonState.typedChars : LessonState.inputIndex;
-
-      const inputChar = (<HTMLInputElement>testInput).value.split('')[LessonState.inputIndex];
 
       if (!LessonState.typing) {
         LessonTimer.stopTimer = false;
@@ -73,6 +111,7 @@ class LessonInput {
 
       if (inputChar == null) {
         if (LessonState.inputIndex) LessonState.inputIndex -= 1;
+        LessonInput.highlightKey(LessonState.inputIndex);
         LessonState.lessonChars[LessonState.inputIndex].classList.remove('correct', 'incorrect', 'correction');
         LessonState.lessonChars[LessonState.inputIndex].classList.add('active-char');
         return;

@@ -33,13 +33,14 @@ class LessonMain {
     const lessonStats = LessonStats.createLessonStats();
     const restartBtn = LessonRestartBtn.createRestartBtn(render);
     const lessonContent = LessonContent.createLessonContent();
+    const keyboard = LessonKeyboard.createLessonKeyboard();
     const input = LessonInput.createLessonInput();
-    // const keyboard = LessonKeyboard.createLessonKeyboard();
+
     LessonState.ribbon = ribbon;
     topWrapper.append(back, lessonSettings);
     contentTopWrapper.append(lessonStats, restartBtn);
     lessonWrapper.append(contentTopWrapper, lessonContent, input);
-    main.append(topWrapper, ribbon, lessonWrapper);
+    main.append(topWrapper, ribbon, lessonWrapper, keyboard);
 
     document.addEventListener('keydown', () => {
       input.focus();

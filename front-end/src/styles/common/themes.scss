@@ -19,6 +19,8 @@ body.light {
   --c-mistake: #FFDADA;
   --c-correction: #FFEBC6;
   --c-correct: #E8FFDA;
+  --c-lesson-btn-border: #F6F6F6;
+  --c-key-border: #E1E1E1;
   --c-modal-overlay: rgba(50, 50, 50, .2);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -92,6 +94,8 @@ body.dark {
   --c-mistake: #694444;
   --c-correction: #716756;
   --c-correct: #3E6253;
+  --c-lesson-btn-border: #3C4A64;
+  --c-key-border: #3C4A64;
   --c-modal-overlay: rgba(0, 0, 0, .5);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
@@ -165,6 +169,8 @@ $c-bg-modal-overlay: var(--c-modal-overlay);
 $c-mistake: var(--c-mistake);
 $c-correction: var(--c-correction);
 $c-correct: var(--c-correct);
+$c-lesson-btn-border: var(--c-lesson-btn-border);
+$c-key-border: var(--c-key-border);
 $c-error-text: #DA5C54;
 
 

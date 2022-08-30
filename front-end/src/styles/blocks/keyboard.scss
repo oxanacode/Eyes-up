@@ -1,0 +1,71 @@
+$gap: 4px;
+$key-size: 40px;
+$title-function-color: #383840;
+$keyboard-background: #EEEEEE;
+$keyboard-border: #CCCCCC;
+$key-background: #616673;
+
+.lesson-keyboard {
+  @include font-subtitle-mobile;
+  display: flex;
+  flex-direction: column;
+  max-width: 63.5rem;
+  gap: $gap;
+  border-radius: 5px;
+  user-select: none;
+  margin: 0 auto;
+}
+
+.keyboard-row {
+  display: flex;
+  gap: $gap;
+}
+
+.keyboard-key {
+  width: $key-size;
+  height: $key-size;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  border: 0.1rem solid $c-key-border;
+
+  color: $c-main-text;
+  background-color: $c-block-bg;
+  border-radius: 0.5rem;
+    
+  &.key_function {
+    @include font-keyboard-function;
+    display: flex;
+    justify-content: end;
+    text-align: start;
+    padding-left: 0.4rem;
+  } 
+}
+
+.key-size-space {
+  width: calc($key-size * 6 + $gap * 5);
+}
+
+.key-size-one-half {
+  width: calc($key-size * 1.5 + $gap);
+}
+
+.key-size-double {
+  width: calc($key-size * 2 + $gap);
+}
+
+.key-size-two-half {
+  width: calc($key-size * 2.5 + $gap * 2);
+}
+
+.key-two-symbols {
+  @include font-main-small;
+}
+
+.current-char {
+  background-color: $c-accent;
+  border-color: $c-accent;
+  color: white;
+}

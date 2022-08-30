@@ -104,6 +104,10 @@
   font-size: 2rem;
 }
 
+@mixin font-keyboard-function {
+  font-size: 1.2rem;
+}
+
 @mixin default-wrapper {
   display: flex;
   align-items: center;
