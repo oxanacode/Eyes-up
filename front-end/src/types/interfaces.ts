@@ -90,7 +90,7 @@ export interface TypingAdventureData {
 }
 
 export interface UserLessons {
-  [key: number]: {
+  [key: string]: {
     bestSpeed: number;
     bestAccuracy: number;
     bestScore: number;
@@ -100,4 +100,8 @@ export interface UserLessons {
 export interface UserTesting {
   bestSpeed: number;
   bestAccuracy: number;
+}
+
+export interface VirtualKeys {
+  [key: string]: HTMLElement;
 }

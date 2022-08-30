@@ -1,16 +1,9 @@
-$gap: 4px;
-$key-size: 40px;
-$title-function-color: #383840;
-$keyboard-background: #EEEEEE;
-$keyboard-border: #CCCCCC;
-$key-background: #616673;
-
 .lesson-keyboard {
   @include font-subtitle-mobile;
   display: flex;
   flex-direction: column;
   max-width: 63.5rem;
-  gap: $gap;
+  gap: $keyboard-gap;
   border-radius: 5px;
   user-select: none;
   margin: 0 auto;
@@ -18,7 +11,7 @@ $key-background: #616673;
 
 .keyboard-row {
   display: flex;
-  gap: $gap;
+  gap: $keyboard-gap;
 }
 
 .keyboard-key {
@@ -45,19 +38,19 @@ $key-background: #616673;
 }
 
 .key-size-space {
-  width: calc($key-size * 6 + $gap * 5);
+  width: calc($key-size * 6 + $keyboard-gap * 5);
 }
 
 .key-size-one-half {
-  width: calc($key-size * 1.5 + $gap);
+  width: calc($key-size * 1.5 + $keyboard-gap);
 }
 
 .key-size-double {
-  width: calc($key-size * 2 + $gap);
+  width: calc($key-size * 2 + $keyboard-gap);
 }
 
 .key-size-two-half {
-  width: calc($key-size * 2.5 + $gap * 2);
+  width: calc($key-size * 2.5 + $keyboard-gap * 2);
 }
 
 .key-two-symbols {

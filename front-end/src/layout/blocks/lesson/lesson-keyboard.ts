@@ -3,10 +3,8 @@ import keys from '../../../data/keys';
 import State from '../../../scripts/state/state';
 
 import { Layout, Tag } from '../../../types/enums';
+import { VirtualKeys } from '../../../types/interfaces';
 
-interface VirtualKeys {
-  [key: string]: HTMLElement;
-}
 class LessonKeyboard {
   public static virtualKeys: VirtualKeys = {};
 
