@@ -11,6 +11,8 @@ import { RenderHandler } from '../../../../types/types';
 
 class ViewProfileHeader {
   public static createViewProfileHeader(
+    dataBlock: HTMLElement,
+    condirmationWrapper: HTMLElement,
     editProfile: HTMLElement,
     user: User,
     render: RenderHandler,
@@ -20,7 +22,14 @@ class ViewProfileHeader {
     const header = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header' }]);
     const closeBtn = CloseBtn.createCloseBtn('small-btn close-btn profile-btn', modalToClose);
     const title = MainTitle.createMainTitle(translation.profileTitle[State.currentLang]);
-    const editBtn = EditProfileBtn.createEditProfileBtn(editProfile, user, render, modalToHide);
+    const editBtn = EditProfileBtn.createEditProfileBtn(
+      dataBlock,
+      condirmationWrapper,
+      editProfile,
+      user,
+      render,
+      modalToHide
+    );
 
     header.append(closeBtn, title, editBtn);
 

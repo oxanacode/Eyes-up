@@ -19,7 +19,6 @@ class ViewProfileModal {
     ManageProfileState.updateProfileState(user);
 
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal-content' }]);
-    const header = ViewProfileHeader.createViewProfileHeader(editProfile, user, render, modalToClose, modal);
     const data = ProfileData.createViewProfileData(user, Profile.view);
     const logoutWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'logout-confirmation-wrapper' },
@@ -31,6 +30,15 @@ class ViewProfileModal {
       Confirmation.logout
     );
     const logoutBtn = LogoutBtn.createLogoutBtn(logoutWrapper);
+    const header = ViewProfileHeader.createViewProfileHeader(
+      data,
+      logoutWrapper,
+      editProfile,
+      user,
+      render,
+      modalToClose,
+      modal
+    );
 
     logoutWrapper.append(logoutConfirmation, logoutBtn);
     modal.append(header, data, logoutWrapper);
