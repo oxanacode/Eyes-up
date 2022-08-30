@@ -1,6 +1,7 @@
 import State from '../../../scripts/state/state';
-import { Layout } from '../../../types/enums';
 import LessonState from './lesson-state';
+
+import { Layout } from '../../../types/enums';
 
 class LessonTimer {
   public static stopTimer = false;

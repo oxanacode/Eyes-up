@@ -65,6 +65,10 @@
   &:disabled {
     background-color: $c-big-btn-disabled;
   }
+
+  @include mobile {
+    font-size: 1.8rem;
+  }
 }
 
 @mixin small-btn-bg {

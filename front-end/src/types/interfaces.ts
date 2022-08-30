@@ -88,3 +88,16 @@ export interface TypingAdventureData {
   gameBeasts: TypingAdventureBeast[];
   achievements: Record<string, boolean>;
 }
+
+export interface UserLessons {
+  [key: number]: {
+    bestSpeed: number;
+    bestAccuracy: number;
+    bestScore: number;
+  };
+}
+
+export interface UserTesting {
+  bestSpeed: number;
+  bestAccuracy: number;
+}

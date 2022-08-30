@@ -2,9 +2,9 @@ import CreateElement from '../../elements/create-element';
 import ManageModal from '../../../scripts/layout/manage-modal';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
+import LessonInput from './lesson-input';
 
 import { Tag } from '../../../types/enums';
-import LessonInput from './lesson-input';
 
 class LessonResult {
   public static visible = false;

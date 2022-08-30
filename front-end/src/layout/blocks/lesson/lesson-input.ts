@@ -4,9 +4,9 @@ import State from '../../../scripts/state/state';
 import LessonState from './lesson-state';
 import RowsPosition from './rows-position';
 import LessonTimer from './lesson-timer';
+import LessonKeyboard from './lesson-keyboard';
 
 import { Tag } from '../../../types/enums';
-import LessonKeyboard from './lesson-keyboard';
 
 class LessonInput {
   public static checkMatch(inputChar: string): void {
@@ -118,7 +118,6 @@ class LessonInput {
       }
 
       LessonInput.checkMatch(inputChar);
-
       LessonState.wpmCount.textContent = `${LessonTimer.getWpm()} ${translation.testWpmSub[State.currentLang]}`;
       LessonState.correctionsCount.textContent = `${Math.floor(LessonInput.getCorrections())}`;
       LessonState.accuracyCount.textContent = `${Math.floor(LessonInput.getAccuracy())} %`;
@@ -126,7 +125,7 @@ class LessonInput {
 
       if (LessonState.inputIndex === LessonState.lessonChars.length - 1) {
         LessonTimer.stopTimer = true;
-        // TestResult.showTestResult(wpmCount);
+        // TestResult.showLessonResult;
       }
 
       LessonState.inputIndex += 1;

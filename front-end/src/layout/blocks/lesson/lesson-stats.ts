@@ -1,9 +1,9 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
-
-import { Tag } from '../../../types/enums';
 import State from '../../../scripts/state/state';
 import LessonState from './lesson-state';
+
+import { Tag } from '../../../types/enums';
 
 class LessonStats {
   public static createLessonStats(): HTMLElement {
