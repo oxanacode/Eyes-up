@@ -123,3 +123,8 @@ export enum Profile {
   view = 'view',
   edit = 'edit',
 }
+
+export enum Confirmation {
+  logout = 'logout',
+  delete = 'delete',
+}

@@ -46,6 +46,10 @@
   margin-top: 0.2rem;
 }
 
+.registration-password-input {
+  @include password-input;
+}
+
 .registration-password-visibility-btn {
   bottom: 1rem;
   right: 1rem;

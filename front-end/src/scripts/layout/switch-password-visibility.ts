@@ -12,6 +12,20 @@ class SwitchPasswordVisibility {
       passwordInput.setAttribute('type', InputType.password);
     }
   }
+
+  public static hidePassword(dataBlock: HTMLElement): void {
+    if (
+      dataBlock.lastElementChild &&
+      dataBlock.lastElementChild.lastElementChild &&
+      dataBlock.lastElementChild.lastElementChild.previousElementSibling
+    ) {
+      if (dataBlock.lastElementChild.lastElementChild.previousElementSibling.getAttribute('type') === InputType.text) {
+        dataBlock.lastElementChild.lastElementChild.classList.add('password-close');
+        dataBlock.lastElementChild.lastElementChild.classList.remove('password-open');
+        dataBlock.lastElementChild.lastElementChild.previousElementSibling.setAttribute('type', InputType.password);
+      }
+    }
+  }
 }
 
 export default SwitchPasswordVisibility;
