@@ -1,5 +1,5 @@
-const PORT = 3000;
-const CONNECT = 'mongodb://127.0.0.1:27017/RSClone';
+const PORT = process.env.PORT;
+const CONNECT = process.env.MONGO_CONNECTION_STRING;
 const express = require('express');
 const mongoose = require('mongoose');
 const db = mongoose.connection;
