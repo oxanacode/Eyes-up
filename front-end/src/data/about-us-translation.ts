@@ -14,8 +14,8 @@ const aboutUsTranslation: Translation = {
     ru: 'С ходом работ и полным списком особенностей нашего приложения можно ознакомиться по ',
   },
   featuresLink: {
-    en: 'link',
-    ru: 'ссылке',
+    en: 'link.',
+    ru: 'ссылке.',
   },
   technologies: {
     en: 'Technologies',
@@ -110,7 +110,7 @@ const aboutUsTranslation: Translation = {
     ru: 'Благодарности',
   },
   inspyredBy: {
-    en: 'Inspired by ',
+    en: 'The idea was taken from ',
     ru: 'Идея проекта взята с сайта ',
   },
   typingClub: {
@@ -118,8 +118,8 @@ const aboutUsTranslation: Translation = {
     ru: 'TypingClub',
   },
   imagesBy: {
-    en: 'Illustrations are created by ',
-    ru: 'Иллюстрации созданы ',
+    en: 'All illustrations are created by ',
+    ru: 'Все иллюстрации созданы ',
   },
   illustratorOne: {
     en: 'Spectrum UI',
