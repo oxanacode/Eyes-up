@@ -1,29 +1,41 @@
 import { Translation } from '../types/interfaces';
 
-const aboutUsTranslation: Translation = {
+const aboutTranslation: Translation = {
   greeting: {
     en: 'Hello everyone!',
     ru: 'Всем привет!',
   },
   project: {
-    en: 'The project was created as a final task of the Rolling Scopes School front-end development course.',
-    ru: 'Проект был создан в рамках финального задания курса front-end разработки Rolling Scopes School.',
+    en: 'The project was created as a final task of the Rolling Scopes School front-end development course. The working process and the full feature list of our application can be found by the ',
+    ru: 'Проект был создан в рамках финального задания курса front-end разработки Rolling Scopes School. С ходом работ и полным списком особенностей нашего приложения можно ознакомиться по ',
   },
-  featuresText: {
-    en: 'The working process and the full feature list of our application can be found by the ',
-    ru: 'С ходом работ и полным списком особенностей нашего приложения можно ознакомиться по ',
+  features: {
+    en: 'link.',
+    ru: 'ссылке.',
   },
-  featuresLink: {
-    en: 'link',
-    ru: 'ссылке',
+  technologies: {
+    en: 'Technologies',
+    ru: 'Технологии',
   },
-  frontEnd: {
-    en: 'Technologies used for front-end: HTML, SCSS, TypeScript.',
-    ru: 'Использованые front-end технологии: HTML, SCSS, TypeScript.',
+  textFront: {
+    en: 'Technologies used for front-end: ',
+    ru: 'Использованые front-end технологии: ',
   },
-  backEnd: {
-    en: 'Technologies used for back-end: NodeJS, Express, Mongoose, MongoDB, Heroku.',
-    ru: 'Использованые back-end технологии: NodeJS, Express, Mongoose, MongoDB, Heroku.',
+  textBack: {
+    en: 'Technologies used for back-end: ',
+    ru: 'Использованые back-end технологии: ',
+  },
+  techFront: {
+    en: 'HTML, SCSS, TypeScript',
+    ru: 'HTML, SCSS, TypeScript',
+  },
+  techBack: {
+    en: 'NodeJS, Express, Mongoose, MongoDB, Heroku',
+    ru: 'NodeJS, Express, Mongoose, MongoDB, Heroku',
+  },
+  developers: {
+    en: 'Developers',
+    ru: 'Разработчики',
   },
   nameOxana: {
     en: 'Oxana',
@@ -58,12 +70,12 @@ const aboutUsTranslation: Translation = {
     ru: 'концепты игр',
   },
   taskTwoNikita: {
-    en: 'layout: footer, both games',
-    ru: 'верстка: подвал, обе игры',
+    en: 'layout: footer, Typing Adventure game, Typing Hero game',
+    ru: 'верстка: подвал, игра Typing Adventure, игра Typing Hero',
   },
   taskThreeNikita: {
-    en: 'logic: both games',
-    ru: 'логика: обе игры',
+    en: 'logic: Typing Adventure game, Typing Hero game',
+    ru: 'логика: игра Typing Adventure, игра Typing Hero',
   },
   taskFourNikita: {
     en: 'back-end deploy',
@@ -74,8 +86,8 @@ const aboutUsTranslation: Translation = {
     ru: 'Ирина',
   },
   taskOneIrina: {
-    en: 'layout: header, all modal windows, "About Us" page',
-    ru: 'верстка: шапка, все модальные окна, страница "О нас"',
+    en: 'layout: header, modal windows, "About Us"',
+    ru: 'верстка: шапка, модальные окна, "О нас"',
   },
   taskTwoIrina: {
     en: 'logic: registration/authorization, data change/logout/profile deletion, display of statistics/badges in a profile',
@@ -89,17 +101,25 @@ const aboutUsTranslation: Translation = {
     en: 'back-end development',
     ru: 'разработка back-end',
   },
+  credits: {
+    en: 'Credits',
+    ru: 'Благодарности',
+  },
   inspyredBy: {
-    en: 'Inspired by ',
+    en: 'The idea was taken from ',
     ru: 'Идея проекта взята с сайта ',
   },
   typingClub: {
     en: 'TypingClub',
     ru: 'TypingClub',
   },
-  imagesBy: {
-    en: 'Illustrations are created by ',
-    ru: 'Иллюстрации созданы ',
+  illustrationsBy: {
+    en: 'All illustrations are created by ',
+    ru: 'Все иллюстрации созданы ',
+  },
+  and: {
+    en: ' and ',
+    ru: ' и ',
   },
   illustratorOne: {
     en: 'Spectrum UI',
@@ -111,4 +131,4 @@ const aboutUsTranslation: Translation = {
   },
 };
 
-export default aboutUsTranslation;
+export default aboutTranslation;

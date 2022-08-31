@@ -17,6 +17,8 @@ export enum Tag {
   footer = 'footer',
   section = 'section',
   label = 'label',
+  list = 'ul',
+  listItem = 'li',
 }
 
 export enum InputType {

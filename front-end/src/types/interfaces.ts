@@ -82,6 +82,17 @@ export interface Links {
   [key: string]: string;
 }
 
+export interface Developer {
+  name: string;
+  nickname: string;
+  gitHubLink: string;
+  avatar: string;
+}
+
+export interface Developers {
+  [key: string]: Developer;
+}
+
 export interface Test {
   _id: string;
   __v: number;
