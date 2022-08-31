@@ -16,16 +16,16 @@
   }
 }
 
-.game-one-bg{
+.game-one-bg {
   background: $bg-game-bg no-repeat right / contain;
 
   @include tablet {
     background-position: center center;
   }
-  
+
 }
 
-.game-two-bg{
+.game-two-bg {
   background: $bg-game-bg no-repeat right / contain;
 
   @include tablet {
@@ -52,5 +52,9 @@
 }
 
 .game-desc-text {
-  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
