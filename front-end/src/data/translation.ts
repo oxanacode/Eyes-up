@@ -1,4 +1,6 @@
-const translation = {
+import { Translation } from '../types/interfaces';
+
+const translation: Translation = {
   homeLink: {
     en: 'Home',
     ru: 'Главная',
@@ -15,23 +17,31 @@ const translation = {
     en: 'Typing Adventure',
     ru: 'Typing Adventure',
   },
-  gameOneDescTitle: {
-    en: 'GameOneDesc',
-    ru: 'Описание',
+  gameOneDescFirst: {
+    en: 'Do you want to feel yoursels like a real seeker of adventures? Welcome to Typing Adventure!',
+    ru: 'Хотите почувствовать себя настоящим искателем приключений? Добро пожаловать в Typing Adventure!',
   },
-  gameOneDescText: {
-    en: 'Text',
-    ru: 'Описание',
+  gameOneDescSecond: {
+    en: 'Here fights with various monsters are waiting for you and the victory over them depends only on how quickly and accurately you will type spells. With each level not only your skills will grow, but also the strength of the monsters - so do not forget to combine attacks to cause more damage.',
+    ru: 'Здесь вас ждут схватки с разнообразными монстрами, а победа или поражение зависит от того, насколько быстро и точно вы будете печатать заклинания. С каждым уровнем будут расти не только ваши навыки, но и сила монстров - поэтому не забывайте комбинировать атаки, чтобы наносить больше урона.',
+  },
+  gameOneDescThird: {
+    en: 'Well, are you ready? Then go ahead, towards adventures!',
+    ru: 'Ну что, готовы? Тогда вперед, навстречу приключениям!',
   },
   gameTwoTitle: {
     en: 'Typing Hero',
     ru: 'Typing Hero',
   },
-  gameTwoDescTitle: {
-    en: 'GameTwoDesc',
+  gameTwoDescFirst: {
+    en: 'Text',
     ru: 'Описание',
   },
-  gameTwoDescText: {
+  gameTwoDescSecond: {
+    en: 'Text',
+    ru: 'Описание',
+  },
+  gameTwoDescThird: {
     en: 'Text',
     ru: 'Описание',
   },

@@ -1,4 +1,5 @@
 import CreateElement from '../../elements/create-element';
+import links from '../../../data/links';
 
 import { Tag } from '../../../types/enums';
 
@@ -6,15 +7,15 @@ class GithubLinks {
   public static createGithubLinks() {
     return [
       {
-        link: 'https://github.com/IDemidova',
+        link: links.IDemidova,
         name: 'IDemidova',
       },
       {
-        link: 'https://github.com/ReWired25',
+        link: links.ReWired25,
         name: 'ReWired25',
       },
       {
-        link: 'https://github.com/oxanacode',
+        link: links.oxanacode,
         name: 'oxanacode',
       },
     ].map((item) => {

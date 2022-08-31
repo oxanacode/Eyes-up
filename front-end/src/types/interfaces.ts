@@ -64,6 +64,24 @@ export interface Translation {
   [key: string]: TranslationOption;
 }
 
+export interface BadgeContent {
+  title: string;
+  text: string;
+}
+
+export interface BadgeDescription {
+  en: BadgeContent;
+  ru: BadgeContent;
+}
+
+export interface BadgesDescription {
+  [key: string]: BadgeDescription;
+}
+
+export interface Links {
+  [key: string]: string;
+}
+
 export interface Test {
   _id: string;
   __v: number;
