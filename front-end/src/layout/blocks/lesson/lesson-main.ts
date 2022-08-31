@@ -23,6 +23,7 @@ class LessonMain {
     }
 
     main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'lesson' }]);
+    LessonState.page = main;
 
     const topWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-top' }]);
     const back = BackBtn.createBackBtn(Page.lessons, render);

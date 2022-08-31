@@ -90,13 +90,14 @@ export interface TypingAdventureData {
 }
 
 export interface UserLessons {
-  [key: string]: {
-    bestSpeed: number;
-    bestAccuracy: number;
-    bestScore: number;
-  };
+  [key: string]: UserLesson;
 }
 
+export interface UserLesson {
+  lastSpeed: number;
+  lastAccuracy: number;
+  lastScore: number;
+}
 export interface UserTesting {
   bestSpeed: number;
   bestAccuracy: number;

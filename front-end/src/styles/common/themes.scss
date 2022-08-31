@@ -55,6 +55,7 @@ body.light {
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-light.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-light.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-light.svg);
+  --bg-lessons-star-empty: url(./assets/images/background/icons/icon-star-empty-light.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-light.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-light.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-light.svg);
@@ -130,6 +131,7 @@ body.dark {
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-dark.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-dark.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-dark.svg);
+  --bg-lessons-star-empty: url(./assets/images/background/icons/icon-star-empty-dark.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-dark.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-dark.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-dark.svg);
@@ -212,6 +214,7 @@ $bg-profile-edit-hover: var(--bg-profile-edit-hover);
 $bg-modal-password-open: var(--bg-modal-password-open);
 $bg-modal-password-closed: var(--bg-modal-password-closed);
 $bg-lessons-star: var(--bg-lessons-star);
+$bg-lessons-star-empty: var(--bg-lessons-star-empty);
 $bg-arrow-left: var(--bg-arrow-left);
 $bg-arrow-right: var(--bg-arrow-right);
 $bg-icon-burger-menu: var(--bg-icon-burger-menu);

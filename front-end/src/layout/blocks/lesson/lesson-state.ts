@@ -1,6 +1,8 @@
-import { Lesson } from '../../../types/interfaces';
+import { Lesson, User } from '../../../types/interfaces';
 
 class LessonState {
+  public static user: User;
+
   public static lessonData: Lesson;
 
   public static lessonChars: Array<HTMLElement>;
@@ -8,6 +10,8 @@ class LessonState {
   public static charsWrapper: HTMLElement;
 
   public static contentWrapper: HTMLElement;
+
+  public static page: HTMLElement;
 
   public static ribbon: HTMLElement;
 
@@ -18,6 +22,10 @@ class LessonState {
   public static wpmCount: HTMLElement;
 
   public static accuracyCount: HTMLElement;
+
+  public static speed: number;
+
+  public static accuracy: number;
 
   public static inputIndex = 0;
 
