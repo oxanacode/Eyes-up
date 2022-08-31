@@ -78,6 +78,10 @@ export interface BadgesDescription {
   [key: string]: BadgeDescription;
 }
 
+export interface Links {
+  [key: string]: string;
+}
+
 export interface Test {
   _id: string;
   __v: number;

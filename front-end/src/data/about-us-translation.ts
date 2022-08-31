@@ -38,12 +38,12 @@ const aboutUsTranslation: Translation = {
     ru: 'содержимое тестов/уроков',
   },
   taskThreeOxana: {
-    en: 'layout (home, lessons layout choice, list of lessons, test, lesson, games choice)',
-    ru: 'верстка (главная, выбор раскладки для уроков, список уроков, тест, урок, выбор игр)',
+    en: 'layout: home, lessons layout choice, list of lessons, test, lesson, games choice',
+    ru: 'верстка: главная, выбор раскладки для уроков, список уроков, тест, урок, выбор игр',
   },
   taskFourOxana: {
-    en: 'logic (test, lesson, lesson customization)',
-    ru: 'логика (тест, урок, кастомизация урока)',
+    en: 'logic: test, lesson, lesson customization',
+    ru: 'логика: тест, урок, кастомизация урока',
   },
   taskFiveOxana: {
     en: 'back-end development',
@@ -58,12 +58,12 @@ const aboutUsTranslation: Translation = {
     ru: 'концепты игр',
   },
   taskTwoNikita: {
-    en: 'layout (footer, both games)',
-    ru: 'верстка (подвал, обе игры)',
+    en: 'layout: footer, both games',
+    ru: 'верстка: подвал, обе игры',
   },
   taskThreeNikita: {
-    en: 'logic (both games)',
-    ru: 'логика (обе игры)',
+    en: 'logic: both games',
+    ru: 'логика: обе игры',
   },
   taskFourNikita: {
     en: 'back-end deploy',
@@ -74,12 +74,12 @@ const aboutUsTranslation: Translation = {
     ru: 'Ирина',
   },
   taskOneIrina: {
-    en: 'layout (header, all modal windows, "About Us" page)',
-    ru: 'верстка (шапка, все модальные окна, страница "О нас")',
+    en: 'layout: header, all modal windows, "About Us" page',
+    ru: 'верстка: шапка, все модальные окна, страница "О нас"',
   },
   taskTwoIrina: {
-    en: 'logic (registration/authorization, data change/logout/profile deletion, display of statistics/badges in a profile)',
-    ru: 'логика (регистрация/авторизация, смена данных/выход/удаление профиля, отображение статистики/достижений в профиле)',
+    en: 'logic: registration/authorization, data change/logout/profile deletion, display of statistics/badges in a profile',
+    ru: 'логика: регистрация/авторизация, смена данных/выход/удаление профиля, отображение статистики/достижений в профиле',
   },
   taskThreeIrina: {
     en: 'work with local storage',
