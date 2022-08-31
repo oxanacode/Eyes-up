@@ -21,12 +21,10 @@ class GameSection {
       render
     );
     const descSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game-desc' }]);
-    const descTitle = CreateElement.createElement(Tag.h4, [{ name: 'class', value: 'section-title' }]);
     const descText = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'base-text game-desc-text' }]);
 
-    descTitle.textContent = translation[`${gameName}DescTitle`][State.currentLang];
     descText.textContent = translation[`${gameName}DescText`][State.currentLang];
-    descSection.append(descTitle, descText);
+    descSection.append(descText);
     gameSection.append(gameBtn, descSection);
 
     return gameSection;

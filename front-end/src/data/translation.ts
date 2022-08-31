@@ -17,10 +17,6 @@ const translation: Translation = {
     en: 'Typing Adventure',
     ru: 'Typing Adventure',
   },
-  gameOneDescTitle: {
-    en: 'GameOneDesc',
-    ru: 'Описание',
-  },
   gameOneDescText: {
     en: 'Text',
     ru: 'Описание',
@@ -28,10 +24,6 @@ const translation: Translation = {
   gameTwoTitle: {
     en: 'Typing Hero',
     ru: 'Typing Hero',
-  },
-  gameTwoDescTitle: {
-    en: 'GameTwoDesc',
-    ru: 'Описание',
   },
   gameTwoDescText: {
     en: 'Text',
