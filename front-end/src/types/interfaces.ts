@@ -83,6 +83,7 @@ export interface Links {
 }
 
 export interface Developer {
+  name: string;
   nickname: string;
   gitHubLink: string;
   avatar: string;
