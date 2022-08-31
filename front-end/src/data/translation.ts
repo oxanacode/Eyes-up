@@ -1,4 +1,6 @@
-const translation = {
+import { Translation } from '../types/interfaces';
+
+const translation: Translation = {
   homeLink: {
     en: 'Home',
     ru: 'Главная',

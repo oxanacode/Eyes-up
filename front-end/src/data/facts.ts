@@ -1,4 +1,6 @@
-const facts = [
+import { TranslationOption } from '../types/interfaces';
+
+const facts: Array<TranslationOption> = [
   {
     en: 'According to Cornwell University and the University of British Columbia, the ideal typing posture is such that the keyboard is below your elbow height when seated, with your wrists straight and not planted on the surface of the desk.',
     ru: 'По данным Корнуэллского университета и Университета Британской Колумбии, идеальной считается поза, при которой клавиатура находится ниже уровня локтя, когда вы сидите, а ваши запястья прямые и не касаются поверхности стола.',
