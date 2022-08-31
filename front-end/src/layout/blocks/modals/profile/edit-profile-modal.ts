@@ -5,7 +5,7 @@ import ProfileData from './profile-data';
 import SaveChangesBtn from './save-changes-btn';
 import ProfileAvatars from './profile-avatars';
 import DeleteAccountBtn from './delete-account-btn';
-import ProfileSubtitle from './profile-subtitle';
+import Subtitle from '../../../elements/subtitle';
 import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
 import ManageModal from '../../../../scripts/layout/manage-modal';
 import ConfirmationContent from '../confirmation/confirmation-content';
@@ -26,7 +26,7 @@ class EditProfileModal {
     ]);
     const saveChangesBtn = SaveChangesBtn.createSaveChangesBtn(user, errorBlock, render);
     const data = ProfileData.createViewProfileData(user, Profile.edit, saveChangesBtn);
-    const avatarsTitle = ProfileSubtitle.createProfileSubtitle(translation.profileAvatarsTitle[State.currentLang]);
+    const avatarsTitle = Subtitle.createSubtitle(translation.profileAvatarsTitle[State.currentLang]);
     const avatars = ProfileAvatars.createProfileAvatars(user, data, saveChangesBtn);
     const deleteAccountWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'delete-account-confirmation-wrapper' },

@@ -139,16 +139,6 @@
   margin: 0 auto;
 }
 
-.profile-subtitle {
-  @include font-title-mobile;
-  color: $c-main-text;
-  margin-bottom: 2rem;
-
-  @include tablet-small {
-    text-align: center;
-  }
-}
-
 .profile-avatars-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
