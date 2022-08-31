@@ -9,7 +9,7 @@ import { Tag } from '../../../types/enums';
 
 class CreditsBlock {
   public static createCreditsBlock(): HTMLElement {
-    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-double-wrapper' }]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-wrapper' }]);
     const idea = AboutDesc.createAboutDesc(
       aboutTranslation.inspyredBy[State.currentLang],
       aboutTranslation.typingClub[State.currentLang],

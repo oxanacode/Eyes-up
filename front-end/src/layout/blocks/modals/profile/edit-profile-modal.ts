@@ -26,7 +26,10 @@ class EditProfileModal {
     ]);
     const saveChangesBtn = SaveChangesBtn.createSaveChangesBtn(user, errorBlock, render);
     const data = ProfileData.createViewProfileData(user, Profile.edit, saveChangesBtn);
-    const avatarsTitle = Subtitle.createSubtitle(translation.profileAvatarsTitle[State.currentLang]);
+    const avatarsTitle = Subtitle.createSubtitle(
+      'subtitle profile-subtitle',
+      translation.profileAvatarsTitle[State.currentLang]
+    );
     const avatars = ProfileAvatars.createProfileAvatars(user, data, saveChangesBtn);
     const deleteAccountWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'delete-account-confirmation-wrapper' },

@@ -7,7 +7,7 @@ import { Tag } from '../../../types/enums';
 
 class TechBlock {
   public static createTechBlock(): HTMLElement {
-    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-double-wrapper' }]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-wrapper' }]);
     const frontend = TechDesc.createTechDesc(
       aboutTranslation.textFront[State.currentLang],
       aboutTranslation.techFront[State.currentLang]

@@ -86,8 +86,8 @@ const aboutTranslation: Translation = {
     ru: 'Ирина',
   },
   taskOneIrina: {
-    en: 'layout: header, all modal windows, "About Us" page',
-    ru: 'верстка: шапка, все модальные окна, страница "О нас"',
+    en: 'layout: header, modal windows, "About Us"',
+    ru: 'верстка: шапка, модальные окна, "О нас"',
   },
   taskTwoIrina: {
     en: 'logic: registration/authorization, data change/logout/profile deletion, display of statistics/badges in a profile',

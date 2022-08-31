@@ -6,7 +6,7 @@ import { Tag } from '../../../types/enums';
 
 class DevBlock {
   public static createDevBlock(): HTMLElement {
-    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-triple-wrapper' }]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-wrapper' }]);
     const irina = DevDesc.createDevDesc(developers.Irina);
     const nikita = DevDesc.createDevDesc(developers.Nikita);
     const oxana = DevDesc.createDevDesc(developers.Oxana);

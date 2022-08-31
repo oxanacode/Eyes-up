@@ -7,7 +7,9 @@ import { Tag } from '../../../types/enums';
 
 class IllustrationsDesc {
   public static createIllustrationsDesc(): HTMLElement {
-    const desc = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'about-desc' }]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-desc' }]);
+    const par = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'about-text' }]);
+    const desc = CreateElement.createElement(Tag.span);
     const and = CreateElement.createElement(Tag.span);
     const linkOne = CreateElement.createElement(Tag.link, [
       { name: 'class', value: 'about-link' },
@@ -24,9 +26,10 @@ class IllustrationsDesc {
     and.textContent = aboutTranslation.and[State.currentLang];
     linkOne.textContent = aboutTranslation.illustratorOne[State.currentLang];
     linkTwo.textContent = aboutTranslation.illustratorTwo[State.currentLang];
-    desc.append(linkOne, and, linkTwo);
+    par.append(desc, linkOne, and, linkTwo);
+    wrapper.append(par);
 
-    return desc;
+    return wrapper;
   }
 }
 

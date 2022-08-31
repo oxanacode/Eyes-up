@@ -1,0 +1,95 @@
+.about {
+  max-width: 110rem;
+  padding: 0 $desktop-margin;
+  margin: 0 auto 2rem;
+
+  @include mobile {
+    padding: 0 $mobile-margin;
+  }
+}
+
+.about-subtitle {
+  @include tablet {
+    text-align: center;
+  }
+}
+
+.about-desc {
+  @include default-wrapper;
+  @include about-desc;
+  min-height: 10.5rem;
+  padding: 3rem;
+}
+
+.about-link {
+  color: $c-accent;
+}
+
+.about-text {
+  @include tablet {
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.about-dev {
+  @include about-desc;
+  padding: 2rem 3rem 3rem;
+}
+
+.about-dev-avatar-wrapper {
+  @include avatar-wrapper;
+  background-color: $bg-dev-avatar;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+
+  @include tablet {
+    display: none;
+  }
+}
+
+.about-dev-avatar-image {
+  @include default-avatar;
+}
+
+.about-dev-title {
+  @include font-title-mobile;
+  color: $c-accent;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-dev-tasks {
+  list-style-type: disc;
+  padding-left: 2rem;
+
+  @include tablet {
+    max-width: 45rem;
+    margin: 0 auto;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.about-dev-task {
+  margin-bottom: 1rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.about-wrapper {
+  display: flex;
+  gap: $tablet-margin;
+
+  @include desktop-small {
+    gap: 2rem;
+  }
+
+  @include tablet {
+    flex-direction: column;
+  }
+}

@@ -4,7 +4,9 @@ import { Tag } from '../../../types/enums';
 
 class AboutDesc {
   public static createAboutDesc(descText: string, linkText: string, linkUrl: string): HTMLElement {
-    const desc = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'about-desc' }]);
+    const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'about-desc' }]);
+    const par = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'about-text' }]);
+    const desc = CreateElement.createElement(Tag.span);
     const link = CreateElement.createElement(Tag.link, [
       { name: 'class', value: 'about-link' },
       { name: 'href', value: linkUrl },
@@ -13,9 +15,10 @@ class AboutDesc {
 
     desc.textContent = descText;
     link.textContent = linkText;
-    desc.append(link);
+    par.append(desc, link);
+    wrapper.append(par);
 
-    return desc;
+    return wrapper;
   }
 }
 
