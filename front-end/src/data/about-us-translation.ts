@@ -17,13 +17,29 @@ const aboutUsTranslation: Translation = {
     en: 'link',
     ru: 'ссылке',
   },
-  frontEnd: {
-    en: 'Technologies used for front-end: HTML, SCSS, TypeScript.',
-    ru: 'Использованые front-end технологии: HTML, SCSS, TypeScript.',
+  technologies: {
+    en: 'Technologies',
+    ru: 'Технологии',
   },
-  backEnd: {
-    en: 'Technologies used for back-end: NodeJS, Express, Mongoose, MongoDB, Heroku.',
-    ru: 'Использованые back-end технологии: NodeJS, Express, Mongoose, MongoDB, Heroku.',
+  textFront: {
+    en: 'Technologies used for front-end: ',
+    ru: 'Использованые front-end технологии: ',
+  },
+  textBack: {
+    en: 'Technologies used for back-end: ',
+    ru: 'Использованые back-end технологии: ',
+  },
+  techsFront: {
+    en: 'HTML, SCSS, TypeScript',
+    ru: 'HTML, SCSS, TypeScript',
+  },
+  techsBack: {
+    en: 'NodeJS, Express, Mongoose, MongoDB, Heroku',
+    ru: 'NodeJS, Express, Mongoose, MongoDB, Heroku',
+  },
+  developers: {
+    en: 'Developers',
+    ru: 'Разработчики',
   },
   nameOxana: {
     en: 'Oxana',
@@ -58,12 +74,12 @@ const aboutUsTranslation: Translation = {
     ru: 'концепты игр',
   },
   taskTwoNikita: {
-    en: 'layout: footer, both games',
-    ru: 'верстка: подвал, обе игры',
+    en: 'layout: footer, Typing Adventure game, Typing Hero game',
+    ru: 'верстка: подвал, игра Typing Adventure, игра Typing Hero',
   },
   taskThreeNikita: {
-    en: 'logic: both games',
-    ru: 'логика: обе игры',
+    en: 'logic: Typing Adventure game, Typing Hero game',
+    ru: 'логика: игра Typing Adventure, игра Typing Hero',
   },
   taskFourNikita: {
     en: 'back-end deploy',
@@ -88,6 +104,10 @@ const aboutUsTranslation: Translation = {
   taskFourIrina: {
     en: 'back-end development',
     ru: 'разработка back-end',
+  },
+  credits: {
+    en: 'Credits',
+    ru: 'Благодарности',
   },
   inspyredBy: {
     en: 'Inspired by ',
