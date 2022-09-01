@@ -9,6 +9,7 @@ import ApiService from '../../../scripts/api/api-service';
 import UserState from '../../../scripts/user/user-state';
 
 import { Layout, Tag } from '../../../types/enums';
+import LessonBadge from './lesson-badge';
 
 class LessonResult {
   public static getScore(): number {
@@ -41,35 +42,24 @@ class LessonResult {
 
     const lessons = ParseLessons.setLessons(userLessonsData);
 
-    if (State.currentLayout === Layout.en) {
-      const userData = new CurrentUser(
-        LessonState.user.login,
-        LessonState.user.password,
-        LessonState.user.avatar,
-        LessonState.user.testing,
-        lessons,
-        LessonState.user.lessonsRu,
-        LessonState.user.typingAdventure,
-        LessonState.user.typingHero,
-        LessonState.user.badges
-      );
+    if (State.currentLayout === Layout.en) LessonState.user.lessonsEn = lessons;
+    else LessonState.user.lessonsRu = lessons;
 
-      ApiService.updateUser(LessonState.user._id, userData);
-    } else {
-      const userData = new CurrentUser(
-        LessonState.user.login,
-        LessonState.user.password,
-        LessonState.user.avatar,
-        LessonState.user.testing,
-        LessonState.user.lessonsEn,
-        lessons,
-        LessonState.user.typingAdventure,
-        LessonState.user.typingHero,
-        LessonState.user.badges
-      );
+    LessonState.page.append(LessonBadge.checkBadges());
 
-      ApiService.updateUser(LessonState.user._id, userData);
-    }
+    const userData = new CurrentUser(
+      LessonState.user.login,
+      LessonState.user.password,
+      LessonState.user.avatar,
+      LessonState.user.testing,
+      LessonState.user.lessonsEn,
+      LessonState.user.lessonsRu,
+      LessonState.user.typingAdventure,
+      LessonState.user.typingHero,
+      LessonState.user.badges
+    );
+
+    ApiService.updateUser(LessonState.user._id, userData);
   }
 
   public static createAccuracyReq(): HTMLElement {
@@ -174,8 +164,11 @@ class LessonResult {
   }
 
   public static showLessonResult(): void {
-    if (UserState.checkIfUserAuthorised()) LessonResult.saveResult();
+    LessonState.contentWrapper.style.visibility = 'hidden';
+    LessonState.keyboard.style.visibility = 'hidden';
     LessonState.page.append(LessonResult.createLessonResult());
+
+    if (UserState.checkIfUserAuthorised()) LessonResult.saveResult();
   }
 }
 

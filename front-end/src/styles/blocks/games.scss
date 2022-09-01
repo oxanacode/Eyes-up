@@ -1,6 +1,6 @@
 .games {
   display: grid;
-  grid-template-columns: minmax(max-content, 110rem);
+  grid-template-columns: minmax(min-content, 110rem);
   row-gap: 3rem;
   max-width: 110rem;
   padding: 0 8rem;
@@ -22,7 +22,6 @@
   @include tablet {
     background-position: center center;
   }
-
 }
 
 .game-two-bg {
@@ -57,4 +56,8 @@
   &:last-child {
     margin-bottom: 0;
   }
+}
+
+.game-two-btn {
+  max-height: min-content;
 }

@@ -38,6 +38,7 @@ class LessonMain {
     const input = LessonInput.createLessonInput();
 
     LessonState.ribbon = ribbon;
+    LessonState.keyboard = keyboard;
     topWrapper.append(back, lessonSettings);
     contentTopWrapper.append(lessonStats, restartBtn);
     lessonWrapper.append(contentTopWrapper, lessonContent, input);

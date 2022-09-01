@@ -30,16 +30,18 @@ class LessonsMain {
     if (UserState.checkIfUserAuthorised()) {
       ApiService.getUser(State.currentUser.login).then((user) => {
         LessonState.user = user;
+        ApiService.getLessons({ layout, complexity }).then((res) => {
+          main.append(AllLessonsList.createLessonsList(res, render));
+          LessonState.lessonsNumber = res.length;
+        });
       });
     } else {
       LessonState.user = EmptyUser.createEmptyUser();
+      ApiService.getLessons({ layout, complexity }).then((res) => {
+        main.append(AllLessonsList.createLessonsList(res, render));
+        LessonState.lessonsNumber = res.length;
+      });
     }
-
-    ApiService.getLessons({ layout, complexity }).then((res) => {
-      main.append(AllLessonsList.createLessonsList(res, render));
-    });
-
-    console.log(LessonState.user);
 
     return main;
   }

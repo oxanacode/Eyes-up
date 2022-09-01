@@ -278,16 +278,16 @@ const translation: Translation = {
     ru: 'Результат',
   },
   lessonResults0: {
-    en: 'Never give up! Try again',
-    ru: 'Не сдавайтесь, попробуйте еще раз!',
+    en: 'Продолжайте практиковаться!',
+    ru: 'Что ж, попробуйте еще раз!',
   },
   lessonResults1: {
     en: 'Keep practicing!',
     ru: 'Продолжайте практиковаться!',
   },
   lessonResults2: {
-    en: 'Not bad! Keep practicing',
-    ru: 'Неплохо! Продолжайте практиковаться',
+    en: 'Keep practicing!',
+    ru: 'Продолжайте практиковаться!',
   },
   lessonResults3: {
     en: 'Good job!',
@@ -325,24 +325,24 @@ const translation: Translation = {
     en: 'New achivment',
     ru: 'Новое достижение',
   },
-  lessonBadgeCompleteAllLessons: {
-    en: `You’ve completed all lessons!`,
+  lessonBadgeCompletedAllLessons: {
+    en: `You've completed all lessons!`,
     ru: 'Вы завершили все уроки!',
   },
   lessonBadgeEyesUp: {
-    en: `You’ve completed all EyesUp lessons!`,
+    en: `You've completed all EyesUp lessons!`,
     ru: 'Вы завершили все уроки EyesUp!',
   },
   lessonBadgeSpeed20: {
-    en: `You’ve achieved a typing speed of 20wpm!`,
+    en: `You've reached a typing speed of 20wpm!`,
     ru: 'Вы достигли скорости печати 20 слов в минуту!',
   },
   lessonBadgeSpeed60: {
-    en: `You’ve achieved a typing speed of 60wpm!`,
+    en: `You've reached a typing speed of 60wpm!`,
     ru: 'Вы достигли скорости печати 60 слов в минуту!',
   },
   lessonBadgeSpeed100: {
-    en: `You’ve achieved a typing speed of 100wpm!`,
+    en: `You've reached a typing speed of 100wpm!`,
     ru: 'Вы достигли скорости печати 100 слов в минуту!',
   },
 };
