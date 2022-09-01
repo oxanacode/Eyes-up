@@ -1,20 +1,13 @@
 import ManagePage from './manage-page';
-import MeasureScrollbar from './measure-scrollbar';
 
 class ManageModal {
   public static openModal(modalToOpen: HTMLElement): void {
-    const page = ManagePage.getPage();
-
-    ManagePage.hideScrollbar();
-    page.style.paddingRight = `${MeasureScrollbar.countScrollbarWidth()}px`;
-    page.append(modalToOpen);
+    ManagePage.hidePageScrollbar();
+    ManagePage.getPage().append(modalToOpen);
   }
 
   public static closeModal(modalToClose: HTMLElement): void {
-    const page = ManagePage.getPage();
-
-    ManagePage.showScrollbar();
-    page.style.paddingRight = '0';
+    ManagePage.showPageScrollbar();
     modalToClose.remove();
   }
 
