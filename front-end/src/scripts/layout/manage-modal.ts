@@ -6,7 +6,7 @@ class ManageModal {
     ManagePage.getPage().append(modalToOpen);
   }
 
-  public static closeModal(modalToClose: HTMLElement): void {
+  public static closeModal(modalToClose: HTMLElement | Element): void {
     ManagePage.showPageScrollbar();
     modalToClose.remove();
   }
@@ -33,6 +33,24 @@ class ManageModal {
       Array.from(modal.children).forEach((child: Element) => {
         modal.removeChild(child);
       });
+    }
+  }
+
+  public static closeBurgerMenu(): void {
+    const page = ManagePage.getPage();
+
+    if (
+      page.lastElementChild &&
+      page.lastElementChild.lastElementChild &&
+      page.lastElementChild.lastElementChild.classList.contains('burger-menu')
+    ) {
+      ManageModal.closeModal(page.lastElementChild);
+    }
+  }
+
+  public static closeBurgerMenuHandler(): void {
+    if (!window.matchMedia('(max-width: 899px)').matches) {
+      ManageModal.closeBurgerMenu();
     }
   }
 }

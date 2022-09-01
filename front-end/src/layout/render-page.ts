@@ -15,6 +15,7 @@ import LessonMain from './blocks/lesson/lesson-main';
 import AboutMain from './blocks/about/about-main';
 
 import { Page } from '../types/enums';
+import ManageModal from '../scripts/layout/manage-modal';
 
 class RenderPage {
   public static renderInteractivePage(): void {
@@ -65,6 +66,9 @@ class RenderPage {
     ManageState.updateState();
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
+    window.addEventListener('resize', () => {
+      ManageModal.closeBurgerMenuHandler();
+    });
 
     if (
       State.currentPage === Page.lesson ||
