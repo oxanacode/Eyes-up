@@ -49,7 +49,9 @@ class ManageModal {
   }
 
   public static closeBurgerMenuHandler(): void {
-    if (!window.matchMedia('(max-width: 899px)').matches) {
+    const TABLET = '(max-width: 899px)';
+
+    if (!window.matchMedia(TABLET).matches) {
       ManageModal.closeBurgerMenu();
     }
   }
