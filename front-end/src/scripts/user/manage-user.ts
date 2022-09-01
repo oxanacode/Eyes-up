@@ -7,6 +7,7 @@ import ManageState from '../state/manage-state';
 import State from '../state/state';
 import ProfileState from '../profile/profile-state';
 import CurrentUser from './current-user';
+import ManagePage from '../layout/manage-page';
 
 import { ErrorSource, ErrorType, StatusCode } from '../../types/enums';
 import { RenderHandler } from '../../types/types';
@@ -35,6 +36,7 @@ class ManageUser {
           ApiService.createUser(userData).then(() => {
             UserState.updateUserLogin(login);
             ManageState.saveState();
+            ManagePage.showPageScrollbar();
             render();
           });
         }
@@ -65,6 +67,7 @@ class ManageUser {
             } else {
               UserState.updateUserState(login, user.avatar);
               ManageState.saveState();
+              ManagePage.showPageScrollbar();
               render();
             }
           });
@@ -76,6 +79,7 @@ class ManageUser {
   public static logoutFromProfile(render: RenderHandler): void {
     UserState.resetUserState();
     ManageState.saveState();
+    ManagePage.showPageScrollbar();
     render();
   }
 
@@ -105,6 +109,7 @@ class ManageUser {
             ApiService.updateUser(user._id, userData).then(() => {
               UserState.updateUserState(ProfileState.login, ProfileState.avatar);
               ManageState.saveState();
+              ManagePage.showPageScrollbar();
               render();
             });
           }
@@ -113,6 +118,7 @@ class ManageUser {
         ApiService.updateUser(user._id, userData).then(() => {
           UserState.updateUserState(ProfileState.login, ProfileState.avatar);
           ManageState.saveState();
+          ManagePage.showPageScrollbar();
           render();
         });
       }
