@@ -1,19 +1,19 @@
-import { Data } from '../../../types/enums';
-
 class EmptyUser {
   public static createEmptyUser() {
+    const NO_DATA = 'noData';
+
     return {
-      _id: Data.noData,
+      _id: NO_DATA,
       __v: 0,
-      login: Data.noData,
-      password: Data.noData,
+      login: NO_DATA,
+      password: NO_DATA,
       avatar: 1,
-      testing: Data.noData,
-      lessonsEn: Data.noData,
-      lessonsRu: Data.noData,
-      typingAdventure: Data.noData,
-      typingHero: Data.noData,
-      badges: Data.noData,
+      testing: NO_DATA,
+      lessonsEn: NO_DATA,
+      lessonsRu: NO_DATA,
+      typingAdventure: NO_DATA,
+      typingHero: NO_DATA,
+      badges: NO_DATA,
     };
   }
 }
