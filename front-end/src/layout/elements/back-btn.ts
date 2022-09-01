@@ -21,10 +21,12 @@ class BackBtn {
         TestState.clearState();
         TestTimer.stopTimer = true;
       }
+
       if (State.currentPage === Page.lesson) {
         LessonState.clearState();
         LessonTimer.stopTimer = true;
       }
+
       if (State.currentPage === Page.lessons) State.currentComplexity = undefined;
 
       SwitchPage.applyPage(page, render);

@@ -26,8 +26,11 @@ class LessonTimer {
   public static getWpm() {
     const MINUTE = 60;
     const AVERAGE_WORD_LENGTH = State.currentLayout === Layout.en ? 6 : 8;
+    const speed = Math.floor(((LessonState.inputIndex / AVERAGE_WORD_LENGTH) * MINUTE) / LessonTimer.getTime());
 
-    return Math.floor(((LessonState.inputIndex / AVERAGE_WORD_LENGTH) * MINUTE) / LessonTimer.getTime());
+    LessonState.speed = speed;
+
+    return speed || 1;
   }
 }
 

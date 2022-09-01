@@ -132,15 +132,6 @@
   background-color: $c-block-bg;
   cursor: pointer;
 
-  &:hover {
-    background-color: $c-accent;
-    color: white;
-
-    .section-title {
-      color: white;
-    }
-  }
-
   @include tablet {
     padding-left: 0;
     height: 35rem;

@@ -6,6 +6,9 @@ import LessonsFilters from './lessons-filters';
 import ApiService from '../../../scripts/api/api-service';
 import AllLessonsList from './lessons-list';
 import BackBtn from '../../elements/back-btn';
+import UserState from '../../../scripts/user/user-state';
+import LessonState from '../lesson/lesson-state';
+import EmptyUser from '../lesson/empty-user';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -24,9 +27,21 @@ class LessonsMain {
     lessonsTopWrapper.append(mainTitle, lessonFilters);
     main.append(back, lessonsTopWrapper);
 
-    ApiService.getLessons({ layout, complexity }).then((res) => {
-      main.append(AllLessonsList.createLessonsList(res, render));
-    });
+    if (UserState.checkIfUserAuthorised()) {
+      ApiService.getUser(State.currentUser.login).then((user) => {
+        LessonState.user = user;
+        ApiService.getLessons({ layout, complexity }).then((res) => {
+          main.append(AllLessonsList.createLessonsList(res, render));
+          LessonState.lessonsNumber = res.length;
+        });
+      });
+    } else {
+      LessonState.user = EmptyUser.createEmptyUser();
+      ApiService.getLessons({ layout, complexity }).then((res) => {
+        main.append(AllLessonsList.createLessonsList(res, render));
+        LessonState.lessonsNumber = res.length;
+      });
+    }
 
     return main;
   }
