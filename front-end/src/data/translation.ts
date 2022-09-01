@@ -289,9 +289,77 @@ const translation: Translation = {
     en: 'Text language',
     ru: 'Язык текста',
   },
-  testResults: {
-    en: 'Test Results',
-    ru: 'Результаты теста',
+  testResultText: {
+    en: 'Result',
+    ru: 'Результат',
+  },
+  lessonResults0: {
+    en: 'Продолжайте практиковаться!',
+    ru: 'Что ж, попробуйте еще раз!',
+  },
+  lessonResults1: {
+    en: 'Keep practicing!',
+    ru: 'Продолжайте практиковаться!',
+  },
+  lessonResults2: {
+    en: 'Keep practicing!',
+    ru: 'Продолжайте практиковаться!',
+  },
+  lessonResults3: {
+    en: 'Good job!',
+    ru: 'Хорошая работа!',
+  },
+  lessonResults4: {
+    en: 'Well done!',
+    ru: 'Отличная работа!',
+  },
+  lessonResults5: {
+    en: 'Excellent job!',
+    ru: 'Отличная работа!',
+  },
+  lessonResultsScoreText: {
+    en: 'Your score',
+    ru: 'Ваш результат',
+  },
+  lessonResultsReq: {
+    en: 'Lesson requirements',
+    ru: 'Требования к уроку',
+  },
+  lessonResultsReqSpeed: {
+    en: 'Minimum speed',
+    ru: 'Минимальная скорость',
+  },
+  lessonResultsReqSpeedStar: {
+    en: 'Speed for a star',
+    ru: 'Скорость для звезды',
+  },
+  lessonResultsReqAccuracy: {
+    en: 'Minimum accuracy',
+    ru: 'Минимальная точность',
+  },
+  lessonBadgeTitle: {
+    en: 'New achivment',
+    ru: 'Новое достижение',
+  },
+  lessonBadgeCompletedAllLessons: {
+    en: `You've completed all lessons!`,
+    ru: 'Вы завершили все уроки!',
+  },
+  lessonBadgeEyesUp: {
+    en: `You've completed all EyesUp lessons!`,
+    ru: 'Вы завершили все уроки EyesUp!',
+  },
+  lessonBadgeSpeed20: {
+    en: `You've reached a typing speed of 20wpm!`,
+    ru: 'Вы достигли скорости печати 20 слов в минуту!',
+  },
+  lessonBadgeSpeed60: {
+    en: `You've reached a typing speed of 60wpm!`,
+    ru: 'Вы достигли скорости печати 60 слов в минуту!',
+  },
+  lessonBadgeSpeed100: {
+    en: `You've reached a typing speed of 100wpm!`,
+    ru: 'Вы достигли скорости печати 100 слов в минуту!',
   },
 };
 

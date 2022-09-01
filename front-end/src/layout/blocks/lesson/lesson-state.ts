@@ -1,13 +1,21 @@
-import { Lesson } from '../../../types/interfaces';
+import { Lesson, User } from '../../../types/interfaces';
 
 class LessonState {
+  public static user: User;
+
   public static lessonData: Lesson;
 
+  public static lessonsNumber = 0;
+
   public static lessonChars: Array<HTMLElement>;
+
+  public static page: HTMLElement;
 
   public static charsWrapper: HTMLElement;
 
   public static contentWrapper: HTMLElement;
+
+  public static keyboard: HTMLElement;
 
   public static ribbon: HTMLElement;
 
@@ -18,6 +26,10 @@ class LessonState {
   public static wpmCount: HTMLElement;
 
   public static accuracyCount: HTMLElement;
+
+  public static speed: number;
+
+  public static accuracy: number;
 
   public static inputIndex = 0;
 
@@ -36,6 +48,7 @@ class LessonState {
   public static lineHeight = 40;
 
   public static clearState() {
+    LessonState.lessonsNumber = 0;
     LessonState.inputIndex = 0;
     LessonState.mistakes = [];
     LessonState.historyMistakes = [];

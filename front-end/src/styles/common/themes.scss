@@ -24,6 +24,7 @@ body.light {
   --c-modal-overlay: rgba(50, 50, 50, .2);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+  --bxs-result-shadow: 0px 0px 100px rgba(33, 37, 41, 0.15);
 
   --bg-header-gradient: linear-gradient(180deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 100%);
   --bg-footer-gradient: linear-gradient(0deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 56%);
@@ -55,6 +56,7 @@ body.light {
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-light.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-light.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-light.svg);
+  --bg-lessons-star-empty: url(./assets/images/background/icons/icon-star-empty-light.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-light.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-light.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-light.svg);
@@ -99,6 +101,7 @@ body.dark {
   --c-modal-overlay: rgba(0, 0, 0, .5);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+  --bxs-result-shadow: 0px 0px 20px rgba(30, 69, 107, 0.5);
 
   --bg-header-gradient: linear-gradient(180deg, #111A2C 0%, #1E273A 61.33%);
   --bg-footer-gradient: linear-gradient(0deg, #131B2C 0%, #1E273A 69%);
@@ -130,6 +133,7 @@ body.dark {
   --bg-modal-password-open: url(./assets/images/background/icons/icon-password-open-dark.svg);
   --bg-modal-password-closed: url(./assets/images/background/icons/icon-password-closed-dark.svg);
   --bg-lessons-star: url(./assets/images/background/icons/icon-star-dark.svg);
+  --bg-lessons-star-empty: url(./assets/images/background/icons/icon-star-empty-dark.svg);
   --bg-arrow-left: url(./assets/images/background/icons/icon-arrow-left-dark.svg);
   --bg-arrow-right: url(./assets/images/background/icons/icon-arrow-right-dark.svg);
   --bg-icon-burger-menu: url(./assets/images/background/icons/icon-burger-menu-dark.svg);
@@ -175,6 +179,7 @@ $c-error-text: #DA5C54;
 $c-confirmation-yes-text: #F3F3F4;
 
 $bxs-modal-shadow: var(--bxs-modal-shadow);
+$bxs-result-shadow: var(--bxs-result-shadow);
 
 $bg-header-gradient: var(--bg-header-gradient);
 $bg-footer-gradient: var(--bg-footer-gradient);
@@ -213,6 +218,7 @@ $bg-profile-edit-hover: var(--bg-profile-edit-hover);
 $bg-modal-password-open: var(--bg-modal-password-open);
 $bg-modal-password-closed: var(--bg-modal-password-closed);
 $bg-lessons-star: var(--bg-lessons-star);
+$bg-lessons-star-empty: var(--bg-lessons-star-empty);
 $bg-arrow-left: var(--bg-arrow-left);
 $bg-arrow-right: var(--bg-arrow-right);
 $bg-icon-burger-menu: var(--bg-icon-burger-menu);

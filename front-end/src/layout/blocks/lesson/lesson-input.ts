@@ -5,6 +5,7 @@ import LessonState from './lesson-state';
 import RowsPosition from './rows-position';
 import LessonTimer from './lesson-timer';
 import LessonKeyboard from './lesson-keyboard';
+import LessonResult from './lesson-result';
 
 import { Tag } from '../../../types/enums';
 
@@ -30,14 +31,17 @@ class LessonInput {
   }
 
   public static getCorrections(): number {
-    return LessonState.historyMistakes.length - LessonState.mistakes.length;
+    return Math.floor(LessonState.historyMistakes.length - LessonState.mistakes.length);
   }
 
   public static getAccuracy(): number {
     const finalCorrectChars = LessonState.typedChars + 1 - LessonState.mistakes.length;
     const correctedChars = LessonState.historyMistakes.length - LessonState.mistakes.length;
+    const accuracy = Math.floor(((finalCorrectChars - correctedChars / 2) / (LessonState.typedChars + 1)) * 100);
 
-    return ((finalCorrectChars - correctedChars / 2) / (LessonState.typedChars + 1)) * 100;
+    LessonState.accuracy = accuracy;
+
+    return accuracy;
   }
 
   public static hideRibbon(): void {
@@ -119,13 +123,13 @@ class LessonInput {
 
       LessonInput.checkMatch(inputChar);
       LessonState.wpmCount.textContent = `${LessonTimer.getWpm()} ${translation.testWpmSub[State.currentLang]}`;
-      LessonState.correctionsCount.textContent = `${Math.floor(LessonInput.getCorrections())}`;
-      LessonState.accuracyCount.textContent = `${Math.floor(LessonInput.getAccuracy())} %`;
+      LessonState.correctionsCount.textContent = `${LessonInput.getCorrections()}`;
+      LessonState.accuracyCount.textContent = `${LessonInput.getAccuracy()} %`;
       LessonState.mistakesCount.textContent = `${LessonState.mistakes.length}`;
 
       if (LessonState.inputIndex === LessonState.lessonChars.length - 1) {
         LessonTimer.stopTimer = true;
-        // TestResult.showLessonResult;
+        LessonResult.showLessonResult();
       }
 
       LessonState.inputIndex += 1;
