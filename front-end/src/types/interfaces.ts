@@ -127,6 +127,7 @@ export interface UserLesson {
   lastAccuracy: number;
   lastScore: number;
 }
+
 export interface UserTesting {
   bestSpeed: number;
   bestAccuracy: number;
