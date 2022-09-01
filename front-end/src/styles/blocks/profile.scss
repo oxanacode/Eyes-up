@@ -67,7 +67,7 @@
 }
 
 .profile-avatar-wrapper {
-  @include profile-avatar-wrapper;
+  @include avatar-wrapper;
   grid-row: 1/3;
 
   @include tablet-small {
@@ -139,16 +139,6 @@
   margin: 0 auto;
 }
 
-.profile-subtitle {
-  @include font-title-mobile;
-  color: $c-main-text;
-  margin-bottom: 2rem;
-
-  @include tablet-small {
-    text-align: center;
-  }
-}
-
 .profile-avatars-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -169,7 +159,7 @@
 }
 
 .avatar-btn {
-  @include profile-avatar-wrapper;
+  @include avatar-wrapper;
 
   @include tablet-small {
     margin: 0 auto;
@@ -195,5 +185,11 @@
   @include tablet-small {
     position: static;
     margin: 0 auto 3rem;
+  }
+}
+
+.profile-subtitle {
+  @include tablet-small {
+    text-align: center;
   }
 }

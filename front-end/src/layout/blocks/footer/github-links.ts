@@ -1,4 +1,5 @@
 import CreateElement from '../../elements/create-element';
+import developers from '../../../data/developers';
 
 import { Tag } from '../../../types/enums';
 
@@ -6,16 +7,16 @@ class GithubLinks {
   public static createGithubLinks() {
     return [
       {
-        link: 'https://github.com/IDemidova',
-        name: 'IDemidova',
+        link: developers.Irina.gitHubLink,
+        name: developers.Irina.nickname,
       },
       {
-        link: 'https://github.com/ReWired25',
-        name: 'ReWired25',
+        link: developers.Nikita.gitHubLink,
+        name: developers.Nikita.nickname,
       },
       {
-        link: 'https://github.com/oxanacode',
-        name: 'oxanacode',
+        link: developers.Oxana.gitHubLink,
+        name: developers.Oxana.nickname,
       },
     ].map((item) => {
       const link = CreateElement.createElement(Tag.link, [

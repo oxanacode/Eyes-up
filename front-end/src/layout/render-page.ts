@@ -12,6 +12,7 @@ import TestMain from './blocks/testing/test-main';
 import TypingAdventure from '../games/typing-adventure/game-start';
 import SwitchPage from '../scripts/layout/switch-page';
 import LessonMain from './blocks/lesson/lesson-main';
+import AboutMain from './blocks/about/about-main';
 
 import { Page } from '../types/enums';
 
@@ -49,6 +50,9 @@ class RenderPage {
         break;
       case Page.games:
         main = GamesMain.createGamesMain(RenderPage.renderPage);
+        break;
+      case Page.about:
+        main = AboutMain.createAboutMain();
         break;
       default:
         main = HomeMain.createHomeMain(RenderPage.renderPage);

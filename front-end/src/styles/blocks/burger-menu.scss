@@ -1,0 +1,42 @@
+.burger-menu-btn {
+  @include interaction-effects;
+  @include small-btn-bg;
+  display: none;
+  width: 2.4rem;
+  height: 1.8rem;
+  background-image: $bg-icon-burger-menu;
+  margin-left: 2rem;
+
+  @include tablet {
+    display: block;
+  }
+}
+
+.burger-menu {
+  @include default-modal;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 20rem;
+  padding: 0.6rem;
+}
+
+.burger-menu-profile-btn {
+  @include interaction-effects;
+  width: 10rem;
+  display: block;
+  margin: 0 auto;
+
+  &:hover .burger-menu-profile-text {
+    color: $c-main-text;
+  }
+}
+
+.burger-menu-profile-avatar {
+  margin-bottom: 1rem;
+}
+
+.burger-menu-profile-text {
+  @include font-main;
+  color: $c-menu-inactive-link;
+}
