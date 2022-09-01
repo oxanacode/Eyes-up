@@ -72,20 +72,103 @@ class LessonResult {
     }
   }
 
+  public static createAccuracyReq(): HTMLElement {
+    const accuracyWrapper = CreateElement.createElement(Tag.span, [
+      { name: 'class', value: 'lesson-result-accuracy-wrapper' },
+    ]);
+    const accuracyText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'lesson-result-accuracy' }]);
+    const accuracyNumber = CreateElement.createElement(Tag.span, [
+      { name: 'class', value: 'lesson-result-accuracy-num' },
+    ]);
+
+    accuracyText.textContent = translation.lessonResultsReqAccuracy[State.currentLang];
+    accuracyNumber.textContent = `${LessonState.lessonData.minAccuracy}%`;
+    accuracyWrapper.append(accuracyText, accuracyNumber);
+
+    return accuracyWrapper;
+  }
+
+  public static createSpeedReq(): HTMLElement {
+    const speedWrapper = CreateElement.createElement(Tag.span, [
+      { name: 'class', value: 'lesson-result-speed-wrapper' },
+    ]);
+    const speedText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'lesson-result-speed' }]);
+    const speedNumber = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'lesson-result-speed-num' }]);
+
+    speedText.textContent = translation.lessonResultsReqSpeed[State.currentLang];
+    speedNumber.textContent = `${LessonState.lessonData.minSpeed}${translation.testWpmSub[State.currentLang]}`;
+    speedWrapper.append(speedText, speedNumber);
+
+    return speedWrapper;
+  }
+
+  public static createSpeedStarReq(): HTMLElement {
+    const speedStarWrapper = CreateElement.createElement(Tag.span, [
+      { name: 'class', value: 'lesson-result-speed-star-wrapper' },
+    ]);
+    const speedStarText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'lesson-result-speed-star' }]);
+    const speedStarNumber = CreateElement.createElement(Tag.span, [
+      { name: 'class', value: 'lesson-result-speed-star-num' },
+    ]);
+
+    speedStarText.textContent = translation.lessonResultsReqSpeedStar[State.currentLang];
+    speedStarNumber.textContent = `${LessonState.lessonData.starSpeed}${translation.testWpmSub[State.currentLang]}`;
+    speedStarWrapper.append(speedStarText, speedStarNumber);
+
+    return speedStarWrapper;
+  }
+
   public static createLessonResult(): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-result-ribbon' }]);
-    const text = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'result-ribbon-text' }]);
-    const speed = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'result-ribbon-speed' }]);
-    const accuracy = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'result-ribbon-accuracy' }]);
+    const result = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-result' }]);
+    const title = CreateElement.createElement(Tag.h5, [{ name: 'class', value: 'lesson-result-title' }]);
+    const scoreText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'lesson-result-score-text' }]);
+    const scoreStarWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-score' }]);
+    const scoreWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-score-wrapper' }]);
+    const TOTAL_NUMBER_OF_STARS = 5;
+    const score = LessonResult.getScore();
+    const reqTitle = CreateElement.createElement(Tag.h5, [{ name: 'class', value: 'lesson-result-req' }]);
+    const minAccuracy = LessonResult.createAccuracyReq();
+    const minSpeed = LessonResult.createSpeedReq();
+    const minStarSpeed = LessonResult.createSpeedStarReq();
 
-    text.textContent = translation.testResults[State.currentLang];
-    speed.textContent = `${translation.testWpmText[State.currentLang]} ${LessonState.wpmCount.textContent}`;
-    accuracy.textContent = `${translation.testAccuracyText[State.currentLang]} ${
-      LessonState.accuracyCount.textContent
-    }`;
-    modal.append(text, speed, accuracy);
+    if (TOTAL_NUMBER_OF_STARS - score) {
+      for (let i = 0; i < TOTAL_NUMBER_OF_STARS - score; i += 1) {
+        const star = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-btn-star-empty' }]);
 
-    return modal;
+        scoreWrapper.append(star);
+      }
+    }
+
+    for (let i = 0; i < score; i += 1) {
+      const star = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-btn-star' }]);
+
+      scoreStarWrapper.append(star);
+    }
+
+    switch (score) {
+      case 1:
+        title.textContent = translation.lessonResults1[State.currentLang];
+        break;
+      case 2:
+        title.textContent = translation.lessonResults2[State.currentLang];
+        break;
+      case 3:
+        title.textContent = translation.lessonResults3[State.currentLang];
+        break;
+      case 4:
+        title.textContent = translation.lessonResults4[State.currentLang];
+        break;
+      case 5:
+        title.textContent = translation.lessonResults5[State.currentLang];
+        break;
+      default:
+        title.textContent = translation.lessonResults0[State.currentLang];
+    }
+
+    scoreWrapper.append(scoreText, scoreStarWrapper);
+    result.append(title, scoreWrapper, reqTitle, minAccuracy, minSpeed, minStarSpeed);
+
+    return result;
   }
 
   public static showLessonResult(): void {

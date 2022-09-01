@@ -11,7 +11,7 @@ class UserLessonsStats {
     }
 
     if (user.lessonsRu !== Data.noData && State.currentLayout === Layout.ru) {
-      return ParseLessons.getLessons(user.lessonsEn);
+      return ParseLessons.getLessons(user.lessonsRu);
     }
 
     return {};

@@ -273,9 +273,53 @@ const translation: Translation = {
     en: 'Text language',
     ru: 'Язык текста',
   },
-  testResults: {
-    en: 'Test Results',
-    ru: 'Результаты теста',
+  testResultText: {
+    en: 'Result',
+    ru: 'Результат',
+  },
+  lessonResults0: {
+    en: 'Never give up! Try again',
+    ru: 'Не сдавайтесь, попробуйте еще раз!',
+  },
+  lessonResults1: {
+    en: 'Keep practicing!',
+    ru: 'Продолжайте практиковаться!',
+  },
+  lessonResults2: {
+    en: 'Not bad! Keep practicing',
+    ru: 'Неплохо! Продолжайте практиковаться',
+  },
+  lessonResults3: {
+    en: 'Good job!',
+    ru: 'Хорошая работа!',
+  },
+  lessonResults4: {
+    en: 'Well done!',
+    ru: 'Отличная работа!',
+  },
+  lessonResults5: {
+    en: 'Excellent job!',
+    ru: 'Отличная работа!',
+  },
+  lessonResultsScoreText: {
+    en: 'Your score',
+    ru: 'Ваш результат',
+  },
+  lessonResultsReq: {
+    en: 'Lesson requirements',
+    ru: 'Требования к уроку',
+  },
+  lessonResultsReqSpeed: {
+    en: 'Minimum speed',
+    ru: 'Минимальная скорость',
+  },
+  lessonResultsReqSpeedStar: {
+    en: 'Speed for a star',
+    ru: 'Скорость для звезды',
+  },
+  lessonResultsReqAccuracy: {
+    en: 'Minimum accuracy',
+    ru: 'Минимальная точность',
   },
 };
 
