@@ -9,6 +9,7 @@ import LessonsMain from '../lessons/lessons-main';
 import LessonStats from './lesson-stats';
 import LessonRestartBtn from './lesson-restart-btn';
 import LessonInput from './lesson-input';
+import translation from '../../../data/translation';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -28,7 +29,7 @@ class LessonMain {
     const topWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-top' }]);
     const back = BackBtn.createBackBtn(Page.lessons, render);
     const lessonSettings = LessonSettings.createLessonSettings();
-    const ribbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-ribbon' }]);
+    const ribbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-ribbon' }]);
     const lessonWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-wrapper' }]);
     const contentTopWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'content-top-wrapper' }]);
     const lessonStats = LessonStats.createLessonStats();
@@ -37,6 +38,7 @@ class LessonMain {
     const keyboard = LessonKeyboard.createLessonKeyboard();
     const input = LessonInput.createLessonInput();
 
+    ribbon.textContent = translation.testRibbonText[State.currentLang];
     LessonState.ribbon = ribbon;
     LessonState.keyboard = keyboard;
     topWrapper.append(back, lessonSettings);

@@ -1,10 +1,11 @@
 import translation from '../../../data/translation';
 import ParseBadges from '../../../scripts/parsing/parse-badges';
 import State from '../../../scripts/state/state';
-import { Badge, Data, Layout, Tag } from '../../../types/enums';
 import CreateElement from '../../elements/create-element';
 import UserLessonsStats from '../lessons/user-lessons';
 import LessonState from './lesson-state';
+
+import { Badge, Data, Layout, Tag } from '../../../types/enums';
 
 class LessonBadge {
   public static create(index: number, text: string): HTMLElement {

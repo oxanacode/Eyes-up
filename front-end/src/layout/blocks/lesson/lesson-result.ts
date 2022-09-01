@@ -7,9 +7,9 @@ import UserLessonsStats from '../lessons/user-lessons';
 import ParseLessons from '../../../scripts/parsing/parse-lessons';
 import ApiService from '../../../scripts/api/api-service';
 import UserState from '../../../scripts/user/user-state';
+import LessonBadge from './lesson-badge';
 
 import { Layout, Tag } from '../../../types/enums';
-import LessonBadge from './lesson-badge';
 
 class LessonResult {
   public static getScore(): number {

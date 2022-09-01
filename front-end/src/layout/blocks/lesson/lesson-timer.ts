@@ -30,7 +30,7 @@ class LessonTimer {
 
     LessonState.speed = speed;
 
-    return speed;
+    return speed || 1;
   }
 }
 
