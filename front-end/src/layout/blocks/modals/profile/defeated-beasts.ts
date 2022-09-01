@@ -15,7 +15,7 @@ class DefeatedBeasts {
       statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userSpells.length;
 
     itemText.textContent = translation.statsDefeatedBeasts[State.currentLang];
-    itemValue.textContent = `${defeatedBeasts}/${TypingAdventure.beasts}`;
+    itemValue.textContent = `${defeatedBeasts} / ${TypingAdventure.beasts}`;
 
     listItem.append(itemText, itemValue);
 

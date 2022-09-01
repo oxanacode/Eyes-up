@@ -10,19 +10,18 @@ class AverageScore {
   public static createAverageScore(statsData: string): HTMLElement {
     const listItem = CreateElement.createElement(Tag.listItem, [{ name: 'class', value: 'profile-stats-item' }]);
     const itemText = CreateElement.createElement(Tag.par);
-    const itemValue = CreateElement.createElement(Tag.par);
-    const valueText = CreateElement.createElement(Tag.span);
+    const itemValue = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'profile-stats-score-wrapper' }]);
+    const valueText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'profile-stats-score-value' }]);
     const valueMark = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'profile-stats-score-mark' }]);
     let averageScore;
 
     if (statsData === Data.noData) {
       averageScore = Data.noStats;
     } else {
-      averageScore =
-        [...Object.values(ParseLessons.getLessons(statsData))]
-          .map((el: UserLesson) => el.lastScore)
-          .reduce((acc, currValue) => acc + currValue, 0) /
-        [...Object.values(ParseLessons.getLessons(statsData))].length;
+      const sumScore = [...Object.values(ParseLessons.getLessons(statsData))]
+        .map((el: UserLesson) => el.lastScore)
+        .reduce((acc, currValue) => acc + currValue, 0);
+      averageScore = Math.ceil(sumScore / [...Object.values(ParseLessons.getLessons(statsData))].length);
     }
 
     itemText.textContent = translation.statsLessonsScore[State.currentLang];

@@ -14,7 +14,7 @@ class ReachedLevel {
     const reachedLevel = statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userLvl;
 
     itemText.textContent = translation.statsReachedLevel[State.currentLang];
-    itemValue.textContent = `${reachedLevel}/${TypingAdventure.levels}`;
+    itemValue.textContent = `${reachedLevel} / ${TypingAdventure.levels}`;
 
     listItem.append(itemText, itemValue);
 

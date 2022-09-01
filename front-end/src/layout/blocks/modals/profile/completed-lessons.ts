@@ -19,7 +19,7 @@ class CompletedLessons {
       const lessonsAmount = data.length;
 
       itemText.textContent = translation.statsLessonsCompleted[State.currentLang];
-      itemValue.textContent = `${completedLessons}/${lessonsAmount}`;
+      itemValue.textContent = `${completedLessons} / ${lessonsAmount}`;
 
       listItem.append(itemText, itemValue);
     });

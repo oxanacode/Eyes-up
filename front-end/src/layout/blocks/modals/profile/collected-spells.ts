@@ -15,7 +15,7 @@ class CollectedSpells {
       statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userSpells.length;
 
     itemText.textContent = translation.statsCollectedSpells[State.currentLang];
-    itemValue.textContent = `${collectedSpells}/${TypingAdventure.spells}`;
+    itemValue.textContent = `${collectedSpells} / ${TypingAdventure.spells}`;
 
     listItem.append(itemText, itemValue);
 

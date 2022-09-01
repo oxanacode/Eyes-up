@@ -16,15 +16,14 @@ class AverageAccuracy {
     if (statsData === Data.noData) {
       averageAccuracy = Data.noStats;
     } else {
-      averageAccuracy =
-        [...Object.values(ParseLessons.getLessons(statsData))]
-          .map((el: UserLesson) => el.lastAccuracy)
-          .reduce((acc, currValue) => acc + currValue, 0) /
-        [...Object.values(ParseLessons.getLessons(statsData))].length;
+      const sumAccuracy = [...Object.values(ParseLessons.getLessons(statsData))]
+        .map((el: UserLesson) => el.lastAccuracy)
+        .reduce((acc, currValue) => acc + currValue, 0);
+      averageAccuracy = Math.floor(sumAccuracy / [...Object.values(ParseLessons.getLessons(statsData))].length);
     }
 
     itemText.textContent = translation.statsLessonsAccuracy[State.currentLang];
-    itemValue.textContent = `${averageAccuracy}%`;
+    itemValue.textContent = `${averageAccuracy} %`;
     listItem.append(itemText, itemValue);
 
     return listItem;

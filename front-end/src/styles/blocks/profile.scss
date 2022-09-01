@@ -189,7 +189,77 @@
 }
 
 .profile-subtitle {
+  margin-bottom: 3rem;
+
   @include tablet-small {
     text-align: center;
   }
+}
+
+.profile-stats-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    flex-direction: column;
+  }
+}
+
+.profile-stats-block {
+  width: 100%;
+  padding: 1rem 2rem 0;
+  border: 0.2rem solid $c-accent;
+  border-radius: $big-border-radius;
+}
+
+.profile-stats-title {
+  @include font-subtitle-mobile;
+  text-align: center;
+  color: $c-main-text;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-subtitle {
+  @include font-main;
+  color: $c-accent;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-list {
+  background-color: $c-block-bg;
+  padding: 1rem;
+  border-radius: $small-border-radius;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-item {
+  @include font-main-small;
+  display: flex;
+  justify-content: space-between;
+  color: $c-main-text;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.profile-stats-score-wrapper {
+  @include default-wrapper;
+  gap: 0.3rem;
+}
+
+.profile-stats-score-value {
+  display: block;
+  height: 1.4rem;
+}
+
+.profile-stats-score-mark {
+  @include small-btn-bg;
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-image: $bg-lessons-star;
+  background-size: 1.4rem;
 }
