@@ -1,16 +1,16 @@
 import CreateElement from '../../../elements/create-element';
 import MainTitle from '../../../elements/main-title';
-import CloseEditProfileBtn from './close-edit-profile-btn';
+import ProfileBadgesCloseBtn from './profile-badges-close-btn';
 import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
 
 import { Tag } from '../../../../types/enums';
 
-class EditProfileHeader {
-  public static createEditProfileHeader(modalToHide: HTMLElement): HTMLElement {
+class BadgesProfileHeader {
+  public static createBadgesProfileHeader(modalToHide: HTMLElement, parentModal: HTMLElement): HTMLElement {
     const header = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header' }]);
-    const closeBtn = CloseEditProfileBtn.createCloseEditProfileBtn(modalToHide);
-    const title = MainTitle.createMainTitle(translation.profileEditTitle[State.currentLang]);
+    const closeBtn = ProfileBadgesCloseBtn.createProfileBadgesCloseBtn(modalToHide, parentModal);
+    const title = MainTitle.createMainTitle(translation.badgesTitle[State.currentLang]);
     const plag = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header-plag' }]);
 
     header.append(closeBtn, title, plag);
@@ -19,4 +19,4 @@ class EditProfileHeader {
   }
 }
 
-export default EditProfileHeader;
+export default BadgesProfileHeader;

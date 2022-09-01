@@ -1,21 +1,22 @@
 import CreateElement from '../../../elements/create-element';
+import ManageModal from '../../../../scripts/layout/manage-modal';
 import State from '../../../../scripts/state/state';
-import ManageConfirmation from '../../../../scripts/layout/manage-confirmation';
 import translation from '../../../../data/translation';
 
 import { Tag } from '../../../../types/enums';
 
-class DeleteAccountBtn {
-  public static createDeleteAccountBtn(wrapper: HTMLElement): HTMLElement {
+class AllBadgesBtn {
+  public static createAllBadgesBtn(modalToShow: HTMLElement, modalToHide: HTMLElement): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'simple-account-btn' }]);
 
-    btn.textContent = translation.profileDeleteBtn[State.currentLang];
+    btn.textContent = translation.profileBadgesLink[State.currentLang];
     btn.addEventListener('click', () => {
-      ManageConfirmation.showConfirmation(wrapper);
+      ManageModal.showModal(modalToShow);
+      ManageModal.hideModal(modalToHide);
     });
 
     return btn;
   }
 }
 
-export default DeleteAccountBtn;
+export default AllBadgesBtn;

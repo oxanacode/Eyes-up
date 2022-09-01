@@ -114,91 +114,91 @@ const badgesDescription: BadgesDescription = {
   '12': {
     en: {
       title: `Gotta Catch 'Em All (En)!`,
-      text: 'You have completed all lessons for the English layout with at least 1 star.',
+      text: 'You have completed all lessons for the En layout with at least 1 star.',
     },
     ru: {
       title: 'Собери их всеx (En)!',
-      text: 'Вы завершили все уроки для английской раскладки минимум на 1 звезду.',
+      text: 'Вы завершили все уроки для En раскладки минимум на 1 звезду.',
     },
   },
   '13': {
     en: {
       title: `Gotta Catch 'Em All (Ru)!`,
-      text: 'You have completed all lessons for the Russian layout with at least 1 star.',
+      text: 'You have completed all lessons for the Ru layout with at least 1 star.',
     },
     ru: {
       title: 'Собери их всеx (Ru)!',
-      text: 'Вы завершили все уроки для русской раскладки минимум на 1 звезду.',
+      text: 'Вы завершили все уроки для Ru раскладки минимум на 1 звезду.',
     },
   },
   '14': {
     en: {
       title: 'First steps (En)!',
-      text: 'You have reached the typing speed of 20 words per mimute at the English layout.',
+      text: 'You have reached the typing speed of 20 wpm at the En layout.',
     },
     ru: {
       title: 'Первые шаги (En)!',
-      text: 'Вы достигли скорости печати 20 слов в минуту на английской раскладке.',
+      text: 'Вы достигли скорости печати 20 свм у на En раскладке.',
     },
   },
   '15': {
     en: {
       title: 'First steps (Ru)!',
-      text: 'You have reached the typing speed of 20 words per mimute at the Russian layout.',
+      text: 'You have reached the typing speed of 20 wpm at the Ru layout.',
     },
     ru: {
       title: 'Первые шаги (Ru)!',
-      text: 'Вы достигли скорости печати 20 слов в минуту на русской раскладке.',
+      text: 'Вы достигли скорости печати 20 свм на Ru раскладке.',
     },
   },
   '16': {
     en: {
       title: 'The Typing Machine (En)!',
-      text: 'You have reached the typing speed of 60 words per mimute at the English layout.',
+      text: 'You have reached the typing speed of 60 wpm at the En layout.',
     },
     ru: {
       title: 'Печатная машина (En)!',
-      text: 'Вы достигли скорости печати 60 слов в минуту на английской раскладке.',
+      text: 'Вы достигли скорости печати 60 свм на En раскладке.',
     },
   },
   '17': {
     en: {
       title: 'The Typing Machine (Ru)!',
-      text: 'You have reached the typing speed of 60 words per mimute at the Russian layout.',
+      text: 'You have reached the typing speed of 60 wpm at the Ru layout.',
     },
     ru: {
       title: 'Печатная машина (Ru)!',
-      text: 'Вы достигли скорости печати 60 слов в минуту на русской раскладке.',
+      text: 'Вы достигли скорости печати 60 свм на Ru раскладке.',
     },
   },
   '18': {
     en: {
       title: 'Fast fingers (En)!',
-      text: 'You have reached the typing speed of 100 words per mimute at the English layout.',
+      text: 'You have reached the typing speed of 100 wpm at the En layout.',
     },
     ru: {
       title: 'Быстрые пальцы (En)!',
-      text: 'Вы достигли скорости печати 100 слов в минуту на английской раскладке.',
+      text: 'Вы достигли скорости печати 100 свм на En раскладке.',
     },
   },
   '19': {
     en: {
       title: 'Fast fingers (Ru)!',
-      text: 'You have reached the typing speed of 100 words per mimute at the Russian layout.',
+      text: 'You have reached the typing speed of 100 wpm at the Ru layout.',
     },
     ru: {
       title: 'Быстрые пальцы (Ru)!',
-      text: 'Вы достигли скорости печати 100 слов в минуту на русской раскладке.',
+      text: 'Вы достигли скорости печати 100 свм на Ru раскладке.',
     },
   },
   '20': {
     en: {
       title: 'Eyes Up!',
-      text: 'You have completed all lessons in EyesUp app with at least 1 star.',
+      text: 'You have completed all EyesUp lessons with at least 1 star.',
     },
     ru: {
       title: 'Не опуская глаз!',
-      text: 'Вы прошли все уроки в приложении EyesUp минимум на 1 звезду.',
+      text: 'Вы прошли все уроки EyesUp минимум на 1 звезду.',
     },
   },
 };

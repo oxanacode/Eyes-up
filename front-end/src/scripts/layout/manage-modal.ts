@@ -23,9 +23,23 @@ class ManageModal {
       modalToHide.previousElementSibling.classList.remove('hidden');
     }
 
-    if (modalToHide.nextElementSibling) {
+    if (modalToHide.nextElementSibling && !modalToHide.nextElementSibling.classList.contains('profile-badges-modal')) {
       modalToHide.nextElementSibling.classList.remove('hidden');
     }
+  }
+
+  public static showModal(modalToShow: HTMLElement | Element): void {
+    modalToShow.classList.remove('hidden');
+  }
+
+  public static showModalHandler(parentModal: HTMLElement): void {
+    if (parentModal.firstElementChild) {
+      ManageModal.showModal(parentModal.firstElementChild);
+    }
+  }
+
+  public static hideModal(modalToHide: HTMLElement): void {
+    modalToHide.classList.add('hidden');
   }
 
   public static clearModalContent(modal: HTMLElement): void {

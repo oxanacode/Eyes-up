@@ -48,7 +48,7 @@
   }
 }
 
-.edit-profile-plag {
+.profile-header-plag {
   width: 4rem;
   height: 4rem;
 }
@@ -171,7 +171,7 @@
   }
 }
 
-.delete-account-btn {
+.simple-account-btn {
   @include font-main;
   color: $c-main-text;
 }
@@ -262,4 +262,14 @@
   height: 1.4rem;
   background-image: $bg-lessons-star;
   background-size: 1.4rem;
+}
+
+.profile-badges-title {
+  @include default-wrapper;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.profile-badges-title .profile-subtitle {
+  margin-bottom: 0;
 }

@@ -12,10 +12,12 @@ import translation from '../../../../data/translation';
 import { Confirmation, Profile, Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
 import { User } from '../../../../types/interfaces';
+import ProfileBadgesTitle from './profile-badges-title';
 
 class ViewProfileModal {
   public static createViewProfileModal(
     editProfile: HTMLElement,
+    profileBadges: HTMLElement,
     modalToClose: HTMLElement,
     user: User,
     render: RenderHandler
@@ -45,9 +47,10 @@ class ViewProfileModal {
     );
     const statsTitle = Subtitle.createSubtitle('subtitle profile-subtitle', translation.statsTitle[State.currentLang]);
     const statsData = ProfileStats.createProfileStats(user);
+    const badgesTitle = ProfileBadgesTitle.createProfileBadgesTitle(profileBadges, modal);
 
     logoutWrapper.append(logoutConfirmation, logoutBtn);
-    modal.append(header, data, statsTitle, statsData, logoutWrapper);
+    modal.append(header, data, statsTitle, statsData, badgesTitle, logoutWrapper);
 
     return modal;
   }

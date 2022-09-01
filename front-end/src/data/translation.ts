@@ -230,12 +230,16 @@ const translation: Translation = {
     ru: 'Побежденные монстры',
   },
   profileBadgesTitle: {
-    en: 'Earned Badges',
+    en: 'Earned badges',
     ru: 'Полученные значки',
   },
   profileBadgesLink: {
     en: 'All badges',
     ru: 'Все значки',
+  },
+  badgesTitle: {
+    en: 'Badges',
+    ru: 'Значки',
   },
   profileLogoutBtn: {
     en: 'Logout',
