@@ -4,6 +4,10 @@ import ProfileData from './profile-data';
 import LogoutBtn from './logout-btn';
 import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
 import ConfirmationContent from '../confirmation/confirmation-content';
+import Subtitle from '../../../elements/subtitle';
+import State from '../../../../scripts/state/state';
+import ProfileStats from './profile-stats';
+import translation from '../../../../data/translation';
 
 import { Confirmation, Profile, Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
@@ -39,9 +43,11 @@ class ViewProfileModal {
       modalToClose,
       modal
     );
+    const statsTitle = Subtitle.createSubtitle('subtitle profile-subtitle', translation.statsTitle[State.currentLang]);
+    const statsData = ProfileStats.createProfileStats(user);
 
     logoutWrapper.append(logoutConfirmation, logoutBtn);
-    modal.append(header, data, logoutWrapper);
+    modal.append(header, data, statsTitle, statsData, logoutWrapper);
 
     return modal;
   }

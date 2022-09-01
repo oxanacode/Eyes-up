@@ -119,6 +119,7 @@ export enum Disabled {
 
 export enum Data {
   noData = 'noData',
+  noStats = 0,
 }
 
 export enum Profile {
@@ -129,4 +130,10 @@ export enum Profile {
 export enum Confirmation {
   logout = 'logout',
   delete = 'delete',
+}
+
+export enum TypingAdventure {
+  levels = 10,
+  spells = 28,
+  beasts = 9,
 }

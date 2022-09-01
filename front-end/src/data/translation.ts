@@ -209,13 +209,25 @@ const translation: Translation = {
     en: 'Completed lessons',
     ru: 'Завершено уроков',
   },
-  statsLessonsSpeed: {
-    en: 'Average Speed',
-    ru: 'Средняя скорость',
+  statsLessonsScore: {
+    en: 'Average score',
+    ru: 'Средняя оценка',
   },
   statsLessonsAccuracy: {
-    en: 'Accuracy',
-    ru: 'Точность',
+    en: 'Average accuracy',
+    ru: 'Средняя точность',
+  },
+  statsReachedLevel: {
+    en: 'Reached level',
+    ru: 'Достигнутый уровень',
+  },
+  statsCollectedSpells: {
+    en: 'Collected spells',
+    ru: 'Собранные заклинания',
+  },
+  statsDefeatedBeasts: {
+    en: 'Defeated beasts',
+    ru: 'Побежденные монстры',
   },
   profileBadgesTitle: {
     en: 'Earned Badges',

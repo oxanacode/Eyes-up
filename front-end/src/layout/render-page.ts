@@ -13,9 +13,9 @@ import TypingAdventure from '../games/typing-adventure/game-start';
 import SwitchPage from '../scripts/layout/switch-page';
 import LessonMain from './blocks/lesson/lesson-main';
 import AboutMain from './blocks/about/about-main';
+import ManageModal from '../scripts/layout/manage-modal';
 
 import { Page } from '../types/enums';
-import ManageModal from '../scripts/layout/manage-modal';
 
 class RenderPage {
   public static renderInteractivePage(): void {
