@@ -24,6 +24,7 @@ body.light {
   --c-modal-overlay: rgba(50, 50, 50, .2);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+  --bxs-result-shadow: 0px 0px 100px rgba(33, 37, 41, 0.15);
 
   --bg-header-gradient: linear-gradient(180deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 100%);
   --bg-footer-gradient: linear-gradient(0deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 56%);
@@ -100,6 +101,7 @@ body.dark {
   --c-modal-overlay: rgba(0, 0, 0, .5);
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
+  --bxs-result-shadow: 0px 0px 100px rgba(33, 37, 41, 0.15);
 
   --bg-header-gradient: linear-gradient(180deg, #111A2C 0%, #1E273A 61.33%);
   --bg-footer-gradient: linear-gradient(0deg, #131B2C 0%, #1E273A 69%);
@@ -177,6 +179,7 @@ $c-error-text: #DA5C54;
 $c-confirmation-yes-text: #F3F3F4;
 
 $bxs-modal-shadow: var(--bxs-modal-shadow);
+$bxs-result-shadow: var(--bxs-result-shadow);
 
 $bg-header-gradient: var(--bg-header-gradient);
 $bg-footer-gradient: var(--bg-footer-gradient);

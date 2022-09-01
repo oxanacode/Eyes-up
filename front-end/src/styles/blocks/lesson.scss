@@ -1,11 +1,15 @@
-.lesson::before {
-  content: '';
-  display: block;
-  position: absolute;
-  top: 0;
-  height: 5rem;
-  width: 100%;
-  background-color: $c-block-bg;
+.lesson {
+  position: relative;
+
+ &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 5rem;
+    width: 100%;
+    background-color: $c-block-bg;
+  }
 }
 
 .lesson-top {
@@ -173,4 +177,63 @@
   word-spacing: 0.4rem;
   height: 24rem;
   overflow: hidden;
+}
+
+
+.lesson-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 5rem;
+  background-color: white;
+  border-radius: $big-border-radius;
+  box-shadow: $bxs-result-shadow;
+  max-width: max-content;
+  position: absolute;
+  bottom: -3rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  @include mobile {
+    padding: 3rem 2rem;
+  }
+}
+
+.lesson-result-title {
+  @include font-title-mobile;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.lesson-result-req {
+  @include font-main;
+  font-weight: bold;
+  margin: 2rem 0 1rem;
+}
+
+
+.lesson-score {
+  display: flex;
+}
+
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper,
+.lesson-result-speed-star-wrapper,
+.lesson-score-wrapper {
+  @include font-main;
+  display: flex;
+  justify-content: space-between;
+  width: 25rem;
+}
+
+.lesson-result-req,
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper,
+.lesson-result-speed-star-wrapper {
+  color: $c-menu-inactive-link;
+}
+
+.lesson-result-accuracy-wrapper,
+.lesson-result-speed-wrapper {
+  margin-top: 0.4rem;
 }

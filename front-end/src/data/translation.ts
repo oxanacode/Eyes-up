@@ -321,6 +321,30 @@ const translation: Translation = {
     en: 'Minimum accuracy',
     ru: 'Минимальная точность',
   },
+  lessonBadgeTitle: {
+    en: 'New achivment',
+    ru: 'Новое достижение',
+  },
+  lessonBadgeCompleteAllLessons: {
+    en: `You’ve completed all lessons!`,
+    ru: 'Вы завершили все уроки!',
+  },
+  lessonBadgeEyesUp: {
+    en: `You’ve completed all EyesUp lessons!`,
+    ru: 'Вы завершили все уроки EyesUp!',
+  },
+  lessonBadgeSpeed20: {
+    en: `You’ve achieved a typing speed of 20wpm!`,
+    ru: 'Вы достигли скорости печати 20 слов в минуту!',
+  },
+  lessonBadgeSpeed60: {
+    en: `You’ve achieved a typing speed of 60wpm!`,
+    ru: 'Вы достигли скорости печати 60 слов в минуту!',
+  },
+  lessonBadgeSpeed100: {
+    en: `You’ve achieved a typing speed of 100wpm!`,
+    ru: 'Вы достигли скорости печати 100 слов в минуту!',
+  },
 };
 
 export default translation;

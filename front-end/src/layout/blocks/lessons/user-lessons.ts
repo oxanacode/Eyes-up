@@ -2,7 +2,7 @@ import State from '../../../scripts/state/state';
 import ParseLessons from '../../../scripts/parsing/parse-lessons';
 
 import { Data, Layout } from '../../../types/enums';
-import { User, UserLessons } from '../../../types/interfaces';
+import { User } from '../../../types/interfaces';
 
 class UserLessonsStats {
   public static getAllLessons(user: User) {

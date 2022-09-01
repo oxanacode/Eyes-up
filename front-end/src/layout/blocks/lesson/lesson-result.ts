@@ -135,7 +135,7 @@ class LessonResult {
       for (let i = 0; i < TOTAL_NUMBER_OF_STARS - score; i += 1) {
         const star = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-btn-star-empty' }]);
 
-        scoreWrapper.append(star);
+        scoreStarWrapper.append(star);
       }
     }
 
@@ -165,6 +165,8 @@ class LessonResult {
         title.textContent = translation.lessonResults0[State.currentLang];
     }
 
+    reqTitle.textContent = translation.lessonResultsReq[State.currentLang];
+    scoreText.textContent = translation.lessonResultsScoreText[State.currentLang];
     scoreWrapper.append(scoreText, scoreStarWrapper);
     result.append(title, scoreWrapper, reqTitle, minAccuracy, minSpeed, minStarSpeed);
 

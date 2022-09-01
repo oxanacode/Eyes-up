@@ -6,12 +6,12 @@ import LessonsFilters from './lessons-filters';
 import ApiService from '../../../scripts/api/api-service';
 import AllLessonsList from './lessons-list';
 import BackBtn from '../../elements/back-btn';
-import UserLessonsStats from './user-lessons';
 import UserState from '../../../scripts/user/user-state';
+import LessonState from '../lesson/lesson-state';
+import EmptyUser from '../lesson/empty-user';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
-import LessonState from '../lesson/lesson-state';
 
 class LessonsMain {
   public static createLessonsMain(render: RenderHandler): HTMLElement {
@@ -31,6 +31,8 @@ class LessonsMain {
       ApiService.getUser(State.currentUser.login).then((user) => {
         LessonState.user = user;
       });
+    } else {
+      LessonState.user = EmptyUser.createEmptyUser();
     }
 
     ApiService.getLessons({ layout, complexity }).then((res) => {
