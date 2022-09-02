@@ -7,6 +7,7 @@ class CloseEditProfileBtn {
   public static createCloseEditProfileBtn(modalToHide: HTMLElement): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'small-btn close-btn profile-btn' }]);
 
+    btn.textContent = 'Close button';
     btn.addEventListener('click', () => {
       ManageModal.switchModal(modalToHide);
     });
