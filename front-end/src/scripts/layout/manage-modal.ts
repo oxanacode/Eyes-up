@@ -19,7 +19,10 @@ class ManageModal {
   public static switchModal(modalToHide: HTMLElement): void {
     modalToHide.classList.add('hidden');
 
-    if (modalToHide.previousElementSibling) {
+    if (
+      modalToHide.previousElementSibling &&
+      !modalToHide.previousElementSibling.classList.contains('profile-badges-modal')
+    ) {
       modalToHide.previousElementSibling.classList.remove('hidden');
     }
 
@@ -30,12 +33,6 @@ class ManageModal {
 
   public static showModal(modalToShow: HTMLElement | Element): void {
     modalToShow.classList.remove('hidden');
-  }
-
-  public static showModalHandler(parentModal: HTMLElement): void {
-    if (parentModal.firstElementChild) {
-      ManageModal.showModal(parentModal.firstElementChild);
-    }
   }
 
   public static hideModal(modalToHide: HTMLElement): void {

@@ -7,9 +7,9 @@ import translation from '../../../../data/translation';
 import { Tag } from '../../../../types/enums';
 
 class BadgesProfileHeader {
-  public static createBadgesProfileHeader(modalToHide: HTMLElement, parentModal: HTMLElement): HTMLElement {
+  public static createBadgesProfileHeader(profileBadges: HTMLElement, viewProfile: HTMLElement): HTMLElement {
     const header = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header' }]);
-    const closeBtn = ProfileBadgesCloseBtn.createProfileBadgesCloseBtn(modalToHide, parentModal);
+    const closeBtn = ProfileBadgesCloseBtn.createProfileBadgesCloseBtn(profileBadges, viewProfile);
     const title = MainTitle.createMainTitle(translation.badgesTitle[State.currentLang]);
     const plag = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-header-plag' }]);
 

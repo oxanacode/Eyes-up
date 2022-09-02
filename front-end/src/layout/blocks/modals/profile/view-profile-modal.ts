@@ -5,14 +5,14 @@ import LogoutBtn from './logout-btn';
 import ManageProfileState from '../../../../scripts/profile/manage-profile-state';
 import ConfirmationContent from '../confirmation/confirmation-content';
 import Subtitle from '../../../elements/subtitle';
-import State from '../../../../scripts/state/state';
 import ProfileStats from './profile-stats';
+import ProfileBadgesTitle from './profile-badges-title';
+import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
 
 import { Confirmation, Profile, Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
 import { User } from '../../../../types/interfaces';
-import ProfileBadgesTitle from './profile-badges-title';
 
 class ViewProfileModal {
   public static createViewProfileModal(
@@ -47,7 +47,7 @@ class ViewProfileModal {
     );
     const statsTitle = Subtitle.createSubtitle('subtitle profile-subtitle', translation.statsTitle[State.currentLang]);
     const statsData = ProfileStats.createProfileStats(user);
-    const badgesTitle = ProfileBadgesTitle.createProfileBadgesTitle(profileBadges, modal);
+    const badgesTitle = ProfileBadgesTitle.createProfileBadgesTitle(data, logoutWrapper, profileBadges, modal, user);
 
     logoutWrapper.append(logoutConfirmation, logoutBtn);
     modal.append(header, data, statsTitle, statsData, badgesTitle, logoutWrapper);

@@ -1,18 +1,23 @@
-import CreateElement from '../../../elements/create-element';
 import BadgesProfileHeader from './profile-badges-header';
+import ManageModal from '../../../../scripts/layout/manage-modal';
+import ProfileBadgesList from './profile-badges-list';
 
-import { Tag } from '../../../../types/enums';
+import { User } from '../../../../types/interfaces';
 
 class ProfileBadgesModal {
-  public static createProfileBadgesModal(modalWrapper: HTMLElement): HTMLElement {
-    const modal = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'profile-modal-content profile-badges-modal hidden' },
-    ]);
-    const header = BadgesProfileHeader.createBadgesProfileHeader(modal, modalWrapper);
+  public static createProfileBadgesModal(
+    profileBadges: HTMLElement,
+    viewProfile: HTMLElement,
+    user: User
+  ): HTMLElement {
+    ManageModal.clearModalContent(profileBadges);
 
-    modal.append(header);
+    const header = BadgesProfileHeader.createBadgesProfileHeader(profileBadges, viewProfile);
+    const badges = ProfileBadgesList.createProfileBadgesList(user);
 
-    return modal;
+    profileBadges.append(header, badges);
+
+    return profileBadges;
   }
 }
 
