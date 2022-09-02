@@ -12,7 +12,7 @@ class DefeatedBeasts {
     const itemValue = CreateElement.createElement(Tag.par);
 
     const defeatedBeasts =
-      statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userSpells.length;
+      statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).gameBeasts.length;
 
     itemText.textContent = translation.statsDefeatedBeasts[State.currentLang];
     itemValue.textContent = `${defeatedBeasts} / ${TypingAdventure.beasts}`;
