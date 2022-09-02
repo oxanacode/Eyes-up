@@ -18,7 +18,7 @@ const translation: Translation = {
     ru: 'Typing Adventure',
   },
   gameOneDescFirst: {
-    en: 'Do you want to feel yoursels like a real seeker of adventures? Welcome to Typing Adventure!',
+    en: 'Do you want to feel yourself like a real seeker of adventures? Welcome to Typing Adventure!',
     ru: 'Хотите почувствовать себя настоящим искателем приключений? Добро пожаловать в Typing Adventure!',
   },
   gameOneDescSecond: {
