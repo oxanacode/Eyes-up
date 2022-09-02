@@ -153,3 +153,26 @@ export enum Badge {
   nineteen = 19,
   twenty = 20,
 }
+
+export enum LessonBg {
+  default = 'bg-default',
+  one = 'bg-one',
+  two = 'bg-two',
+}
+
+export enum LessonFontSize {
+  normal = 'font-size-normal',
+  small = 'font-size-small',
+  big = 'font-size-big',
+}
+
+export enum LessonFontFamily {
+  default = 'font-size-sans',
+  serif = 'font-size-serif',
+}
+
+export enum LessonLineHeight {
+  normal = 40,
+  small = 30,
+  big = 60,
+}

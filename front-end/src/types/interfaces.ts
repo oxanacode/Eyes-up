@@ -1,4 +1,4 @@
-import { Complexity, Lang, Page, Theme, Layout } from './enums';
+import { Complexity, Lang, Page, Theme, Layout, LessonBg, LessonFontSize, LessonFontFamily } from './enums';
 
 export interface Attribute {
   name: string;
@@ -49,6 +49,9 @@ export interface CurrentState {
   currentTheme: Theme;
   currentLayout: Layout;
   currentComplexity: Complexity | undefined;
+  currentLessonBg: LessonBg;
+  currentLessonFontSize: LessonFontSize;
+  currentLessonFontFamily: LessonFontFamily;
 }
 
 export interface RegExpPattern {

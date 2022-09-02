@@ -14,6 +14,9 @@ class ManageState {
       State.currentTheme = currentState.currentTheme;
       State.currentLayout = currentState.currentLayout;
       State.currentComplexity = currentState.currentComplexity;
+      State.currentLessonBg = currentState.currentLessonBg;
+      State.currentLessonFontSize = currentState.currentLessonFontSize;
+      State.currentLessonFontFamily = currentState.currentLessonFontFamily;
     }
   }
 
@@ -25,6 +28,9 @@ class ManageState {
       currentTheme: State.currentTheme,
       currentLayout: State.currentLayout,
       currentComplexity: State.currentComplexity,
+      currentLessonBg: State.currentLessonBg,
+      currentLessonFontSize: State.currentLessonFontSize,
+      currentLessonFontFamily: State.currentLessonFontFamily,
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);

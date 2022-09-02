@@ -1,4 +1,14 @@
-import { Avatar, Complexity, Lang, Layout, Page, Theme } from '../../types/enums';
+import {
+  Avatar,
+  Complexity,
+  Lang,
+  Layout,
+  LessonBg,
+  Page,
+  Theme,
+  LessonFontSize,
+  LessonFontFamily,
+} from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
 class State {
@@ -20,6 +30,12 @@ class State {
   public static currentLayout: Layout;
 
   public static currentComplexity: Complexity | undefined;
+
+  public static currentLessonBg = LessonBg.default;
+
+  public static currentLessonFontSize = LessonFontSize.normal;
+
+  public static currentLessonFontFamily = LessonFontFamily.default;
 }
 
 export default State;

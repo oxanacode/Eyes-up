@@ -23,7 +23,7 @@ class LessonMain {
       return main;
     }
 
-    main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'lesson' }]);
+    main = CreateElement.createElement(Tag.main, [{ name: 'class', value: `lesson lesson-${State.currentLessonBg}` }]);
     LessonState.page = main;
 
     const topWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-top' }]);

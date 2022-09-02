@@ -99,25 +99,6 @@
   }
 }
 
-.section-btns-wrapper {
-  max-width: 110rem;
-  display: flex;
-  column-gap: 8rem;
-
-  @include desktop-small {
-    column-gap: 5rem;
-  }
-
-  @include tablet {
-    column-gap: 3rem;
-  }
-
-  @include mobile {
-    flex-direction: column;
-    row-gap: 3rem;
-  }
-}
-
 .section-btn {
   flex-grow: 1;
   width: 100%;
@@ -161,6 +142,7 @@
   cursor: pointer;
   line-height: 2.4rem;
   padding-left: 3.4rem;
+  z-index: 10;
 
   &:hover {
     color: $c-main-text;

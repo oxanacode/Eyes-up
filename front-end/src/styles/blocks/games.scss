@@ -1,7 +1,4 @@
 .games {
-  display: grid;
-  grid-template-columns: minmax(min-content, 110rem);
-  row-gap: 3rem;
   max-width: 110rem;
   padding: 0 8rem;
   margin: 0 auto 4rem;
@@ -14,6 +11,49 @@
     padding: 0 1.6rem;
     row-gap: 2rem;
   }
+}
+
+.games-section-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "gameOneBtn gameTwoBtn"
+    "gameOneDesc gameTwoDesc";
+  column-gap: 8rem;
+  row-gap: 3rem;
+  margin-top: 3rem;
+
+  @include desktop-small {
+    column-gap: 5rem;
+  }
+
+  @include tablet {
+    column-gap: 3rem;
+  }
+
+  @include mobile {
+    grid-template-columns: 1fr;
+    grid-template-areas: "gameOneBtn"
+      "gameOneDesc"
+      "gameTwoBtn" 
+      "ameTwoDesc";
+    row-gap: 3rem;
+  }
+}
+
+.game-one-btn {
+  grid-area: gameOneBtn;
+}
+
+.game-two-btn {
+  grid-area: gameTwoBtn;
+}
+
+.game-one-game-desc {
+  grid-area: gameOneDesc;
+}
+
+.game-two-game-desc {
+  grid-area: gameTwoDesc;
 }
 
 .game-one-bg {
@@ -32,19 +72,8 @@
   }
 }
 
-.game {
-  flex-grow: 1;
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  row-gap: 3rem;
-
-  @include mobile {
-    row-gap: 1rem;
-  }
-}
-
-.game-desc {
+.game-one-desc,
+.game-two-desc {
   padding: 3rem 4rem;
   background-color: $c-block-bg;
   border-radius: $big-border-radius;

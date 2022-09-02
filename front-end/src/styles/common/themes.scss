@@ -22,6 +22,10 @@ body.light {
   --c-lesson-btn-border: #F6F6F6;
   --c-key-border: #E1E1E1;
   --c-modal-overlay: rgba(50, 50, 50, .2);
+  --c-lesson-bg-default: #FFFFFF;
+  --c-lesson-bg-one: #EEF5FF;
+  --c-lesson-bg-two: #DBDDFF;
+
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
   --bxs-result-shadow: 0px 0px 100px rgba(33, 37, 41, 0.15);
@@ -99,6 +103,9 @@ body.dark {
   --c-lesson-btn-border: #3C4A64;
   --c-key-border: #3C4A64;
   --c-modal-overlay: rgba(0, 0, 0, .5);
+  --c-lesson-bg-default: #1E273A;
+  --c-lesson-bg-one: #044565 ;
+  --c-lesson-bg-two: #3A4765;
 
   --bxs-modal-shadow: 0px 0px 10px rgba(33, 37, 41, 0.15);
   --bxs-result-shadow: 0px 0px 20px rgba(30, 69, 107, 0.5);
@@ -177,6 +184,9 @@ $c-lesson-btn-border: var(--c-lesson-btn-border);
 $c-key-border: var(--c-key-border);
 $c-error-text: #DA5C54;
 $c-confirmation-yes-text: #F3F3F4;
+$c-lesson-bg-default: var(--c-lesson-bg-default);
+$c-lesson-bg-one: var(--c-lesson-bg-one);
+$c-lesson-bg-two: var(--c-lesson-bg-two);
 
 $bxs-modal-shadow: var(--bxs-modal-shadow);
 $bxs-result-shadow: var(--bxs-result-shadow);

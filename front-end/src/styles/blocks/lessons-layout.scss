@@ -78,3 +78,22 @@
     }
   }
 }
+
+.section-btns-wrapper {
+  max-width: 110rem;
+  display: flex;
+  column-gap: 8rem;
+
+  @include desktop-small {
+    column-gap: 5rem;
+  }
+
+  @include tablet {
+    column-gap: 3rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+}

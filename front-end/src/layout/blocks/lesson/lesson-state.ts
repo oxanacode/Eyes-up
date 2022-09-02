@@ -1,3 +1,4 @@
+import { LessonLineHeight } from '../../../types/enums';
 import { Lesson, User } from '../../../types/interfaces';
 
 class LessonState {
@@ -45,7 +46,7 @@ class LessonState {
 
   public static typedChars = 0;
 
-  public static lineHeight = 40;
+  public static lineHeight = LessonLineHeight.normal;
 
   public static clearState() {
     LessonState.lessonsNumber = 0;
