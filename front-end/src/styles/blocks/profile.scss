@@ -308,9 +308,55 @@
 
 .not-earned-badge {
   filter: grayscale(100%);
+  opacity: 0.7;
+  transition: $transition-time;
+
+  &:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
 }
 
 .profile-badge-title {
   font-size: 1.6rem;
   font-weight: $fw-bold;
+}
+
+.profile-earned-badges {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 1rem;
+    padding: 0 4rem;
+  }
+
+  @include mobile-badges {
+    column-gap: 2rem;
+    padding: 0 2.5rem;
+  }
+
+  @include mobile-small {
+    padding: 0 0.5rem;
+  }
+
+  @include mobile-small-badges {
+    padding: 0;
+  }
+}
+
+.earned-badges-image {
+  width: 12rem;
+
+  @include tablet-small {
+    width: 10rem;
+  }
+
+  @include mobile-small {
+    width: 8rem;
+  }
 }

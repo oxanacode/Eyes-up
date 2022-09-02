@@ -7,6 +7,7 @@ import ConfirmationContent from '../confirmation/confirmation-content';
 import Subtitle from '../../../elements/subtitle';
 import ProfileStats from './profile-stats';
 import ProfileBadgesTitle from './profile-badges-title';
+import ProfileEarnedBadges from './profile-earned-badges';
 import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
 
@@ -48,9 +49,10 @@ class ViewProfileModal {
     const statsTitle = Subtitle.createSubtitle('subtitle profile-subtitle', translation.statsTitle[State.currentLang]);
     const statsData = ProfileStats.createProfileStats(user);
     const badgesTitle = ProfileBadgesTitle.createProfileBadgesTitle(data, logoutWrapper, profileBadges, modal, user);
+    const badgesData = ProfileEarnedBadges.createProfileEarnedBadges(user);
 
     logoutWrapper.append(logoutConfirmation, logoutBtn);
-    modal.append(header, data, statsTitle, statsData, badgesTitle, logoutWrapper);
+    modal.append(header, data, statsTitle, statsData, badgesTitle, badgesData, logoutWrapper);
 
     return modal;
   }

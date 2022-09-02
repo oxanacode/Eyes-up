@@ -29,14 +29,26 @@
   }
 }
 
+@mixin mobile {
+  @media (max-width: $mobile-width) {
+    @content;
+  }
+}
+
+@mixin mobile-badges {
+  @media (max-width: $mobile-badges-width) {
+    @content;
+  }
+}
+
 @mixin mobile-small {
   @media (max-width: $mobile-small-width) {
     @content;
   }
 }
 
-@mixin mobile {
-  @media (max-width: $mobile-width) {
+@mixin mobile-small-badges {
+  @media (max-width: $mobile-small-badges-width) {
     @content;
   }
 }
