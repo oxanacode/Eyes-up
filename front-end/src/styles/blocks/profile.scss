@@ -246,20 +246,18 @@
 }
 
 .profile-stats-score-wrapper {
-  @include default-wrapper;
+  display: flex;
   gap: 0.3rem;
 }
 
 .profile-stats-score-value {
-  display: block;
-  height: 1.4rem;
+  line-height: 1.92rem;
 }
 
 .profile-stats-score-mark {
   @include small-btn-bg;
-  display: block;
   width: 1.4rem;
-  height: 1.4rem;
+  height: 1.92rem;
   background-image: $bg-lessons-star;
   background-size: 1.4rem;
 }
