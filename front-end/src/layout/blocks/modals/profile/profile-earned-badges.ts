@@ -13,14 +13,52 @@ class ProfileEarnedBadges {
     const badgesList = [...Object.keys(badgesDescription)];
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-earned-badges' }]);
 
-    for (let i = 0; i < EARNED_BADGES_AMOUNT; i += 1) {
-      if (userBadges === Data.noData) {
+    if (userBadges === Data.noData) {
+      for (let i = 0; i < EARNED_BADGES_AMOUNT; i += 1) {
         const img = BadgeImage.createBadgeImage(
           'earned-badges-image not-earned-badge',
           BadgeImage.createBadgeImagePath(badgesList[i])
         );
-
         wrapper.append(img);
+      }
+    }
+
+    if (userBadges !== Data.noData) {
+      if (userBadges.length === EARNED_BADGES_AMOUNT) {
+        for (let i = 0; i < EARNED_BADGES_AMOUNT; i += 1) {
+          const img = BadgeImage.createBadgeImage(
+            'earned-badges-image',
+            BadgeImage.createBadgeImagePath(`${userBadges[i]}`)
+          );
+          wrapper.append(img);
+        }
+      }
+
+      if (userBadges.length > EARNED_BADGES_AMOUNT) {
+        for (let i = userBadges.length - EARNED_BADGES_AMOUNT; i < userBadges.length; i += 1) {
+          const img = BadgeImage.createBadgeImage(
+            'earned-badges-image',
+            BadgeImage.createBadgeImagePath(`${userBadges[i]}`)
+          );
+          wrapper.append(img);
+        }
+      }
+
+      if (userBadges.length < EARNED_BADGES_AMOUNT) {
+        for (let i = 0; i < userBadges.length; i += 1) {
+          const img = BadgeImage.createBadgeImage(
+            'earned-badges-image',
+            BadgeImage.createBadgeImagePath(`${userBadges[i]}`)
+          );
+          wrapper.append(img);
+        }
+        for (let i = 0; i < EARNED_BADGES_AMOUNT - userBadges.length; i += 1) {
+          const img = BadgeImage.createBadgeImage(
+            'earned-badges-image not-earned-badge',
+            BadgeImage.createBadgeImagePath(badgesList[i])
+          );
+          wrapper.append(img);
+        }
       }
     }
 
