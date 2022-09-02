@@ -134,7 +134,7 @@ const badgesDescription: BadgesDescription = {
   '14': {
     en: {
       title: 'First steps (En)!',
-      text: 'You have reached the typing speed of 20 wpm at the En layout.',
+      text: 'You have reached typing speed of 20 wpm at the En layout.',
     },
     ru: {
       title: 'Первые шаги (En)!',
@@ -144,7 +144,7 @@ const badgesDescription: BadgesDescription = {
   '15': {
     en: {
       title: 'First steps (Ru)!',
-      text: 'You have reached the typing speed of 20 wpm at the Ru layout.',
+      text: 'You have reached typing speed of 20 wpm at the Ru layout.',
     },
     ru: {
       title: 'Первые шаги (Ru)!',
@@ -154,7 +154,7 @@ const badgesDescription: BadgesDescription = {
   '16': {
     en: {
       title: 'The Typing Machine (En)!',
-      text: 'You have reached the typing speed of 60 wpm at the En layout.',
+      text: 'You have reached typing speed of 60 wpm at the En layout.',
     },
     ru: {
       title: 'Печатная машина (En)!',
@@ -164,7 +164,7 @@ const badgesDescription: BadgesDescription = {
   '17': {
     en: {
       title: 'The Typing Machine (Ru)!',
-      text: 'You have reached the typing speed of 60 wpm at the Ru layout.',
+      text: 'You have reached typing speed of 60 wpm at the Ru layout.',
     },
     ru: {
       title: 'Печатная машина (Ru)!',
@@ -174,7 +174,7 @@ const badgesDescription: BadgesDescription = {
   '18': {
     en: {
       title: 'Fast fingers (En)!',
-      text: 'You have reached the typing speed of 100 wpm at the En layout.',
+      text: 'You have reached typing speed of 100 wpm at the En layout.',
     },
     ru: {
       title: 'Быстрые пальцы (En)!',
@@ -184,7 +184,7 @@ const badgesDescription: BadgesDescription = {
   '19': {
     en: {
       title: 'Fast fingers (Ru)!',
-      text: 'You have reached the typing speed of 100 wpm at the Ru layout.',
+      text: 'You have reached typing speed of 100 wpm at the Ru layout.',
     },
     ru: {
       title: 'Быстрые пальцы (Ru)!',

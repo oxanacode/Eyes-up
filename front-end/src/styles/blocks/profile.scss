@@ -273,3 +273,44 @@
 .profile-badges-title .profile-subtitle {
   margin-bottom: 0;
 }
+
+.profile-badges-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+  padding-top: 1rem;
+
+  @include tablet-small {
+    grid-template-columns: 1fr;
+    padding-top: 0rem;
+  }
+}
+
+.profile-badge-item {
+  @include font-main;
+  @include default-wrapper;
+  gap: 1rem;
+
+  @include tablet-small {
+    width: 38rem;
+    margin: 0 auto;
+  }
+
+  @include mobile-small {
+    width: 100%;
+  }
+}
+
+.all-badges-image {
+  width: $desktop-margin;
+}
+
+.not-earned-badge {
+  filter: grayscale(100%);
+}
+
+.profile-badge-title {
+  font-size: 1.6rem;
+  font-weight: $fw-bold;
+}
