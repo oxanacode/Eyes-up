@@ -1,6 +1,6 @@
 .lesson {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
 
  &::before {
     content: '';
@@ -78,7 +78,7 @@
   }
 
   @include tablet {
-    margin: 3rem auto;
+    margin: 4rem auto;
   }
   
   @include mobile {

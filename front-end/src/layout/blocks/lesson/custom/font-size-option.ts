@@ -24,7 +24,9 @@ class FontSizeOption {
       LessonState.contentWrapper.classList.remove(`lesson-${State.currentLessonFontSize}`);
       LessonState.contentWrapper.classList.add(`lesson-${className}`);
       State.currentLessonFontSize = className;
-      RowsPosition.check();
+
+      if (LessonState.contentWrapper.style.visibility !== 'hidden') RowsPosition.check();
+
       ManageState.saveState();
     });
 

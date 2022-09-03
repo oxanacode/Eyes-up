@@ -60,7 +60,7 @@
 .bg-default,
 .bg-one,
 .bg-two {
-  &:hover {
+  &:not(.active-bg-option):hover {
     transition: 0s;
     outline: 0.2rem solid $c-accent;
   }

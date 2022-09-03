@@ -1,6 +1,7 @@
 import State from '../../../scripts/state/state';
-import { LessonFontSize, LessonLineHeight } from '../../../types/enums';
 import LessonState from './lesson-state';
+
+import { LessonFontSize, LessonLineHeight } from '../../../types/enums';
 
 class RowsPosition {
   public static getStep(): number {
