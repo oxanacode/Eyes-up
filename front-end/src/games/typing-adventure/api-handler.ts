@@ -86,7 +86,7 @@ class ApiHandler {
     const uniqueBeasts: string[] = [];
 
     beasts.forEach((beast) => {
-      if (!uniqueBeasts.includes(beast.beastType)) uniqueBeasts.push(beast.beastType);
+      if (!uniqueBeasts.includes(beast.beastType) && beast.done) uniqueBeasts.push(beast.beastType);
     });
 
     return uniqueBeasts.length;
