@@ -361,6 +361,22 @@ const translation: Translation = {
     en: `You've reached a typing speed of 100wpm!`,
     ru: 'Вы достигли скорости печати 100 слов в минуту!',
   },
+  lessonSoundSilent: {
+    en: 'Silent',
+    ru: 'Без звука',
+  },
+  lessonSoundSoft: {
+    en: 'Soft Laptop',
+    ru: 'Мягкий звук',
+  },
+  lessonSoundHard: {
+    en: 'Hard Laptop',
+    ru: 'Громкий звук',
+  },
+  lessonSoundMech: {
+    en: 'Mechanical',
+    ru: 'Механический',
+  },
 };
 
 export default translation;

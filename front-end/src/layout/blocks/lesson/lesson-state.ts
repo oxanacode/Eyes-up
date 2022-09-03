@@ -1,3 +1,4 @@
+import { LessonLineHeight } from '../../../types/enums';
 import { Lesson, User } from '../../../types/interfaces';
 
 class LessonState {
@@ -10,6 +11,8 @@ class LessonState {
   public static lessonChars: Array<HTMLElement>;
 
   public static page: HTMLElement;
+
+  public static audio: HTMLAudioElement;
 
   public static charsWrapper: HTMLElement;
 
@@ -45,7 +48,7 @@ class LessonState {
 
   public static typedChars = 0;
 
-  public static lineHeight = 40;
+  public static lineHeight = LessonLineHeight.normal;
 
   public static clearState() {
     LessonState.lessonsNumber = 0;
