@@ -130,6 +130,7 @@ export interface TypingAdventureData {
   firstFieldRender: boolean;
   userLvl: number;
   userSpells: Record<string, string>[];
+  uniqueBeasts: number;
   gameBeasts: TypingAdventureBeast[];
   achievements: Record<string, boolean>;
 }

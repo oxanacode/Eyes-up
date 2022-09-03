@@ -10,7 +10,6 @@ interface IBeast {
   hp: number;
   renderCallback: () => void;
   done: boolean;
-
   createBeast(): HTMLElement;
 }
 
@@ -31,6 +30,7 @@ export interface Idata {
   firstFieldRender: boolean;
   userLvl: number;
   userSpells: Record<string, string>[];
+  uniqueBeasts: number;
   gameBeasts: IBeast[];
   achievements: Record<string, boolean>;
 }

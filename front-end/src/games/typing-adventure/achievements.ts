@@ -16,6 +16,18 @@ class Achievements {
     gameDone: false,
   };
 
+  static achievementsNums: { [index: string]: number } = {
+    tenSpells: 2,
+    lvlUp: 1,
+    halfGame: 3,
+    gameDone: 4,
+    thunderSpells: 5,
+    fireSpells: 6,
+    waterSpells: 7,
+    lightSpells: 8,
+    windSpells: 9,
+  };
+
   static windowsCounter = 0;
 
   static setStatus() {
