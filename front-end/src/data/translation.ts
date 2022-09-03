@@ -18,32 +18,32 @@ const translation: Translation = {
     ru: 'Typing Adventure',
   },
   gameOneDescFirst: {
-    en: 'Do you want to feel yourself like a real seeker of adventures? Welcome to Typing Adventure!',
+    en: 'Do you want to feel yourself like a real seeker of adventures? Then welcome to Typing Adventure!',
     ru: 'Хотите почувствовать себя настоящим искателем приключений? Добро пожаловать в Typing Adventure!',
   },
   gameOneDescSecond: {
-    en: 'Here fights with various monsters are waiting for you and the victory over them depends only on how quickly and accurately you will type spells. With each level not only your skills will grow, but also the strength of the monsters - so do not forget to combine attacks to cause more damage.',
-    ru: 'Здесь вас ждут схватки с разнообразными монстрами, а победа или поражение зависит от того, насколько быстро и точно вы будете печатать заклинания. С каждым уровнем будут расти не только ваши навыки, но и сила монстров - поэтому не забывайте комбинировать атаки, чтобы наносить больше урона.',
+    en: 'Fights with various monsters are waiting for you and the victory over them depends only on how quickly and accurately you will type spells. Your skills will grow with each level, but so will the strength of the monsters - so do not forget to combine attacks to cause more damage.',
+    ru: 'Вас ждут схватки с разнообразными монстрами, а победа над ними зависит только от того, насколько быстро и точно вы будете печатать заклинания. С каждым уровнем будут расти не только ваши навыки, но и сила монстров - поэтому не забывайте комбинировать атаки, чтобы наносить больше урона.',
   },
   gameOneDescThird: {
-    en: 'Well, are you ready? Then go ahead, towards adventures!',
-    ru: 'Ну что, готовы? Тогда вперед, навстречу приключениям!',
+    en: `Well, are you ready? Let's go on an adventure!`,
+    ru: 'Ну что, готовы? Вперед, навстречу приключениям!',
   },
   gameTwoTitle: {
     en: 'Typing Hero',
     ru: 'Typing Hero',
   },
   gameTwoDescFirst: {
-    en: 'Text',
-    ru: 'Описание',
+    en: 'Always dreamed to become a hero of the stage? Your dream can come true right now in Typing Hero!',
+    ru: 'Всегда мечтали стать героем сцены? Ваша мечта может осуществиться прямо сейчас в Typing Hero!',
   },
   gameTwoDescSecond: {
-    en: 'Text',
-    ru: 'Описание',
+    en: 'Keyboard will take place of the guitar neck and letters will replace notes, but the result will still depend on your skill and fingers speed. You also will be able to write your own "melody" by choosing the speed, the number of "frets" and the duration of the level in a special menu.',
+    ru: 'Место гитарного грифа займет клавиатура, а буквы заменят ноты, но результат все также будет зависеть от вашего мастерства и скорости пальцев. Вы также сможете написать собственную "мелодию", самостоятельно выбрав скорость, количество "ладов" и продолжительность уровня в специальном меню.',
   },
   gameTwoDescThird: {
-    en: 'Text',
-    ru: 'Описание',
+    en: 'Are you ready to perform? The stage awaits for you!',
+    ru: 'Ну что, готовы к выступлению? Сцена вас ждет!',
   },
   aboutUsLink: {
     en: 'About Us',
