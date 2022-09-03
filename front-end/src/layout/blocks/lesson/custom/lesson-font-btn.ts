@@ -1,7 +1,9 @@
 import CreateElement from '../../../elements/create-element';
-
-import { LessonFontSize, Tag } from '../../../../types/enums';
 import FontSizeOption from './font-size-option';
+import FontFamilyOption from './font-family-option';
+import ActiveOption from './active-option';
+
+import { LessonFontFamily, LessonFontSize, Tag } from '../../../../types/enums';
 
 class LessonFontBtn {
   public static fillOptionPanel(panel: HTMLElement, overlay: HTMLElement): void {
@@ -12,12 +14,18 @@ class LessonFontBtn {
     const fontSizeNormal = FontSizeOption.create(LessonFontSize.normal);
     const fontSizeSmall = FontSizeOption.create(LessonFontSize.small);
     const fontSizeBig = FontSizeOption.create(LessonFontSize.big);
+    const fontFamilySansSerif = FontFamilyOption.create(LessonFontFamily.default);
+    const fontFamilySerif = FontFamilyOption.create(LessonFontFamily.serif);
 
     fontSizeNormal.textContent = 'Aa';
     fontSizeSmall.textContent = 'Aa';
     fontSizeBig.textContent = 'Aa';
+    fontFamilySansSerif.textContent = 'Font Sans Serif';
+    fontFamilySerif.textContent = 'Font Serif';
+    fontFamilyOptions.append(fontFamilySansSerif, fontFamilySerif);
     fontSizeOptions.append(fontSizeSmall, fontSizeNormal, fontSizeBig);
     fontOptions.append(fontSizeOptions, fontFamilyOptions);
+
     optionsPanel.classList.remove('hidden');
     optionsPanel.textContent = '';
     optionsPanel.append(fontOptions);
@@ -29,6 +37,11 @@ class LessonFontBtn {
 
     fontBtn.addEventListener('click', () => {
       LessonFontBtn.fillOptionPanel(panel, overlay);
+
+      if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');
+
+      ActiveOption.option = fontBtn;
+      ActiveOption.option.classList.add('active-option');
     });
 
     return fontBtn;

@@ -35,7 +35,7 @@
     grid-template-areas: "gameOneBtn"
       "gameOneDesc"
       "gameTwoBtn" 
-      "ameTwoDesc";
+      "gameTwoDesc";
     row-gap: 3rem;
   }
 }
@@ -48,11 +48,11 @@
   grid-area: gameTwoBtn;
 }
 
-.game-one-game-desc {
+.game-one-desc {
   grid-area: gameOneDesc;
 }
 
-.game-two-game-desc {
+.game-two-desc {
   grid-area: gameTwoDesc;
 }
 
@@ -77,6 +77,12 @@
   padding: 3rem 4rem;
   background-color: $c-block-bg;
   border-radius: $big-border-radius;
+  text-align: justify;
+
+  @include tablet {
+    padding: 3rem 3rem;
+
+  }
 }
 
 .game-desc-text {

@@ -1,5 +1,6 @@
 import CreateElement from '../../../elements/create-element';
 import BgOption from './bg-option';
+import ActiveOption from './active-option';
 
 import { LessonBg, Tag } from '../../../../types/enums';
 
@@ -23,6 +24,11 @@ class LessonBgBtn {
 
     bgBtn.addEventListener('click', () => {
       LessonBgBtn.fillOptionPanel(panel, overlay);
+
+      if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');
+
+      ActiveOption.option = bgBtn;
+      ActiveOption.option.classList.add('active-option');
     });
 
     return bgBtn;

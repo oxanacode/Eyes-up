@@ -8,6 +8,8 @@ import {
   Theme,
   LessonFontSize,
   LessonFontFamily,
+  LessonSound,
+  LessonSkin,
 } from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
@@ -36,6 +38,10 @@ class State {
   public static currentLessonFontSize = LessonFontSize.normal;
 
   public static currentLessonFontFamily = LessonFontFamily.default;
+
+  public static currentLessonSound = LessonSound.silent;
+
+  public static currentLessonSkin = LessonSkin.default;
 }
 
 export default State;

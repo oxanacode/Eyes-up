@@ -62,7 +62,7 @@
   position: relative;
 
   @include desktop-small {
-    margin: 0 auto 10rem;
+    margin: 0 auto 15rem;
     flex-direction: column;
     height: 70rem;
   }
@@ -334,5 +334,22 @@
       height: 40rem;
       bottom: -10rem;
     }
+  }
+}
+
+.home-lessons-content,
+.home-progress-content {
+  padding-left: 6rem;
+
+  @include desktop-small {
+    padding-left: 0;
+  }
+}
+
+.home-games-content {
+  padding-right: 3rem;
+
+  @include desktop-small {
+    padding-right: 0;
   }
 }

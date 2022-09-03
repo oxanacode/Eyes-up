@@ -5,11 +5,39 @@
   position: absolute;
   top: 5rem;
   border-radius: 0 0  $small-border-radius $small-border-radius;
+  border-bottom: 0.2rem solid $c-accent;
+  border-left: 0.2rem solid $c-accent;
+  border-right: 0.2rem solid $c-accent;
   z-index: 10;
 
   @include mobile {
     right: 0; 
   } 
+}
+
+.lesson-font-btn.active-option {
+  background: $bg-lesson-font-hover no-repeat center;
+  background-color: $c-body-bg;
+}
+
+.lesson-sound-btn.active-option {
+  background: $bg-lesson-sound-hover no-repeat center;
+  background-color: $c-body-bg;
+}
+
+.lesson-bg-btn.active-option {
+  background: $bg-lesson-bg-hover no-repeat center;
+  background-color: $c-body-bg;
+}
+
+.lesson-skin-btn.active-option {
+  background: $bg-lesson-skin-hover no-repeat center;
+  background-color: $c-body-bg;
+}
+
+.active-option {
+  border-radius: $small-border-radius;
+  transition: 0s;
 }
 
 .options-panel-overlay {
@@ -96,12 +124,16 @@
   }
 }
 
-.active-option {
+.active-bg-option {
   outline: 0.4rem solid $c-accent;
   transition: 0s;
 }
 
 .options-font {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  justify-content: center;
   padding: 0 3rem;
 }
 
@@ -109,6 +141,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: 0.1rem solid $c-menu-inactive-link;
 }
 
 .font-size-normal,
@@ -117,7 +150,10 @@
   color: $c-main-text;
   width: 6rem;
   height: 6rem;
-  transition: 0s;
+
+  &:not(.active-font-size-option):hover {
+    color: $c-menu-inactive-link;
+  }
 }
 
 .font-size-normal {
@@ -149,4 +185,162 @@
 .lesson-font-size-big {
   font-size: 3.6rem;
   line-height: 6rem;
+}
+
+.options-font-family {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.font-family-sans-serif,
+.font-family-serif {
+  @include font-subtitle-mobile;
+  color: $c-main-text; 
+
+  &:not(.active-font-family-option):hover {
+    color: $c-menu-inactive-link;
+  }
+}
+
+.font-family-serif {
+  font-family: 'NotoSerif', 'Times New Roman', Times, serif;
+}
+
+.lesson-font-family-serif {
+  font-family: 'Nunito', Arial, Helvetica, sans-serif;
+}
+
+.lesson-font-family-serif {
+  font-family: 'NotoSerif', 'Times New Roman', Times, serif;
+}
+
+.active-font-family-option {
+  color: $c-accent;
+}
+
+.options-sound {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  padding: 2rem;
+}
+
+.sound-silent,
+.sound-soft,
+.sound-hard,
+.sound-mechanical {
+  @include font-main;
+  color: $c-main-text;
+  transition: 0s;
+
+  &:not(.active-sound-option):hover {
+    color: $c-accent;
+  }
+}
+
+.active-sound-option {
+  background-color: $c-accent;
+  color: white;
+  border-radius: $small-border-radius;
+}
+
+.options-skin {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.skin-default,
+.skin-one,
+.skin-two,
+.skin-three {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 5.6rem;
+  outline: 0.2rem solid $c-key-border;
+  transition: 0s;
+
+  &:not(.active-skin-option):hover {
+    transition: 0s;
+    outline: 0.2rem solid $c-accent;
+  }
+}
+
+.skin-default {
+  background: url(./assets/images/background/custom/skin-choice-default-preview.svg) center;
+  background-size: 5.6rem;
+}
+
+.skin-one {
+  background: url(./assets/images/background/custom/skin-choice-one-preview.svg) center;
+  background-size: 5.6rem;
+}
+
+.skin-two {
+  background: url(./assets/images/background/custom/skin-choice-two-preview.svg) center;
+  background-size: 5.6rem;
+}
+
+.skin-three {
+  background: url(./assets/images/background/custom/skin-choice-three-preview.svg) center;
+  background-size: 5.6rem;
+}
+
+
+.active-skin-option {
+  outline: 0.4rem solid $c-accent;
+  transition: 0s;
+}
+
+.lesson-skin-one .keyboard-key {
+  border-radius: 5rem;
+
+  &.key-function {
+    @include font-keyboard-function;
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    padding-left: 0.4rem;
+  }
+}
+
+.lesson-skin-default .keyboard-key {
+  border-radius: 0.5rem;
+}
+
+.lesson-skin-two .keyboard-key {
+  border: none;
+  background-color: $c-skin-two-bg-all;
+  border-radius: 0.5rem;
+
+  &.key-function {
+    background-color: $c-skin-two-bg-func;
+  } 
+
+  &.current-char {
+    background-color: $c-accent;
+  }
+}
+
+.lesson-skin-three .keyboard-key {
+  border: none;
+  background-color: $c-skin-two-bg-all;
+  border-radius: 5rem;
+
+  &.key-function {
+    display: flex;
+    justify-content: center;
+    text-align: start;
+    background-color: $c-skin-two-bg-func;
+  } 
+
+  &.current-char {
+    background-color: $c-accent;
+  }
 }

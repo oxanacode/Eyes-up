@@ -25,12 +25,12 @@
   align-content: center;
   text-align: center;
   border: 0.1rem solid $c-key-border;
-
   color: $c-main-text;
   background-color: $c-block-bg;
-  border-radius: 0.5rem;
+  position: relative;
+  z-index: -2;
     
-  &.key_function {
+  &.key-function {
     @include font-keyboard-function;
     display: flex;
     justify-content: end;

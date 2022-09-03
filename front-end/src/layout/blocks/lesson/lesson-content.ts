@@ -7,7 +7,10 @@ import State from '../../../scripts/state/state';
 class LessonContent {
   public static createLessonContent(): HTMLElement {
     const lessonContent = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: `lesson-content lesson-${State.currentLessonFontSize}` },
+      {
+        name: 'class',
+        value: `lesson-content lesson-${State.currentLessonFontSize} lesson-${State.currentLessonFontFamily}`,
+      },
     ]);
     const charsArray: Array<HTMLElement> = [];
     const charsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'chars-wrapper' }]);

@@ -2,10 +2,10 @@ import CreateElement from '../../../elements/create-element';
 import LessonState from '../lesson-state';
 import State from '../../../../scripts/state/state';
 import ManageState from '../../../../scripts/state/manage-state';
-
-import { LessonFontSize, Tag } from '../../../../types/enums';
 import ActiveOption from './active-option';
 import RowsPosition from '../rows-position';
+
+import { LessonFontSize, Tag } from '../../../../types/enums';
 
 class FontSizeOption {
   public static create(className: LessonFontSize): HTMLElement {

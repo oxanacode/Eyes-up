@@ -12,6 +12,8 @@ class LessonState {
 
   public static page: HTMLElement;
 
+  public static audio: HTMLAudioElement;
+
   public static charsWrapper: HTMLElement;
 
   public static contentWrapper: HTMLElement;

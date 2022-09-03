@@ -20,15 +20,16 @@ class LessonKeyboard {
   }
 
   public static createLessonKeyboard(): HTMLElement {
-    const keyboard = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-keyboard' }]);
-
+    const keyboard = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: `lesson-keyboard lesson-${State.currentLessonSkin}` },
+    ]);
     keys.forEach((row) => {
       const keyboardRow = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'keyboard-row' }]);
       row.forEach((key) => {
         const keyElement = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'keyboard-key' }]);
 
         if (key.type === 'Function') {
-          keyElement.classList.add('key_function');
+          keyElement.classList.add('key-function');
           keyElement.textContent = `${key.down}`;
         }
         if (key.specialSize) {
@@ -76,7 +77,6 @@ class LessonKeyboard {
       });
       keyboard.append(keyboardRow);
     });
-
     return keyboard;
   }
 }
