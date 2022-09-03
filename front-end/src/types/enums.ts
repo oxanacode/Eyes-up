@@ -19,6 +19,7 @@ export enum Tag {
   label = 'label',
   list = 'ul',
   listItem = 'li',
+  audio = 'audio',
 }
 
 export enum InputType {
@@ -152,4 +153,41 @@ export enum Badge {
   eighteen = 18,
   nineteen = 19,
   twenty = 20,
+}
+
+export enum LessonBg {
+  default = 'bg-default',
+  one = 'bg-one',
+  two = 'bg-two',
+}
+
+export enum LessonFontSize {
+  normal = 'font-size-normal',
+  small = 'font-size-small',
+  big = 'font-size-big',
+}
+
+export enum LessonFontFamily {
+  default = 'font-family-sans-serif',
+  serif = 'font-family-serif',
+}
+
+export enum LessonLineHeight {
+  normal = 40,
+  small = 30,
+  big = 60,
+}
+
+export enum LessonSound {
+  soft = 'sound-soft',
+  hard = 'sound-hard',
+  mech = 'sound-mechanical',
+  silent = 'sound-silent',
+}
+
+export enum LessonSkin {
+  default = 'skin-default',
+  one = 'skin-one',
+  two = 'skin-two',
+  three = 'skin-three',
 }

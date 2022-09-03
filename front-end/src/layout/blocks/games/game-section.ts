@@ -9,27 +9,25 @@ import { Tag, Game, Page } from '../../../types/enums';
 
 class GameSection {
   public static createGameSection(
+    gamesWrapper: HTMLElement,
     className: string,
-    gameName: Game.one | Game.two,
+    gameName: Game,
     gamePage: Page.gameOne | Page.gameTwo,
     render: RenderHandler
-  ): HTMLElement {
-    const gameSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game' }]);
+  ) {
     const gameBtn = GameSectionBtn.createGameSectionBtn(
       className,
       translation[`${gameName}Title`][State.currentLang],
       gamePage,
       render
     );
-    const descSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: 'game-desc' }]);
+    const descSection = CreateElement.createElement(Tag.section, [{ name: 'class', value: `${className}-desc` }]);
     const descFirst = GameDesc.createGameDesc(translation[`${gameName}DescFirst`][State.currentLang]);
     const descSecond = GameDesc.createGameDesc(translation[`${gameName}DescSecond`][State.currentLang]);
     const descThird = GameDesc.createGameDesc(translation[`${gameName}DescThird`][State.currentLang]);
 
     descSection.append(descFirst, descSecond, descThird);
-    gameSection.append(gameBtn, descSection);
-
-    return gameSection;
+    gamesWrapper.append(gameBtn, descSection);
   }
 }
 

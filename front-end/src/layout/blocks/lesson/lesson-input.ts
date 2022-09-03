@@ -7,7 +7,7 @@ import LessonTimer from './lesson-timer';
 import LessonKeyboard from './lesson-keyboard';
 import LessonResult from './lesson-result';
 
-import { Tag } from '../../../types/enums';
+import { LessonSound, Tag } from '../../../types/enums';
 
 class LessonInput {
   public static checkMatch(inputChar: string): void {
@@ -80,6 +80,19 @@ class LessonInput {
     }
   }
 
+  public static turnOnSound() {
+    if (State.currentLessonSound === LessonSound.silent) return;
+
+    let audio = new Audio(`./assets/audio/${LessonSound.soft}.wav`);
+
+    if (State.currentLessonSound === LessonSound.hard) audio = new Audio(`./assets/audio/${LessonSound.hard}.wav`);
+
+    if (State.currentLessonSound === LessonSound.mech) audio = new Audio(`./assets/audio/${LessonSound.mech}.wav`);
+
+    audio.currentTime = 0;
+    audio.play();
+  }
+
   public static createLessonInput(): HTMLElement {
     const testInput = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'lesson-input' },
@@ -89,6 +102,7 @@ class LessonInput {
     LessonInput.highlightKey(0);
 
     testInput.addEventListener('input', () => {
+      LessonInput.turnOnSound();
       if (LessonState.inputIndex < LessonState.lessonChars.length)
         LessonState.lessonChars[LessonState.inputIndex].classList.remove('active-char');
 

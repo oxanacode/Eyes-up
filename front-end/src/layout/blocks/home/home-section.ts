@@ -9,7 +9,9 @@ class HomeSection {
     const title = MainTitle.createMainTitle(sectionTitle);
     const text = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'home-text' }]);
     const imgContainer = CreateElement.createElement(Tag.div, [{ name: 'class', value: `home-${sectionClass}-bg` }]);
-    const contentContainer = CreateElement.createElement(Tag.div);
+    const contentContainer = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: `home-${sectionClass}-content` },
+    ]);
 
     title.textContent = sectionTitle;
     text.textContent = sectionText;
