@@ -2,8 +2,10 @@ import GameState from './game-state';
 import Beast from './beasts/beast-creater';
 import ApiService from '../../scripts/api/api-service';
 import ParseTypingAdventure from '../../scripts/parsing/parse-typing-adventure';
+import ParseBadges from '../../scripts/parsing/parse-badges';
+import Achievements from './achievements';
 
-import { Idata, User } from './game-types/interfaces';
+import IBeast, { Idata, User } from './game-types/interfaces';
 
 class ApiHandler {
   static userData: User;
@@ -54,19 +56,59 @@ class ApiHandler {
     });
   }
 
+  static badgesHandler() {
+    if (!ApiHandler.userData || !GameState.achievementsCurrentStatus) return;
+
+    const { badges } = ApiHandler.userData;
+    const currentBadgesKeys = Object.keys(GameState.achievementsCurrentStatus);
+    const newBadges: number[] = [];
+
+    currentBadgesKeys.forEach((key) => {
+      if (GameState.achievementsCurrentStatus[key]) newBadges.push(Achievements.achievementsNums[key]);
+    });
+
+    if (badges === 'noData') ApiHandler.userData.badges = ParseBadges.setBadges(newBadges);
+    else {
+      const userBadges = ParseBadges.getBadges(badges);
+
+      newBadges.forEach((badge) => {
+        if (!userBadges.includes(badge)) userBadges.push(badge);
+      });
+
+      ApiHandler.userData.badges = ParseBadges.setBadges(userBadges);
+    }
+  }
+
+  static uniqueBeastsCounter() {
+    if (!GameState.currentGameBeasts) return 0;
+
+    const beasts: IBeast[] = GameState.currentGameBeasts;
+    const uniqueBeasts: string[] = [];
+
+    beasts.forEach((beast) => {
+      if (!uniqueBeasts.includes(beast.beastType)) uniqueBeasts.push(beast.beastType);
+    });
+
+    return uniqueBeasts.length;
+  }
+
   static setData() {
     if (!ApiHandler.userData) return;
+
+    const currentUniqueBeasts = ApiHandler.uniqueBeastsCounter();
 
     const gameData: Idata = {
       firstMapRender: GameState.firstAppearance,
       firstFieldRender: GameState.firstFieldAppearance,
       userLvl: GameState.userLvl,
       userSpells: GameState.userSpells,
+      uniqueBeasts: currentUniqueBeasts,
       gameBeasts: GameState.currentGameBeasts,
       achievements: GameState.achievementsCurrentStatus,
     };
 
     const gameDataJson = ParseTypingAdventure.setGameData(gameData);
+    ApiHandler.badgesHandler();
 
     const data: User = {
       _id: ApiHandler.userData._id,

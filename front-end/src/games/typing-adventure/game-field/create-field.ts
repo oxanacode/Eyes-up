@@ -79,7 +79,7 @@ class GameField {
       FieldState.beastHp = hp;
       FieldState.beastView = wrapper;
     } else {
-      hp.textContent = GameState.userHp.toString();
+      hp.textContent = (GameState.userHp * GameState.userLvl).toString();
       FieldState.heroHp = hp;
       FieldState.heroView = wrapper;
     }
