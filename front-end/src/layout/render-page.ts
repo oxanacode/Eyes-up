@@ -10,6 +10,7 @@ import ManageState from '../scripts/state/manage-state';
 import LessonsMain from './blocks/lessons/lessons-main';
 import TestMain from './blocks/testing/test-main';
 import TypingAdventure from '../games/typing-adventure/game-start';
+import TypingHero from '../games/typing-hero/game-start';
 import SwitchPage from '../scripts/layout/switch-page';
 import LessonMain from './blocks/lesson/lesson-main';
 import AboutMain from './blocks/about/about-main';
@@ -30,6 +31,9 @@ class RenderPage {
         break;
       case Page.gameOne:
         main = TypingAdventure.start(Page.games, SwitchPage.applyPage, RenderPage.renderPage);
+        break;
+      case Page.gameTwo:
+        main = TypingHero.start(Page.games, SwitchPage.applyPage, RenderPage.renderPage);
         break;
       default:
         main = LessonsMain.createLessonsMain(RenderPage.renderPage);
@@ -69,6 +73,7 @@ class RenderPage {
     if (
       State.currentPage === Page.lesson ||
       State.currentPage === Page.gameOne ||
+      State.currentPage === Page.gameTwo ||
       State.currentPage === Page.lessons ||
       State.currentPage === Page.test
     ) {
