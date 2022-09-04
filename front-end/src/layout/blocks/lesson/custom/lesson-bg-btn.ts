@@ -23,6 +23,14 @@ class LessonBgBtn {
     const bgBtn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lesson-bg-btn' }]);
 
     bgBtn.addEventListener('click', () => {
+      if (bgBtn.classList.contains('active-option')) {
+        bgBtn.classList.remove('active-option');
+        overlay.classList.add('hidden');
+        panel.classList.add('hidden');
+
+        return;
+      }
+
       LessonBgBtn.fillOptionPanel(panel, overlay);
 
       if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');

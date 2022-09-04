@@ -163,3 +163,7 @@ export interface UserTesting {
 export interface VirtualKeys {
   [key: string]: HTMLElement;
 }
+
+export interface Match {
+  [key: string]: string;
+}

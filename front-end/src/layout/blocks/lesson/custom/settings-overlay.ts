@@ -1,5 +1,6 @@
 import CreateElement from '../../../elements/create-element';
 import LessonState from '../lesson-state';
+import ActiveOption from './active-option';
 
 import { Tag } from '../../../../types/enums';
 
@@ -14,6 +15,7 @@ class SettingsOverlay {
       overlay.classList.add('hidden');
       optionsPanel.textContent = '';
       optionsPanel.classList.add('hidden');
+      ActiveOption.option.classList.remove('active-option');
     });
 
     return overlay;

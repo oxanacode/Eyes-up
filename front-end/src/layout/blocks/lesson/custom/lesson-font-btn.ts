@@ -36,6 +36,14 @@ class LessonFontBtn {
     const fontBtn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lesson-font-btn' }]);
 
     fontBtn.addEventListener('click', () => {
+      if (fontBtn.classList.contains('active-option')) {
+        fontBtn.classList.remove('active-option');
+        overlay.classList.add('hidden');
+        panel.classList.add('hidden');
+
+        return;
+      }
+
       LessonFontBtn.fillOptionPanel(panel, overlay);
 
       if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');

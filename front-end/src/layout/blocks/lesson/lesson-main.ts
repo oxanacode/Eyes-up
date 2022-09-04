@@ -36,6 +36,15 @@ class LessonMain {
     const restartBtn = LessonRestartBtn.createRestartBtn(render);
     const lessonContent = LessonContent.createLessonContent();
     const keyboard = LessonKeyboard.createLessonKeyboard();
+    const hands = CreateElement.createElement(Tag.img, [
+      { name: 'class', value: 'lesson-hands' },
+      { name: 'alt', value: 'Hands tip' },
+      { name: 'height', value: '500px' },
+      { name: 'width', value: '900px' },
+    ]) as HTMLImageElement;
+
+    LessonState.hands = hands;
+
     const input = LessonInput.createLessonInput();
 
     ribbon.textContent = translation.testRibbonText[State.currentLang];
@@ -44,7 +53,7 @@ class LessonMain {
     topWrapper.append(back, lessonSettings);
     contentTopWrapper.append(lessonStats, restartBtn);
     lessonWrapper.append(contentTopWrapper, lessonContent, input);
-    main.append(topWrapper, ribbon, lessonWrapper, keyboard);
+    main.append(topWrapper, ribbon, lessonWrapper, keyboard, hands);
 
     document.addEventListener('keydown', () => {
       input.focus();

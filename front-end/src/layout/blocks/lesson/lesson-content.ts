@@ -1,8 +1,8 @@
 import CreateElement from '../../elements/create-element';
 import LessonState from './lesson-state';
+import State from '../../../scripts/state/state';
 
 import { Tag } from '../../../types/enums';
-import State from '../../../scripts/state/state';
 
 class LessonContent {
   public static createLessonContent(): HTMLElement {
