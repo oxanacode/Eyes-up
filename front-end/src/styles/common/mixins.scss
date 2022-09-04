@@ -190,3 +190,20 @@
   border-radius: $big-border-radius;
   margin-bottom: 2rem;
 }
+
+@mixin confirmation-content {
+  @include bubble-modal-bg;
+  @include font-main;
+  position: absolute;
+  width: 24rem;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+@mixin confirmation-btn {
+  @include interaction-effects;
+  width: 6.6rem;
+  padding: 0.2rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.6rem;
+}
