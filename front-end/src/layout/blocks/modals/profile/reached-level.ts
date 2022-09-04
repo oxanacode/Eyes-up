@@ -10,7 +10,6 @@ class ReachedLevel {
     const listItem = CreateElement.createElement(Tag.listItem, [{ name: 'class', value: 'profile-stats-item' }]);
     const itemText = CreateElement.createElement(Tag.par);
     const itemValue = CreateElement.createElement(Tag.par);
-
     const reachedLevel = statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userLvl;
 
     itemText.textContent = translation.statsReachedLevel[State.currentLang];

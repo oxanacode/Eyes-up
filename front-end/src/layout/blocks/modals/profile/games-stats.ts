@@ -13,7 +13,7 @@ class GamesStats {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-stats-block' }]);
     const title = StatsTitle.createStatsTitle(translation.gamesTitle[State.currentLang]);
     const typingAdventure = TypingAdventureStats.createTypingAdventureStats(user);
-    const typinghero = TypingHeroStats.createTypingHeroStats();
+    const typinghero = TypingHeroStats.createTypingHeroStats(user);
 
     wrapper.append(title, typingAdventure, typinghero);
 

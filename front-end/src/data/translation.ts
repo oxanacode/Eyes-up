@@ -223,11 +223,23 @@ const translation: Translation = {
   },
   statsCollectedSpells: {
     en: 'Collected spells',
-    ru: 'Собранные заклинания',
+    ru: 'Собрано заклинаний',
   },
   statsDefeatedBeasts: {
     en: 'Defeated beasts',
-    ru: 'Побежденные монстры',
+    ru: 'Побеждено монстров',
+  },
+  statsCompletedLevels: {
+    en: 'Completed levels',
+    ru: 'Пройдено уровней',
+  },
+  statsBestScore: {
+    en: 'Best score',
+    ru: 'Лучший результат',
+  },
+  statsBestAccuracy: {
+    en: 'Best accuracy',
+    ru: 'Лучшая точность',
   },
   profileBadgesTitle: {
     en: 'Earned badges',

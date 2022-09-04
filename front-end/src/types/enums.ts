@@ -198,3 +198,7 @@ export enum TypingAdventure {
   spells = 28,
   beasts = 9,
 }
+
+export enum TypingHero {
+  levels = 10,
+}
