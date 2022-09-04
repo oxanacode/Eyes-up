@@ -24,6 +24,14 @@ class LessonSkinBtn {
     const skinBtn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lesson-skin-btn' }]);
 
     skinBtn.addEventListener('click', () => {
+      if (skinBtn.classList.contains('active-option')) {
+        skinBtn.classList.remove('active-option');
+        overlay.classList.add('hidden');
+        panel.classList.add('hidden');
+
+        return;
+      }
+
       LessonSkinBtn.fillOptionPanel(panel, overlay);
 
       if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');

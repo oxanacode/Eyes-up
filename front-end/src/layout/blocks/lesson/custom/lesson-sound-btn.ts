@@ -20,8 +20,8 @@ class LessonSoundBtn {
     soundHard.textContent = translation.lessonSoundHard[State.currentLang];
     soundMechanical.textContent = translation.lessonSoundMech[State.currentLang];
     soundOptions.append(soundSilent, soundSoft, soundHard, soundMechanical);
-    optionsPanel.classList.remove('hidden');
     optionsPanel.textContent = '';
+    optionsPanel.classList.remove('hidden');
     optionsPanel.append(soundOptions);
     overlay.classList.remove('hidden');
   }
@@ -30,6 +30,14 @@ class LessonSoundBtn {
     const soundBtn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lesson-sound-btn' }]);
 
     soundBtn.addEventListener('click', () => {
+      if (soundBtn.classList.contains('active-option')) {
+        soundBtn.classList.remove('active-option');
+        overlay.classList.add('hidden');
+        panel.classList.add('hidden');
+
+        return;
+      }
+
       LessonSoundBtn.fillOptionPanel(panel, overlay);
 
       if (ActiveOption.option) ActiveOption.option.classList.remove('active-option');

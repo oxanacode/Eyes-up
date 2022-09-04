@@ -2,7 +2,6 @@ import CreateElement from '../../../elements/create-element';
 import State from '../../../../scripts/state/state';
 import ManageState from '../../../../scripts/state/manage-state';
 import ActiveOption from './active-option';
-import RowsPosition from '../rows-position';
 
 import { LessonSound, Tag } from '../../../../types/enums';
 
@@ -21,7 +20,6 @@ class SoundOption {
       ActiveOption.sound = option;
       option.classList.add('active-sound-option');
       State.currentLessonSound = className;
-      RowsPosition.check();
       ManageState.saveState();
     });
 
