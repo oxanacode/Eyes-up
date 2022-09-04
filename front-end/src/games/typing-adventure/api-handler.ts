@@ -6,6 +6,7 @@ import ParseBadges from '../../scripts/parsing/parse-badges';
 import Achievements from './achievements';
 
 import IBeast, { Idata, User } from './game-types/interfaces';
+import { Data } from './game-types/enums';
 
 class ApiHandler {
   static userData: User;
@@ -13,7 +14,7 @@ class ApiHandler {
   static getData(user: User, callback: () => void) {
     ApiHandler.userData = user;
 
-    if (user.typingAdventure === 'noData') return;
+    if (user.typingAdventure === Data.noData) return;
     if (!user.typingAdventure) return;
 
     const data: Idata = ParseTypingAdventure.getGameData(user.typingAdventure);
@@ -67,7 +68,8 @@ class ApiHandler {
       if (GameState.achievementsCurrentStatus[key]) newBadges.push(Achievements.achievementsNums[key]);
     });
 
-    if (badges === 'noData') ApiHandler.userData.badges = ParseBadges.setBadges(newBadges);
+    if (badges === Data.noData && !newBadges.length) return;
+    if (badges === Data.noData) ApiHandler.userData.badges = ParseBadges.setBadges(newBadges);
     else {
       const userBadges = ParseBadges.getBadges(badges);
 

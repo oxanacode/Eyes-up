@@ -48,16 +48,15 @@ class Achievements {
       { name: 'class', value: 'achievement-content-wrapper' },
     ]);
     const textWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text-wrapper' }]);
+    let top = GameValues.achievementStyleTop;
 
     title.textContent = GameState.lib.achievementTitle as string;
     textTitle.textContent = titleContent;
     text.textContent = textContent;
-
     textWrapper.append(textTitle, text);
     contentWrapper.append(img, textWrapper);
     modal.append(title, contentWrapper);
 
-    let top = GameValues.achievementStyleTop;
     for (let i = 0; i < Achievements.windowsCounter; i += 1) {
       top += GameValues.achievementAnotherModal;
     }
