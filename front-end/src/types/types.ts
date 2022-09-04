@@ -32,7 +32,3 @@ export type ActionHandler = (
   errorBlock: HTMLElement,
   render: RenderHandler
 ) => HTMLElement;
-
-export type Match = {
-  [key: string]: string;
-};

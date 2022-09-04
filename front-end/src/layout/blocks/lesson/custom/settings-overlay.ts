@@ -1,8 +1,8 @@
 import CreateElement from '../../../elements/create-element';
 import LessonState from '../lesson-state';
+import ActiveOption from './active-option';
 
 import { Tag } from '../../../../types/enums';
-import ActiveOption from './active-option';
 
 class SettingsOverlay {
   public static create(panel: HTMLElement): HTMLElement {

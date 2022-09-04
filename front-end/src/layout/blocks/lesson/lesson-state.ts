@@ -52,7 +52,7 @@ class LessonState {
 
   public static hands: HTMLImageElement;
 
-  public static clearState() {
+  public static clearState(): void {
     LessonState.lessonsNumber = 0;
     LessonState.inputIndex = 0;
     LessonState.mistakes = [];

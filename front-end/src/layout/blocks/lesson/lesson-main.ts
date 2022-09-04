@@ -36,12 +36,12 @@ class LessonMain {
     const restartBtn = LessonRestartBtn.createRestartBtn(render);
     const lessonContent = LessonContent.createLessonContent();
     const keyboard = LessonKeyboard.createLessonKeyboard();
-    const hands = <HTMLImageElement>CreateElement.createElement(Tag.img, [
+    const hands = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'lesson-hands' },
       { name: 'alt', value: 'Hands tip' },
       { name: 'height', value: '500px' },
       { name: 'width', value: '900px' },
-    ]);
+    ]) as HTMLImageElement;
 
     LessonState.hands = hands;
 

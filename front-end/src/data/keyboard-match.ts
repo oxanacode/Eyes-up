@@ -1,4 +1,4 @@
-import { Match } from '../types/types';
+import { Match } from '../types/interfaces';
 
 const matchKeyboard: Match = {
   ё: 'apostrophe',

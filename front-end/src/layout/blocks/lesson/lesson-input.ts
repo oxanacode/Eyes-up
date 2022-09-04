@@ -50,13 +50,14 @@ class LessonInput {
   }
 
   public static highlightKey(index: number): void {
+    const charLetter = /[a-zA-Zа-яА-ЯЁё]/;
     if (index < LessonState.lessonChars.length) {
-      let char = <string>LessonState.lessonChars[index].textContent;
+      let char = LessonState.lessonChars[index].textContent as string;
 
       if (char === ' ') {
         LessonKeyboard.space.classList.add('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(/[a-zA-Zа-яА-Я]/))
+        if (char === char.toLocaleUpperCase() && char.match(charLetter))
           LessonKeyboard.shift.classList.add('current-char');
 
         char = char.toLocaleLowerCase();
@@ -66,13 +67,15 @@ class LessonInput {
   }
 
   public static removeKeyHighlight(index: number): void {
+    const charLetter = /[a-zA-Zа-яА-ЯЁё]/;
+
     if (index < LessonState.lessonChars.length) {
       let char = <string>LessonState.lessonChars[index].textContent;
 
       if (char === ' ') {
         LessonKeyboard.space.classList.remove('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(/[a-zA-Zа-яА-Я]/))
+        if (char === char.toLocaleUpperCase() && char.match(charLetter))
           LessonKeyboard.shift.classList.remove('current-char');
 
         char = char.toLocaleLowerCase();
@@ -81,7 +84,7 @@ class LessonInput {
     }
   }
 
-  public static turnOnSound() {
+  public static turnOnSound(): void {
     if (State.currentLessonSound === LessonSound.silent) return;
 
     let audio = new Audio(`./assets/audio/${LessonSound.soft}.wav`);
@@ -94,20 +97,24 @@ class LessonInput {
     audio.play();
   }
 
-  public static addHands() {
+  public static addHands(): void {
     if (LessonState.lessonData.complexity === Complexity.hard) LessonState.hands.classList.add('hidden');
 
     const char = <string>LessonState.lessonChars[LessonState.inputIndex].textContent;
     const theme = State.currentTheme;
+    const charRu = /[а-яА-ЯЁё]/;
+    const charEn = /[a-zA-Z]/;
+    const charNum = /\d/;
 
-    if (char.match(/[а-яА-ЯЁё]/))
+    if (char.match(charRu))
       LessonState.hands.setAttribute(
         'src',
         `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`
       );
-    else if (char.match(/[a-zA-Z]/))
+    else if (char.match(charEn))
       LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}-${theme}.svg`);
-    else if (char.match(/\d/)) LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}-${theme}.svg`);
+    else if (char.match(charNum))
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}-${theme}.svg`);
     else if (char === '`' || char === '~')
       LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe-${theme}.svg`);
     else if (char === `'` || char === '"')
@@ -154,7 +161,7 @@ class LessonInput {
 
       if (LessonState.inputIndex >= LessonState.lessonChars.length) return;
 
-      const inputChar = (<HTMLInputElement>testInput).value.split('')[LessonState.inputIndex];
+      const inputChar = (testInput as HTMLInputElement).value.split('')[LessonState.inputIndex];
 
       if (inputChar) LessonInput.highlightKey(LessonState.inputIndex + 1);
       if (!LessonState.inputIndex) LessonInput.hideRibbon();
