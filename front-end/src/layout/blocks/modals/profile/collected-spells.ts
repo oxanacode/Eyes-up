@@ -10,7 +10,6 @@ class CollectedSpells {
     const listItem = CreateElement.createElement(Tag.listItem, [{ name: 'class', value: 'profile-stats-item' }]);
     const itemText = CreateElement.createElement(Tag.par);
     const itemValue = CreateElement.createElement(Tag.par);
-
     const collectedSpells =
       statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).userSpells.length;
 

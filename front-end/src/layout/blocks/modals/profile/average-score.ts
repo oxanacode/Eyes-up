@@ -21,6 +21,7 @@ class AverageScore {
       const sumScore = [...Object.values(ParseLessons.getLessons(statsData))]
         .map((el: UserLesson) => el.lastScore)
         .reduce((acc, currValue) => acc + currValue, 0);
+
       averageScore = Math.ceil(sumScore / [...Object.values(ParseLessons.getLessons(statsData))].length);
     }
 

@@ -1,6 +1,6 @@
 import CreateElement from '../../../elements/create-element';
 import CollectedSpells from './collected-spells';
-import DefeatedBeasts from './defeated-beasts';
+import EncounteredBeasts from './encountered-beasts';
 import ReachedLevel from './reached-level';
 import StatsSubtitle from './stats-subtitle';
 import State from '../../../../scripts/state/state';
@@ -17,7 +17,7 @@ class TypingAdventureStats {
     const statsList = CreateElement.createElement(Tag.list, [{ name: 'class', value: 'profile-stats-list' }]);
     const levelItem = ReachedLevel.createReachedLevel(statsData);
     const spellsItem = CollectedSpells.createCollectedSpells(statsData);
-    const beastsItem = DefeatedBeasts.createDefeatedBeasts(statsData);
+    const beastsItem = EncounteredBeasts.createEncounteredBeasts(statsData);
 
     statsList.append(levelItem, spellsItem, beastsItem);
     wrapper.append(title, statsList);

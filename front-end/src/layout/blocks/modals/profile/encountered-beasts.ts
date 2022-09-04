@@ -5,17 +5,16 @@ import translation from '../../../../data/translation';
 
 import { Data, Tag, TypingAdventure } from '../../../../types/enums';
 
-class DefeatedBeasts {
-  public static createDefeatedBeasts(statsData: string): HTMLElement {
+class EncounteredBeasts {
+  public static createEncounteredBeasts(statsData: string): HTMLElement {
     const listItem = CreateElement.createElement(Tag.listItem, [{ name: 'class', value: 'profile-stats-item' }]);
     const itemText = CreateElement.createElement(Tag.par);
     const itemValue = CreateElement.createElement(Tag.par);
-
-    const defeatedBeasts =
+    const encounteredBeasts =
       statsData === Data.noData ? Data.noStats : ParseTypingAdventure.getGameData(statsData).uniqueBeasts;
 
-    itemText.textContent = translation.statsDefeatedBeasts[State.currentLang];
-    itemValue.textContent = `${defeatedBeasts} / ${TypingAdventure.beasts}`;
+    itemText.textContent = translation.statsEncounteredBeasts[State.currentLang];
+    itemValue.textContent = `${encounteredBeasts} / ${TypingAdventure.beasts}`;
 
     listItem.append(itemText, itemValue);
 
@@ -23,4 +22,4 @@ class DefeatedBeasts {
   }
 }
 
-export default DefeatedBeasts;
+export default EncounteredBeasts;
