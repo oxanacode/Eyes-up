@@ -1,2 +1,2 @@
 # rs-clone
-Repo for RS Clone task.
+Deploy of RS Clone task.
