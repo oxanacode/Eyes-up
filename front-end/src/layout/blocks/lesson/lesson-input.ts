@@ -11,6 +11,14 @@ import matchKeyboard from '../../../data/keyboard-match';
 import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
 
 class LessonInput {
+  public static charLetter = /[a-zA-Zа-яА-ЯЁё]/;
+
+  public static charRu = /[а-яА-ЯЁё]/;
+
+  public static charEn = /[a-zA-Z]/;
+
+  public static charNum = /\d/;
+
   public static checkMatch(inputChar: string): void {
     if (LessonState.lessonChars[LessonState.inputIndex].textContent === inputChar) {
       if (LessonState.historyMistakes.includes(LessonState.inputIndex)) {
@@ -50,14 +58,13 @@ class LessonInput {
   }
 
   public static highlightKey(index: number): void {
-    const charLetter = /[a-zA-Zа-яА-ЯЁё]/;
     if (index < LessonState.lessonChars.length) {
       let char = LessonState.lessonChars[index].textContent as string;
 
       if (char === ' ') {
         LessonKeyboard.space.classList.add('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(charLetter))
+        if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.add('current-char');
 
         char = char.toLocaleLowerCase();
@@ -67,15 +74,13 @@ class LessonInput {
   }
 
   public static removeKeyHighlight(index: number): void {
-    const charLetter = /[a-zA-Zа-яА-ЯЁё]/;
-
     if (index < LessonState.lessonChars.length) {
       let char = <string>LessonState.lessonChars[index].textContent;
 
       if (char === ' ') {
         LessonKeyboard.space.classList.remove('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(charLetter))
+        if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.remove('current-char');
 
         char = char.toLocaleLowerCase();
@@ -102,18 +107,15 @@ class LessonInput {
 
     const char = LessonState.lessonChars[LessonState.inputIndex].textContent as string;
     const theme = State.currentTheme;
-    const charRu = /[а-яА-ЯЁё]/;
-    const charEn = /[a-zA-Z]/;
-    const charNum = /\d/;
 
-    if (char.match(charRu))
+    if (char.match(LessonInput.charRu))
       LessonState.hands.setAttribute(
         'src',
         `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`
       );
-    else if (char.match(charEn))
+    else if (char.match(LessonInput.charEn))
       LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}-${theme}.svg`);
-    else if (char.match(charNum))
+    else if (char.match(LessonInput.charNum))
       LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}-${theme}.svg`);
     else if (char === '`' || char === '~')
       LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe-${theme}.svg`);
