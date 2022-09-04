@@ -100,7 +100,7 @@ class LessonInput {
   public static addHands(): void {
     if (LessonState.lessonData.complexity === Complexity.hard) LessonState.hands.classList.add('hidden');
 
-    const char = <string>LessonState.lessonChars[LessonState.inputIndex].textContent;
+    const char = LessonState.lessonChars[LessonState.inputIndex].textContent as string;
     const theme = State.currentTheme;
     const charRu = /[а-яА-ЯЁё]/;
     const charEn = /[a-zA-Z]/;
