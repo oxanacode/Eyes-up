@@ -3,7 +3,7 @@ import ParseTypingHero from '../../../../scripts/parsing/parse-typing-hero';
 import State from '../../../../scripts/state/state';
 import translation from '../../../../data/translation';
 
-import { Data, Tag } from '../../../../types/enums';
+import { Data, Tag, TypingHero } from '../../../../types/enums';
 
 class BestScore {
   public static createBestScore(statsData: string): HTMLElement {
@@ -13,7 +13,7 @@ class BestScore {
     const bestScore = statsData === Data.noData ? Data.noStats : ParseTypingHero.getGameData(statsData).bestScore;
 
     itemText.textContent = translation.statsBestScore[State.currentLang];
-    itemValue.textContent = `${bestScore}`;
+    itemValue.textContent = `${bestScore} / ${TypingHero.score}`;
 
     listItem.append(itemText, itemValue);
 

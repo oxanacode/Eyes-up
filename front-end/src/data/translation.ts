@@ -226,8 +226,8 @@ const translation: Translation = {
     ru: 'Собрано заклинаний',
   },
   statsDefeatedBeasts: {
-    en: 'Defeated beasts',
-    ru: 'Побеждено монстров',
+    en: 'Beasts encountered',
+    ru: 'Встречено монстров',
   },
   statsCompletedLevels: {
     en: 'Completed levels',

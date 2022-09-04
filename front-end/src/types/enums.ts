@@ -201,4 +201,5 @@ export enum TypingAdventure {
 
 export enum TypingHero {
   levels = 10,
+  score = 2590,
 }

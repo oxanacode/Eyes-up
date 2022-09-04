@@ -201,7 +201,7 @@
   gap: 2rem;
   margin-bottom: 3rem;
 
-  @include mobile {
+  @include tablet-stats {
     flex-direction: column;
   }
 }
@@ -223,7 +223,7 @@
 .profile-stats-subtitle {
   @include font-main;
   color: $c-accent;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .profile-stats-list {
