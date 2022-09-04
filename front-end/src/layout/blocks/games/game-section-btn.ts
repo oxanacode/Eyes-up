@@ -17,9 +17,9 @@ class GameSectionBtn {
       button.addEventListener('click', () => {
         SwitchPage.applyPage(Page.gameOne, render);
       });
-    } else {
+    } else if (gamePage === Page.gameTwo) {
       button.addEventListener('click', () => {
-        SwitchPage.applyPage(Page.home, render);
+        SwitchPage.applyPage(Page.gameTwo, render);
       });
     }
 

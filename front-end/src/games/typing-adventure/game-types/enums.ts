@@ -1,4 +1,4 @@
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, Data } from '../../../types/enums';
 
 enum GameValues {
   heroTimer = 5,
@@ -15,6 +15,6 @@ enum GameValues {
   achievementAnotherModal = 170,
 }
 
-export { Tag, Page };
+export { Tag, Page, Data };
 
 export default GameValues;

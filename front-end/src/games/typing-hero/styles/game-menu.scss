@@ -1,0 +1,110 @@
+.hero-menu-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-menu-app-button,
+.hero-menu-sandbox-button {
+  display: block;
+  width: 100px;
+  height: 50px;
+  margin: 10px auto;
+  border: 2.5px solid darkmagenta;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.hero-menu-content-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hero-menu-points-wrapper {
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 25px;
+  text-align: center;
+}
+
+.total-score {
+  margin-top: 50px;
+}
+
+.lvl-section-button {
+  margin: 25px;
+  width: 150px;
+  height: 150px;
+  cursor: pointer;
+  font-size: 20px;
+  border: 2.5px solid darkmagenta;
+  border-radius: 5px;
+}
+
+.lvl-button-content {
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+}
+
+.hero-start-menu-overlay,
+.sandbox-menu-overlay {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+}
+
+.hero-start-menu-image {
+  width: 430px;
+}
+
+.hero-start-menu-modal,
+.sandbox-menu-modal {
+  position: relative;
+  overflow-y: scroll;
+  width: 500px;
+  height: 500px;
+  top: calc(50% - 250px);
+  left: calc(50% - 250px);
+  background: white;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  align-items: center;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.sandbox-modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.sandbox-input {
+  border: 1px solid black;
+  padding: 0 5px;
+}
+
+.sandbox-modal-buttons {
+  display: flex;
+  gap: 30px;
+}
+
+.sandbox-close-modal-button,
+.sandbox-start-button {
+  padding: 5px;
+  font-size: 18px;
+  border: 2.5px solid darkmagenta;
+  border-radius: 5px;
+  cursor: pointer;
+}

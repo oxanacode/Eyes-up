@@ -149,7 +149,7 @@ class MoveHandler {
       const messageInfo = GameState.lib.resultNewLvl as string;
 
       GameState.userLvl += 1;
-      GameState.userHp += 100;
+
       FieldState.beastInstance.done = true;
       Modal.createFieldModal(resultMessage, messageInfo);
     } else {
