@@ -40,7 +40,7 @@ class LessonMain {
       { name: 'class', value: 'lesson-hands' },
       { name: 'alt', value: 'Hands tip' },
       { name: 'height', value: '500px' },
-      { name: 'width', value: '850px' },
+      { name: 'width', value: '900px' },
     ]);
 
     LessonState.hands = hands;

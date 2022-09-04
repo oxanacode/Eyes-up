@@ -98,40 +98,42 @@ class LessonInput {
     if (LessonState.lessonData.complexity === Complexity.hard) LessonState.hands.classList.add('hidden');
 
     const char = <string>LessonState.lessonChars[LessonState.inputIndex].textContent;
+    const theme = State.currentTheme;
 
     if (char.match(/[а-яА-ЯЁё]/))
       LessonState.hands.setAttribute(
         'src',
-        `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}.svg`
+        `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`
       );
     else if (char.match(/[a-zA-Z]/))
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}.svg`);
-    else if (char.match(/\d/)) LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}-${theme}.svg`);
+    else if (char.match(/\d/)) LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}-${theme}.svg`);
     else if (char === '`' || char === '~')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe-${theme}.svg`);
     else if (char === `'` || char === '"')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-single-quote.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-single-quote-${theme}.svg`);
     else if (char === `\\` || char === '|')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-back-slash.svg`);
-    else if (char === `-` || char === '_') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dash.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-back-slash-${theme}.svg`);
+    else if (char === `-` || char === '_')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dash-${theme}.svg`);
     else if (char === ',' || char === '<')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-comma.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-comma-${theme}.svg`);
     else if (char === `/` || char === '?')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash-${theme}.svg`);
     else if (char === '=' || char === '+')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-equality.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-equality-${theme}.svg`);
     else if (char === '[' || char === '{')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-left-bracket.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-left-bracket-${theme}.svg`);
     else if (char === ']' || char === '}')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-right-bracket.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-right-bracket-${theme}.svg`);
     else if (char === ';' || char === ':')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-semicolon.svg`);
-    else if (char === ' ') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-space.svg`);
-    else if (char === '>') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot.svg`);
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-semicolon-${theme}.svg`);
+    else if (char === ' ') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-space-${theme}.svg`);
+    else if (char === '>') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot-${theme}.svg`);
     else if (char === '.')
       if (State.currentLayout === Layout.en)
-        LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot.svg`);
-      else LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash.svg`);
+        LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash-${theme}.svg`);
   }
 
   public static createLessonInput(): HTMLElement {
