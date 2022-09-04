@@ -6,9 +6,9 @@ import RowsPosition from './rows-position';
 import LessonTimer from './lesson-timer';
 import LessonKeyboard from './lesson-keyboard';
 import LessonResult from './lesson-result';
+import matchKeyboard from '../../../data/keyboard-match';
 
 import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
-import matchKeyboard from '../../../data/keyboard-match';
 
 class LessonInput {
   public static checkMatch(inputChar: string): void {

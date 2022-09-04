@@ -1,3 +1,5 @@
+import { Match } from '../types/types';
+
 const matchKeyboard: Match = {
   ё: 'apostrophe',
   й: 'q',
@@ -35,7 +37,3 @@ const matchKeyboard: Match = {
 };
 
 export default matchKeyboard;
-
-type Match = {
-  [key: string]: string;
-};
