@@ -166,6 +166,7 @@ class LessonResult {
   public static showLessonResult(): void {
     LessonState.contentWrapper.style.visibility = 'hidden';
     LessonState.keyboard.style.visibility = 'hidden';
+    LessonState.hands.style.visibility = 'hidden';
     LessonState.page.append(LessonResult.createLessonResult());
 
     if (UserState.checkIfUserAuthorised()) LessonResult.saveResult();

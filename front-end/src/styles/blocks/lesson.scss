@@ -78,7 +78,7 @@
   }
 
   @include tablet {
-    margin: 4rem auto;
+    margin: 5rem auto 4rem;
   }
   
   @include mobile {
@@ -140,6 +140,10 @@
     bottom: -1rem;
     border-radius: $small-border-radius;
     background-color: $c-accent;
+  }
+
+  @include tablet {
+    height: 9rem;
   }
 }
 
@@ -334,4 +338,16 @@
 
 .lesson-badge-content {
   color: $c-main-text;
+}
+
+.lesson-hands {
+  position: absolute;
+  top: 52.5rem;
+  z-index: 10;
+  left: 48.5%;
+  transform: translate(-50%, 0);
+
+  @media (max-width: 700px) {
+    display: none;
+  }
 }

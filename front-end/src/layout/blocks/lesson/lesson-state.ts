@@ -50,6 +50,8 @@ class LessonState {
 
   public static lineHeight = LessonLineHeight.normal;
 
+  public static hands: HTMLImageElement;
+
   public static clearState() {
     LessonState.lessonsNumber = 0;
     LessonState.inputIndex = 0;

@@ -7,7 +7,8 @@ import LessonTimer from './lesson-timer';
 import LessonKeyboard from './lesson-keyboard';
 import LessonResult from './lesson-result';
 
-import { LessonSound, Tag } from '../../../types/enums';
+import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
+import matchKeyboard from '../../../data/keyboard-match';
 
 class LessonInput {
   public static checkMatch(inputChar: string): void {
@@ -93,6 +94,46 @@ class LessonInput {
     audio.play();
   }
 
+  public static addHands() {
+    if (LessonState.lessonData.complexity === Complexity.hard) LessonState.hands.classList.add('hidden');
+
+    const char = <string>LessonState.lessonChars[LessonState.inputIndex].textContent;
+
+    if (char.match(/[а-яА-ЯЁё]/))
+      LessonState.hands.setAttribute(
+        'src',
+        `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}.svg`
+      );
+    else if (char.match(/[a-zA-Z]/))
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}.svg`);
+    else if (char.match(/\d/)) LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}.svg`);
+    else if (char === '`' || char === '~')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe.svg`);
+    else if (char === `'` || char === '"')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-single-quote.svg`);
+    else if (char === `\\` || char === '|')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-back-slash.svg`);
+    else if (char === `-` || char === '_') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dash.svg`);
+    else if (char === ',' || char === '<')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-comma.svg`);
+    else if (char === `/` || char === '?')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash.svg`);
+    else if (char === '=' || char === '+')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-equality.svg`);
+    else if (char === '[' || char === '{')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-left-bracket.svg`);
+    else if (char === ']' || char === '}')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-right-bracket.svg`);
+    else if (char === ';' || char === ':')
+      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-semicolon.svg`);
+    else if (char === ' ') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-space.svg`);
+    else if (char === '>') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot.svg`);
+    else if (char === '.')
+      if (State.currentLayout === Layout.en)
+        LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot.svg`);
+      else LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash.svg`);
+  }
+
   public static createLessonInput(): HTMLElement {
     const testInput = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'lesson-input' },
@@ -100,6 +141,7 @@ class LessonInput {
     ]);
     LessonState.lessonChars[0].classList.add('active-char');
     LessonInput.highlightKey(0);
+    LessonInput.addHands();
 
     testInput.addEventListener('input', () => {
       LessonInput.turnOnSound();
@@ -113,7 +155,6 @@ class LessonInput {
       const inputChar = (<HTMLInputElement>testInput).value.split('')[LessonState.inputIndex];
 
       if (inputChar) LessonInput.highlightKey(LessonState.inputIndex + 1);
-
       if (!LessonState.inputIndex) LessonInput.hideRibbon();
 
       RowsPosition.adjust();
@@ -126,15 +167,14 @@ class LessonInput {
         LessonState.typing = true;
         LessonTimer.startTimer();
       }
-
       if (inputChar == null) {
         if (LessonState.inputIndex) LessonState.inputIndex -= 1;
         LessonInput.highlightKey(LessonState.inputIndex);
         LessonState.lessonChars[LessonState.inputIndex].classList.remove('correct', 'incorrect', 'correction');
         LessonState.lessonChars[LessonState.inputIndex].classList.add('active-char');
+        LessonInput.addHands();
         return;
       }
-
       LessonInput.checkMatch(inputChar);
       LessonState.wpmCount.textContent = `${LessonTimer.getWpm()} ${translation.testWpmSub[State.currentLang]}`;
       LessonState.correctionsCount.textContent = `${LessonInput.getCorrections()}`;
@@ -147,9 +187,10 @@ class LessonInput {
       }
 
       LessonState.inputIndex += 1;
-
-      if (LessonState.inputIndex < LessonState.lessonChars.length)
+      if (LessonState.inputIndex < LessonState.lessonChars.length) {
+        LessonInput.addHands();
         LessonState.lessonChars[LessonState.inputIndex].classList.add('active-char');
+      }
     });
     return testInput;
   }
