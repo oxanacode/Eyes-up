@@ -3,10 +3,10 @@ import GameState from '../game-state';
 import LevelState from './level-state';
 import LevelPoints from './level-points';
 import { levelValues, levelMaxScore } from './levels-values';
-
-import { Tag, GameValues } from '../game-types/enums';
 import UserData from '../data-handler';
 import Modal from '../modal';
+
+import { Tag, GameValues } from '../game-types/enums';
 
 class Level {
   static createLvlButton(lvlNum: string, menuCallback: () => void) {
@@ -15,7 +15,6 @@ class Level {
     const buttonContent = Level.createButtonContent(lvlNum);
 
     lvlTitle.textContent = `${GameState.lib.level} ${lvlNum}`;
-
     button.addEventListener('click', () => {
       GameState.gameWrapper.innerHTML = '';
       GameState.gameWrapper.append(
@@ -28,18 +27,17 @@ class Level {
         )
       );
     });
-
     button.append(lvlTitle, buttonContent);
+
     return button;
   }
 
   static createButtonContent(lvlNum: string) {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-button-content' }]);
-
     const userScore = UserData.levels[lvlNum].score;
     const userAccuracy = UserData.levels[lvlNum].accuracy;
 
-    if (userScore === 0) {
+    if (userScore === GameValues.startScore) {
       const baseTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-base-title' }]);
 
       baseTitle.textContent = GameState.lib.baseLvlContent;
@@ -69,9 +67,10 @@ class Level {
     const { score, accuracy } = LevelPoints.createScoreAccuracyWrappers();
     const { userScore, userAccuracy } = LevelPoints.createUserPointsWrappers(lvlNum);
     const menuButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'field-menu-button' }]);
-    menuButton.textContent = GameState.lib.levelButton;
-
+    const saveResultTime = lvlSpeed * GameValues.resultTimeMultiplier;
     const fieldColumns: HTMLElement[] = [];
+
+    menuButton.textContent = GameState.lib.levelButton;
 
     for (let i = 0; i < columns; i += 1) {
       const column = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-field-column' }]);
@@ -86,7 +85,6 @@ class Level {
 
     window.addEventListener('keypress', Level.keyChecker);
 
-    const saveResultTime = lvlSpeed * GameValues.resultTimeMultiplier;
     const timeoutLvl = setTimeout(() => {
       clearInterval(intervalLvl);
       setTimeout(() => {
@@ -163,7 +161,7 @@ class Level {
   static keyChecker(event: KeyboardEvent) {
     const currentKey = event.key;
     const currentUpperKey = event.key.toUpperCase();
-    let keyCounter = 1;
+    let keyCounter = GameValues.keyCounterStep;
 
     LevelState.currentPressKeys.push(currentKey);
 
@@ -171,14 +169,14 @@ class Level {
       if (key === null) return;
 
       if (key.classList.contains(currentKey) || key.classList.contains(currentUpperKey)) {
-        if (keyCounter === 1) {
+        if (keyCounter === GameValues.keyCounterStep) {
           key.classList.add('select');
 
           LevelState.matchedKeys.push(currentKey);
           LevelPoints.scoreHandler();
-          LevelState.currentFieldKeys.splice(index, 1);
+          LevelState.currentFieldKeys.splice(index, GameValues.keyCounterStep);
 
-          keyCounter += 1;
+          keyCounter += GameValues.keyCounterStep;
         }
       }
     });

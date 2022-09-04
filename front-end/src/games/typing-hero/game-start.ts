@@ -7,10 +7,11 @@ import Modal from './modal';
 import Achievements from './achievements';
 import State from './app-scripts/app-state';
 import ApiService from '../../scripts/api/api-service';
+import UserData from './data-handler';
 
 import { Tag, Page } from './game-types/enums';
 import { RenderHandler } from './game-types/types';
-import UserData from './data-handler';
+import { IappCallbacks } from './game-types/interfaces';
 
 class TypingHero {
   static start(
@@ -18,15 +19,14 @@ class TypingHero {
     switchPageCallback: (page: Page, render: RenderHandler) => void,
     renderCallback: () => void
   ) {
-    const appCallbacks = {
+    const appCallbacks: IappCallbacks = {
       page: appPage,
       switchPage: switchPageCallback,
       render: renderCallback,
     };
-
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
-    GameState.gameWrapper = gameView;
 
+    GameState.gameWrapper = gameView;
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
         GameState.engageState();
@@ -38,6 +38,7 @@ class TypingHero {
         if (GameState.firstAppearance) {
           Modal.startModal();
         }
+
         if (GameState.achievementCurrentStatus) {
           Achievements.current = GameState.achievementCurrentStatus;
         }

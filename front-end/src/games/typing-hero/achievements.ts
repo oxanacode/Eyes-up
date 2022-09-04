@@ -6,11 +6,12 @@ import State from './app-scripts/app-state';
 import badgesDescription from '../../data/badges-description';
 
 import { Tag, AchievementsValues } from './game-types/enums';
+import { Iachievement } from './game-types/interfaces';
 
 class Achievements {
   static windowsCounter = 0;
 
-  static current = {
+  static current: Iachievement = {
     hero: false,
     legend: false,
   };
@@ -29,20 +30,18 @@ class Achievements {
       { name: 'class', value: 'achievement-content-wrapper' },
     ]);
     const textWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text-wrapper' }]);
+    let top = AchievementsValues.achievementStyleTop;
 
     title.textContent = GameState.lib.achievementTitle as string;
     textTitle.textContent = titleContent;
     text.textContent = textContent;
-
     textWrapper.append(textTitle, text);
     contentWrapper.append(img, textWrapper);
     modal.append(title, contentWrapper);
 
-    let top = AchievementsValues.achievementStyleTop;
     for (let i = 0; i < Achievements.windowsCounter; i += 1) {
       top += AchievementsValues.achievementAnotherModal;
     }
-
     modal.style.top = `${top}px`;
 
     GameState.gameWrapper.append(modal);
@@ -57,6 +56,7 @@ class Achievements {
   static achievementChecker() {
     if (!Achievements.current.hero) Achievements.achievementHero();
     if (!Achievements.current.legend) Achievements.achievementLegend();
+
     Achievements.achievementSetStatus();
   }
 

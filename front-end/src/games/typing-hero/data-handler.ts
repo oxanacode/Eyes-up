@@ -4,8 +4,8 @@ import ParseBadges from '../../scripts/parsing/parse-badges';
 import ApiService from '../../scripts/api/api-service';
 
 import { User } from '../../types/interfaces';
-import { Idata, IlevelValues } from './game-types/interfaces';
-import { AchievementsValues, PointsType } from './game-types/enums';
+import { Idata, IlevelValues, Iachievement } from './game-types/interfaces';
+import { AchievementsValues, PointsType, Data } from './game-types/enums';
 
 class UserData {
   static userData: User;
@@ -69,9 +69,9 @@ class UserData {
 
   static createArrOfPoints(type: string) {
     const lvls = Object.keys(UserData.levels);
-
     const completeLvls = lvls.filter((lvl) => {
       if (UserData.levels[lvl][type] === 0) return false;
+
       return true;
     });
     const completeLvlsCount = completeLvls.length;
@@ -119,7 +119,7 @@ class UserData {
   static getData(user: User) {
     UserData.userData = user;
 
-    if (user.typingHero === 'noData') return;
+    if (user.typingHero === Data.noData) return;
     if (!user.typingHero) return;
 
     const data: Idata = ParseTypingHero.getGameData(user.typingHero);
@@ -133,10 +133,11 @@ class UserData {
     if (data.averageAccuracy) UserData.averageAccuracy = data.averageAccuracy;
 
     const { badges } = user;
-    if (badges === 'noData') return;
+
+    if (badges === Data.noData) return;
 
     const userBadges = ParseBadges.getBadges(badges);
-    const badgesObj = {
+    const badgesObj: Iachievement = {
       hero: false,
       legend: false,
     };
@@ -156,8 +157,8 @@ class UserData {
     if (GameState.achievementCurrentStatus.hero) newBadges.push(AchievementsValues.hero);
     if (GameState.achievementCurrentStatus.legend) newBadges.push(AchievementsValues.legend);
 
-    if (badges === 'noData' && !newBadges.length) return;
-    if (badges === 'noData') UserData.userData.badges = ParseBadges.setBadges(newBadges);
+    if (badges === Data.noData && !newBadges.length) return;
+    if (badges === Data.noData) UserData.userData.badges = ParseBadges.setBadges(newBadges);
     else {
       const userBadges = ParseBadges.getBadges(badges);
 
@@ -181,8 +182,8 @@ class UserData {
       totalScore: UserData.totalScore,
       averageAccuracy: UserData.averageAccuracy,
     };
-
     const gameDataJson = ParseTypingHero.setGameData(gameData);
+
     UserData.badgeHandler();
 
     const data: User = {

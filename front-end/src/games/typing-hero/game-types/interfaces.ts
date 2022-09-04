@@ -9,6 +9,11 @@ export interface IlevelMaxScore {
   [index: string]: number;
 }
 
+export interface Iachievement {
+  hero: boolean;
+  legend: boolean;
+}
+
 export interface Idata {
   firstAppearance: boolean;
   levelsPoints: IlevelValues;

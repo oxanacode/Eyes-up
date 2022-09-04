@@ -1,16 +1,18 @@
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, Data } from '../../../types/enums';
 
-export { Tag, Page };
+export { Tag, Page, Data };
 
 export enum GameValues {
   marginRoad = 500,
   keysStep = 100,
   keyCheck = 1,
+  keyCounterStep = 1,
   hundredPercent = 100,
   resultTimeMultiplier = 1.5,
   completeModal = 5000,
   msMultiplier = 1000,
   maxLvls = 10,
+  startScore = 0,
 }
 
 export enum PointsType {
@@ -30,4 +32,13 @@ export enum AchievementsValues {
   achievementStyleTop = 20,
   achievementAnotherModal = 170,
   achievementTimer = 7000,
+}
+
+export enum SandboxVadilValues {
+  speedMin = 1000,
+  speedMax = 10000,
+  durationMin = 10000,
+  durationMax = 150000,
+  columnsMin = 3,
+  columnsMax = 7,
 }

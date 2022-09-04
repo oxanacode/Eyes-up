@@ -4,9 +4,9 @@ import GameState from './game-state';
 import LevelPoints from './level-functionality/level-points';
 import Achievements from './achievements';
 import Modal from './modal';
+import UserData from './data-handler';
 
 import { Tag, PointsType } from './game-types/enums';
-import UserData from './data-handler';
 
 class Menu {
   static createMenu() {
@@ -22,7 +22,6 @@ class Menu {
     const averageAccuracy = Menu.createMenuPointsView(PointsType.average, PointsType.accuracy);
     const appButton = Menu.createMenuButton();
     const sandboxButton = Menu.sandboxButton();
-
     const levelsNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     const testLvl = levelsNames.map((name) => Level.createLvlButton(name, Menu.updateMenu));
 
@@ -36,8 +35,8 @@ class Menu {
 
   static createMenuButton() {
     const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'hero-menu-app-button' }]);
-    button.textContent = GameState.lib.appButton;
 
+    button.textContent = GameState.lib.appButton;
     button.addEventListener('click', () => {
       GameState.appCallbacks.switchPage(GameState.appCallbacks.page, GameState.appCallbacks.render);
       GameState.gameWrapper.remove();
@@ -52,12 +51,15 @@ class Menu {
     if (wrapperType === PointsType.best && pointsType === PointsType.score) {
       title.textContent = `${GameState.lib.bestScore} ${GameState.lib.score}`;
     }
+
     if (wrapperType === PointsType.best && pointsType === PointsType.accuracy) {
       title.textContent = `${GameState.lib.bestAccuracy} ${GameState.lib.accuracy}`;
     }
+
     if (wrapperType === PointsType.total && pointsType === PointsType.score) {
       title.textContent = `${GameState.lib.total} ${GameState.lib.totalScore}`;
     }
+
     if (wrapperType === PointsType.average && pointsType === PointsType.accuracy) {
       title.textContent = `${GameState.lib.average} ${GameState.lib.accuracy}`;
     }
@@ -66,6 +68,7 @@ class Menu {
       GameState.bestScore = points;
       points.textContent = UserData.bestLvlScore.toString();
     }
+
     if (pointsType === PointsType.accuracy) {
       GameState.bestAccuracy = points;
       if (UserData.bestLvlAccuracy === PointsType.basePointsContent) {
@@ -74,10 +77,12 @@ class Menu {
         points.textContent = `${UserData.bestLvlAccuracy.toString()}%`;
       }
     }
+
     if (wrapperType === PointsType.total && pointsType === PointsType.score) {
       GameState.totalScore = points;
       points.textContent = UserData.totalScore.toString();
     }
+
     if (wrapperType === PointsType.average && pointsType === PointsType.accuracy) {
       GameState.totalScore = points;
       if (UserData.averageAccuracy === PointsType.basePointsContent) {
@@ -103,6 +108,7 @@ class Menu {
 
   static sandboxButton() {
     const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'hero-menu-sandbox-button' }]);
+
     button.textContent = GameState.lib.sandboxButton;
     button.addEventListener('click', () => {
       Modal.sandboxModal(Level.createLvl, Menu.updateMenu);

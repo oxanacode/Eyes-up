@@ -35,13 +35,13 @@ class LevelPoints {
       title.textContent = `${GameState.lib.currentScore} ${GameState.lib.score}`;
       LevelState.scoreWrapper = points;
     }
+
     if (pointsType === PointsType.accuracy) {
       title.textContent = `${GameState.lib.currentAccuracy} ${GameState.lib.accuracy}`;
       LevelState.accuracyWrapper = points;
     }
 
     points.textContent = PointsType.basePointsContent;
-
     wrapper.append(title, points);
 
     return wrapper;
@@ -49,20 +49,21 @@ class LevelPoints {
 
   static createUserPoints(lvlNum: string, type: string) {
     const { wrapper, title, points } = LevelPoints.createPointsWrapper(`user-data`);
-
     const userPoints = UserData.levels[lvlNum][type];
 
     if (type === PointsType.score) {
       title.textContent = `${GameState.lib.prevousBestScore} ${GameState.lib.score}`;
     }
+
     if (type === PointsType.accuracy) {
       title.textContent = `${GameState.lib.prevousBestAccuracy} ${GameState.lib.accuracy}`;
     }
 
-    if (userPoints === 0) {
+    if (userPoints === GameValues.startScore) {
       points.textContent = PointsType.basePointsContent;
-    } else if (userPoints > 0 && type === PointsType.accuracy) {
+    } else if (userPoints > GameValues.startScore && type === PointsType.accuracy) {
       const strValue = userPoints.toString();
+
       points.textContent = `${strValue}%`;
     } else {
       points.textContent = userPoints.toString();
@@ -75,7 +76,6 @@ class LevelPoints {
 
   static scoreHandler() {
     LevelState.lvlScore += PointsType.scorePoint;
-
     LevelState.scoreWrapper.textContent = LevelState.lvlScore.toString();
   }
 

@@ -3,17 +3,16 @@ import GameState from './game-state';
 import LevelState from './level-functionality/level-state';
 
 import LvlCreate from './game-types/types';
-import { Tag, GameValues } from './game-types/enums';
+import { Tag, GameValues, SandboxVadilValues } from './game-types/enums';
 
 class Modal {
   static lvlComplete() {
     const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-complete-modal' }]);
-    content.textContent = GameState.lib.leveCompleted;
 
+    content.textContent = GameState.lib.leveCompleted;
     setTimeout(() => {
       content.remove();
     }, GameValues.completeModal);
-
     LevelState.lvlWrapper.append(content);
   }
 
@@ -115,7 +114,14 @@ class Modal {
   }
 
   static sandboxValidChecker(speed: number, duration: number, columns: number) {
-    if (speed >= 1000 && speed <= 10000 && duration >= 10000 && duration <= 150000 && columns >= 3 && columns <= 7) {
+    if (
+      speed >= SandboxVadilValues.speedMin &&
+      speed <= SandboxVadilValues.speedMax &&
+      duration >= SandboxVadilValues.durationMin &&
+      duration <= SandboxVadilValues.durationMax &&
+      columns >= SandboxVadilValues.columnsMin &&
+      columns <= SandboxVadilValues.columnsMax
+    ) {
       return false;
     }
 

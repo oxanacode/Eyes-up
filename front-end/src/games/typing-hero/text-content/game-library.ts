@@ -1,4 +1,4 @@
-export const enKeys = [
+export const enKeys: string[] = [
   'Q',
   'W',
   'E',
@@ -27,7 +27,7 @@ export const enKeys = [
   'M',
 ];
 
-export const ruKeys = [
+export const ruKeys: string[] = [
   'Й',
   'Ц',
   'У',
@@ -62,7 +62,7 @@ export const ruKeys = [
   'Ю',
 ];
 
-export const enLibrary = {
+export const enLibrary: Record<string, string> = {
   startModalTitle: 'Welcome to the Typing Hero!',
   startModalParagOne: 'Your task is to catch all the letters that appear on the playing field',
   startModalParagTwo:
@@ -101,7 +101,7 @@ export const enLibrary = {
   achievementTitle: 'New achievement',
 };
 
-export const ruLibrary = {
+export const ruLibrary: Record<string, string> = {
   startModalTitle: 'Добро пожаловать в игру Typing Hero!',
   startModalParagOne: 'Ваша задача — успеть поймать все буквы, появляющиеся на игровом поле.',
   startModalParagTwo:

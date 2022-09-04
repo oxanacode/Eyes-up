@@ -1,7 +1,7 @@
 import State from './app-scripts/app-state';
 import { enKeys, ruKeys, enLibrary, ruLibrary } from './text-content/game-library';
 
-import { IappCallbacks } from './game-types/interfaces';
+import { IappCallbacks, Iachievement } from './game-types/interfaces';
 
 class GameState {
   static gameWrapper: HTMLElement;
@@ -22,7 +22,7 @@ class GameState {
 
   static averageAccuracy: HTMLElement;
 
-  static achievementCurrentStatus: { hero: boolean; legend: boolean };
+  static achievementCurrentStatus: Iachievement;
 
   static engageState() {
     GameState.keys = State.currentLang === 'en' ? enKeys : ruKeys;
