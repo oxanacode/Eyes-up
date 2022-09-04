@@ -1,33 +1,17 @@
-@mixin confirmation-content {
-  @include bubble-modal-bg;
-  @include font-main;
-  position: absolute;
-  width: 24rem;
-  text-align: center;
-  padding: 1rem;
-}
-
-@mixin confirmation-btn {
-  @include interaction-effects;
-  width: 6.6rem;
-  padding: 0.2rem;
-  border-radius: 0.6rem;
-}
-
 .confirmation-question {
   color: $c-accent;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .confirmation-text {
   color: $c-main-text;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .confirmation-btns-wrapper {
   display: flex;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .confirmation-yes-btn {
@@ -39,7 +23,7 @@
 .confirmation-no-btn {
   @include confirmation-btn;
   color: $c-accent;
-  border: 0.1rem solid $c-accent;
+  border-color: $c-accent;
 }
 
 .logout-confirmation-wrapper {

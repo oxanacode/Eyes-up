@@ -14,6 +14,7 @@ import TypingHero from '../games/typing-hero/game-start';
 import SwitchPage from '../scripts/layout/switch-page';
 import LessonMain from './blocks/lesson/lesson-main';
 import AboutMain from './blocks/about/about-main';
+import ManageModal from '../scripts/layout/manage-modal';
 
 import { Page } from '../types/enums';
 
@@ -69,6 +70,9 @@ class RenderPage {
     ManageState.updateState();
     ManagePage.clearPage();
     SwitchTheme.swapTheme();
+    window.addEventListener('resize', () => {
+      ManageModal.closeBurgerMenuHandler();
+    });
 
     if (
       State.currentPage === Page.lesson ||

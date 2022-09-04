@@ -1,4 +1,5 @@
 import CreateElement from '../../elements/create-element';
+import ManagePage from '../../../scripts/layout/manage-page';
 import SwitchPage from '../../../scripts/layout/switch-page';
 import State from '../../../scripts/state/state';
 
@@ -15,6 +16,7 @@ class MenuBtn {
 
     btn.textContent = text;
     btn.addEventListener('click', () => {
+      ManagePage.showPageScrollbar();
       SwitchPage.applyPage(page, render);
     });
 

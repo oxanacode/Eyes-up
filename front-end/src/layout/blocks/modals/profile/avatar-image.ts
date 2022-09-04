@@ -10,10 +10,11 @@ class AvatarImage {
   }
 
   public static createAvatarImage(className: string, imgPath: string): HTMLElement {
-    const avatar = CreateElement.createElement(Tag.img, [{ name: 'class', value: className }]);
-
-    avatar.setAttribute('src', imgPath);
-    avatar.setAttribute('alt', 'Avatar image');
+    const avatar = CreateElement.createElement(Tag.img, [
+      { name: 'class', value: className },
+      { name: 'src', value: imgPath },
+      { name: 'alt', value: 'Avatar image' },
+    ]);
 
     return avatar;
   }

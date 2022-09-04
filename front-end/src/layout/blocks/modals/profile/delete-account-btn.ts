@@ -7,7 +7,7 @@ import { Tag } from '../../../../types/enums';
 
 class DeleteAccountBtn {
   public static createDeleteAccountBtn(wrapper: HTMLElement): HTMLElement {
-    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'delete-account-btn' }]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'simple-account-btn' }]);
 
     btn.textContent = translation.profileDeleteBtn[State.currentLang];
     btn.addEventListener('click', () => {

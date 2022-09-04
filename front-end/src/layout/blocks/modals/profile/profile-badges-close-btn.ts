@@ -1,19 +1,20 @@
-import ManageModal from '../../../../scripts/layout/manage-modal';
 import CreateElement from '../../../elements/create-element';
+import ManageModal from '../../../../scripts/layout/manage-modal';
 
 import { Tag } from '../../../../types/enums';
 
-class CloseEditProfileBtn {
-  public static createCloseEditProfileBtn(modalToHide: HTMLElement): HTMLElement {
+class ProfileBadgesCloseBtn {
+  public static createProfileBadgesCloseBtn(profileBages: HTMLElement, viewProfile: HTMLElement): HTMLElement {
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'small-btn close-btn profile-btn' }]);
 
     btn.textContent = 'Close button';
     btn.addEventListener('click', () => {
-      ManageModal.switchModal(modalToHide);
+      ManageModal.showModal(viewProfile);
+      ManageModal.hideModal(profileBages);
     });
 
     return btn;
   }
 }
 
-export default CloseEditProfileBtn;
+export default ProfileBadgesCloseBtn;

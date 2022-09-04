@@ -9,6 +9,8 @@
 }
 
 .about-subtitle {
+  margin-bottom: 2rem;
+
   @include tablet {
     text-align: center;
   }

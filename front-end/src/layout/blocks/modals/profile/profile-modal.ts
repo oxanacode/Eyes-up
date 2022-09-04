@@ -14,9 +14,18 @@ class ProfileModal {
       const editProfile = CreateElement.createElement(Tag.div, [
         { name: 'class', value: 'profile-modal-content hidden' },
       ]);
-      const viewProfile = ViewProfileModal.createViewProfileModal(editProfile, modalToClose, user, render);
+      const profileBadges = CreateElement.createElement(Tag.div, [
+        { name: 'class', value: 'profile-modal-content profile-badges-modal hidden' },
+      ]);
+      const viewProfile = ViewProfileModal.createViewProfileModal(
+        editProfile,
+        profileBadges,
+        modalToClose,
+        user,
+        render
+      );
 
-      modal.append(viewProfile, editProfile);
+      modal.append(viewProfile, editProfile, profileBadges);
     });
 
     return modal;

@@ -48,7 +48,7 @@
   }
 }
 
-.edit-profile-plag {
+.profile-header-plag {
   width: 4rem;
   height: 4rem;
 }
@@ -171,7 +171,7 @@
   }
 }
 
-.delete-account-btn {
+.simple-account-btn {
   @include font-main;
   color: $c-main-text;
 }
@@ -189,7 +189,172 @@
 }
 
 .profile-subtitle {
+  margin-bottom: 3rem;
+
   @include tablet-small {
     text-align: center;
+  }
+}
+
+.profile-stats-wrapper {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 3rem;
+
+  @include tablet-stats {
+    flex-direction: column;
+  }
+}
+
+.profile-stats-block {
+  width: 100%;
+  padding: 1rem 2rem 0;
+  border: 0.2rem solid $c-accent;
+  border-radius: $big-border-radius;
+}
+
+.profile-stats-title {
+  @include font-subtitle-mobile;
+  text-align: center;
+  color: $c-main-text;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-subtitle {
+  @include font-main;
+  color: $c-accent;
+  margin-bottom: 1rem;
+}
+
+.profile-stats-list {
+  background-color: $c-block-bg;
+  padding: 1rem;
+  border-radius: $small-border-radius;
+  margin-bottom: 2rem;
+}
+
+.profile-stats-item {
+  @include font-main-small;
+  display: flex;
+  justify-content: space-between;
+  color: $c-main-text;
+  margin-bottom: 1.5rem;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.profile-stats-score-wrapper {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.profile-stats-score-value {
+  line-height: 1.92rem;
+}
+
+.profile-stats-score-mark {
+  @include small-btn-bg;
+  width: 1.4rem;
+  height: 1.92rem;
+  background-image: $bg-lessons-star;
+  background-size: 1.4rem;
+}
+
+.profile-badges-title {
+  @include default-wrapper;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+}
+
+.profile-badges-title .profile-subtitle {
+  margin-bottom: 0;
+}
+
+.profile-badges-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 1rem;
+  padding-top: 1rem;
+
+  @include tablet-small {
+    grid-template-columns: 1fr;
+    padding-top: 0rem;
+  }
+}
+
+.profile-badge-item {
+  @include font-main;
+  @include default-wrapper;
+  gap: 1rem;
+
+  @include tablet-small {
+    width: 38rem;
+    margin: 0 auto;
+  }
+
+  @include mobile-small {
+    width: 100%;
+  }
+}
+
+.all-badges-image {
+  width: $desktop-margin;
+}
+
+.not-earned-badge {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: $transition-time;
+
+  &:hover {
+    filter: grayscale(0);
+    opacity: 1;
+  }
+}
+
+.profile-badge-title {
+  font-size: 1.6rem;
+  font-weight: $fw-bold;
+}
+
+.profile-earned-badges {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+
+  @include mobile {
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 3rem;
+    row-gap: 1rem;
+    padding: 0 4rem;
+  }
+
+  @include mobile-badges {
+    column-gap: 2rem;
+    padding: 0 2.5rem;
+  }
+
+  @include mobile-small {
+    padding: 0 0.5rem;
+  }
+
+  @include mobile-small-badges {
+    padding: 0;
+  }
+}
+
+.earned-badges-image {
+  width: 12rem;
+
+  @include tablet-small {
+    width: 10rem;
+  }
+
+  @include mobile-small {
+    width: 8rem;
   }
 }

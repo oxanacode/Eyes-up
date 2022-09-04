@@ -120,6 +120,7 @@ export enum Disabled {
 
 export enum Data {
   noData = 'noData',
+  noStats = 0,
 }
 
 export enum Profile {
@@ -190,4 +191,15 @@ export enum LessonSkin {
   one = 'skin-one',
   two = 'skin-two',
   three = 'skin-three',
+}
+
+export enum TypingAdventure {
+  levels = 10,
+  spells = 28,
+  beasts = 9,
+}
+
+export enum TypingHero {
+  levels = 10,
+  score = 2590,
 }
