@@ -67,6 +67,7 @@ class ApiHandler {
       if (GameState.achievementsCurrentStatus[key]) newBadges.push(Achievements.achievementsNums[key]);
     });
 
+    if (badges === 'noData' && !newBadges.length) return;
     if (badges === 'noData') ApiHandler.userData.badges = ParseBadges.setBadges(newBadges);
     else {
       const userBadges = ParseBadges.getBadges(badges);

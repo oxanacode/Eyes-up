@@ -135,6 +135,16 @@ export interface TypingAdventureData {
   achievements: Record<string, boolean>;
 }
 
+export interface TypingHeroData {
+  firstAppearance: boolean;
+  levelsPoints: { [index: string]: Record<string, number> };
+  levelsDone: number;
+  bestScore: string | number;
+  bestAccuracy: string | number;
+  totalScore: string | number;
+  averageAccuracy: string | number;
+}
+
 export interface UserLessons {
   [key: string]: UserLesson;
 }
