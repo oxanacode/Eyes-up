@@ -1,22 +1,38 @@
 .hero-menu-header {
   max-width: 102rem;
   margin: 0 auto;
-  padding: 7rem 1rem 5rem 1rem;
+  padding: 5rem 2rem 7rem 2rem;
   display: flex;
   justify-content: space-between;
+
+  @include tablet-stats {
+    padding: 2rem 2rem 3rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
 }
 
 .hero-menu-app-button {
   @extend .back-btn;
   margin-right: 0;
+
+  @include tablet-stats {
+    align-self: flex-start;
+  }
 }
 
 .hero-menu-title-wrapper {
   display: flex;
+  padding-left: 6.2rem;
   font-size: 3.2rem;
   font-weight: 700;
   text-align: center;
-  gap: 1rem;
+  gap: 2rem;
+
+  @include tablet-stats {
+    padding-left: 0;
+  }
 }
 
 .hero-menu-typing-title {
@@ -37,11 +53,17 @@
 }
 
 .hero-menu-points-wrapper {
-  padding: 0 1rem;
+  padding: 0 2rem;
   margin: 0 auto;
   max-width: 102rem;
   display: flex;
   justify-content: space-between;
+
+  @include tablet-stats {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
 }
 
 .best-score,
@@ -53,6 +75,10 @@
   display: flex;
   color: $c-menu-inactive-link;
   gap: 1rem;
+
+  @include tablet-stats {
+    @include font-subtitle-mobile;
+  }
 }
 
 .best-accuracy::before,
@@ -66,22 +92,51 @@
   height: 3.3rem;
   background-color: $c-accent;
   border-radius: $small-border-radius;
+
+  @include desktop-small {
+    content: none;
+  }
 }
 
 .hero-menu-best-points-wrapper,
 .hero-menu-overall-points-wrapper {
   display: flex;
   gap: 3.2rem;
+
+  @include desktop-small {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  @include tablet-stats {
+    align-items: center;
+  }
+}
+
+.hero-menu-overall-points-wrapper {
+  @include desktop-small {
+    align-items: flex-end;
+  }
+
+  @include tablet-stats {
+    align-items: center;
+  }
 }
 
 .hero-menu-lvls-wrapper {
   max-width: 102rem;
   margin: 8rem auto;
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   row-gap: 4rem;
   column-gap: 1rem;
+
+  @include tablet-stats {
+    margin: 4rem auto;
+    justify-content: center;
+  }
 }
 
 .lvl-section-button {
@@ -139,6 +194,11 @@
   align-items: center;
   justify-content: space-between;
   column-gap: 2rem;
+
+  @include tablet-stats {
+    margin: 0 auto 5rem auto;
+    justify-content: center;
+  }
 
   @include tablet {
     padding: 3rem 2rem;

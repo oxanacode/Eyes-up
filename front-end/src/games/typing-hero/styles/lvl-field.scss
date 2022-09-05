@@ -1,6 +1,9 @@
 .lvl-wrapper {
   background-color: #F5F5F5;
   padding: 5.5rem 0 10rem 0;
+  @include tablet-stats {
+    padding: 2rem 0 5rem 0;
+  }
 }
 
 .field-menu-button-wrapper {
@@ -11,6 +14,7 @@
 .field-menu-button {
   @extend .back-btn;
   display: block;
+  margin-left: 3rem;
 }
 
 .field-points-wrapper {
@@ -18,6 +22,11 @@
   margin: 6.5rem auto 0 auto;
   display: flex;
   justify-content: space-between;
+  @include tablet-stats {
+    margin: 3rem auto 0 auto;
+    flex-direction: column;
+    row-gap: 3rem;
+  }
 }
 
 .current-points-wrapper,
@@ -25,10 +34,16 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  @include tablet-stats {
+    align-items: center;
+  }
 }
 
 .current-points-wrapper {
   align-items: flex-end;
+  @include tablet-stats {
+    align-items: center;
+  }
 }
 
 .current-score,
@@ -38,6 +53,9 @@
   display: flex;
   gap: 1rem;
   color: $c-menu-inactive-link;
+  @include tablet-stats {
+    @include font-subtitle-mobile;
+  }
 }
 
 .user-data-points {
@@ -59,12 +77,19 @@
   border-style: solid;
   border-color: $c-accent;
   display: flex;
+  @include tablet-stats {
+    margin: 3rem auto 0 auto;
+    width: 30rem;
+  }
 }
 
 .lvl-field-column {
   overflow: hidden;
   position: relative;
   width: 12rem;
+  @include tablet-stats {
+    width: 6rem;
+  }
 }
 
 .lvl-field-column:not(:last-child) {
@@ -88,10 +113,17 @@
   &.select {
     background-color: #D984BC;
   }
+  @include tablet-stats {
+    @include font-subtitle;
+    width: 4rem;
+    height: 4rem;
+    left: calc(50% - 2rem);
+  }
 }
 
 .lvl-start-completed-modal {
   @include font-subtitle;
+  z-index: 10;
   position: fixed;
   top: 0;
   left: calc(50% - 17rem);
@@ -104,4 +136,9 @@
   align-items: center;
   box-shadow: $bxs-result-shadow;
   border-radius: 0 0 $big-border-radius $big-border-radius;
+  @include tablet-stats {
+    width: 28rem;
+    height: 7rem;
+    left: calc(50% - 14rem);
+  }
 }
