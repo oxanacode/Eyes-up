@@ -108,7 +108,6 @@
 
 .profile-input {
   @include default-input;
-  @include font-main;
   width: 39rem;
 
   @include mobile {

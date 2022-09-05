@@ -44,11 +44,18 @@
   @include tablet-small {
     position: static;
     display: block;
-    margin: 0 auto 3rem;
+    text-align: center;
+    margin-bottom: 3rem;
   }
 }
 
 .delete-account-confirmation-content {
   @include confirmation-content;
   bottom: calc((5rem - 2.1rem) / 2 + 2rem);
+
+  @include tablet-small {
+    bottom: 11.1rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }

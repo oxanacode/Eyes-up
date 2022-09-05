@@ -6,6 +6,7 @@ const links: Links = {
   TypingClub: 'https://www.typingclub.com',
   SpectrumUI: 'https://spectrumui.gumroad.com',
   AlzeaArafat: 'https://dribbble.com/alzea/shots',
+  Upklyak: 'https://ru.freepik.com/author/upklyak',
 };
 
 export default links;

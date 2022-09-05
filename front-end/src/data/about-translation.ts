@@ -121,6 +121,10 @@ const aboutTranslation: Translation = {
     en: ' and ',
     ru: ' и ',
   },
+  comma: {
+    en: ', ',
+    ru: ', ',
+  },
   illustratorOne: {
     en: 'Spectrum UI',
     ru: 'Spectrum UI',
@@ -128,6 +132,10 @@ const aboutTranslation: Translation = {
   illustratorTwo: {
     en: 'Alzea Arafat',
     ru: 'Alzea Arafat',
+  },
+  illustratorThree: {
+    en: 'Upklyak',
+    ru: 'Upklyak',
   },
 };
 
