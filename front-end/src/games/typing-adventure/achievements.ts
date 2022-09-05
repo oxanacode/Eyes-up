@@ -1,5 +1,7 @@
 import GameState from './game-state';
 import CreateElement from './overal-func.ts/create-element';
+import badgesDescription from '../../data/badges-description';
+import State from './app-state';
 
 import GameValues, { Tag } from './game-types/enums';
 
@@ -34,7 +36,7 @@ class Achievements {
     GameState.achievementsCurrentStatus = Achievements.current;
   }
 
-  static createWindow(titleContent: string, textContent: string, path: string) {
+  static createWindow(textContent: string, path: string) {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-modal' }]);
     const title = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-title' }]);
     const text = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text' }]);
@@ -82,40 +84,36 @@ class Achievements {
 
   static tenSpellsCheck() {
     if (GameState.userSpells.length >= 10) {
-      const title = GameState.lib.achievementTitleTenSpells as string;
-      const text = GameState.lib.achievementTextTenSpells as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.tenSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-2.svg');
       Achievements.current.tenSpells = true;
     }
   }
 
   static lvlUpCheck() {
     if (GameState.userLvl === 2) {
-      const title = GameState.lib.achievementTitleLvlUp as string;
-      const text = GameState.lib.achievementTextLvlUp as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.lvlUp][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-1.svg');
       Achievements.current.lvlUp = true;
     }
   }
 
   static halfGameCheck() {
     if (GameState.userLvl === 5) {
-      const title = GameState.lib.achievementTitleHalfGame as string;
-      const text = GameState.lib.achievementTextHalfGame as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.halfGame][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-3.svg');
       Achievements.current.halfGame = true;
     }
   }
 
   static gameDoneCheck() {
     if (GameState.userLvl === 10) {
-      const title = GameState.lib.achievementTitleGameDone as string;
-      const text = GameState.lib.achievementTextGameDone as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.gameDone][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-4.svg');
       Achievements.current.gameDone = true;
     }
   }
@@ -124,10 +122,9 @@ class Achievements {
     const status = Achievements.elementalCheck('thunderSpells');
 
     if (status) {
-      const title = GameState.lib.achievementTitleThunder as string;
-      const text = GameState.lib.achievementTextThunder as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.thunderSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-5.svg');
       Achievements.current.thunderSpells = true;
     }
   }
@@ -136,10 +133,9 @@ class Achievements {
     const status = Achievements.elementalCheck('fireSpells');
 
     if (status) {
-      const title = GameState.lib.achievementTitleFire as string;
-      const text = GameState.lib.achievementTextFire as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.fireSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-6.svg');
       Achievements.current.fireSpells = true;
     }
   }
@@ -148,10 +144,9 @@ class Achievements {
     const status = Achievements.elementalCheck('waterSpells');
 
     if (status) {
-      const title = GameState.lib.achievementTitleWater as string;
-      const text = GameState.lib.achievementTextWater as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.waterSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-7.svg');
       Achievements.current.waterSpells = true;
     }
   }
@@ -160,10 +155,9 @@ class Achievements {
     const status = Achievements.elementalCheck('lightSpells');
 
     if (status) {
-      const title = GameState.lib.achievementTitleLight as string;
-      const text = GameState.lib.achievementTextLight as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.lightSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-8.svg');
       Achievements.current.lightSpells = true;
     }
   }
@@ -172,10 +166,9 @@ class Achievements {
     const status = Achievements.elementalCheck('windSpells');
 
     if (status) {
-      const title = GameState.lib.achievementTitleWind as string;
-      const text = GameState.lib.achievementTextWind as string;
+      const { text } = badgesDescription[Achievements.achievementsNums.lightSpells][State.currentLang];
 
-      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
+      Achievements.createWindow(text, './assets/images/badges/badge-9.svg');
       Achievements.current.windSpells = true;
     }
   }
