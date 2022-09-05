@@ -72,10 +72,6 @@ module.exports = {
       {
         from: './src/games/typing-adventure/assets',
         to: './assets/typing-adventure',
-      },
-      {
-        from: './src/games/typing-hero/assets',
-        to: './assets/typing-hero',
       }],
     })
   ]

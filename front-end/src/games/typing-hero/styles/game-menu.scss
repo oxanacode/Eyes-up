@@ -1,110 +1,156 @@
-.hero-menu-wrapper {
+.hero-menu-header {
+  max-width: 102rem;
+  margin: 0 auto;
+  padding: 7rem 1rem 5rem 1rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
 }
 
-.hero-menu-app-button,
-.hero-menu-sandbox-button {
-  display: block;
-  width: 100px;
-  height: 50px;
-  margin: 10px auto;
-  border: 2.5px solid darkmagenta;
-  border-radius: 5px;
-  cursor: pointer;
+.hero-menu-app-button {
+  @extend .back-btn;
+  margin-right: 0;
 }
 
-.hero-menu-content-wrapper {
+.hero-menu-title-wrapper {
   display: flex;
-  justify-content: space-around;
+  font-size: 3.2rem;
+  font-weight: 700;
+  text-align: center;
+  gap: 1rem;
+}
+
+.hero-menu-typing-title {
+  color: $c-accent;
+}
+
+.hero-menu-hero-title {
+  color: $c-main-text;
+}
+
+.hero-menu-reset-button {
+  @include font-main;
+  width: 13rem;
+  height: 4rem;
+  background-color: $c-block-bg;
+  border-radius: $small-border-radius;
+  color: $c-main-text;
 }
 
 .hero-menu-points-wrapper {
-  min-width: 300px;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 102rem;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  font-size: 25px;
-  text-align: center;
+  justify-content: space-between;
 }
 
-.total-score {
-  margin-top: 50px;
+.best-score,
+.best-accuracy,
+.total-score,
+.average-accuracy {
+  @include font-subtitle;
+  position: relative;
+  display: flex;
+  color: $c-menu-inactive-link;
+  gap: 1rem;
+}
+
+.best-accuracy::before,
+.average-accuracy::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -1.5rem;
+  width: 0.2rem;
+  height: 3.3rem;
+  background-color: $c-accent;
+  border-radius: $small-border-radius;
+}
+
+.hero-menu-best-points-wrapper,
+.hero-menu-overall-points-wrapper {
+  display: flex;
+  gap: 3.2rem;
+}
+
+.hero-menu-lvls-wrapper {
+  max-width: 102rem;
+  margin: 8rem auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 4rem;
+  column-gap: 1rem;
 }
 
 .lvl-section-button {
-  margin: 25px;
-  width: 150px;
-  height: 150px;
-  cursor: pointer;
-  font-size: 20px;
-  border: 2.5px solid darkmagenta;
-  border-radius: 5px;
+  position: relative;
+  width: 18rem;
+  height: 18rem;
+  border: 0.2rem solid #F4F4F4;
+  border-radius: $big-border-radius;
+  transition: $transition-time;
+  &:hover {
+    border-color: $c-accent;
+  }
+}
+
+.lvl-section-button.basic {
+  background-image: url(./assets/games/typing-hero/background/basic-lvl-button.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+}
+
+.lvl-section-button.completed {
+  background-image: url(./assets/games/typing-hero/background/completed-lvl-button.svg);
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+}
+
+.lvl-section-title {
+  @include font-subtitle;
+  font-weight: 700;
+  color: $c-accent;
 }
 
 .lvl-button-content {
-  padding: 10px;
-  font-size: 14px;
-  margin-top: 30px;
-}
-
-.hero-start-menu-overlay,
-.sandbox-menu-overlay {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba($color: #000000, $alpha: 0.3);
-}
-
-.hero-start-menu-image {
-  width: 430px;
-}
-
-.hero-start-menu-modal,
-.sandbox-menu-modal {
-  position: relative;
-  overflow-y: scroll;
-  width: 500px;
-  height: 500px;
-  top: calc(50% - 250px);
-  left: calc(50% - 250px);
-  background: white;
-  font-size: 18px;
+  @include font-main;
   display: flex;
   flex-direction: column;
-  gap: 50px;
-  align-items: center;
-  padding: 20px;
-  border-radius: 5px;
+  gap: 1rem;
+  padding: 4rem 1rem 0rem 1rem;
+  color: $c-menu-inactive-link;
 }
 
-.sandbox-modal-content {
+.lvl-button-score-wrapper,
+.lvl-button-accuracy-wrapper {
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-  align-items: center;
+  justify-content: space-between;
 }
 
-.sandbox-input {
-  border: 1px solid black;
-  padding: 0 5px;
-}
-
-.sandbox-modal-buttons {
+.hero-menu-sandbox-wrapper {
+  max-width: 102rem;
+  margin: 0 auto 10rem auto;
   display: flex;
-  gap: 30px;
+  padding: 3rem 5rem;
+  background-color: $c-block-bg;
+  border-radius: $big-border-radius;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+
+  @include tablet {
+    padding: 3rem 2rem;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 }
 
-.sandbox-close-modal-button,
-.sandbox-start-button {
-  padding: 5px;
-  font-size: 18px;
-  border: 2.5px solid darkmagenta;
-  border-radius: 5px;
-  cursor: pointer;
+.hero-menu-sandbox-title {
+  @extend .section-title;
+}
+
+.hero-menu-sandbox-button {
+  @extend .big-btn;
 }

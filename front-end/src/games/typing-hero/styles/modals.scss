@@ -1,0 +1,100 @@
+.hero-start-menu-overlay,
+.sandbox-menu-overlay,
+.hero-reset-overlay {
+  z-index: 10;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+}
+
+.hero-start-menu-modal {
+  z-index: 10;
+  position: relative;
+  overflow-y: scroll;
+  width: 55rem;
+  height: 50rem;
+  top: calc(50% - 27.5rem);
+  left: calc(50% - 25rem);
+  background: white;
+  font-size: 2rem;
+  color: $c-main-text;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  padding: 3rem 2rem;
+  border-radius: $small-border-radius;
+}
+
+.hero-start-menu-image {
+  width: 43rem;
+}
+
+.sandbox-menu-modal {
+  @extend .hero-start-menu-modal;
+  overflow: auto;
+}
+
+.sandbox-modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.hero-reset-modal {
+  z-index: 10;
+  position: relative;
+  width: 40rem;
+  height: 20rem;
+  top: calc(50% - 10rem);
+  left: calc(50% - 20rem);
+  background: white;
+  font-size: 2rem;
+  color: $c-main-text;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  padding: 2rem;
+  border-radius: $small-border-radius;
+}
+
+.sandbox-modal-buttons,
+.hero-reset-buttons {
+  display: flex;
+  gap: 2rem;
+}
+
+.start-menu-button,
+.hero-reset-button,
+.hero-reset-close-button,
+.sandbox-close-modal-button,
+.sandbox-start-button {
+  font-size: 1.7rem;
+  border: 0.2rem solid #F4F4F4;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0;
+  text-align: center;
+  color: $c-main-text;
+  width: 12rem;
+  &:hover {
+    border-color: $c-accent;
+  }
+  &:disabled {
+    color: #B7B7B7;
+    &:hover {
+      border-color: #F4F4F4;
+    }
+  }
+}
+
+.sandbox-input {
+  @include default-input;
+}
