@@ -35,8 +35,8 @@ export enum PointsType {
 export enum AchievementsValues {
   hero = 10,
   legend = 11,
-  achievementStyleTop = 20,
-  achievementAnotherModal = 170,
+  achievementStyleTop = 2,
+  achievementAnotherModal = 17,
   achievementTimer = 7000,
 }
 

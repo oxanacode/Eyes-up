@@ -123,7 +123,6 @@ class Menu {
     GameState.gameWrapper.innerHTML = '';
     GameState.gameWrapper.append(newMenu);
     Achievements.achievementChecker();
-    console.log(GameState.firstAppearance);
     UserData.setData();
   }
 

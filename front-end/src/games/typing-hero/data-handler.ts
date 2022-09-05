@@ -161,12 +161,34 @@ class UserData {
     if (badges === Data.noData) UserData.userData.badges = ParseBadges.setBadges(newBadges);
     else {
       const userBadges = ParseBadges.getBadges(badges);
+      const badgesNums: number[] = [AchievementsValues.hero, AchievementsValues.legend];
+      let finalBadges: number[] = [];
+      const indexes: number[] = [];
 
       newBadges.forEach((badge) => {
         if (!userBadges.includes(badge)) userBadges.push(badge);
       });
+      badgesNums.forEach((badgeNum) => {
+        if (userBadges.includes(badgeNum) && !newBadges.includes(badgeNum)) {
+          const index = userBadges.indexOf(badgeNum);
 
-      UserData.userData.badges = ParseBadges.setBadges(userBadges);
+          indexes.push(index);
+        }
+      });
+
+      if (!newBadges.length) {
+        finalBadges = userBadges.filter((item) => {
+          if (badgesNums.includes(item)) return false;
+          return true;
+        });
+      } else {
+        finalBadges = userBadges.filter((item, index) => {
+          if (indexes.includes(index)) return false;
+          return true;
+        });
+      }
+
+      UserData.userData.badges = ParseBadges.setBadges(finalBadges);
     }
   }
 
