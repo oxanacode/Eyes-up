@@ -13,12 +13,14 @@
 .hero-start-menu-modal {
   @include font-main;
   z-index: 10;
-  position: relative;
+  position: fixed;
   overflow-y: scroll;
-  width: 55rem;
+  max-width: 55rem;
+  width: 60%;
   height: 50rem;
-  top: calc(50% - 27.5rem);
-  left: calc(50% - 25rem);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: $c-hero-modal-bg;
   color: $c-main-text;
   text-align: center;
@@ -26,8 +28,12 @@
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  padding: 3rem 2rem;
+  padding: 3rem;
   border-radius: $small-border-radius;
+
+  @include mobile {
+    width: 90%;
+  }
 }
 
 .hero-start-menu-title {
@@ -36,7 +42,7 @@
 }
 
 .hero-start-menu-image {
-  width: 43rem;
+  width: 100%;
 }
 
 .sandbox-menu-modal {
@@ -85,7 +91,7 @@
 .sandbox-start-button {
   @include font-main;
   border: 0.2rem solid $c-hero-borders;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   padding: 0.5rem 0;
   text-align: center;
   color: $c-hero-modal-title-btn;
