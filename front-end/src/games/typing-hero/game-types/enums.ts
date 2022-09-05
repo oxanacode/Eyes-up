@@ -8,7 +8,7 @@ export enum GameName {
 }
 
 export enum GameValues {
-  marginRoad = 500,
+  marginRoad = 50,
   keysStep = 100,
   keyCheck = 1,
   keyCounterStep = 1,

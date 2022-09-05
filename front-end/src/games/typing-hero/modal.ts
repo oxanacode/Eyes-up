@@ -6,14 +6,42 @@ import LvlCreate from './game-types/types';
 import { Tag, GameValues, SandboxVadilValues } from './game-types/enums';
 
 class Modal {
-  static lvlComplete() {
-    const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-complete-modal' }]);
+  static lvlStartCompleted(textContent: string, duration: number) {
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-start-completed-modal' }]);
+    const content = CreateElement.createElement(Tag.par, [
+      { name: 'class', value: 'lvl-start-completed-modal-content' },
+    ]);
 
-    content.textContent = GameState.lib.leveCompleted;
+    content.textContent = textContent;
+    setTimeout(() => {
+      modal.remove();
+    }, duration);
+    modal.append(content);
+    LevelState.lvlWrapper.append(modal);
+  }
+
+  static lvlComplete() {
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-complete-modal' }]);
+    const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-complete-modal-content' }]);
+
+    content.textContent = GameState.lib.levelCompleted;
     setTimeout(() => {
       content.remove();
     }, GameValues.completeModal);
-    LevelState.lvlWrapper.append(content);
+    modal.append(content);
+    LevelState.lvlWrapper.append(modal);
+  }
+
+  static preparationModal(lvlSpeed: number) {
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-complete-modal' }]);
+    const content = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-complete-modal-content' }]);
+
+    content.textContent = GameState.lib.preparation;
+    setTimeout(() => {
+      content.remove();
+    }, lvlSpeed);
+    modal.append(content);
+    LevelState.lvlWrapper.append(modal);
   }
 
   static startModal() {

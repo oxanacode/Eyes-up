@@ -1,80 +1,107 @@
-.field-content-wrapper {
+.lvl-wrapper {
+  background-color: #F5F5F5;
+  padding: 5.5rem 0 10rem 0;
+}
+
+.field-menu-button-wrapper {
+  max-width: 102rem;
+  margin: 0 auto;
+}
+
+.field-menu-button {
+  @extend .back-btn;
+  display: block;
+}
+
+.field-points-wrapper {
+  max-width: 60rem;
+  margin: 6.5rem auto 0 auto;
   display: flex;
-  justify-content: center;
-  gap: 50px;
+  justify-content: space-between;
+}
+
+.current-points-wrapper,
+.user-points-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.current-points-wrapper {
+  align-items: flex-end;
+}
+
+.current-score,
+.current-accuracy,
+.user-data {
+  @include font-subtitle;
+  display: flex;
+  gap: 1rem;
+  color: $c-menu-inactive-link;
+}
+
+.user-data-points {
+  color: #D984BC;
+}
+
+.current-score-points,
+.current-accuracy-points {
+  color: $c-accent;
 }
 
 .lvl-field {
-  width: 500px;
-  height: 500px;
-  border-radius: 5px;
-  border: 2px solid darkmagenta;
+  width: 60rem;
+  height: 50rem;
+  margin: 7rem auto 0 auto;
+  border-radius: $big-border-radius;
+  background-color: white;
+  border-width: 0.2rem 0px 0.6rem 0px;
+  border-style: solid;
+  border-color: $c-accent;
   display: flex;
 }
 
 .lvl-field-column {
   overflow: hidden;
   position: relative;
-  width: 100px;
-  border-left: 1px solid darkmagenta;
-  border-right: 1px solid darkmagenta;
+  width: 12rem;
 }
 
-.field-menu-button {
-  display: block;
-  width: 100px;
-  height: 45px;
-  margin: 10px auto;
-  border: 2.5px solid darkmagenta;
-  border-radius: 5px;
-  cursor: pointer;
+.lvl-field-column:not(:last-child) {
+  border-right: 0.2rem solid #F4F4F4;
 }
 
 .column-key {
+  @include font-title;
   position: absolute;
   top: 0;
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 50px;
-  background-color: darkmagenta;
-  border-radius: 5px;
-  margin: -55px auto;
+  left: calc(50% - 3rem);
+  width: 6rem;
+  height: 6rem;
+  background-color: $c-accent;
+  border-radius: $small-border-radius;
+  margin: -5.5rem auto;
   color: white;
-  font-size: 25px;
   display: flex;
   justify-content: center;
   align-items: center;
   &.select {
-    background-color: orangered;
+    background-color: #D984BC;
   }
 }
 
-.current-points-wrapper,
-.user-points-wrapper {
-  padding: 20px 0;
-  min-width: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
-}
-
-.current-score,
-.current-accuracy,
-.user-data {
-  font-size: 25px;
-  text-align: center;
-}
-
-.lvl-complete-modal {
+.lvl-start-completed-modal {
+  @include font-subtitle;
   position: fixed;
-  top: calc(50% - 25px);
-  left: calc(50% - 150px);
-  width: 300px;
-  height: 50px;
-  font-size: 35px;
-  color: darkmagenta;
-  text-shadow: 0 0 15px darkmagenta;
-  text-align: center;
+  top: 0;
+  left: calc(50% - 17rem);
+  width: 34rem;
+  height: 9rem;
+  color: $c-accent;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $bxs-result-shadow;
+  border-radius: 0 0 $big-border-radius $big-border-radius;
 }

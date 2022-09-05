@@ -80,14 +80,17 @@ class Level {
   static createLvl(lvlNum: string, columns: number, lvlSpeed: number, lvlDuration: number, menuCallback: () => void) {
     const lvlWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-wrapper' }]);
     const lvlField = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-field' }]);
-    const pointsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'current-points-wrapper' }]);
-    const userPointsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'user-points-wrapper' }]);
-    const fieldContentWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'field-content-wrapper' },
+    const currentPointsWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'current-points-wrapper' },
     ]);
+    const userPointsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'user-points-wrapper' }]);
+    const allPointsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'field-points-wrapper' }]);
     const { score, accuracy } = LevelPoints.createScoreAccuracyWrappers();
     const { userScore, userAccuracy } = LevelPoints.createUserPointsWrappers(lvlNum);
     const menuButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'field-menu-button' }]);
+    const menuButtonWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'field-menu-button-wrapper' },
+    ]);
     const saveResultTime = lvlSpeed * GameValues.resultTimeMultiplier;
     const fieldColumns: HTMLElement[] = [];
 
@@ -110,7 +113,7 @@ class Level {
       clearInterval(intervalLvl);
       setTimeout(() => {
         LevelPoints.saveResult(lvlNum);
-        Modal.lvlComplete();
+        Modal.lvlStartCompleted(GameState.lib.levelCompleted, GameValues.completeModal);
       }, saveResultTime);
     }, lvlDuration);
 
@@ -123,11 +126,13 @@ class Level {
     });
 
     lvlField.append(...fieldColumns);
-    pointsWrapper.append(score, accuracy);
+    menuButtonWrapper.append(menuButton);
+    currentPointsWrapper.append(score, accuracy);
     userPointsWrapper.append(userScore, userAccuracy);
-    fieldContentWrapper.append(userPointsWrapper, lvlField, pointsWrapper);
-    lvlWrapper.append(menuButton, fieldContentWrapper);
+    allPointsWrapper.append(userPointsWrapper, currentPointsWrapper);
+    lvlWrapper.append(menuButtonWrapper, allPointsWrapper, lvlField);
     LevelState.lvlWrapper = lvlWrapper;
+    Modal.lvlStartCompleted(GameState.lib.preparationContent, lvlSpeed);
 
     return lvlWrapper;
   }
@@ -145,7 +150,7 @@ class Level {
 
         setTimeout(() => {
           key.style.transition = `margin ${lvlSpeed}ms linear, background-color 500ms`;
-          key.style.margin = `${GameValues.marginRoad}px auto`;
+          key.style.margin = `${GameValues.marginRoad}rem auto`;
         }, GameValues.keysStep);
 
         key.addEventListener('transitionend', () => key.remove());
