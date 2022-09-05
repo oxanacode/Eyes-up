@@ -1,19 +1,15 @@
 import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import TestInput from './test-input';
 import TestRestartBtn from './test-restart-btn';
+import TestState from './test-state';
 
 import { Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
-class TestInteraction {
-  public static createTestInteraction(
-    spanArray: Array<HTMLElement>,
-    spansWrapper: HTMLElement,
-    render: RenderHandler
-  ): HTMLElement {
-    const interaction = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-results' }]);
+class TestTop {
+  public static createTestTop(render: RenderHandler): HTMLElement {
+    const testTop = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-top' }]);
     const stats = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-stats' }]);
     const mistakesWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-mistakes-wrapper' }]);
     const mistakes = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'test-mistakes' }]);
@@ -32,17 +28,12 @@ class TestInteraction {
     const accuracy = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'test-accuracy' }]);
     const accuracyCount = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'test-accuracy-count' }]);
     const restart = TestRestartBtn.createTestRestartBtn(render);
-    const ribbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-ribbon' }]);
-    const testInput = TestInput.createTestInput(spanArray, spansWrapper, [
-      ribbon,
-      mistakesCount,
-      correctionsCount,
-      wpmCount,
-      accuracyCount,
-    ]);
 
+    TestState.mistakesCount = mistakesCount;
+    TestState.correctionsCount = correctionsCount;
+    TestState.wpmCount = wpmCount;
+    TestState.accuracyCount = accuracyCount;
     corrections.textContent = translation.testCorrectionsText[State.currentLang];
-    ribbon.textContent = translation.testRibbonText[State.currentLang];
     mistakes.textContent = translation.testMistakesText[State.currentLang];
     wpm.textContent = translation.testWpmText[State.currentLang];
     accuracy.textContent = translation.testAccuracyText[State.currentLang];
@@ -55,14 +46,10 @@ class TestInteraction {
     wpmWrapper.append(wpm, wpmCount);
     accuracyWrapper.append(accuracy, accuracyCount);
     stats.append(mistakesWrapper, correctionsWrapper, wpmWrapper, accuracyWrapper);
-    interaction.append(testInput, stats, restart, ribbon);
+    testTop.append(stats, restart);
 
-    document.addEventListener('keydown', () => {
-      testInput.focus();
-    });
-
-    return interaction;
+    return testTop;
   }
 }
 
-export default TestInteraction;
+export default TestTop;

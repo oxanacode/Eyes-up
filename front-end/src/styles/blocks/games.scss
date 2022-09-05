@@ -57,7 +57,7 @@
 }
 
 .game-one-bg {
-  background: $bg-game-bg no-repeat right / contain;
+  background: $bg-game-one-bg no-repeat right / contain;
 
   @include tablet {
     background-position: center center;
@@ -65,7 +65,7 @@
 }
 
 .game-two-bg {
-  background: $bg-game-bg no-repeat right / contain;
+  background: $bg-game-two-bg no-repeat right / contain;
 
   @include tablet {
     background-position: center center;

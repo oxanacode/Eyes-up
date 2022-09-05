@@ -49,7 +49,7 @@
   padding: 0 3rem;
   line-height: 5rem;
   background-color: $c-accent;
-  color: white;
+  color: $c-white;
   top: 5rem;
   text-align: center;
   border-radius: 0 0 $small-border-radius $small-border-radius;
@@ -350,4 +350,92 @@
   @media (max-width: 700px) {
     display: none;
   }
+}
+
+.intro-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 19;
+  background: $c-bg-modal-overlay;
+}
+
+.lesson-intro {
+  background-color: $c-body-bg;
+  border-radius: $big-border-radius;
+  padding: 4rem 5rem;
+  position: fixed;
+  z-index: 20;
+  width: 70%;
+  max-width: 60rem;
+  height: 50rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include mobile {
+    padding: 4rem 2rem;
+    width: 90%;
+  }
+}
+
+.intro-img {
+  height: 26rem;
+}
+
+.intro-btns-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.intro-text {
+  @include font-subtitle-mobile;
+  color: $c-main-text;
+  text-align: center;
+}
+
+.intro-skip-btn,
+.intro-next-btn {
+  @include font-main;
+  width: 12rem;
+  height: 4rem;
+  border: 0.2rem solid $c-accent;
+  border-radius: $small-border-radius;
+}
+
+.intro-skip-btn {
+  color: $c-accent;
+}
+
+.intro-next-btn {
+  color: $c-white;
+  background-color: $c-accent;
+}
+
+.intro-text-key {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  color: $c-white;
+  background-color: $c-accent;
+  margin: 0 1rem;
+  line-height: 4rem;
+  border-radius: $small-border-radius;
+}
+
+.intro-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  row-gap: 5rem;
+  margin-top: auto;
+  margin-bottom: 15rem; 
+}
+
+.intro-text-accent {
+  @include font-title-mobile;
+  color: $c-accent;
 }

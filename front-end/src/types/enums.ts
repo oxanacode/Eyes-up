@@ -203,3 +203,11 @@ export enum TypingHero {
   levels = 10,
   score = 2590,
 }
+
+export enum LessonTip {
+  first = 1,
+  second = 2,
+  third = 3,
+  fourth = 4,
+  fifth = 5,
+}

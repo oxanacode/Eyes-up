@@ -1,5 +1,6 @@
 import State from '../../../scripts/state/state';
 import LessonState from './lesson-state';
+import translation from '../../../data/translation';
 
 import { Layout } from '../../../types/enums';
 
@@ -18,9 +19,10 @@ class LessonTimer {
 
     const refreshTime = setInterval(() => {
       if (LessonTimer.stopTimer) clearInterval(refreshTime);
+      else LessonTimer.getWpm();
 
       LessonState.checkTime = LessonTimer.getTime();
-    }, 100);
+    }, 500);
   }
 
   public static getWpm() {
@@ -28,9 +30,9 @@ class LessonTimer {
     const AVERAGE_WORD_LENGTH = State.currentLayout === Layout.en ? 6 : 8;
     const speed = Math.floor(((LessonState.inputIndex / AVERAGE_WORD_LENGTH) * MINUTE) / LessonTimer.getTime());
 
-    LessonState.speed = speed;
+    LessonState.speed = speed || 0;
 
-    return speed || 1;
+    LessonState.wpmCount.textContent = `${LessonState.speed} ${translation.testWpmSub[State.currentLang]}`;
   }
 }
 
