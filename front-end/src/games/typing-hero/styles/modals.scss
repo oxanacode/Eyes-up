@@ -11,6 +11,7 @@
 }
 
 .hero-start-menu-modal {
+  @include font-main;
   z-index: 10;
   position: relative;
   overflow-y: scroll;
@@ -18,8 +19,7 @@
   height: 50rem;
   top: calc(50% - 27.5rem);
   left: calc(50% - 25rem);
-  background: white;
-  font-size: 2rem;
+  background: $c-hero-modal-bg;
   color: $c-main-text;
   text-align: center;
   display: flex;
@@ -28,6 +28,11 @@
   gap: 3rem;
   padding: 3rem 2rem;
   border-radius: $small-border-radius;
+}
+
+.hero-start-menu-title {
+  @include font-title-mobile;
+  color: $c-hero-modal-title-btn;
 }
 
 .hero-start-menu-image {
@@ -43,18 +48,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  justify-content: space-between;
+  height: 100%;
 }
 
 .hero-reset-modal {
+  @include font-main;
   z-index: 10;
   position: relative;
   width: 40rem;
   height: 20rem;
   top: calc(50% - 10rem);
   left: calc(50% - 20rem);
-  background: white;
-  font-size: 2rem;
+  background: $c-hero-modal-bg;
   color: $c-main-text;
   text-align: center;
   display: flex;
@@ -77,20 +83,20 @@
 .hero-reset-close-button,
 .sandbox-close-modal-button,
 .sandbox-start-button {
-  font-size: 1.7rem;
-  border: 0.2rem solid #F4F4F4;
+  @include font-main;
+  border: 0.2rem solid $c-hero-borders;
   border-radius: 0.5rem;
   padding: 0.5rem 0;
   text-align: center;
-  color: $c-main-text;
+  color: $c-hero-modal-title-btn;
   width: 12rem;
   &:hover {
-    border-color: $c-accent;
+    border-color: $c-hero-modal-title-btn;
   }
   &:disabled {
     color: #B7B7B7;
     &:hover {
-      border-color: #F4F4F4;
+      border-color: $c-hero-borders;
     }
   }
 }

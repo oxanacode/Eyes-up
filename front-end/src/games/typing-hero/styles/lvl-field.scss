@@ -1,5 +1,5 @@
 .lvl-wrapper {
-  background-color: #F5F5F5;
+  background-color: $c-hero-lvl-bg;
   padding: 5.5rem 0 10rem 0;
   @include tablet-stats {
     padding: 2rem 0 5rem 0;
@@ -72,7 +72,7 @@
   height: 50rem;
   margin: 7rem auto 0 auto;
   border-radius: $big-border-radius;
-  background-color: white;
+  background-color: $c-letters-field;
   border-width: 0.2rem 0px 0.6rem 0px;
   border-style: solid;
   border-color: $c-accent;
@@ -93,7 +93,7 @@
 }
 
 .lvl-field-column:not(:last-child) {
-  border-right: 0.2rem solid #F4F4F4;
+  border-right: 0.2rem solid $c-hero-borders;
 }
 
 .column-key {
@@ -130,7 +130,7 @@
   width: 34rem;
   height: 9rem;
   color: $c-accent;
-  background-color: white;
+  background-color: $c-hero-lvl-bg;
   display: flex;
   justify-content: center;
   align-items: center;
