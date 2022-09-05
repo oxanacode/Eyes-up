@@ -47,10 +47,33 @@
 }
 
 .promo-content-container {
+  position: relative;
+
   @include desktop-small {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    transition: $transition-time;
+    background: $bg-home-bg-1 no-repeat center / contain;
+    right: 12rem;
+    bottom: -23rem; 
+    width: 3rem;
+    height: 3rem;
+
+    @include desktop-small {
+      bottom: -35rem;
+      right: 5rem;
+    }
+
+    @include tablet {
+      bottom: -35rem;
+      right: 5rem;
+    }
   }
 }
 
@@ -76,8 +99,7 @@
     margin: 0 1.6rem 7rem;
   }
 
-  &::before,
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     transition: $transition-time;
@@ -96,24 +118,6 @@
 
     @include tablet {
       left: 0;
-    }
-  }
-
-  &::after {
-    background: $bg-home-bg-1 no-repeat center / contain;
-    right: 70rem;
-    bottom: -10rem; 
-    width: 3rem;
-    height: 3rem;
-
-    @include desktop-small {
-      bottom: 10rem;
-      right: 50rem;
-    }
-
-    @include tablet {
-      right: 8rem;
-      bottom: 5rem;
     }
   }
 }
@@ -234,8 +238,8 @@
     content: '';
     position: absolute;
     background: $bg-home-bg-blur-1 no-repeat center / contain;
-    width: 90rem;
-    height: 90rem;
+    width: 80rem;
+    height: 80rem;
     transition: $transition-time;
     left: -40rem;
     z-index: -1;
@@ -262,8 +266,8 @@
     content: '';
     position: absolute;
     background: $bg-home-bg-blur-2 no-repeat center / contain;
-    width: 90rem;
-    height: 90rem;
+    width: 80rem;
+    height: 80rem;
     transition: $transition-time;
     right: -40rem;
     z-index: -1;

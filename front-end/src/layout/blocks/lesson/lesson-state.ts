@@ -60,7 +60,7 @@ class LessonState {
     LessonState.typing = false;
     LessonState.checkTime = 0;
     LessonState.typedChars = 0;
-    LessonState.lineHeight = 40;
+    LessonState.lineHeight = LessonLineHeight.normal;
   }
 }
 
