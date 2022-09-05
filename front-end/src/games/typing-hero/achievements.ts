@@ -42,7 +42,7 @@ class Achievements {
     for (let i = 0; i < Achievements.windowsCounter; i += 1) {
       top += AchievementsValues.achievementAnotherModal;
     }
-    modal.style.top = `${top}px`;
+    modal.style.top = `${top}rem`;
 
     GameState.gameWrapper.append(modal);
     Achievements.windowsCounter += 1;

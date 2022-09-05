@@ -11,8 +11,8 @@ enum GameValues {
   thirdAction = 2,
   firstLvl = 1,
   achievementTimer = 7000,
-  achievementStyleTop = 20,
-  achievementAnotherModal = 170,
+  achievementStyleTop = 2,
+  achievementAnotherModal = 17,
 }
 
 export { Tag, Page, Data };

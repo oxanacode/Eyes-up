@@ -1,80 +1,144 @@
-.field-content-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
+.lvl-wrapper {
+  background-color: $c-hero-lvl-bg;
+  padding: 5.5rem 0 10rem 0;
+  @include tablet-stats {
+    padding: 2rem 0 5rem 0;
+  }
 }
 
-.lvl-field {
-  width: 500px;
-  height: 500px;
-  border-radius: 5px;
-  border: 2px solid darkmagenta;
-  display: flex;
-}
-
-.lvl-field-column {
-  overflow: hidden;
-  position: relative;
-  width: 100px;
-  border-left: 1px solid darkmagenta;
-  border-right: 1px solid darkmagenta;
+.field-menu-button-wrapper {
+  max-width: 102rem;
+  margin: 0 auto;
 }
 
 .field-menu-button {
+  @extend .back-btn;
   display: block;
-  width: 100px;
-  height: 45px;
-  margin: 10px auto;
-  border: 2.5px solid darkmagenta;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-left: 3rem;
 }
 
-.column-key {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 25px);
-  width: 50px;
-  height: 50px;
-  background-color: darkmagenta;
-  border-radius: 5px;
-  margin: -55px auto;
-  color: white;
-  font-size: 25px;
+.field-points-wrapper {
+  max-width: 60rem;
+  margin: 6.5rem auto 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  &.select {
-    background-color: orangered;
+  justify-content: space-between;
+  @include tablet-stats {
+    margin: 3rem auto 0 auto;
+    flex-direction: column;
+    row-gap: 3rem;
   }
 }
 
 .current-points-wrapper,
 .user-points-wrapper {
-  padding: 20px 0;
-  min-width: 230px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 100px;
+  gap: 1.5rem;
+  @include tablet-stats {
+    align-items: center;
+  }
+}
+
+.current-points-wrapper {
+  align-items: flex-end;
+  @include tablet-stats {
+    align-items: center;
+  }
 }
 
 .current-score,
 .current-accuracy,
 .user-data {
-  font-size: 25px;
-  text-align: center;
+  @include font-subtitle;
+  display: flex;
+  gap: 1rem;
+  color: $c-menu-inactive-link;
+  @include tablet-stats {
+    @include font-subtitle-mobile;
+  }
 }
 
-.lvl-complete-modal {
+.user-data-points {
+  color: #D984BC;
+}
+
+.current-score-points,
+.current-accuracy-points {
+  color: $c-accent;
+}
+
+.lvl-field {
+  width: 60rem;
+  height: 50rem;
+  margin: 7rem auto 0 auto;
+  border-radius: $big-border-radius;
+  background-color: $c-letters-field;
+  border-width: 0.2rem 0 0.6rem 0;
+  border-style: solid;
+  border-color: $c-accent;
+  display: flex;
+  @include tablet-stats {
+    margin: 3rem auto 0 auto;
+    width: 30rem;
+  }
+}
+
+.lvl-field-column {
+  overflow: hidden;
+  position: relative;
+  width: 12rem;
+  @include tablet-stats {
+    width: 6rem;
+  }
+}
+
+.lvl-field-column:not(:last-child) {
+  border-right: 0.2rem solid $c-hero-borders;
+}
+
+.column-key {
+  @include font-title;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 3rem);
+  width: 6rem;
+  height: 6rem;
+  background-color: $c-accent;
+  border-radius: $small-border-radius;
+  margin: -5.5rem auto;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &.select {
+    background-color: #D984BC;
+  }
+  @include tablet-stats {
+    @include font-subtitle;
+    width: 4rem;
+    height: 4rem;
+    left: calc(50% - 2rem);
+  }
+}
+
+.lvl-start-completed-modal {
+  @include font-subtitle;
+  z-index: 10;
   position: fixed;
-  top: calc(50% - 25px);
-  left: calc(50% - 150px);
-  width: 300px;
-  height: 50px;
-  font-size: 35px;
-  color: darkmagenta;
-  text-shadow: 0 0 15px darkmagenta;
-  text-align: center;
+  top: 0;
+  left: calc(50% - 17rem);
+  width: 34rem;
+  height: 9rem;
+  color: $c-accent;
+  background-color: $c-hero-lvl-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: $bxs-result-shadow;
+  border-radius: 0 0 $big-border-radius $big-border-radius;
+  @include tablet-stats {
+    width: 28rem;
+    height: 7rem;
+    left: calc(50% - 14rem);
+  }
 }

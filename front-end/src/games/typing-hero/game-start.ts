@@ -1,5 +1,3 @@
-import './style.scss';
-
 import CreateElement from './app-scripts/app-create-element';
 import Menu from './game-menu';
 import GameState from './game-state';

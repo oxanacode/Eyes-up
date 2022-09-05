@@ -34,6 +34,8 @@ class ApiHandler {
       const spells = data.userSpells;
       GameState.userSpells = [];
 
+      if (!GameState.spellsLib) return;
+
       spells.forEach((spell) => {
         ApiHandler.engageSpell(spell.name);
       });
@@ -72,12 +74,34 @@ class ApiHandler {
     if (badges === Data.noData) ApiHandler.userData.badges = ParseBadges.setBadges(newBadges);
     else {
       const userBadges = ParseBadges.getBadges(badges);
+      const badgesNums = Object.values(Achievements.achievementsNums);
+      let finalBadges: number[] = [];
+      const indexes: number[] = [];
 
       newBadges.forEach((badge) => {
         if (!userBadges.includes(badge)) userBadges.push(badge);
       });
+      badgesNums.forEach((badgeNum) => {
+        if (userBadges.includes(badgeNum) && !newBadges.includes(badgeNum)) {
+          const index = userBadges.indexOf(badgeNum);
 
-      ApiHandler.userData.badges = ParseBadges.setBadges(userBadges);
+          indexes.push(index);
+        }
+      });
+
+      if (!newBadges.length) {
+        finalBadges = userBadges.filter((item) => {
+          if (badgesNums.includes(item)) return false;
+          return true;
+        });
+      } else {
+        finalBadges = userBadges.filter((item, index) => {
+          if (indexes.includes(index)) return false;
+          return true;
+        });
+      }
+
+      ApiHandler.userData.badges = ParseBadges.setBadges(finalBadges);
     }
   }
 

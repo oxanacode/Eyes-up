@@ -148,7 +148,7 @@
 }
 
 @mixin default-input {
-  @include font-main-small;
+  @include font-main;
   display: block;
   height: 4rem;
   color: $c-main-text;
