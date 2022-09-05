@@ -1,5 +1,3 @@
-import './style.scss';
-
 import CreateElement from './overal-func.ts/create-element';
 import GameState from './game-state';
 import GameMap from './game-map';

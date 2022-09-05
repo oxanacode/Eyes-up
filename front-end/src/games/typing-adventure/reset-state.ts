@@ -1,5 +1,6 @@
 import GameState from './game-state';
 import Modal from './overal-func.ts/create-modal';
+import ApiHandler from './api-handler';
 
 class Reset {
   static state() {
@@ -21,6 +22,8 @@ class Reset {
       Reset.state();
       overlay.remove();
       callback();
+      Modal.createStartModal();
+      ApiHandler.setData();
     });
 
     modal.append(modalText, button);

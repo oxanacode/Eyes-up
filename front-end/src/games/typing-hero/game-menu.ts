@@ -5,30 +5,50 @@ import LevelPoints from './level-functionality/level-points';
 import Achievements from './achievements';
 import Modal from './modal';
 import UserData from './data-handler';
+import Reset from './reset-state';
 
-import { Tag, PointsType } from './game-types/enums';
+import { Tag, PointsType, GameName } from './game-types/enums';
 
 class Menu {
   static createMenu() {
     const menuWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-wrapper' }]);
-    const contentWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'hero-menu-content-wrapper' },
+    const headerWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-header' }]);
+    const gameTitle = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-title-wrapper' }]);
+    const typingTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'hero-menu-typing-title' }]);
+    const heroTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'hero-menu-hero-title' }]);
+    const pointsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-points-wrapper' }]);
+    const bestPoints = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'hero-menu-best-points-wrapper' },
+    ]);
+    const overallPoints = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'hero-menu-overall-points-wrapper' },
+    ]);
+    const sandboxWrapper = CreateElement.createElement(Tag.section, [
+      { name: 'class', value: 'hero-menu-sandbox-wrapper' },
     ]);
     const lvlsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-lvls-wrapper' }]);
-    const points = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-menu-points-wrapper' }]);
     const bestScore = Menu.createMenuPointsView(PointsType.best, PointsType.score);
     const bestAccuracy = Menu.createMenuPointsView(PointsType.best, PointsType.accuracy);
     const totalScore = Menu.createMenuPointsView(PointsType.total, PointsType.score);
     const averageAccuracy = Menu.createMenuPointsView(PointsType.average, PointsType.accuracy);
     const appButton = Menu.createMenuButton();
+    const sandboxMenuTitle = CreateElement.createElement(Tag.h4, [{ name: 'class', value: 'hero-menu-sandbox-title' }]);
     const sandboxButton = Menu.sandboxButton();
+    const resetButton = Menu.resetButton();
     const levelsNames = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     const testLvl = levelsNames.map((name) => Level.createLvlButton(name, Menu.updateMenu));
 
-    points.append(bestScore, bestAccuracy, totalScore, averageAccuracy);
+    typingTitle.textContent = GameName.typingPart;
+    heroTitle.textContent = GameName.heroPart;
+    sandboxMenuTitle.textContent = GameState.lib.sandboxMenuTitle;
+    gameTitle.append(typingTitle, heroTitle);
+    headerWrapper.append(appButton, gameTitle, resetButton);
+    bestPoints.append(bestScore, bestAccuracy);
+    overallPoints.append(totalScore, averageAccuracy);
+    pointsWrapper.append(bestPoints, overallPoints);
     lvlsWrapper.append(...testLvl);
-    contentWrapper.append(points, lvlsWrapper);
-    menuWrapper.append(appButton, sandboxButton, contentWrapper);
+    sandboxWrapper.append(sandboxMenuTitle, sandboxButton);
+    menuWrapper.append(headerWrapper, pointsWrapper, lvlsWrapper, sandboxWrapper);
 
     return menuWrapper;
   }
@@ -112,6 +132,17 @@ class Menu {
     button.textContent = GameState.lib.sandboxButton;
     button.addEventListener('click', () => {
       Modal.sandboxModal(Level.createLvl, Menu.updateMenu);
+    });
+
+    return button;
+  }
+
+  static resetButton() {
+    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'hero-menu-reset-button' }]);
+
+    button.textContent = GameState.lib.resetButton;
+    button.addEventListener('click', () => {
+      Reset.resetMethod(Menu.updateMenu);
     });
 
     return button;

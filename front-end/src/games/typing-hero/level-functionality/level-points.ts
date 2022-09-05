@@ -23,7 +23,7 @@ class LevelPoints {
   static createPointsWrapper(pointsTypes: string) {
     const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: `${pointsTypes}` }]);
     const title = CreateElement.createElement(Tag.par, [{ name: 'class', value: `${pointsTypes}-title` }]);
-    const points = CreateElement.createElement(Tag.par, [{ name: 'class', value: `${pointsTypes}-pionts` }]);
+    const points = CreateElement.createElement(Tag.par, [{ name: 'class', value: `${pointsTypes}-points` }]);
 
     return { wrapper, title, points };
   }
@@ -32,12 +32,12 @@ class LevelPoints {
     const { wrapper, title, points } = LevelPoints.createPointsWrapper(`current-${pointsType}`);
 
     if (pointsType === PointsType.score) {
-      title.textContent = `${GameState.lib.currentScore} ${GameState.lib.score}`;
+      title.textContent = `${GameState.lib.currentScore} ${GameState.lib.score.slice(0, -1)}`;
       LevelState.scoreWrapper = points;
     }
 
     if (pointsType === PointsType.accuracy) {
-      title.textContent = `${GameState.lib.currentAccuracy} ${GameState.lib.accuracy}`;
+      title.textContent = `${GameState.lib.currentAccuracy} ${GameState.lib.accuracy.slice(0, -1)}`;
       LevelState.accuracyWrapper = points;
     }
 
@@ -52,11 +52,11 @@ class LevelPoints {
     const userPoints = UserData.levels[lvlNum][type];
 
     if (type === PointsType.score) {
-      title.textContent = `${GameState.lib.prevousBestScore} ${GameState.lib.score}`;
+      title.textContent = `${GameState.lib.bestScore} ${GameState.lib.score.slice(0, -1)}`;
     }
 
     if (type === PointsType.accuracy) {
-      title.textContent = `${GameState.lib.prevousBestAccuracy} ${GameState.lib.accuracy}`;
+      title.textContent = `${GameState.lib.bestAccuracy} ${GameState.lib.accuracy.slice(0, -1)}`;
     }
 
     if (userPoints === GameValues.startScore) {

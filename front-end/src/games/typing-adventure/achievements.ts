@@ -37,31 +37,25 @@ class Achievements {
   static createWindow(titleContent: string, textContent: string, path: string) {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-modal' }]);
     const title = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-title' }]);
-    const textTitle = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text' }]);
     const text = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text' }]);
     const img = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'achievement-img' },
       { name: 'alt', value: 'achievement-image' },
       { name: 'src', value: path },
     ]);
-    const contentWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'achievement-content-wrapper' },
-    ]);
     const textWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text-wrapper' }]);
     let top = GameValues.achievementStyleTop;
 
     title.textContent = GameState.lib.achievementTitle as string;
-    textTitle.textContent = titleContent;
     text.textContent = textContent;
-    textWrapper.append(textTitle, text);
-    contentWrapper.append(img, textWrapper);
-    modal.append(title, contentWrapper);
+    textWrapper.append(title, text);
+    modal.append(img, textWrapper);
 
     for (let i = 0; i < Achievements.windowsCounter; i += 1) {
       top += GameValues.achievementAnotherModal;
     }
 
-    modal.style.top = `${top}px`;
+    modal.style.top = `${top}rem`;
 
     GameState.gameWrapper.append(modal);
     Achievements.windowsCounter += 1;
@@ -82,6 +76,7 @@ class Achievements {
     if (!Achievements.current.waterSpells) Achievements.waterCheck();
     if (!Achievements.current.lightSpells) Achievements.lightCheck();
     if (!Achievements.current.windSpells) Achievements.windCheck();
+
     Achievements.setStatus();
   }
 
@@ -90,7 +85,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleTenSpells as string;
       const text = GameState.lib.achievementTextTenSpells as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.tenSpells = true;
     }
   }
@@ -100,7 +95,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleLvlUp as string;
       const text = GameState.lib.achievementTextLvlUp as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.lvlUp = true;
     }
   }
@@ -110,7 +105,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleHalfGame as string;
       const text = GameState.lib.achievementTextHalfGame as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.halfGame = true;
     }
   }
@@ -120,7 +115,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleGameDone as string;
       const text = GameState.lib.achievementTextGameDone as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.gameDone = true;
     }
   }
@@ -132,7 +127,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleThunder as string;
       const text = GameState.lib.achievementTextThunder as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.thunderSpells = true;
     }
   }
@@ -144,7 +139,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleFire as string;
       const text = GameState.lib.achievementTextFire as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.fireSpells = true;
     }
   }
@@ -156,7 +151,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleWater as string;
       const text = GameState.lib.achievementTextWater as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.waterSpells = true;
     }
   }
@@ -168,7 +163,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleLight as string;
       const text = GameState.lib.achievementTextLight as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.lightSpells = true;
     }
   }
@@ -180,7 +175,7 @@ class Achievements {
       const title = GameState.lib.achievementTitleWind as string;
       const text = GameState.lib.achievementTextWind as string;
 
-      Achievements.createWindow(title, text, './assets/typing-adventure/achievement.png');
+      Achievements.createWindow(title, text, './assets/games/typing-adventure/achievement.png');
       Achievements.current.windSpells = true;
     }
   }

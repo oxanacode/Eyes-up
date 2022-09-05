@@ -2,8 +2,13 @@ import { Tag, Page, Data } from '../../../types/enums';
 
 export { Tag, Page, Data };
 
+export enum GameName {
+  typingPart = 'Typing',
+  heroPart = 'Hero',
+}
+
 export enum GameValues {
-  marginRoad = 500,
+  marginRoad = 50,
   keysStep = 100,
   keyCheck = 1,
   keyCounterStep = 1,
@@ -13,6 +18,7 @@ export enum GameValues {
   msMultiplier = 1000,
   maxLvls = 10,
   startScore = 0,
+  initialValue = 0,
 }
 
 export enum PointsType {
@@ -20,7 +26,7 @@ export enum PointsType {
   accuracy = 'accuracy',
   scorePoint = 10,
   basePoints = 0,
-  basePointsContent = '-.-',
+  basePointsContent = '0',
   best = 'best',
   total = 'total',
   average = 'average',
@@ -29,8 +35,8 @@ export enum PointsType {
 export enum AchievementsValues {
   hero = 10,
   legend = 11,
-  achievementStyleTop = 20,
-  achievementAnotherModal = 170,
+  achievementStyleTop = 2,
+  achievementAnotherModal = 17,
   achievementTimer = 7000,
 }
 
