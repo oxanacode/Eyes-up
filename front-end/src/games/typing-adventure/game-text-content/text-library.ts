@@ -1,5 +1,5 @@
 export const enContent = {
-  lvl: 'lvl.',
+  lvl: 'Level',
   beastTitle: [
     'cave beast',
     'swamp beast',
@@ -11,8 +11,8 @@ export const enContent = {
     'lava monster',
     'tornado monster',
   ],
-  layoutButton: 'back to games',
-  resetButton: 'reset progress',
+  layoutButton: 'Back',
+  resetButton: 'Reset Score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
 
   preparation: 'preparation',
@@ -25,7 +25,7 @@ export const enContent = {
   winnerBeast: 'Beast won!',
   lowStrengthMessage: 'Now you are stronger!',
   toMap: 'back to map',
-  doneStatus: ' (DONE)',
+  // doneStatus: ' (DONE)',
 
   welcomeModalTitle: 'Welcome to the Typing Adventure!',
   welcomeModalMessage:
@@ -44,7 +44,7 @@ export const enContent = {
   startModalParagFive: 'Collect enchantments, win and get in-game achievements!\nGood luck!',
   startModalButton: 'start the game',
 
-  gameInfoTitle: 'game info',
+  gameInfoTitle: 'Statistics',
   gameInfoLvl: 'your lvl',
   gameInfoHeroSpells: 'your spells',
   gameInfoNullSpells: 'you are on your way to learning!',
@@ -101,7 +101,7 @@ export const enContent = {
 };
 
 export const ruContent = {
-  lvl: 'ур.',
+  lvl: 'Уровень',
   beastTitle: [
     'пещерное чудище',
     'болотное чудище',
@@ -113,8 +113,8 @@ export const ruContent = {
     'лавовый монстр',
     'ураганный монстр',
   ],
-  layoutButton: 'обратно к играм',
-  resetButton: 'сбросить прогресс',
+  layoutButton: 'Назад',
+  resetButton: 'Сбросить Прогресс',
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
 
   preparation: 'подготовка',
@@ -127,7 +127,7 @@ export const ruContent = {
   winnerBeast: 'Монстр победил!',
   lowStrengthMessage: 'На этот раз ты сильнее!',
   toMap: 'вернуться на карту',
-  doneStatus: ' (Пройден)',
+  // doneStatus: ' (Пройден)',
 
   welcomeModalTitle: 'Добро пожаловать в игру Typing Adventure!',
   welcomeModalMessage:
@@ -146,7 +146,7 @@ export const ruContent = {
   startModalParagFive: 'Собирайте чары, побеждайте и получайте игровые достижения!\nУдачи!',
   startModalButton: 'начать игру',
 
-  gameInfoTitle: 'статистика',
+  gameInfoTitle: 'Статистика',
   gameInfoLvl: 'ваш уровень',
   gameInfoHeroSpells: 'ваши чары',
   gameInfoNullSpells: 'вы на пути к изучению!',

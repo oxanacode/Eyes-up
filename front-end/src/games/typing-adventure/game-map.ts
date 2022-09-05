@@ -6,15 +6,18 @@ import GameInfo from './game-info';
 import Reset from './reset-state';
 import ApiHandler from './api-handler';
 
-import { Tag } from './game-types/enums';
+import GameValues, { Tag, GameName } from './game-types/enums';
 
 class GameMap {
   static mapRender(): HTMLElement {
     const map = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-map' }]);
-    const buttons = GameMap.createMapButtons();
+    const beastsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-map-beasts-wrapper' }]);
+    const header = GameMap.createMapHeader();
     const beasts = GameMap.mapBeastsRender();
+    const inactiveCells = GameMap.createInactiveCells();
 
-    map.append(buttons, ...beasts);
+    beastsWrapper.append(...beasts, ...inactiveCells);
+    map.append(header, beastsWrapper);
 
     return map;
   }
@@ -33,12 +36,24 @@ class GameMap {
     ApiHandler.setData();
   }
 
-  static createMapButtons() {
-    const buttonWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'map-buttons-wrapper' }]);
-    const layoutButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'layout-button' }]);
-    const infoButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'game-info-button' }]);
-    const resetButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'reset-state-button' }]);
+  static createMapHeader() {
+    const mapHeaderWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'map-header-wrapper' }]);
+    const layoutButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'adventure-back-button' }]);
+    const infoButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'adventure-info-button' }]);
+    const resetButton = CreateElement.createElement(Tag.btn, [
+      { name: 'class', value: 'adventure-reset-state-button' },
+    ]);
+    const buttonsWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'map-header-buttons-wrapper' },
+    ]);
+    const gameTitle = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'adventure-menu-title-wrapper' }]);
+    const typingTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'adventure-menu-typing-title' }]);
+    const adventureTitle = CreateElement.createElement(Tag.par, [
+      { name: 'class', value: 'adventure-menu-adventure-title' },
+    ]);
 
+    typingTitle.textContent = GameName.typingPart;
+    adventureTitle.textContent = GameName.adventurePart;
     layoutButton.textContent = GameState.lib.layoutButton as string;
     resetButton.textContent = GameState.lib.resetButton as string;
     infoButton.textContent = GameState.lib.gameInfoTitle as string;
@@ -53,10 +68,26 @@ class GameMap {
     resetButton.addEventListener('click', () => {
       Reset.resetMethod(GameMap.innerGameMapRender);
     });
+    gameTitle.append(typingTitle, adventureTitle);
+    buttonsWrapper.append(resetButton, infoButton);
+    mapHeaderWrapper.append(layoutButton, gameTitle, buttonsWrapper);
 
-    buttonWrapper.append(layoutButton, infoButton, resetButton);
+    return mapHeaderWrapper;
+  }
 
-    return buttonWrapper;
+  static createInactiveCells() {
+    const beastAmount = GameState.currentGameBeasts.length;
+    const cells: HTMLElement[] = [];
+
+    for (let i = beastAmount + 1; i < GameValues.maxMapBeasts; i += 1) {
+      const beastWrapper = CreateElement.createElement(Tag.div, [
+        { name: 'class', value: `beast-wrapper inactive-cell` },
+      ]);
+
+      cells.push(beastWrapper);
+    }
+
+    return cells;
   }
 }
 
