@@ -52,7 +52,7 @@ class TestInput {
       if (TestState.inputIndex <= TestState.testChars.length - 1)
         TestState.testChars[TestState.inputIndex].classList.remove('active-char');
 
-      if (TestState.inputIndex > TestState.testChars.length - 1 || TestResult.visible) return;
+      if (TestState.inputIndex > TestState.testChars.length - 1 || TestState.timeCount.textContent === '0') return;
 
       TextPosition.adjust();
 

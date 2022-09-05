@@ -317,6 +317,7 @@
 .profile-badge-title {
   font-size: 1.6rem;
   font-weight: $fw-bold;
+  color: $c-accent;
 }
 
 .profile-earned-badges {
@@ -357,3 +358,7 @@
     width: 8rem;
   }
 }
+
+.profile-badge-desc {
+  color: $c-main-text;
+ }

@@ -70,7 +70,7 @@
 .best-accuracy,
 .total-score,
 .average-accuracy {
-  @include font-subtitle;
+  @include font-subtitle-mobile;
   position: relative;
   display: flex;
   color: $c-menu-inactive-link;
@@ -128,10 +128,10 @@
   margin: 8rem auto;
   padding: 0 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   row-gap: 4rem;
-  column-gap: 1rem;
+  column-gap: 2rem;
 
   @include tablet-stats {
     margin: 4rem auto;

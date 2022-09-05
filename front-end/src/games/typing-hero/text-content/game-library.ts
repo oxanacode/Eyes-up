@@ -104,7 +104,7 @@ export const enLibrary: Record<string, string> = {
 
 export const ruLibrary: Record<string, string> = {
   startModalTitle: 'Добро пожаловать в игру Typing Hero!',
-  startModalParagOne: 'Ваша задача — успеть поймать все буквы, появляющиеся на игровом поле.',
+  startModalParagOne: 'Ваша задача - успеть поймать все буквы, появляющиеся на игровом поле.',
   startModalParagTwo:
     'За каждую пойманную букву начисляются очки. На протяжении уровня вам будет также выводиться ваша точность. Если вы прошли уровень до конца - он считается пройденным и падает вам в копилку!',
   startModalParagThree: 'Ловите буквы, набирайте очки, практикуйтесь в точности!',
