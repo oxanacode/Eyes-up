@@ -70,7 +70,6 @@ export const enLibrary: Record<string, string> = {
   startModalParagThree: 'Catch letters, score points, practice accuracy!',
   startModalButton: "let's start!",
 
-  // baseLvlContent: 'get your first points',
   appButton: 'Back',
   sandboxButton: 'sandbox',
   resetButton: 'Reset Score',
@@ -111,7 +110,6 @@ export const ruLibrary: Record<string, string> = {
   startModalParagThree: 'Ловите буквы, набирайте очки, практикуйтесь в точности!',
   startModalButton: 'вперёд!',
 
-  // baseLvlContent: 'получите первые очки',
   appButton: 'Назад',
   sandboxButton: 'песочница',
   resetButton: 'Сбросить Прогресс',

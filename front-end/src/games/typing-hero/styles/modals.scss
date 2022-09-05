@@ -94,7 +94,7 @@
     border-color: $c-hero-modal-title-btn;
   }
   &:disabled {
-    color: #B7B7B7;
+    color: $c-hero-disabled-modal;
     &:hover {
       border-color: $c-hero-borders;
     }

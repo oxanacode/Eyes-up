@@ -13,7 +13,6 @@ class Level {
     const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lvl-section-button' }]);
     const lvlTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-section-title' }]);
     const userScore = UserData.levels[lvlNum].score;
-    // const buttonContent = Level.createButtonContent(lvlNum, button);
 
     lvlTitle.textContent = `${GameState.lib.level} ${lvlNum}`;
     button.addEventListener('click', () => {
@@ -46,33 +45,24 @@ class Level {
     const userScore = UserData.levels[lvlNum].score;
     const userAccuracy = UserData.levels[lvlNum].accuracy;
 
-    if (userScore === GameValues.startScore) {
-      // const baseTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-base-title' }]);
-      // baseTitle.textContent = GameState.lib.baseLvlContent;
-      currenButton.classList.add('basic');
-      // wrapper.append(baseTitle);
-    } else {
-      const scoreTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-score-title' }]);
-      const accuracyTitle = CreateElement.createElement(Tag.par, [
-        { name: 'class', value: 'lvl-button-accuracy-title' },
-      ]);
-      const score = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-score' }]);
-      const accuracy = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-accuracy' }]);
-      const scoreWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-button-score-wrapper' }]);
-      const accuracyWrapper = CreateElement.createElement(Tag.div, [
-        { name: 'class', value: 'lvl-button-accuracy-wrapper' },
-      ]);
+    const scoreTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-score-title' }]);
+    const accuracyTitle = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-accuracy-title' }]);
+    const score = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-score' }]);
+    const accuracy = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'lvl-button-accuracy' }]);
+    const scoreWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lvl-button-score-wrapper' }]);
+    const accuracyWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'lvl-button-accuracy-wrapper' },
+    ]);
 
-      scoreTitle.textContent = `${GameState.lib.score.slice(0, -1)}`;
-      accuracyTitle.textContent = `${GameState.lib.accuracy.slice(0, -1)}`;
-      score.textContent = `${userScore}/${levelMaxScore[lvlNum]}`;
-      accuracy.textContent = `${userAccuracy}%`;
-      currenButton.classList.add('completed');
+    scoreTitle.textContent = `${GameState.lib.score.slice(0, -1)}`;
+    accuracyTitle.textContent = `${GameState.lib.accuracy.slice(0, -1)}`;
+    score.textContent = `${userScore}/${levelMaxScore[lvlNum]}`;
+    accuracy.textContent = `${userAccuracy}%`;
+    currenButton.classList.add('completed');
 
-      scoreWrapper.append(scoreTitle, score);
-      accuracyWrapper.append(accuracyTitle, accuracy);
-      wrapper.append(scoreWrapper, accuracyWrapper);
-    }
+    scoreWrapper.append(scoreTitle, score);
+    accuracyWrapper.append(accuracyTitle, accuracy);
+    wrapper.append(scoreWrapper, accuracyWrapper);
 
     return wrapper;
   }
