@@ -180,7 +180,7 @@ class FieldAction {
   }
 
   static clearPanels() {
-    FieldState.timer.textContent = 'finished';
+    FieldState.timer.textContent = 'Finished';
     FieldState.actionTotal.textContent = '';
   }
 }

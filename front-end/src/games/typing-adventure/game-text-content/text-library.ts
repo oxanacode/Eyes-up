@@ -98,7 +98,7 @@ export const ruContent = {
   winnerHero: 'Вы победили!',
   winnerBeast: 'Монстр победил!',
   lowStrengthMessage: 'Ты сильнее!',
-  toMap: 'вернуться на карту',
+  toMap: 'На карту',
 
   welcomeModalTitle: 'Добро пожаловать в игру Typing Adventure!',
   welcomeModalMessage:
