@@ -1,5 +1,5 @@
 export const enContent = {
-  lvl: 'lvl.',
+  lvl: 'Level',
   beastTitle: [
     'cave beast',
     'swamp beast',
@@ -11,28 +11,27 @@ export const enContent = {
     'lava monster',
     'tornado monster',
   ],
-  layoutButton: 'back to games',
-  resetButton: 'reset progress',
+  layoutButton: 'Back',
+  resetButton: 'Reset Score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
 
-  preparation: 'preparation',
-  yourMove: 'your move!',
-  beastMove: 'beast move!',
+  preparation: 'Get Ready!',
+  yourMove: 'Your Move!',
+  beastMove: 'Beast Move!',
   resistMessage: '\nresist!',
   resultNewLvl: 'Level has been increased!\nNew beast on the map!',
   resultFinalLvl: 'Congratulations!\nYou completed the game!',
-  winnerHero: 'You won!',
-  winnerBeast: 'Beast won!',
-  lowStrengthMessage: 'Now you are stronger!',
-  toMap: 'back to map',
-  doneStatus: ' (DONE)',
+  winnerHero: 'You Won!',
+  winnerBeast: 'Beast Won!',
+  lowStrengthMessage: 'You stronger!',
+  toMap: 'Back To Map',
 
   welcomeModalTitle: 'Welcome to the Typing Adventure!',
   welcomeModalMessage:
     'Defeat the strongest monsters of Typiria to win the crown and the title of fast typing professional!\nThe monsters have gone berserk and are not going to calm down! Luckily, elemental magic comes to your rescue!',
   welcomeModalWarning: 'Please register to save your progress!',
-  welcomeModalToLayoutBtn: 'back to site',
-  welcomeModalСontinue: 'continue',
+  welcomeModalToLayoutBtn: 'Back To Site',
+  welcomeModalСontinue: 'Continue',
 
   startModalParagOne:
     'Before you is a game map on which various monsters appear. With each new level, your strength increases, and a new monster appears on the map.',
@@ -42,21 +41,21 @@ export const enContent = {
     "Monsters are able to attack in different ways: magical or physical attacks.\nThe monster's magic attack is much stronger, but it can be repelled.\nMoreover, in addition to monsters, monsters that have protection from certain elements may also appear, be careful with them!",
   startModalParagFour: 'If this is your first game, carefully read the hints on the playing field.',
   startModalParagFive: 'Collect enchantments, win and get in-game achievements!\nGood luck!',
-  startModalButton: 'start the game',
+  startModalButton: 'Start The Game',
 
-  gameInfoTitle: 'game info',
-  gameInfoLvl: 'your lvl',
-  gameInfoHeroSpells: 'your spells',
-  gameInfoNullSpells: 'you are on your way to learning!',
-  gameInfoAllSpells: 'game spells',
-  gameInfoButton: 'back to game',
+  gameInfoTitle: 'Statistics',
+  gameInfoLvl: 'Your Lvl',
+  gameInfoHeroSpells: 'Your Spells',
+  gameInfoNullSpells: 'You are on your way to learning!',
+  gameInfoAllSpells: 'Game Spells',
+  gameInfoButton: 'Back To Game',
 
   fieldTutorialModalParagOne: 'You are on the Typing Adventure game field!',
   fieldTutorialModalParagTwo: 'Check out a little hint guide before you start playing.',
   fieldTutorialModalParagThree:
     'Attention!\nFor the correct input of spells, the selected language in the system must match the language of the application!',
-  fieldTutorialModalParagButtonStart: 'hints',
-  fieldTutorialModalParagButtonEsc: 'skip',
+  fieldTutorialModalParagButtonStart: 'Hints',
+  fieldTutorialModalParagButtonEsc: 'Skip',
 
   fieldTutorialHintOne:
     'The hero and the monster alternate moves, each move preceded by a preparation stage.\nDuring preparation, it is noted whose turn it will be, what spells are available in the cloud, or what attack the monster will have.',
@@ -67,41 +66,14 @@ export const enContent = {
   fieldTutorialHintFour: `The monster can attack with both physics and magic. The magic attack is much stronger, but you can defend yourself by typing "resist" during the monster's turn with a magic attack. If successful, you will see the word "resist" appear in the action field.`,
   fieldTutorialHintFive:
     "That's it, everything is quite simple, once again check that the layout in the system matches the selected language in the application, and go!",
-  fieldTutorialButtonNext: 'next',
-  fieldTutorialButtonDone: 'get start',
+  fieldTutorialButtonNext: 'Next',
+  fieldTutorialButtonDone: 'Get Start',
 
   achievementTitle: 'New achievement!',
-
-  achievementTitleLvlUp: 'Wirst win!',
-  achievementTextLvlUp: 'Wow, you are not so simple!',
-
-  achievementTitleTenSpells: 'Wizard!',
-  achievementTextTenSpells: 'You have collected 10 spells!',
-
-  achievementTitleHalfGame: 'Almost there!',
-  achievementTextHalfGame: 'You are halfway through the game!',
-
-  achievementTitleGameDone: 'Typeria Conqueror!',
-  achievementTextGameDone: 'You completed Typing Adventure!',
-
-  achievementTitleThunder: 'Friend of thunder!',
-  achievementTextThunder: 'You have collected all thunder spells!',
-
-  achievementTitleFire: 'Friend of fire!',
-  achievementTextFire: 'You have collected all fire spells!',
-
-  achievementTitleWater: 'Friend of water!',
-  achievementTextWater: 'You have collected all water spells!',
-
-  achievementTitleLight: 'Friend of light!',
-  achievementTextLight: 'You have collected all light spells!',
-
-  achievementTitleWind: 'Friend of wind!',
-  achievementTextWind: 'You have collected all wind spells!',
 };
 
 export const ruContent = {
-  lvl: 'ур.',
+  lvl: 'Уровень',
   beastTitle: [
     'пещерное чудище',
     'болотное чудище',
@@ -113,28 +85,27 @@ export const ruContent = {
     'лавовый монстр',
     'ураганный монстр',
   ],
-  layoutButton: 'обратно к играм',
-  resetButton: 'сбросить прогресс',
+  layoutButton: 'Назад',
+  resetButton: 'Сбросить Прогресс',
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
 
-  preparation: 'подготовка',
-  yourMove: 'ваш ход!',
-  beastMove: 'ход монстра!',
+  preparation: 'Подготовка!',
+  yourMove: 'Ваш Ход!',
+  beastMove: 'Ход Монстра!',
   resistMessage: '\nзащита!',
   resultNewLvl: 'Повышение уровня!\nНовый монстр на карте!',
   resultFinalLvl: 'Поздравляем!\nВы прошли всю игру!',
   winnerHero: 'Вы победили!',
   winnerBeast: 'Монстр победил!',
-  lowStrengthMessage: 'На этот раз ты сильнее!',
+  lowStrengthMessage: 'Ты сильнее!',
   toMap: 'вернуться на карту',
-  doneStatus: ' (Пройден)',
 
   welcomeModalTitle: 'Добро пожаловать в игру Typing Adventure!',
   welcomeModalMessage:
     'Одолейте сильнейших чудищ Тайпирии, чтобы завоевать корону и звание профессионала быстрой печати!\nЧудища разбуянились и успокаиваться не собираются! К счастью, вам на помощь приходит магия стихий!',
   welcomeModalWarning: 'Пожалуйста, пройдите регистрацию для сохранения прогресса!',
-  welcomeModalToLayoutBtn: 'назад к сайту',
-  welcomeModalСontinue: 'продолжить',
+  welcomeModalToLayoutBtn: 'Назад К Сайту',
+  welcomeModalСontinue: 'Продолжить',
 
   startModalParagOne:
     'Перед вами игровая карта, на которой появляются различные чудища. С каждым новым уровнем увеличивается ваша стойкость, а на карте возникает новое чудище.',
@@ -144,21 +115,21 @@ export const ruContent = {
     'Чудища способны атаковать разными способами: магической или физической атаками.\nМагическая атака чудища намного сильнее, однако её можно отразить.\nБолее того, помимо чудищ могут появится и монстры, которые имеют защиту от определённых стихий, будте с ними осторожнее!',
   startModalParagFour: 'Если это ваша первая игра — внимательно прочтите подсказки на игровом поле.',
   startModalParagFive: 'Собирайте чары, побеждайте и получайте игровые достижения!\nУдачи!',
-  startModalButton: 'начать игру',
+  startModalButton: 'Начать Игру',
 
-  gameInfoTitle: 'статистика',
-  gameInfoLvl: 'ваш уровень',
-  gameInfoHeroSpells: 'ваши чары',
-  gameInfoNullSpells: 'вы на пути к изучению!',
-  gameInfoAllSpells: 'чары в игре',
-  gameInfoButton: 'вернуться к игре',
+  gameInfoTitle: 'Статистика',
+  gameInfoLvl: 'Ваш уровень',
+  gameInfoHeroSpells: 'Ваши чары',
+  gameInfoNullSpells: 'Вы на пути к изучению!',
+  gameInfoAllSpells: 'Чары В Игре',
+  gameInfoButton: 'Вернуться К Игре',
 
   fieldTutorialModalParagOne: 'Вы на игровом поле Typing Adventure!',
   fieldTutorialModalParagTwo: 'Посмотрите небольшое руководство из подсказок, прежде чем начать играть.',
   fieldTutorialModalParagThree:
     'Внимание!\nДля корректного ввода чар выбранный язык в системе должен соответствовать языку приложения!',
-  fieldTutorialModalParagButtonStart: 'подсказки',
-  fieldTutorialModalParagButtonEsc: 'пропустить',
+  fieldTutorialModalParagButtonStart: 'Подсказки',
+  fieldTutorialModalParagButtonEsc: 'Пропустить',
 
   fieldTutorialHintOne:
     'Герой и монстр ходят поочерёдно, каждому ходу предшествует стадия подготовки.\nВо время подготовки отмечается чей будет ход, какие спеллы доступны в облаке или какая атака будет у монстра.',
@@ -170,35 +141,8 @@ export const ruContent = {
     'Монстр может атаковать как силой, так и магией. Магическая атака намного сильнее, но вы можете защититься, напечатав "отразить" во время хода монстра с магической атакой. В случае успеха, вы увидете, как в поле действий появится слово "защита".',
   fieldTutorialHintFive:
     'Вот так, всё довольно просто, ещё раз проверьте соответствие раскладки в системе выбранному языку в приложении, и вперёд!',
-  fieldTutorialButtonNext: 'далее',
-  fieldTutorialButtonDone: 'начинаем!',
+  fieldTutorialButtonNext: 'Далее',
+  fieldTutorialButtonDone: 'Начинаем!',
 
   achievementTitle: 'Новое достижение!',
-
-  achievementTitleLvlUp: 'Первая победа!',
-  achievementTextLvlUp: 'А вы не так просты!',
-
-  achievementTitleTenSpells: 'Вы маг!',
-  achievementTextTenSpells: 'Вы собрали десять чар!',
-
-  achievementTitleHalfGame: 'Почти у цели!',
-  achievementTextHalfGame: 'Вы прошли половину игры!',
-
-  achievementTitleGameDone: 'Завоеватель Тайперии!',
-  achievementTextGameDone: 'Вы прошли Typing Adventure!',
-
-  achievementTitleThunder: 'Друг грома!',
-  achievementTextThunder: 'Вы собрали все чары грома!',
-
-  achievementTitleFire: 'Друг огня!',
-  achievementTextFire: 'Вы собрали все чары огня!',
-
-  achievementTitleWater: 'Друг воды!',
-  achievementTextWater: 'Вы собрали все чары воды!',
-
-  achievementTitleLight: 'Друг света!',
-  achievementTextLight: 'Вы собрали все чары света!',
-
-  achievementTitleWind: 'Друг ветра!',
-  achievementTextWind: 'Вы собрали все чары ветра!',
 };

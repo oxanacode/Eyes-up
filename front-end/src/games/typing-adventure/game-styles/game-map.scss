@@ -1,62 +1,225 @@
 .game-map {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('./assets/games/typing-adventure/bg.png');
-  background-size: contain;
-  padding: 20px;
-  display: flex;
-  column-gap: 20px;
-}
+  background: $c-adventure-map-bg;
+  min-height: 100vh;
+  padding: 5rem 0 8rem 0;
 
-.map-buttons-wrapper {
-  display: flex;
-  flex-direction: column;
-  row-gap: 40px;
-  padding: 200px 20px;
-}
-
-.layout-button,
-.game-info-button,
-.reset-state-button {
-  padding: 5px 10px;
-  color: darkmagenta;
-  font-size: 17px;
-  border: 2px solid darkmagenta;
-  border-radius: 5px;
-  background-color: inherit;
-  transition: 0.5s;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.1);
+  @include mobile {
+    padding: 2rem 0 3rem 0;
   }
 }
 
-.beast-title {
-  width: 220px;
-  font-size: 20px;
-  transition: 0.8s;
-  padding: 10px;
-  text-align: center;
+.map-header-wrapper {
+  display: flex;
+  max-width: 102rem;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 0 2rem 10rem 2rem;
+
+  @include desktop-small {
+    padding: 0 2rem 10rem 2rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  @include tablet {
+    padding: 0 2rem 5rem 2rem;
+  }
 }
 
-.beast {
-  width: 200px;
-  height: 150px;
-  border-radius: 10px;
-  background-color: blueviolet;
-  transition: 0.8s;
+.adventure-back-button {
+  @extend .back-btn;
+  margin-right: 0;
+  color: $c-adventure-back-button;
+  &:hover {
+    color: $c-adventure-title-content;
+  }
+
+  @include desktop-small {
+    align-self: flex-start;
+  }
+}
+
+.adventure-menu-title-wrapper {
+  @include font-title;
+  display: flex;
+  text-align: center;
+  gap: 1rem;
+  padding-left: 19rem;
+
+  @include desktop-small {
+    padding-left: 0;
+  }
+
+  @include mobile {
+    @include font-title-mobile;
+  }
+}
+
+.adventure-menu-typing-title {
+  color: $c-adventure-text-content;
+}
+
+.adventure-menu-adventure-title {
+  color: $c-adventure-title-content;
+}
+
+.map-header-buttons-wrapper {
+  display: flex;
+  gap: 2rem;
+
+  @include desktop-small {
+    gap: 1rem;
+  }
+}
+
+.adventure-reset-state-button,
+.adventure-info-button {
+  width: 12rem;
+  height: 4rem;
+  color: $c-adventure-title-content;
+  border: 0.1rem solid $c-adventure-title-content;
+  border-radius: $small-border-radius;
+  font-size: 1.6rem;
+  font-weight: $fw-bold;
+  &:hover {
+    background: $c-adventure-title-content;
+    color: $c-adventure-text-content;
+  }
+
+  @include mobile {
+    @include font-main-small;
+    width: 10rem;
+    height: 4rem;
+  }
+}
+
+.game-map-beasts-wrapper {
+  max-width: 80rem;
+  display: grid;
+  margin: 0 auto;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10rem;
+  row-gap: 5rem;
+  justify-items: center;
+  align-items: center;
+  transition: $transition-time;
+
+  @include tablet {
+    max-width: 57rem;
+    column-gap: 4rem;
+    row-gap: 2rem;
+  }
+
+  @include mobile {
+    max-width: 31rem;
+    column-gap: 0rem;
+    row-gap: 2rem;
+  }
 }
 
 .beast-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: fit-content;
+  height: fit-content;
   cursor: pointer;
-  &:hover {
-    .beast-title,
-    .beast {
-      transform: scale(1.1);
-      transition: 0.8s;
-    }
+}
+
+.beast-title {
+  @include font-title-mobile;
+  text-align: center;
+  color: $c-adventure-title-content;
+
+  @include mobile {
+    @include font-main-small;
+  }
+}
+
+.beast {
+  width: 20rem;
+  height: 20rem;
+  transition: $transition-time;
+
+  @include tablet {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @include mobile {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.cave-beast {
+  background-image: url(./assets/games/typing-adventure/beasts-map/cave-beast.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.swamp-beast {
+  background-image: url(./assets/games/typing-adventure/beasts-map/swamp-beast.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.sand-beast {
+  background-image: url(./assets/games/typing-adventure/beasts-map/sand-beast.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.stone-beast {
+  background-image: url(./assets/games/typing-adventure/beasts-map/stone-beast.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.forest-beast {
+  background-image: url(./assets/games/typing-adventure/beasts-map/forest-beast.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.cloud-monster {
+  background-image: url(./assets/games/typing-adventure/beasts-map/cloud-monster.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.waterfall-monster {
+  background-image: url(./assets/games/typing-adventure/beasts-map/waterfall-monster.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.lava-monster {
+  background-image: url(./assets/games/typing-adventure/beasts-map/lava-monster.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.tornado-monster {
+  background-image: url(./assets/games/typing-adventure/beasts-map/tornado-monster.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.inactive-cell {
+  width: 20rem;
+  height: 20rem;
+  background-image: url(./assets/games/typing-adventure/beasts-map/inactive-cell.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: auto;
+
+  @include tablet {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  @include mobile {
+    width: 8rem;
+    height: 8rem;
   }
 }
