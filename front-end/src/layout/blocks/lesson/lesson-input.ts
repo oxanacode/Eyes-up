@@ -18,6 +18,8 @@ class LessonInput {
 
   public static charNum = /\d/;
 
+  public static charSymbols = /[():*%"]/;
+
   public static checkMatch(inputChar: string): void {
     if (LessonState.lessonChars[LessonState.inputIndex].textContent === inputChar) {
       if (LessonState.historyMistakes.includes(LessonState.inputIndex)) {
@@ -66,6 +68,10 @@ class LessonInput {
         if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.add('current-char');
 
+        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.add('current-char');
+
+        if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.add('current-char');
+
         char = char.toLocaleLowerCase();
         LessonKeyboard.virtualKeys[char].classList.add('current-char');
       }
@@ -81,6 +87,10 @@ class LessonInput {
       } else {
         if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.remove('current-char');
+
+        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.remove('current-char');
+
+        if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.remove('current-char');
 
         char = char.toLocaleLowerCase();
         LessonKeyboard.virtualKeys[char].classList.remove('current-char');

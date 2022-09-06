@@ -79,14 +79,14 @@ export const ruContent = {
     'болотное чудище',
     'песчанное чудище',
     'каменное чудище',
-    'лесное чущиде',
+    'лесное чудище',
     'облачный монстр',
     'водопадный монстр',
     'лавовый монстр',
     'ураганный монстр',
   ],
   layoutButton: 'Назад',
-  resetButton: 'Сбросить Прогресс',
+  resetButton: 'Сброс',
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
 
   preparation: 'Подготовка!',
@@ -98,13 +98,13 @@ export const ruContent = {
   winnerHero: 'Вы победили!',
   winnerBeast: 'Монстр победил!',
   lowStrengthMessage: 'Ты сильнее!',
-  toMap: 'вернуться на карту',
+  toMap: 'На карту',
 
   welcomeModalTitle: 'Добро пожаловать в игру Typing Adventure!',
   welcomeModalMessage:
     'Одолейте сильнейших чудищ Тайпирии, чтобы завоевать корону и звание профессионала быстрой печати!\nЧудища разбуянились и успокаиваться не собираются! К счастью, вам на помощь приходит магия стихий!',
   welcomeModalWarning: 'Пожалуйста, пройдите регистрацию для сохранения прогресса!',
-  welcomeModalToLayoutBtn: 'Назад К Сайту',
+  welcomeModalToLayoutBtn: 'Назад к сайту',
   welcomeModalСontinue: 'Продолжить',
 
   startModalParagOne:
@@ -121,8 +121,8 @@ export const ruContent = {
   gameInfoLvl: 'Ваш уровень',
   gameInfoHeroSpells: 'Ваши чары',
   gameInfoNullSpells: 'Вы на пути к изучению!',
-  gameInfoAllSpells: 'Чары В Игре',
-  gameInfoButton: 'Вернуться К Игре',
+  gameInfoAllSpells: 'Чары в игре',
+  gameInfoButton: 'Вернуться к игре',
 
   fieldTutorialModalParagOne: 'Вы на игровом поле Typing Adventure!',
   fieldTutorialModalParagTwo: 'Посмотрите небольшое руководство из подсказок, прежде чем начать играть.',
