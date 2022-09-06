@@ -1,11 +1,114 @@
-.field-modal-overlay {
+.welcome-modal-overlay,
+.start-modal-overlay,
+.game-info-modal-overlay,
+.reset-state-modal-overlay {
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
   position: fixed;
+  background-color: rgba($color: #000000, $alpha: 0.15);
+}
+
+.field-modal-overlay {
+  @extend .welcome-modal-overlay;
   background-color: rgba($color: #000000, $alpha: 0.3);
 }
+
+.welcome-modal-window,
+.game-info-modal-window {
+  @include font-main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
+  position: relative;
+  top: calc(50% - 14.5rem);
+  left: calc(50% - 25rem);
+  width: 50rem;
+  height: 29rem;
+  padding: 20px;
+  background-color: #130432; /////////////////////////// VAR
+  border-radius: $big-border-radius;
+  text-align: center;
+  color: #F3F3F4; /////////////////////////// VAR
+  box-shadow: 0px 0px 1rem rgba(33, 37, 41, 0.15);
+}
+
+.start-modal-window {
+  @extend .welcome-modal-window;
+  width: 50rem;
+  height: 50rem;
+  top: calc(50% - 25rem);
+  left: calc(50% - 25rem);
+}
+
+.start-modal-window,
+.game-info-modal-window {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: scroll;
+}
+
+.start-modal-img {
+  width: 40rem;
+}
+
+.welcome-modal-text {
+  @include font-title-mobile;
+  color: #9271EE; /////////////////////////// VAR
+}
+
+.game-info-modal-window {
+  width: 48rem;
+  height: 50rem;
+  top: calc(50% - 25rem);
+  left: calc(50% - 24rem);
+}
+
+.reset-state-modal-window {
+  @extend .welcome-modal-window;
+  width: 30rem;
+  height: 15rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 15rem);
+  text-align: center;
+}
+
+.welcome-layout-button,
+.welcome-modal-button,
+.start-modal-button,
+.game-info-modal-button,
+.field-modal-button,
+.reset-state-modal-button {
+  min-width: 12rem;
+  padding: 1rem;
+  height: 4rem;
+  color: #9271EE; //////////////////////// VAR 2
+  border: 0.1rem solid #9271EE; //////////////////////// VAR 2
+  border-radius: $small-border-radius;
+  font-size: 1.6rem;
+  font-weight: $fw-bold;
+  &:hover {
+    background: #9271EE; //////////////////////// VAR 2
+    color: #F3F3F4; //////////////////////// VAR 1
+  }
+
+  @include mobile {
+    @include font-main-small;
+    width: 10rem;
+    height: 4rem;
+  }
+}
+
+.welcome-modal-buttons {
+  display: flex;
+  gap: 5.5rem;
+}
+
+//
 
 .field-modal-window {
   display: flex;
@@ -33,37 +136,6 @@
   color: darkmagenta;
 }
 
-.welcome-modal-overlay,
-.start-modal-overlay,
-.game-info-modal-overlay {
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  background-color: rgba($color: #000000, $alpha: 0.15);
-}
-
-.welcome-modal-window,
-.start-modal-window,
-.game-info-modal-window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 25px;
-  position: relative;
-  top: calc(50% - 250px);
-  left: calc(50% - 250px);
-  width: 500px;
-  height: 500px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
-  font-size: 18px;
-  text-align: center;
-}
-
 .game-info-title {
   font-size: 25px;
   color: darkmagenta;
@@ -84,54 +156,4 @@
 
 .info-spell.available {
   color: orange;
-}
-
-.start-modal-window,
-.game-info-modal-window {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  overflow-y: scroll;
-}
-
-.welcome-modal-buttons {
-  display: flex;
-  gap: 20px;
-}
-
-.welcome-layout-button,
-.welcome-modal-button,
-.start-modal-button,
-.game-info-modal-button,
-.field-modal-button {
-  font-size: 18px;
-  padding: 5px 10px;
-  border: 2px solid darkmagenta;
-  border-radius: 5px;
-  color: darkmagenta;
-  cursor: pointer;
-  transition: 0.5s;
-  &:hover {
-    transform: scale(1.1);
-  }
-}
-
-.start-modal-img {
-  width: 400px;
-}
-
-.reset-state-modal-overlay {
-  @extend .field-modal-overlay;
-}
-
-.reset-state-modal-window {
-  @extend .field-modal-window;
-  font-size: 20px;
-  width: 400px;
-  height: 200px;
-  text-align: center;
-}
-
-.reset-state-modal-button {
-  @extend .welcome-layout-button;
 }

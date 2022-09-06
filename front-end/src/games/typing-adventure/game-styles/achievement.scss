@@ -16,21 +16,21 @@
 .achievement-modal {
   z-index: 20;
   position: fixed;
-  left: 20px;
+  left: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 1rem;
   max-width: min-content;
   padding: 1rem;
-  background-color: $c-body-bg;
+  background-color: #130432; ///////////////// VAR
   border-radius: $small-border-radius;
-  box-shadow: $bxs-result-shadow;
+  box-shadow: 0 0 1rem rgba(33, 37, 41, 0.15); ///////////////// VAR
   animation: appear 7s;
 }
 
 .achievement-title {
-  color: $c-accent;
+  color: #9271EE; ///////////////// VAR
 }
 
 .achievement-text-wrapper {
@@ -48,5 +48,5 @@
 }
 
 .achievement-text {
-  color: $c-main-text;
+  color: #F3F3F4; ///////////////// VAR
 }

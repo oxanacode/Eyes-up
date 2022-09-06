@@ -4,10 +4,10 @@
 
 .field-tutorial-modal-window {
   @extend .welcome-modal-window;
-  height: 350px;
-  font-size: 20px;
-  color: darkmagenta;
-  top: calc(50% - 175px);
+  width: 38rem;
+  height: 30rem;
+  top: calc(50% - 15rem);
+  left: calc(50% - 19rem);
 }
 
 .field-tutorial-buttons {
@@ -31,41 +31,83 @@
 .hint-five-modal-window {
   position: absolute;
   z-index: 20;
-  padding: 25px;
-  width: 400px;
-  font-size: 18px;
-  font-weight: normal;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  justify-content: center;
-  align-items: center;
-  color: darkmagenta;
-  background: white;
-  border-radius: 5px;
+  @extend .welcome-modal-window;
+  width: 35rem;
+  height: 25rem;
+  padding: 3rem;
 }
 
 .hint-one-modal-window {
-  top: -120px;
-  left: -400px;
+  top: -3rem;
+  left: -10rem;
+
+  @include mobile {
+    @include font-main-small;
+    top: -1rem;
+    left: -9rem;
+    padding: 2rem;
+    row-gap: 1rem;
+    width: 28rem;
+    height: 20rem;
+  }
 }
 
 .hint-two-modal-window {
-  top: 10px;
-  left: -350px;
+  top: 7.5rem;
+  left: -22rem;
+
+  @include mobile {
+    @include font-main-small;
+    top: 9rem;
+    left: -9rem;
+    padding: 2rem;
+    row-gap: 1rem;
+    width: 28rem;
+    height: 20rem;
+  }
 }
 
 .hint-three-modal-window {
-  top: -70px;
-  left: 220px;
+  top: -20rem;
+  left: 20rem;
+
+  @include mobile {
+    @include font-main-small;
+    top: 9rem;
+    left: -9rem;
+    padding: 2rem;
+    row-gap: 1rem;
+    width: 28rem;
+    height: 20rem;
+  }
 }
 
 .hint-four-modal-window {
-  top: -90px;
-  left: -350px;
+  top: 10rem;
+  left: -32rem;
+
+  @include mobile {
+    @include font-main-small;
+    top: -5rem;
+    left: -13rem;
+    padding: 2rem;
+    row-gap: 1rem;
+    width: 28rem;
+    height: 20rem;
+  }
 }
 
 .hint-five-modal-window {
-  top: -120px;
-  left: -145px;
+  top: -3rem;
+  left: -7.5rem;
+
+  @include mobile {
+    @include font-main-small;
+    top: 0rem;
+    left: -9rem;
+    padding: 2rem;
+    row-gap: 1rem;
+    width: 28rem;
+    height: 20rem;
+  }
 }
