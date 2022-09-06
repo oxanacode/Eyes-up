@@ -25,7 +25,7 @@ class Beast {
     this.done = done;
   }
 
-  createBeast(): HTMLElement {
+  createBeast(mapCallback: () => void): HTMLElement {
     const beastWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: `beast-wrapper` }]);
     const beastTitle = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'beast-title' }]);
     const beastPlace = CreateElement.createElement(Tag.div, [
@@ -33,12 +33,11 @@ class Beast {
     ]);
 
     beastTitle.innerHTML = `${GameState.lib.lvl} ${this.lvl}`;
-    // if (this.done) beastTitle.innerHTML += GameState.lib.doneStatus as string;
     beastWrapper.append(beastTitle, beastPlace);
 
     beastWrapper.addEventListener('click', () => {
       FieldState.beastInstance = this;
-      GameField.createField();
+      GameField.createField(mapCallback);
     });
 
     return beastWrapper;

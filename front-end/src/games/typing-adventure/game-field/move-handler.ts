@@ -32,7 +32,7 @@ class MoveHandler {
 
         MonsterResist.handler(spell.name, spell.damage);
 
-        FieldState.actionTotal.textContent = MoveHandler.totalSpells.join(' & ');
+        FieldState.actionTotal.textContent = MoveHandler.totalSpells.join(' ');
         MoveHandler.inputStr = '';
       }
     });
@@ -45,7 +45,7 @@ class MoveHandler {
           const damage = MonsterResist.handler(spell.name, spell.damage);
           MoveHandler.totalEffects.push(damage);
 
-          FieldState.actionTotal.textContent = MoveHandler.totalSpells.join(' & ');
+          FieldState.actionTotal.textContent = MoveHandler.totalSpells.join(' ');
           MoveHandler.inputStr = '';
         }
       }

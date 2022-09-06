@@ -1,157 +1,362 @@
 .field-wrapper {
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: linear-gradient(180deg, #160A30 0%, #130432 100%);
 }
 
 .field-header {
+  height: 10rem;
+  background-color: #250D40; //////////////////////// VAR 4
+}
+
+.field-header-wrapper {
+  position: relative;
+  height: 100%;
+  max-width: 144rem;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
 }
 
-.spells-field-panel {
-  position: relative;
-  width: 250px;
-  height: 120px;
-  background: #ffff7d;
-  border-radius: 10px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
+.field-header-menu-button {
+  @extend .back-btn;
+  position: absolute;
+  top: 4.5rem;
+  left: 2rem;
+  margin-right: 0;
+  color: #75819C; //////////////////////// VAR 3
+  &:hover {
+    color: #9271EE;
+  }
 
-.action-spell-wrapper {
-  width: 80px;
-  height: 90px;
-}
-
-.action-spell-image {
-  width: 80px;
-  height: 70px;
-  border-radius: 10px;
-}
-
-.tunder {
-  background-color: aquamarine;
-}
-
-.water {
-  background-color: aqua;
-}
-
-.fire {
-  background-color: darkred;
-}
-
-.light {
-  background-color: white;
-}
-
-.wind {
-  background-color: powderblue;
-}
-
-.action-spell-name {
-  text-align: center;
-  font-size: 17px;
+  @include mobile {
+    top: 2rem;
+  }
 }
 
 .field-middle {
-  padding: 0 50px;
+  flex-grow: 1;
+  padding: 3rem 0;
+  max-width: 144rem;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+  gap: 12rem;
+  transition: $transition-time;
+
+  @media (max-width: $desktop-small-width) {
+    gap: 5rem;
+  }
+
+  @include tablet {
+    gap: 2rem;
+  }
+
+  @include mobile {
+    padding: 2rem 0;
+    gap: 0;
+    display: grid;
+    grid-template-areas: 
+            "total-panel total-panel"
+            "hero beast";
+    column-gap: 1.5rem;
+  }
 }
 
-.action-field-panel {
+.spells-field-panel {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  @include mobile {
+    align-items: flex-end;
+    padding: 1.5rem 0;
+  }
+}
+
+.action-spell-wrapper {
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: #180734; //////////////////////// ANOTHER ONE
+  border-radius: $small-border-radius;
+  padding: 1rem 1rem;
+  &.beast-action {
+    padding: 0;
+  }
+
+  @include mobile {
+    height: 3rem;
+  }
+}
+
+.action-spell-image {
+  width: 2.4rem;
+  height: 2.4rem;
+
+  @include mobile {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.action-spell-name {
+  @include font-title-mobile;
+
+  @include mobile {
+    @include font-subtitle-mobile;
+    font-weight: $fw-bold;
+  }
+}
+
+.hero-field-wrapper {
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  row-gap: 10px;
-}
 
-.field-timer {
-  width: 100px;
-  height: 50px;
-  border: 1px solid;
-  border-radius: 5px;
-  font-size: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.action-field-input {
-  width: 200px;
-  height: 50px;
-  background: #ffa521;
-  border-radius: 5px;
-}
-
-.action-field-total {
-  position: relative;
-  width: 150px;
-  min-height: 50px;
-  background: #ffff74;
-  border-radius: 5px;
-  color: purple;
-  font-size: 20px;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.field-footer {
-  display: flex;
-  justify-content: space-between;
-}
-
-.hero-field-wrapper,
-.beast-field-wrapper {
-  position: relative;
-  font-size: 20px;
-  text-align: center;
-}
-
-.hero-field-view,
-.beast-field-view {
-  width: 150px;
-  height: 150px;
-  border-radius: 10px;
-  font-size: 20px;
+  @include mobile {
+    grid-area: hero;
+  }
 }
 
 .hero-field-view {
-  background-color: darkblue;
+  width: 40rem;
+  height: 35rem;
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/hero.svg);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (max-width: $desktop-adventure) {
+    width: 30rem;
+    height: 25rem;
+  }
+
+  @include desktop-small {
+    width: 25rem;
+    height: 25rem;
+  }
+
+  @include tablet {
+    width: 15rem;
+    height: 22rem;
+  }
+
+  @include mobile {
+    width: 10rem;
+    height: 15rem;
+  }
 }
 
-.beast-field-view {
-  background-color: maroon;
-}
-
-.field-hp-result-view {
-  position: absolute;
-  width: 40px;
-  text-align: center;
-  top: -20px;
-  left: calc(50% - 20px);
-  color: brown;
-}
-
-.hero-field-panel,
-.beast-field-panel {
-  position: relative;
+.hero-field-hp,
+.beast-field-hp {
+  @include font-title-mobile;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  column-gap: 20px;
-  font-size: 20px;
-  color: darkmagenta;
-  width: 300px;
-  height: 200px;
-  border: 2px solid darkviolet;
-  border-radius: 5px;
+  min-width: 10rem;
+  padding: 0 1rem;
+  height: 4rem;
+  background: #250D40; //////////////////////// VAR 11
+  border-radius: $small-border-radius;
+  color: #F3F3F4; //////////////////////// ONE OF HEIGHT
+
+  @include tablet {
+    width: 8rem;
+    height: 3rem;
+    font-size: 1.6rem;
+  }
+}
+
+.hero-field-hp {
+  @include mobile {
+    margin-bottom: 1.2rem;
+  }
+}
+
+.field-hp-result-view {
+  @include font-title-mobile;
+  position: absolute;
+  width: 4rem;
+  text-align: center;
+  top: -3rem;
+  left: calc(50% - 2rem);
+  color: #911059;
+}
+
+.action-field-panel {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3rem;
+
+  @include tablet {
+    row-gap: 1rem;
+  }
+
+  @include mobile {
+    grid-area: total-panel;
+  }
+}
+
+.field-timer {
+  @include font-title;
+  width: 22rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F3F3F4;
+
+  @media (max-width: $desktop-adventure) {
+    @include font-title-mobile;
+  }
+
+  @include desktop-small {
+    width: 15rem;
+    height: 5rem;
+  }
+
+  @include mobile {
+    @include font-subtitle-mobile;
+  }
+}
+
+.action-field-total {
+  @include font-title-mobile;
+  position: relative;
+  width: 20rem;
+  min-height: 8rem;
+  background: #250D40; //////////////////////// VAR 11
+  border-radius: $big-border-radius;
+  color: #F3F3F4; //////////////////////// ONE OF HEIGHT;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  @media (max-width: $desktop-adventure) {
+    @include font-subtitle;
+  }
+
+  @include desktop-small {
+    width: 15rem;
+  }
+
+  @include tablet {
+    @include font-subtitle-mobile;
+    width: 15rem;
+  }
+
+  @include mobile {
+    @include font-main;
+    font-weight: $fw-bold;
+    width: 10rem;
+  }
+}
+
+.beast-field-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+
+  @include mobile {
+    grid-area: beast;
+    gap: 1rem;
+  }
+}
+
+.beast-field-view {
+  width: 40rem;
+  height: 22rem;
+  background-position: 50% 0;
+
+  @media (max-width: $desktop-adventure) {
+    width: 30rem;
+    height: 12rem;
+    background-size: contain;
+  }
+
+  @include desktop-small {
+    width: 25rem;
+    height: 10rem;
+  }
+
+  @include tablet {
+    width: 15rem;
+    height: 8rem;
+    margin: 0 auto;
+  }
+}
+
+.beast-field-name {
+  @include font-title-mobile;
+  text-transform: capitalize;
+  color: #9271EE; //////////////////////// ONE OF HEIGHT;
+  text-align: center;
+
+  @include tablet {
+    @include font-subtitle-mobile;
+  }
+
+  @include mobile {
+    @include font-main;
+  }
+}
+
+.beast-field-panel {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+
+  @include tablet {
+    gap: 1rem;
+  }
+
+  @include mobile {
+    gap: 0.5rem;
+  }
+}
+
+.beast-action-wrapper {
+  width: 8rem;
+  height: 4rem;
+  background-color: #250D40; //////////////////////// ONE OF HEIGHT;
+  border-radius: $small-border-radius;
+  color: #9271EE; //////////////////////// ONE OF HEIGHT;
+  font-size: 1.6rem;
+  font-weight: $fw-bold;
+  text-transform: capitalize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include mobile {
+    width: 7rem;
+  }
+}
+
+.field-footer {
+  height: 15rem;
+  background-color: #260D40; //////////////////////// MAYBE NEW;
+}
+
+.hero-field-panel {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 0 5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
 }

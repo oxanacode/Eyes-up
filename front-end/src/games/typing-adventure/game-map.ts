@@ -24,7 +24,7 @@ class GameMap {
 
   static mapBeastsRender() {
     CurrentBeasts.createBeasts(GameMap.innerGameMapRender);
-    return GameState.currentGameBeasts.map((beast) => beast.createBeast());
+    return GameState.currentGameBeasts.map((beast) => beast.createBeast(GameMap.innerGameMapRender));
   }
 
   static innerGameMapRender() {
