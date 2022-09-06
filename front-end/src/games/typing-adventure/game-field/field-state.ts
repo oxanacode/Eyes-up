@@ -29,8 +29,6 @@ class FieldState {
 
   static timerCounter: number;
 
-  static actionInput: HTMLElement;
-
   static actionTotal: HTMLElement;
 
   static heroPanel: HTMLElement;

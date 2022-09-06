@@ -8,9 +8,9 @@ import IBeast from '../game-types/interfaces';
 import { Tag } from '../game-types/enums';
 
 class GameField {
-  static createField() {
+  static createField(mapCallback: () => void) {
     const fieldWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-wrapper` }]);
-    const header = GameField.createFieldHeader();
+    const header = GameField.createFieldHeader(mapCallback);
     const middle = GameField.createFieldMiddle(FieldState.beastInstance);
     const footer = GameField.createFieldFooter();
 
@@ -27,11 +27,20 @@ class GameField {
     FieldAction.action();
   }
 
-  static createFieldHeader() {
+  static createFieldHeader(mapCallback: () => void) {
     const fieldHeader = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-header` }]);
+    const fieldHeaderWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-header-wrapper` }]);
     FieldState.spellsPanel = CreateElement.createElement(Tag.div, [{ name: 'class', value: `spells-field-panel` }]);
+    const menuButton = CreateElement.createElement(Tag.btn, [{ name: 'class', value: `field-header-menu-button` }]);
 
-    fieldHeader.append(FieldState.spellsPanel);
+    menuButton.textContent = GameState.lib.layoutButton as string;
+    menuButton.addEventListener('click', () => {
+      mapCallback();
+      FieldState.currentMove = true;
+    });
+
+    fieldHeaderWrapper.append(menuButton, FieldState.spellsPanel);
+    fieldHeader.append(fieldHeaderWrapper);
 
     return fieldHeader;
   }
@@ -40,12 +49,11 @@ class GameField {
     const fieldMiddle = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-middle` }]);
     const actionPanel = CreateElement.createElement(Tag.div, [{ name: 'class', value: `action-field-panel` }]);
     FieldState.timer = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-timer` }]);
-    FieldState.actionInput = CreateElement.createElement(Tag.div, [{ name: 'class', value: `action-field-input` }]);
     FieldState.actionTotal = CreateElement.createElement(Tag.div, [{ name: 'class', value: `action-field-total` }]);
     const hero = GameField.createCharacterView('hero');
     const beast = GameField.createCharacterView('beast', beastInstance);
 
-    actionPanel.append(FieldState.timer, FieldState.actionInput, FieldState.actionTotal);
+    actionPanel.append(FieldState.timer, FieldState.actionTotal);
     fieldMiddle.append(hero, actionPanel, beast);
 
     return fieldMiddle;
@@ -54,9 +62,8 @@ class GameField {
   static createFieldFooter() {
     const fieldFooter = CreateElement.createElement(Tag.div, [{ name: 'class', value: `field-footer` }]);
     FieldState.heroPanel = CreateElement.createElement(Tag.div, [{ name: 'class', value: `hero-field-panel` }]);
-    FieldState.beastPanel = CreateElement.createElement(Tag.div, [{ name: 'class', value: `beast-field-panel` }]);
 
-    fieldFooter.append(FieldState.heroPanel, FieldState.beastPanel);
+    fieldFooter.append(FieldState.heroPanel);
 
     return fieldFooter;
   }
@@ -68,23 +75,29 @@ class GameField {
 
     if (beast) {
       view = CreateElement.createElement(Tag.par, [
-        { name: 'class', value: `${characterType}-field-view ${beastsSelectors[beast.beastType]}` },
+        { name: 'class', value: `${characterType}-field-view ${beastsSelectors[beast.beastType]}-field` },
       ]);
     } else {
       view = CreateElement.createElement(Tag.par, [{ name: 'class', value: `${characterType}-field-view` }]);
     }
 
     if (beast) {
+      FieldState.beastPanel = CreateElement.createElement(Tag.div, [{ name: 'class', value: `beast-field-panel` }]);
+      const beastName = CreateElement.createElement(Tag.par, [{ name: 'class', value: `beast-field-name` }]);
+
+      beastName.textContent = beast.beastType;
       hp.textContent = beast.hp.toString();
       FieldState.beastHp = hp;
       FieldState.beastView = wrapper;
+
+      wrapper.append(hp, view, beastName, FieldState.beastPanel);
     } else {
       hp.textContent = (GameState.userHp * GameState.userLvl).toString();
       FieldState.heroHp = hp;
       FieldState.heroView = wrapper;
-    }
 
-    wrapper.append(hp, view);
+      wrapper.append(hp, view);
+    }
 
     return wrapper;
   }

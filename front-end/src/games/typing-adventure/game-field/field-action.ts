@@ -108,13 +108,27 @@ class FieldAction {
 
     currentItems.forEach((item) => {
       const wrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'action-spell-wrapper' }]);
-      const image = CreateElement.createElement(Tag.div, [
-        { name: 'class', value: `action-spell-image ${spellsSelectors[item.name]}` },
-      ]);
-      const name = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'action-spell-name' }]);
 
-      name.textContent = item.name;
-      wrapper.append(image, name);
+      if (item.name === GameState.beastMoves.physics.name || item.name === GameState.beastMoves.magic.name) {
+        const wrapperName = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'beast-action-wrapper' }]);
+        const name = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'beast-field-action' }]);
+
+        wrapper.classList.add('beast-action');
+        name.textContent = item.name;
+        wrapperName.append(name);
+        wrapper.append(wrapperName);
+      } else {
+        const image = CreateElement.createElement(Tag.div, [
+          { name: 'class', value: `action-spell-image ${spellsSelectors[item.name]}` },
+        ]);
+        const name = CreateElement.createElement(Tag.par, [
+          { name: 'class', value: `action-spell-name ${spellsSelectors[item.name]}` },
+        ]);
+
+        name.textContent = item.name;
+        wrapper.append(image, name);
+      }
+
       currPanel.append(wrapper);
     });
   }
@@ -166,8 +180,7 @@ class FieldAction {
   }
 
   static clearPanels() {
-    FieldState.timer.textContent = '-.-';
-    FieldState.actionInput.textContent = '';
+    FieldState.timer.textContent = 'finished';
     FieldState.actionTotal.textContent = '';
   }
 }

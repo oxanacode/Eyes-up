@@ -11,9 +11,9 @@ export const enSpells: ISpells = {
     tunder: { name: 'thunder', damage: '10' },
   },
   3: {
-    sunfire: { name: 'sunfire', damage: '50' },
-    'aqua vortex': { name: 'aqua vortex', damage: '40' },
-    'wind vortex': { name: 'wind vortex', damage: '50' },
+    'heavy flame': { name: 'heavy flame', damage: '50' },
+    maelstrom: { name: 'maelstrom', damage: '40' },
+    'wind whirl': { name: 'wind whirl', damage: '50' },
   },
   4: {
     soundwave: { name: 'soundwave', damage: '40' },
@@ -43,11 +43,11 @@ export const enSpells: ISpells = {
   9: {
     'whirlwind lightning': { name: 'whirlwind lightning', damage: '150' },
     'burning onslaught': { name: 'burning onslaught', damage: '150' },
-    'elemental magic': { name: 'elemental magic', damage: '100' },
+    'elemental chars': { name: 'elemental chars', damage: '100' },
   },
   10: {
     'elemental high magic': { name: 'elemental high magic', damage: '250' },
-    'elemental great magic': { name: 'elemental great magic', damage: '300' },
+    'elemental great enchantment': { name: 'elemental great enchantment', damage: '300' },
   },
 };
 
@@ -62,9 +62,9 @@ export const ruSpells: ISpells = {
     tunder: { name: 'гром', damage: '10' },
   },
   3: {
-    sunfire: { name: 'огненный вихрь', damage: '50' },
-    'aqua vortex': { name: 'водный вихрь', damage: '40' },
-    'wind vortex': { name: 'воздушный вихрь', damage: '50' },
+    'heavy flame': { name: 'сильное пламя', damage: '50' },
+    maelstrom: { name: 'водоворот', damage: '40' },
+    'wind whirl': { name: 'завихрение ветра', damage: '50' },
   },
   4: {
     soundwave: { name: 'громовая волна', damage: '40' },
@@ -94,11 +94,11 @@ export const ruSpells: ISpells = {
   9: {
     'whirlwind lightning': { name: 'вихревая молния', damage: '150' },
     'burning onslaught': { name: 'огненный натиск', damage: '150' },
-    'elemental magic': { name: 'стихийная магия', damage: '100' },
+    'elemental chars': { name: 'стихийные чары', damage: '100' },
   },
   10: {
     'elemental high magic': { name: 'высшая стихийная магия', damage: '250' },
-    'elemental great magic': { name: 'великая стихийная магия', damage: '300' },
+    'elemental great enchantment': { name: 'великое стихийное волшебство', damage: '300' },
   },
 };
 

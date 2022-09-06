@@ -13,27 +13,27 @@
   }
 }
 
-.achievement-modal {
+.adventure-achievement-modal {
   z-index: 20;
   position: fixed;
-  left: 20px;
+  left: 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   column-gap: 1rem;
   max-width: min-content;
   padding: 1rem;
-  background-color: $c-body-bg;
+  background-color: $c-adventure-modal-bg;
   border-radius: $small-border-radius;
-  box-shadow: $bxs-result-shadow;
+  box-shadow: $c-adventure-modal-shadow;
   animation: appear 7s;
 }
 
-.achievement-title {
-  color: $c-accent;
+.adventure-achievement-title {
+  color: $c-adventure-title-content;
 }
 
-.achievement-text-wrapper {
+.adventure-achievement-text-wrapper {
   @include font-main-small;
   display: flex;
   flex-direction: column;
@@ -47,6 +47,6 @@
   height: 8rem;
 }
 
-.achievement-text {
-  color: $c-main-text;
+.adventure-achievement-text {
+  color: $c-adventure-text-content;
 }

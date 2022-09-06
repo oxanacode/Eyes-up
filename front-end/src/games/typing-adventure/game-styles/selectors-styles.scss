@@ -1,0 +1,132 @@
+.action-spell-image.thunder,
+.action-spell-image.soundwave,
+.action-spell-image.thunder-blow,
+.action-spell-image.lightning-blast,
+.action-spell-image.whirlwind-lightning {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/thunder-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-image.water,
+.action-spell-image.maelstrom,
+.action-spell-image.water-storm,
+.action-spell-image.waterspout,
+.action-spell-image.furious-flow {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/water-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-image.fire,
+.action-spell-image.heavy-flame,
+.action-spell-image.fiery-hail,
+.action-spell-image.fiery-hurricane,
+.action-spell-image.burning-onslaught {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/fire-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-image.light,
+.action-spell-image.ligth-wall,
+.action-spell-image.rising-glow,
+.action-spell-image.shining-vortex,
+.action-spell-image.luminous-pillar {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/light-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-image.wind,
+.action-spell-image.wind-whirl,
+.action-spell-image.furious-whirlwind,
+.action-spell-image.windspout,
+.action-spell-image.massive-tornado {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/wind-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-image.elemental-chars,
+.action-spell-image.elemental-high-magic,
+.action-spell-image.elemental-great-enchantment {
+  background-image: url(./assets/games/typing-adventure/hero-and-spells/elemental-spell.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.action-spell-name.water,
+.action-spell-name.maelstrom,
+.action-spell-name.water-storm,
+.action-spell-name.waterspout,
+.action-spell-name.furious-flow {
+  color: $c-adventure-spells-water;
+}
+
+.action-spell-name.fire,
+.action-spell-name.heavy-flame,
+.action-spell-name.fiery-hail,
+.action-spell-name.fiery-hurricane,
+.action-spell-name.burning-onslaught {
+  color: $c-adventure-spells-fire;
+}
+
+.action-spell-name.wind,
+.action-spell-name.wind-whirl,
+.action-spell-name.furious-whirlwind,
+.action-spell-name.windspout,
+.action-spell-name.massive-tornado {
+  color: $c-adventure-spells-wind;
+}
+
+.action-spell-name.light,
+.action-spell-name.ligth-wall,
+.action-spell-name.rising-glow,
+.action-spell-name.shining-vortex,
+.action-spell-name.luminous-pillar {
+  color: $c-adventure-spells-light;
+}
+
+.action-spell-name.thunder,
+.action-spell-name.soundwave,
+.action-spell-name.thunder-blow,
+.action-spell-name.lightning-blast,
+.action-spell-name.whirlwind-lightning {
+  color: $c-adventure-spells-thunder;
+}
+
+.action-spell-name.elemental-chars,
+.action-spell-name.elemental-high-magic,
+.action-spell-name.elemental-great-enchantment {
+  color: $c-adventure-spells-elemental;
+}
+
+.beast-field-view.forest-beast-field,
+.beast-field-view.swamp-beast-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/swamp-forest-beast.svg);
+  background-repeat: no-repeat;
+}
+
+.beast-field-view.cave-beast-field,
+.beast-field-view.stone-beast-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/cave-stone-beast.svg);
+  background-repeat: no-repeat;
+}
+
+.beast-field-view.lava-monster-field,
+.beast-field-view.sand-beast-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/lava-sand-beast.svg);
+  background-repeat: no-repeat;
+}
+
+.beast-field-view.tornado-monster-field,
+.beast-field-view.waterfall-monster-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/tornado-water-monster.svg);
+  background-repeat: no-repeat;
+}
+
+.beast-field-view.cloud-monster-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/cloud-beast.svg);
+  background-repeat: no-repeat;
+}

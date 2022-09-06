@@ -10,7 +10,7 @@ interface IBeast {
   hp: number;
   renderCallback: () => void;
   done: boolean;
-  createBeast(): HTMLElement;
+  createBeast(mapCallback: () => void): HTMLElement;
 }
 
 export interface ISpells {
