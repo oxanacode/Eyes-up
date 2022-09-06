@@ -1,42 +1,54 @@
-import { Lang } from '../../../types/enums';
+import { Lang, LessonLineHeight } from '../../../types/enums';
 
 class TestState {
   public static lang = Lang.en;
 
-  public static charIndex = 0;
+  public static inputIndex = 0;
+
+  public static testChars: Array<HTMLElement>;
+
+  public static page: HTMLElement;
+
+  public static charsWrapper: HTMLElement;
+
+  public static contentWrapper: HTMLElement;
+
+  public static mistakesCount: HTMLElement;
+
+  public static ribbon: HTMLElement;
+
+  public static timeCount: HTMLElement;
+
+  public static correctionsCount: HTMLElement;
+
+  public static wpmCount: HTMLElement;
+
+  public static accuracyCount: HTMLElement;
+
+  public static speed: number;
+
+  public static accuracy: number;
 
   public static mistakes: Array<number> = [];
 
   public static historyMistakes: Array<number> = [];
 
-  public static Typing = false;
+  public static typing = false;
 
   public static startTime: Date;
 
   public static checkTime = 0;
 
-  public static words = 0;
-
   public static typedChars = 0;
 
-  public static getCorrections(): number {
-    return TestState.historyMistakes.length - TestState.mistakes.length;
-  }
-
-  public static getAccuracy(): number {
-    const finalCorrectChars = TestState.typedChars + 1 - TestState.mistakes.length;
-    const correctedChars = TestState.historyMistakes.length - TestState.mistakes.length;
-
-    return ((finalCorrectChars - correctedChars / 2) / (TestState.typedChars + 1)) * 100;
-  }
+  public static lineHeight = LessonLineHeight.normal;
 
   public static clearState() {
-    TestState.charIndex = 0;
+    TestState.inputIndex = 0;
     TestState.mistakes = [];
     TestState.historyMistakes = [];
-    TestState.Typing = false;
+    TestState.typing = false;
     TestState.checkTime = 0;
-    TestState.words = 0;
     TestState.typedChars = 0;
   }
 }

@@ -305,6 +305,10 @@ const translation: Translation = {
     en: 'Result',
     ru: 'Результат',
   },
+  testTimeText: {
+    en: 'Time:',
+    ru: 'Время:',
+  },
   lessonResults0: {
     en: 'Продолжайте практиковаться!',
     ru: 'Что ж, попробуйте еще раз!',
@@ -388,6 +392,54 @@ const translation: Translation = {
   lessonSoundMech: {
     en: 'Mechanical',
     ru: 'Механический',
+  },
+  lessonTipNext: {
+    en: 'Next',
+    ru: 'Далее',
+  },
+  lessonTipSkip: {
+    en: 'Skip',
+    ru: 'Пропустить',
+  },
+  lessonTipFirst: {
+    en: 'Before we start... Good posture is important for your health!',
+    ru: 'Прежде, чем начнем... Правильная осанка важна для вашего здоровья!',
+  },
+  lessonTipSecond: {
+    en: 'Now the first thing you need to do is to find the bumps on the',
+    ru: 'Теперь, первое, что вам нужно сделать, это найти бугорки на',
+  },
+  lessonTipSecondMiddle: {
+    en: 'and',
+    ru: 'и',
+  },
+  lessonTipSecondEnd: {
+    en: 'keys.',
+    ru: 'клавишах.',
+  },
+  lessonTipF: {
+    en: 'F',
+    ru: 'А',
+  },
+  lessonTipJ: {
+    en: 'J',
+    ru: 'О',
+  },
+  lessonTipThird: {
+    en: 'Close your eyes and find them with your index fingers.',
+    ru: 'Закройте глаза и найдите их указательными пальцами.',
+  },
+  lessonTipFourth: {
+    en: 'And this is the base position for your fingers, which you should return to after each keystroke.',
+    ru: 'А это базовое положение пальцев, в которое нужно возвращаться после каждого нажатия клавиши.',
+  },
+  lessonTipFifth1: {
+    en: 'Keep your eyes up!',
+    ru: 'Не опускайте глаза!',
+  },
+  lessonTipFifth2: {
+    en: 'The main rule: do not look at the keyboard again. And soon you will type like a pro.',
+    ru: 'Главное правило: не смотрите на клавиатуру. И скоро вы будете печатать как профессионал.',
   },
 };
 

@@ -54,12 +54,12 @@ class Modal {
     const btnsImg = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'hero-start-menu-image' },
       { name: 'alt', value: 'buttons-image' },
-      { name: 'src', value: './assets/games/typing-hero/letters-view.png' },
+      { name: 'src', value: './assets/games/typing-hero/letters-view.svg' },
     ]);
     const completedImg = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'hero-start-menu-image' },
       { name: 'alt', value: 'completed-image' },
-      { name: 'src', value: './assets/games/typing-hero/lvl-completed.png' },
+      { name: 'src', value: './assets/games/typing-hero/lvl-completed.svg' },
     ]);
     const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'start-menu-button' }]);
 

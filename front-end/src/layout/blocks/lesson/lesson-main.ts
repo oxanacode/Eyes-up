@@ -10,6 +10,7 @@ import LessonStats from './lesson-stats';
 import LessonRestartBtn from './lesson-restart-btn';
 import LessonInput from './lesson-input';
 import translation from '../../../data/translation';
+import LessonIntro from './lesson-intro';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
@@ -58,6 +59,8 @@ class LessonMain {
     document.addEventListener('keydown', () => {
       input.focus();
     });
+
+    if (LessonState.lessonData.index === 1) LessonIntro.show();
 
     return main;
   }

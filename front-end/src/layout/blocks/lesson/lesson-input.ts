@@ -1,5 +1,4 @@
 import CreateElement from '../../elements/create-element';
-import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 import LessonState from './lesson-state';
 import RowsPosition from './rows-position';
@@ -107,42 +106,28 @@ class LessonInput {
 
     const char = LessonState.lessonChars[LessonState.inputIndex].textContent as string;
     const theme = State.currentTheme;
+    const path = './assets/images/hands/hand';
 
     if (char.match(LessonInput.charRu))
-      LessonState.hands.setAttribute(
-        'src',
-        `./assets/images/hands/hand-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`
-      );
+      LessonState.hands.setAttribute('src', `${path}-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`);
     else if (char.match(LessonInput.charEn))
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char.toLocaleLowerCase()}-${theme}.svg`);
-    else if (char.match(LessonInput.charNum))
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-${char}-${theme}.svg`);
-    else if (char === '`' || char === '~')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-apostrophe-${theme}.svg`);
-    else if (char === `'` || char === '"')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-single-quote-${theme}.svg`);
-    else if (char === `\\` || char === '|')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-back-slash-${theme}.svg`);
-    else if (char === `-` || char === '_')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dash-${theme}.svg`);
-    else if (char === ',' || char === '<')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-comma-${theme}.svg`);
-    else if (char === `/` || char === '?')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash-${theme}.svg`);
-    else if (char === '=' || char === '+')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-equality-${theme}.svg`);
-    else if (char === '[' || char === '{')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-left-bracket-${theme}.svg`);
-    else if (char === ']' || char === '}')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-right-bracket-${theme}.svg`);
-    else if (char === ';' || char === ':')
-      LessonState.hands.setAttribute('src', `./assets/images/hands/hand-semicolon-${theme}.svg`);
-    else if (char === ' ') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-space-${theme}.svg`);
-    else if (char === '>') LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot-${theme}.svg`);
+      LessonState.hands.setAttribute('src', `${path}-${char.toLocaleLowerCase()}-${theme}.svg`);
+    else if (char.match(LessonInput.charNum)) LessonState.hands.setAttribute('src', `${path}-${char}-${theme}.svg`);
+    else if (char === '`' || char === '~') LessonState.hands.setAttribute('src', `${path}-apostrophe-${theme}.svg`);
+    else if (char === `'` || char === '"') LessonState.hands.setAttribute('src', `${path}-single-quote-${theme}.svg`);
+    else if (char === `\\` || char === '|') LessonState.hands.setAttribute('src', `${path}-back-slash-${theme}.svg`);
+    else if (char === `-` || char === '_') LessonState.hands.setAttribute('src', `${path}-dash-${theme}.svg`);
+    else if (char === ',' || char === '<') LessonState.hands.setAttribute('src', `${path}-comma-${theme}.svg`);
+    else if (char === `/` || char === '?') LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
+    else if (char === '=' || char === '+') LessonState.hands.setAttribute('src', `${path}-equality-${theme}.svg`);
+    else if (char === '[' || char === '{') LessonState.hands.setAttribute('src', `${path}-left-bracket-${theme}.svg`);
+    else if (char === ']' || char === '}') LessonState.hands.setAttribute('src', `${path}-right-bracket-${theme}.svg`);
+    else if (char === ';' || char === ':') LessonState.hands.setAttribute('src', `${path}-semicolon-${theme}.svg`);
+    else if (char === ' ') LessonState.hands.setAttribute('src', `${path}-space-${theme}.svg`);
+    else if (char === '>') LessonState.hands.setAttribute('src', `${path}-dot-${theme}.svg`);
     else if (char === '.')
-      if (State.currentLayout === Layout.en)
-        LessonState.hands.setAttribute('src', `./assets/images/hands/hand-dot-${theme}.svg`);
-      else LessonState.hands.setAttribute('src', `./assets/images/hands/hand-slash-${theme}.svg`);
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-dot-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
   }
 
   public static createLessonInput(): HTMLElement {
@@ -187,7 +172,6 @@ class LessonInput {
         return;
       }
       LessonInput.checkMatch(inputChar);
-      LessonState.wpmCount.textContent = `${LessonTimer.getWpm()} ${translation.testWpmSub[State.currentLang]}`;
       LessonState.correctionsCount.textContent = `${LessonInput.getCorrections()}`;
       LessonState.accuracyCount.textContent = `${LessonInput.getAccuracy()} %`;
       LessonState.mistakesCount.textContent = `${LessonState.mistakes.length}`;

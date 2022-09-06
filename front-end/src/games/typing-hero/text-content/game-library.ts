@@ -68,21 +68,21 @@ export const enLibrary: Record<string, string> = {
   startModalParagTwo:
     'Points are awarded for each letter caught. Throughout the level, you will also be shown your accuracy. If you have passed the level to the end - it is considered passed and falls into your thrift-box!',
   startModalParagThree: 'Catch letters, score points, practice accuracy!',
-  startModalButton: "let's start!",
+  startModalButton: "Let's start!",
 
   appButton: 'Back',
-  sandboxButton: 'sandbox',
+  sandboxButton: 'Sandbox',
   resetButton: 'Reset Score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
-  closeModal: 'close',
+  closeModal: 'Close',
 
   sandboxMenuTitle: 'Build your own custom level!',
   sandboxModalText:
     'In the sandbox, you can choose the speed of the letters, the number of columns and the duration of the level. Sandbox points count towards the overall score, but, like levels, are overwritten with each replay.',
-  sandboxInputSpeed: 'speed (in seconds): 1 to 10',
-  sandboxInputDuration: 'duration (in seconds): 10 to 150',
-  sandboxInputColumns: 'columns: 3 to 7',
-  sandboxButtonStart: 'start',
+  sandboxInputSpeed: 'Speed (in seconds): 1 to 10',
+  sandboxInputDuration: 'Duration (in seconds): 10 to 150',
+  sandboxInputColumns: 'Columns: 3 to 7',
+  sandboxButtonStart: 'Start',
 
   preparationContent: 'Preparation!',
   level: 'Level',
@@ -104,39 +104,39 @@ export const enLibrary: Record<string, string> = {
 
 export const ruLibrary: Record<string, string> = {
   startModalTitle: 'Добро пожаловать в игру Typing Hero!',
-  startModalParagOne: 'Ваша задача — успеть поймать все буквы, появляющиеся на игровом поле.',
+  startModalParagOne: 'Ваша задача - успеть поймать все буквы, появляющиеся на игровом поле.',
   startModalParagTwo:
     'За каждую пойманную букву начисляются очки. На протяжении уровня вам будет также выводиться ваша точность. Если вы прошли уровень до конца - он считается пройденным и падает вам в копилку!',
   startModalParagThree: 'Ловите буквы, набирайте очки, практикуйтесь в точности!',
-  startModalButton: 'вперёд!',
+  startModalButton: 'Вперёд!',
 
   appButton: 'Назад',
-  sandboxButton: 'песочница',
+  sandboxButton: 'Песочница',
   resetButton: 'Сбросить Прогресс',
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
-  closeModal: 'закрыть',
+  closeModal: 'Закрыть',
 
   sandboxMenuTitle: 'Настройте уровень по своему!',
   sandboxModalText:
     'В песочнице вы можете сами выбрать скорость букв, количество колонок и продолжительность уровня. Очки песочницы идут в общий зачёт, но, как и у уровней, перезаписываются при каждом повторном перепрохождении.',
-  sandboxInputSpeed: 'скорость (в секундах): от 1 до 10',
-  sandboxInputDuration: 'продожительность (в секундах): от 10 до 150',
-  sandboxInputColumns: 'колонки: от 3 to 7',
-  sandboxButtonStart: 'начать',
+  sandboxInputSpeed: 'Скорость (в секундах): от 1 до 10',
+  sandboxInputDuration: 'Продолжительность (в секундах): от 10 до 150',
+  sandboxInputColumns: 'Колонки: от 3 to 7',
+  sandboxButtonStart: 'Начать',
 
   preparationContent: 'Подготовка!',
   level: 'Уровень',
   levelButton: 'Назад',
   levelCompleted: 'уровень пройден!',
 
-  score: 'Очки:',
-  accuracy: 'Точность:',
+  score: 'очки:',
+  accuracy: 'точность:',
   currentScore: 'Текущие',
   currentAccuracy: 'Текущая',
   bestScore: 'Лучшие',
   bestAccuracy: 'Лучшая',
   total: 'Всего',
-  totalScore: 'Очков:',
+  totalScore: 'очков:',
   average: 'Средняя',
 
   achievementTitle: 'Новое достижение',

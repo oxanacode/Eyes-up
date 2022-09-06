@@ -4,9 +4,11 @@ import BackBtn from '../../elements/back-btn';
 import TestLangBtn from './test-lang-btn';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
-import TestText from './test-text';
+import TestContent from './test-content';
 import TestState from './test-state';
 import TestTimer from './test-timer';
+import TestInput from './test-input';
+import TestTop from './test-stats';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Lang } from '../../../types/enums';
@@ -17,21 +19,41 @@ class TestMain {
     TestTimer.stopTimer = true;
 
     const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'test' }]);
-    const top = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-top' }]);
+    const nav = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-nav' }]);
     const back = BackBtn.createBackBtn(Page.layout, render);
     const btnsWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-btns' }]);
     const btnsText = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'test-btns-text' }]);
     const enBtn = TestLangBtn.createTestLangBtn(Lang.en, render);
     const ruBtn = TestLangBtn.createTestLangBtn(Lang.ru, render);
+    const ribbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-ribbon' }]);
+    const testTop = TestTop.createTestTop(render);
+    const time = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-time' }]);
+    const timeText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'test-time-text' }]);
+    const timeCount = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'test-time-count' }]);
 
+    ribbon.textContent = translation.testRibbonText[State.currentLang];
+    TestState.ribbon = ribbon;
     btnsText.textContent = translation.testBtnsText[State.currentLang];
+    timeText.textContent = translation.testTimeText[State.currentLang];
+    timeCount.textContent = '60';
+    TestState.timeCount = timeCount;
     btnsWrapper.append(enBtn, ruBtn);
-    top.append(back, btnsText, btnsWrapper);
-    main.append(top);
+    nav.append(back, btnsText, btnsWrapper);
+    time.append(timeText, timeCount);
+    main.append(nav, ribbon, time, testTop);
 
     ApiService.getTest(TestState.lang).then((data) => {
-      main.append(TestText.createTestText(data[0].text, render));
+      main.append(TestContent.createTestContent(data[0].text));
     });
+
+    const testInput = TestInput.createTestInput();
+
+    document.addEventListener('keydown', () => {
+      testInput.focus();
+    });
+
+    testTop.append(testInput);
+    TestState.page = main;
 
     return main;
   }
