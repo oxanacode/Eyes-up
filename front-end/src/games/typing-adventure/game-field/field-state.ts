@@ -36,6 +36,8 @@ class FieldState {
   static beastPanel: HTMLElement;
 
   static beastTypeAction: Record<string, string>[] = [];
+
+  static asyncId: NodeJS.Timer[] = [];
 }
 
 export default FieldState;
