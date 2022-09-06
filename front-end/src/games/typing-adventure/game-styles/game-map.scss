@@ -1,5 +1,5 @@
 .game-map {
-  background: linear-gradient(180deg, #010000 0%, #0E0325 95.1%, #130432 100%);
+  background: $c-adventure-map-bg;
   min-height: 100vh;
   padding: 5rem 0 8rem 0;
 
@@ -30,9 +30,9 @@
 .adventure-back-button {
   @extend .back-btn;
   margin-right: 0;
-  color: #75819C; //////////////////////// VAR 3
+  color: $c-adventure-back-button;
   &:hover {
-    color: #9271EE;
+    color: $c-adventure-title-content;
   }
 
   @include desktop-small {
@@ -57,11 +57,11 @@
 }
 
 .adventure-menu-typing-title {
-  color: #F3F3F4; //////////////////////// VAR 1
+  color: $c-adventure-text-content;
 }
 
 .adventure-menu-adventure-title {
-  color: #9271EE; //////////////////////// VAR 2
+  color: $c-adventure-title-content;
 }
 
 .map-header-buttons-wrapper {
@@ -77,14 +77,14 @@
 .adventure-info-button {
   width: 12rem;
   height: 4rem;
-  color: #9271EE; //////////////////////// VAR 2
-  border: 0.1rem solid #9271EE; //////////////////////// VAR 2
+  color: $c-adventure-title-content;
+  border: 0.1rem solid $c-adventure-title-content;
   border-radius: $small-border-radius;
   font-size: 1.6rem;
   font-weight: $fw-bold;
   &:hover {
-    background: #9271EE; //////////////////////// VAR 2
-    color: #F3F3F4; //////////////////////// VAR 1
+    background: $c-adventure-title-content;
+    color: $c-adventure-text-content;
   }
 
   @include mobile {
@@ -128,7 +128,7 @@
 .beast-title {
   @include font-title-mobile;
   text-align: center;
-  color: #9271EE; //////////////////////// VAR 2
+  color: $c-adventure-title-content;
 
   @include mobile {
     @include font-main-small;

@@ -28,12 +28,12 @@
   left: calc(50% - 25rem);
   width: 50rem;
   height: 29rem;
-  padding: 20px;
-  background-color: #130432; /////////////////////////// VAR
+  padding: 2rem;
+  background-color: $c-adventure-modal-bg;
   border-radius: $big-border-radius;
   text-align: center;
-  color: #F3F3F4; /////////////////////////// VAR
-  box-shadow: 0px 0px 1rem rgba(33, 37, 41, 0.15);
+  color: $c-adventure-text-content;
+  box-shadow: $c-adventure-modal-shadow;
 }
 
 .start-modal-window {
@@ -58,7 +58,7 @@
 
 .welcome-modal-text {
   @include font-title-mobile;
-  color: #9271EE; /////////////////////////// VAR
+  color: $c-adventure-title-content;
 }
 
 .game-info-modal-window {
@@ -82,18 +82,19 @@
 .start-modal-button,
 .game-info-modal-button,
 .field-modal-button,
-.reset-state-modal-button {
+.reset-state-modal-button,
+.adventure-reset-close-button {
   min-width: 12rem;
   padding: 1rem;
   height: 4rem;
-  color: #9271EE; //////////////////////// VAR 2
-  border: 0.1rem solid #9271EE; //////////////////////// VAR 2
+  color: $c-adventure-title-content;
+  border: 0.1rem solid $c-adventure-title-content;
   border-radius: $small-border-radius;
   font-size: 1.6rem;
   font-weight: $fw-bold;
   &:hover {
-    background: #9271EE; //////////////////////// VAR 2
-    color: #F3F3F4; //////////////////////// VAR 1
+    background: $c-adventure-title-content;
+    color: $c-adventure-text-content;
   }
 
   @include mobile {
@@ -103,57 +104,63 @@
   }
 }
 
+.adventure-reset-buttons-wrapper {
+  display: flex;
+  gap: 1rem;
+}
+
 .welcome-modal-buttons {
   display: flex;
   gap: 5.5rem;
 }
 
-//
-
 .field-modal-window {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 25px;
+  @extend .welcome-modal-window;
   position: relative;
-  top: calc(50% - 75px);
-  left: calc(50% - 150px);
-  width: 300px;
-  height: 150px;
-  padding: 20px;
-  background-color: white;
-  border-radius: 5px;
+  width: 30rem;
+  height: 15rem;
+  top: calc(50% - 7.5rem);
+  left: calc(50% - 15rem);
+  padding: 2rem;
+  border-radius: $big-border-radius;
 }
 
 .field-modal-content {
-  font-size: 25px;
-  color: darkmagenta;
+  @include font-title-mobile;
+  color: $c-adventure-text-content;
 }
 
 .field-modal-content-info {
-  font-size: 18px;
-  color: darkmagenta;
+  @include font-subtitle;
+  color: $c-adventure-text-content;
 }
 
 .game-info-title {
-  font-size: 25px;
-  color: darkmagenta;
+  @include font-title-mobile;
+  color: $c-adventure-text-content;
 }
 
 .info-title {
-  font-size: 20px;
-  color: darkmagenta;
+  @include font-subtitle-mobile;
+  color: $c-adventure-text-content;
+}
+
+.info-lvl {
+  color: $c-adventure-title-content;
+}
+
+.info-user-spell {
+  color: $c-adventure-title-content;
 }
 
 .lvl-spells-title {
-  color: darkmagenta;
+  color: $c-adventure-text-content;
 }
 
 .info-spell {
-  color: darkgray;
+  color: $c-adventure-info-spells;
 }
 
 .info-spell.available {
-  color: orange;
+  color: $c-adventure-title-content;
 }

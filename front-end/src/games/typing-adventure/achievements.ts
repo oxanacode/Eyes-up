@@ -37,15 +37,17 @@ class Achievements {
   }
 
   static createWindow(textContent: string, path: string) {
-    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-modal' }]);
-    const title = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-title' }]);
-    const text = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text' }]);
+    const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'adventure-achievement-modal' }]);
+    const title = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'adventure-achievement-title' }]);
+    const text = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'adventure-achievement-text' }]);
     const img = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'achievement-img' },
       { name: 'alt', value: 'achievement-image' },
       { name: 'src', value: path },
     ]);
-    const textWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'achievement-text-wrapper' }]);
+    const textWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'adventure-achievement-text-wrapper' },
+    ]);
     let top = GameValues.achievementStyleTop;
 
     title.textContent = GameState.lib.achievementTitle as string;

@@ -70,33 +70,6 @@ export const enContent = {
   fieldTutorialButtonDone: 'Get Start',
 
   achievementTitle: 'New achievement!',
-
-  // achievementTitleLvlUp: 'Wirst win!',
-  // achievementTextLvlUp: 'Wow, you are not so simple!',
-
-  // achievementTitleTenSpells: 'Wizard!',
-  // achievementTextTenSpells: 'You have collected 10 spells!',
-
-  // achievementTitleHalfGame: 'Almost there!',
-  // achievementTextHalfGame: 'You are halfway through the game!',
-
-  // achievementTitleGameDone: 'Typeria Conqueror!',
-  // achievementTextGameDone: 'You completed Typing Adventure!',
-
-  // achievementTitleThunder: 'Friend of thunder!',
-  // achievementTextThunder: 'You have collected all thunder spells!',
-
-  // achievementTitleFire: 'Friend of fire!',
-  // achievementTextFire: 'You have collected all fire spells!',
-
-  // achievementTitleWater: 'Friend of water!',
-  // achievementTextWater: 'You have collected all water spells!',
-
-  // achievementTitleLight: 'Friend of light!',
-  // achievementTextLight: 'You have collected all light spells!',
-
-  // achievementTitleWind: 'Friend of wind!',
-  // achievementTextWind: 'You have collected all wind spells!',
 };
 
 export const ruContent = {
@@ -172,31 +145,4 @@ export const ruContent = {
   fieldTutorialButtonDone: 'Начинаем!',
 
   achievementTitle: 'Новое достижение!',
-
-  // achievementTitleLvlUp: 'Первая победа!',
-  // achievementTextLvlUp: 'А вы не так просты!',
-
-  // achievementTitleTenSpells: 'Вы маг!',
-  // achievementTextTenSpells: 'Вы собрали десять чар!',
-
-  // achievementTitleHalfGame: 'Почти у цели!',
-  // achievementTextHalfGame: 'Вы прошли половину игры!',
-
-  // achievementTitleGameDone: 'Завоеватель Тайперии!',
-  // achievementTextGameDone: 'Вы прошли Typing Adventure!',
-
-  // achievementTitleThunder: 'Друг грома!',
-  // achievementTextThunder: 'Вы собрали все чары грома!',
-
-  // achievementTitleFire: 'Друг огня!',
-  // achievementTextFire: 'Вы собрали все чары огня!',
-
-  // achievementTitleWater: 'Друг воды!',
-  // achievementTextWater: 'Вы собрали все чары воды!',
-
-  // achievementTitleLight: 'Друг света!',
-  // achievementTextLight: 'Вы собрали все чары света!',
-
-  // achievementTitleWind: 'Друг ветра!',
-  // achievementTextWind: 'Вы собрали все чары ветра!',
 };
