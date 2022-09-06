@@ -36,6 +36,7 @@ class GameField {
     menuButton.textContent = GameState.lib.layoutButton as string;
     menuButton.addEventListener('click', () => {
       mapCallback();
+      FieldState.asyncId.forEach((id) => clearTimeout(id));
       FieldState.currentMove = true;
     });
 

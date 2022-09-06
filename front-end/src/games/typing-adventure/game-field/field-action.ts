@@ -55,13 +55,15 @@ class FieldAction {
     FieldState.timer.textContent = GameState.lib.yourMove as string;
     FieldState.currentMove = false;
 
-    setTimeout(() => {
+    const timeId = setTimeout(() => {
       FieldState.timer.textContent = `${FieldState.timerCounter}`;
       FieldState.actionTotal.textContent = '';
       FieldAction.timerChanger();
       FieldState.spellCapture = true;
       MoveHandler.heroMoveAction(currentSpells);
     }, GameValues.startTimer);
+
+    FieldState.asyncId.push(timeId);
   }
 
   static beastMove() {
@@ -70,16 +72,18 @@ class FieldAction {
     FieldState.timer.textContent = GameState.lib.beastMove as string;
     FieldState.currentMove = true;
 
-    setTimeout(() => {
+    const timeId = setTimeout(() => {
       FieldState.timer.textContent = `${FieldState.timerCounter}`;
       FieldAction.nextBeastActions();
       FieldAction.timerChanger();
       MoveHandler.beastMoveAction();
     }, GameValues.startTimer);
+
+    FieldState.asyncId.push(timeId);
   }
 
   static timerChanger() {
-    setTimeout(() => {
+    const timeId = setTimeout(() => {
       FieldState.timerCounter -= 1;
       FieldState.timer.textContent = `${FieldState.timerCounter}`;
 
@@ -92,6 +96,8 @@ class FieldAction {
         FieldAction.action();
       }
     }, 1000);
+
+    FieldState.asyncId.push(timeId);
   }
 
   static randomSpells() {
