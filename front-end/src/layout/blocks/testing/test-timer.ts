@@ -6,6 +6,8 @@ import TestResult from './test-result';
 import { Lang } from '../../../types/enums';
 
 class TestTimer {
+  public static minute = 60;
+
   public static stopTimer = false;
 
   public static getTime() {
@@ -16,7 +18,6 @@ class TestTimer {
   }
 
   public static startTimer(): void {
-    const MINUTE = 60;
     TestState.startTime = new Date();
 
     const refreshTime = setInterval(() => {
@@ -29,7 +30,7 @@ class TestTimer {
 
       if (leftTime) TestState.timeCount.textContent = `${leftTime - 1}`;
 
-      if (TestState.checkTime >= MINUTE) {
+      if (TestState.checkTime >= TestTimer.minute) {
         TestTimer.stopTimer = true;
         TestResult.showTestResult();
       }
@@ -37,9 +38,8 @@ class TestTimer {
   }
 
   public static getWpm() {
-    const MINUTE = 60;
     const AVERAGE_WORD_LENGTH = TestState.lang === Lang.en ? 6 : 8;
-    const speed = Math.floor(((TestState.inputIndex / AVERAGE_WORD_LENGTH) * MINUTE) / TestTimer.getTime());
+    const speed = Math.floor(((TestState.inputIndex / AVERAGE_WORD_LENGTH) * TestTimer.minute) / TestTimer.getTime());
 
     TestState.speed = speed || 0;
     TestState.wpmCount.textContent = `${TestState.speed} ${translation.testWpmSub[State.currentLang]}`;

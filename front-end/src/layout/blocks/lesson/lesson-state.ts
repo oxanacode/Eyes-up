@@ -8,6 +8,8 @@ class LessonState {
 
   public static lessonsNumber = 0;
 
+  public static lessonsId: Array<string> = [];
+
   public static lessonChars: Array<HTMLElement>;
 
   public static page: HTMLElement;
@@ -54,6 +56,7 @@ class LessonState {
 
   public static clearState(): void {
     LessonState.lessonsNumber = 0;
+    LessonState.lessonsId = [];
     LessonState.inputIndex = 0;
     LessonState.mistakes = [];
     LessonState.historyMistakes = [];

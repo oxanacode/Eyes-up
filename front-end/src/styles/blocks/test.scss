@@ -3,7 +3,8 @@
   grid-template-columns: minmax(min-content, 110rem);
   max-width: 110rem;
   padding: 0 8rem;
-  margin: 6rem auto 2rem;
+  margin: 6rem auto 2rem; 
+  user-select: none;
 
   @include desktop-small {
     padding: 0 4rem;

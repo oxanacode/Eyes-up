@@ -441,6 +441,14 @@ const translation: Translation = {
     en: 'The main rule: do not look at the keyboard again. And soon you will type like a pro.',
     ru: 'Главное правило: не смотрите на клавиатуру. И скоро вы будете печатать как профессионал.',
   },
+  lessonNextBtn: {
+    en: 'Next lesson',
+    ru: 'Следующий урок',
+  },
+  lessonNextLastBtn: {
+    en: 'To lesson list',
+    ru: 'К списку уроков',
+  },
 };
 
 export default translation;

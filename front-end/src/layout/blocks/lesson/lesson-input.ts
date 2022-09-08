@@ -8,6 +8,7 @@ import LessonResult from './lesson-result';
 import matchKeyboard from '../../../data/keyboard-match';
 
 import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class LessonInput {
   public static charLetter = /[a-zA-Zа-яА-ЯЁё]/;
@@ -140,7 +141,7 @@ class LessonInput {
       else LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
   }
 
-  public static createLessonInput(): HTMLElement {
+  public static createLessonInput(render: RenderHandler): HTMLElement {
     const testInput = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'lesson-input' },
       { name: 'autocomplete', value: 'off' },
@@ -188,7 +189,7 @@ class LessonInput {
 
       if (LessonState.inputIndex === LessonState.lessonChars.length - 1) {
         LessonTimer.stopTimer = true;
-        LessonResult.showLessonResult();
+        LessonResult.showLessonResult(render);
       }
 
       LessonState.inputIndex += 1;

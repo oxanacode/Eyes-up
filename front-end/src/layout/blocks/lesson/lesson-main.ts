@@ -46,7 +46,7 @@ class LessonMain {
 
     LessonState.hands = hands;
 
-    const input = LessonInput.createLessonInput();
+    const input = LessonInput.createLessonInput(render);
 
     ribbon.textContent = translation.testRibbonText[State.currentLang];
     LessonState.ribbon = ribbon;

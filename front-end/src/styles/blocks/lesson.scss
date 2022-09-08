@@ -1,6 +1,7 @@
 .lesson {
   position: relative;
   min-height: 100vh;
+  user-select: none;
 
  &::before {
     content: '';
@@ -225,11 +226,7 @@
   background-color: $c-body-bg;
   border-radius: $big-border-radius;
   box-shadow: $bxs-result-shadow;
-  position: absolute;
   width: 37rem;
-  top: 25rem;
-  left: 50%;
-  transform: translate(-50%, 0);
 
   @include tablet {
     top: 22rem;
@@ -295,9 +292,7 @@
   justify-content: center;
   column-gap: 2rem;
   row-gap: 1rem;
-  position: relative;
   padding: 0 2rem;
-  top: -18rem;
   flex-wrap: wrap;
   margin: 0 auto;
 
@@ -439,4 +434,29 @@
 .intro-text-accent {
   @include font-title-mobile;
   color: $c-accent;
+}
+
+.lesson-next-btn {
+  @include font-main;
+  width: 16rem;
+  height: 4rem;
+  background-color: $c-accent;
+  border-radius: $small-border-radius;
+  color: $c-white;
+
+  @include mobile {
+
+  }
+}
+
+.lesson-result-wrapper {
+  position: absolute;
+  top: 22rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 2rem;
 }

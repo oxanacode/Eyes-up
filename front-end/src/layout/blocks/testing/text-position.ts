@@ -1,4 +1,3 @@
-import RowsPosition from '../lesson/rows-position';
 import TestState from './test-state';
 
 class TextPosition {
@@ -8,7 +7,7 @@ class TextPosition {
     const wrapperTop = TestState.charsWrapper.getBoundingClientRect().top;
     const frameTop = TestState.contentWrapper.getBoundingClientRect().top;
     const frameBottom = TestState.contentWrapper.getBoundingClientRect().bottom;
-    const step = RowsPosition.getStep();
+    const step = TestState.lineHeight;
 
     if (charBottom > frameBottom - step) {
       const margin = parseInt(TestState.charsWrapper.style.marginTop || '0px', 10);
