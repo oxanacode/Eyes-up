@@ -87,6 +87,7 @@ body.light {
   --bg-lesson-skin: url(./assets/images/background/icons/icon-lesson-kb-light.svg);
   --bg-lesson-skin-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-light.svg);
   --bg-game-two-bg: url(./assets/images/games/games-game-2-light.svg);
+  --bg-game-one-bg: url(./assets/images/games/games-game-1-light.svg);
 }
 
 body.dark {
@@ -178,6 +179,7 @@ body.dark {
   --bg-lesson-skin: url(./assets/images/background/icons/icon-lesson-kb-dark.svg);
   --bg-lesson-skin-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-dark.svg);
   --bg-game-two-bg: url(./assets/images/games/games-game-2-dark.svg);
+  --bg-game-one-bg: url(./assets/images/games/games-game-1-dark.svg);
 }
 
 $c-body-bg: var(--c-body-bg);
@@ -229,7 +231,7 @@ $bg-dev-avatar: #E4E4E4;
 
 $bg-icon-github: url(./assets/images/background/icons/icon-github.svg);
 $bg-home-wave: url(./assets/images/background/home/home-wave.svg);
-$bg-game-one-bg: url(./assets/images/games/games-game-1.svg);
+$bg-game-one-bg: var(--bg-game-one-bg);
 $bg-game-two-bg: var(--bg-game-two-bg);
 $bg-icon-back: url(./assets/images/background/icons/icon-back.svg);
 $bg-icon-restart: url(./assets/images/background/icons/icon-restart.svg);

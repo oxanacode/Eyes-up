@@ -28,7 +28,7 @@ class TestTimer {
 
       const leftTime = +(TestState.timeCount.textContent as string);
 
-      if (leftTime) TestState.timeCount.textContent = `${leftTime - 1}`;
+      if (leftTime && !TestTimer.stopTimer) TestState.timeCount.textContent = `${leftTime - 1}`;
 
       if (TestState.checkTime >= TestTimer.minute) {
         TestTimer.stopTimer = true;

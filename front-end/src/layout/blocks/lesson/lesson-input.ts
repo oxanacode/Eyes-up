@@ -19,7 +19,9 @@ class LessonInput {
 
   public static charNum = /\d/;
 
-  public static charSymbols = /[():*%"]/;
+  public static charSymbols = /[():*%"!?~"#№_+|<>{}^@]/;
+
+  public static charShiftRu = /[,;/]/;
 
   public static checkMatch(inputChar: string): void {
     if (LessonState.lessonChars[LessonState.inputIndex].textContent === inputChar) {
@@ -69,7 +71,8 @@ class LessonInput {
         if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.add('current-char');
 
-        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.add('current-char');
+        if (State.currentLayout === Layout.ru && char.match(LessonInput.charShiftRu))
+          LessonKeyboard.shift.classList.add('current-char');
 
         if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.add('current-char');
 
@@ -89,7 +92,8 @@ class LessonInput {
         if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
           LessonKeyboard.shift.classList.remove('current-char');
 
-        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.remove('current-char');
+        if (State.currentLayout === Layout.ru && char.match(LessonInput.charShiftRu))
+          LessonKeyboard.shift.classList.remove('current-char');
 
         if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.remove('current-char');
 
