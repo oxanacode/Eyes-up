@@ -30,7 +30,7 @@ class TestTimer {
 
       if (leftTime && !TestTimer.stopTimer) TestState.timeCount.textContent = `${leftTime - 1}`;
 
-      if (TestState.checkTime >= TestTimer.minute) {
+      if (TestState.checkTime >= TestTimer.minute && !TestTimer.stopTimer) {
         TestTimer.stopTimer = true;
         TestResult.showTestResult();
       }

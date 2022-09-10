@@ -46,7 +46,7 @@ class TestInput {
       { name: 'class', value: 'test-input' },
       { name: 'autocomplete', value: 'off' },
     ]);
-    const MINUTE = 60;
+    // const MINUTE = 60;
 
     testInput.addEventListener('input', () => {
       if (TestState.inputIndex <= TestState.testChars.length - 1)
@@ -92,10 +92,10 @@ class TestInput {
       if (TestState.inputIndex < TestState.testChars.length)
         TestState.testChars[TestState.inputIndex].classList.add('active-char');
 
-      if (TestTimer.getTime() > MINUTE) {
-        TestTimer.stopTimer = true;
-        TestResult.showTestResult();
-      }
+      // if (TestTimer.getTime() > MINUTE) {
+      //   TestTimer.stopTimer = true;
+      //   TestResult.showTestResult();
+      // }
     });
 
     return testInput;

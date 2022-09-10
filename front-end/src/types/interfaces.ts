@@ -156,8 +156,8 @@ export interface UserLesson {
 }
 
 export interface UserTesting {
-  bestSpeed: number;
-  bestAccuracy: number;
+  lastSpeed: number;
+  lastAccuracy: number;
 }
 
 export interface VirtualKeys {

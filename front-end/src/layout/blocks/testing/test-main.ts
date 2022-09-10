@@ -9,6 +9,8 @@ import TestState from './test-state';
 import TestTimer from './test-timer';
 import TestInput from './test-input';
 import TestTop from './test-stats';
+import UserState from '../../../scripts/user/user-state';
+import TestLastResult from './test-last';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Lang } from '../../../types/enums';
@@ -44,6 +46,12 @@ class TestMain {
 
     ApiService.getTest(TestState.lang).then((data) => {
       main.append(TestContent.createTestContent(data[0].text));
+
+      if (UserState.checkIfUserAuthorised()) {
+        const lastResult = TestLastResult.createTestLastResult();
+
+        main.append(lastResult);
+      }
     });
 
     const testInput = TestInput.createTestInput();

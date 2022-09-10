@@ -302,15 +302,19 @@ const translation: Translation = {
     ru: 'Язык текста',
   },
   testResultText: {
-    en: 'Result',
-    ru: 'Результат',
+    en: 'Test Result:',
+    ru: 'Результат теста:',
+  },
+  testLastResultText: {
+    en: 'Last Result:',
+    ru: 'Последний результат:',
   },
   testTimeText: {
     en: 'Time:',
     ru: 'Время:',
   },
   lessonResults0: {
-    en: 'Продолжайте практиковаться!',
+    en: 'Well, try again!',
     ru: 'Что ж, попробуйте еще раз!',
   },
   lessonResults1: {
