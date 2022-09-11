@@ -8,9 +8,9 @@ import ParseLessons from '../../../scripts/parsing/parse-lessons';
 import ApiService from '../../../scripts/api/api-service';
 import UserState from '../../../scripts/user/user-state';
 import LessonBadge from './lesson-badge';
+import SwitchPage from '../../../scripts/layout/switch-page';
 
 import { Layout, Page, Tag } from '../../../types/enums';
-import SwitchPage from '../../../scripts/layout/switch-page';
 import { RenderHandler } from '../../../types/types';
 
 class LessonResult {

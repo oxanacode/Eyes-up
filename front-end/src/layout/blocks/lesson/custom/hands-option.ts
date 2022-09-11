@@ -1,9 +1,9 @@
 import CreateElement from '../../../elements/create-element';
 import State from '../../../../scripts/state/state';
 import ManageState from '../../../../scripts/state/manage-state';
+import LessonState from '../lesson-state';
 
 import { LessonHands, Tag } from '../../../../types/enums';
-import LessonState from '../lesson-state';
 
 class HandsOption {
   public static create(): HTMLElement {

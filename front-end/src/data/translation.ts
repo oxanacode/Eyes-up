@@ -450,7 +450,7 @@ const translation: Translation = {
     ru: 'Следующий урок',
   },
   lessonNextLastBtn: {
-    en: 'To lesson list',
+    en: 'To lessons list',
     ru: 'К списку уроков',
   },
 };

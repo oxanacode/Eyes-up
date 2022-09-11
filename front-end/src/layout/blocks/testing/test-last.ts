@@ -3,9 +3,9 @@ import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 import ApiService from '../../../scripts/api/api-service';
 import ParseTesting from '../../../scripts/parsing/parse-testing';
+import TestState from './test-state';
 
 import { Data, Tag } from '../../../types/enums';
-import TestState from './test-state';
 
 class TestLastResult {
   public static visible = false;
