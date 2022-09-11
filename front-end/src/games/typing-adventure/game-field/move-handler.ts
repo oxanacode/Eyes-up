@@ -140,7 +140,7 @@ class MoveHandler {
       resultMessage = GameState.lib.winnerBeast as string;
     }
 
-    if (beastLvl === 10 && winner === 'hero') {
+    if (beastLvl === 9 && winner === 'hero') {
       const messageInfo = GameState.lib.resultFinalLvl as string;
 
       FieldState.beastInstance.done = true;

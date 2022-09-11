@@ -10,6 +10,7 @@ export interface IlevelMaxScore {
 }
 
 export interface Iachievement {
+  [index: string]: boolean;
   hero: boolean;
   legend: boolean;
 }

@@ -5,7 +5,7 @@ enum GameValues {
   beastTimer = 3,
   startTimer = 5000,
   allBeastsTypes = 9,
-  maxMapBeasts = 10,
+  maxMapBeasts = 9,
   randomSpellsAmount = 1,
   firstAction = 0,
   secondAction = 1,

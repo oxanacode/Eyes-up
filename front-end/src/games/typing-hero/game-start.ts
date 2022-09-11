@@ -6,6 +6,7 @@ import Achievements from './achievements';
 import State from './app-scripts/app-state';
 import ApiService from '../../scripts/api/api-service';
 import UserData from './data-handler';
+import Reset from './reset-state';
 
 import { Tag, Page } from './game-types/enums';
 import { RenderHandler } from './game-types/types';
@@ -28,6 +29,9 @@ class TypingHero {
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
         GameState.engageState();
+        Reset.state();
+        Reset.resetLvlsPoints();
+        Reset.achievementClear();
         UserData.getData(user);
         GameState.appCallbacks = appCallbacks;
 
@@ -45,6 +49,9 @@ class TypingHero {
       });
     } else {
       GameState.engageState();
+      Reset.state();
+      Reset.resetLvlsPoints();
+      Reset.achievementClear();
       GameState.appCallbacks = appCallbacks;
 
       const menu = Menu.createMenu();

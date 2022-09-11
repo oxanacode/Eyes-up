@@ -40,6 +40,16 @@ class GameState {
 
   static achievementsCurrentStatus: Record<string, boolean>;
 
+  static clearState() {
+    GameState.firstAppearance = true;
+    GameState.firstFieldAppearance = true;
+    GameState.userLvl = 1;
+    GameState.userHp = 100;
+    GameState.userSpells = [];
+    GameState.currentGameBeasts = [];
+    GameState.achievementsCurrentStatus = {};
+  }
+
   static engageState(): void {
     GameState.currentLang = State.currentLang;
 
