@@ -7,7 +7,7 @@ import LessonKeyboard from './lesson-keyboard';
 import LessonResult from './lesson-result';
 import matchKeyboard from '../../../data/keyboard-match';
 
-import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
+import { Layout, LessonSound, Tag } from '../../../types/enums';
 import { RenderHandler } from '../../../types/types';
 
 class LessonInput {
@@ -160,7 +160,9 @@ class LessonInput {
     else if (char === '|') LessonState.hands.setAttribute('src', `${path}-or-${theme}.svg`);
     else if (char === `-`) LessonState.hands.setAttribute('src', `${path}-dash-${theme}.svg`);
     else if (char === '_') LessonState.hands.setAttribute('src', `${pathShift}-dash-${theme}.svg`);
-    else if (char === ',') LessonState.hands.setAttribute('src', `${path}-comma-${theme}.svg`);
+    else if (char === ',')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-comma-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${path}-question-${theme}.svg`);
     else if (char === '<') LessonState.hands.setAttribute('src', `${pathShift}-comma-${theme}.svg`);
     else if (char === `/`)
       if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);

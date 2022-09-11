@@ -9,6 +9,7 @@ import {
   LessonFontFamily,
   LessonSound,
   LessonSkin,
+  LessonHands,
 } from './enums';
 
 export interface Attribute {
@@ -65,6 +66,7 @@ export interface CurrentState {
   currentLessonFontFamily: LessonFontFamily;
   currentLessonSound: LessonSound;
   currentLessonSkin: LessonSkin;
+  currentLessonHands: LessonHands;
 }
 
 export interface RegExpPattern {

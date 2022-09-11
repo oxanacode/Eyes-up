@@ -13,7 +13,7 @@ import translation from '../../../data/translation';
 import LessonIntro from './lesson-intro';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, LessonHands } from '../../../types/enums';
 
 class LessonMain {
   public static createLessonMain(render: RenderHandler): HTMLElement {
@@ -48,6 +48,7 @@ class LessonMain {
     ]) as HTMLImageElement;
 
     LessonState.hands = hands;
+    if (State.currentLessonHands === LessonHands.hidden) hands.style.visibility = 'hidden';
 
     const input = LessonInput.createLessonInput(render);
 

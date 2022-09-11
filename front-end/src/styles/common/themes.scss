@@ -34,10 +34,10 @@ body.light {
   --c-hero-lvl-bg: #F5F5F5;
   --c-letters-field: #FFFFFF;
   --c-hero-modal-bg: #FFFFFF;
-  --c-hero-modal-title-btn: #212529;
+  --c-hero-modal-title-btn: #848ED9;
 
   --bxs-modal-shadow: 0px 0px 1rem rgba(33, 37, 41, 0.15);
-  --bxs-result-shadow: 0px 0px 5rem rgba(33, 37, 41, 0.15);
+  --bxs-result-shadow: 0px 0px 2rem rgba(33, 37, 41, 0.07);
 
   --bg-header-gradient: linear-gradient(180deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 100%);
   --bg-footer-gradient: linear-gradient(0deg, #F0EFFC 0%, rgba(240, 239, 252, 0) 56%);
@@ -88,6 +88,9 @@ body.light {
   --bg-lesson-skin-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-light.svg);
   --bg-game-two-bg: url(./assets/images/games/games-game-2-light.svg);
   --bg-game-one-bg: url(./assets/images/games/games-game-1-light.svg);
+  --bg-icon-hand: url(./assets/images/background/icons/icon-hand-light.svg);
+  --bg-icon-hand-yes: url(./assets/images/background/icons/icon-hand-yes-light.svg);
+  --bg-icon-hand-no: url(./assets/images/background/icons/icon-hand-no-light.svg);
 }
 
 body.dark {
@@ -180,6 +183,9 @@ body.dark {
   --bg-lesson-skin-hover: url(./assets/images/background/icons/icon-lesson-kb-hover-dark.svg);
   --bg-game-two-bg: url(./assets/images/games/games-game-2-dark.svg);
   --bg-game-one-bg: url(./assets/images/games/games-game-1-dark.svg);
+  --bg-icon-hand: url(./assets/images/background/icons/icon-hand-dark.svg);
+  --bg-icon-hand-yes: url(./assets/images/background/icons/icon-hand-yes-dark.svg);
+  --bg-icon-hand-no: url(./assets/images/background/icons/icon-hand-no-dark.svg);
 }
 
 $c-body-bg: var(--c-body-bg);
@@ -280,8 +286,11 @@ $bg-lesson-sound: var(--bg-lesson-sound);
 $bg-lesson-sound-hover: var(--bg-lesson-sound-hover);
 $bg-lesson-skin: var(--bg-lesson-skin);
 $bg-lesson-skin-hover: var(--bg-lesson-skin-hover);
+$bg-icon-hand: var(--bg-icon-hand);
+$bg-icon-hand-yes: var(--bg-icon-hand-yes);
+$bg-icon-hand-no: var(--bg-icon-hand-no);
 
-$c-adventure-map-bg: linear-gradient(180deg, #010000 0%, #0E0325 95.1%, #130432 100%);
+$c-adventure-map-bg: linear-gradient(180deg, #060111 0%, #0E0325 95.1%, #130432 100%);
 $c-adventure-modal-bg: #130432;
 $c-adventure-modal-shadow: 0 0 1rem rgba(33, 37, 41, 0.15);
 $c-adventure-title-content: #9271EE;

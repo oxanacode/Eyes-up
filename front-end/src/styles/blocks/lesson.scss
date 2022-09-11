@@ -464,7 +464,7 @@
 .progress-bar-wrapper {
   max-width: 110rem;
   margin: 0 auto 5.4rem;
-  height: 0.6rem;
+  height: 0.4rem;
   padding: 0 8rem;
 
   @include desktop-small {
@@ -490,5 +490,5 @@
   width: 0%;
   border-radius: $small-border-radius;
   background-color: $c-accent;
-  margin: 0 0.2rem;
+  margin: 0 0.1rem;
 }
