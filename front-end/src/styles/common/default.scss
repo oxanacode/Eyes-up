@@ -55,9 +55,10 @@
 }
 
 .big-btn {
+  @include big-btn;
+  position: relative;
   z-index: 2;
   transition: $transition-time;
-  @include big-btn;
 }
 
 .main-title {
