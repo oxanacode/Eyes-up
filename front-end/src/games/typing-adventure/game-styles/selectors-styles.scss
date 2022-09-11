@@ -1,8 +1,8 @@
 .action-spell-image.thunder,
 .action-spell-image.soundwave,
-.action-spell-image.thunder-blow,
-.action-spell-image.lightning-blast,
-.action-spell-image.whirlwind-lightning {
+.action-spell-image.blusting-blow,
+.action-spell-image.electrical-discharge,
+.action-spell-image.vortical-typhoon {
   background-image: url(./assets/games/typing-adventure/hero-and-spells/thunder-spell.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -10,8 +10,8 @@
 
 .action-spell-image.water,
 .action-spell-image.maelstrom,
-.action-spell-image.water-storm,
-.action-spell-image.waterspout,
+.action-spell-image.cloudburst,
+.action-spell-image.aquaswirl,
 .action-spell-image.furious-flow {
   background-image: url(./assets/games/typing-adventure/hero-and-spells/water-spell.svg);
   background-repeat: no-repeat;
@@ -21,7 +21,7 @@
 .action-spell-image.fire,
 .action-spell-image.heavy-flame,
 .action-spell-image.fiery-hail,
-.action-spell-image.fiery-hurricane,
+.action-spell-image.volcanic-hurricane,
 .action-spell-image.burning-onslaught {
   background-image: url(./assets/games/typing-adventure/hero-and-spells/fire-spell.svg);
   background-repeat: no-repeat;
@@ -29,7 +29,7 @@
 }
 
 .action-spell-image.light,
-.action-spell-image.ligth-wall,
+.action-spell-image.radiant-wall,
 .action-spell-image.rising-glow,
 .action-spell-image.shining-vortex,
 .action-spell-image.luminous-pillar {
@@ -39,8 +39,8 @@
 }
 
 .action-spell-image.wind,
-.action-spell-image.wind-whirl,
-.action-spell-image.furious-whirlwind,
+.action-spell-image.whirl-gale,
+.action-spell-image.ferocious-twister,
 .action-spell-image.windspout,
 .action-spell-image.massive-tornado {
   background-image: url(./assets/games/typing-adventure/hero-and-spells/wind-spell.svg);
@@ -58,8 +58,8 @@
 
 .action-spell-name.water,
 .action-spell-name.maelstrom,
-.action-spell-name.water-storm,
-.action-spell-name.waterspout,
+.action-spell-name.cloudburst,
+.action-spell-name.aquaswirl,
 .action-spell-name.furious-flow {
   color: $c-adventure-spells-water;
 }
@@ -67,21 +67,21 @@
 .action-spell-name.fire,
 .action-spell-name.heavy-flame,
 .action-spell-name.fiery-hail,
-.action-spell-name.fiery-hurricane,
+.action-spell-name.volcanic-hurricane,
 .action-spell-name.burning-onslaught {
   color: $c-adventure-spells-fire;
 }
 
 .action-spell-name.wind,
-.action-spell-name.wind-whirl,
-.action-spell-name.furious-whirlwind,
+.action-spell-name.whirl-gale,
+.action-spell-name.ferocious-twister,
 .action-spell-name.windspout,
 .action-spell-name.massive-tornado {
   color: $c-adventure-spells-wind;
 }
 
 .action-spell-name.light,
-.action-spell-name.ligth-wall,
+.action-spell-name.radiant-wall,
 .action-spell-name.rising-glow,
 .action-spell-name.shining-vortex,
 .action-spell-name.luminous-pillar {
@@ -90,9 +90,9 @@
 
 .action-spell-name.thunder,
 .action-spell-name.soundwave,
-.action-spell-name.thunder-blow,
-.action-spell-name.lightning-blast,
-.action-spell-name.whirlwind-lightning {
+.action-spell-name.blusting-blow,
+.action-spell-name.electrical-discharge,
+.action-spell-name.vortical-typhoon {
   color: $c-adventure-spells-thunder;
 }
 
