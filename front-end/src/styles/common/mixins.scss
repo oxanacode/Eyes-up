@@ -195,9 +195,10 @@
   @include bubble-modal-bg;
   @include font-main;
   position: absolute;
-  width: 24rem;
+  width: 28rem;
   text-align: center;
   padding: 1.5rem 1rem;
+  z-index: 2;
 }
 
 @mixin confirmation-btn {
