@@ -43,7 +43,7 @@
 
 .game-info-modal-window::-webkit-scrollbar-track,
 .start-modal-window::-webkit-scrollbar-track {
-  background-color: #130432;
+  background-color: $c-adventure-modal-bg;
   border-radius: 5rem;
 }
 
@@ -52,7 +52,7 @@
   border-radius: 5rem;
   border: 0.2rem solid transparent;
   background-clip: content-box;
-  background-color: #9271EE;
+  background-color: $c-adventure-title-content;
 }
 
 .start-modal-window {
