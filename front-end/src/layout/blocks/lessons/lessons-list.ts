@@ -1,9 +1,9 @@
 import CreateElement from '../../elements/create-element';
 import LessonBtn from './lesson-btn';
+import LessonState from '../lesson/lesson-state';
 
 import { LessonsList, RenderHandler } from '../../../types/types';
 import { Tag } from '../../../types/enums';
-import LessonState from '../lesson/lesson-state';
 
 class AllLessonsList {
   public static createLessonsList(data: LessonsList, render: RenderHandler): HTMLElement {

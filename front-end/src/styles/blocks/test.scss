@@ -254,25 +254,6 @@
   color: $c-accent;
 }
 
-// .result-ribbon-accuracy {
-//   position: relative;
-
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     width: 0.2rem;
-//     height: 100%;
-//     border-radius: $small-border-radius;
-//     background-color: $c-accent;
-//     top: 0;
-//     left: -1rem;
-
-//     @include tablet {
-//       display: none;
-//     }
-//   }
-// }
-
 .test-time {
   @include font-subtitle-mobile;
   margin: 0 auto 3rem;
