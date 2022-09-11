@@ -32,6 +32,10 @@ class LessonState {
 
   public static accuracyCount: HTMLElement;
 
+  public static progress: HTMLElement;
+
+  public static progressWrapper: HTMLElement;
+
   public static speed: number;
 
   public static accuracy: number;
@@ -56,7 +60,6 @@ class LessonState {
 
   public static clearState(): void {
     LessonState.lessonsNumber = 0;
-    LessonState.lessonsId = [];
     LessonState.inputIndex = 0;
     LessonState.mistakes = [];
     LessonState.historyMistakes = [];

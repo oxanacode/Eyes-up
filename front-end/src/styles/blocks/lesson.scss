@@ -69,9 +69,8 @@
 .lesson-wrapper {
   display: flex;
   flex-direction: column;
-  row-gap: 2rem;
   max-width: 110rem;
-  margin: 10rem auto 4rem;
+  margin: 10rem auto 0;
   padding: 0 8rem;
   
   @include desktop-small {
@@ -79,7 +78,7 @@
   }
 
   @include tablet {
-    margin: 5rem auto 4rem;
+    margin: 5rem auto 0;
   }
   
   @include mobile {
@@ -131,6 +130,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2rem;
   position: relative;
 
   &::after {
@@ -337,7 +337,7 @@
 
 .lesson-hands {
   position: absolute;
-  top: 53rem;
+  top: 52.8rem;
   z-index: 10;
   left: 50%;
   transform: translate(-50%, 0);
@@ -428,7 +428,7 @@
   flex-direction: column;
   row-gap: 5rem;
   margin-top: auto;
-  margin-bottom: 15rem; 
+  margin-bottom: 14rem; 
 }
 
 .intro-text-accent {
@@ -459,4 +459,36 @@
   justify-content: center;
   align-items: center;
   row-gap: 2rem;
+}
+
+.progress-bar-wrapper {
+  max-width: 110rem;
+  margin: 0 auto 5.4rem;
+  height: 0.6rem;
+  padding: 0 8rem;
+
+  @include desktop-small {
+    padding: 0 5rem;
+  }
+
+  @include mobile {
+    padding: 0 1.6rem;
+  }
+}
+
+.progress-bar-all {
+  height: 100%;
+  width: 100%;
+  border-radius: $small-border-radius;
+  background-color: $c-block-bg;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar-done {
+  height: 0.2rem;
+  width: 0%;
+  border-radius: $small-border-radius;
+  background-color: $c-accent;
+  margin: 0 0.2rem;
 }

@@ -36,6 +36,9 @@ class LessonMain {
     const lessonStats = LessonStats.createLessonStats();
     const restartBtn = LessonRestartBtn.createRestartBtn(render);
     const lessonContent = LessonContent.createLessonContent();
+    const progressBarWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-wrapper' }]);
+    const progressBarDone = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-done' }]);
+    const progressBarAll = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-all' }]);
     const keyboard = LessonKeyboard.createLessonKeyboard();
     const hands = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'lesson-hands' },
@@ -54,7 +57,11 @@ class LessonMain {
     topWrapper.append(back, lessonSettings);
     contentTopWrapper.append(lessonStats, restartBtn);
     lessonWrapper.append(contentTopWrapper, lessonContent, input);
-    main.append(topWrapper, ribbon, lessonWrapper, keyboard, hands);
+    progressBarAll.append(progressBarDone);
+    progressBarWrapper.append(progressBarAll);
+    LessonState.progress = progressBarDone;
+    LessonState.progressWrapper = progressBarWrapper;
+    main.append(topWrapper, ribbon, lessonWrapper, progressBarWrapper, keyboard, hands);
 
     document.addEventListener('keydown', () => {
       input.focus();

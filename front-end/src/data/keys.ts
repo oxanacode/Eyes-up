@@ -250,7 +250,7 @@ const keys = [
     },
     {
       type: 'Symbol',
-      upEng: "'",
+      upEng: '"',
       downEng: "'",
       downRu: 'э',
     },

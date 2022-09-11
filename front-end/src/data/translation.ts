@@ -410,16 +410,16 @@ const translation: Translation = {
     ru: 'Прежде, чем начнем... Правильная осанка важна для вашего здоровья!',
   },
   lessonTipSecond: {
-    en: 'Now the first thing you need to do is to find the bumps on the',
-    ru: 'Теперь, первое, что вам нужно сделать, это найти бугорки на',
+    en: 'Now take a look at your keyboard. Do you see the bumps on the',
+    ru: 'Теперь взгляните на вашу клавиатуру. Видите бугорки на',
   },
   lessonTipSecondMiddle: {
     en: 'and',
     ru: 'и',
   },
   lessonTipSecondEnd: {
-    en: 'keys.',
-    ru: 'клавишах.',
+    en: 'keys?',
+    ru: 'клавишах?',
   },
   lessonTipF: {
     en: 'F',
