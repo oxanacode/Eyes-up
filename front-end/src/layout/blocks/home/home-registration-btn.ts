@@ -1,18 +1,16 @@
 import BigBtn from '../../elements/big-btn';
-import ManageModal from '../../../scripts/layout/manage-modal';
-import ModalWrapper from '../modals/common/modal-wrapper';
-import RegistrationModal from '../modals/registration/registration-modal';
+import ManageRegistration from '../../../scripts/layout/manage-registration';
+import State from '../../../scripts/state/state';
 import translation from '../../../data/translation';
 
 import { RenderHandler } from '../../../types/types';
-import State from '../../../scripts/state/state';
 
 class HomeRegBtn {
-  public static createHomeRegBtn(render: RenderHandler): HTMLElement {
+  public static createHomeRegBtn(wrapper: HTMLElement, render: RenderHandler): HTMLElement {
     const button = BigBtn.createBigBtn(translation.homeRegistrationBtn[State.currentLang]);
 
     button.addEventListener('click', () => {
-      ManageModal.openModal(ModalWrapper.createModalWrapper(RegistrationModal.createRegistrationModal, render));
+      ManageRegistration.homeRegistrationHandler(wrapper, render);
     });
 
     return button;

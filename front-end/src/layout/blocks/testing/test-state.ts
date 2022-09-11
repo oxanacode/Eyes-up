@@ -1,6 +1,11 @@
+import EmptyUser from '../lesson/empty-user';
+
+import { User } from '../../../games/typing-adventure/game-types/interfaces';
 import { Lang, LessonLineHeight } from '../../../types/enums';
 
 class TestState {
+  public static user: User;
+
   public static lang = Lang.en;
 
   public static inputIndex = 0;
@@ -44,6 +49,7 @@ class TestState {
   public static lineHeight = LessonLineHeight.normal;
 
   public static clearState() {
+    TestState.user = EmptyUser.createEmptyUser();
     TestState.inputIndex = 0;
     TestState.mistakes = [];
     TestState.historyMistakes = [];

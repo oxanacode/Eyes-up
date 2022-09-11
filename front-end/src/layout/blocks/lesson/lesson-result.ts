@@ -8,8 +8,10 @@ import ParseLessons from '../../../scripts/parsing/parse-lessons';
 import ApiService from '../../../scripts/api/api-service';
 import UserState from '../../../scripts/user/user-state';
 import LessonBadge from './lesson-badge';
+import SwitchPage from '../../../scripts/layout/switch-page';
 
-import { Layout, Tag } from '../../../types/enums';
+import { Layout, Page, Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class LessonResult {
   public static getScore(): number {
@@ -30,7 +32,7 @@ class LessonResult {
     return score;
   }
 
-  public static saveResult(): void {
+  public static saveResult(result: HTMLElement): void {
     const lesson = {
       lastSpeed: LessonState.speed,
       lastAccuracy: LessonState.accuracy,
@@ -45,7 +47,7 @@ class LessonResult {
     if (State.currentLayout === Layout.en) LessonState.user.lessonsEn = lessons;
     else LessonState.user.lessonsRu = lessons;
 
-    LessonState.page.append(LessonBadge.checkBadges());
+    result.append(LessonBadge.checkBadges());
 
     const userData = new CurrentUser(
       LessonState.user.login,
@@ -163,13 +165,45 @@ class LessonResult {
     return result;
   }
 
-  public static showLessonResult(): void {
+  public static createNextBtn(render: RenderHandler): HTMLElement {
+    const button = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'lesson-next-btn' }]);
+
+    const currentLessonNumber = LessonState.lessonsId.indexOf(LessonState.lessonData._id);
+
+    if (currentLessonNumber < LessonState.lessonsId.length - 1) {
+      button.textContent = translation.lessonNextBtn[State.currentLang];
+
+      button.addEventListener('click', () => {
+        ApiService.getLesson(LessonState.lessonsId[currentLessonNumber + 1]).then((res) => {
+          LessonState.lessonData = res;
+          LessonState.clearState();
+          SwitchPage.applyPage(Page.lesson, render);
+        });
+      });
+    } else {
+      button.textContent = translation.lessonNextLastBtn[State.currentLang];
+
+      button.addEventListener('click', () => {
+        LessonState.clearState();
+        SwitchPage.applyPage(Page.lessons, render);
+      });
+    }
+
+    return button;
+  }
+
+  public static showLessonResult(render: RenderHandler): void {
+    const resultWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-result-wrapper' }]);
+
     LessonState.contentWrapper.style.visibility = 'hidden';
     LessonState.keyboard.style.visibility = 'hidden';
     LessonState.hands.style.visibility = 'hidden';
-    LessonState.page.append(LessonResult.createLessonResult());
+    LessonState.progressWrapper.style.visibility = 'hidden';
+    resultWrapper.append(LessonResult.createLessonResult());
+    resultWrapper.append(LessonResult.createNextBtn(render));
+    LessonState.page.append(resultWrapper);
 
-    if (UserState.checkIfUserAuthorised()) LessonResult.saveResult();
+    if (UserState.checkIfUserAuthorised()) LessonResult.saveResult(resultWrapper);
   }
 }
 

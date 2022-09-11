@@ -8,6 +8,8 @@ class LessonState {
 
   public static lessonsNumber = 0;
 
+  public static lessonsId: Array<string> = [];
+
   public static lessonChars: Array<HTMLElement>;
 
   public static page: HTMLElement;
@@ -29,6 +31,10 @@ class LessonState {
   public static wpmCount: HTMLElement;
 
   public static accuracyCount: HTMLElement;
+
+  public static progress: HTMLElement;
+
+  public static progressWrapper: HTMLElement;
 
   public static speed: number;
 

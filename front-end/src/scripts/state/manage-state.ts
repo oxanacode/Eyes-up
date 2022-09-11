@@ -19,6 +19,7 @@ class ManageState {
       State.currentLessonFontFamily = currentState.currentLessonFontFamily;
       State.currentLessonSound = currentState.currentLessonSound;
       State.currentLessonSkin = currentState.currentLessonSkin;
+      State.currentLessonHands = currentState.currentLessonHands;
     }
   }
 
@@ -35,6 +36,7 @@ class ManageState {
       currentLessonFontFamily: State.currentLessonFontFamily,
       currentLessonSound: State.currentLessonSound,
       currentLessonSkin: State.currentLessonSkin,
+      currentLessonHands: State.currentLessonHands,
     };
 
     LocalStorageService.setItem('eyesUpState', stateToSave);

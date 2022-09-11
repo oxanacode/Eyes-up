@@ -112,7 +112,7 @@ export const ruLibrary: Record<string, string> = {
 
   appButton: 'Назад',
   sandboxButton: 'Песочница',
-  resetButton: 'Сбросить Прогресс',
+  resetButton: 'Сбросить прогресс',
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
   closeModal: 'Закрыть',
 

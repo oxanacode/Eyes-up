@@ -1,7 +1,7 @@
 import { Match } from '../types/interfaces';
 
 const matchKeyboard: Match = {
-  ё: 'apostrophe',
+  ё: 'backquote',
   й: 'q',
   ц: 'w',
   у: 'e',
@@ -24,7 +24,7 @@ const matchKeyboard: Match = {
   л: 'k',
   д: 'l',
   ж: 'semicolon',
-  э: `single-quote`,
+  э: 'single-quote',
   я: 'z',
   ч: 'x',
   с: 'c',
@@ -34,6 +34,13 @@ const matchKeyboard: Match = {
   ь: 'm',
   б: 'comma',
   ю: 'dot',
+  Ё: 'tilda',
+  Х: 'left-brace',
+  Ъ: 'right-brace',
+  Ж: 'colon',
+  Э: 'double-quote',
+  Б: 'shift-comma',
+  Ю: 'shift-dot',
 };
 
 export default matchKeyboard;

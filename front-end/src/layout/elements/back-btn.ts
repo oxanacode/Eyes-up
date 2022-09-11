@@ -24,6 +24,7 @@ class BackBtn {
 
       if (State.currentPage === Page.lesson) {
         LessonState.clearState();
+        LessonState.lessonsId = [];
         LessonTimer.stopTimer = true;
       }
 

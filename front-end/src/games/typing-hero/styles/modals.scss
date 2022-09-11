@@ -36,6 +36,22 @@
   }
 }
 
+.hero-start-menu-modal::-webkit-scrollbar {
+  width: 1rem;
+}
+
+.hero-start-menu-modal::-webkit-scrollbar-track {
+  background-color: $c-body-bg;
+  border-radius: 5rem;
+}
+
+.hero-start-menu-modal::-webkit-scrollbar-thumb {
+  border-radius: 5rem;
+  border: 0.2rem solid transparent;
+  background-clip: content-box;
+  background-color: $c-accent;
+}
+
 .hero-start-menu-title {
   @include font-title-mobile;
   color: $c-hero-modal-title-btn;

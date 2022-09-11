@@ -13,7 +13,7 @@ import translation from '../../../data/translation';
 import LessonIntro from './lesson-intro';
 
 import { RenderHandler } from '../../../types/types';
-import { Tag, Page } from '../../../types/enums';
+import { Tag, Page, LessonHands } from '../../../types/enums';
 
 class LessonMain {
   public static createLessonMain(render: RenderHandler): HTMLElement {
@@ -36,6 +36,9 @@ class LessonMain {
     const lessonStats = LessonStats.createLessonStats();
     const restartBtn = LessonRestartBtn.createRestartBtn(render);
     const lessonContent = LessonContent.createLessonContent();
+    const progressBarWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-wrapper' }]);
+    const progressBarDone = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-done' }]);
+    const progressBarAll = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'progress-bar-all' }]);
     const keyboard = LessonKeyboard.createLessonKeyboard();
     const hands = CreateElement.createElement(Tag.img, [
       { name: 'class', value: 'lesson-hands' },
@@ -45,8 +48,9 @@ class LessonMain {
     ]) as HTMLImageElement;
 
     LessonState.hands = hands;
+    if (State.currentLessonHands === LessonHands.hidden) hands.style.visibility = 'hidden';
 
-    const input = LessonInput.createLessonInput();
+    const input = LessonInput.createLessonInput(render);
 
     ribbon.textContent = translation.testRibbonText[State.currentLang];
     LessonState.ribbon = ribbon;
@@ -54,7 +58,11 @@ class LessonMain {
     topWrapper.append(back, lessonSettings);
     contentTopWrapper.append(lessonStats, restartBtn);
     lessonWrapper.append(contentTopWrapper, lessonContent, input);
-    main.append(topWrapper, ribbon, lessonWrapper, keyboard, hands);
+    progressBarAll.append(progressBarDone);
+    progressBarWrapper.append(progressBarAll);
+    LessonState.progress = progressBarDone;
+    LessonState.progressWrapper = progressBarWrapper;
+    main.append(topWrapper, ribbon, lessonWrapper, progressBarWrapper, keyboard, hands);
 
     document.addEventListener('keydown', () => {
       input.focus();

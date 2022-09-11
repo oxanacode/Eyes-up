@@ -10,7 +10,9 @@ class LessonKeyboard {
 
   public static space: HTMLElement;
 
-  public static shift: HTMLElement;
+  public static shiftLeft: HTMLElement;
+
+  public static shiftRight: HTMLElement;
 
   public static createKey(key: HTMLElement, content: string): void {
     const char = CreateElement.createElement(Tag.span);
@@ -27,7 +29,6 @@ class LessonKeyboard {
       const keyboardRow = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'keyboard-row' }]);
       row.forEach((key) => {
         const keyElement = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'keyboard-key' }]);
-
         if (key.type === 'Function') {
           keyElement.classList.add('key-function');
           keyElement.textContent = `${key.down}`;
@@ -39,10 +40,11 @@ class LessonKeyboard {
               break;
             case 2:
               keyElement.classList.add('key-size-double');
+              if (key.down === 'Shift') LessonKeyboard.shiftRight = keyElement;
               break;
             case 3:
               keyElement.classList.add('key-size-two-half');
-              if (key.down === 'Shift') LessonKeyboard.shift = keyElement;
+              if (key.down === 'Shift') LessonKeyboard.shiftLeft = keyElement;
               break;
             default:
               keyElement.classList.add('key-size-space');
