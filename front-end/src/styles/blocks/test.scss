@@ -3,7 +3,8 @@
   grid-template-columns: minmax(min-content, 110rem);
   max-width: 110rem;
   padding: 0 8rem;
-  margin: 6rem auto 2rem;
+  margin: 6rem auto 2rem; 
+  user-select: none;
 
   @include desktop-small {
     padding: 0 4rem;
@@ -210,19 +211,19 @@
 }
 
 .test-result-ribbon {
-  @include font-subtitle;
+  @include font-subtitle-mobile;
   height: 6rem;
-  width: 65rem;
+  width: 62rem;
   background-color: $c-block-bg;
   color: $c-main-text;
   display: flex;
   align-items: center;
-  column-gap: 4rem;
+  column-gap: 2rem;
   position: relative;
   padding: 0 3rem;
+  margin-bottom: 2rem;
 
   @include tablet {
-    @include font-subtitle-mobile;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
@@ -253,25 +254,6 @@
   color: $c-accent;
 }
 
-.result-ribbon-accuracy {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    width: 0.2rem;
-    height: 100%;
-    border-radius: $small-border-radius;
-    background-color: $c-accent;
-    top: 0;
-    left: -2rem;
-
-    @include tablet {
-      display: none;
-    }
-  }
-}
-
 .test-time {
   @include font-subtitle-mobile;
   margin: 0 auto 3rem;
@@ -287,4 +269,39 @@
   @include tablet {
     margin-bottom: 2rem;
   }
+
+  @include mobile {
+    @include font-main;
+    line-height: 2rem;
+  }
+}
+
+.test-result-last {
+  @include font-subtitle-mobile;
+  width: 73rem;
+  color: $c-menu-inactive-link;
+  height: 6rem;
+  display: flex;
+  column-gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  border-left: 2rem solid $c-block-bg;
+  order: 1;
+
+  @include tablet {
+    flex-direction: column;
+    height: 9rem;
+    top: 72rem;
+    border-left: 1rem solid $c-block-bg;
+    align-items: flex-start;
+    justify-content: center;
+    row-gap: 1rem;
+    height: 11rem;
+    width: 24rem;
+  }
+}
+
+.result-last-text {
+  color: $c-accent;
 }

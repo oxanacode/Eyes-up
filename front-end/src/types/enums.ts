@@ -193,6 +193,11 @@ export enum LessonSkin {
   three = 'skin-three',
 }
 
+export enum LessonHands {
+  visible = 'hands-visible',
+  hidden = 'hands-hidden',
+}
+
 export enum TypingAdventure {
   levels = 10,
   spells = 28,

@@ -2,11 +2,32 @@ import CreateElement from '../../elements/create-element';
 import translation from '../../../data/translation';
 import State from '../../../scripts/state/state';
 import TestState from './test-state';
+import ApiService from '../../../scripts/api/api-service';
+import CurrentUser from '../../../scripts/user/current-user';
+import ParseTesting from '../../../scripts/parsing/parse-testing';
+import UserState from '../../../scripts/user/user-state';
 
 import { Tag } from '../../../types/enums';
+import { UserTesting } from '../../../types/interfaces';
 
 class TestResult {
-  public static visible = false;
+  public static updateLastResult(): void {
+    const lastResult: UserTesting = { lastSpeed: TestState.speed, lastAccuracy: TestState.accuracy };
+
+    const userData = new CurrentUser(
+      TestState.user.login,
+      TestState.user.password,
+      TestState.user.avatar,
+      ParseTesting.setTesting(lastResult),
+      TestState.user.lessonsEn,
+      TestState.user.lessonsRu,
+      TestState.user.typingAdventure,
+      TestState.user.typingHero,
+      TestState.user.badges
+    );
+
+    ApiService.updateUser(TestState.user._id, userData);
+  }
 
   public static createTestResult(): HTMLElement {
     const ribbon = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-result-ribbon' }]);
@@ -15,19 +36,18 @@ class TestResult {
     const accuracy = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'result-ribbon-accuracy' }]);
 
     text.textContent = translation.testResultText[State.currentLang];
-    speed.textContent = `${translation.testWpmText[State.currentLang]} ${TestState.speed} ${
+    speed.textContent = `${translation.testWpmText[State.currentLang]} ${TestState.speed}${
       translation.testWpmSub[State.currentLang]
-    }`;
-    accuracy.textContent = `${translation.testAccuracyText[State.currentLang]} ${Math.floor(TestState.accuracy)} %`;
+    },`;
+    accuracy.textContent = `${translation.testAccuracyText[State.currentLang]} ${Math.floor(TestState.accuracy)}%`;
     ribbon.append(text, speed, accuracy);
 
     return ribbon;
   }
 
   public static showTestResult(): void {
-    if (TestResult.visible) return;
+    if (UserState.checkIfUserAuthorised()) TestResult.updateLastResult();
 
-    TestResult.visible = true;
     TestState.page.append(TestResult.createTestResult());
   }
 }

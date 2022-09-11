@@ -10,6 +10,7 @@ import {
   LessonFontFamily,
   LessonSound,
   LessonSkin,
+  LessonHands,
 } from '../../types/enums';
 import { CurrentUser } from '../../types/interfaces';
 
@@ -42,6 +43,8 @@ class State {
   public static currentLessonSound = LessonSound.silent;
 
   public static currentLessonSkin = LessonSkin.default;
+
+  public static currentLessonHands = LessonHands.visible;
 }
 
 export default State;

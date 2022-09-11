@@ -302,15 +302,19 @@ const translation: Translation = {
     ru: 'Язык текста',
   },
   testResultText: {
-    en: 'Result',
-    ru: 'Результат',
+    en: 'Test Result:',
+    ru: 'Результат теста:',
+  },
+  testLastResultText: {
+    en: 'Last Result:',
+    ru: 'Последний результат:',
   },
   testTimeText: {
     en: 'Time:',
     ru: 'Время:',
   },
   lessonResults0: {
-    en: 'Продолжайте практиковаться!',
+    en: 'Well, try again!',
     ru: 'Что ж, попробуйте еще раз!',
   },
   lessonResults1: {
@@ -406,16 +410,16 @@ const translation: Translation = {
     ru: 'Прежде, чем начнем... Правильная осанка важна для вашего здоровья!',
   },
   lessonTipSecond: {
-    en: 'Now the first thing you need to do is to find the bumps on the',
-    ru: 'Теперь, первое, что вам нужно сделать, это найти бугорки на',
+    en: 'Now take a look at your keyboard. Do you see the bumps on the',
+    ru: 'Теперь взгляните на вашу клавиатуру. Видите бугорки на',
   },
   lessonTipSecondMiddle: {
     en: 'and',
     ru: 'и',
   },
   lessonTipSecondEnd: {
-    en: 'keys.',
-    ru: 'клавишах.',
+    en: 'keys?',
+    ru: 'клавишах?',
   },
   lessonTipF: {
     en: 'F',
@@ -440,6 +444,14 @@ const translation: Translation = {
   lessonTipFifth2: {
     en: 'The main rule: do not look at the keyboard again. And soon you will type like a pro.',
     ru: 'Главное правило: не смотрите на клавиатуру. И скоро вы будете печатать как профессионал.',
+  },
+  lessonNextBtn: {
+    en: 'Next lesson',
+    ru: 'Следующий урок',
+  },
+  lessonNextLastBtn: {
+    en: 'To lessons list',
+    ru: 'К списку уроков',
   },
 };
 

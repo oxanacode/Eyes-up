@@ -7,7 +7,8 @@ import LessonKeyboard from './lesson-keyboard';
 import LessonResult from './lesson-result';
 import matchKeyboard from '../../../data/keyboard-match';
 
-import { Complexity, Layout, LessonSound, Tag } from '../../../types/enums';
+import { Layout, LessonSound, Tag } from '../../../types/enums';
+import { RenderHandler } from '../../../types/types';
 
 class LessonInput {
   public static charLetter = /[a-zA-Zа-яА-ЯЁё]/;
@@ -18,7 +19,15 @@ class LessonInput {
 
   public static charNum = /\d/;
 
-  public static charSymbols = /[():*%"]/;
+  public static charSymbols = /[():*%"!?~"#№_+|<>{}^@$&]/;
+
+  public static charShiftRu = /[,;/]/;
+
+  public static charRuSpecial = /[ЁХЪЖЭБЮ]/;
+
+  public static rightShift = /[~!@#$%Ё№ЙЦУКЕФЫВАПЯЧСМИQWERTASDFGZXCVB]/;
+
+  public static rightShiftRu = /[";]/;
 
   public static checkMatch(inputChar: string): void {
     if (LessonState.lessonChars[LessonState.inputIndex].textContent === inputChar) {
@@ -65,12 +74,17 @@ class LessonInput {
       if (char === ' ') {
         LessonKeyboard.space.classList.add('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
-          LessonKeyboard.shift.classList.add('current-char');
-
-        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.add('current-char');
-
-        if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.add('current-char');
+        if (
+          (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter)) ||
+          (State.currentLayout === Layout.ru && char.match(LessonInput.charShiftRu)) ||
+          char.match(LessonInput.charSymbols)
+        )
+          if (
+            char.match(LessonInput.rightShift) ||
+            (State.currentLayout === Layout.ru && char.match(LessonInput.rightShiftRu))
+          )
+            LessonKeyboard.shiftRight.classList.add('current-char');
+          else LessonKeyboard.shiftLeft.classList.add('current-char');
 
         char = char.toLocaleLowerCase();
         LessonKeyboard.virtualKeys[char].classList.add('current-char');
@@ -85,12 +99,17 @@ class LessonInput {
       if (char === ' ') {
         LessonKeyboard.space.classList.remove('current-char');
       } else {
-        if (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter))
-          LessonKeyboard.shift.classList.remove('current-char');
-
-        if (State.currentLayout === Layout.ru && char === ',') LessonKeyboard.shift.classList.remove('current-char');
-
-        if (char.match(LessonInput.charSymbols)) LessonKeyboard.shift.classList.remove('current-char');
+        if (
+          (char === char.toLocaleUpperCase() && char.match(LessonInput.charLetter)) ||
+          (State.currentLayout === Layout.ru && char.match(LessonInput.charShiftRu)) ||
+          char.match(LessonInput.charSymbols)
+        )
+          if (
+            char.match(LessonInput.rightShift) ||
+            (State.currentLayout === Layout.ru && char.match(LessonInput.rightShiftRu))
+          )
+            LessonKeyboard.shiftRight.classList.remove('current-char');
+          else LessonKeyboard.shiftLeft.classList.remove('current-char');
 
         char = char.toLocaleLowerCase();
         LessonKeyboard.virtualKeys[char].classList.remove('current-char');
@@ -111,36 +130,76 @@ class LessonInput {
     audio.play();
   }
 
-  public static addHands(): void {
-    if (LessonState.lessonData.complexity === Complexity.hard) LessonState.hands.classList.add('hidden');
+  public static addHandsRu(char: string, path: string, pathShift: string, theme: string): void {
+    if (char === char.toLocaleLowerCase())
+      LessonState.hands.setAttribute('src', `${path}-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`);
+    else if (char === char.toLocaleUpperCase() && !char.match(LessonInput.charRuSpecial))
+      LessonState.hands.setAttribute('src', `${pathShift}-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`);
+    else if (char.match(LessonInput.charRuSpecial))
+      LessonState.hands.setAttribute('src', `${path}-${matchKeyboard[char]}-${theme}.svg`);
+  }
 
+  public static addHands(): void {
     const char = LessonState.lessonChars[LessonState.inputIndex].textContent as string;
     const theme = State.currentTheme;
     const path = './assets/images/hands/hand';
-
-    if (char.match(LessonInput.charRu))
-      LessonState.hands.setAttribute('src', `${path}-${matchKeyboard[char.toLocaleLowerCase()]}-${theme}.svg`);
-    else if (char.match(LessonInput.charEn))
-      LessonState.hands.setAttribute('src', `${path}-${char.toLocaleLowerCase()}-${theme}.svg`);
-    else if (char.match(LessonInput.charNum)) LessonState.hands.setAttribute('src', `${path}-${char}-${theme}.svg`);
-    else if (char === '`' || char === '~') LessonState.hands.setAttribute('src', `${path}-apostrophe-${theme}.svg`);
-    else if (char === `'` || char === '"') LessonState.hands.setAttribute('src', `${path}-single-quote-${theme}.svg`);
-    else if (char === `\\` || char === '|') LessonState.hands.setAttribute('src', `${path}-back-slash-${theme}.svg`);
-    else if (char === `-` || char === '_') LessonState.hands.setAttribute('src', `${path}-dash-${theme}.svg`);
-    else if (char === ',' || char === '<') LessonState.hands.setAttribute('src', `${path}-comma-${theme}.svg`);
-    else if (char === `/` || char === '?') LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
-    else if (char === '=' || char === '+') LessonState.hands.setAttribute('src', `${path}-equality-${theme}.svg`);
-    else if (char === '[' || char === '{') LessonState.hands.setAttribute('src', `${path}-left-bracket-${theme}.svg`);
-    else if (char === ']' || char === '}') LessonState.hands.setAttribute('src', `${path}-right-bracket-${theme}.svg`);
-    else if (char === ';' || char === ':') LessonState.hands.setAttribute('src', `${path}-semicolon-${theme}.svg`);
+    const pathShift = './assets/images/hands/hand-shift';
+    if (char.match(LessonInput.charRu)) LessonInput.addHandsRu(char, path, pathShift, theme);
+    else if (char.match(LessonInput.charEn)) {
+      if (char === char.toLocaleLowerCase())
+        LessonState.hands.setAttribute('src', `${path}-${char.toLocaleLowerCase()}-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${pathShift}-${char.toLocaleLowerCase()}-${theme}.svg`);
+    } else if (char.match(LessonInput.charNum)) LessonState.hands.setAttribute('src', `${path}-${char}-${theme}.svg`);
+    else if (char === '`') LessonState.hands.setAttribute('src', `${path}-backquote-${theme}.svg`);
+    else if (char === '~') LessonState.hands.setAttribute('src', `${path}-tilda-${theme}.svg`);
+    else if (char === `'`) LessonState.hands.setAttribute('src', `${path}-single-quote-${theme}.svg`);
+    else if (char === '"')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-double-quote-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${pathShift}-2-${theme}.svg`);
+    else if (char === `\\`) LessonState.hands.setAttribute('src', `${path}-back-slash-${theme}.svg`);
+    else if (char === '|') LessonState.hands.setAttribute('src', `${path}-or-${theme}.svg`);
+    else if (char === `-`) LessonState.hands.setAttribute('src', `${path}-dash-${theme}.svg`);
+    else if (char === '_') LessonState.hands.setAttribute('src', `${pathShift}-dash-${theme}.svg`);
+    else if (char === ',')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-comma-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${path}-question-${theme}.svg`);
+    else if (char === '<') LessonState.hands.setAttribute('src', `${pathShift}-comma-${theme}.svg`);
+    else if (char === `/`)
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${path}-or-${theme}.svg`);
+    else if (char === '=') LessonState.hands.setAttribute('src', `${path}-equality-${theme}.svg`);
+    else if (char === '+') LessonState.hands.setAttribute('src', `${pathShift}-equality-${theme}.svg`);
+    else if (char === '[') LessonState.hands.setAttribute('src', `${path}-left-bracket-${theme}.svg`);
+    else if (char === '{') LessonState.hands.setAttribute('src', `${path}-left-brace-${theme}.svg`);
+    else if (char === ']') LessonState.hands.setAttribute('src', `${path}-right-bracket-${theme}.svg`);
+    else if (char === '}') LessonState.hands.setAttribute('src', `${path}-right-brace-${theme}.svg`);
+    else if (char === ';')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-semicolon-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${pathShift}-4-${theme}.svg`);
+    else if (char === ':')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-colon-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${pathShift}-6-${theme}.svg`);
     else if (char === ' ') LessonState.hands.setAttribute('src', `${path}-space-${theme}.svg`);
-    else if (char === '>') LessonState.hands.setAttribute('src', `${path}-dot-${theme}.svg`);
+    else if (char === '>') LessonState.hands.setAttribute('src', `${pathShift}-dot-${theme}.svg`);
+    else if (char === ')') LessonState.hands.setAttribute('src', `${pathShift}-0-${theme}.svg`);
+    else if (char === '(') LessonState.hands.setAttribute('src', `${pathShift}-9-${theme}.svg`);
+    else if (char === '!') LessonState.hands.setAttribute('src', `${pathShift}-1-${theme}.svg`);
+    else if (char === '@') LessonState.hands.setAttribute('src', `${pathShift}-2-${theme}.svg`);
+    else if (char === '%') LessonState.hands.setAttribute('src', `${pathShift}-5-${theme}.svg`);
+    else if (char === '^') LessonState.hands.setAttribute('src', `${pathShift}-6-${theme}.svg`);
+    else if (char === '*') LessonState.hands.setAttribute('src', `${pathShift}-8-${theme}.svg`);
+    else if (char === '$') LessonState.hands.setAttribute('src', `${pathShift}-4-${theme}.svg`);
+    else if (char === '&') LessonState.hands.setAttribute('src', `${pathShift}-7-${theme}.svg`);
+    else if (char === '#' || char === '№') LessonState.hands.setAttribute('src', `${pathShift}-3-${theme}.svg`);
+    else if (char === '?')
+      if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-question-${theme}.svg`);
+      else LessonState.hands.setAttribute('src', `${pathShift}-7-${theme}.svg`);
     else if (char === '.')
       if (State.currentLayout === Layout.en) LessonState.hands.setAttribute('src', `${path}-dot-${theme}.svg`);
       else LessonState.hands.setAttribute('src', `${path}-slash-${theme}.svg`);
   }
 
-  public static createLessonInput(): HTMLElement {
+  public static createLessonInput(render: RenderHandler): HTMLElement {
     const testInput = CreateElement.createElement(Tag.input, [
       { name: 'class', value: 'lesson-input' },
       { name: 'autocomplete', value: 'off' },
@@ -164,7 +223,6 @@ class LessonInput {
       if (!LessonState.inputIndex) LessonInput.hideRibbon();
 
       RowsPosition.adjust();
-
       LessonState.typedChars =
         LessonState.typedChars > LessonState.inputIndex ? LessonState.typedChars : LessonState.inputIndex;
 
@@ -179,6 +237,7 @@ class LessonInput {
         LessonState.lessonChars[LessonState.inputIndex].classList.remove('correct', 'incorrect', 'correction');
         LessonState.lessonChars[LessonState.inputIndex].classList.add('active-char');
         LessonInput.addHands();
+        LessonState.progress.style.width = `${(LessonState.inputIndex / LessonState.lessonChars.length) * 100}%`;
         return;
       }
       LessonInput.checkMatch(inputChar);
@@ -188,7 +247,7 @@ class LessonInput {
 
       if (LessonState.inputIndex === LessonState.lessonChars.length - 1) {
         LessonTimer.stopTimer = true;
-        LessonResult.showLessonResult();
+        LessonResult.showLessonResult(render);
       }
 
       LessonState.inputIndex += 1;
@@ -196,6 +255,7 @@ class LessonInput {
         LessonInput.addHands();
         LessonState.lessonChars[LessonState.inputIndex].classList.add('active-char');
       }
+      LessonState.progress.style.width = `${(LessonState.inputIndex / LessonState.lessonChars.length) * 100}%`;
     });
     return testInput;
   }

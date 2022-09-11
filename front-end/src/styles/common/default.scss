@@ -120,6 +120,13 @@
     align-items: center;
     padding-top: 2rem;
   }
+
+  &:hover {
+    .section-title {  
+      transition: $transition-time;
+      color: $c-accent;
+    }
+  }
 }
 
 .section-btn-bg {
