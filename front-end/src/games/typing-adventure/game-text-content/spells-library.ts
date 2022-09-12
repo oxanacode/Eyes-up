@@ -28,7 +28,7 @@ export const enSpells: ISpells = {
   6: {
     'shining vortex': { name: 'shining vortex', damage: '50' },
     'furious flow': { name: 'furious flow', damage: '50' },
-    windspout: { name: 'windspout', damage: '50' },
+    flurryspout: { name: 'flurryspout', damage: '50' },
   },
   7: {
     aquaswirl: { name: 'aquaswirl', damage: '50' },
@@ -79,7 +79,7 @@ export const ruSpells: ISpells = {
   6: {
     'shining vortex': { name: 'сияющий вихрь', damage: '50' },
     'furious flow': { name: 'яростный поток', damage: '50' },
-    windspout: { name: 'воздушный смерч', damage: '50' },
+    flurryspout: { name: 'воздушный смерч', damage: '50' },
   },
   7: {
     aquaswirl: { name: 'водяной смерч', damage: '50' },
@@ -106,7 +106,7 @@ export const enElementalSpells: IElementalSpells = {
   thunderSpells: ['thunder', 'blusting blow', 'soundwave', 'electrical discharge', 'vortical typhoon'],
   fireSpells: ['fire', 'heavy flame', 'fiery hail', 'volcanic hurricane', 'burning onslaught'],
   waterSpells: ['water', 'maelstrom', 'furious flow', 'cloudburst', 'aquaswirl'],
-  windSpells: ['wind', 'whirl gale', 'windspout', 'massive tornado', 'ferocious twister'],
+  windSpells: ['wind', 'whirl gale', 'flurryspout', 'massive tornado', 'ferocious twister'],
   lightSpells: ['light', 'radiant wall', 'rising glow', 'shining vortex', 'luminous pillar'],
 };
 

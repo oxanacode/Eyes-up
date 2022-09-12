@@ -112,11 +112,15 @@ class Achievements {
   }
 
   static gameDoneCheck() {
-    if (GameState.userLvl === 10) {
-      const { text } = badgesDescription[Achievements.achievementsNums.gameDone][State.currentLang];
+    if (GameState.userLvl === 9) {
+      const doneStatus = GameState.currentGameBeasts.every((beast) => beast.done === true);
 
-      Achievements.createWindow(text, './assets/images/badges/badge-4.svg');
-      Achievements.current.gameDone = true;
+      if (doneStatus) {
+        const { text } = badgesDescription[Achievements.achievementsNums.gameDone][State.currentLang];
+
+        Achievements.createWindow(text, './assets/images/badges/badge-4.svg');
+        Achievements.current.gameDone = true;
+      }
     }
   }
 

@@ -41,7 +41,7 @@
 .action-spell-image.wind,
 .action-spell-image.whirl-gale,
 .action-spell-image.ferocious-twister,
-.action-spell-image.windspout,
+.action-spell-image.flurryspout,
 .action-spell-image.massive-tornado {
   background-image: url(./assets/games/typing-adventure/hero-and-spells/wind-spell.svg);
   background-repeat: no-repeat;
@@ -75,7 +75,7 @@
 .action-spell-name.wind,
 .action-spell-name.whirl-gale,
 .action-spell-name.ferocious-twister,
-.action-spell-name.windspout,
+.action-spell-name.flurryspout,
 .action-spell-name.massive-tornado {
   color: $c-adventure-spells-wind;
 }
@@ -102,31 +102,47 @@
   color: $c-adventure-spells-elemental;
 }
 
-.beast-field-view.forest-beast-field,
+.beast-field-view.forest-beast-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/forest-beast-field.svg);
+  background-repeat: no-repeat;
+}
+
 .beast-field-view.swamp-beast-field {
-  background-image: url(./assets/games/typing-adventure/beasts-field/swamp-forest-beast.svg);
+  background-image: url(./assets/games/typing-adventure/beasts-field/swamp-beast-field.svg);
   background-repeat: no-repeat;
 }
 
-.beast-field-view.cave-beast-field,
+.beast-field-view.cave-beast-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/cave-beast-field.svg);
+  background-repeat: no-repeat;
+}
+
 .beast-field-view.stone-beast-field {
-  background-image: url(./assets/games/typing-adventure/beasts-field/cave-stone-beast.svg);
+  background-image: url(./assets/games/typing-adventure/beasts-field/stone-beast-field.svg);
   background-repeat: no-repeat;
 }
 
-.beast-field-view.lava-monster-field,
 .beast-field-view.sand-beast-field {
-  background-image: url(./assets/games/typing-adventure/beasts-field/lava-sand-beast.svg);
+  background-image: url(./assets/games/typing-adventure/beasts-field/sand-beast-field.svg);
   background-repeat: no-repeat;
 }
 
-.beast-field-view.tornado-monster-field,
+.beast-field-view.lava-monster-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/lava-monster-field.svg);
+  background-repeat: no-repeat;
+}
+
+.beast-field-view.tornado-monster-field {
+  background-image: url(./assets/games/typing-adventure/beasts-field/tornado-monster-field.svg);
+  background-repeat: no-repeat;
+}
+
 .beast-field-view.waterfall-monster-field {
-  background-image: url(./assets/games/typing-adventure/beasts-field/tornado-water-monster.svg);
+  background-image: url(./assets/games/typing-adventure/beasts-field/water-monster-field.svg);
   background-repeat: no-repeat;
 }
 
 .beast-field-view.cloud-monster-field {
-  background-image: url(./assets/games/typing-adventure/beasts-field/cloud-beast.svg);
+  background-image: url(./assets/games/typing-adventure/beasts-field/cloud-monster-field.svg);
   background-repeat: no-repeat;
 }

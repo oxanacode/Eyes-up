@@ -140,11 +140,13 @@ class MoveHandler {
       resultMessage = GameState.lib.winnerBeast as string;
     }
 
-    if (beastLvl === 9 && winner === 'hero') {
+    if (beastLvl === 9 && !FieldState.beastInstance.done && winner === 'hero') {
       const messageInfo = GameState.lib.resultFinalLvl as string;
 
       FieldState.beastInstance.done = true;
       Modal.createFieldModal(resultMessage, messageInfo);
+    } else if (beastLvl === 9 && winner === 'hero') {
+      Modal.createFieldModal(resultMessage);
     } else if (heroLvl === beastLvl && winner === 'hero') {
       const messageInfo = GameState.lib.resultNewLvl as string;
 
