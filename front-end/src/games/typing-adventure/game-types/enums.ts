@@ -25,6 +25,15 @@ export enum LevelValues {
   maxBeastLvl = 9,
 }
 
+export enum MoveValues {
+  resultHp = 0,
+  shieldEffect = 2,
+  hero = 'hero',
+  beast = 'beast',
+  enMagic = 'magic',
+  ruMagic = 'магия',
+}
+
 export enum GameName {
   typingPart = 'Typing',
   adventurePart = 'Adventure',

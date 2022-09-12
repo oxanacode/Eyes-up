@@ -4,7 +4,7 @@ import Modal from '../overal-func.ts/create-modal';
 import GameState from '../game-state';
 import MonsterResist from './monster-resist-handler';
 
-import GameValues, { LevelValues, Tag } from '../game-types/enums';
+import GameValues, { LevelValues, MoveValues, Tag } from '../game-types/enums';
 
 class MoveHandler {
   static spells: Record<string, string>[];
@@ -69,14 +69,14 @@ class MoveHandler {
     }, 0);
 
     if (MoveHandler.heroShield) {
-      totalResult = Math.trunc((totalResult /= 2));
+      totalResult = Math.trunc((totalResult /= MoveValues.shieldEffect));
       MoveHandler.heroShield = false;
     }
 
-    if (MoveHandler.whoseMove === 'hero') {
+    if (MoveHandler.whoseMove === MoveValues.hero) {
       MoveHandler.resultMoveHandler(totalResult, FieldState.beastHp);
     }
-    if (MoveHandler.whoseMove === 'beast') {
+    if (MoveHandler.whoseMove === MoveValues.beast) {
       MoveHandler.resultMoveHandler(totalResult, FieldState.heroHp);
     }
 
@@ -90,11 +90,11 @@ class MoveHandler {
 
     if (!currentHp) return;
     let resultHp = +currentHp - totalResult;
-    if (resultHp < 0) resultHp = 0;
+    if (resultHp < MoveValues.resultHp) resultHp = MoveValues.resultHp;
 
     MoveHandler.createResultView(totalResult);
 
-    if (resultHp === 0) {
+    if (resultHp === MoveValues.resultHp) {
       stateHp.textContent = GameState.lib.lowStrengthMessage as string;
       FieldState.FieldStatus = false;
       MoveHandler.resultHandler(MoveHandler.whoseMove);
@@ -112,16 +112,16 @@ class MoveHandler {
       view.remove();
     }, GameValues.startTimer);
 
-    if (MoveHandler.whoseMove === 'hero') {
+    if (MoveHandler.whoseMove === MoveValues.hero) {
       FieldState.beastView.append(view);
     }
-    if (MoveHandler.whoseMove === 'beast') {
+    if (MoveHandler.whoseMove === MoveValues.beast) {
       FieldState.heroView.append(view);
     }
   }
 
   static heroMoveAction(spells: Record<string, string>[]) {
-    MoveHandler.whoseMove = 'hero';
+    MoveHandler.whoseMove = MoveValues.hero;
     MoveHandler.spells = spells;
     MoveHandler.inputStr = '';
     MoveHandler.totalSpells = [];
@@ -134,22 +134,22 @@ class MoveHandler {
     const heroLvl = GameState.userLvl;
     let resultMessage;
 
-    if (winner === 'hero') {
+    if (winner === MoveValues.hero) {
       resultMessage = GameState.lib.winnerHero as string;
     } else {
       resultMessage = GameState.lib.winnerBeast as string;
     }
 
-    if (beastLvl === LevelValues.maxBeastLvl && !FieldState.beastInstance.done && winner === 'hero') {
+    if (beastLvl === LevelValues.maxBeastLvl && !FieldState.beastInstance.done && winner === MoveValues.hero) {
       const messageInfo = GameState.lib.resultFinalLvl as string;
 
       GameState.userLvl += LevelValues.increaseLvl;
 
       FieldState.beastInstance.done = true;
       Modal.createFieldModal(resultMessage, messageInfo);
-    } else if (heroLvl === LevelValues.fullGame && winner === 'hero') {
+    } else if (heroLvl === LevelValues.fullGame && winner === MoveValues.hero) {
       Modal.createFieldModal(resultMessage);
-    } else if (heroLvl === beastLvl && winner === 'hero') {
+    } else if (heroLvl === beastLvl && winner === MoveValues.hero) {
       const messageInfo = GameState.lib.resultNewLvl as string;
 
       GameState.userLvl += LevelValues.increaseLvl;
@@ -164,10 +164,13 @@ class MoveHandler {
   }
 
   static beastMoveAction() {
-    MoveHandler.whoseMove = 'beast';
+    MoveHandler.whoseMove = MoveValues.beast;
     MoveHandler.inputStr = '';
 
-    if (FieldState.actionTotal.textContent === 'magic' || FieldState.actionTotal.textContent === 'магия') {
+    if (
+      FieldState.actionTotal.textContent === MoveValues.enMagic ||
+      FieldState.actionTotal.textContent === MoveValues.ruMagic
+    ) {
       window.addEventListener('keypress', MoveHandler.beastEventHandler);
     }
   }
