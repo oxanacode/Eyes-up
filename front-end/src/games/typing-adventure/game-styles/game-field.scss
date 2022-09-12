@@ -260,7 +260,7 @@
   @include mobile {
     @include font-main;
     font-weight: $fw-bold;
-    width: 10rem;
+    margin-bottom: 1rem;
   }
 }
 
