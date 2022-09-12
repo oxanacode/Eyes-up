@@ -113,11 +113,11 @@
     justify-content: center;
   }
 
-  @media (max-width: 700px) {
+  @include tablet-stats {
     grid-template-columns: repeat(2, 18rem);
   }
 
-  @media (max-width: 410px) {
+  @include mobile-small {
     grid-template-columns: repeat(1, 18rem);
   }
 }

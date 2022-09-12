@@ -31,6 +31,10 @@
   @extend .start-modal-button;
 }
 
+.field-tutorial-modal-button {
+  order: 1;
+}
+
 .hint-one-modal-window,
 .hint-two-modal-window,
 .hint-three-modal-window,

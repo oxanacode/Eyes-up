@@ -64,6 +64,10 @@
 .sandbox-menu-modal {
   @extend .hero-start-menu-modal;
   overflow: auto;
+
+  @include mobile {
+    padding: 2rem 1rem;
+  }
 }
 
 .sandbox-modal-content {
@@ -92,6 +96,11 @@
   gap: 3rem;
   padding: 2rem;
   border-radius: $small-border-radius;
+
+  @include mobile {
+    width: 30rem;
+    left: calc(50% - 15rem);
+  }
 }
 
 .sandbox-modal-buttons,

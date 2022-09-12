@@ -342,7 +342,7 @@
   left: 50%;
   transform: translate(-50%, 0);
 
-  @media (max-width: 700px) {
+  @include tablet-stats {
     display: none;
   }
 }
@@ -443,10 +443,6 @@
   background-color: $c-accent;
   border-radius: $small-border-radius;
   color: $c-white;
-
-  @include mobile {
-
-  }
 }
 
 .lesson-result-wrapper {
@@ -458,7 +454,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 2rem;
+  row-gap: 2rem;  
+  z-index: 20;
 }
 
 .progress-bar-wrapper {
