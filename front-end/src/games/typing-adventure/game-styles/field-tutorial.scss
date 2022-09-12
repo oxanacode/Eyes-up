@@ -75,13 +75,13 @@
 }
 
 .hint-three-modal-window {
-  top: -20rem;
-  left: 20rem;
+  top: 10rem;
+  left: -10rem;
 
   @include mobile {
     @include font-main-small;
-    top: -15rem;
-    left: 2rem;
+    top: 18rem;
+    left: -6.5rem;
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;

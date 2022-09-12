@@ -43,10 +43,6 @@ export const enSpells: ISpells = {
   9: {
     'vortical typhoon': { name: 'vortical typhoon', damage: '150' },
     'burning onslaught': { name: 'burning onslaught', damage: '150' },
-    'elemental chars': { name: 'elemental chars', damage: '100' },
-  },
-  10: {
-    'elemental high magic': { name: 'elemental high magic', damage: '250' },
     'elemental great enchantment': { name: 'elemental great enchantment', damage: '300' },
   },
 };
@@ -94,10 +90,6 @@ export const ruSpells: ISpells = {
   9: {
     'vortical typhoon': { name: 'вихревой тайфун', damage: '150' },
     'burning onslaught': { name: 'огненный натиск', damage: '150' },
-    'elemental chars': { name: 'стихийные чары', damage: '100' },
-  },
-  10: {
-    'elemental high magic': { name: 'высшая стихийная магия', damage: '250' },
     'elemental great enchantment': { name: 'великое стихийное волшебство', damage: '300' },
   },
 };

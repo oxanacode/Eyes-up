@@ -4,7 +4,7 @@ import Modal from '../overal-func.ts/create-modal';
 import GameState from '../game-state';
 import MonsterResist from './monster-resist-handler';
 
-import GameValues, { Tag } from '../game-types/enums';
+import GameValues, { LevelValues, Tag } from '../game-types/enums';
 
 class MoveHandler {
   static spells: Record<string, string>[];
@@ -140,17 +140,19 @@ class MoveHandler {
       resultMessage = GameState.lib.winnerBeast as string;
     }
 
-    if (beastLvl === 9 && !FieldState.beastInstance.done && winner === 'hero') {
+    if (beastLvl === LevelValues.maxBeastLvl && !FieldState.beastInstance.done && winner === 'hero') {
       const messageInfo = GameState.lib.resultFinalLvl as string;
+
+      GameState.userLvl += LevelValues.increaseLvl;
 
       FieldState.beastInstance.done = true;
       Modal.createFieldModal(resultMessage, messageInfo);
-    } else if (beastLvl === 9 && winner === 'hero') {
+    } else if (heroLvl === LevelValues.fullGame && winner === 'hero') {
       Modal.createFieldModal(resultMessage);
     } else if (heroLvl === beastLvl && winner === 'hero') {
       const messageInfo = GameState.lib.resultNewLvl as string;
 
-      GameState.userLvl += 1;
+      GameState.userLvl += LevelValues.increaseLvl;
 
       FieldState.beastInstance.done = true;
       Modal.createFieldModal(resultMessage, messageInfo);

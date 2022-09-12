@@ -2,10 +2,12 @@ import GameState from '../game-state';
 import Random from '../overal-func.ts/random-funcs';
 import Beast from './beast-creater';
 
-import GameValues from '../game-types/enums';
+import GameValues, { LevelValues } from '../game-types/enums';
 
 class CurrentBeasts {
   static createBeasts(renderCallback: () => void): void {
+    if (GameState.userLvl === LevelValues.fullGame) return;
+
     const currentLvl = GameState.userLvl;
     const nums = Random.createRandomNums(currentLvl, GameValues.allBeastsTypes);
     const lengthArrOfBeasts = GameState.currentGameBeasts.length;

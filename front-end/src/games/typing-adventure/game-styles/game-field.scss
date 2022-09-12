@@ -234,6 +234,7 @@
 .action-field-total {
   @include font-title-mobile;
   position: relative;
+  padding: 0.5rem;
   width: 20rem;
   min-height: 8rem;
   background: $c-adventure-field-blocks;

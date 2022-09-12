@@ -14,6 +14,15 @@ enum GameValues {
   achievementTimer = 7000,
   achievementStyleTop = 2,
   achievementAnotherModal = 17,
+  tenSpells = 10,
+}
+
+export enum LevelValues {
+  increaseLvl = 1,
+  firstLvlDone = 2,
+  halfGame = 5,
+  fullGame = 10,
+  maxBeastLvl = 9,
 }
 
 export enum GameName {
