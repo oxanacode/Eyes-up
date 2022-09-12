@@ -79,7 +79,7 @@ class GameMap {
     const beastAmount = GameState.currentGameBeasts.length;
     const cells: HTMLElement[] = [];
 
-    for (let i = beastAmount + 1; i < GameValues.maxMapBeasts; i += 1) {
+    for (let i = beastAmount + 1; i <= GameValues.maxMapBeasts; i += 1) {
       const beastWrapper = CreateElement.createElement(Tag.div, [
         { name: 'class', value: `beast-wrapper inactive-cell` },
       ]);

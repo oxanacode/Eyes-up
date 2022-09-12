@@ -84,7 +84,7 @@ class FieldTutorial {
   static createHintThree() {
     const textContent = GameState.lib.fieldTutorialHintThree as string;
 
-    FieldTutorial.tutorialHint('hint-three', textContent, FieldState.heroPanel, FieldTutorial.createHintFour);
+    FieldTutorial.tutorialHint('hint-three', textContent, FieldState.actionTotal, FieldTutorial.createHintFour);
   }
 
   static createHintFour() {

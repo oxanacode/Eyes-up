@@ -8,6 +8,13 @@
   height: 30rem;
   top: calc(50% - 15rem);
   left: calc(50% - 19rem);
+
+  @include mobile {
+    width: 30rem;
+    height: 23rem;
+    top: calc(50% - 11.5rem);
+    left: calc(50% - 15rem);
+  }
 }
 
 .field-tutorial-buttons {
@@ -44,7 +51,7 @@
   @include mobile {
     @include font-main-small;
     top: -1rem;
-    left: -9rem;
+    left: -6.5rem;
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;
@@ -63,18 +70,18 @@
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;
-    height: 20rem;
+    height: 25rem;
   }
 }
 
 .hint-three-modal-window {
-  top: -20rem;
-  left: 20rem;
+  top: 10rem;
+  left: -10rem;
 
   @include mobile {
     @include font-main-small;
-    top: 9rem;
-    left: -9rem;
+    top: 18rem;
+    left: -6.5rem;
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;
@@ -88,12 +95,12 @@
 
   @include mobile {
     @include font-main-small;
-    top: -5rem;
+    top: -8rem;
     left: -13rem;
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;
-    height: 20rem;
+    height: 23rem;
   }
 }
 
@@ -104,10 +111,10 @@
   @include mobile {
     @include font-main-small;
     top: 0rem;
-    left: -9rem;
+    left: -6.5rem;
     padding: 2rem;
     row-gap: 1rem;
     width: 28rem;
-    height: 20rem;
+    height: 18rem;
   }
 }

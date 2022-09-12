@@ -3,7 +3,7 @@ import CreateElement from './overal-func.ts/create-element';
 import badgesDescription from '../../data/badges-description';
 import State from './app-state';
 
-import GameValues, { Tag } from './game-types/enums';
+import GameValues, { Tag, LevelValues } from './game-types/enums';
 
 class Achievements {
   static current: Record<string, boolean> = {
@@ -85,7 +85,7 @@ class Achievements {
   }
 
   static tenSpellsCheck() {
-    if (GameState.userSpells.length >= 10) {
+    if (GameState.userSpells.length >= GameValues.tenSpells) {
       const { text } = badgesDescription[Achievements.achievementsNums.tenSpells][State.currentLang];
 
       Achievements.createWindow(text, './assets/images/badges/badge-2.svg');
@@ -94,7 +94,7 @@ class Achievements {
   }
 
   static lvlUpCheck() {
-    if (GameState.userLvl === 2) {
+    if (GameState.userLvl === LevelValues.firstLvlDone) {
       const { text } = badgesDescription[Achievements.achievementsNums.lvlUp][State.currentLang];
 
       Achievements.createWindow(text, './assets/images/badges/badge-1.svg');
@@ -103,7 +103,7 @@ class Achievements {
   }
 
   static halfGameCheck() {
-    if (GameState.userLvl === 5) {
+    if (GameState.userLvl === LevelValues.halfGame) {
       const { text } = badgesDescription[Achievements.achievementsNums.halfGame][State.currentLang];
 
       Achievements.createWindow(text, './assets/images/badges/badge-3.svg');
@@ -112,7 +112,7 @@ class Achievements {
   }
 
   static gameDoneCheck() {
-    if (GameState.userLvl === 10) {
+    if (GameState.userLvl === LevelValues.fullGame) {
       const { text } = badgesDescription[Achievements.achievementsNums.gameDone][State.currentLang];
 
       Achievements.createWindow(text, './assets/images/badges/badge-4.svg');

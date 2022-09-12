@@ -13,40 +13,36 @@ export const enSpells: ISpells = {
   3: {
     'heavy flame': { name: 'heavy flame', damage: '50' },
     maelstrom: { name: 'maelstrom', damage: '40' },
-    'wind whirl': { name: 'wind whirl', damage: '50' },
+    'whirl gale': { name: 'whirl gale', damage: '50' },
   },
   4: {
     soundwave: { name: 'soundwave', damage: '40' },
     'fiery hail': { name: 'fiery hail', damage: '50' },
-    'ligth wall': { name: 'ligth wall', damage: '40' },
+    'radiant wall': { name: 'radiant wall', damage: '40' },
   },
   5: {
-    'thunder blow': { name: 'thunder blow', damage: '40' },
+    'blusting blow': { name: 'blusting blow', damage: '40' },
     'rising glow': { name: 'rising glow', damage: '50' },
-    'water storm': { name: 'water storm', damage: '50' },
+    cloudburst: { name: 'cloudburst', damage: '50' },
   },
   6: {
     'shining vortex': { name: 'shining vortex', damage: '50' },
     'furious flow': { name: 'furious flow', damage: '50' },
-    windspout: { name: 'windspout', damage: '50' },
+    flurryspout: { name: 'flurryspout', damage: '50' },
   },
   7: {
-    waterspout: { name: 'waterspout', damage: '50' },
+    aquaswirl: { name: 'aquaswirl', damage: '50' },
     'massive tornado': { name: 'massive tornado', damage: '70' },
-    'lightning blast': { name: 'lightning blast', damage: '70' },
+    'electrical discharge': { name: 'electrical discharge', damage: '70' },
   },
   8: {
-    'fiery hurricane': { name: 'fiery hurricane', damage: '100' },
-    'furious whirlwind': { name: 'furious whirlwind', damage: '150' },
+    'volcanic hurricane': { name: 'volcanic hurricane', damage: '100' },
+    'ferocious twister': { name: 'ferocious twister', damage: '150' },
     'luminous pillar': { name: 'luminous pillar', damage: '150' },
   },
   9: {
-    'whirlwind lightning': { name: 'whirlwind lightning', damage: '150' },
+    'vortical typhoon': { name: 'vortical typhoon', damage: '150' },
     'burning onslaught': { name: 'burning onslaught', damage: '150' },
-    'elemental chars': { name: 'elemental chars', damage: '100' },
-  },
-  10: {
-    'elemental high magic': { name: 'elemental high magic', damage: '250' },
     'elemental great enchantment': { name: 'elemental great enchantment', damage: '300' },
   },
 };
@@ -64,56 +60,52 @@ export const ruSpells: ISpells = {
   3: {
     'heavy flame': { name: 'сильное пламя', damage: '50' },
     maelstrom: { name: 'водоворот', damage: '40' },
-    'wind whirl': { name: 'завихрение ветра', damage: '50' },
+    'whirl gale': { name: 'завихрение ветра', damage: '50' },
   },
   4: {
     soundwave: { name: 'громовая волна', damage: '40' },
     'fiery hail': { name: 'огненный град', damage: '50' },
-    'ligth wall': { name: 'стена света', damage: '40' },
+    'radiant wall': { name: 'стена света', damage: '40' },
   },
   5: {
-    'thunder blow': { name: 'удар грома', damage: '40' },
+    'blusting blow': { name: 'удар грома', damage: '40' },
     'rising glow': { name: 'восход сияния', damage: '50' },
-    'water storm': { name: 'водяная буря', damage: '50' },
+    cloudburst: { name: 'водяная буря', damage: '50' },
   },
   6: {
     'shining vortex': { name: 'сияющий вихрь', damage: '50' },
     'furious flow': { name: 'яростный поток', damage: '50' },
-    windspout: { name: 'воздушный смерч', damage: '50' },
+    flurryspout: { name: 'воздушный смерч', damage: '50' },
   },
   7: {
-    waterspout: { name: 'водяной смерч', damage: '50' },
+    aquaswirl: { name: 'водяной смерч', damage: '50' },
     'massive tornado': { name: 'гигантский торнадо', damage: '70' },
-    'lightning blast': { name: 'удар молнии', damage: '70' },
+    'electrical discharge': { name: 'удар молнии', damage: '70' },
   },
   8: {
-    'fiery hurricane': { name: 'огненный ураган', damage: '100' },
-    'furious whirlwind': { name: 'яростный ветер', damage: '150' },
+    'volcanic hurricane': { name: 'пламенный ураган', damage: '100' },
+    'ferocious twister': { name: 'яростный шквал', damage: '150' },
     'luminous pillar': { name: 'световой столп', damage: '150' },
   },
   9: {
-    'whirlwind lightning': { name: 'вихревая молния', damage: '150' },
+    'vortical typhoon': { name: 'вихревой тайфун', damage: '150' },
     'burning onslaught': { name: 'огненный натиск', damage: '150' },
-    'elemental chars': { name: 'стихийные чары', damage: '100' },
-  },
-  10: {
-    'elemental high magic': { name: 'высшая стихийная магия', damage: '250' },
     'elemental great enchantment': { name: 'великое стихийное волшебство', damage: '300' },
   },
 };
 
 export const enElementalSpells: IElementalSpells = {
-  thunderSpells: ['thunder', 'thunder blow', 'soundwave', 'lightning blast', 'whirlwind lightning'],
-  fireSpells: ['fire', 'sunfire', 'fiery hail', 'fiery hurricane', 'burning onslaught'],
-  waterSpells: ['water', 'aqua vortex', 'furious flow', 'water storm', 'waterspout'],
-  windSpells: ['wind', 'wind vortex', 'windspout', 'massive tornado', 'furious whirlwind'],
-  lightSpells: ['light', 'ligth wall', 'rising glow', 'shining vortex', 'luminous pillar'],
+  thunderSpells: ['thunder', 'blusting blow', 'soundwave', 'electrical discharge', 'vortical typhoon'],
+  fireSpells: ['fire', 'heavy flame', 'fiery hail', 'volcanic hurricane', 'burning onslaught'],
+  waterSpells: ['water', 'maelstrom', 'furious flow', 'cloudburst', 'aquaswirl'],
+  windSpells: ['wind', 'whirl gale', 'flurryspout', 'massive tornado', 'ferocious twister'],
+  lightSpells: ['light', 'radiant wall', 'rising glow', 'shining vortex', 'luminous pillar'],
 };
 
 export const ruElementalSpells: IElementalSpells = {
   thunderSpells: ['гром', 'удар грома', 'громовая волна', 'удар молнии', 'вихревая молния'],
   fireSpells: ['огонь', 'огненный вихрь', 'огненный град', 'огненный ураган', 'огненный натиск'],
-  waterSpells: ['вода', 'водный вихрь', 'яростный поток', 'водяная буря', 'waterspout'],
+  waterSpells: ['вода', 'водный вихрь', 'яростный поток', 'водяная буря', 'водяной смерч'],
   windSpells: ['ветер', 'воздушный вихрь', 'водяной смерч', 'гигантский торнадо', 'яростный ветер'],
   lightSpells: ['свет', 'стена света', 'восход сияния', 'сияющий вихрь', 'световой столп'],
 };
