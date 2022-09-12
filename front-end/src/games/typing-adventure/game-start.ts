@@ -5,6 +5,7 @@ import ApiHandler from './api-handler';
 import Modal from './overal-func.ts/create-modal';
 import State from './app-state';
 import ApiService from '../../scripts/api/api-service';
+import Reset from './reset-state';
 
 import { Page, Tag } from './game-types/enums';
 import RenderHandler from './game-types/types';
@@ -26,6 +27,8 @@ class TypingAdventure {
 
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
+        GameState.clearState();
+        Reset.achievementClear();
         GameState.engageState();
         ApiHandler.getData(user, GameMap.innerGameMapRender);
         GameState.appCallbacks = appCallbacks;
@@ -39,6 +42,8 @@ class TypingAdventure {
         gameView.append(mapView);
       });
     } else {
+      GameState.clearState();
+      Reset.achievementClear();
       GameState.engageState();
       GameState.appCallbacks = appCallbacks;
 

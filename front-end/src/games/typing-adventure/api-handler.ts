@@ -22,7 +22,10 @@ class ApiHandler {
     if (data.firstMapRender !== undefined) GameState.firstAppearance = data.firstMapRender;
     if (data.firstFieldRender !== undefined) GameState.firstFieldAppearance = data.firstFieldRender;
     if (data.userLvl) GameState.userLvl = data.userLvl;
-    if (data.achievements) GameState.achievementsCurrentStatus = data.achievements;
+    if (data.achievements) {
+      GameState.achievementsCurrentStatus = data.achievements;
+      Achievements.current = data.achievements;
+    }
 
     if (data.gameBeasts) {
       GameState.currentGameBeasts = data.gameBeasts.map(

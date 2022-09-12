@@ -29,7 +29,7 @@ class Modal {
       const modalInfo = CreateElement.createElement(Tag.par, [{ name: 'class', value: 'field-modal-content-info' }]);
 
       modalInfo.textContent = messageInfo;
-      modal.append(modalText, button);
+      modal.append(modalText, modalInfo, button);
     } else {
       modal.append(modalText, button);
     }

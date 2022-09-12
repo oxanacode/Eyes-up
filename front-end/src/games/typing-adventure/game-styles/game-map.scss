@@ -103,7 +103,7 @@
   column-gap: 10rem;
   row-gap: 5rem;
   justify-items: center;
-  align-items: center;
+  align-items: flex-end;
   transition: $transition-time;
 
   @include tablet {
@@ -206,20 +206,21 @@
 }
 
 .inactive-cell {
-  width: 20rem;
+  width: 17rem;
   height: 20rem;
   background-image: url(./assets/games/typing-adventure/beasts-map/inactive-cell.svg);
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: 0 55%;
   cursor: auto;
 
   @include tablet {
-    width: 15rem;
+    width: 13rem;
     height: 15rem;
   }
 
   @include mobile {
-    width: 8rem;
+    width: 7rem;
     height: 8rem;
   }
 }

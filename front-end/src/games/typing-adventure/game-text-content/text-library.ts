@@ -60,7 +60,7 @@ export const enContent = {
   fieldTutorialHintOne:
     'The hero and the monster alternate moves, each move preceded by a preparation stage.\nDuring preparation, it is noted whose turn it will be, what spells are available in the cloud, or what attack the monster will have.',
   fieldTutorialHintTwo:
-    "Spells appear randomly in the spell cloud and can be used by typing the name of the spell.\nIf the spell is new for your hero, after use it goes into the hero's collection.",
+    "Spells appear randomly in the spell cloud and can be used by typing the name of the spell.\nMulti-word spells must be entered with spaces.\nIf the spell is new for your hero, after use it goes into the hero's collection.",
   fieldTutorialHintThree:
     'Here you can find a collection of hero spells. You can use both spells from the cloud and spells from the collection.\nThe principle of use is the same: you need to type the name of the spell.',
   fieldTutorialHintFour: `The monster can attack with both physics and magic. The magic attack is much stronger, but you can defend yourself by typing "resist" during the monster's turn with a magic attack. If successful, you will see the word "resist" appear in the action field.`,
@@ -134,7 +134,7 @@ export const ruContent = {
   fieldTutorialHintOne:
     'Герой и монстр ходят поочерёдно, каждому ходу предшествует стадия подготовки.\nВо время подготовки отмечается чей будет ход, какие спеллы доступны в облаке или какая атака будет у монстра.',
   fieldTutorialHintTwo:
-    'В облаке спеллов в случайном порядке появляются спеллы, которые можно использовать: нужно напечатать название спелла.\nЕсли спелл новый для вашего героя - после использования он попадает в коллекцию героя.',
+    'В облаке спеллов в случайном порядке появляются спеллы, которые можно использовать: нужно напечатать название спелла.\nСпеллы из нескольких слов нужно вводить с пробелами.\nЕсли спелл новый для вашего героя - после использования он попадает в коллекцию героя.',
   fieldTutorialHintThree:
     'Здесь вы можете найти коллекцию спеллов героя. Можно использовать как спеллы из облака, так и спеллы из коллекции.\nПринцип использования такой же: нужно напечатать название спелла.',
   fieldTutorialHintFour:

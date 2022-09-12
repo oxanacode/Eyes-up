@@ -2,6 +2,7 @@ import CreateElement from './app-scripts/app-create-element';
 import UserData from './data-handler';
 import GameState from './game-state';
 import Modal from './modal';
+import Achievements from './achievements';
 
 import { Tag, PointsType, GameValues } from './game-types/enums';
 
@@ -24,6 +25,14 @@ class Reset {
     });
   }
 
+  static achievementClear() {
+    const names = Object.keys(Achievements.current);
+
+    names.forEach((name) => {
+      Achievements.current[name] = false;
+    });
+  }
+
   static resetMethod(callback: () => void) {
     const overlay = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-reset-overlay' }]);
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'hero-reset-modal' }]);
@@ -39,6 +48,7 @@ class Reset {
     button.addEventListener('click', () => {
       Reset.state();
       Reset.resetLvlsPoints();
+      Reset.achievementClear();
       overlay.remove();
       callback();
       Modal.startModal();

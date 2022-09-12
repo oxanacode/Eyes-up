@@ -2,6 +2,7 @@ import GameState from './game-state';
 import Modal from './overal-func.ts/create-modal';
 import ApiHandler from './api-handler';
 import CreateElement from './overal-func.ts/create-element';
+import Achievements from './achievements';
 
 import { Tag } from './game-types/enums';
 
@@ -13,6 +14,14 @@ class Reset {
     GameState.userHp = 100;
     GameState.userSpells = [];
     GameState.currentGameBeasts = [];
+  }
+
+  static achievementClear() {
+    const names = Object.keys(Achievements.current);
+
+    names.forEach((name) => {
+      Achievements.current[name] = false;
+    });
   }
 
   static resetMethod(callback: () => void) {
@@ -33,10 +42,10 @@ class Reset {
     });
     button.addEventListener('click', () => {
       Reset.state();
+      Reset.achievementClear();
       overlay.remove();
       callback();
-      Modal.createStartModal();
-      ApiHandler.setData();
+      Modal.createWelcomeModal(ApiHandler.setData);
     });
 
     buttonsWrapper.append(resetCloseButton, button);
