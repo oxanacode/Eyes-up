@@ -72,13 +72,13 @@ export const enLibrary: Record<string, string> = {
 
   appButton: 'Back',
   sandboxButton: 'Sandbox',
-  resetButton: 'Reset Score',
+  resetButton: 'Reset score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
   closeModal: 'Close',
 
   sandboxMenuTitle: 'Build your own custom level!',
   sandboxModalText:
-    'In the sandbox, you can choose the speed of the letters, the number of columns and the duration of the level. Sandbox points count towards the overall score, but, like levels, are overwritten with each replay.',
+    'In the sandbox you can choose the speed of the letters, the number of columns and the duration of the level. Sandbox points count towards the overall score, but, like levels, are overwritten with each replay.',
   sandboxInputSpeed: 'Speed (in seconds): 1 to 10',
   sandboxInputDuration: 'Duration (in seconds): 10 to 150',
   sandboxInputColumns: 'Columns: 3 to 7',
@@ -108,7 +108,7 @@ export const ruLibrary: Record<string, string> = {
   startModalParagTwo:
     'За каждую пойманную букву начисляются очки. На протяжении уровня вам будет также выводиться ваша точность. Если вы прошли уровень до конца - он считается пройденным и падает вам в копилку!',
   startModalParagThree: 'Ловите буквы, набирайте очки, практикуйтесь в точности!',
-  startModalButton: 'Вперёд!',
+  startModalButton: 'Вперед!',
 
   appButton: 'Назад',
   sandboxButton: 'Песочница',
@@ -116,9 +116,9 @@ export const ruLibrary: Record<string, string> = {
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
   closeModal: 'Закрыть',
 
-  sandboxMenuTitle: 'Настройте уровень по своему!',
+  sandboxMenuTitle: 'Настройте уровень по-своему!',
   sandboxModalText:
-    'В песочнице вы можете сами выбрать скорость букв, количество колонок и продолжительность уровня. Очки песочницы идут в общий зачёт, но, как и у уровней, перезаписываются при каждом повторном перепрохождении.',
+    'В песочнице вы можете сами выбрать скорость букв, количество колонок и продолжительность уровня. Очки песочницы идут в общий зачет, но, как и у уровней, перезаписываются при каждом повторном перепрохождении.',
   sandboxInputSpeed: 'Скорость (в секундах): от 1 до 10',
   sandboxInputDuration: 'Продолжительность (в секундах): от 10 до 150',
   sandboxInputColumns: 'Колонки: от 3 to 7',
@@ -127,7 +127,7 @@ export const ruLibrary: Record<string, string> = {
   preparationContent: 'Подготовка!',
   level: 'Уровень',
   levelButton: 'Назад',
-  levelCompleted: 'уровень пройден!',
+  levelCompleted: 'Уровень пройден!',
 
   score: 'очки:',
   accuracy: 'точность:',

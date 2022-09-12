@@ -243,7 +243,7 @@ const translation: Translation = {
   },
   profileBadgesTitle: {
     en: 'Earned badges',
-    ru: 'Полученные значки',
+    ru: 'Ваши значки',
   },
   profileBadgesLink: {
     en: 'All badges',

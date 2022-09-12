@@ -167,6 +167,7 @@
   background: $c-adventure-field-blocks;
   border-radius: $small-border-radius;
   color: $c-adventure-text-content;
+  text-align: center;
 
   @include tablet {
     width: 8rem;
@@ -189,6 +190,11 @@
   top: -3rem;
   left: calc(50% - 2rem);
   color: $c-adventure-hp-result;
+
+  @include tablet {
+    font-size: 1.6rem;
+    top: -2rem;
+  }
 }
 
 .action-field-panel {
@@ -261,7 +267,7 @@
   @include mobile {
     @include font-main;
     font-weight: $fw-bold;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -281,6 +287,7 @@
   width: 40rem;
   height: 22rem;
   background-position: 50% 0;
+  background-size: contain;
 
   @media (max-width: $desktop-adventure) {
     width: 30rem;

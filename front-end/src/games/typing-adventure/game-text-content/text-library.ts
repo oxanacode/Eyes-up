@@ -12,7 +12,7 @@ export const enContent = {
     'tornado monster',
   ],
   layoutButton: 'Back',
-  resetButton: 'Reset Score',
+  resetButton: 'Reset score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
 
   preparation: 'Get Ready!',
@@ -24,13 +24,13 @@ export const enContent = {
   winnerHero: 'You Won!',
   winnerBeast: 'Beast Won!',
   lowStrengthMessage: 'You stronger!',
-  toMap: 'Back To Map',
+  toMap: 'Back to map',
 
   welcomeModalTitle: 'Welcome to the Typing Adventure!',
   welcomeModalMessage:
     'Defeat the strongest monsters of Typiria to win the crown and the title of fast typing professional!\nThe monsters have gone berserk and are not going to calm down! Luckily, elemental magic comes to your rescue!',
   welcomeModalWarning: 'Please register to save your progress!',
-  welcomeModalToLayoutBtn: 'Back To Site',
+  welcomeModalToLayoutBtn: 'Back to site',
   welcomeModalСontinue: 'Continue',
 
   startModalParagOne:
@@ -41,14 +41,14 @@ export const enContent = {
     "Monsters are able to attack in different ways: magical or physical attacks.\nThe monster's magic attack is much stronger, but it can be repelled.\nMoreover, in addition to monsters, monsters that have protection from certain elements may also appear, be careful with them!",
   startModalParagFour: 'If this is your first game, carefully read the hints on the playing field.',
   startModalParagFive: 'Collect enchantments, win and get in-game achievements!\nGood luck!',
-  startModalButton: 'Start The Game',
+  startModalButton: 'Start the game',
 
   gameInfoTitle: 'Statistics',
   gameInfoLvl: 'Your Lvl',
   gameInfoHeroSpells: 'Your Spells',
   gameInfoNullSpells: 'You are on your way to learning!',
   gameInfoAllSpells: 'Game Spells',
-  gameInfoButton: 'Back To Game',
+  gameInfoButton: 'Back to game',
 
   fieldTutorialModalParagOne: 'You are on the Typing Adventure game field!',
   fieldTutorialModalParagTwo: 'Check out a little hint guide before you start playing.',
@@ -90,7 +90,7 @@ export const ruContent = {
   resetModalInfo: 'Вы действительно хотите сбросить прогресс игры и начать заново?',
 
   preparation: 'Подготовка!',
-  yourMove: 'Ваш Ход!',
+  yourMove: 'Ваш ход!',
   beastMove: 'Ход Монстра!',
   resistMessage: '\nзащита!',
   resultNewLvl: 'Повышение уровня!\nНовый монстр на карте!',
@@ -110,37 +110,37 @@ export const ruContent = {
   startModalParagOne:
     'Перед вами игровая карта, на которой появляются различные чудища. С каждым новым уровнем увеличивается ваша стойкость, а на карте возникает новое чудище.',
   startModalParagTwo:
-    'Выберите чудище, чтобы попасть на игровое поле. Чтобы одолеть соперника, вам нужно вводить названия магических чар, которые появляются в верхней табличке игрового поля. Вы изучаете чары: после применения они переносятся в вашу коллекцию.\nВ игре доступны чары различных стихий: огня, воды, света, ветра и грома.',
+    'Выберите чудище, чтобы попасть на игровое поле. Чтобы одолеть соперника, вам нужно вводить названия магических заклинаний, которые появляются в верхней табличке игрового поля. Вы изучаете заклинания: после применения они переносятся в вашу коллекцию.\nВ игре доступны заклинания различных стихий: огня, воды, света, ветра и грома.',
   startModalParagThree:
-    'Чудища способны атаковать разными способами: магической или физической атаками.\nМагическая атака чудища намного сильнее, однако её можно отразить.\nБолее того, помимо чудищ могут появится и монстры, которые имеют защиту от определённых стихий, будте с ними осторожнее!',
-  startModalParagFour: 'Если это ваша первая игра — внимательно прочтите подсказки на игровом поле.',
-  startModalParagFive: 'Собирайте чары, побеждайте и получайте игровые достижения!\nУдачи!',
-  startModalButton: 'Начать Игру',
+    'Чудища способны атаковать разными способами: магической или физической атаками.\nМагическая атака чудища намного сильнее, однако ее можно отразить.\nБолее того, помимо чудищ могут появится и монстры, которые имеют защиту от определенных стихий, будьте с ними осторожнее!',
+  startModalParagFour: 'Если это ваша первая игра - внимательно прочтите подсказки на игровом поле.',
+  startModalParagFive: 'Собирайте закдинания, побеждайте и получайте игровые достижения!\nУдачи!',
+  startModalButton: 'Начать игру',
 
   gameInfoTitle: 'Статистика',
   gameInfoLvl: 'Ваш уровень',
-  gameInfoHeroSpells: 'Ваши чары',
+  gameInfoHeroSpells: 'Ваши заклинания',
   gameInfoNullSpells: 'Вы на пути к изучению!',
-  gameInfoAllSpells: 'Чары в игре',
+  gameInfoAllSpells: 'Заклинания в игре',
   gameInfoButton: 'Вернуться к игре',
 
   fieldTutorialModalParagOne: 'Вы на игровом поле Typing Adventure!',
   fieldTutorialModalParagTwo: 'Посмотрите небольшое руководство из подсказок, прежде чем начать играть.',
   fieldTutorialModalParagThree:
-    'Внимание!\nДля корректного ввода чар выбранный язык в системе должен соответствовать языку приложения!',
+    'Внимание!\nДля корректного ввода заклинаний выбранный язык в системе должен соответствовать языку приложения!',
   fieldTutorialModalParagButtonStart: 'Подсказки',
   fieldTutorialModalParagButtonEsc: 'Пропустить',
 
   fieldTutorialHintOne:
-    'Герой и монстр ходят поочерёдно, каждому ходу предшествует стадия подготовки.\nВо время подготовки отмечается чей будет ход, какие спеллы доступны в облаке или какая атака будет у монстра.',
+    'Герой и монстр ходят поочередно, каждому ходу предшествует стадия подготовки.\nВо время подготовки отмечается чей будет ход, какие заклинания доступны в облаке или какая атака будет у монстра.',
   fieldTutorialHintTwo:
-    'В облаке спеллов в случайном порядке появляются спеллы, которые можно использовать: нужно напечатать название спелла.\nСпеллы из нескольких слов нужно вводить с пробелами.\nЕсли спелл новый для вашего героя - после использования он попадает в коллекцию героя.',
+    'В облаке в случайном порядке появляются заклинания, которые можно использовать: нужно напечатать их названия.\nЗаклинания из нескольких слов нужно вводить с пробелами.\nЕсли заклинание новое для вашего героя - после использования оно попадает в коллекцию героя.',
   fieldTutorialHintThree:
-    'Здесь вы можете найти коллекцию спеллов героя. Можно использовать как спеллы из облака, так и спеллы из коллекции.\nПринцип использования такой же: нужно напечатать название спелла.',
+    'Здесь вы можете найти коллекцию заклинаний героя. Можно использовать как заклинание из облака, так и из коллекции.\nПринцип использования такой же: нужно напечатать название заклинания.',
   fieldTutorialHintFour:
     'Монстр может атаковать как силой, так и магией. Магическая атака намного сильнее, но вы можете защититься, напечатав "отразить" во время хода монстра с магической атакой. В случае успеха, вы увидете, как в поле действий появится слово "защита".',
   fieldTutorialHintFive:
-    'Вот так, всё довольно просто, ещё раз проверьте соответствие раскладки в системе выбранному языку в приложении, и вперёд!',
+    'Вот так, все довольно просто, еще раз проверьте соответствие раскладки в системе выбранному языку в приложении, и вперед!',
   fieldTutorialButtonNext: 'Далее',
   fieldTutorialButtonDone: 'Начинаем!',
 
