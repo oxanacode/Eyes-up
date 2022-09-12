@@ -106,8 +106,8 @@ const aboutTranslation: Translation = {
     ru: 'Благодарности',
   },
   inspyredBy: {
-    en: 'The idea was taken from ',
-    ru: 'Идея проекта взята с сайта ',
+    en: 'The idea and content are taken from ',
+    ru: 'Идея и контент проекта взяты с сайта ',
   },
   typingClub: {
     en: 'TypingClub',

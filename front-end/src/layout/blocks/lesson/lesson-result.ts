@@ -197,7 +197,7 @@ class LessonResult {
 
     LessonState.contentWrapper.style.visibility = 'hidden';
     LessonState.keyboard.style.visibility = 'hidden';
-    LessonState.hands.style.visibility = 'hidden';
+    LessonState.hands.classList.add('hidden');
     LessonState.progressWrapper.style.visibility = 'hidden';
     resultWrapper.append(LessonResult.createLessonResult());
     resultWrapper.append(LessonResult.createNextBtn(render));
