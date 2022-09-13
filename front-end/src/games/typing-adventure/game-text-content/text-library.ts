@@ -15,14 +15,14 @@ export const enContent = {
   resetButton: 'Reset score',
   resetModalInfo: 'Are you sure you want to reset the game progress and start over?',
 
-  preparation: 'Get Ready!',
-  yourMove: 'Your Move!',
-  beastMove: 'Beast Move!',
+  preparation: 'Get ready!',
+  yourMove: 'Your move!',
+  beastMove: 'Beast move!',
   resistMessage: '\nresist!',
   resultNewLvl: 'Level has been increased!\nNew beast on the map!',
   resultFinalLvl: 'Congratulations!\nYou completed the game!',
-  winnerHero: 'You Won!',
-  winnerBeast: 'Beast Won!',
+  winnerHero: 'You won!',
+  winnerBeast: 'Beast won!',
   lowStrengthMessage: 'You stronger!',
   toMap: 'Back to map',
 
@@ -44,7 +44,7 @@ export const enContent = {
   startModalButton: 'Start the game',
 
   gameInfoTitle: 'Statistics',
-  gameInfoLvl: 'Your Lvl',
+  gameInfoLvl: 'Your Level',
   gameInfoHeroSpells: 'Your Spells',
   gameInfoNullSpells: 'You are on your way to learning!',
   gameInfoAllSpells: 'Game Spells',

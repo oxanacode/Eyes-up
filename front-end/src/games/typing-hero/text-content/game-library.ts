@@ -87,7 +87,7 @@ export const enLibrary: Record<string, string> = {
   preparationContent: 'Preparation!',
   level: 'Level',
   levelButton: 'Back',
-  levelCompleted: 'level completed!',
+  levelCompleted: 'Level Completed!',
 
   score: 'Score:',
   accuracy: 'Accuracy:',

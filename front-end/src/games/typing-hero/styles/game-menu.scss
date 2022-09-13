@@ -24,11 +24,11 @@
 
 .hero-menu-title-wrapper {
   display: flex;
-  padding-left: 6.2rem;
+  padding-left: 7.2rem;
   font-size: 3.2rem;
   font-weight: 700;
   text-align: center;
-  gap: 2rem;
+  gap: 1rem;
 
   @include tablet-stats {
     padding-left: 0;
