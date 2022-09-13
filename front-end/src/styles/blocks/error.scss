@@ -31,6 +31,7 @@
   left: 50%;
   transform: translateX(-50%);
   padding: 2rem;
+  z-index: 10;
 }
 
 .profile-modal-content .error-hint {

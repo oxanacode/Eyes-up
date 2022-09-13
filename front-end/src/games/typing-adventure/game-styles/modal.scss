@@ -209,6 +209,7 @@
 }
 
 .lvl-spells-title {
+  @include font-subtitle-mobile;
   color: $c-adventure-text-content;
 }
 

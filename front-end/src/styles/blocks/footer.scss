@@ -87,10 +87,14 @@
 .dev-link::before {
   content: $bg-icon-github;
   position: absolute;
-  top: -0.4rem;
+  top: -0.2rem;
   left: -3.3rem;
   width: 2.4rem;
   height: 2.4rem;
+
+  @include mobile {
+    top: -0.4rem;
+  }
 }
 
 .dev-link:not(:first-child)::before {
