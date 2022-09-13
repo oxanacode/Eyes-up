@@ -67,7 +67,7 @@ export const enContent = {
   fieldTutorialHintFive:
     "That's it, everything is quite simple, once again check that the layout in the system matches the selected language in the application, and go!",
   fieldTutorialButtonNext: 'Next',
-  fieldTutorialButtonDone: 'Get Start',
+  fieldTutorialButtonDone: 'Get started',
 
   achievementTitle: 'New achievement!',
 };
