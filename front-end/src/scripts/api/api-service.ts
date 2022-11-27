@@ -3,7 +3,7 @@ import { User, Lesson, Test, Query } from '../../types/interfaces';
 import { UsersList, LessonsList, UserData, LessonData, TestsList, TestData, RandomTest } from '../../types/types';
 
 class ApiService {
-  private static url = 'https://eyesup-backend.herokuapp.com/api/v1';
+  private static url = 'https://rss-clone-backend.onrender.com/api/v1';
 
   private static getLessonsQuery(query: Query): string {
     if (query.layout && query.complexity) {
