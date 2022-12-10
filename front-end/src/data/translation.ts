@@ -453,6 +453,10 @@ const translation: Translation = {
     en: 'To lessons list',
     ru: 'К списку уроков',
   },
+  loading: {
+    en: 'Loading...',
+    ru: 'Загрузка...',
+  },
 };
 
 export default translation;
