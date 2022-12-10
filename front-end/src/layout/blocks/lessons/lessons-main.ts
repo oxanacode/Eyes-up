@@ -10,36 +10,45 @@ import UserState from '../../../scripts/user/user-state';
 import LessonState from '../lesson/lesson-state';
 import EmptyUser from '../lesson/empty-user';
 
-import { RenderHandler } from '../../../types/types';
+import { LessonsList, RenderHandler } from '../../../types/types';
 import { Tag, Page } from '../../../types/enums';
 
 class LessonsMain {
   public static createLessonsMain(render: RenderHandler): HTMLElement {
     const back = BackBtn.createBackBtn(Page.layout, render);
     const main = CreateElement.createElement(Tag.main, [{ name: 'class', value: 'lessons' }]);
+    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner' }]);
+    const loadingText = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loading' }]);
     const lessonsTopWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lessons-top' }]);
     const mainTitle = MainTitle.createMainTitle(translation.lessonsTitle[State.currentLang]);
     const lessonFilters = LessonsFilters.createLessonsFilters(State.currentLayout, render);
     const layout = State.currentLayout;
     const complexity = State.currentComplexity;
 
+    loadingText.textContent = translation.loading[State.currentLang];
     mainTitle.classList.add('lessons-title');
     lessonsTopWrapper.append(mainTitle, lessonFilters);
     main.append(back, lessonsTopWrapper);
+    main.append(spinner, loadingText);
+
+    const addLessons = (res: LessonsList) => {
+      spinner.remove();
+      loadingText.remove();
+      main.append(AllLessonsList.createLessonsList(res, render));
+      LessonState.lessonsNumber = res.length;
+    };
 
     if (UserState.checkIfUserAuthorised()) {
       ApiService.getUser(State.currentUser.login).then((user) => {
         LessonState.user = user;
         ApiService.getLessons({ layout, complexity }).then((res) => {
-          main.append(AllLessonsList.createLessonsList(res, render));
-          LessonState.lessonsNumber = res.length;
+          addLessons(res);
         });
       });
     } else {
       LessonState.user = EmptyUser.createEmptyUser();
       ApiService.getLessons({ layout, complexity }).then((res) => {
-        main.append(AllLessonsList.createLessonsList(res, render));
-        LessonState.lessonsNumber = res.length;
+        addLessons(res);
       });
     }
 
