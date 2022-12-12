@@ -17,6 +17,15 @@
   animation: spin 1.5s infinite linear;
 }
 
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  height: calc(100% - 10rem);
+}
+
 @keyframes spin {
   0%,
   100% {
