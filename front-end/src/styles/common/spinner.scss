@@ -17,6 +17,27 @@
   animation: spin 1.5s infinite linear;
 }
 
+.spinner.spinner-in-wrapper {
+  margin: 0 auto;
+}
+
+.spinner.auth-spinner {
+  margin: 0 auto 4rem;
+}
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  height: 100%;
+}
+
+.loader-wrapper.game-loader {
+  height: 100vh;
+}
+
 @keyframes spin {
   0%,
   100% {

@@ -18,6 +18,8 @@ class ManageUser {
     loginInput: HTMLInputElement,
     passwordInput: HTMLInputElement,
     errorBlock: HTMLElement,
+    spinner: HTMLElement,
+    btn: HTMLElement,
     render: RenderHandler
   ): void {
     const login = loginInput.value.trim();
@@ -27,6 +29,8 @@ class ManageUser {
     if (dataCorrect) {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.found) {
+          spinner.remove();
+          btn.removeAttribute('disabled');
           ManageError.showError(errorBlock, ErrorSource.registration, ErrorType.existingLogin);
         }
 
@@ -34,6 +38,8 @@ class ManageUser {
           const userData = new BaseUser(login, password, State.currentUser.avatar);
 
           ApiService.createUser(userData).then(() => {
+            spinner.remove();
+            btn.removeAttribute('disabled');
             UserState.updateUserLogin(login);
             ManageState.saveState();
             ManagePage.showPageScrollbar();
@@ -48,6 +54,8 @@ class ManageUser {
     loginInput: HTMLInputElement,
     passwordInput: HTMLInputElement,
     errorBlock: HTMLElement,
+    spinner: HTMLElement,
+    btn: HTMLElement,
     render: RenderHandler
   ): void {
     const login = loginInput.value.trim();
@@ -57,11 +65,15 @@ class ManageUser {
     if (dataEntered) {
       ApiService.checkUser(login).then((status: number) => {
         if (status === StatusCode.notFound) {
+          spinner.remove();
+          btn.removeAttribute('disabled');
           ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notRegistered);
         }
 
         if (status === StatusCode.found) {
           ApiService.getUser(login).then((user: User) => {
+            spinner.remove();
+            btn.removeAttribute('disabled');
             if (password !== user.password) {
               ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notMatchingPassword);
             } else {

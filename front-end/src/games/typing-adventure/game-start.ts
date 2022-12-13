@@ -6,6 +6,7 @@ import Modal from './overal-func.ts/create-modal';
 import State from './app-state';
 import ApiService from '../../scripts/api/api-service';
 import Reset from './reset-state';
+import Spinner from '../../layout/elements/spinner';
 
 import { Page, Tag } from './game-types/enums';
 import RenderHandler from './game-types/types';
@@ -23,7 +24,14 @@ class TypingAdventure {
     };
 
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
+    const loaderWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'loader-wrapper game-loader' },
+    ]);
+    const { spinner, loadingText } = Spinner.create('spinner spinner-in-wrapper');
+
     GameState.gameWrapper = gameView;
+    loaderWrapper.append(spinner, loadingText);
+    gameView.append(loaderWrapper);
 
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
@@ -39,6 +47,7 @@ class TypingAdventure {
           Modal.createWelcomeModal(ApiHandler.setData);
         }
 
+        loaderWrapper.remove();
         gameView.append(mapView);
       });
     } else {
@@ -53,6 +62,7 @@ class TypingAdventure {
         Modal.createWelcomeModal(ApiHandler.setData);
       }
 
+      loaderWrapper.remove();
       gameView.append(mapView);
     }
 

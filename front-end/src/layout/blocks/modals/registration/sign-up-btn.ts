@@ -13,14 +13,19 @@ class SignUpBtn {
     errorBlock: HTMLElement,
     render: RenderHandler
   ): HTMLElement {
+    const btnWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'btn-wrapper' }]);
     const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'big-btn' }]);
+    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner auth-spinner' }]);
 
     btn.textContent = translation.modalSignUpTitle[State.currentLang];
+    btnWrapper.append(btn);
     btn.addEventListener('click', () => {
-      ManageUser.createUser(loginInput, passwordInput, errorBlock, render);
+      btnWrapper.prepend(spinner);
+      btn.setAttribute('disabled', '');
+      ManageUser.createUser(loginInput, passwordInput, errorBlock, spinner, btn, render);
     });
 
-    return btn;
+    return btnWrapper;
   }
 }
 
