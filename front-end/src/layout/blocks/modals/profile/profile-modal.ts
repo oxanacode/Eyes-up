@@ -2,7 +2,7 @@ import CreateElement from '../../../elements/create-element';
 import ViewProfileModal from './view-profile-modal';
 import ApiService from '../../../../scripts/api/api-service';
 import State from '../../../../scripts/state/state';
-import translation from '../../../../data/translation';
+import Spinner from '../../../elements/spinner';
 
 import { Tag } from '../../../../types/enums';
 import { RenderHandler } from '../../../../types/types';
@@ -12,10 +12,8 @@ class ProfileModal {
   public static createProfileModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal' }]);
     const loaderWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loader-wrapper' }]);
-    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner spinner-in-wrapper' }]);
-    const loadingText = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loading' }]);
+    const { spinner, loadingText } = Spinner.create('spinner spinner-in-wrapper');
 
-    loadingText.textContent = translation.loading[State.currentLang];
     loaderWrapper.append(spinner, loadingText);
     modal.append(loaderWrapper);
 

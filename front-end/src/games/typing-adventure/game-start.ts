@@ -6,7 +6,7 @@ import Modal from './overal-func.ts/create-modal';
 import State from './app-state';
 import ApiService from '../../scripts/api/api-service';
 import Reset from './reset-state';
-import translation from '../../data/translation';
+import Spinner from '../../layout/elements/spinner';
 
 import { Page, Tag } from './game-types/enums';
 import RenderHandler from './game-types/types';
@@ -24,13 +24,12 @@ class TypingAdventure {
     };
 
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
-    GameState.gameWrapper = gameView;
     const loaderWrapper = CreateElement.createElement(Tag.div, [
       { name: 'class', value: 'loader-wrapper game-loader' },
     ]);
-    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner spinner-in-wrapper' }]);
-    const loadingText = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loading' }]);
-    loadingText.textContent = translation.loading[State.currentLang];
+    const { spinner, loadingText } = Spinner.create('spinner spinner-in-wrapper');
+
+    GameState.gameWrapper = gameView;
     loaderWrapper.append(spinner, loadingText);
     gameView.append(loaderWrapper);
 
