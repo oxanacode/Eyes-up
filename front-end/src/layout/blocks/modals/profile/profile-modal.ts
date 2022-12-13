@@ -12,7 +12,7 @@ class ProfileModal {
   public static createProfileModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal' }]);
     const loaderWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loader-wrapper' }]);
-    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner' }]);
+    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner spinner-in-wrapper' }]);
     const loadingText = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loading' }]);
 
     loadingText.textContent = translation.loading[State.currentLang];

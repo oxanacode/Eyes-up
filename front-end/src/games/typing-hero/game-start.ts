@@ -7,6 +7,7 @@ import State from './app-scripts/app-state';
 import ApiService from '../../scripts/api/api-service';
 import UserData from './data-handler';
 import Reset from './reset-state';
+import translation from '../../data/translation';
 
 import { Tag, Page } from './game-types/enums';
 import { RenderHandler } from './game-types/types';
@@ -24,8 +25,16 @@ class TypingHero {
       render: renderCallback,
     };
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
-
     GameState.gameWrapper = gameView;
+    const loaderWrapper = CreateElement.createElement(Tag.div, [
+      { name: 'class', value: 'loader-wrapper game-loader' },
+    ]);
+    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner spinner-in-wrapper' }]);
+    const loadingText = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loading' }]);
+    loadingText.textContent = translation.loading[State.currentLang];
+    loaderWrapper.append(spinner, loadingText);
+    gameView.append(loaderWrapper);
+
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
         GameState.engageState();
@@ -34,17 +43,16 @@ class TypingHero {
         Reset.achievementClear();
         UserData.getData(user);
         GameState.appCallbacks = appCallbacks;
-
         const menu = Menu.createMenu();
 
         if (GameState.firstAppearance) {
           Modal.startModal();
         }
-
         if (GameState.achievementCurrentStatus) {
           Achievements.current = GameState.achievementCurrentStatus;
         }
 
+        loaderWrapper.remove();
         gameView.append(menu);
       });
     } else {
@@ -53,13 +61,13 @@ class TypingHero {
       Reset.resetLvlsPoints();
       Reset.achievementClear();
       GameState.appCallbacks = appCallbacks;
-
       const menu = Menu.createMenu();
 
       if (GameState.firstAppearance) {
         Modal.startModal();
       }
 
+      loaderWrapper.remove();
       gameView.append(menu);
     }
 
