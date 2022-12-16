@@ -198,3 +198,9 @@
   @include font-title-mobile;
   color: $c-main-text;
 }
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

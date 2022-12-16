@@ -24,14 +24,10 @@ class TypingAdventure {
     };
 
     const gameView = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'game-wrapper' }]);
-    const loaderWrapper = CreateElement.createElement(Tag.div, [
-      { name: 'class', value: 'loader-wrapper game-loader' },
-    ]);
-    const { spinner, loadingText } = Spinner.create('spinner spinner-in-wrapper');
+    const spinner = Spinner.create();
 
     GameState.gameWrapper = gameView;
-    loaderWrapper.append(spinner, loadingText);
-    gameView.append(loaderWrapper);
+    gameView.append(spinner);
 
     if (State.currentUser.login !== State.notAuthorised) {
       ApiService.getUser(State.currentUser.login).then((user) => {
@@ -47,7 +43,7 @@ class TypingAdventure {
           Modal.createWelcomeModal(ApiHandler.setData);
         }
 
-        loaderWrapper.remove();
+        spinner.remove();
         gameView.append(mapView);
       });
     } else {
@@ -62,7 +58,7 @@ class TypingAdventure {
         Modal.createWelcomeModal(ApiHandler.setData);
       }
 
-      loaderWrapper.remove();
+      spinner.remove();
       gameView.append(mapView);
     }
 

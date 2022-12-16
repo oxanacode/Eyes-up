@@ -1,12 +1,11 @@
-.loading {
+.loading-text {
   color: $c-menu-inactive-link;
   font-size: 1.6rem;
   padding-left: 0.6rem;
 }
 
 .spinner {
-  position: relative;
-  margin: 10rem auto 0;
+  margin-top: 2rem;
   width: 1rem;
   height: 1rem;
   border-radius: 0.5rem;
@@ -16,25 +15,15 @@
   animation: spin 1.5s infinite linear;
 }
 
-.spinner.spinner-in-wrapper {
-  margin: 0 auto;
-}
-
-.spinner.auth-spinner {
-  margin: 0 auto 4rem;
-}
-
-.loader-wrapper {
+.spinner-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 5rem;
+  padding: 4rem 0;
   height: 100%;
-}
-
-.loader-wrapper.game-loader {
-  height: 100vh;
+  flex: 1;
 }
 
 .btn-spinner {
