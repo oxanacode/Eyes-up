@@ -11,6 +11,7 @@ import TestInput from './test-input';
 import TestTop from './test-stats';
 import UserState from '../../../scripts/user/user-state';
 import TestLastResult from './test-last';
+import Spinner from '../../elements/spinner';
 
 import { RenderHandler } from '../../../types/types';
 import { Tag, Page, Lang } from '../../../types/enums';
@@ -32,6 +33,7 @@ class TestMain {
     const time = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'test-time' }]);
     const timeText = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'test-time-text' }]);
     const timeCount = CreateElement.createElement(Tag.span, [{ name: 'class', value: 'test-time-count' }]);
+    const spinner = Spinner.create();
 
     ribbon.textContent = translation.testRibbonText[State.currentLang];
     TestState.ribbon = ribbon;
@@ -42,9 +44,10 @@ class TestMain {
     btnsWrapper.append(enBtn, ruBtn);
     nav.append(back, btnsText, btnsWrapper);
     time.append(timeText, timeCount);
-    main.append(nav, ribbon, time, testTop);
+    main.append(nav, ribbon, time, testTop, spinner);
 
     ApiService.getTest(TestState.lang).then((data) => {
+      spinner.remove();
       main.append(TestContent.createTestContent(data[0].text));
 
       if (UserState.checkIfUserAuthorised()) {

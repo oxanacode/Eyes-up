@@ -11,11 +11,9 @@ import { User } from '../../../../types/interfaces';
 class ProfileModal {
   public static createProfileModal(modalToClose: HTMLElement, render: RenderHandler): HTMLElement {
     const modal = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'profile-modal' }]);
-    const loaderWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'loader-wrapper' }]);
-    const { spinner, loadingText } = Spinner.create('spinner spinner-in-wrapper');
+    const spinner = Spinner.create();
 
-    loaderWrapper.append(spinner, loadingText);
-    modal.append(loaderWrapper);
+    modal.append(spinner);
 
     ApiService.getUser(State.currentUser.login).then((user: User) => {
       const editProfile = CreateElement.createElement(Tag.div, [
@@ -32,7 +30,7 @@ class ProfileModal {
         render
       );
 
-      loaderWrapper.remove();
+      spinner.remove();
       modal.append(viewProfile, editProfile, profileBadges);
     });
 

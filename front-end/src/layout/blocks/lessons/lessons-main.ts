@@ -23,16 +23,14 @@ class LessonsMain {
     const lessonFilters = LessonsFilters.createLessonsFilters(State.currentLayout, render);
     const layout = State.currentLayout;
     const complexity = State.currentComplexity;
-    const { spinner, loadingText } = Spinner.create('spinner');
+    const spinner = Spinner.create();
 
     mainTitle.classList.add('lessons-title');
     lessonsTopWrapper.append(mainTitle, lessonFilters);
-    main.append(back, lessonsTopWrapper);
-    main.append(spinner, loadingText);
+    main.append(back, lessonsTopWrapper, spinner);
 
     const addLessons = (res: LessonsList) => {
       spinner.remove();
-      loadingText.remove();
       main.append(AllLessonsList.createLessonsList(res, render));
       LessonState.lessonsNumber = res.length;
     };

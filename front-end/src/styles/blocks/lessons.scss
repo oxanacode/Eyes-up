@@ -1,8 +1,11 @@
 .lessons {
   display: grid;
   grid-template-columns: minmax(min-content, 110rem);
+  grid-template-rows: auto auto 1fr;
+  align-content: start;
   row-gap: 6rem;
   max-width: 110rem;
+  min-height: 100vh;
   padding: 0 8rem;
   margin: 0 auto 6rem;
 
@@ -99,6 +102,7 @@
 .lessons-list {
   display: grid;
   grid-template-columns: repeat(5, 18rem);
+  align-content: start;
   column-gap: 1rem;
   row-gap: 2rem;
   justify-content: space-between;

@@ -13,19 +13,17 @@ class LogInBtn {
     errorBlock: HTMLElement,
     render: RenderHandler
   ): HTMLElement {
-    const btnWrapper = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'btn-wrapper' }]);
-    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'big-btn' }]);
-    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'spinner auth-spinner' }]);
+    const btn = CreateElement.createElement(Tag.btn, [{ name: 'class', value: 'big-btn auth-btn' }]);
+    const spinner = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'btn-spinner' }]);
 
     btn.textContent = translation.modalLogInTitle[State.currentLang];
-    btnWrapper.append(btn);
     btn.addEventListener('click', () => {
-      btnWrapper.prepend(spinner);
       btn.setAttribute('disabled', '');
+      btn.prepend(spinner);
       ManageUser.authoriseUser(loginInput, passwordInput, errorBlock, spinner, btn, render);
     });
 
-    return btnWrapper;
+    return btn;
   }
 }
 
