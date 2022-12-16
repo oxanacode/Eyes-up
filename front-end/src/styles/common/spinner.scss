@@ -1,5 +1,4 @@
 .loading {
-  margin: 0 auto;
   color: $c-menu-inactive-link;
   font-size: 1.6rem;
   padding-left: 0.6rem;
@@ -38,30 +37,74 @@
   height: 100vh;
 }
 
+.btn-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 0.3rem solid $c-btn-spinner;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: btn-spin 1s linear infinite;
+  margin: 0 1rem 0 -0.6rem;
+}
+
+@keyframes btn-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
 @keyframes spin {
   0%,
   100% {
-    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 0 $c-accent, 1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 -0.5rem, 0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
+    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 0 $c-accent, 
+      1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 -0.5rem, 
+      0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, 
+      -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
   }
   12.5% {
-    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 0 $c-accent, 1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 0 $c-accent, 0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
+    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 0 $c-accent, 
+      1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 0 $c-accent, 
+      0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, 
+      -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
   }
   25% {
-    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 0 $c-accent, 0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 -0.5rem, -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
+    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 
+      1.8rem 0 0 0 $c-accent, 1.3rem 1.3rem 0 0 $c-accent,
+      0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 -0.5rem,
+      -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
   }
   37.5% {
-    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 0 $c-accent, 0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 0 $c-accent, -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
+    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 
+      1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 0 $c-accent,
+      0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 0 $c-accent,
+      -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 -0.5rem;
   }
   50% {
-    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem, 0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 0 $c-accent, -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 -0.5rem;
+    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem,
+      1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem,
+      0 1.8rem 0 0 $c-accent, -1.3rem 1.3rem 0 0 $c-accent,
+      -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 -0.5rem;
   }
   62.5% {
-    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem, 1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem, 0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 0 $c-accent, -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 0 $c-accent;
+    box-shadow: 0 -1.8rem 0 -0.5rem, 1.3rem -1.3rem 0 -0.5rem,
+      1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem,
+      0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 0 $c-accent,
+      -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 0 $c-accent;
   }
   75% {
-    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 -0.5rem, 1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem, 0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 0 $c-accent;
+    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 -0.5rem,
+      1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem,
+      0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem,
+      -1.8rem 0 0 0 $c-accent, -1.3rem -1.3rem 0 0 $c-accent;
   }
   87.5% {
-    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 0 $c-accent, 1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem, 0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem, -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 0 $c-accent;
+    box-shadow: 0 -1.8rem 0 0 $c-accent, 1.3rem -1.3rem 0 0 $c-accent,
+      1.8rem 0 0 -0.5rem, 1.3rem 1.3rem 0 -0.5rem,
+      0 1.8rem 0 -0.5rem, -1.3rem 1.3rem 0 -0.5rem,
+      -1.8rem 0 0 -0.5rem, -1.3rem -1.3rem 0 0 $c-accent;
   }
 }

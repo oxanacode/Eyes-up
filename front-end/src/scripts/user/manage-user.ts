@@ -47,6 +47,9 @@ class ManageUser {
           });
         }
       });
+    } else {
+      spinner.remove();
+      btn.removeAttribute('disabled');
     }
   }
 
@@ -74,6 +77,7 @@ class ManageUser {
           ApiService.getUser(login).then((user: User) => {
             spinner.remove();
             btn.removeAttribute('disabled');
+
             if (password !== user.password) {
               ManageError.showError(errorBlock, ErrorSource.authorisation, ErrorType.notMatchingPassword);
             } else {
@@ -85,6 +89,9 @@ class ManageUser {
           });
         }
       });
+    } else {
+      spinner.remove();
+      btn.removeAttribute('disabled');
     }
   }
 

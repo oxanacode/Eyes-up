@@ -60,6 +60,9 @@
 }
 
 @mixin big-btn {
+  display: flex;  
+  align-items: center;
+  justify-content: center;
   width: 24rem;
   height: 5rem;
   border-radius: $small-border-radius;

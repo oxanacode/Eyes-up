@@ -29,6 +29,7 @@ body.light {
   --c-skin-two-bg-all: #C2CAF5;
   --c-skin-two-bg-func: #D3AFE0;
   --c-skin-two-bg-cur: #69C9FF;
+  --c-btn-spinner: #BAC4DC;
 
   --c-hero-borders: #F4F4F4;
   --c-hero-lvl-bg: #F5F5F5;
@@ -124,6 +125,7 @@ body.dark {
   --c-skin-two-bg-all: #58698B;
   --c-skin-two-bg-func: #8E7A98;
   --c-skin-two-bg-cur: #4F98C1;
+  --c-btn-spinner: #BAC4DC;
 
   --c-hero-borders: #303D58;
   --c-hero-lvl-bg: #1E273A;
@@ -220,6 +222,7 @@ $c-skin-two-border: var(--c-skin-two-border);
 $c-skin-two-bg-all: var(--c-skin-two-bg-all);
 $c-skin-two-bg-func: var(--c-skin-two-bg-func);
 $c-skin-two-bg-cur: var(--c-skin-two-bg-cur);
+$c-btn-spinner: var(--c-btn-spinner);
 
 $c-hero-borders: var(--c-hero-borders);
 $c-hero-lvl-bg: var(--c-hero-lvl-bg);
