@@ -5,19 +5,19 @@ const developers: Developers = {
     name: 'Oxana',
     nickname: 'oxanacode',
     gitHubLink: 'https://github.com/oxanacode',
-    avatar: './assets/images/developers/oxana.svg',
+    avatar: './assets/images/developers/oxana.png',
   },
   Nikita: {
     name: 'Nikita',
     nickname: 'ReWired25',
     gitHubLink: 'https://github.com/ReWired25',
-    avatar: './assets/images/developers/nikita.svg',
+    avatar: './assets/images/developers/nikita.png',
   },
   Irina: {
     name: 'Irina',
     nickname: 'IDemidova',
     gitHubLink: 'https://github.com/IDemidova',
-    avatar: './assets/images/developers/irina.svg',
+    avatar: './assets/images/developers/irina.png',
   },
 };
 

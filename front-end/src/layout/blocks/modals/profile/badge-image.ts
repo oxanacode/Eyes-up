@@ -6,7 +6,7 @@ class BadgeImage {
   public static path = './assets/images/badges/';
 
   public static createBadgeImagePath(badge: string): string {
-    return `${BadgeImage.path}badge-${badge}.svg`;
+    return `${BadgeImage.path}badge-${badge}.png`;
   }
 
   public static createBadgeImage(className: string, imgPath: string): HTMLElement {

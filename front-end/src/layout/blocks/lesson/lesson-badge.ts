@@ -11,7 +11,7 @@ class LessonBadge {
   public static create(index: number, text: string): HTMLElement {
     const badge = CreateElement.createElement(Tag.div, [{ name: 'class', value: 'lesson-badge' }]);
     const badgeImg = CreateElement.createElement(Tag.img, [
-      { name: 'src', value: `./assets/images/badges/badge-${index}.svg` },
+      { name: 'src', value: `./assets/images/badges/badge-${index}.png` },
       { name: 'alt', value: 'Badge Image' },
       { name: 'height', value: '80px' },
       { name: 'width', value: '80px' },

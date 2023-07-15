@@ -63,7 +63,7 @@ class Achievements {
 
     Achievements.createModal(
       badgesDescription[AchievementsValues.hero][State.currentLang].text,
-      './assets/images/badges/badge-10.svg'
+      './assets/images/badges/badge-10.png'
     );
     Achievements.current.hero = true;
   }
@@ -81,7 +81,7 @@ class Achievements {
 
     Achievements.createModal(
       badgesDescription[AchievementsValues.legend][State.currentLang].text,
-      './assets/images/badges/badge-11.svg'
+      './assets/images/badges/badge-11.png'
     );
     Achievements.current.legend = true;
   }

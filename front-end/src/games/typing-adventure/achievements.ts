@@ -88,7 +88,7 @@ class Achievements {
     if (GameState.userSpells.length >= GameValues.tenSpells) {
       const { text } = badgesDescription[Achievements.achievementsNums.tenSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-2.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-2.png');
       Achievements.current.tenSpells = true;
     }
   }
@@ -97,7 +97,7 @@ class Achievements {
     if (GameState.userLvl === LevelValues.firstLvlDone) {
       const { text } = badgesDescription[Achievements.achievementsNums.lvlUp][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-1.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-1.png');
       Achievements.current.lvlUp = true;
     }
   }
@@ -106,7 +106,7 @@ class Achievements {
     if (GameState.userLvl === LevelValues.halfGame) {
       const { text } = badgesDescription[Achievements.achievementsNums.halfGame][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-3.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-3.png');
       Achievements.current.halfGame = true;
     }
   }
@@ -115,7 +115,7 @@ class Achievements {
     if (GameState.userLvl === LevelValues.fullGame) {
       const { text } = badgesDescription[Achievements.achievementsNums.gameDone][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-4.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-4.png');
       Achievements.current.gameDone = true;
     }
   }
@@ -126,7 +126,7 @@ class Achievements {
     if (status) {
       const { text } = badgesDescription[Achievements.achievementsNums.thunderSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-5.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-5.png');
       Achievements.current.thunderSpells = true;
     }
   }
@@ -137,7 +137,7 @@ class Achievements {
     if (status) {
       const { text } = badgesDescription[Achievements.achievementsNums.fireSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-6.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-6.png');
       Achievements.current.fireSpells = true;
     }
   }
@@ -148,7 +148,7 @@ class Achievements {
     if (status) {
       const { text } = badgesDescription[Achievements.achievementsNums.waterSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-7.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-7.png');
       Achievements.current.waterSpells = true;
     }
   }
@@ -159,7 +159,7 @@ class Achievements {
     if (status) {
       const { text } = badgesDescription[Achievements.achievementsNums.lightSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-8.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-8.png');
       Achievements.current.lightSpells = true;
     }
   }
@@ -170,7 +170,7 @@ class Achievements {
     if (status) {
       const { text } = badgesDescription[Achievements.achievementsNums.lightSpells][State.currentLang];
 
-      Achievements.createWindow(text, './assets/images/badges/badge-9.svg');
+      Achievements.createWindow(text, './assets/images/badges/badge-9.png');
       Achievements.current.windSpells = true;
     }
   }
