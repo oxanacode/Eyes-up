@@ -70,7 +70,7 @@
 .bg-default {
   height: 6rem;
   width: 6rem;
-  background: url(./assets/images/background/custom/bg-choice-default-preview.svg) center;
+  background: url(./assets/images/background/custom/bg-choice-default-preview.png) center;
   background-size: 6rem;
   border-radius: 5rem;
 }
@@ -78,7 +78,7 @@
 .bg-one {
   height: 6rem;
   width: 6rem;
-  background: url(./assets/images/background/custom/bg-choice-one-preview.svg) center;
+  background: url(./assets/images/background/custom/bg-choice-one-preview.png) center;
   background-size: 6rem;
   border-radius: 5rem;
 }
@@ -86,7 +86,7 @@
 .bg-two {
   height: 6rem;
   width: 6rem;
-  background: url(./assets/images/background/custom/bg-choice-two-preview.svg) center;
+  background: url(./assets/images/background/custom/bg-choice-two-preview.png) center;
   background-size: 6rem;
   border-radius: 5rem;
 }
@@ -100,7 +100,7 @@
 
   &::after {
     content: '';
-    background: url(./assets/images/background/custom/bg-choice-one.svg) no-repeat center / contain;
+    background: url(./assets/images/background/custom/bg-choice-one.png) no-repeat center / contain;
     display: block;
     position: absolute;
     width: 30rem;
@@ -115,7 +115,7 @@
 
   &::after {
     content: '';
-    background: url(./assets/images/background/custom/bg-choice-two.svg) no-repeat center / contain;
+    background: url(./assets/images/background/custom/bg-choice-two.png) no-repeat center / contain;
     display: block;
     position: absolute;
     width: 30rem;
@@ -273,22 +273,22 @@
 }
 
 .skin-default {
-  background: url(./assets/images/background/custom/skin-choice-default-preview.svg) center;
+  background: url(./assets/images/background/custom/skin-choice-default-preview.png) center;
   background-size: 5.6rem;
 }
 
 .skin-one {
-  background: url(./assets/images/background/custom/skin-choice-one-preview.svg) center;
+  background: url(./assets/images/background/custom/skin-choice-one-preview.png) center;
   background-size: 5.6rem;
 }
 
 .skin-two {
-  background: url(./assets/images/background/custom/skin-choice-two-preview.svg) center;
+  background: url(./assets/images/background/custom/skin-choice-two-preview.png) center;
   background-size: 5.6rem;
 }
 
 .skin-three {
-  background: url(./assets/images/background/custom/skin-choice-three-preview.svg) center;
+  background: url(./assets/images/background/custom/skin-choice-three-preview.png) center;
   background-size: 5.6rem;
 }
 
