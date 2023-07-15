@@ -84,14 +84,14 @@ class Modal {
         return CreateElement.createElement(Tag.img, [
           { name: 'class', value: 'start-modal-img' },
           { name: 'alt', value: 'game-map' },
-          { name: 'src', value: './assets/games/typing-adventure/adventure-map.svg' },
+          { name: 'src', value: './assets/games/typing-adventure/adventure-map.png' },
         ]);
       }
       if (text === 'startModalField') {
         return CreateElement.createElement(Tag.img, [
           { name: 'class', value: 'start-modal-img' },
           { name: 'alt', value: 'game-map' },
-          { name: 'src', value: './assets/games/typing-adventure/adventure-action.svg' },
+          { name: 'src', value: './assets/games/typing-adventure/adventure-action.png' },
         ]);
       }
 
